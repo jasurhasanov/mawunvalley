@@ -4,115 +4,278 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mawun Valley Farm - Slow Down, Connect Deeply</title>
-  <meta name="description" content="A family-run farm in Lombok dedicated to sustainable living, permaculture education, and eco-tourism.">
+  <meta name="description" content="A family farm in Lombok's valley, minutes from world-class surf. Farmstay, farm experiences, cooking classes, BBQ nights, and family membership.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
+  <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#" class="logo"><img src="images/logo.png" alt="Mawun Valley Farm"></a>
+      <a href="/" class="logo"><img src="images/logo.png" alt="Mawun Valley Farm"></a>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#facilities">Amenities</a></li>
-        <li><a href="#packages">Farmstays</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#ways">Explore</a></li>
+        <li><a href="stay.html">Stay</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="gather.html">Gather</a></li>
+        <li><a href="belong.html">Belong</a></li>
         <li><a href="#contact" class="btn btn-primary">Contact</a></li>
       </ul>
     </div>
   </nav>
 
+  <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-bg"><img src="images/hero-1.jpg" alt="Mawun Valley Farm"></div>
     <div class="hero-content">
-      <h1>Mawun Valley Farm</h1>
-      <p class="tagline">Farm. Food. Farmstay and more.</p>
-      <a href="#contact" class="btn btn-primary btn-lg">Make An Enquiry</a>
+      <p class="hero-subtitle handwritten">Est. 35 years of welcome</p>
+      <h1>Slow Down.<br>Connect Deeply.</h1>
+      <p class="tagline">A family farm in the valley, minutes from the sea.</p>
+      <a href="#ways" class="btn btn-primary btn-lg">Discover the Farm</a>
     </div>
     <div class="scroll-indicator"><span></span></div>
   </section>
 
-  <section class="about" id="about">
+  <!-- The Place -->
+  <section class="place" id="place">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image"><img src="images/hero-2.jpg" alt="Farm life"></div>
-        <div class="about-content">
-          <span class="section-label">About Us</span>
-          <h2>Slow Down, Connect Deeply.</h2>
-          <h3>35 Years Of Warm Welcome…</h3>
-          <p>We're a family-run farm dedicated to creating a sustainable and thriving community space in Lombok.</p>
-          <p>Our farm is a hub for permaculture education, cultural exchange, and eco-tourism, all within easy reach of world-class surf.</p>
-          <p>At Mawun Valley Farm, nestled in the tranquil landscapes of Lombok, we offer a unique opportunity to immerse yourself in the principles of slow living.</p>
+      <div class="place-grid">
+        <div class="place-content">
+          <span class="section-label">The Place</span>
+          <h2>Where Mountains Meet the Sea</h2>
+          <p class="lead">Nestled in a peaceful valley in South Lombok, surrounded by rice fields and mountain views — yet just 3-6 minutes from some of the best surfing beaches in Indonesia.</p>
+          <div class="place-features">
+            <div class="place-feature">
+              <span class="feature-icon">🏔️</span>
+              <span>Valley & mountain views</span>
+            </div>
+            <div class="place-feature">
+              <span class="feature-icon">🏄</span>
+              <span>3-6 min to Mawun & Selong Belanak</span>
+            </div>
+            <div class="place-feature">
+              <span class="feature-icon">🌾</span>
+              <span>Traditional Sasak village</span>
+            </div>
+            <div class="place-feature">
+              <span class="feature-icon">🌱</span>
+              <span>Organic & sustainable</span>
+            </div>
+          </div>
+        </div>
+        <div class="place-image">
+          <img src="images/hero-2.jpg" alt="Farm valley views">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="facilities" id="facilities">
+  <!-- Ways to Experience -->
+  <section class="ways" id="ways">
     <div class="container">
-      <span class="section-label">Our Farm</span>
-      <h2>All Facilities for Slow Living</h2>
-      <div class="facilities-grid">
-        <div class="facility-card"><div class="facility-icon">🏡</div><h3>Farmstay</h3><p>Comfortable accommodations surrounded by nature</p></div>
-        <div class="facility-card"><div class="facility-icon">🎭</div><h3>Amphitheater</h3><p>Open-air venue for events and gatherings</p></div>
-        <div class="facility-card"><div class="facility-icon">☕</div><h3>Farm Cafe</h3><p>Fresh, farm-to-table dining experience</p></div>
-        <div class="facility-card"><div class="facility-icon">⚽</div><h3>Sports Field</h3><p>Open spaces for recreation and play</p></div>
-        <div class="facility-card"><div class="facility-icon">🐔</div><h3>Animals</h3><p>Meet our friendly farm animals</p></div>
-        <div class="facility-card"><div class="facility-icon">🌱</div><h3>Nursery</h3><p>Growing the future, one seedling at a time</p></div>
-        <div class="facility-card"><div class="facility-icon">🍊</div><h3>Fruit Trees</h3><p>Tropical fruits fresh from the orchard</p></div>
-        <div class="facility-card"><div class="facility-icon">🥬</div><h3>Vegetables</h3><p>Organic produce grown with care</p></div>
+      <div class="section-header">
+        <span class="section-label">Ways to Experience</span>
+        <h2>Find Your Way to the Farm</h2>
+        <p>Whether you're here for a night or a season, there's a place for you.</p>
+      </div>
+      <div class="ways-grid">
+        <a href="stay.html" class="way-card">
+          <div class="way-icon">🏡</div>
+          <h3>Stay</h3>
+          <p>Farmstay cabins with valley views. Wake up to roosters, not alarms.</p>
+          <span class="way-link">View cabins →</span>
+        </a>
+        <a href="experience.html" class="way-card">
+          <div class="way-icon">🌱</div>
+          <h3>Experience</h3>
+          <p>Immersive farm programs. Become part of the farm, not just a visitor.</p>
+          <span class="way-link">Explore programs →</span>
+        </a>
+        <a href="gather.html" class="way-card">
+          <div class="way-icon">🍽️</div>
+          <h3>Gather</h3>
+          <p>BBQ nights, cooking classes, Little Farmer for kids. Come together.</p>
+          <span class="way-link">See events →</span>
+        </a>
+        <a href="belong.html" class="way-card">
+          <div class="way-icon">👨‍👩‍👧</div>
+          <h3>Belong</h3>
+          <p>Family Farm Membership. More than visitors — become family.</p>
+          <span class="way-link">Join us →</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="experience" id="packages">
+  <!-- The Animals -->
+  <section class="animals" id="animals">
     <div class="container">
-      <span class="section-label">Experience Slow Living</span>
-      <h2>Slow Down, Connect Deeply</h2>
-      <p class="experience-text">Whether you're looking for a peaceful retreat, an educational experience in permaculture, or simply want to disconnect from the chaos of modern life — Mawun Valley Farm welcomes you.</p>
-      <a href="#contact" class="btn btn-primary btn-lg">Message Us</a>
+      <div class="section-header">
+        <span class="section-label">The Residents</span>
+        <h2>Meet the Family</h2>
+        <p class="handwritten">"They're family. You will be too."</p>
+      </div>
+      <div class="animals-grid">
+        <div class="animal-card">
+          <div class="animal-emoji">🐐</div>
+          <h4>The Goats</h4>
+          <p>Curious, friendly, always hungry</p>
+        </div>
+        <div class="animal-card">
+          <div class="animal-emoji">🦆</div>
+          <h4>The Ducks</h4>
+          <p>Our morning alarm clock</p>
+        </div>
+        <div class="animal-card">
+          <div class="animal-emoji">🐱</div>
+          <h4>The Cats</h4>
+          <p>Professional nappers</p>
+        </div>
+        <div class="animal-card">
+          <div class="animal-emoji">🐕</div>
+          <h4>The Dog</h4>
+          <p>Chief welcoming officer</p>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Philosophy -->
+  <section class="philosophy" id="philosophy">
+    <div class="container">
+      <div class="philosophy-content">
+        <span class="section-label light">Our Philosophy</span>
+        <h2>We Believe in Slow Living</h2>
+        <div class="philosophy-grid">
+          <div class="philosophy-item">
+            <h4>Organic & Natural</h4>
+            <p>No chemicals, no shortcuts. We grow with patience and care.</p>
+          </div>
+          <div class="philosophy-item">
+            <h4>Community Over Commerce</h4>
+            <p>Relationships matter more than transactions.</p>
+          </div>
+          <div class="philosophy-item">
+            <h4>Learning by Doing</h4>
+            <p>Get your hands dirty. That's where the magic happens.</p>
+          </div>
+          <div class="philosophy-item">
+            <h4>Sustainable Future</h4>
+            <p>Building something that lasts for generations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
   <section class="gallery" id="gallery">
     <div class="container">
-      <span class="section-label">Gallery</span>
-      <h2>Peek Into Mawun Valley Farm</h2>
+      <div class="section-header">
+        <span class="section-label">Life at the Farm</span>
+        <h2>Peek Inside</h2>
+      </div>
       <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/gallery-1.jpg" alt="Farm"></div>
-        <div class="gallery-item"><img src="images/gallery-2.jpg" alt="Scenery"></div>
+        <div class="gallery-item"><img src="images/gallery-1.jpg" alt="Farm life"></div>
+        <div class="gallery-item"><img src="images/gallery-2.jpg" alt="Valley views"></div>
         <div class="gallery-item"><img src="images/gallery-3.jpg" alt="Activities"></div>
         <div class="gallery-item"><img src="images/gallery-4.jpg" alt="Nature"></div>
       </div>
     </div>
   </section>
 
-  <section class="contact" id="contact">
+  <!-- Testimonials -->
+  <section class="testimonials" id="reviews">
     <div class="container">
-      <span class="section-label">Get In Touch</span>
-      <h2>Plan Your Visit</h2>
-      <p>Ready to experience slow living at Mawun Valley Farm? Reach out to us!</p>
-      <div class="contact-options">
-        <a href="https://wa.me/6281234567890" class="btn btn-whatsapp" target="_blank">WhatsApp Us</a>
-        <a href="mailto:hello@mawunvalley.com" class="btn btn-outline">Email Us</a>
+      <div class="section-header">
+        <span class="section-label">Guest Stories</span>
+        <h2>What People Say</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"This place changed something in me. The family welcomed me like I was their own. I came for a week, stayed for a month."</p>
+          <p class="testimonial-author">— Sarah, Australia</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"My kids didn't want to leave. They fed the goats every morning and learned where food actually comes from. Worth more than any resort."</p>
+          <p class="testimonial-author">— The Martinez Family, Spain</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Best surf trip decision I made was staying here instead of Kuta. Peaceful mornings, epic waves 5 minutes away, real food."</p>
+          <p class="testimonial-author">— Jake, California</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-content">
+          <span class="section-label light">Come Find Us</span>
+          <h2>Start Your Journey</h2>
+          <p>We're in Selong Belanak village, where the valley meets the coast. Reach out — we'd love to hear from you.</p>
+          <div class="contact-options">
+            <a href="https://wa.me/6281234567890" class="btn btn-whatsapp" target="_blank">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp Us
+            </a>
+            <a href="mailto:hello@mawunvalley.com" class="btn btn-outline">Email Us</a>
+          </div>
+        </div>
+        <div class="contact-location">
+          <div class="location-card">
+            <h4>📍 Location</h4>
+            <p>Mawun Valley Farm<br>Selong Belanak Village<br>Lombok Tengah, NTB 83573<br>Indonesia</p>
+            <h4>🏄 Nearby Beaches</h4>
+            <p>Mawun Beach — 3 min<br>Selong Belanak — 5 min<br>Tampah — 6 min</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-brand"><img src="images/logo.png" alt="Mawun Valley Farm" class="footer-logo"><p>Slow Down, Connect Deeply.</p></div>
-        <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="#about">About Us</a></li><li><a href="#facilities">Amenities</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
-        <div class="footer-social"><h4>Follow Us</h4><div class="social-icons"><a href="#">Instagram</a><a href="#">Facebook</a></div></div>
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Mawun Valley Farm" class="footer-logo">
+          <p class="handwritten">"Slow Down, Connect Deeply"</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Experience</h4>
+          <ul>
+            <li><a href="stay.html">Stay</a></li>
+            <li><a href="experience.html">Farm Programs</a></li>
+            <li><a href="gather.html">Events</a></li>
+            <li><a href="belong.html">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://wa.me/6281234567890">WhatsApp</a></li>
+            <li><a href="gift.html">Gift Cards</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-bottom"><p>© 2026 Mawun Valley Farm. All rights reserved.</p></div>
+      <div class="footer-bottom">
+        <p>© 2026 Mawun Valley Farm. Made with 🌱 in Lombok.</p>
+      </div>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
