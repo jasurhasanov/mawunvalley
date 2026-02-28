@@ -454,3 +454,36 @@ section { padding: 100px 0; }
   text-align: center;
   opacity: 0.9;
 }
+
+/* Improved Social Links */
+.social-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.social-link-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.social-link-item:hover {
+  color: var(--color-gold);
+  transform: translateX(4px);
+}
+
+.social-link-item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.social-link-item span {
+  font-weight: 500;
+}
