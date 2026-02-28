@@ -5,39 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Mawun Valley Farm — Things to Do in South Lombok</title>
   <meta name="description" content="Discover South Lombok through the Mawun Valley Farm blog. Travel guides, adventure activities, beach guides, local culture, and slow living tips.">
-  <meta name="keywords" content="Mawun Valley Farm blog, South Lombok travel guide, things to do Lombok, Lombok beaches, Lombok adventure, Sasak culture">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../blog.css">
   <link rel="icon" type="image/png" href="../images/logo.png">
-  <style>
-    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; background: #fffef9; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-    .blog-nav .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
-    .blog-nav .logo img { height: 45px; }
-    .blog-nav .menu { display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0; }
-    .blog-nav .menu a { font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 500; color: #2c3e2d; text-decoration: none; }
-    .blog-nav .menu a:hover { color: #d4a574; }
-    .blog-nav .menu .btn-contact { display: inline-flex; padding: 12px 24px; background: #d4a574; color: #2c3e2d; border-radius: 6px; font-weight: 600; }
-    .blog-nav .menu .btn-contact:hover { background: #c17f59; color: #fff; }
-    .blog-card { position: relative; cursor: pointer; }
-    .blog-card-link { position: absolute; inset: 0; z-index: 5; }
-    @media (max-width: 768px) {
-      .blog-nav .menu { display: none; }
-    }
-  </style>
 </head>
 <body>
-  <nav class="blog-nav">
-    <div class="nav-inner">
-      <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Mawun Valley Farm"></a>
-      <ul class="menu">
-        <li><a href="../index.html#about">About Us</a></li>
-        <li><a href="../nonis.html">Noni's</a></li>
-        <li><a href="../experience.html">Programs</a></li>
-        <li><a href="index.html">Blog</a></li>
-        <li><a href="../index.html#contact" class="btn-contact">Contact</a></li>
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:#fffef9;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;">
+      <a href="../index.html"><img src="../images/logo.png" alt="Mawun Valley Farm" style="height:45px;"></a>
+      <ul style="display:flex !important;flex-direction:row !important;align-items:center;gap:32px;list-style:none;margin:0;padding:0;position:static !important;width:auto !important;height:auto !important;background:transparent !important;">
+        <li><a href="../index.html#about" style="font-family:Quicksand,sans-serif;font-size:14px;font-weight:500;color:#2c3e2d;text-decoration:none;">About Us</a></li>
+        <li><a href="../nonis.html" style="font-family:Quicksand,sans-serif;font-size:14px;font-weight:500;color:#2c3e2d;text-decoration:none;">Noni's</a></li>
+        <li><a href="../experience.html" style="font-family:Quicksand,sans-serif;font-size:14px;font-weight:500;color:#2c3e2d;text-decoration:none;">Programs</a></li>
+        <li><a href="index.html" style="font-family:Quicksand,sans-serif;font-size:14px;font-weight:500;color:#2c3e2d;text-decoration:none;">Blog</a></li>
+        <li><a href="../index.html#contact" style="display:inline-flex;padding:12px 24px;background:#d4a574;color:#2c3e2d;border-radius:6px;font-family:Quicksand,sans-serif;font-size:14px;font-weight:600;text-decoration:none;">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -45,62 +29,53 @@
   <section class="blog-hero">
     <div class="container">
       <h1>Mawun Valley Blog</h1>
-      <p>Stories, guides, and inspiration from South Lombok — helping you discover the best of our beautiful corner of Indonesia.</p>
+      <p>Stories, guides, and inspiration from South Lombok.</p>
     </div>
   </section>
 
   <section class="container">
     <div class="blog-grid">
-      <article class="blog-card" onclick="location.href='adventure-activities-south-lombok.html'">
-        <a href="adventure-activities-south-lombok.html" class="blog-card-link"></a>
-        <div class="blog-card-image"><img src="../images/blog/paragliding.jpg" alt="Adventure activities near Mawun Valley Farm"></div>
+      <article class="blog-card" onclick="location.href='adventure-activities-south-lombok.html'" style="cursor:pointer;">
+        <div class="blog-card-image"><img src="../images/blog/paragliding.jpg" alt="Adventure activities"></div>
         <div class="blog-card-content">
           <span class="blog-card-category">Adventure</span>
-          <h3>6 Thrilling Adventure Activities Near Mawun Valley Farm</h3>
-          <p>From jet skiing at Mawun Beach to paragliding at Skylancing, waterfall hikes to escape rooms — your ultimate adrenaline guide.</p>
-          <div class="blog-card-meta"><span>February 28, 2026</span><span>•</span><span>8 min read</span></div>
+          <h3><a href="adventure-activities-south-lombok.html" style="color:#2c3e2d;text-decoration:none;">6 Thrilling Adventure Activities Near Mawun Valley Farm</a></h3>
+          <p>From jet skiing to paragliding, waterfall hikes to escape rooms.</p>
         </div>
       </article>
 
-      <article class="blog-card" onclick="location.href='beach-hopping-south-lombok.html'">
-        <a href="beach-hopping-south-lombok.html" class="blog-card-link"></a>
-        <div class="blog-card-image"><img src="../images/blog/beach-hopping.jpg" alt="Beach hopping South Lombok"></div>
+      <article class="blog-card" onclick="location.href='beach-hopping-south-lombok.html'" style="cursor:pointer;">
+        <div class="blog-card-image"><img src="../images/blog/beach-hopping.jpg" alt="Beach hopping"></div>
         <div class="blog-card-content">
           <span class="blog-card-category">Beaches</span>
-          <h3>7 Stunning Beaches & Viewpoints Near Mawun Valley Farm</h3>
-          <p>Discover South Lombok's most beautiful beaches and scenic viewpoints — from Mawun Beach to Ashtari's magical ocean views.</p>
-          <div class="blog-card-meta"><span>February 28, 2026</span><span>•</span><span>10 min read</span></div>
+          <h3><a href="beach-hopping-south-lombok.html" style="color:#2c3e2d;text-decoration:none;">7 Stunning Beaches & Viewpoints Near Mawun Valley Farm</a></h3>
+          <p>From Mawun Beach to Ashtari's magical ocean views.</p>
         </div>
       </article>
 
-      <article class="blog-card" onclick="location.href='farm-life-culture-lombok.html'">
-        <a href="farm-life-culture-lombok.html" class="blog-card-link"></a>
-        <div class="blog-card-image"><img src="../images/blog/farm-life.jpg" alt="Farm life at Mawun Valley"></div>
+      <article class="blog-card" onclick="location.href='farm-life-culture-lombok.html'" style="cursor:pointer;">
+        <div class="blog-card-image"><img src="../images/blog/farm-life.jpg" alt="Farm life"></div>
         <div class="blog-card-content">
           <span class="blog-card-category">Culture & Slow Living</span>
-          <h3>Farm Life, Culture & Slow Living at Mawun Valley Farm</h3>
-          <p>Experience authentic Lombok — feed goats, play volleyball, join yoga, visit Sasak villages, and embrace the art of slowing down.</p>
-          <div class="blog-card-meta"><span>February 28, 2026</span><span>•</span><span>12 min read</span></div>
+          <h3><a href="farm-life-culture-lombok.html" style="color:#2c3e2d;text-decoration:none;">Farm Life, Culture & Slow Living at Mawun Valley Farm</a></h3>
+          <p>Feed goats, play volleyball, yoga, visit Sasak villages.</p>
         </div>
       </article>
     </div>
   </section>
 
-  <section style="padding: 4rem 0;">
+  <section style="padding:4rem 0;">
     <div class="container">
       <div class="article-cta">
         <h2>Ready to Visit?</h2>
-        <p>Book your stay at Mawun Valley Farm and experience South Lombok at its finest.</p>
-        <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20staying%20at%20Mawun%20Valley%20Farm!" class="btn btn-primary" target="_blank">Message Us on WhatsApp</a>
+        <p>Book your stay at Mawun Valley Farm.</p>
+        <a href="https://wa.me/6282258440585" class="btn btn-primary" target="_blank">Message Us on WhatsApp</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom"><p>© 2026 Mawun Valley Farm. All rights reserved.</p></div>
-    </div>
+    <div class="container"><p style="text-align:center;padding:20px 0;">© 2026 Mawun Valley Farm.</p></div>
   </footer>
-  <script src="../script.js"></script>
 </body>
 </html>
