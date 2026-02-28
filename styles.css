@@ -244,3 +244,13 @@ section { padding: 100px 0; }
     background-color: transparent;
   }
 }
+
+/* Logo visibility fix */
+.logo img {
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.8)) drop-shadow(0 0 3px rgba(255,255,255,1));
+  transition: filter 0.3s ease;
+}
+
+.navbar.scrolled .logo img {
+  filter: none;
+}
