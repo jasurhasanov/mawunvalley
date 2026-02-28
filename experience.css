@@ -759,3 +759,23 @@
 .essential-item strong {
   color: var(--color-dark);
 }
+
+/* Price highlight - booking site style */
+.info-item.price-highlight {
+  background: linear-gradient(135deg, var(--color-gold) 0%, #d4a84b 100%);
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(198, 107, 61, 0.3);
+}
+
+.info-item.price-highlight .info-icon {
+  font-size: 18px;
+}
+
+.info-item.price-highlight span:last-child {
+  font-family: var(--font-heading);
+  letter-spacing: -0.5px;
+}
