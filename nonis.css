@@ -26,6 +26,12 @@
   z-index: 1;
 }
 
+.nonis-logo-img {
+  max-width: 350px;
+  width: 80%;
+  height: auto;
+}
+
 .nonis-logo-text {
   font-family: 'Quicksand', sans-serif;
   font-size: clamp(4rem, 12vw, 8rem);
@@ -355,7 +361,13 @@
     min-height: 350px;
   }
   
-  .nonis-logo-text {
+  .nonis-logo-img {
+  max-width: 350px;
+  width: 80%;
+  height: auto;
+}
+
+.nonis-logo-text {
     font-size: 3.5rem;
   }
   
