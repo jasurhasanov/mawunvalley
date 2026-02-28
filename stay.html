@@ -65,10 +65,19 @@
       <div class="cabins-grid">
         
         <!-- Peace Cabin -->
-        <article class="cabin-card">
+        <article class="cabin-card cabin-card-gallery">
           <div class="cabin-image">
-            <img src="images/program-1.jpg" alt="Peace Cabin">
+            <img src="images/peace-1.jpg" alt="Peace Cabin" id="peace-main">
             <span class="cabin-capacity">🛏️ Queen Bed</span>
+          </div>
+          <div class="cabin-gallery">
+            <img src="images/peace-1.jpg" alt="Peace view 1" onclick="switchCabinPhoto('peace-main', this)" class="active">
+            <img src="images/peace-2.jpg" alt="Peace view 2" onclick="switchCabinPhoto('peace-main', this)">
+            <img src="images/peace-3.jpg" alt="Peace view 3" onclick="switchCabinPhoto('peace-main', this)">
+            <img src="images/peace-4.jpg" alt="Peace view 4" onclick="switchCabinPhoto('peace-main', this)">
+            <img src="images/peace-5.jpg" alt="Peace view 5" onclick="switchCabinPhoto('peace-main', this)">
+            <img src="images/peace-6.jpg" alt="Peace view 6" onclick="switchCabinPhoto('peace-main', this)">
+            <img src="images/peace-7.jpg" alt="Peace view 7" onclick="switchCabinPhoto('peace-main', this)">
           </div>
           <div class="cabin-content">
             <h2>Peace Cabin</h2>
@@ -81,7 +90,6 @@
             <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20booking%20Peace%20Cabin" class="btn btn-primary" target="_blank">Book This Cabin</a>
           </div>
         </article>
-
         <!-- Sandat Cabin -->
         <article class="cabin-card cabin-card-gallery">
           <div class="cabin-image">
