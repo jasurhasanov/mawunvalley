@@ -417,11 +417,3 @@
   }
 }
 
-/* Footer logo fix - white logo on dark background */
-.footer .footer-logo {
-  background: none !important;
-  padding: 0 !important;
-  filter: brightness(0) invert(1) !important;
-  height: auto;
-  max-height: 50px;
-}
