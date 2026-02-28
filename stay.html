@@ -83,10 +83,19 @@
         </article>
 
         <!-- Sandat Cabin -->
-        <article class="cabin-card">
+        <article class="cabin-card cabin-card-gallery">
           <div class="cabin-image">
-            <img src="images/cat-fence.jpg" alt="Sandat Cabin">
+            <img src="images/sandat-1.jpg" alt="Sandat Cabin" id="sandat-main">
             <span class="cabin-capacity">🛏️ Queen Bed</span>
+          </div>
+          <div class="cabin-gallery">
+            <img src="images/sandat-1.jpg" alt="Sandat view 1" onclick="switchCabinPhoto('sandat-main', this)" class="active">
+            <img src="images/sandat-2.jpg" alt="Sandat view 2" onclick="switchCabinPhoto('sandat-main', this)">
+            <img src="images/sandat-3.jpg" alt="Sandat view 3" onclick="switchCabinPhoto('sandat-main', this)">
+            <img src="images/sandat-4.jpg" alt="Sandat view 4" onclick="switchCabinPhoto('sandat-main', this)">
+            <img src="images/sandat-5.jpg" alt="Sandat view 5" onclick="switchCabinPhoto('sandat-main', this)">
+            <img src="images/sandat-6.jpg" alt="Sandat view 6" onclick="switchCabinPhoto('sandat-main', this)">
+            <img src="images/sandat-7.jpg" alt="Sandat view 7" onclick="switchCabinPhoto('sandat-main', this)">
           </div>
           <div class="cabin-content">
             <h2>Sandat Cabin</h2>
@@ -100,12 +109,19 @@
             <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20booking%20Sandat%20Cabin" class="btn btn-primary" target="_blank">Book This Cabin</a>
           </div>
         </article>
-
         <!-- Rick's Windmill -->
-        <article class="cabin-card">
+        <article class="cabin-card cabin-card-gallery">
           <div class="cabin-image">
-            <img src="images/program-3.jpg" alt="Rick's Windmill">
+            <img src="images/windmill-1.jpg" alt="Rick's Windmill" id="windmill-main">
             <span class="cabin-capacity">🛏️ Queen Bed</span>
+          </div>
+          <div class="cabin-gallery">
+            <img src="images/windmill-1.jpg" alt="Windmill view 1" onclick="switchCabinPhoto('windmill-main', this)" class="active">
+            <img src="images/windmill-2.jpg" alt="Windmill view 2" onclick="switchCabinPhoto('windmill-main', this)">
+            <img src="images/windmill-3.jpg" alt="Windmill view 3" onclick="switchCabinPhoto('windmill-main', this)">
+            <img src="images/windmill-4.jpg" alt="Windmill view 4" onclick="switchCabinPhoto('windmill-main', this)">
+            <img src="images/windmill-5.jpg" alt="Windmill view 5" onclick="switchCabinPhoto('windmill-main', this)">
+            <img src="images/windmill-6.jpg" alt="Windmill view 6" onclick="switchCabinPhoto('windmill-main', this)">
           </div>
           <div class="cabin-content">
             <h2>Rick's Windmill</h2>
@@ -117,7 +133,6 @@
             <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20booking%20Rick's%20Windmill" class="btn btn-primary" target="_blank">Book This Cabin</a>
           </div>
         </article>
-
         <!-- Jabalkap Cabin -->
         <article class="cabin-card">
           <div class="cabin-image">
@@ -300,5 +315,14 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Cabin gallery photo switcher
+    function switchCabinPhoto(mainId, thumb) {
+      document.getElementById(mainId).src = thumb.src;
+      const gallery = thumb.parentElement;
+      gallery.querySelectorAll("img").forEach(img => img.classList.remove("active"));
+      thumb.classList.add("active");
+    }
+  </script>
 </body>
 </html>
