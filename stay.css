@@ -193,3 +193,20 @@
     font-size: 13px;
   }
 }
+
+/* Minimalist cabin booking button */
+.cabin-card .btn-primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  border: none;
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: none;
+  padding: 12px 24px;
+  font-size: 13px;
+}
+
+.cabin-card .btn-primary:hover {
+  background: var(--color-terracotta);
+  color: var(--color-white);
+}
