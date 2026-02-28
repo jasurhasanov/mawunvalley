@@ -463,3 +463,251 @@
     padding: 12px;
   }
 }
+
+/* ========================================
+   Retreat Page Styles
+   ======================================== */
+
+.retreat-header {
+  padding-bottom: 80px;
+}
+
+.retreat-quick-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.retreat-intro {
+  padding: 80px 0;
+  background: var(--color-white);
+}
+
+.intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-content h2 {
+  margin-bottom: 20px;
+}
+
+.intro-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.retreat-itinerary {
+  padding: 80px 0;
+  background: var(--color-light);
+}
+
+.retreat-itinerary h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.itinerary-full {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.itinerary-day-full {
+  background: var(--color-white);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.day-header .day-number {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.day-header h3 {
+  color: var(--color-white);
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.day-details {
+  padding: 20px;
+}
+
+.day-details p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.day-details p:last-child {
+  margin-bottom: 0;
+}
+
+.retreat-included {
+  padding: 80px 0;
+  background: var(--color-white);
+}
+
+.retreat-included h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.included-item {
+  text-align: center;
+  padding: 25px;
+  background: var(--color-light);
+  border-radius: 12px;
+}
+
+.included-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.included-item strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.included-item p {
+  font-size: 0.9rem;
+  color: var(--color-dark-light);
+  margin: 0;
+}
+
+.not-included {
+  max-width: 400px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.not-included h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.not-included ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.not-included li {
+  color: var(--color-dark-light);
+  font-size: 0.9rem;
+}
+
+.retreat-requirements {
+  padding: 60px 0;
+  background: var(--color-light);
+  text-align: center;
+}
+
+.requirements-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.requirements-list li {
+  background: var(--color-white);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+/* Retreat promo on programs page */
+.retreat-promo {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-light) 100%);
+  border-radius: 12px;
+  color: var(--color-white);
+}
+
+.retreat-promo h3 {
+  color: var(--color-white);
+  margin-bottom: 10px;
+}
+
+.retreat-promo p {
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .retreat-quick-stats {
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .included-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .day-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .included-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .requirements-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

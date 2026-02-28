@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Farm Experience Programs - Mawun Valley Farm</title>
-  <meta name="description" content="Join our farm experience programs in Lombok. Choose from hands-on permaculture, slow living retreats, content creation, or immersive group trips.">
+  <meta name="description" content="Join our work exchange programs in Lombok. Choose from hands-on permaculture, slow living retreats, or content creation opportunities.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,29 +19,27 @@
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html#about">About Us</a></li>
-        <li><a href="index.html#facilities">Amenities</a></li>
         <li><a href="experience.html" class="active">Programs</a></li>
+        <li><a href="retreat.html">Farm Retreat</a></li>
         <li><a href="index.html#gallery">Gallery</a></li>
         <li><a href="#inquiry" class="btn btn-primary">Apply Now</a></li>
       </ul>
     </div>
   </nav>
+
   <section class="page-header">
     <div class="container">
-      <span class="section-label">Farm Experience</span>
-      <h1>Find Your Path at Mawun Valley</h1>
-      <p>Whether you're seeking adventure, mindfulness, creativity, or community — we have a program for you.</p>
+      <span class="section-label">Work Exchange</span>
+      <h1>Farm Experience Programs</h1>
+      <p>Live and learn at Mawun Valley Farm. Help 3 hours a day, enjoy private accommodation, meals, and unforgettable experiences.</p>
     </div>
   </section>
+
   <section class="programs-section">
     <div class="container">
-      <div class="program-filters">
-        <button class="filter-btn active" data-filter="all">All Programs</button>
-        <button class="filter-btn" data-filter="exchange">Work Exchange</button>
-        <button class="filter-btn" data-filter="group">Group Trips</button>
-      </div>
       <div class="programs-grid">
-        <article class="program-card" data-type="exchange" id="beachside">
+        <!-- Program 1: Beachside Farming -->
+        <article class="program-card" id="beachside">
           <div class="program-image">
             <img src="images/program-beachside.jpg" alt="Hands-on farming experience near the beach">
             <span class="program-badge">🏄 Surf + Farm</span>
@@ -65,7 +63,9 @@
             </div>
           </div>
         </article>
-        <article class="program-card" data-type="exchange" id="slowliving">
+
+        <!-- Program 2: Slow Living -->
+        <article class="program-card" id="slowliving">
           <div class="program-image">
             <img src="images/program-slowliving.jpg" alt="Slow living experience">
             <span class="program-badge">🧘 Mindful</span>
@@ -88,7 +88,9 @@
             </div>
           </div>
         </article>
-        <article class="program-card" data-type="exchange" id="creative">
+
+        <!-- Program 3: Creative Content -->
+        <article class="program-card" id="creative">
           <div class="program-image">
             <img src="images/program-creative.jpg" alt="Content creation at the farm">
             <span class="program-badge">📸 Creator</span>
@@ -111,33 +113,17 @@
             </div>
           </div>
         </article>
-        <article class="program-card featured" data-type="group" id="grouptrip">
-          <div class="program-image">
-            <img src="images/program-grouptrip.jpg" alt="8-day farm life immersion">
-            <span class="program-badge">⭐ 8-Day Trip</span>
-          </div>
-          <div class="program-content">
-            <div class="program-rating"><span class="stars">★★★★★</span><span class="rating-text">4.9 (15 reviews)</span></div>
-            <h2>Farm Life Experience: 8-Day Immersive Journey</h2>
-            <p class="program-tagline">A transformative group trip to explore permaculture, community, and self-discovery in beautiful Lombok.</p>
-            <div class="program-quick-info">
-              <div class="info-item"><span class="info-icon">📅</span><span>8 days / 7 nights</span></div>
-              <div class="info-item"><span class="info-icon">🍽️</span><span>All meals included</span></div>
-              <div class="info-item"><span class="info-icon">✈️</span><span>Airport transfer included</span></div>
-            </div>
-            <button class="btn-expand" onclick="toggleProgram('grouptrip')">View Details <span class="arrow">↓</span></button>
-            <div class="program-details" id="grouptrip-details">
-              <div class="detail-section"><h3>🌿 The Experience</h3><p>Dream of a simpler, more connected life? Join a small group of like-minded travelers to explore what it truly means to live in harmony with the land.</p><p class="highlight-text">This is more than a trip — it's a chance to build deep friendships, reconnect with nature, and find pieces of yourself in a stunning Indonesian setting.</p></div>
-              <div class="detail-section"><h3>📅 8-Day Itinerary</h3><div class="itinerary"><div class="itinerary-day"><span class="day-number">Day 1</span><div class="day-content"><strong>Welcome</strong><p>Settle in, welcome feast</p></div></div><div class="itinerary-day"><span class="day-number">Day 2</span><div class="day-content"><strong>Permaculture</strong><p>Farm gym, workshop, bonfire</p></div></div><div class="itinerary-day"><span class="day-number">Day 3</span><div class="day-content"><strong>Ocean</strong><p>Fishing, snorkeling, BBQ</p></div></div><div class="itinerary-day"><span class="day-number">Day 4</span><div class="day-content"><strong>Explore</strong><p>Beaches, caves, market</p></div></div><div class="itinerary-day"><span class="day-number">Day 5</span><div class="day-content"><strong>Farm</strong><p>Tour, cooking class</p></div></div><div class="itinerary-day"><span class="day-number">Day 6</span><div class="day-content"><strong>Community</strong><p>Workshop, village</p></div></div><div class="itinerary-day"><span class="day-number">Day 7</span><div class="day-content"><strong>Celebrate</strong><p>Free time, farewell BBQ</p></div></div><div class="itinerary-day"><span class="day-number">Day 8</span><div class="day-content"><strong>Departure</strong><p>Breakfast, airport</p></div></div></div></div>
-              <div class="detail-section"><h3>✅ What's Included</h3><div class="benefits-grid"><div class="benefit-item"><span class="benefit-icon">🛏️</span><div><strong>8 Nights</strong><p>Private cabin</p></div></div><div class="benefit-item"><span class="benefit-icon">🍽️</span><div><strong>All Meals</strong><p>B/L/D daily</p></div></div><div class="benefit-item"><span class="benefit-icon">✈️</span><div><strong>Airport Transfer</strong><p>LOP pickup</p></div></div><div class="benefit-item"><span class="benefit-icon">🚐</span><div><strong>Transport</strong><p>All excursions</p></div></div><div class="benefit-item"><span class="benefit-icon">🌱</span><div><strong>Workshops</strong><p>Permaculture, cooking</p></div></div><div class="benefit-item"><span class="benefit-icon">🎣</span><div><strong>Adventures</strong><p>Fishing, snorkeling</p></div></div></div></div>
-              <div class="detail-section"><h3>✅ Requirements</h3><ul class="detail-list simple"><li>Beginner English</li><li>Over 18 years old</li></ul></div>
-              <a href="#inquiry" class="btn btn-primary btn-lg program-cta">Reserve Your Spot</a>
-            </div>
-          </div>
-        </article>
+      </div>
+
+      <!-- Link to retreat -->
+      <div class="retreat-promo">
+        <h3>Looking for a full immersive experience?</h3>
+        <p>Check out our 8-day Farm Retreat — all meals, activities, and accommodation included.</p>
+        <a href="retreat.html" class="btn btn-primary">Explore Farm Retreat →</a>
       </div>
     </div>
   </section>
+
   <section class="inquiry-section" id="inquiry">
     <div class="container">
       <div class="inquiry-content">
@@ -154,11 +140,12 @@
       </div>
     </div>
   </section>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand"><img src="images/logo.png" alt="Mawun Valley Farm" class="footer-logo"><p>Slow Down, Connect Deeply.</p></div>
-        <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="experience.html">Programs</a></li><li><a href="#inquiry">Contact</a></li></ul></div>
+        <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="experience.html">Programs</a></li><li><a href="retreat.html">Farm Retreat</a></li><li><a href="#inquiry">Contact</a></li></ul></div>
         <div class="footer-social"><h4>Follow Us</h4><div class="social-icons"><a href="https://instagram.com/mawunvalley" aria-label="Instagram" target="_blank"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></div></div>
       </div>
       <div class="footer-bottom"><p>© 2026 Mawun Valley Farm. All rights reserved.</p></div>
@@ -173,14 +160,6 @@
       if (details.classList.contains('expanded')) { details.classList.remove('expanded'); arrow.textContent = '↓'; }
       else { document.querySelectorAll('.program-details.expanded').forEach(el => { el.classList.remove('expanded'); el.previousElementSibling.querySelector('.arrow').textContent = '↓'; }); details.classList.add('expanded'); arrow.textContent = '↑'; }
     }
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.querySelectorAll('.program-card').forEach(card => { card.style.display = (filter === 'all' || card.dataset.type === filter) ? 'block' : 'none'; });
-      });
-    });
   </script>
 </body>
 </html>
