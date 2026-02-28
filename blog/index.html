@@ -18,6 +18,25 @@
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../blog.css">
   <link rel="icon" type="image/png" href="../images/logo.png">
+  <style>
+    /* Card link overlay for full clickability */
+    .blog-card {
+      position: relative;
+    }
+    .blog-card-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+    }
+    .blog-card h3 a,
+    .blog-card-image a {
+      position: relative;
+      z-index: 11;
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar scrolled" id="navbar">
@@ -43,39 +62,46 @@
 
   <section class="container">
     <div class="blog-grid">
+      
       <article class="blog-card">
+        <a href="adventure-activities-south-lombok.html" class="blog-card-link" aria-label="Read: 6 Thrilling Adventure Activities Near Mawun Valley Farm"></a>
         <div class="blog-card-image">
-          <a href="adventure-activities-south-lombok.html"><img src="../images/blog/paragliding.jpg" alt="Adventure activities near Mawun Valley Farm"></a>
+          <img src="../images/blog/paragliding.jpg" alt="Adventure activities near Mawun Valley Farm">
         </div>
         <div class="blog-card-content">
           <span class="blog-card-category">Adventure</span>
-          <h3><a href="adventure-activities-south-lombok.html">6 Thrilling Adventure Activities Near Mawun Valley Farm</a></h3>
+          <h3>6 Thrilling Adventure Activities Near Mawun Valley Farm</h3>
           <p>From jet skiing at Mawun Beach to paragliding at Skylancing, waterfall hikes to escape rooms — your ultimate adrenaline guide.</p>
           <div class="blog-card-meta"><span>February 28, 2026</span><span>•</span><span>8 min read</span></div>
         </div>
       </article>
+
       <article class="blog-card">
+        <a href="beach-hopping-south-lombok.html" class="blog-card-link" aria-label="Read: 7 Stunning Beaches & Viewpoints Near Mawun Valley Farm"></a>
         <div class="blog-card-image">
-          <a href="beach-hopping-south-lombok.html"><img src="../images/blog/beach-hopping.jpg" alt="Beach hopping South Lombok"></a>
+          <img src="../images/blog/beach-hopping.jpg" alt="Beach hopping South Lombok">
         </div>
         <div class="blog-card-content">
           <span class="blog-card-category">Beaches</span>
-          <h3><a href="beach-hopping-south-lombok.html">7 Stunning Beaches & Viewpoints Near Mawun Valley Farm</a></h3>
+          <h3>7 Stunning Beaches & Viewpoints Near Mawun Valley Farm</h3>
           <p>Discover South Lombok's most beautiful beaches and scenic viewpoints — from Mawun Beach to Ashtari's magical ocean views.</p>
           <div class="blog-card-meta"><span>February 28, 2026</span><span>•</span><span>10 min read</span></div>
         </div>
       </article>
+
       <article class="blog-card">
+        <a href="farm-life-culture-lombok.html" class="blog-card-link" aria-label="Read: Farm Life, Culture & Slow Living at Mawun Valley Farm"></a>
         <div class="blog-card-image">
-          <a href="farm-life-culture-lombok.html"><img src="../images/blog/farm-life.jpg" alt="Farm life at Mawun Valley"></a>
+          <img src="../images/blog/farm-life.jpg" alt="Farm life at Mawun Valley">
         </div>
         <div class="blog-card-content">
           <span class="blog-card-category">Culture & Slow Living</span>
-          <h3><a href="farm-life-culture-lombok.html">Farm Life, Culture & Slow Living at Mawun Valley Farm</a></h3>
+          <h3>Farm Life, Culture & Slow Living at Mawun Valley Farm</h3>
           <p>Experience authentic Lombok — feed goats, play volleyball, join yoga, visit Sasak villages, and embrace the art of slowing down.</p>
           <div class="blog-card-meta"><span>February 28, 2026</span><span>•</span><span>12 min read</span></div>
         </div>
       </article>
+
     </div>
   </section>
 
@@ -103,7 +129,7 @@
           <p>📸 <a href="https://instagram.com/mawunvalley" target="_blank">@mawunvalley</a></p>
         </div>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Mawun Valley Farm. All rights reserved.</p></div>
+      <div class="footer-bottom"><p>© 2026 Mawun Valley Farm. All rights reserved.</p></div>
     </div>
   </footer>
   <script src="../script.js"></script>
