@@ -711,3 +711,24 @@
     gap: 10px;
   }
 }
+
+/* Benefits Preview Icons */
+.benefits-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: var(--color-light);
+  border-radius: 8px;
+}
+
+.benefits-preview span {
+  font-size: 24px;
+  cursor: help;
+  transition: transform 0.2s;
+}
+
+.benefits-preview span:hover {
+  transform: scale(1.2);
+}
