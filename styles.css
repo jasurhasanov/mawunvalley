@@ -487,3 +487,22 @@ section { padding: 100px 0; }
 .social-link-item span {
   font-weight: 500;
 }
+
+/* Fix tablet/mobile nav visibility */
+@media (max-width: 768px) {
+  .nav-links {
+    overflow: hidden;
+  }
+  .nav-links .dropdown-menu {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding-left: 20px;
+  }
+  .nav-links .dropdown-menu a {
+    color: var(--color-white) !important;
+  }
+}
