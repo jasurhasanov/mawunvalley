@@ -816,3 +816,15 @@
   background: var(--color-terracotta);
   color: var(--color-white);
 }
+
+/* Smaller buttons */
+.program-card .btn-primary,
+.btn.btn-primary.btn-lg.program-cta {
+  padding: 12px 24px;
+  font-size: 13px;
+}
+
+.btn-expand {
+  padding: 10px 20px;
+  font-size: 13px;
+}
