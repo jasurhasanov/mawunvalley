@@ -48,7 +48,7 @@ img { max-width: 100%; height: auto; }
 .nav-links a { font-family: var(--font-heading); font-size: 14px; font-weight: 500; color: var(--color-white); }
 .navbar.scrolled .nav-links a { color: var(--color-dark); }
 .nav-links a:hover { color: var(--color-gold); }
-.mobile-menu-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; }
+.mobile-menu-btn { display: none; flex-direction: column; gap: 5px; background: none !important; border: none; cursor: pointer; padding: 5px; }
 .mobile-menu-btn span { width: 24px; height: 2px; background: var(--color-white); transition: var(--transition); }
 .navbar.scrolled .mobile-menu-btn span { background: var(--color-dark); }
 
@@ -139,8 +139,8 @@ section { padding: 100px 0; }
 .footer { background: var(--color-dark); color: var(--color-white); padding: 60px 0 30px; border-top: 1px solid rgba(255,255,255,0.1); }
 .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
 .footer-logo {
-  filter: brightness(0) invert(1);
-  background: none;
+  filter: brightness(0) invert(1) !important;
+  background: none !important;
   padding: 0;
    height: 50px; margin-bottom: 16px; }
 .footer-brand .handwritten { font-size: 1.3rem; opacity: 0.9; }
@@ -280,8 +280,8 @@ section { padding: 100px 0; }
 }
 
 .footer-logo {
-  filter: brightness(0) invert(1);
-  background: none;
+  filter: brightness(0) invert(1) !important;
+  background: none !important;
   padding: 0;
   
   height: 60px;
