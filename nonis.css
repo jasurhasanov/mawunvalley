@@ -416,3 +416,12 @@
     padding: 30px 20px;
   }
 }
+
+/* Footer logo fix */
+.footer .footer-logo {
+  background: #FAF6F0;
+  padding: 15px 20px;
+  border-radius: 12px;
+  height: auto;
+  max-height: 60px;
+}
