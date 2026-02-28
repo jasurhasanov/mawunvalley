@@ -732,3 +732,30 @@
 .benefits-preview span:hover {
   transform: scale(1.2);
 }
+
+/* Program Essentials (inside details) */
+.program-essentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--color-light) 0%, #fff 100%);
+  border-radius: 12px;
+  border: 2px solid var(--color-gold);
+  margin-bottom: 25px;
+}
+
+.essential-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--color-white);
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.essential-item strong {
+  color: var(--color-dark);
+}
