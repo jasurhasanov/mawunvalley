@@ -417,11 +417,11 @@
   }
 }
 
-/* Footer logo fix */
+/* Footer logo fix - white logo on dark background */
 .footer .footer-logo {
-  background: #FAF6F0;
-  padding: 15px 20px;
-  border-radius: 12px;
+  background: none;
+  padding: 0;
+  filter: brightness(0) invert(1);
   height: auto;
-  max-height: 60px;
+  max-height: 50px;
 }
