@@ -6,7 +6,7 @@
     </div>
     <div class="cabin-gallery" v-if="images.length > 1">
       <img 
-        v-for="(img, idx) in images.slice(0, 6)" 
+        v-for="(img, idx) in images.slice(0, 7)" 
         :key="idx"
         :src="img" 
         :alt="`${name} view ${idx + 1}`"
@@ -16,7 +16,7 @@
     </div>
     <div class="cabin-content">
       <h2>{{ name }}</h2>
-      <p class="cabin-style">{{ style }}</p>
+      <p class="cabin-style-text">{{ cabinStyle }}</p>
       <div class="cabin-features">
         <span v-for="feature in features" :key="feature">{{ feature }}</span>
       </div>
@@ -26,9 +26,11 @@
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
+
 const props = defineProps({
   name: String,
-  style: String,
+  cabinStyle: String,
   bed: String,
   images: Array,
   features: Array,
@@ -44,17 +46,101 @@ const bookingLink = computed(() => {
 </script>
 
 <style scoped>
-.cabin-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-.cabin-card.featured { border: 2px solid var(--color-gold); }
-.cabin-image { position: relative; }
-.cabin-image img { width: 100%; height: 280px; object-fit: cover; }
-.cabin-capacity { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.95); padding: 6px 12px; border-radius: 20px; font-size: 13px; }
-.cabin-gallery { display: flex; gap: 8px; padding: 12px; overflow-x: auto; }
-.cabin-gallery img { width: 60px; height: 45px; object-fit: cover; border-radius: 6px; cursor: pointer; opacity: 0.6; transition: opacity 0.2s; }
-.cabin-gallery img.active, .cabin-gallery img:hover { opacity: 1; }
-.cabin-content { padding: 20px; }
-.cabin-content h2 { margin-bottom: 4px; }
-.cabin-style { color: #888; font-size: 14px; margin-bottom: 16px; }
-.cabin-features { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-.cabin-features span { background: var(--color-cream); padding: 6px 12px; border-radius: 20px; font-size: 13px; }
+.cabin-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.cabin-card.featured {
+  border: 2px solid var(--color-gold);
+}
+
+.cabin-image {
+  position: relative;
+}
+
+.cabin-image img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.cabin-capacity {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.95);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.cabin-gallery {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+.cabin-gallery img {
+  width: 60px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.cabin-gallery img.active,
+.cabin-gallery img:hover {
+  opacity: 1;
+}
+
+.cabin-content {
+  padding: 20px;
+}
+
+.cabin-content h2 {
+  margin-bottom: 4px;
+  font-size: 1.3rem;
+}
+
+.cabin-style-text {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.cabin-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.cabin-features span {
+  background: var(--color-cream);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--color-terracotta);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--color-sage);
+}
 </style>
