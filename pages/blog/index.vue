@@ -31,7 +31,7 @@
         </div>
         
         <div class="filter-group">
-          <span class="filter-label">Traveler Type:</span>
+          <span class="filter-label">I'm travelling as:</span>
           <div class="filter-buttons">
             <button 
               class="filter-btn" 
