@@ -29,6 +29,38 @@
             >Mawun Valley Team</button>
           </div>
         </div>
+        
+        <div class="filter-group">
+          <span class="filter-label">Traveler Type:</span>
+          <div class="filter-buttons">
+            <button 
+              class="filter-btn" 
+              :class="{ active: filters.audience === 'all' }"
+              @click="filters.audience = 'all'"
+            >All Travelers</button>
+            <button 
+              class="filter-btn" 
+              :class="{ active: filters.audience === 'families' }"
+              @click="filters.audience = 'families'"
+            >👨‍👩‍👧 Families</button>
+            <button 
+              class="filter-btn" 
+              :class="{ active: filters.audience === 'surfers' }"
+              @click="filters.audience = 'surfers'"
+            >🏄 Surfers</button>
+            <button 
+              class="filter-btn" 
+              :class="{ active: filters.audience === 'solo' }"
+              @click="filters.audience = 'solo'"
+            >🎒 Solo Travelers</button>
+            <button 
+              class="filter-btn" 
+              :class="{ active: filters.audience === 'couples' }"
+              @click="filters.audience = 'couples'"
+            >💑 Couples</button>
+          </div>
+        </div>
+        
         <div class="filter-group">
           <span class="filter-label">Topic:</span>
           <div class="filter-buttons">
@@ -57,6 +89,16 @@
               :class="{ active: filters.topic === 'cashew' }"
               @click="filters.topic = 'cashew'"
             >Cashew</button>
+            <button 
+              class="filter-btn" 
+              :class="{ active: filters.topic === 'adventure' }"
+              @click="filters.topic = 'adventure'"
+            >Adventure</button>
+            <button 
+              class="filter-btn" 
+              :class="{ active: filters.topic === 'beaches' }"
+              @click="filters.topic = 'beaches'"
+            >Beaches</button>
           </div>
         </div>
       </div>
@@ -104,6 +146,7 @@ useHead({ title: 'Field Notes - Mawun Valley Farm Blog' })
 
 const filters = ref({
   author: 'all',
+  audience: 'all',
   topic: 'all'
 })
 
@@ -117,8 +160,9 @@ const filteredArticles = computed(() => {
   if (!articles.value) return []
   return articles.value.filter(article => {
     const authorMatch = filters.value.author === 'all' || article.authorType === filters.value.author
+    const audienceMatch = filters.value.audience === 'all' || article.audience === filters.value.audience
     const topicMatch = filters.value.topic === 'all' || article.topic === filters.value.topic
-    return authorMatch && topicMatch
+    return authorMatch && audienceMatch && topicMatch
   })
 })
 </script>
