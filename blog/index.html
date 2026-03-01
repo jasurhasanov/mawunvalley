@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Field Notes | Mawun Valley Farm Blog</title>
-  <meta name="description" content="Stories, guides, and insights from Mawun Valley Farm in South Lombok. Discover local adventures, farm life, and guest experiences.">
+  <title>Field Notes | Mawun Valley Farm Blog - South Lombok Guides & Stories</title>
+  <meta name="description" content="Travel guides, guest stories, and local insights from Mawun Valley Farm in South Lombok. Tips for families, surfers, solo travellers, and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,66 +12,18 @@
   <link rel="stylesheet" href="../blog.css">
   <link rel="icon" type="image/png" href="../images/favicon.png">
   <style>
-    .filter-section {
-      padding: 20px 0;
-      background: #fffef9;
-      border-bottom: 1px solid #e8e6df;
-    }
-    .filter-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .filter-group {
-      margin-bottom: 15px;
-    }
-    .filter-label {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      color: #2c3e2d;
-      margin-bottom: 10px;
-      display: block;
-    }
-    .filter-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .filter-btn {
-      padding: 8px 16px;
-      border: 2px solid #e8e6df;
-      background: #fff;
-      border-radius: 20px;
-      font-family: 'Quicksand', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: #2c3e2d;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .filter-btn:hover {
-      border-color: #d4a574;
-      background: #faf8f5;
-    }
-    .filter-btn.active {
-      background: #d4a574;
-      border-color: #d4a574;
-      color: #2c3e2d;
-    }
-    .blog-card.hidden {
-      display: none;
-    }
-    .no-results {
-      text-align: center;
-      padding: 60px 20px;
-      color: #666;
-      font-family: 'Open Sans', sans-serif;
-      display: none;
-    }
-    .no-results.show {
-      display: block;
-    }
+    .filter-section { padding: 20px 0; background: #fffef9; border-bottom: 1px solid #e8e6df; }
+    .filter-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .filter-group { margin-bottom: 15px; }
+    .filter-label { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 14px; color: #2c3e2d; margin-bottom: 10px; display: block; }
+    .filter-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+    .filter-btn { padding: 8px 16px; border: 2px solid #e8e6df; background: #fff; border-radius: 20px; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 500; color: #2c3e2d; cursor: pointer; transition: all 0.2s ease; }
+    .filter-btn:hover { border-color: #d4a574; background: #faf8f5; }
+    .filter-btn.active { background: #d4a574; border-color: #d4a574; color: #2c3e2d; }
+    .blog-card.hidden { display: none; }
+    .no-results { text-align: center; padding: 60px 20px; color: #666; font-family: 'Open Sans', sans-serif; display: none; }
+    .no-results.show { display: block; }
+    .blog-card-date { font-size: 12px; color: #888; margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -93,13 +45,13 @@
 
   <section class="blog-hero">
     <h1>Field Notes</h1>
-    <p>Stories from the farm, local adventures, and guest experiences in South Lombok</p>
+    <p>Stories from the farm, local guides, and guest experiences in South Lombok</p>
   </section>
 
   <section class="filter-section">
     <div class="filter-container">
       <div class="filter-group">
-        <span class="filter-label">Filter by Author:</span>
+        <span class="filter-label">Written by:</span>
         <div class="filter-buttons" id="author-filters">
           <button class="filter-btn active" data-filter="all" data-type="author">All</button>
           <button class="filter-btn" data-filter="guest" data-type="author">Farm Guests</button>
@@ -107,10 +59,21 @@
         </div>
       </div>
       <div class="filter-group">
-        <span class="filter-label">Filter by Topic:</span>
+        <span class="filter-label">I'm travelling as:</span>
+        <div class="filter-buttons" id="audience-filters">
+          <button class="filter-btn active" data-filter="all" data-type="audience">Everyone</button>
+          <button class="filter-btn" data-filter="families" data-type="audience">Families</button>
+          <button class="filter-btn" data-filter="surfers" data-type="audience">Surfers</button>
+          <button class="filter-btn" data-filter="solo" data-type="audience">Solo Traveller</button>
+          <button class="filter-btn" data-filter="couples" data-type="audience">Couples</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Topic:</span>
         <div class="filter-buttons" id="topic-filters">
           <button class="filter-btn active" data-filter="all" data-type="topic">All Topics</button>
           <button class="filter-btn" data-filter="guest-diary" data-type="topic">Guest Diaries</button>
+          <button class="filter-btn" data-filter="guides" data-type="topic">Travel Guides</button>
           <button class="filter-btn" data-filter="farm-life" data-type="topic">Farm Life</button>
           <button class="filter-btn" data-filter="adventure" data-type="topic">Adventure</button>
           <button class="filter-btn" data-filter="beaches" data-type="topic">Beaches</button>
@@ -124,69 +87,111 @@
     <div class="container">
       <div class="blog-grid" id="blog-grid">
       
+        <!-- NEW: Family Activities Guide -->
+        <article class="blog-card" data-author="team" data-topic="guides" data-audience="families" onclick="location.href='family-activities-south-lombok.html'" style="cursor:pointer;">
+          <div class="blog-card-image"><img src="../images/blog/goats.jpg" alt="Family activities South Lombok"></div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Family Guide</span>
+            <h3><a href="family-activities-south-lombok.html" style="color:#2c3e2d;text-decoration:none;">Best Family Activities in South Lombok: A Guide for Expat Families</a></h3>
+            <p>Farm visits, beach days, and wholesome experiences for kids in Kuta & Selong Belanak.</p>
+            <span class="blog-card-date">February 12, 2026</span>
+          </div>
+        </article>
+
+        <!-- NEW: Surf Guide -->
+        <article class="blog-card" data-author="team" data-topic="guides" data-audience="surfers" onclick="location.href='surf-guide-south-lombok.html'" style="cursor:pointer;">
+          <div class="blog-card-image"><img src="../images/blog/surfing.jpg" alt="Surfing South Lombok"></div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Surf Guide</span>
+            <h3><a href="surf-guide-south-lombok.html" style="color:#2c3e2d;text-decoration:none;">Ultimate Surf Guide South Lombok: Best Waves, Stays & Local Tips</a></h3>
+            <p>Complete guide to surf spots from Selong Belanak to Ekas. Where to stay, when to go.</p>
+            <span class="blog-card-date">February 18, 2026</span>
+          </div>
+        </article>
+
+        <!-- NEW: Solo Travel Guide -->
+        <article class="blog-card" data-author="team" data-topic="guides" data-audience="solo" onclick="location.href='solo-travel-guide-lombok.html'" style="cursor:pointer;">
+          <div class="blog-card-image"><img src="../images/blog/yoga.jpg" alt="Solo travel Lombok"></div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Solo Travel</span>
+            <h3><a href="solo-travel-guide-lombok.html" style="color:#2c3e2d;text-decoration:none;">Solo Travel in South Lombok: Complete Guide for Independent Travellers</a></h3>
+            <p>Safety tips, where to meet people, and making the most of travelling alone.</p>
+            <span class="blog-card-date">February 22, 2026</span>
+          </div>
+        </article>
+      
         <!-- Ava's Guest Diary Series -->
-        <article class="blog-card" data-author="guest" data-topic="guest-diary" onclick="location.href='guest-diary-part-1.html'" style="cursor:pointer;">
+        <article class="blog-card" data-author="guest" data-topic="guest-diary" data-audience="solo" onclick="location.href='guest-diary-part-1.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/farm-life.jpg" alt="Mawun Valley Farm"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Guest Diary</span>
             <h3><a href="guest-diary-part-1.html" style="color:#2c3e2d;text-decoration:none;">Ava's Guest Diary Part 1: First Impressions</a></h3>
-            <p>Part 1: Ava discovers the grapevine entrance, meets the goats, and falls in love with Noni's cafe.</p>
+            <p>Discovering the grapevine entrance, meeting the goats, and falling in love with Noni's cafe.</p>
+            <span class="blog-card-date">February 25, 2026</span>
           </div>
         </article>
 
-        <article class="blog-card" data-author="guest" data-topic="guest-diary" onclick="location.href='guest-diary-part-2.html'" style="cursor:pointer;">
+        <article class="blog-card" data-author="guest" data-topic="guest-diary" data-audience="solo" onclick="location.href='guest-diary-part-2.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/yoga.jpg" alt="Morning yoga"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Guest Diary</span>
             <h3><a href="guest-diary-part-2.html" style="color:#2c3e2d;text-decoration:none;">Ava's Guest Diary Part 2: A Day in the Life</a></h3>
-            <p>Part 2: Sunrise yoga, beach trips, cozy lodges, and evenings under the stars.</p>
+            <p>Sunrise yoga, beach trips, cozy lodges, and evenings under the stars.</p>
+            <span class="blog-card-date">February 26, 2026</span>
           </div>
         </article>
 
-        <article class="blog-card" data-author="guest" data-topic="guest-diary" onclick="location.href='guest-diary-part-3.html'" style="cursor:pointer;">
+        <article class="blog-card" data-author="guest" data-topic="guest-diary" data-audience="solo" onclick="location.href='guest-diary-part-3.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/rice-fields.jpg" alt="Sustainable farming"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Guest Diary</span>
             <h3><a href="guest-diary-part-3.html" style="color:#2c3e2d;text-decoration:none;">Ava's Guest Diary Part 3: Growing Together</a></h3>
-            <p>Part 3: Sustainability, permaculture projects, and why this place feels like home.</p>
+            <p>Sustainability, permaculture projects, and why this place feels like home.</p>
+            <span class="blog-card-date">February 27, 2026</span>
           </div>
         </article>
 
-        <!-- Grapevine Article - Guest Authors -->
-        <article class="blog-card" data-author="guest" data-topic="farm-life" onclick="location.href='grapevine-pruning-lombok.html'" style="cursor:pointer;">
+        <!-- Grapevine Article -->
+        <article class="blog-card" data-author="guest" data-topic="farm-life" data-audience="all" onclick="location.href='grapevine-pruning-lombok.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/grapevine-1.jpg" alt="Grapevine pruning"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Farm Life</span>
             <h3><a href="grapevine-pruning-lombok.html" style="color:#2c3e2d;text-decoration:none;">Through the Grapevine: First Pruning at Mawun Valley</a></h3>
             <p>Sarah & Johnny share their experience pruning and training grapevines at the farm.</p>
+            <span class="blog-card-date">February 28, 2026</span>
           </div>
         </article>
 
-        <!-- SEO Articles - Team Authors -->
-        <article class="blog-card" data-author="team" data-topic="adventure" onclick="location.href='adventure-activities-south-lombok.html'" style="cursor:pointer;">
+        <!-- Adventure Activities -->
+        <article class="blog-card" data-author="team" data-topic="adventure" data-audience="all" onclick="location.href='adventure-activities-south-lombok.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/paragliding.jpg" alt="Adventure activities"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Adventure</span>
             <h3><a href="adventure-activities-south-lombok.html" style="color:#2c3e2d;text-decoration:none;">Adventure Activities Near Mawun Valley</a></h3>
             <p>Surfing, paragliding, waterfall hikes and more — your guide to adventure in South Lombok.</p>
+            <span class="blog-card-date">February 15, 2026</span>
           </div>
         </article>
 
-        <article class="blog-card" data-author="team" data-topic="beaches" onclick="location.href='beach-hopping-south-lombok.html'" style="cursor:pointer;">
+        <!-- Beach Hopping -->
+        <article class="blog-card" data-author="team" data-topic="beaches" data-audience="couples" onclick="location.href='beach-hopping-south-lombok.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/mawun-beach.jpg" alt="South Lombok beaches"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Beaches</span>
             <h3><a href="beach-hopping-south-lombok.html" style="color:#2c3e2d;text-decoration:none;">Beach Hopping Guide: South Lombok's Best Beaches</a></h3>
             <p>From Mawun to Tanjung Aan — discover the stunning coastline near our farm.</p>
+            <span class="blog-card-date">February 10, 2026</span>
           </div>
         </article>
 
-        <article class="blog-card" data-author="team" data-topic="culture" onclick="location.href='farm-life-culture-lombok.html'" style="cursor:pointer;">
+        <!-- Culture -->
+        <article class="blog-card" data-author="team" data-topic="culture" data-audience="all" onclick="location.href='farm-life-culture-lombok.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/weaving.jpg" alt="Sasak culture"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Culture</span>
             <h3><a href="farm-life-culture-lombok.html" style="color:#2c3e2d;text-decoration:none;">Farm Life & Sasak Culture in Lombok</a></h3>
             <p>Experience traditional weaving, local cuisine, and the warm hospitality of Lombok.</p>
+            <span class="blog-card-date">February 14, 2026</span>
           </div>
         </article>
         
@@ -201,27 +206,22 @@
   <footer class="footer"><div class="container"><p style="text-align:center;padding:20px 0;">© 2026 Mawun Valley Farm. Owned by Noni Trisnawati.</p></div></footer>
 
   <script>
-    // Filter functionality
     let activeAuthor = 'all';
     let activeTopic = 'all';
+    let activeAudience = 'all';
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         const filterType = this.dataset.type;
         const filterValue = this.dataset.filter;
 
-        // Update active state for this filter group
         document.querySelectorAll(`.filter-btn[data-type="${filterType}"]`).forEach(b => b.classList.remove('active'));
         this.classList.add('active');
 
-        // Update active filter values
-        if (filterType === 'author') {
-          activeAuthor = filterValue;
-        } else if (filterType === 'topic') {
-          activeTopic = filterValue;
-        }
+        if (filterType === 'author') activeAuthor = filterValue;
+        else if (filterType === 'topic') activeTopic = filterValue;
+        else if (filterType === 'audience') activeAudience = filterValue;
 
-        // Apply filters
         applyFilters();
       });
     });
@@ -233,11 +233,13 @@
       cards.forEach(card => {
         const cardAuthor = card.dataset.author;
         const cardTopic = card.dataset.topic;
+        const cardAudience = card.dataset.audience;
 
         const matchesAuthor = activeAuthor === 'all' || cardAuthor === activeAuthor;
         const matchesTopic = activeTopic === 'all' || cardTopic === activeTopic;
+        const matchesAudience = activeAudience === 'all' || cardAudience === activeAudience || cardAudience === 'all';
 
-        if (matchesAuthor && matchesTopic) {
+        if (matchesAuthor && matchesTopic && matchesAudience) {
           card.classList.remove('hidden');
           visibleCount++;
         } else {
@@ -245,7 +247,6 @@
         }
       });
 
-      // Show/hide no results message
       document.getElementById('no-results').classList.toggle('show', visibleCount === 0);
     }
   </script>
