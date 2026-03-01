@@ -5,7 +5,7 @@ date: 2026-02-22
 category: Solo Travel
 topic: guides
 authorType: team
-image: /images/blog/yoga.jpg
+image: /images/blog/ocean-view.jpg
 keywords: "solo travel lombok, solo female travel lombok, safe travel indonesia, independent travel south lombok"
 ---
 

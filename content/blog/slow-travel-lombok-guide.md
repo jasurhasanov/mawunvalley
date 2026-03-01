@@ -5,7 +5,7 @@ date: 2026-02-16
 category: Slow Travel
 topic: guides
 authorType: team
-image: /images/blog/rice-fields.jpg
+image: /images/blog/bukit-merese.jpg
 keywords: "slow travel lombok, long stay indonesia, extended travel lombok, meaningful travel south lombok"
 ---
 

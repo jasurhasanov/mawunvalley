@@ -5,7 +5,7 @@ date: 2026-02-17
 category: Couples Guide
 topic: guides
 authorType: team
-image: /images/blog/sunset-viewpoint.jpg
+image: /images/blog/tanjung-aan.jpg
 ---
 
 There's something about South Lombok sunsets. The light hits the hills differently, fishing boats return to shore, and watching the day end here feels like a gift — especially with someone you love.

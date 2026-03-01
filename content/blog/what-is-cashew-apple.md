@@ -5,7 +5,7 @@ date: 2026-02-05
 category: Tropical Fruits
 topic: cashew
 authorType: team
-image: /images/blog/cooking-class.jpg
+image: /images/blog/cliff-jumping.jpg
 ---
 
 *Taste it yourself: Join our [Cashew Apple Jam Cooking Class](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm) and experience this unique fruit firsthand.*

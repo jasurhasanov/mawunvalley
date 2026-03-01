@@ -5,7 +5,7 @@ date: 2026-01-25
 category: Tropical Fruits
 topic: cashew
 authorType: team
-image: /images/blog/cooking-class.jpg
+image: /images/blog/skijet.jpg
 ---
 
 *Learn to make cashew apple jam: Our [Cashew Apple Jam Cooking Class](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm) teaches you to transform this rare fruit.*

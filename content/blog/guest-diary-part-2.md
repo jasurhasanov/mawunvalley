@@ -6,7 +6,7 @@ category: Guest Diary
 topic: guest-diary
 authorType: guest
 audience: solo
-image: /images/blog/yoga.jpg
+image: /images/blog/selong-belanak.jpg
 ---
 
 *About the Author: Ava is a traveller from the UK documenting her stay at Mawun Valley Farm. This is Part 2 of her 3-part diary series. [Read Part 1](/blog/guest-diary-part-1)*
@@ -19,7 +19,7 @@ It is early morning and I have risen around 6:30am. An early start is perfect wh
 
 It is a quiet time of the day. As we salute the sun towards the end of the ritual, the sun rays caress our faces, spilling over the adjacent hills. A beautiful way to start the morning in a safe, peaceful space.
 
-![Sunrise yoga at Mawun Valley](/images/blog/yoga.jpg)
+![Sunrise yoga at Mawun Valley](/images/blog/selong-belanak.jpg)
 *Morning yoga on Heal Hill — the best way to start the day*
 
 By 8am I'm sitting with the kittens who sleep peacefully atop the amphitheatre whilst I enjoy a **Lombok coffee**. Then comes breakfast — a fresh omelette cooked with spring onions, white onions and juicy tomatoes, all grown right here at Mawun.

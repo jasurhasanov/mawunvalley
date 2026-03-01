@@ -5,7 +5,7 @@ date: 2026-01-20
 category: Farm Knowledge
 topic: cashew
 authorType: team
-image: /images/blog/farm-life.jpg
+image: /images/blog/waterfall.jpg
 ---
 
 *From our farm: Mawun Valley is home to 6 large cashew trees. During harvest season (Mid August - Mid December), we offer [Cashew Apple Jam Cooking Classes](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm).*

@@ -5,7 +5,7 @@ date: 2026-01-15
 category: Farm Knowledge
 topic: cashew
 authorType: team
-image: /images/blog/farm-life.jpg
+image: /images/blog/grapevine-2.jpg
 ---
 
 *Visit a working cashew farm: At Mawun Valley, our 6 cashew trees are part of a diverse permaculture system. [Learn more about our farm](/experience).*
