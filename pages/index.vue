@@ -95,22 +95,22 @@
           <div class="animal-card">
             <div class="animal-emoji">🐐</div>
             <h4>The Goats</h4>
-            <p><strong>Coconut</strong> eats everything. <strong>Spinach & Kangkung</strong> are champion fence-jumpers.</p>
+            <p><strong>Coconut</strong> eats everything—cheesecake, cat food, your lunch. <strong>Spinach & Kangkung</strong> are champion fence-jumpers who raid the veggie garden.</p>
           </div>
           <div class="animal-card">
             <div class="animal-emoji">🦆</div>
             <h4>The Ducks</h4>
-            <p><strong>Onyx & Midnight</strong> and their ducklings waddle past your cabin every morning.</p>
+            <p><strong>Onyx & Midnight</strong> and their 7 ducklings. They waddle past your cabin every morning—better than any alarm clock.</p>
           </div>
           <div class="animal-card">
             <div class="animal-emoji">🐱</div>
             <h4>The Cats</h4>
-            <p><strong>Drama Queen</strong> rules the café. <strong>Hungry Lion</strong> leads her kittens.</p>
+            <p><strong>Drama Queen</strong> rules the café. <strong>Hungry Lion</strong> leads her kittens—Scorpion, Charlie Jr & Black Panther. Plus <strong>Charlie Chaplin</strong> and <strong>Sunny</strong>.</p>
           </div>
           <div class="animal-card">
             <div class="animal-emoji">🐕</div>
             <h4>Mango</h4>
-            <p>Our Chief Welcoming Officer. She'll greet you on arrival.</p>
+            <p>Our sweet girl and Chief Welcoming Officer. She'll greet you on arrival and probably follow you everywhere.</p>
           </div>
         </div>
       </div>
@@ -122,23 +122,23 @@
         <div class="philosophy-content">
           <span class="section-label light">Our Philosophy</span>
           <h2>Slow Down, Connect Deeply</h2>
-          <p class="philosophy-intro">In a world that moves too fast, we've created a place where time slows down.</p>
+          <p class="philosophy-intro">In a world that moves too fast, we've created a place where time slows down. Where strangers become family over shared meals. Where the rhythm of farm life replaces the noise of daily hustle.</p>
           <div class="philosophy-grid">
             <div class="philosophy-item">
               <h4>🌱 Farm to Table</h4>
-              <p>Veggies from the garden, jam from our fruit trees, eggs from happy chickens.</p>
+              <p>Veggies from the garden, jam from our fruit trees, eggs from happy chickens. You'll taste the difference when food is grown with love.</p>
             </div>
             <div class="philosophy-item">
               <h4>👨‍👩‍👧‍👦 Family, Not Guests</h4>
-              <p>From day one, you're part of our community.</p>
+              <p>From day one, you're part of our community. Sharing meals, stories, and laughter under the stars at our Friday BBQ nights.</p>
             </div>
             <div class="philosophy-item">
               <h4>🐐 Nature Immersion</h4>
-              <p>Wake up with roosters, cuddle baby goats, watch ducklings waddle by.</p>
+              <p>Wake up with roosters, cuddle baby goats, watch ducklings waddle by. This is farm life—simple, grounding, and beautifully real.</p>
             </div>
             <div class="philosophy-item">
               <h4>🌊 Balance & Freedom</h4>
-              <p>World-class surf breaks 10 minutes away. Work at your own pace.</p>
+              <p>World-class surf breaks 10 minutes away. Work at your own pace. Take what you need from this place—rest, adventure, or both.</p>
             </div>
           </div>
         </div>
