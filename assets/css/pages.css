@@ -1,0 +1,320 @@
+/* Subpage Styles */
+
+/* Page Hero */
+.page-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.page-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(44,62,45,0.5), rgba(44,62,45,0.7));
+}
+.page-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.page-hero-content {
+  color: var(--color-white);
+}
+.page-hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+
+/* Page Intro */
+.page-intro {
+  padding: 80px 0 60px;
+  background: var(--color-warm-white);
+}
+.intro-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.intro-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+/* Features Section */
+.features-section {
+  padding: 60px 0;
+  background: var(--color-cream);
+}
+.features-section h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: var(--color-terracotta);
+}
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.icon-grid.small {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 100%;
+}
+.icon-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--color-warm-white);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--color-dark);
+}
+.icon-item .icon {
+  font-size: 1.5rem;
+}
+
+/* CTA Section */
+.cta-section, .apply-section, .join-section {
+  padding: 80px 0;
+  background: var(--color-sage);
+  color: var(--color-white);
+  text-align: center;
+}
+.cta-section h3, .apply-section h3, .join-section h3 {
+  color: var(--color-white);
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+.cta-section p, .apply-section p, .join-section p {
+  max-width: 500px;
+  margin: 0 auto 32px;
+  opacity: 0.95;
+}
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-outline-dark {
+  background: transparent;
+  color: var(--color-dark);
+  border-color: var(--color-dark);
+}
+.btn-outline-dark:hover {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+/* Programs Section */
+.programs-section {
+  padding: 60px 0;
+  background: var(--color-cream);
+}
+.program-card {
+  background: var(--color-warm-white);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow);
+}
+.program-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.program-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 16px;
+}
+.program-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+.program-subtitle {
+  color: var(--color-terracotta);
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+.program-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.program-details h4 {
+  font-size: 1rem;
+  color: var(--color-terracotta);
+  margin-bottom: 16px;
+}
+.program-duration {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-dark-light);
+  margin-top: 16px;
+}
+
+/* Events Section */
+.events-section {
+  padding: 60px 0;
+  background: var(--color-cream);
+}
+.events-section .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.event-card {
+  background: var(--color-warm-white);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.event-card.featured {
+  grid-column: 1 / -1;
+  text-align: center;
+  background: var(--color-terracotta);
+  color: var(--color-white);
+}
+.event-card.featured h3, .event-card.featured .event-tagline {
+  color: var(--color-white);
+}
+.event-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.event-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+.event-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+.event-tagline {
+  color: var(--color-terracotta);
+  font-family: var(--font-handwritten);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+.event-card p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.event-details {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+.event-card.featured .event-details {
+  justify-content: center;
+}
+
+/* Membership Section */
+.membership-section {
+  padding: 60px 0;
+  background: var(--color-cream);
+}
+.membership-section h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 48px;
+  color: var(--color-terracotta);
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.benefit-card {
+  background: var(--color-warm-white);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.benefit-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 16px;
+}
+.benefit-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.benefit-card p {
+  font-size: 14px;
+  color: var(--color-dark-light);
+  line-height: 1.6;
+}
+
+/* Footer Simple */
+.footer-simple {
+  text-align: center;
+  padding: 40px 0;
+}
+.footer-simple .footer-logo {
+  height: 40px;
+  margin-bottom: 12px;
+}
+.footer-simple p {
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+/* Active nav link */
+.nav-links a.active {
+  color: var(--color-terracotta) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .program-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .events-section .container {
+    grid-template-columns: 1fr;
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
