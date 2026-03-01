@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" :class="{ scrolled: isScrolled }" id="navbar">
+  <nav class="navbar" :class="{ scrolled: isScrolled || !isHomePage }" id="navbar">
     <div class="nav-container">
       <NuxtLink to="/" class="logo">
         <img src="/images/logo.png" alt="Mawun Valley Farm">
@@ -30,8 +30,18 @@
 </template>
 
 <script setup>
+import { ref, computed, onMounted } from 'vue'
+
+const route = useRoute()
 const isScrolled = ref(false)
 const menuOpen = ref(false)
+
+// Pages with dark hero backgrounds where white text is needed
+const heroPages = ['/', '/nonis', '/gather']
+
+const isHomePage = computed(() => {
+  return heroPages.includes(route.path)
+})
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
@@ -43,3 +53,7 @@ onMounted(() => {
   })
 })
 </script>
+
+<style scoped>
+/* Navbar styles are in main.css */
+</style>
