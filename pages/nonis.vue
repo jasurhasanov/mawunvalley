@@ -15,9 +15,10 @@
         <div class="story-content">
           <span class="section-label">Our Story</span>
           <h2>Less Items, More Quality</h2>
-          <p>Our story at Mawun Valley Farm is about embracing the quiet beauty of <strong>slow living</strong>. Here, we cultivate peace, open spaces, and a deep connection to nature.</p>
-          <p>It's from this same vision that Noni's, our own little resto and pastry, was born. We extend the farm's ethos of simplicity and genuine enjoyment into every dish.</p>
+          <p>Our story at Mawun Valley Farm is about embracing the quiet beauty of <strong>slow living</strong>. Here, we cultivate peace, open spaces, and a deep connection to nature, nurturing the land's vibrant life.</p>
+          <p>It's from this same vision that Noni's, our own little resto and pastry, was born. We extend the farm's ethos of simplicity and genuine enjoyment into every dish and delightful treat.</p>
           <p>Whether it's a creamy <strong>Basque Burnt Cheesecake</strong> or a soothing <strong>Lemongrass Ginger Tea</strong>, everything is crafted with the same dedication we put into nurturing our farm.</p>
+          <p>As you enjoy your meal, know it's a blend of our slow living aspirations at Mawun Valley Farm and the genuine warmth we bake into every bite at Noni's.</p>
           <p class="philosophy"><em>Less but better — in everything we make.</em></p>
         </div>
       </div>
@@ -57,10 +58,10 @@
           <h3 class="category-title">🍳 Breakfast</h3>
           <p class="category-note">Served all day (8:00 - 17:00)</p>
           <div class="menu-grid">
-            <MenuItem name="Omelette" price="50K" desc="Fluffy eggs with local vegetables and fresh farm herbs." />
-            <MenuItem name="Crêpes (Farm Jam)" price="50K" desc="Delicate pancakes with farm-made seasonal jam." featured />
-            <MenuItem name="Toast & Farm-Made Delight" price="50K" desc="Toasted bread with farm-made seasonal jam." />
-            <MenuItem name="Farm Fresh Boiled Eggs" price="50K" desc="Boiled eggs with fresh farm vegetables." />
+            <MenuItem name="Omelette" price="50K" desc="Fluffy eggs with local vegetables, finished with fresh farm herbs like mint or tarragon." />
+            <MenuItem name="Crêpes (Farm Jam)" price="50K" desc="Thin, delicate pancakes served with rich farm-made seasonal jam, a sweet treat." featured />
+            <MenuItem name="Toast & Farm-Made Delight" price="50K" desc="Toasted bread served with rich farm-made seasonal jam, a sweet treat." />
+            <MenuItem name="Farm Fresh Boiled Eggs" price="50K" desc="Boiled eggs served with fresh farm-grown vegetables, including tomatoes, mint, basil, and seasonal greens." />
           </div>
         </div>
 
@@ -68,8 +69,8 @@
         <div class="menu-category">
           <h3 class="category-title">🍽️ Signature Meals</h3>
           <div class="menu-grid">
-            <MenuItem name="Noni's Plate" price="75K" desc="Farm-to-table recipe with crispy fried chicken or fish, seasonal sides, and signature sambal." featured />
-            <MenuItem name="Noni's Plate (Vegan)" price="75K" desc="Plant-based dish with tofu, fresh vegetables, and signature sambal. 100% vegan." featured />
+            <MenuItem name="Noni's Plate" price="75K" desc="Noni's signature farm-to-table recipe! Features crispy fried chicken or fresh fried fish, served with seasonal side, tofu, fresh farm vegetables, fried peanuts & tempeh, and Noni's signature sambal." featured />
+            <MenuItem name="Noni's Plate (Vegan)" price="75K" desc="A vibrant, plant-based dish celebrating our farm's harvest. Features savory tofu, seasonal side, fresh farm vegetables, crispy peanuts & tempeh, and Noni's signature sambal. 100% plant-based." featured />
           </div>
         </div>
 
@@ -77,14 +78,14 @@
         <div class="menu-category">
           <h3 class="category-title">🍵 Drinks</h3>
           <div class="menu-grid">
-            <MenuItem name="Lemongrass Ginger Tea" price="50K" desc="Soothing tea with farm lemongrass, ginger and honey." featured />
-            <MenuItem name="Wedang Uwuh" price="50K" desc="Traditional Javanese herbal infusion." featured />
-            <MenuItem name="Azerbaijan Tea" price="40K" desc="Black tea with herbs and fruit peels." featured />
-            <MenuItem name="Jasmine / Green Tea" price="40K" desc="Fragrant tea served in a teapot." />
-            <MenuItem name="Ice Lime Tea" price="40K" desc="Refreshing cold tea with lime." />
-            <MenuItem name="Ice Coffee" price="40K" desc="Locally-sourced coffee. Add milk +5K." />
-            <MenuItem name="Lombok Coffee (Hot)" price="40K" desc="Local Lombok coffee." />
-            <MenuItem name="Cranberry Juice" price="40K" desc="Pure juice — no sugar, no preservatives." />
+            <MenuItem name="Lemongrass Ginger Tea" price="50K" desc="A soothing, warming tea infused with fresh farm lemongrass, ginger and honey." featured />
+            <MenuItem name="Wedang Uwuh" price="50K" desc="A traditional Javanese warm herbal infusion — ginger, cinnamon bark, cloves, nutmeg leaf, secang wood, rock sugar (as side)." featured />
+            <MenuItem name="Azerbaijan Tea (hot)" price="40K" desc="A warming black tea infused with various herbs and aromatic fruit peels." featured />
+            <MenuItem name="Jasmine / Green Tea (hot)" price="40K" desc="A fragrant, warming tea served in a teapot." />
+            <MenuItem name="Ice Lime Tea" price="40K" desc="A refreshing cold tea with a zesty lime twist." />
+            <MenuItem name="Ice Coffee" price="40K" desc="A cold cup of locally-sourced coffee. Add milk + 5K." />
+            <MenuItem name="Lombok Coffee (Hot)" price="40K" desc="A warming cup of locally-sourced Lombok coffee." />
+            <MenuItem name="Cranberry Juice" price="40K" desc="Pure cranberry juice — no added sugar, no preservatives, no artificial colors." />
           </div>
         </div>
 
@@ -98,7 +99,7 @@
                 <span class="item-name">Noni's Burnt Cheesecake ⭐</span>
                 <span class="item-price">50K</span>
               </div>
-              <p class="item-desc">A creamy, caramelized cheesecake with a distinct burnt exterior, baked fresh at Noni's.</p>
+              <p class="item-desc">A creamy, caramelized cheesecake with a distinct burnt exterior, baked fresh at Noni's. Our one and only pastry — perfected.</p>
             </div>
           </div>
         </div>
@@ -114,17 +115,17 @@
           <div class="experience-card">
             <div class="exp-icon">🔥</div>
             <h3>BBQ Night</h3>
-            <p>Communal BBQ under the stars. Fresh ingredients, good company.</p>
+            <p>Gather around the fire for a communal BBQ experience under the stars. Fresh ingredients, good company, unforgettable evenings.</p>
           </div>
           <div class="experience-card">
             <div class="exp-icon">👨‍🍳</div>
             <h3>Cooking Classes</h3>
-            <p>Learn traditional Indonesian dishes with farm ingredients.</p>
+            <p>Learn to cook traditional Indonesian dishes using fresh ingredients straight from our farm. Take the flavors home with you.</p>
           </div>
           <div class="experience-card">
             <div class="exp-icon">🍯</div>
             <h3>Farm-Made Jams</h3>
-            <p>Seasonal jams from fruits grown right here.</p>
+            <p>Our seasonal jams are made from fruits grown right here. Take a jar home or enjoy them with our crêpes and toast.</p>
           </div>
         </div>
       </div>
@@ -136,8 +137,53 @@
         <h2>Find a Moment of Peace With Us</h2>
         <p class="tagline">Slow Down, Connect Deeply.</p>
         <div class="cta-buttons">
-          <a href="https://wa.me/6282258440585" class="btn btn-whatsapp" target="_blank">WhatsApp Us</a>
+          <a href="https://wa.me/6282258440585" class="btn btn-whatsapp" target="_blank">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
           <a href="https://instagram.com/nonislombok" class="btn btn-outline" target="_blank">@NonisLombok</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guest Reviews -->
+    <section class="reviews-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">What Guests Say</span>
+          <h2>Reviews from Google Maps</h2>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Veggies straight from the farm, jam made from fruits grown in the garden—and the incredible hospitality of the hosts! This was the best experience we had in Lombok."</p>
+            <p class="review-author">— Dmitri Gorski</p>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Stopped for cheesecake, stayed for the lovely atmosphere and friendly hosts. The goats and cats were fun to watch. Highly recommend!"</p>
+            <p class="review-author">— Jade</p>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"What an absolutely magical place! I saw the sign on the road and something called me to stop in. Had the most beautiful chat with the hosts. The cheesecake was also delicious!"</p>
+            <p class="review-author">— Gary Noble</p>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The cheesecake was delicious and coffee was great too. They're living the dream of having a quaint and cute farm life!"</p>
+            <p class="review-author">— Janice Chen</p>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The owner is friendly, the cakes are delicious. If you bring your kids, it's great to see nature and animals. I highly recommend this place!"</p>
+            <p class="review-author">— Rosella Cla</p>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"I had the cheesecake tonight. Super creamy, better than expected. I would've taken a picture, but I already ate it."</p>
+            <p class="review-author">— Lux Living</p>
+          </div>
         </div>
       </div>
     </section>
@@ -150,4 +196,325 @@ useHead({
 })
 </script>
 
-<style src="~/assets/css/nonis.css"></style>
+<style scoped>
+/* Hero */
+.nonis-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/images/nonis-hero.jpg') center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.nonis-logo-img {
+  max-width: 280px;
+  margin-bottom: 16px;
+}
+
+.nonis-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* Story */
+.nonis-story {
+  padding: 80px 0;
+  background: var(--color-warm-white);
+}
+
+.story-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.story-content h2 {
+  margin-bottom: 24px;
+}
+
+.story-content p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.philosophy {
+  font-size: 1.2rem;
+  color: var(--color-terracotta);
+  margin-top: 24px;
+}
+
+/* Info */
+.nonis-info {
+  padding: 60px 0;
+  background: white;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.info-card {
+  padding: 30px;
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.info-card h3 {
+  margin-bottom: 8px;
+}
+
+.hours {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-terracotta);
+}
+
+.whatsapp-link {
+  color: #25D366;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Menu */
+.nonis-menu {
+  padding: 80px 0;
+  background: var(--color-cream);
+}
+
+.nonis-menu > .container > .section-label,
+.nonis-menu > .container > h2 {
+  text-align: center;
+}
+
+.nonis-menu > .container > h2 {
+  margin-bottom: 48px;
+}
+
+.menu-category {
+  margin-bottom: 48px;
+}
+
+.category-title {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.category-note {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.menu-grid.single {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.menu-item.signature {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+  border: 2px solid var(--color-gold);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.item-name {
+  font-weight: 600;
+}
+
+.item-price {
+  color: var(--color-terracotta);
+  font-weight: 700;
+}
+
+.item-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.pastry-highlight {
+  text-align: center;
+}
+
+/* Experiences */
+.nonis-experiences {
+  padding: 80px 0;
+  background: white;
+}
+
+.nonis-experiences .section-label,
+.nonis-experiences h2 {
+  text-align: center;
+}
+
+.nonis-experiences h2 {
+  margin-bottom: 48px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.experience-card {
+  text-align: center;
+  padding: 30px;
+  background: var(--color-light);
+  border-radius: 16px;
+}
+
+.exp-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.experience-card h3 {
+  margin-bottom: 12px;
+}
+
+.experience-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* CTA */
+.nonis-cta {
+  padding: 80px 0;
+  background: var(--color-sage);
+  text-align: center;
+  color: white;
+}
+
+.nonis-cta h2 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.nonis-cta .tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background: #128C7E;
+}
+
+.btn-outline {
+  padding: 14px 28px;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--color-sage);
+}
+
+/* Reviews */
+.reviews-section {
+  padding: 80px 0;
+  background: var(--color-light);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.review-card {
+  background: var(--color-white);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.stars {
+  color: #D4A84B;
+  margin-bottom: 8px;
+}
+
+.review-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.review-author {
+  font-weight: 600;
+  font-size: 13px;
+}
+</style>
