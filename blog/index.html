@@ -11,6 +11,68 @@
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../blog.css">
   <link rel="icon" type="image/png" href="../images/favicon.png">
+  <style>
+    .filter-section {
+      padding: 20px 0;
+      background: #fffef9;
+      border-bottom: 1px solid #e8e6df;
+    }
+    .filter-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .filter-group {
+      margin-bottom: 15px;
+    }
+    .filter-label {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #2c3e2d;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-btn {
+      padding: 8px 16px;
+      border: 2px solid #e8e6df;
+      background: #fff;
+      border-radius: 20px;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #2c3e2d;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover {
+      border-color: #d4a574;
+      background: #faf8f5;
+    }
+    .filter-btn.active {
+      background: #d4a574;
+      border-color: #d4a574;
+      color: #2c3e2d;
+    }
+    .blog-card.hidden {
+      display: none;
+    }
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: #666;
+      font-family: 'Open Sans', sans-serif;
+      display: none;
+    }
+    .no-results.show {
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <nav style="position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:#fffef9;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
@@ -34,12 +96,36 @@
     <p>Stories from the farm, local adventures, and guest experiences in South Lombok</p>
   </section>
 
+  <section class="filter-section">
+    <div class="filter-container">
+      <div class="filter-group">
+        <span class="filter-label">Filter by Author:</span>
+        <div class="filter-buttons" id="author-filters">
+          <button class="filter-btn active" data-filter="all" data-type="author">All</button>
+          <button class="filter-btn" data-filter="guest" data-type="author">Farm Guests</button>
+          <button class="filter-btn" data-filter="team" data-type="author">Mawun Valley Team</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Filter by Topic:</span>
+        <div class="filter-buttons" id="topic-filters">
+          <button class="filter-btn active" data-filter="all" data-type="topic">All Topics</button>
+          <button class="filter-btn" data-filter="guest-diary" data-type="topic">Guest Diaries</button>
+          <button class="filter-btn" data-filter="farm-life" data-type="topic">Farm Life</button>
+          <button class="filter-btn" data-filter="adventure" data-type="topic">Adventure</button>
+          <button class="filter-btn" data-filter="beaches" data-type="topic">Beaches</button>
+          <button class="filter-btn" data-filter="culture" data-type="topic">Culture</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="blog-content">
     <div class="container">
-      <div class="blog-grid">
+      <div class="blog-grid" id="blog-grid">
       
         <!-- Ava's Guest Diary Series -->
-        <article class="blog-card" onclick="location.href='guest-diary-part-1.html'" style="cursor:pointer;">
+        <article class="blog-card" data-author="guest" data-topic="guest-diary" onclick="location.href='guest-diary-part-1.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/farm-life.jpg" alt="Mawun Valley Farm"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Guest Diary</span>
@@ -48,7 +134,7 @@
           </div>
         </article>
 
-        <article class="blog-card" onclick="location.href='guest-diary-part-2.html'" style="cursor:pointer;">
+        <article class="blog-card" data-author="guest" data-topic="guest-diary" onclick="location.href='guest-diary-part-2.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/yoga.jpg" alt="Morning yoga"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Guest Diary</span>
@@ -57,7 +143,7 @@
           </div>
         </article>
 
-        <article class="blog-card" onclick="location.href='guest-diary-part-3.html'" style="cursor:pointer;">
+        <article class="blog-card" data-author="guest" data-topic="guest-diary" onclick="location.href='guest-diary-part-3.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/rice-fields.jpg" alt="Sustainable farming"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Guest Diary</span>
@@ -66,8 +152,8 @@
           </div>
         </article>
 
-        <!-- Grapevine Article -->
-        <article class="blog-card" onclick="location.href='grapevine-pruning-lombok.html'" style="cursor:pointer;">
+        <!-- Grapevine Article - Guest Authors -->
+        <article class="blog-card" data-author="guest" data-topic="farm-life" onclick="location.href='grapevine-pruning-lombok.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/grapevine-1.jpg" alt="Grapevine pruning"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Farm Life</span>
@@ -76,8 +162,8 @@
           </div>
         </article>
 
-        <!-- SEO Articles -->
-        <article class="blog-card" onclick="location.href='adventure-activities-south-lombok.html'" style="cursor:pointer;">
+        <!-- SEO Articles - Team Authors -->
+        <article class="blog-card" data-author="team" data-topic="adventure" onclick="location.href='adventure-activities-south-lombok.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/paragliding.jpg" alt="Adventure activities"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Adventure</span>
@@ -86,7 +172,7 @@
           </div>
         </article>
 
-        <article class="blog-card" onclick="location.href='beach-hopping-south-lombok.html'" style="cursor:pointer;">
+        <article class="blog-card" data-author="team" data-topic="beaches" onclick="location.href='beach-hopping-south-lombok.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/mawun-beach.jpg" alt="South Lombok beaches"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Beaches</span>
@@ -95,7 +181,7 @@
           </div>
         </article>
 
-        <article class="blog-card" onclick="location.href='farm-life-culture-lombok.html'" style="cursor:pointer;">
+        <article class="blog-card" data-author="team" data-topic="culture" onclick="location.href='farm-life-culture-lombok.html'" style="cursor:pointer;">
           <div class="blog-card-image"><img src="../images/blog/weaving.jpg" alt="Sasak culture"></div>
           <div class="blog-card-content">
             <span class="blog-card-category">Culture</span>
@@ -105,9 +191,63 @@
         </article>
         
       </div>
+      
+      <div class="no-results" id="no-results">
+        <p>No articles match your filters. Try a different combination!</p>
+      </div>
     </div>
   </section>
 
   <footer class="footer"><div class="container"><p style="text-align:center;padding:20px 0;">© 2026 Mawun Valley Farm. Owned by Noni Trisnawati.</p></div></footer>
+
+  <script>
+    // Filter functionality
+    let activeAuthor = 'all';
+    let activeTopic = 'all';
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const filterType = this.dataset.type;
+        const filterValue = this.dataset.filter;
+
+        // Update active state for this filter group
+        document.querySelectorAll(`.filter-btn[data-type="${filterType}"]`).forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        // Update active filter values
+        if (filterType === 'author') {
+          activeAuthor = filterValue;
+        } else if (filterType === 'topic') {
+          activeTopic = filterValue;
+        }
+
+        // Apply filters
+        applyFilters();
+      });
+    });
+
+    function applyFilters() {
+      const cards = document.querySelectorAll('.blog-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardAuthor = card.dataset.author;
+        const cardTopic = card.dataset.topic;
+
+        const matchesAuthor = activeAuthor === 'all' || cardAuthor === activeAuthor;
+        const matchesTopic = activeTopic === 'all' || cardTopic === activeTopic;
+
+        if (matchesAuthor && matchesTopic) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Show/hide no results message
+      document.getElementById('no-results').classList.toggle('show', visibleCount === 0);
+    }
+  </script>
 </body>
 </html>
