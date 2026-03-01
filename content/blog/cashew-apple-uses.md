@@ -1,44 +1,65 @@
 ---
-title: "5 Surprising Uses for Cashew Apples"
-description: "From jam to alcohol to skincare — amazing applications for this tropical fruit."
-date: 2026-02-01
-category: Food & Recipes
+title: "5 Surprising Uses for Cashew Apple"
+description: "From Goan feni to Indonesian jam — discover the creative ways tropical communities use the world's most wasted fruit."
+date: 2026-01-25
+category: Tropical Fruits
 topic: cashew
 authorType: team
 image: /images/blog/cooking-class.jpg
 ---
 
-The cashew apple is one of the world's most wasted foods — millions of tons discarded annually. But in communities that know better, this forgotten fruit has surprising uses.
+*Learn to make cashew apple jam: Our [Cashew Apple Jam Cooking Class](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm) teaches you to transform this rare fruit.*
+
+While 95% of cashew apples go to waste globally, creative communities in tropical regions have found remarkable uses for this forgotten fruit. Here are 5 you've probably never heard of.
 
 ## 1. Cashew Apple Jam
 
-When cooked with sugar and citrus, the fruit transforms into a beautiful amber jam with a unique flavor. At [Mawun Valley Farm](/gather), we make cashew apple jam and teach guests in our cooking classes.
+This is our specialty at [Mawun Valley Farm](/gather). Cashew apple jam captures the fruit's unique sweet-tangy flavor in a shelf-stable form.
 
-## 2. Juice and Drinks
+The process involves:
 
-Fresh-pressed cashew apple juice is common in Brazil and India. High in vitamin C and best consumed immediately.
+- Pressing fresh cashew apples to extract juice
+- Slow cooking with sugar and citrus
+- Creating a preserve that lasts months
 
-**Cajuína** is a popular Brazilian clarified cashew juice — clear and shelf-stable.
+The result? A jam unlike anything else — tropical, complex, and conversation-starting.
 
-## 3. Fermented Beverages
+## 2. Feni: Cashew Spirit
 
-**Feni (India):** A Goan liquor made from cashew apples.
-**Caju Wine (Brazil):** Fermented juice, similar to cider.
-**Cashew Vinegar:** Made from fermented juice.
+In Goa, India, cashew apples are fermented and distilled into **feni** — a potent alcoholic spirit with protected geographical status (like Champagne or Tequila).
 
-## 4. Candied and Dried Fruit
+The process takes the fresh juice through double distillation, creating a clear spirit with a distinctive aroma. It's a cultural icon in Goa.
 
-- Sun-dried into chewy snacks
-- Candied in sugar syrup
-- Pickled in spiced brine
+## 3. Fresh Juice (Same-Day Only)
 
-## 5. Skincare Applications
+In cashew-growing regions, fresh cashew apple juice is a delicacy — but only available immediately after harvest. The juice ferments within hours, so it can't be stored or transported.
 
-Cashew apple extract is gaining interest in cosmetics:
-- Antioxidant properties for anti-aging
-- Vitamin C for brightening
-- Natural acids for gentle exfoliation
+If you visit a cashew farm during harvest season, ask to try fresh juice. It's a rare experience few tourists ever have.
+
+## 4. Vinegar for Cooking
+
+Cashew apple vinegar is made by allowing the juice to ferment completely. The result is a mild, fruity vinegar used in cooking throughout Brazil and parts of Asia.
+
+It adds unique depth to:
+
+- Salad dressings
+- Marinades
+- Chutneys and pickles
+
+## 5. Natural Skincare
+
+The high Vitamin C content of cashew apples has led to their use in traditional skincare. The fruit extract appears in some tropical skincare products for:
+
+- Skin brightening (Vitamin C)
+- Anti-aging (antioxidants)
+- Hydration (high water content)
+
+## Why These Uses Matter
+
+Each of these uses transforms what would be agricultural waste into something valuable. At [Mawun Valley Farm](/experience), we believe in using what we grow — the cashew apple is too good to waste.
+
+Our [cooking classes](/gather) teach visitors to make jam from our cashew harvest, continuing traditions that honor the whole fruit.
 
 ---
 
-At [Noni's Café](/nonis), we serve cashew apple jam on fresh-baked bread. [Message us on WhatsApp](https://wa.me/6282258440585)
+**Make Your Own Cashew Apple Jam** — Join our seasonal cooking class and take home a jar you made yourself. [Book on Megatix](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm)
