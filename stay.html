@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stay - Cabins at Mawun Valley Farm</title>
+  <meta name="description" content="Stay in one of our 5 unique cabins at Mawun Valley Farm. Each cabin offers farm views, outdoor showers, and a peaceful retreat in Lombok.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stay.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img loading="lazy" decoding="async" src="images/logo.png" alt="Mawun Valley Farm"></a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nonis.html">Noni's</a></li>
+        <li><a href="stay.html" class="active">Stay</a></li>
+        <li class="dropdown">
+          <a href="experience.html" class="dropdown-toggle">Experience ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="experience.html">Programs</a></li>
+            <li><a href="retreat.html">Farm Retreat</a></li>
+          </ul>
+        </li>
+        <li><a href="gather.html">Gather</a></li>
+        <li><a href="belong.html">Belong</a></li>
+        <li><a href="blog/">Field Notes</a></li>
+        <li><a href="index.html#contact" class="btn btn-primary">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label">Rest & Recharge</span>
+      <h1>Our Cabins</h1>
+      <p>Simple, cozy spaces designed for slow mornings and deep sleep.</p>
+    </div>
+  </section>
+
+  <section class="cabins-section">
+    <div class="container">
+      
+      <!-- All Cabins Include -->
+      <div class="all-cabins-features">
+        <h3>All Cabins Include</h3>
+        <div class="features-row">
+          <span>🚿 Outdoor Shower</span>
+          <span>🛏️ Clean Bedsheets & Towels</span>
+          <span>🔌 Charging Socket</span>
+          <span>💨 Fan</span>
+          <span>👕 Clothes Shelf</span>
+          <span>🛋️ Comfortable Mattress</span>
+        </div>
+      </div>
+
+      <div class="cabins-grid">
+        
+        <!-- Peace Cabin -->
+        <article class="cabin-card cabin-card-gallery">
+          <div class="cabin-image">
+            <img loading="lazy" decoding="async" src="images/peace-1.jpg" alt="Peace Cabin" id="peace-main">
+            <span class="cabin-capacity">🛏️ Queen Bed</span>
+          </div>
+          <div class="cabin-gallery">
+            <img loading="lazy" decoding="async" src="images/peace-1.jpg" alt="Peace view 1" onclick="switchCabinPhoto('peace-main', this)" class="active">
+            <img loading="lazy" decoding="async" src="images/peace-2.jpg" alt="Peace view 2" onclick="switchCabinPhoto('peace-main', this)">
+            <img loading="lazy" decoding="async" src="images/peace-3.jpg" alt="Peace view 3" onclick="switchCabinPhoto('peace-main', this)">
+            <img loading="lazy" decoding="async" src="images/peace-4.jpg" alt="Peace view 4" onclick="switchCabinPhoto('peace-main', this)">
+            <img loading="lazy" decoding="async" src="images/peace-5.jpg" alt="Peace view 5" onclick="switchCabinPhoto('peace-main', this)">
+            <img loading="lazy" decoding="async" src="images/peace-6.jpg" alt="Peace view 6" onclick="switchCabinPhoto('peace-main', this)">
+            <img loading="lazy" decoding="async" src="images/peace-7.jpg" alt="Peace view 7" onclick="switchCabinPhoto('peace-main', this)">
+          </div>
+          <div class="cabin-content">
+            <h2>Peace Cabin</h2>
+            <p class="cabin-style">Wooden exterior</p>
+            <div class="cabin-features">
+              <span>🏔️ Farm + Mountain View</span>
+              <span>🏄 Surfboard Storage</span>
+              <span>🧳 Luggage Space</span>
+            </div>
+            <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20booking%20Peace%20Cabin" class="btn btn-primary" target="_blank">Book This Cabin</a>
+          </div>
+        </article>
+        <!-- Sandat Cabin -->
+        <article class="cabin-card cabin-card-gallery">
+          <div class="cabin-image">
+            <img loading="lazy" decoding="async" src="images/sandat-1.jpg" alt="Sandat Cabin" id="sandat-main">
+            <span class="cabin-capacity">🛏️ Queen Bed</span>
+          </div>
+          <div class="cabin-gallery">
+            <img loading="lazy" decoding="async" src="images/sandat-1.jpg" alt="Sandat view 1" onclick="switchCabinPhoto('sandat-main', this)" class="active">
+            <img loading="lazy" decoding="async" src="images/sandat-2.jpg" alt="Sandat view 2" onclick="switchCabinPhoto('sandat-main', this)">
+            <img loading="lazy" decoding="async" src="images/sandat-3.jpg" alt="Sandat view 3" onclick="switchCabinPhoto('sandat-main', this)">
+            <img loading="lazy" decoding="async" src="images/sandat-4.jpg" alt="Sandat view 4" onclick="switchCabinPhoto('sandat-main', this)">
+            <img loading="lazy" decoding="async" src="images/sandat-5.jpg" alt="Sandat view 5" onclick="switchCabinPhoto('sandat-main', this)">
+            <img loading="lazy" decoding="async" src="images/sandat-6.jpg" alt="Sandat view 6" onclick="switchCabinPhoto('sandat-main', this)">
+            <img loading="lazy" decoding="async" src="images/sandat-7.jpg" alt="Sandat view 7" onclick="switchCabinPhoto('sandat-main', this)">
+          </div>
+          <div class="cabin-content">
+            <h2>Sandat Cabin</h2>
+            <p class="cabin-style">Wooden exterior with balcony & patio</p>
+            <div class="cabin-features">
+              <span>🏔️ Farm + Mountain View</span>
+              <span>🌅 Balcony</span>
+              <span>🏄 Surfboard Storage</span>
+              <span>🧳 Luggage Space</span>
+            </div>
+            <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20booking%20Sandat%20Cabin" class="btn btn-primary" target="_blank">Book This Cabin</a>
+          </div>
+        </article>
+        <!-- Rick's Windmill -->
+        <article class="cabin-card cabin-card-gallery">
+          <div class="cabin-image">
+            <img loading="lazy" decoding="async" src="images/windmill-1.jpg" alt="Rick's Windmill" id="windmill-main">
+            <span class="cabin-capacity">🛏️ Queen Bed</span>
+          </div>
+          <div class="cabin-gallery">
+            <img loading="lazy" decoding="async" src="images/windmill-1.jpg" alt="Windmill view 1" onclick="switchCabinPhoto('windmill-main', this)" class="active">
+            <img loading="lazy" decoding="async" src="images/windmill-2.jpg" alt="Windmill view 2" onclick="switchCabinPhoto('windmill-main', this)">
+            <img loading="lazy" decoding="async" src="images/windmill-3.jpg" alt="Windmill view 3" onclick="switchCabinPhoto('windmill-main', this)">
+            <img loading="lazy" decoding="async" src="images/windmill-4.jpg" alt="Windmill view 4" onclick="switchCabinPhoto('windmill-main', this)">
+            <img loading="lazy" decoding="async" src="images/windmill-5.jpg" alt="Windmill view 5" onclick="switchCabinPhoto('windmill-main', this)">
+            <img loading="lazy" decoding="async" src="images/windmill-6.jpg" alt="Windmill view 6" onclick="switchCabinPhoto('windmill-main', this)">
+          </div>
+          <div class="cabin-content">
+            <h2>Rick's Windmill</h2>
+            <p class="cabin-style">Unique design with black balcony</p>
+            <div class="cabin-features">
+              <span>🏔️ Farm + Mountain View</span>
+              <span>🌅 Black Balcony</span>
+            </div>
+            <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20booking%20Rick's%20Windmill" class="btn btn-primary" target="_blank">Book This Cabin</a>
+          </div>
+        </article>
+        <!-- Jabalkap Cabin -->
+        <article class="cabin-card cabin-card-gallery">
+          <div class="cabin-image">
+            <img loading="lazy" decoding="async" src="images/jabalkap-1.jpg" alt="Jabalkap Cabin" id="jabalkap-main">
+            <span class="cabin-capacity">🛏️ Single Bed</span>
+          </div>
+          <div class="cabin-gallery">
+            <img loading="lazy" decoding="async" src="images/jabalkap-1.jpg" alt="Jabalkap view 1" onclick="switchCabinPhoto('jabalkap-main', this)" class="active">
+            <img loading="lazy" decoding="async" src="images/jabalkap-2.jpg" alt="Jabalkap view 2" onclick="switchCabinPhoto('jabalkap-main', this)">
+            <img loading="lazy" decoding="async" src="images/jabalkap-3.jpg" alt="Jabalkap view 3" onclick="switchCabinPhoto('jabalkap-main', this)">
+          </div>
+          <div class="cabin-content">
+            <h2>Jabalkap Cabin</h2>
+            <p class="cabin-style">A-frame style</p>
+            <div class="cabin-features">
+              <span>🏔️ Farm + Mountain View</span>
+              <span>🏄 Surfboard Storage</span>
+              <span>🧳 Luggage Space</span>
+            </div>
+            <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20booking%20Jabalkap%20Cabin" class="btn btn-primary" target="_blank">Book This Cabin</a>
+          </div>
+        </article>
+
+        <!-- Lime Cabin -->
+        <article class="cabin-card cabin-card-gallery featured">
+          <div class="cabin-image">
+            <img loading="lazy" decoding="async" src="images/lime-1.jpg" alt="Lime Cabin" id="lime-main">
+            <span class="cabin-capacity">🛏️ Queen Bed</span>
+          </div>
+          <div class="cabin-gallery">
+            <img loading="lazy" decoding="async" src="images/lime-1.jpg" alt="Lime view 1" onclick="switchCabinPhoto('lime-main', this)" class="active">
+            <img loading="lazy" decoding="async" src="images/lime-2.jpg" alt="Lime view 2" onclick="switchCabinPhoto('lime-main', this)">
+            <img loading="lazy" decoding="async" src="images/lime-3.jpg" alt="Lime view 3" onclick="switchCabinPhoto('lime-main', this)">
+            <img loading="lazy" decoding="async" src="images/lime-4.jpg" alt="Lime view 4" onclick="switchCabinPhoto('lime-main', this)">
+            <img loading="lazy" decoding="async" src="images/lime-5.jpg" alt="Lime view 5" onclick="switchCabinPhoto('lime-main', this)">
+            <img loading="lazy" decoding="async" src="images/lime-6.jpg" alt="Lime view 6" onclick="switchCabinPhoto('lime-main', this)">
+            <img loading="lazy" decoding="async" src="images/lime-7.jpg" alt="Lime view 7" onclick="switchCabinPhoto('lime-main', this)">
+            <img loading="lazy" decoding="async" src="images/lime-8.jpg" alt="Lime view 8" onclick="switchCabinPhoto('lime-main', this)">
+            <img loading="lazy" decoding="async" src="images/lime-9.jpg" alt="Lime view 9" onclick="switchCabinPhoto('lime-main', this)">
+            <img loading="lazy" decoding="async" src="images/lime-10.jpg" alt="Lime view 10" onclick="switchCabinPhoto('lime-main', this)">
+          </div>
+          <div class="cabin-content">
+            <h2>Lime Cabin</h2>
+            <p class="cabin-style">Bright green exterior</p>
+            <div class="cabin-features">
+              <span>🌿 Farm View</span>
+              <span>💚 Colorful & Cozy</span>
+            </div>
+            <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20booking%20Lime%20Cabin" class="btn btn-primary" target="_blank">Book This Cabin</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Booking CTA -->
+      <div class="booking-cta">
+        <h3>Ready to book your stay?</h3>
+        <p>Message us on WhatsApp to check availability and rates. We'll respond within a few hours.</p>
+        <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20a%20cabin%20at%20Mawun%20Valley%20Farm" class="btn btn-whatsapp btn-lg" target="_blank">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Guest Reviews -->
+  <section class="reviews-section" style="padding: 80px 0; background: var(--color-light);">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <span class="section-label">Guest Reviews</span>
+        <h2>What Guests Say About Staying Here</h2>
+      </div>
+      <div class="reviews-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <div class="review-card" style="background: var(--color-white); padding: 24px; border-radius: 12px; box-shadow: var(--shadow);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="color: var(--color-gold);">★★★★★</span>
+            <span style="font-size: 11px; color: var(--color-sage); text-transform: uppercase;">Verified Stay</span>
+          </div>
+          <p style="font-size: 14px; line-height: 1.7; color: var(--color-dark-light); margin-bottom: 12px; font-style: italic;">"The accommodation is on a beautiful farm with lots of charm. The night in the hut was very cozy. We've never had such a delicious breakfast while traveling!"</p>
+          <p style="font-weight: 600; font-size: 13px;">— Hamacher, Germany</p>
+        </div>
+        <div class="review-card" style="background: var(--color-white); padding: 24px; border-radius: 12px; box-shadow: var(--shadow);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="color: var(--color-gold);">★★★★★</span>
+            <span style="font-size: 11px; color: var(--color-sage); text-transform: uppercase;">Verified Stay</span>
+          </div>
+          <p style="font-size: 14px; line-height: 1.7; color: var(--color-dark-light); margin-bottom: 12px; font-style: italic;">"They have a spectacular farm! Spending time with the goats made us very happy. Definitely a place to stay for a few days and enjoy the countryside, the tranquility, and Noni's desserts!"</p>
+          <p style="font-weight: 600; font-size: 13px;">— Paola, Peru</p>
+        </div>
+        <div class="review-card" style="background: var(--color-white); padding: 24px; border-radius: 12px; box-shadow: var(--shadow);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="color: var(--color-gold);">★★★★★</span>
+            <span style="font-size: 11px; color: var(--color-sage); text-transform: uppercase;">Google Maps</span>
+          </div>
+          <p style="font-size: 14px; line-height: 1.7; color: var(--color-dark-light); margin-bottom: 12px; font-style: italic;">"My little cabin was super cute and cozy, and the farm is so well planned. The BBQ nights were the absolute highlight—so delicious! I'm already looking forward to visiting again."</p>
+          <p style="font-weight: 600; font-size: 13px;">— Pame, Chile</p>
+        </div>
+        <div class="review-card" style="background: var(--color-white); padding: 24px; border-radius: 12px; box-shadow: var(--shadow);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="color: var(--color-gold);">★★★★★</span>
+            <span style="font-size: 11px; color: var(--color-sage); text-transform: uppercase;">Google Maps</span>
+          </div>
+          <p style="font-size: 14px; line-height: 1.7; color: var(--color-dark-light); margin-bottom: 12px; font-style: italic;">"The wooden cabins are very cozy! From delicious BBQs and fun card games to movie nights and Noni's amazing baked treats, there is always something to enjoy."</p>
+          <p style="font-weight: 600; font-size: 13px;">— Isabelle, Netherlands</p>
+        </div>
+        <div class="review-card" style="background: var(--color-white); padding: 24px; border-radius: 12px; box-shadow: var(--shadow);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="color: var(--color-gold);">★★★★★</span>
+            <span style="font-size: 11px; color: var(--color-sage); text-transform: uppercase;">Verified Stay</span>
+          </div>
+          <p style="font-size: 14px; line-height: 1.7; color: var(--color-dark-light); margin-bottom: 12px; font-style: italic;">"Can't speak highly enough of this family and their beautiful farm! Greeted with a community dinner—incredible food cooked straight from the garden. Perfect location between Kuta and Selong Belanak!"</p>
+          <p style="font-weight: 600; font-size: 13px;">— Zoe, Australia</p>
+        </div>
+        <div class="review-card" style="background: var(--color-white); padding: 24px; border-radius: 12px; box-shadow: var(--shadow);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="color: var(--color-gold);">★★★★★</span>
+            <span style="font-size: 11px; color: var(--color-sage); text-transform: uppercase;">Verified Stay</span>
+          </div>
+          <p style="font-size: 14px; line-height: 1.7; color: var(--color-dark-light); margin-bottom: 12px; font-style: italic;">"We made a big mistake—we booked only for one night! The cottage is really charming, the whole area is absolutely beautiful and peaceful. Next morning: coffee and delicious omelette. Paradise!"</p>
+          <p style="font-weight: 600; font-size: 13px;">— Marjut, Germany</p>
+        </div>
+        <div class="review-card" style="background: var(--color-white); padding: 24px; border-radius: 12px; box-shadow: var(--shadow);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="color: var(--color-gold);">★★★★★</span>
+            <span style="font-size: 11px; color: var(--color-sage); text-transform: uppercase;">Verified Stay</span>
+          </div>
+          <p style="font-size: 14px; line-height: 1.7; color: var(--color-dark-light); margin-bottom: 12px; font-style: italic;">"The room is basic but you'll have everything you need—fan, mosquito net, outdoor bathroom. We slept like babies! Close to surf beaches and rice fields. 100% recommend for outdoor lovers."</p>
+          <p style="font-weight: 600; font-size: 13px;">— Anouk, Netherlands</p>
+        </div>
+        <div class="review-card" style="background: var(--color-white); padding: 24px; border-radius: 12px; box-shadow: var(--shadow);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="color: var(--color-gold);">★★★★★</span>
+            <span style="font-size: 11px; color: var(--color-sage); text-transform: uppercase;">Verified Stay</span>
+          </div>
+          <p style="font-size: 14px; line-height: 1.7; color: var(--color-dark-light); margin-bottom: 12px; font-style: italic;">"A living farm where little chicks and young goats roam freely! The stay ended beautifully with a friendly musical session around a shared barbecue. A unique and charming experience!"</p>
+          <p style="font-weight: 600; font-size: 13px;">— Loic, France</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img loading="lazy" decoding="async" src="images/logo.png" alt="Mawun Valley Farm" class="footer-logo">
+          <p>Slow Down, Connect Deeply.</p>
+          <p>A family-run permaculture farm in South Lombok, Indonesia. 35 years of warm welcomes.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+        <li><a href="nonis.html">Noni's</a></li>
+            <li><a href="stay.html">Our Cabins</a></li>
+            <li><a href="experience.html">Programs</a></li>
+            <li><a href="retreat.html">Farm Retreat</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="gather.html">Gather</a></li>
+            <li><a href="belong.html">Belong</a></li>
+            <li><a href="blog/">Field Notes</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-social-section">
+          <h4>Follow Us</h4>
+          <div class="social-links-list">
+            <a href="https://instagram.com/mawunvalley" class="social-link-item" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>@mawunvalley</span>
+            </a>
+            <a href="https://instagram.com/nonislombok" class="social-link-item" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>@nonislombok</span>
+            </a>
+            <a href="https://facebook.com/mawunvalley" class="social-link-item" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Mawun Valley</span>
+            </a>
+            <a href="https://www.tiktok.com/@mawunvalley" class="social-link-item" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+              <span>@mawunvalley</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mawun Valley Farm. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Cabin gallery photo switcher
+    function switchCabinPhoto(mainId, thumb) {
+      document.getElementById(mainId).src = thumb.src;
+      const gallery = thumb.parentElement;
+      gallery.querySelectorAll("img").forEach(img => img.classList.remove("active"));
+      thumb.classList.add("active");
+    }
+  </script>
+</body>
+</html>
