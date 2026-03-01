@@ -83,7 +83,7 @@
       </div>
     </section>
 
-    <!-- Animals -->
+    <!-- The Animals -->
     <section class="animals" id="animals">
       <div class="container">
         <div class="section-header">
@@ -95,22 +95,22 @@
           <div class="animal-card">
             <div class="animal-emoji">🐐</div>
             <h4>The Goats</h4>
-            <p><strong>Coconut</strong> eats everything. <strong>Spinach & Kangkung</strong> are champion fence-jumpers.</p>
+            <p><strong>Coconut</strong> eats everything—cheesecake, cat food, your lunch. <strong>Spinach & Kangkung</strong> are champion fence-jumpers who raid the veggie garden.</p>
           </div>
           <div class="animal-card">
             <div class="animal-emoji">🦆</div>
             <h4>The Ducks</h4>
-            <p><strong>Onyx & Midnight</strong> and their ducklings waddle past your cabin every morning.</p>
+            <p><strong>Onyx & Midnight</strong> and their 7 ducklings. They waddle past your cabin every morning—better than any alarm clock.</p>
           </div>
           <div class="animal-card">
             <div class="animal-emoji">🐱</div>
             <h4>The Cats</h4>
-            <p><strong>Drama Queen</strong> rules the café. <strong>Hungry Lion</strong> leads her kittens.</p>
+            <p><strong>Drama Queen</strong> rules the café. <strong>Hungry Lion</strong> leads her kittens—Scorpion, Charlie Jr & Black Panther. Plus <strong>Charlie Chaplin</strong> and <strong>Sunny</strong>.</p>
           </div>
           <div class="animal-card">
             <div class="animal-emoji">🐕</div>
             <h4>Mango</h4>
-            <p>Our Chief Welcoming Officer. She'll greet you on arrival.</p>
+            <p>Our sweet girl and Chief Welcoming Officer. She'll greet you on arrival and probably follow you everywhere.</p>
           </div>
         </div>
       </div>
@@ -122,23 +122,23 @@
         <div class="philosophy-content">
           <span class="section-label light">Our Philosophy</span>
           <h2>Slow Down, Connect Deeply</h2>
-          <p class="philosophy-intro">In a world that moves too fast, we've created a place where time slows down.</p>
+          <p class="philosophy-intro">In a world that moves too fast, we've created a place where time slows down. Where strangers become family over shared meals. Where the rhythm of farm life replaces the noise of daily hustle.</p>
           <div class="philosophy-grid">
             <div class="philosophy-item">
               <h4>🌱 Farm to Table</h4>
-              <p>Veggies from the garden, jam from our fruit trees, eggs from happy chickens.</p>
+              <p>Veggies from the garden, jam from our fruit trees, eggs from happy chickens. You'll taste the difference when food is grown with love.</p>
             </div>
             <div class="philosophy-item">
               <h4>👨‍👩‍👧‍👦 Family, Not Guests</h4>
-              <p>From day one, you're part of our community.</p>
+              <p>From day one, you're part of our community. Sharing meals, stories, and laughter under the stars at our Friday BBQ nights.</p>
             </div>
             <div class="philosophy-item">
               <h4>🐐 Nature Immersion</h4>
-              <p>Wake up with roosters, cuddle baby goats, watch ducklings waddle by.</p>
+              <p>Wake up with roosters, cuddle baby goats, watch ducklings waddle by. This is farm life—simple, grounding, and beautifully real.</p>
             </div>
             <div class="philosophy-item">
               <h4>🌊 Balance & Freedom</h4>
-              <p>World-class surf breaks 10 minutes away. Work at your own pace.</p>
+              <p>World-class surf breaks 10 minutes away. Work at your own pace. Take what you need from this place—rest, adventure, or both.</p>
             </div>
           </div>
         </div>
@@ -153,10 +153,93 @@
           <h2>Peek Inside</h2>
         </div>
         <div class="gallery-grid">
-          <div class="gallery-item"><img src="/images/gallery-1.jpg" alt="Farm life"></div>
-          <div class="gallery-item"><img src="/images/gallery-2.jpg" alt="Farm animals"></div>
-          <div class="gallery-item"><img src="/images/gallery-3.jpg" alt="Farm scenery"></div>
-          <div class="gallery-item"><img src="/images/gallery-4.jpg" alt="Farm activities"></div>
+          <div class="gallery-item"><img src="/images/amphitheater.jpg" alt="BBQ night at the amphitheater"></div>
+          <div class="gallery-item"><img src="/images/cabin-lime.jpg" alt="Lime cabin exterior"></div>
+          <div class="gallery-item"><img src="/images/duckling.jpg" alt="Farm duckling"></div>
+          <div class="gallery-item"><img src="/images/cat-fence.jpg" alt="Cat on fence"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Guest Stories</span>
+          <h2>What People Say</h2>
+          <p class="section-subtitle">Real reviews from our farm experience guests</p>
+        </div>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">"Staying at Mawun Valley Farm was an incredible experience. Fully immersed in nature and local life. The peaceful environment helped me disconnect and reset. If you're a surfer, this place is a hidden gem—only 10-15 minutes from Mawi Beach with world-class waves."</p>
+            <p class="testimonial-author">— Iyad, Tunisia</p>
+            <span class="testimonial-source">Worldpackers</span>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">"We spent 1 month here and couldn't be more happy. There's a strong sense of community. The meals were really good and tasty, the BBQ nights were delicious. We strongly recommend this farm if you want a great farm experience and feel Lombok slow living."</p>
+            <p class="testimonial-author">— Mariana, Portugal</p>
+            <span class="testimonial-source">Worldpackers</span>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">"From day one, I felt like part of the family—sharing meals and stories with Noni and the team. My cabin was super cute and cozy, and the work was flexible. The BBQ nights were the best—so delicious! I'm excited to visit again."</p>
+            <p class="testimonial-author">— Pame, Chile</p>
+            <span class="testimonial-source">Worldpackers</span>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">"Every day was simple but full. Waking up with the roosters, working close to the land, and learning from people who are truly passionate. It's definitely a natural and local experience—that's exactly what makes it so special."</p>
+            <p class="testimonial-author">— Sara, Spain</p>
+            <span class="testimonial-source">Worldpackers</span>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">"The cabins are amazing, the work is flexible, Noni and the team are awesome hosts and the food is delicious! You choose what project you'd like to do—build, plant, cook, paint... it's up to you! Would definitely recommend!"</p>
+            <p class="testimonial-author">— Pippa, Australia</p>
+            <span class="testimonial-source">Worldpackers</span>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">"Great community to be part of! Everyone is very friendly and welcoming! The host has a very inspiring and ambitious vision. We got local food 3 times a day. The beach is within 25 minutes walking distance. I've had a great time!"</p>
+            <p class="testimonial-author">— Rick, Netherlands</p>
+            <span class="testimonial-source">Worldpackers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guest Diaries -->
+    <section class="guest-diaries" id="diaries">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">From Our Guests</span>
+          <h2>Guest Diaries</h2>
+          <p class="section-subtitle">Real stories from travellers who stayed with us</p>
+        </div>
+        <div class="diaries-grid">
+          <NuxtLink to="/blog/guest-diary-part-1" class="diary-card">
+            <img src="/images/blog/farm-life.jpg" alt="Ava's Guest Diary">
+            <div class="diary-content">
+              <span class="diary-tag">Guest Diary</span>
+              <h3>Ava's Guest Diary: First Impressions</h3>
+              <p>"Selamat Datang. A fifteen-minute drive from Kuta lies Mawun Valley — a blissful haven that differs from your average farm stay..."</p>
+              <span class="diary-author">By Ava from UK · 3 part series</span>
+            </div>
+          </NuxtLink>
+          <NuxtLink to="/blog/grapevine-pruning-lombok" class="diary-card">
+            <img src="/images/blog/grapevine-1.jpg" alt="Grapevine pruning story">
+            <div class="diary-content">
+              <span class="diary-tag">Farm Life</span>
+              <h3>Through the Grapevine: First Pruning</h3>
+              <p>"Before picking up the clippers, we did a bit of research to decide the best approach. What we landed on? A hard prune..."</p>
+              <span class="diary-author">By Sarah & Johnny</span>
+            </div>
+          </NuxtLink>
+        </div>
+        <div class="diaries-cta">
+          <NuxtLink to="/blog" class="btn btn-primary">Read All Guest Stories →</NuxtLink>
         </div>
       </div>
     </section>
@@ -164,18 +247,25 @@
     <!-- Contact -->
     <section class="contact" id="contact">
       <div class="container">
-        <div class="section-header">
-          <span class="section-label">Get in Touch</span>
-          <h2>Ready to Visit?</h2>
-          <p>Reach out and let's plan your stay at Mawun Valley Farm.</p>
-        </div>
-        <div class="contact-buttons">
-          <a href="https://wa.me/6282258440585" class="btn btn-whatsapp" target="_blank">
-            WhatsApp Us
-          </a>
-          <a href="mailto:hello@mawunvalley.com" class="btn btn-outline">
-            Email Us
-          </a>
+        <div class="contact-grid">
+          <div class="contact-content">
+            <span class="section-label light">Come Find Us</span>
+            <h2>Start Your Journey</h2>
+            <p>We're in Mawun area, where the valley meets the coast. Reach out — we'd love to hear from you.</p>
+            <div class="contact-options">
+              <a href="https://wa.me/6282258440585" class="btn btn-whatsapp" target="_blank">
+                WhatsApp Us
+              </a>
+            </div>
+          </div>
+          <div class="contact-location">
+            <div class="location-card">
+              <h4>📍 Location</h4>
+              <p>Mawun Valley Farm<br>Selong Belanak Village<br>Lombok Tengah, NTB 83573<br>Indonesia</p>
+              <h4>🏄 Nearby Beaches</h4>
+              <p>Mawun — 3 min<br>Tampah — 5 min<br>Lancing — 6 min<br>Areguling — 10 min</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -187,3 +277,17 @@ useHead({
   title: 'Mawun Valley Farm - Slow Down, Connect Deeply'
 })
 </script>
+
+<style scoped>
+.guest-diaries { padding: 80px 0; background: #f9f8f5; }
+.diaries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+.diary-card { text-decoration: none; color: inherit; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
+.diary-card:hover { transform: translateY(-5px); }
+.diary-card img { width: 100%; height: 200px; object-fit: cover; }
+.diary-content { padding: 24px; }
+.diary-tag { display: inline-block; background: #d4a574; color: #2c3e2d; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 12px; }
+.diary-content h3 { font-size: 1.25rem; color: #2c3e2d; margin-bottom: 10px; }
+.diary-content p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+.diary-author { display: block; color: #888; font-size: 0.85rem; margin-top: 12px; }
+.diaries-cta { text-align: center; margin-top: 40px; }
+</style>
