@@ -5,7 +5,7 @@ category: "Cashew"
 author: "Mawun Valley Team"
 authorType: "team"
 topic: "cashew"
-image: "/images/blog/cashew-apple.jpg"
+image: "/images/blog/farm-life.jpg"
 date: "2026-02-05"
 ---
 

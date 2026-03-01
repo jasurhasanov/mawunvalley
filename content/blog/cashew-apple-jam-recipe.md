@@ -5,7 +5,7 @@ category: "Cashew"
 author: "Noni"
 authorType: "team"
 topic: "cashew"
-image: "/images/blog/cashew-jam.jpg"
+image: "/images/blog/cooking-class.jpg"
 date: "2026-02-10"
 ---
 

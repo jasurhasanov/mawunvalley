@@ -5,7 +5,7 @@ date: 2026-02-14
 category: Group Travel
 topic: guides
 authorType: team
-image: /images/blog/gathering.jpg
+image: /images/blog/cooking-class.jpg
 ---
 
 Travelling with friends is one of life's great joys — and South Lombok is practically designed for it. Empty beaches, cheap scooter rentals, sunset sessions, and enough activities to keep everyone happy.

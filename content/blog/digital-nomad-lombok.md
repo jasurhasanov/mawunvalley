@@ -5,7 +5,7 @@ date: 2026-02-19
 category: Remote Work
 topic: guides
 authorType: team
-image: /images/blog/sunrise.jpg
+image: /images/blog/sunset-viewpoint.jpg
 ---
 
 If you're burnt out on Bali's traffic, $15 smoothie bowls, and fighting for café tables — South Lombok might be exactly what you need. Fewer nomads means more peace, lower costs, and beaches you can actually have to yourself.
