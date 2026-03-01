@@ -64,10 +64,15 @@
 
     <section class="blog-content">
       <div class="container">
-        <ContentList path="/blog" v-slot="{ list }">
+        <div v-if="pending" class="loading">Loading articles...</div>
+        <div v-else-if="error" class="error">Error loading articles. Please refresh.</div>
+        <div v-else-if="!articles || articles.length === 0" class="no-results">
+          <p>No articles found.</p>
+        </div>
+        <template v-else>
           <div class="blog-grid">
             <NuxtLink 
-              v-for="article in filteredArticles(list)" 
+              v-for="article in filteredArticles" 
               :key="article._path" 
               :to="article._path"
               class="blog-card"
@@ -76,17 +81,17 @@
                 <img :src="article.image" :alt="article.title">
               </div>
               <div class="blog-card-content">
-                <span class="blog-card-category">{{ article.category }}</span>
+                <span class="blog-card-category">{{ article.category || 'Article' }}</span>
                 <h3>{{ article.title }}</h3>
                 <p>{{ article.description }}</p>
                 <span class="blog-card-date">{{ article.date }}</span>
               </div>
             </NuxtLink>
           </div>
-          <div v-if="filteredArticles(list).length === 0" class="no-results">
+          <div v-if="filteredArticles.length === 0" class="no-results">
             <p>No articles found matching your filters.</p>
           </div>
-        </ContentList>
+        </template>
       </div>
     </section>
   </div>
@@ -102,13 +107,20 @@ const filters = ref({
   topic: 'all'
 })
 
-function filteredArticles(list) {
-  return list.filter(article => {
+const { data: articles, pending, error } = await useAsyncData('blog-list', () => 
+  queryContent('/blog')
+    .sort({ date: -1 })
+    .find()
+)
+
+const filteredArticles = computed(() => {
+  if (!articles.value) return []
+  return articles.value.filter(article => {
     const authorMatch = filters.value.author === 'all' || article.authorType === filters.value.author
     const topicMatch = filters.value.topic === 'all' || article.topic === filters.value.topic
     return authorMatch && topicMatch
   })
-}
+})
 </script>
 
 <style scoped>
@@ -247,9 +259,13 @@ function filteredArticles(list) {
   color: #888;
 }
 
-.no-results {
+.loading, .error, .no-results {
   text-align: center;
   padding: 60px 20px;
   color: #666;
+}
+
+.error {
+  color: #c44;
 }
 </style>
