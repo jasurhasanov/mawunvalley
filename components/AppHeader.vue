@@ -11,11 +11,11 @@
       </button>
       <ul class="nav-links" :class="{ active: menuOpen }">
         <li><NuxtLink to="/" @click="closeMenu">Home</NuxtLink></li>
-        <li><NuxtLink to="/nonis" @click="closeMenu">Noni's</NuxtLink></li>
         <li><NuxtLink to="/stay-contribute" @click="closeMenu">Stay & Contribute</NuxtLink></li>
+        <li><NuxtLink to="/gather" @click="closeMenu">Farm Events</NuxtLink></li>
+        <li><NuxtLink to="/belong" @click="closeMenu">Membership</NuxtLink></li>
+        <li><NuxtLink to="/nonis" @click="closeMenu">Noni's</NuxtLink></li>
         <li><NuxtLink to="/retreat" @click="closeMenu">Retreat</NuxtLink></li>
-        <li><NuxtLink to="/gather" @click="closeMenu">Gather</NuxtLink></li>
-        <li><NuxtLink to="/belong" @click="closeMenu">Belong</NuxtLink></li>
         <li><NuxtLink to="/blog" @click="closeMenu">Field Notes</NuxtLink></li>
         <li><NuxtLink to="/#contact" class="btn btn-primary" @click="closeMenu">Contact</NuxtLink></li>
       </ul>
@@ -31,7 +31,7 @@ const route = useRoute()
 const isScrolled = ref(false)
 const menuOpen = ref(false)
 
-const heroPages = ['/', '/nonis', '/gather', '/stay-contribute', '/retreat']
+const heroPages = ['/', '/nonis', '/gather', '/stay-contribute', '/retreat', '/belong']
 
 const isHomePage = computed(() => {
   return heroPages.includes(route.path)
@@ -57,7 +57,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Ensure nav-links is above overlay on mobile */
 @media (max-width: 768px) {
   .nav-links {
     z-index: 1000 !important;

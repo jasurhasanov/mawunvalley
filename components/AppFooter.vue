@@ -19,8 +19,8 @@
         <div class="footer-links">
           <h4>Connect</h4>
           <ul>
-            <li><NuxtLink to="/gather">Gather</NuxtLink></li>
-            <li><NuxtLink to="/belong">Belong</NuxtLink></li>
+            <li><NuxtLink to="/gather">Farm Events</NuxtLink></li>
+            <li><NuxtLink to="/belong">Membership</NuxtLink></li>
             <li><NuxtLink to="/blog">Field Notes</NuxtLink></li>
             <li><NuxtLink to="/#contact">Contact Us</NuxtLink></li>
           </ul>
