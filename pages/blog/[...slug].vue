@@ -8,7 +8,7 @@
         <div class="article-hero-content">
           <span class="category">{{ doc.category }}</span>
           <h1>{{ doc.title }}</h1>
-          <p class="meta">By {{ doc.author }}</p>
+          <p class="meta">By {{ doc.author || 'Mawun Valley Team' }}</p>
         </div>
       </section>
       
