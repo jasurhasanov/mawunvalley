@@ -12,7 +12,7 @@ Everyone knows the cashew nut. It's a snack, a butter, a milk alternative, an in
 
 Here's the surprising truth: the part we call a "cashew nut" is actually a seed. The **cashew apple** is the real fruit — a colorful, aromatic, nutritious fruit that 95% of the world has never tasted.
 
-At [Mawun Valley Farm](/experience), we have 6 mature cashew trees, and we believe this forgotten fruit deserves its moment in the spotlight. This guide explains everything you've never known about one of the world's most wasted foods.
+At [Mawun Valley Farm](/stay-contribute), we have 6 mature cashew trees, and we believe this forgotten fruit deserves its moment in the spotlight. This guide explains everything you've never known about one of the world's most wasted foods.
 
 ---
 
@@ -154,7 +154,7 @@ For 99% of the world's population, this combination never happens.
 
 ### At Mawun Valley Farm
 
-Our 6 cashew trees in South Lombok produce during **August through December**. During this season, guests at [the farm](/stay) can:
+Our 6 cashew trees in South Lombok produce during **August through December**. During this season, guests at [the farm](/stay-contribute) can:
 - See cashew growing on the trees
 - Taste fresh cashew apple (picked that day)
 - Learn about the plant's unusual biology
@@ -174,7 +174,7 @@ Pressed cashew apple juice is:
 - Naturally sweet-tart
 - Must be consumed within hours
 
-In cashew-growing regions, fresh juice is a prized seasonal treat. At [the farm](/experience), we sometimes press juice for guests during harvest season — ask if you're visiting August-December.
+In cashew-growing regions, fresh juice is a prized seasonal treat. At [the farm](/stay-contribute), we sometimes press juice for guests during harvest season — ask if you're visiting August-December.
 
 ### Jam and Preserves
 
@@ -290,7 +290,7 @@ This means roughly **8.5 million tons** of nutritious, delicious fruit wasted ev
 
 **Dried cashew apple:** Experimental dehydration preserves some products
 
-**Agrotourism:** Farms like [Mawun Valley](/experience) sharing the fruit with visitors
+**Agrotourism:** Farms like [Mawun Valley](/stay-contribute) sharing the fruit with visitors
 
 ---
 
@@ -316,7 +316,7 @@ We're committed to utilizing our cashew harvest fully and sharing this incredibl
 
 ## Why We Care
 
-At [Mawun Valley Farm](/stay), we practice what we preach about sustainability. Using our cashew apple harvest isn't just about making delicious jam — it's about:
+At [Mawun Valley Farm](/stay-contribute), we practice what we preach about sustainability. Using our cashew apple harvest isn't just about making delicious jam — it's about:
 
 - **Honoring the plant:** Using what we grow completely
 - **Reducing waste:** Demonstrating that the fruit has value

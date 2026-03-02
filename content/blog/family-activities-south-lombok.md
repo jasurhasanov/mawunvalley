@@ -11,7 +11,7 @@ image: /images/blog/goats.jpg
 
 Traveling with kids changes everything — what you can do, how you plan, what counts as success. But South Lombok is surprisingly family-friendly, offering experiences that engage children while giving parents the relaxation they desperately need.
 
-At [Mawun Valley Farm](/stay), we've hosted families with babies through teenagers. This guide shares what works for families and how to create a trip everyone will remember.
+At [Mawun Valley Farm](/stay-contribute), we've hosted families with babies through teenagers. This guide shares what works for families and how to create a trip everyone will remember.
 
 ---
 
@@ -61,7 +61,7 @@ At [Mawun Valley Farm](/stay), we've hosted families with babies through teenage
 
 ### Mawun Beach — Your Family Base
 
-**📍 3 minutes from [Mawun Valley Farm](/stay)**
+**📍 3 minutes from [Mawun Valley Farm](/stay-contribute)**
 
 The best beach for families, right on our doorstep.
 
@@ -120,7 +120,7 @@ Kids love the unique "pepper sand" that feels different underfoot.
 
 ### Animal Interactions
 
-At [Mawun Valley Farm](/experience), kids can:
+At [Mawun Valley Farm](/stay-contribute), kids can:
 
 **Feed the goats:**
 - Coconut, Spinach, Kangkung, and friends
@@ -313,7 +313,7 @@ Our [cooking classes](/gather) can be adapted for families:
 
 ## Booking for Families
 
-[Mawun Valley Farm](/stay) welcomes families with:
+[Mawun Valley Farm](/stay-contribute) welcomes families with:
 
 - Family-friendly cabin options
 - Kid-appropriate meals at [Noni's](/nonis)

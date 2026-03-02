@@ -11,7 +11,7 @@ image: /images/blog/volleyball.jpg
 
 Traveling with a group unlocks experiences that solo travelers miss — shared meals become celebrations, activities become adventures, and inside jokes last a lifetime. South Lombok is perfectly suited for group travel, offering space, activities, and that rare combination of adventure and relaxation.
 
-At [Mawun Valley Farm](/stay), we've hosted everything from yoga retreats to surf trips, friend reunions to extended family gatherings. This guide shares what we've learned about making group travel in South Lombok unforgettable.
+At [Mawun Valley Farm](/stay-contribute), we've hosted everything from yoga retreats to surf trips, friend reunions to extended family gatherings. This guide shares what we've learned about making group travel in South Lombok unforgettable.
 
 ---
 
@@ -143,7 +143,7 @@ Building team bonds works better far from the office.
 
 **Option A: Stay Together**
 
-Rent a villa or take over accommodation like [Mawun Valley Farm](/stay) where your group has the run of the place.
+Rent a villa or take over accommodation like [Mawun Valley Farm](/stay-contribute) where your group has the run of the place.
 
 *Pros:* Maximum bonding, shared spaces, group meals easy
 *Cons:* Less privacy, need to coordinate schedules
@@ -203,7 +203,7 @@ Book multiple rooms/villas in the same area, come together for activities.
 ### Friend Group: 6 People, 5 Days
 
 **Day 1 - Arrive & Settle**
-- Afternoon: Arrive, settle into [accommodation](/stay)
+- Afternoon: Arrive, settle into [accommodation](/stay-contribute)
 - Evening: Group dinner at the farm, plan the week
 
 **Day 2 - Beach Day**

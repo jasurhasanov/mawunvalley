@@ -11,7 +11,7 @@ image: /images/blog/surfing.jpg
 
 South Lombok is one of Indonesia's premier surf destinations — less crowded than Bali, more consistent than many alternatives, with breaks for every skill level. From gentle beginner waves to heavy barrels that attract pros, this coastline has it all.
 
-This guide breaks down every significant surf spot within 30 minutes of [Mawun Valley Farm](/stay), with the local knowledge that only comes from years in the water here.
+This guide breaks down every significant surf spot within 30 minutes of [Mawun Valley Farm](/stay-contribute), with the local knowledge that only comes from years in the water here.
 
 ---
 
@@ -58,7 +58,7 @@ Beach breaks like Selong Belanak work at all tides.
 
 #### Selong Belanak — The Learning Ground
 
-**📍 15 minutes from [Mawun Valley Farm](/stay)**
+**📍 15 minutes from [Mawun Valley Farm](/stay-contribute)**
 
 The best beginner wave in South Lombok, possibly in all of Indonesia.
 
@@ -100,7 +100,7 @@ When there's swell, Mawun produces gentle waves often overlooked by the crowds h
 - Far fewer people than Selong Belanak
 - Essentially your private beginner break
 - Calm bay when it's flat
-- Steps from your [accommodation](/stay)
+- Steps from your [accommodation](/stay-contribute)
 
 **Practical info:**
 - No board rental at beach (bring from Kuta or Selong)
@@ -325,7 +325,7 @@ South Lombok has a growing local surf community:
 
 ## Where to Stay for Surf
 
-[Mawun Valley Farm](/stay) works for surfers because:
+[Mawun Valley Farm](/stay-contribute) works for surfers because:
 
 **Location:**
 - 15 minutes to Selong Belanak
@@ -367,7 +367,7 @@ South Lombok has a growing local surf community:
 
 ## Ready to Surf?
 
-[Mawun Valley Farm](/stay) is your perfect South Lombok surf base:
+[Mawun Valley Farm](/stay-contribute) is your perfect South Lombok surf base:
 - Central location for all breaks
 - Surf-friendly meals and recovery
 - Local knowledge shared

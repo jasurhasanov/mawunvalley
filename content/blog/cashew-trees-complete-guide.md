@@ -8,11 +8,11 @@ authorType: team
 image: /images/blog/waterfall.jpg
 ---
 
-*From our farm: [Mawun Valley Farm](/experience) is home to 6 mature cashew trees producing both nuts and the rare cashew apple fruit. Visit during harvest season (August-December) to experience cashew firsthand.*
+*From our farm: [Mawun Valley Farm](/stay-contribute) is home to 6 mature cashew trees producing both nuts and the rare cashew apple fruit. Visit during harvest season (August-December) to experience cashew firsthand.*
 
 The cashew tree (Anacardium occidentale) is one of nature's most fascinating plants — and one of the most misunderstood. Most people have eaten cashew nuts without ever seeing the tree, understanding its strange fruit structure, or knowing that the "nut" they love is actually a seed attached to a fruit most of the world has never tasted.
 
-This guide shares everything we've learned from years of growing cashew at [Mawun Valley Farm](/stay) in South Lombok, Indonesia.
+This guide shares everything we've learned from years of growing cashew at [Mawun Valley Farm](/stay-contribute) in South Lombok, Indonesia.
 
 ---
 
@@ -39,7 +39,7 @@ This guide shares everything we've learned from years of growing cashew at [Mawu
 
 ### Lifespan
 
-A healthy cashew tree can live **40-60 years** and remain productive for 25-30 years. The trees at [our farm](/experience) are approximately 15-20 years old, in their prime production years.
+A healthy cashew tree can live **40-60 years** and remain productive for 25-30 years. The trees at [our farm](/stay-contribute) are approximately 15-20 years old, in their prime production years.
 
 ---
 
@@ -89,7 +89,7 @@ What we call the cashew nut is actually the **seed** inside the true fruit — a
 - Wet season: Encourages vegetative growth
 - Dry season: Triggers flowering and fruiting
 
-**Why South Lombok is ideal:** Our location at [Mawun Valley](/stay) has exactly this pattern — wet season from November-March, dry season April-October — perfectly matching cashew's natural cycle.
+**Why South Lombok is ideal:** Our location at [Mawun Valley](/stay-contribute) has exactly this pattern — wet season from November-March, dry season April-October — perfectly matching cashew's natural cycle.
 
 ### Soil Preferences
 
@@ -174,7 +174,7 @@ This natural drop makes harvesting labor-efficient — no climbing or reaching r
 
 ### What We Do at Mawun Valley
 
-During harvest season at [the farm](/experience):
+During harvest season at [the farm](/stay-contribute):
 1. **Daily collection:** We gather fallen fruit each morning
 2. **Separation:** Nuts are twisted off from apples
 3. **Apple processing:** Used same-day for juice or [jam-making](/gather)
@@ -244,7 +244,7 @@ Then yes, you can grow cashew. Container growing is possible but limits producti
 
 ### Why Cashew Fits Our Farm
 
-At [Mawun Valley Farm](/experience), cashew trees are part of an integrated permaculture system:
+At [Mawun Valley Farm](/stay-contribute), cashew trees are part of an integrated permaculture system:
 
 **Multiple yields:** Both nuts (protein/fat) and fruit (vitamins/carbohydrates)
 

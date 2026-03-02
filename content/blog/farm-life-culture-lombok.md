@@ -10,7 +10,7 @@ image: /images/blog/weaving.jpg
 
 South Lombok isn't just about beaches and surf breaks — it's home to one of Indonesia's most fascinating cultures. The Sasak people have inhabited Lombok for over a thousand years, developing traditions, crafts, and a way of life that remains vibrant today.
 
-At [Mawun Valley Farm](/stay), we're embedded in this culture. Our neighbors are Sasak farmers. Our team members share their traditions with curious guests. And our daily rhythm follows patterns that have shaped this land for generations.
+At [Mawun Valley Farm](/stay-contribute), we're embedded in this culture. Our neighbors are Sasak farmers. Our team members share their traditions with curious guests. And our daily rhythm follows patterns that have shaped this land for generations.
 
 This guide explores what makes Sasak culture special and how you can experience it authentically.
 
@@ -44,7 +44,7 @@ While orthodox Islam has grown stronger in recent decades, Wetu Telu traditions 
 
 ### Sade Village
 
-**📍 20 minutes from [Mawun Valley Farm](/stay)**
+**📍 20 minutes from [Mawun Valley Farm](/stay-contribute)**
 
 The most visited traditional village, Sade offers an accessible introduction to Sasak architecture and crafts.
 
@@ -137,7 +137,7 @@ Bamboo is everywhere in Sasak life:
 
 ### Daily Life at Mawun Valley
 
-At [the farm](/stay), you'll experience rhythms that echo Sasak agricultural life:
+At [the farm](/stay-contribute), you'll experience rhythms that echo Sasak agricultural life:
 
 **5:30-6:00 AM:** Wake with roosters
 - First light in the hills
@@ -268,7 +268,7 @@ Traditional Sasak drumming and dance, often performed at ceremonies and cultural
 
 ### The Landscape That Defines Lombok
 
-Rice terraces surround [Mawun Valley Farm](/stay), creating the iconic Indonesian landscape. But these aren't just scenery — they're living agricultural systems following centuries-old patterns.
+Rice terraces surround [Mawun Valley Farm](/stay-contribute), creating the iconic Indonesian landscape. But these aren't just scenery — they're living agricultural systems following centuries-old patterns.
 
 **The rice cycle:**
 - **Planting season:** Wet season begins (November-December)
@@ -305,7 +305,7 @@ We don't perform culture for tourists — we live alongside Sasak neighbors and 
 - Cook with farm ingredients
 - Understand food culture
 
-**[Farm experiences](/experience):**
+**[Farm experiences](/stay-contribute):**
 - Traditional agriculture techniques
 - Permaculture integration
 - Animal husbandry
@@ -338,7 +338,7 @@ We don't perform culture for tourists — we live alongside Sasak neighbors and 
 
 ## Plan Your Cultural Experience
 
-[Mawun Valley Farm](/stay) offers the perfect base for cultural exploration:
+[Mawun Valley Farm](/stay-contribute) offers the perfect base for cultural exploration:
 
 - **Location:** Embedded in rural Sasak community
 - **Connections:** Real relationships with local people
@@ -349,4 +349,4 @@ We don't perform culture for tourists — we live alongside Sasak neighbors and 
 
 ---
 
-*Related: [Experience Program](/experience) | [Gather Program](/gather) | [Slow Travel Guide](/blog/slow-travel-lombok-guide)*
+*Related: [Experience Program](/stay-contribute) | [Gather Program](/gather) | [Slow Travel Guide](/blog/slow-travel-lombok-guide)*

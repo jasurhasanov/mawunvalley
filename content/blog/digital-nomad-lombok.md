@@ -13,7 +13,7 @@ image: /images/blog/ocean-view.jpg
 
 If you're burnt out on Bali's traffic, $15 smoothie bowls, and fighting for café tables with fifty other laptop warriors — South Lombok might be exactly what you need. Fewer nomads means more peace, significantly lower costs, and beaches you can actually have to yourself.
 
-At [Mawun Valley Farm](/stay), we've hosted dozens of remote workers over the years. This guide shares everything we've learned about making South Lombok work for location-independent life.
+At [Mawun Valley Farm](/stay-contribute), we've hosted dozens of remote workers over the years. This guide shares everything we've learned about making South Lombok work for location-independent life.
 
 ---
 
@@ -107,7 +107,7 @@ Let's address the elephant in the room first. South Lombok is **not Canggu or Ub
 - **Cost:** Included for guests; café prices for visitors
 - **Best for:** Deep focus work away from town distractions
 
-**The advantage:** When you [stay with us](/stay), your accommodation and workspace are integrated. No commute, no café-hopping, no fighting for seats. Work from the café, your cabin, or under the jackfruit tree.
+**The advantage:** When you [stay with us](/stay-contribute), your accommodation and workspace are integrated. No commute, no café-hopping, no fighting for seats. Work from the café, your cabin, or under the jackfruit tree.
 
 ### Coworking Spaces
 
@@ -201,7 +201,7 @@ The flip side of "fewer nomads" is potential loneliness. Here's how to build con
 **At the farm:**
 - Join [community activities](/gather) — cooking classes, Friday BBQs
 - Work alongside other guests at Noni's Café
-- Participate in [farm experiences](/experience) to meet people
+- Participate in [farm experiences](/stay-contribute) to meet people
 - Our [Belong program](/belong) is designed for longer-stay community
 
 **In town:**
@@ -335,7 +335,7 @@ South Lombok is **not for everyone**, and that's exactly why it works for those 
 
 ## Long-Term Stays at Mawun Valley Farm
 
-For nomads staying weeks or months, [Mawun Valley Farm](/stay) offers:
+For nomads staying weeks or months, [Mawun Valley Farm](/stay-contribute) offers:
 
 ### Monthly Accommodation
 - Private cabins with reliable WiFi

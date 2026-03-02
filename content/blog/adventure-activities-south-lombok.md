@@ -9,7 +9,7 @@ audience: groups
 image: /images/blog/paragliding.jpg
 ---
 
-South Lombok isn't just about pristine beaches and peaceful farm life — it's an **adventure playground** waiting to be explored. [Staying at Mawun Valley Farm](/stay) puts you right in the heart of the action, with world-class activities just minutes away.
+South Lombok isn't just about pristine beaches and peaceful farm life — it's an **adventure playground** waiting to be explored. [Staying at Mawun Valley Farm](/stay-contribute) puts you right in the heart of the action, with world-class activities just minutes away.
 
 Whether you're a thrill-seeker craving adrenaline or a family looking for memorable experiences, this guide covers the best adventure activities within 30 minutes of the farm. We've personally tried each one and can help you plan the perfect adventure day.
 
@@ -61,7 +61,7 @@ From 200+ meters up, you'll spot:
 - **Cost:** 800,000-1,200,000 IDR for tandem flight with video
 - **Requirements:** No experience needed; weight limit typically 90-100kg
 - **Best conditions:** Morning flights (7-10am) when thermals are optimal
-- **Booking:** We can arrange this for you — just ask at [the farm](/experience)
+- **Booking:** We can arrange this for you — just ask at [the farm](/stay-contribute)
 
 ### Safety Note
 
@@ -163,7 +163,7 @@ The waterfall is located in the foothills of Mount Rinjani, offering a completel
 
 ### Pro Tip
 
-Combine the waterfall trip with a visit to traditional Sasak villages along the way. It makes for a full cultural and adventure day. Ask us about arranging a guided tour from [the farm](/experience).
+Combine the waterfall trip with a visit to traditional Sasak villages along the way. It makes for a full cultural and adventure day. Ask us about arranging a guided tour from [the farm](/stay-contribute).
 
 ---
 
@@ -226,7 +226,7 @@ All these activities are best accessed by **motorbike** (50,000-75,000 IDR/day r
 
 ## Why Base at Mawun Valley Farm?
 
-[Mawun Valley Farm](/stay) isn't just accommodation — it's your **adventure basecamp**. After a day of adrenaline, you return to:
+[Mawun Valley Farm](/stay-contribute) isn't just accommodation — it's your **adventure basecamp**. After a day of adrenaline, you return to:
 
 - Fresh farm-to-table meals at [Noni's Cafe](/nonis)
 - Cold drinks watching the sunset

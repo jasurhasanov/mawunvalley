@@ -11,7 +11,7 @@ image: /images/blog/sunset-viewpoint.jpg
 
 South Lombok offers something increasingly rare: **romance without the crowds**. While Bali's famous spots overflow with tourists, Lombok's pristine beaches, dramatic sunsets, and peaceful hideaways remain blissfully uncrowded.
 
-At [Mawun Valley Farm](/stay), we've hosted countless couples — honeymooners, anniversary celebrants, and partners simply seeking quality time together. This guide shares everything we've learned about creating the perfect romantic escape.
+At [Mawun Valley Farm](/stay-contribute), we've hosted countless couples — honeymooners, anniversary celebrants, and partners simply seeking quality time together. This guide shares everything we've learned about creating the perfect romantic escape.
 
 ---
 
@@ -44,7 +44,7 @@ You'll pay less, experience more, and actually feel like you've escaped together
 
 ### Staying at Mawun Valley Farm
 
-Our [farm stay](/stay) offers a different kind of romance:
+Our [farm stay](/stay-contribute) offers a different kind of romance:
 
 **Private cabins:**
 - Cozy spaces for two
@@ -145,7 +145,7 @@ Shared experiences create lasting bonds:
 - 300,000-500,000 IDR for two
 
 **Yoga:**
-- Morning sessions at [the farm](/experience)
+- Morning sessions at [the farm](/stay-contribute)
 - Ashtari classes with views
 - Practice together, center together
 
@@ -332,7 +332,7 @@ Starting marriage in paradise:
 
 ## Book Your Romantic Escape
 
-[Mawun Valley Farm](/stay) offers the perfect couples retreat:
+[Mawun Valley Farm](/stay-contribute) offers the perfect couples retreat:
 
 - Private, peaceful accommodation
 - [Romantic dinners](/nonis) arranged
@@ -343,4 +343,4 @@ Starting marriage in paradise:
 
 ---
 
-*Related: [Sunset Spots for Couples](/blog/sunset-spots-couples-lombok) | [Beach Guide](/blog/beach-hopping-south-lombok) | [Our Stay Options](/stay)*
+*Related: [Sunset Spots for Couples](/blog/sunset-spots-couples-lombok) | [Beach Guide](/blog/beach-hopping-south-lombok) | [Our Stay Options](/stay-contribute)*

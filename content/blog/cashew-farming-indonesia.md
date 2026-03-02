@@ -8,9 +8,9 @@ authorType: team
 image: /images/blog/grapevine-2.jpg
 ---
 
-*From our farm: [Mawun Valley Farm](/experience) is home to 6 mature cashew trees. During harvest season (August-December), we offer hands-on experiences including our popular [Cashew Apple Jam Cooking Class](/gather).*
+*From our farm: [Mawun Valley Farm](/stay-contribute) is home to 6 mature cashew trees. During harvest season (August-December), we offer hands-on experiences including our popular [Cashew Apple Jam Cooking Class](/gather).*
 
-Indonesia is among the world's top 10 cashew producers, with cultivation spanning from the dry hills of Lombok to the remote islands of Nusa Tenggara and beyond. This versatile tree has become an important part of rural Indonesian agriculture — and at [Mawun Valley Farm](/stay), we're proud to be part of that tradition.
+Indonesia is among the world's top 10 cashew producers, with cultivation spanning from the dry hills of Lombok to the remote islands of Nusa Tenggara and beyond. This versatile tree has become an important part of rural Indonesian agriculture — and at [Mawun Valley Farm](/stay-contribute), we're proud to be part of that tradition.
 
 ---
 
@@ -54,7 +54,7 @@ Sulawesi produces **over 60% of Indonesia's cashew harvest**. The southeastern p
 
 The islands of Nusa Tenggara Barat (NTB) and Nusa Tenggara Timur (NTT) form Indonesia's second-largest cashew region.
 
-**Lombok** — Where [Mawun Valley Farm](/stay) is located. The southern hills around Kuta and Selong have scattered cashew cultivation, often on small family plots rather than large plantations.
+**Lombok** — Where [Mawun Valley Farm](/stay-contribute) is located. The southern hills around Kuta and Selong have scattered cashew cultivation, often on small family plots rather than large plantations.
 
 **Sumbawa** — Larger-scale production with more commercial operations.
 
@@ -93,7 +93,7 @@ Cashew trees follow a predictable cycle tied to Indonesia's monsoon patterns:
 
 ### Best Time to Visit
 
-If you want to experience cashew harvest at [the farm](/experience):
+If you want to experience cashew harvest at [the farm](/stay-contribute):
 - **September-October:** Peak season, most activity
 - **August and November:** Shoulder season, still good
 - **December:** Late harvest, more limited
@@ -112,7 +112,7 @@ Most Indonesian cashew comes from **small family farms** rather than large plant
 - 50-200 trees per farmer
 - Family labor for harvesting and processing
 
-This approach matches what we practice at [Mawun Valley Farm](/experience) — cashew trees integrated into a diverse permaculture system alongside vegetables, fruit trees, and livestock.
+This approach matches what we practice at [Mawun Valley Farm](/stay-contribute) — cashew trees integrated into a diverse permaculture system alongside vegetables, fruit trees, and livestock.
 
 ### Growing Requirements
 
@@ -230,7 +230,7 @@ Middlemen capture significant value that could go to farmers.
 
 ## Experience Cashew Farming at Mawun Valley
 
-[Mawun Valley Farm](/stay) offers visitors a chance to experience cashew cultivation firsthand:
+[Mawun Valley Farm](/stay-contribute) offers visitors a chance to experience cashew cultivation firsthand:
 
 ### Our Cashew Trees
 

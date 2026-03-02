@@ -8,7 +8,7 @@ authorType: team
 image: /images/blog/farm-life.jpg
 ---
 
-Welcome to [Mawun Valley Farm](/stay) — a permaculture farm nestled in the hills of South Lombok, Indonesia, just minutes from some of the most beautiful beaches in the world.
+Welcome to [Mawun Valley Farm](/stay-contribute) — a permaculture farm nestled in the hills of South Lombok, Indonesia, just minutes from some of the most beautiful beaches in the world.
 
 We're not a hotel. We're not a hostel. We're something different — a working farm that opens its doors to travelers seeking authentic experiences, meaningful connections, and a slower pace of life.
 
@@ -39,7 +39,7 @@ At [Noni's Café](/nonis), meals are prepared with ingredients grown steps from 
 
 ### Authentic Experiences
 
-We offer more than accommodation — we offer [experiences](/experience):
+We offer more than accommodation — we offer [experiences](/stay-contribute):
 - Learn traditional cooking techniques
 - Participate in farm activities
 - Explore permaculture principles in action
@@ -71,11 +71,11 @@ Three minutes to [Mawun Beach](/blog/beach-hopping-south-lombok). Fifteen minute
 
 ### Stay With Us
 
-[Accommodation](/stay) ranges from cozy cabins to private rooms, all with access to farm grounds, Noni's Café, and community spaces. Wake to roosters, fall asleep to crickets, and remember what quiet sounds like.
+[Accommodation](/stay-contribute) ranges from cozy cabins to private rooms, all with access to farm grounds, Noni's Café, and community spaces. Wake to roosters, fall asleep to crickets, and remember what quiet sounds like.
 
 ### Join an Experience
 
-Our [Experience program](/experience) offers hands-on activities:
+Our [Experience program](/stay-contribute) offers hands-on activities:
 - Cooking classes featuring local ingredients
 - Farm tours and permaculture workshops
 - Cultural experiences with Sasak traditions

@@ -48,7 +48,7 @@ Prioritize recovery, and you'll surf better, longer, and more often.
 - Morning sessions overlooking the valley
 - More intimate, less crowded
 - Perfect for post-surf gentle stretching
-- Book during your [stay](/stay)
+- Book during your [stay](/stay-contribute)
 
 **Self-practice on the beach**
 - Free, anytime
@@ -111,7 +111,7 @@ Prioritize recovery, and you'll surf better, longer, and more often.
 
 **South Lombok advantage:** Early sunsets, quiet nights, natural rhythm. You'll find yourself sleeping earlier and better than at home.
 
-**At [Mawun Valley Farm](/stay):**
+**At [Mawun Valley Farm](/stay-contribute):**
 - Minimal light pollution
 - Natural quiet (just crickets and roosters)
 - Comfortable beds for proper rest
@@ -250,7 +250,7 @@ Every 3-4 surf days, take a full rest day:
 - Explore inland (waterfall hike, cultural visit)
 - Prepare body for next round of sessions
 
-At [Mawun Valley Farm](/experience), rest days can include:
+At [Mawun Valley Farm](/stay-contribute), rest days can include:
 - Morning yoga
 - Farm activities (surprisingly restorative)
 - [Cooking class](/gather) (learn new skills while resting)
@@ -288,7 +288,7 @@ When the swell drops:
 
 ### The Perfect Surf Base
 
-[Mawun Valley Farm](/stay) works for surfers because:
+[Mawun Valley Farm](/stay-contribute) works for surfers because:
 
 **Location:**
 - 15 minutes to Selong Belanak
@@ -351,7 +351,7 @@ Come for the waves. Stay for the complete experience.
 
 ## Ready for the Complete Surf Experience?
 
-[Mawun Valley Farm](/stay) offers surf-focused stays with recovery built in:
+[Mawun Valley Farm](/stay-contribute) offers surf-focused stays with recovery built in:
 - Strategic location near all major breaks
 - Meals designed for active bodies
 - Quiet environment for quality rest

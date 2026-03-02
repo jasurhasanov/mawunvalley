@@ -41,7 +41,7 @@ The sun sets around **6:00-6:30 PM** year-round (equatorial location means minim
 
 ### 1. Bukit Merese — The Classic Viewpoint
 
-**📍 20 minutes from [Mawun Valley Farm](/stay)**
+**📍 20 minutes from [Mawun Valley Farm](/stay-contribute)**
 
 The most famous sunset spot in South Lombok, and for good reason. This grassy hilltop offers 360-degree views of Tanjung Aan's twin bays and the entire southern coastline.
 
@@ -69,7 +69,7 @@ The most famous sunset spot in South Lombok, and for good reason. This grassy hi
 
 ### 2. Mawun Beach — The Peaceful Bay
 
-**📍 3 minutes from [Mawun Valley Farm](/stay)**
+**📍 3 minutes from [Mawun Valley Farm](/stay-contribute)**
 
 Your closest option, and perfect for intimate sunset beach walks. Mawun's crescent bay faces west, catching the full sunset display.
 
@@ -83,7 +83,7 @@ Your closest option, and perfect for intimate sunset beach walks. Mawun's cresce
 - Often have the beach nearly to yourselves
 - Swimming at sunset is magical
 - Simple, no-planning-required
-- Can walk directly from your [accommodation](/stay)
+- Can walk directly from your [accommodation](/stay-contribute)
 
 **Practical tips:**
 - Go for the whole golden hour (5:00-6:30 PM)
@@ -209,7 +209,7 @@ Famous for its unique "pepper sand" and twin bays. Less dramatic sunset angle th
 
 ### 7. Mawun Valley Farm — Private Sunset
 
-**📍 At [the farm](/stay)**
+**📍 At [the farm](/stay-contribute)**
 
 Our own sunset spot — Heal Hill offers valley views to the ocean, watched from peaceful farm surroundings.
 
@@ -286,7 +286,7 @@ Afternoon cliff jumping at Tanjung Aan → Walk to Bukit Merese for sunset → D
 Day at Selong Belanak → Sunset surf session → Drinks at beach warung
 
 **Relaxation + Sunset:**
-Afternoon at [the farm](/stay) → Heal Hill sunset → Dinner at [Noni's](/nonis) → Stargazing
+Afternoon at [the farm](/stay-contribute) → Heal Hill sunset → Dinner at [Noni's](/nonis) → Stargazing
 
 **Special Occasion:**
 Boat trip with snorkeling → Sunset on the water → Return to [romantic dinner](/blog/romantic-getaway-lombok)
@@ -346,13 +346,13 @@ After sunset, South Lombok offers:
 - **Stargazing:** Minimal light pollution reveals amazing night sky
 - **Bioluminescence:** Some beaches have glowing plankton (seasonal)
 - **Dinner:** Multiple restaurant options across the area
-- **Quiet evenings:** Return to [the farm](/stay) for peaceful nights
+- **Quiet evenings:** Return to [the farm](/stay-contribute) for peaceful nights
 
 ---
 
 ## Plan Your Romantic Trip
 
-[Mawun Valley Farm](/stay) is the perfect base for couples exploring South Lombok:
+[Mawun Valley Farm](/stay-contribute) is the perfect base for couples exploring South Lombok:
 - Minutes from multiple sunset spots
 - Private, peaceful accommodation
 - Romantic dinners at [Noni's](/nonis)
@@ -362,4 +362,4 @@ After sunset, South Lombok offers:
 
 ---
 
-*Related: [Romantic Getaway Guide](/blog/romantic-getaway-lombok) | [Beach Guide](/blog/beach-hopping-south-lombok) | [Complete Farm Experience](/experience)*
+*Related: [Romantic Getaway Guide](/blog/romantic-getaway-lombok) | [Beach Guide](/blog/beach-hopping-south-lombok) | [Complete Farm Experience](/stay-contribute)*

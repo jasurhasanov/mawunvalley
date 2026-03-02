@@ -11,7 +11,7 @@ image: /images/blog/bukit-merese.jpg
 
 In a world obsessed with bucket lists and Instagram highlights, there's a revolutionary travel movement: **slow travel**. Instead of racing through destinations, slow travelers stay longer, do less, and experience more deeply.
 
-South Lombok is the perfect place to practice slow travel. At [Mawun Valley Farm](/stay), we've designed an experience that rewards those who take their time.
+South Lombok is the perfect place to practice slow travel. At [Mawun Valley Farm](/stay-contribute), we've designed an experience that rewards those who take their time.
 
 ---
 
@@ -78,7 +78,7 @@ What emerges when you stop:
 
 ### The Setting
 
-[Mawun Valley Farm](/stay) was designed for slow travel before we called it that:
+[Mawun Valley Farm](/stay-contribute) was designed for slow travel before we called it that:
 
 **Physical space:**
 - Quiet location away from tourist centers
@@ -240,7 +240,7 @@ Our [Belong program](/belong) offers reduced rates and community integration for
 
 Farm life IS slow living. You can't rush growing seasons. You can't multitask with animals. Nature sets the pace.
 
-At [Mawun Valley Farm](/experience):
+At [Mawun Valley Farm](/stay-contribute):
 - Plants grow whether you're productive or not
 - Goats need feeding on goat time
 - Rain comes when it comes
@@ -333,7 +333,7 @@ We find that slow travel plants seeds. The experience stays with you.
 
 ## Start Your Slow Journey
 
-[Mawun Valley Farm](/stay) offers the setting for genuine slow travel:
+[Mawun Valley Farm](/stay-contribute) offers the setting for genuine slow travel:
 
 - Peaceful environment designed for presence
 - Community that welcomes long stays

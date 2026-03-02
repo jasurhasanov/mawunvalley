@@ -15,7 +15,7 @@ image: /images/blog/volleyball.jpg
 
 ## Sustainability at Heart
 
-Sustainability lies at the heart of [Mawun Valley](/experience), evident in the improvement of soil pH and the enrichment of the ground. This is why **compost** is important. In order to grow high quality produce, the ground they bloom from must be healthy.
+Sustainability lies at the heart of [Mawun Valley](/stay-contribute), evident in the improvement of soil pH and the enrichment of the ground. This is why **compost** is important. In order to grow high quality produce, the ground they bloom from must be healthy.
 
 At the far end of the farm is the compost pile. Only organic waste such as vegetables, egg shells, and plant matter are used — decayed organic material that becomes natural fertilizer.
 

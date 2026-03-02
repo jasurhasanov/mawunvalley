@@ -11,7 +11,7 @@ image: /images/blog/ocean-view.jpg
 
 Solo travel is one of life's great adventures — and South Lombok is an exceptional destination for it. Far from the crowds and chaos of more developed tourist areas, you'll find a place where solo travelers can find both solitude and connection, adventure and safety.
 
-At [Mawun Valley Farm](/stay), we host solo travelers regularly. This guide shares what we've learned about making the most of solo travel in South Lombok.
+At [Mawun Valley Farm](/stay-contribute), we host solo travelers regularly. This guide shares what we've learned about making the most of solo travel in South Lombok.
 
 ---
 
@@ -21,7 +21,7 @@ At [Mawun Valley Farm](/stay), we host solo travelers regularly. This guide shar
 
 **Safety:** Indonesia is generally safe, and South Lombok especially so. Violent crime is rare. The main risks (traffic, sun, ocean) are manageable with common sense.
 
-**Easy connections:** The traveler community here is small and friendly. At accommodations like [the farm](/stay), solo travelers naturally meet others. Meals are shared, stories are exchanged.
+**Easy connections:** The traveler community here is small and friendly. At accommodations like [the farm](/stay-contribute), solo travelers naturally meet others. Meals are shared, stories are exchanged.
 
 **Independence possible:** Unlike some places where everything requires groups or tours, South Lombok is easily navigable alone. Rent a motorbike and you're set.
 
@@ -100,7 +100,7 @@ Many of our solo guests are women. Their experiences are overwhelmingly positive
 
 ### Staying at Mawun Valley Farm
 
-Our [farm stay](/stay) works exceptionally well for solo travelers:
+Our [farm stay](/stay-contribute) works exceptionally well for solo travelers:
 
 **Community without pressure:**
 - Shared meals at [Noni's Café](/nonis) create natural social opportunities
@@ -145,7 +145,7 @@ Our [farm stay](/stay) works exceptionally well for solo travelers:
 
 ### Our Recommendation
 
-Start at a social accommodation like [the farm](/stay) to establish a base and meet people. Once you have travel buddies for activities, you'll have options for everything.
+Start at a social accommodation like [the farm](/stay-contribute) to establish a base and meet people. Once you have travel buddies for activities, you'll have options for everything.
 
 ---
 
@@ -259,7 +259,7 @@ No stigma here about eating solo. In fact, it's common:
 
 ### Finding Activity Partners
 
-At [the farm](/stay), simply mention at dinner what you're doing tomorrow. Often someone will want to join. Same applies to:
+At [the farm](/stay-contribute), simply mention at dinner what you're doing tomorrow. Often someone will want to join. Same applies to:
 - Hostel common areas
 - Café conversations
 - Beach encounters
@@ -273,7 +273,7 @@ At [the farm](/stay), simply mention at dinner what you're doing tomorrow. Often
 **The challenge:** Sometimes solo travel feels isolating.
 
 **Solutions:**
-- Stay somewhere social ([the farm](/stay) has community built in)
+- Stay somewhere social ([the farm](/stay-contribute) has community built in)
 - Join activities where talking is natural
 - Use solo time productively (journal, read, think)
 - Know that loneliness passes
@@ -316,7 +316,7 @@ At [the farm](/stay), simply mention at dinner what you're doing tomorrow. Often
 
 ### One Week Solo (First-Timer)
 
-**Day 1:** Arrive, settle at [the farm](/stay), meet other guests at dinner
+**Day 1:** Arrive, settle at [the farm](/stay-contribute), meet other guests at dinner
 **Day 2:** Beach day at Mawun (accessible alone), sunset at farm
 **Day 3:** Join others for surf lesson at Selong Belanak
 **Day 4:** Solo motorbike [beach hopping](/blog/beach-hopping-south-lombok)
@@ -347,7 +347,7 @@ At [the farm](/stay), simply mention at dinner what you're doing tomorrow. Often
 
 ## Ready for Solo Adventure?
 
-[Mawun Valley Farm](/stay) welcomes solo travelers with:
+[Mawun Valley Farm](/stay-contribute) welcomes solo travelers with:
 
 - Community that includes without pressuring
 - Private spaces for solitude

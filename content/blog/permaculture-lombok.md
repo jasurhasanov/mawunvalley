@@ -8,7 +8,7 @@ authorType: team
 image: /images/blog/rice-fields.jpg
 ---
 
-Permaculture isn't just a farming technique — it's a design philosophy for living sustainably with the land. At [Mawun Valley Farm](/experience), we've spent years implementing these principles in a tropical Indonesian context, learning what works and sharing that knowledge with visitors.
+Permaculture isn't just a farming technique — it's a design philosophy for living sustainably with the land. At [Mawun Valley Farm](/stay-contribute), we've spent years implementing these principles in a tropical Indonesian context, learning what works and sharing that knowledge with visitors.
 
 This guide explains what permaculture means to us and how you can experience (and learn) sustainable practices during your stay.
 
@@ -340,7 +340,7 @@ Find local permaculture groups:
 
 ## The Bigger Picture
 
-Permaculture at [Mawun Valley Farm](/stay) is about more than growing vegetables. It's about:
+Permaculture at [Mawun Valley Farm](/stay-contribute) is about more than growing vegetables. It's about:
 
 **Regeneration:** Improving land rather than depleting it
 
@@ -364,4 +364,4 @@ Come see permaculture in a tropical context. Whether you're a complete beginner 
 
 ---
 
-*Related: [Experience Program](/experience) | [Belong Program](/belong) | [Farm Life & Culture](/blog/farm-life-culture-lombok) | [Ava's Diary: Growing Together](/blog/guest-diary-part-3)*
+*Related: [Experience Program](/stay-contribute) | [Belong Program](/belong) | [Farm Life & Culture](/blog/farm-life-culture-lombok) | [Ava's Diary: Growing Together](/blog/guest-diary-part-3)*
