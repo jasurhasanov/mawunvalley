@@ -3,37 +3,50 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="/images/hero-2.jpg" alt="Mawun Valley Farm Experience">
+        <img src="/images/hero-2.jpg" alt="Mawun Valley Farm Stay & Contribute">
       </div>
       <div class="hero-content">
-        <span class="section-label light">Farm Experience</span>
-        <h1>Your Farm Life Awaits</h1>
-        <p>Immerse yourself in permaculture, community, and the beauty of South Lombok. Every program includes a private cabin, meals, and unforgettable experiences.</p>
+        <span class="section-label light">Stay & Contribute</span>
+        <h1>Live the Farm Life</h1>
+        <p>Join our community for 10+ days. Stay in a private cabin, share meals, and contribute your skills to a growing permaculture farm in South Lombok.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-number">10+</span>
+            <span class="hero-stat-label">Day Minimum</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">$19</span>
+            <span class="hero-stat-label">Per Day</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">5 min</span>
+            <span class="hero-stat-label">To Beach</span>
+          </div>
+        </div>
         <div class="hero-cta">
-          <a href="#programs" class="btn btn-primary btn-lg">Explore Programs</a>
+          <a href="#programs" class="btn btn-primary btn-lg">Choose Your Path</a>
         </div>
       </div>
     </section>
 
-    <!-- Quick Stats -->
-    <section class="stats-bar">
+    <!-- How It Works -->
+    <section class="how-it-works">
       <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <span class="stat-number">5.0</span>
-            <span class="stat-label">★ Rating</span>
+        <div class="how-grid">
+          <div class="how-item">
+            <span class="how-icon">🏡</span>
+            <h4>Stay</h4>
+            <p>Private cabin, daily breakfast & lunch, free bikes, workspace</p>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">35+</span>
-            <span class="stat-label">Years of Welcome</span>
+          <div class="how-item">
+            <span class="how-icon">🤝</span>
+            <h4>Contribute</h4>
+            <p>3 hours/day, 4 days/week — choose your skill path</p>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">3 min</span>
-            <span class="stat-label">To Beach</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">$19</span>
-            <span class="stat-label">Per Person/Day</span>
+          <div class="how-item">
+            <span class="how-icon">🌴</span>
+            <h4>Experience</h4>
+            <p>BBQ nights, surf nearby, community, island life</p>
           </div>
         </div>
       </div>
@@ -44,58 +57,94 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">Choose Your Path</span>
-          <h2>Farm Experience Programs</h2>
-          <p>Every program includes a private cabin, daily meals, and access to all farm activities.</p>
+          <h2>How Will You Contribute?</h2>
+          <p>Same stay, different skills. Pick what fits you — or try a bit of everything.</p>
         </div>
 
         <div class="programs-grid">
-          <article class="program-card" @click="openProgram('beachside')">
+          <!-- The Storyteller -->
+          <article class="program-card" @click="openProgram('storyteller')">
             <div class="program-image">
-              <img src="/images/beachside-cover.jpg" alt="Beachside Farming">
-              <span class="program-badge">🏄 Surf + Farm</span>
-            </div>
-            <div class="program-info">
-              <h3>Beachside Farming</h3>
-              <p>Balance farm life with world-class waves — just 3 minutes from the beach.</p>
-              <div class="program-meta"><span>3 hrs/day</span><span>$19/day</span></div>
-            </div>
-          </article>
-
-          <article class="program-card" @click="openProgram('slowliving')">
-            <div class="program-image">
-              <img src="/images/slowliving-cover.jpg" alt="Slow Living">
-              <span class="program-badge">🧘 Mindful</span>
-            </div>
-            <div class="program-info">
-              <h3>Slow Living</h3>
-              <p>Find calm and groundedness. Embrace a slower pace and appreciate the small details.</p>
-              <div class="program-meta"><span>3 hrs/day</span><span>$19/day</span></div>
-            </div>
-          </article>
-
-          <article class="program-card" @click="openProgram('creative')">
-            <div class="program-image">
-              <img src="/images/creative-cover.jpg" alt="Creative Content">
+              <img src="/images/creative-cover.jpg" alt="The Storyteller">
               <span class="program-badge">📸 Creator</span>
             </div>
             <div class="program-info">
-              <h3>Creative Content</h3>
-              <p>Create inspiring content while living the farm life. Perfect for writers & photographers.</p>
-              <div class="program-meta"><span>3 hrs/day</span><span>$19/day</span></div>
+              <h3>The Storyteller</h3>
+              <p>Content creation, photography, video, social media. Perfect for digital nomads and creators.</p>
+              <div class="program-meta">
+                <span>10+ days</span>
+                <span>$19/day</span>
+              </div>
             </div>
           </article>
 
-          <article class="program-card featured" @click="openProgram('retreat')">
+          <!-- The Grower -->
+          <article class="program-card" @click="openProgram('grower')">
             <div class="program-image">
-              <img src="/images/hero-1.jpg" alt="8-Day Retreat">
-              <span class="program-badge">⭐ 8-Day Journey</span>
+              <img src="/images/slowliving-cover.jpg" alt="The Grower">
+              <span class="program-badge">🌱 Nature</span>
             </div>
             <div class="program-info">
-              <h3>8-Day Farm Retreat</h3>
-              <p>A transformative group trip — permaculture, community, and self-discovery.</p>
-              <div class="program-meta"><span>All-inclusive</span><span>8 days</span></div>
+              <h3>The Grower</h3>
+              <p>Garden, permaculture, planting, harvesting. For those who want their hands in the soil.</p>
+              <div class="program-meta">
+                <span>10+ days</span>
+                <span>$19/day</span>
+              </div>
             </div>
           </article>
+
+          <!-- The Maker -->
+          <article class="program-card" @click="openProgram('maker')">
+            <div class="program-image">
+              <img src="/images/beachside-cover.jpg" alt="The Maker">
+              <span class="program-badge">🔨 Builder</span>
+            </div>
+            <div class="program-info">
+              <h3>The Maker</h3>
+              <p>Woodworking, building, repairs, crafts. For hands-on people who love to build things.</p>
+              <div class="program-meta">
+                <span>10+ days</span>
+                <span>$19/day</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- The Caretaker -->
+          <article class="program-card" @click="openProgram('caretaker')">
+            <div class="program-image">
+              <img src="/images/hero-1.jpg" alt="The Caretaker">
+              <span class="program-badge">💚 Nurturing</span>
+            </div>
+            <div class="program-info">
+              <h3>The Caretaker</h3>
+              <p>Animal care, kitchen help, hospitality. For warm souls who love to nurture.</p>
+              <div class="program-meta">
+                <span>10+ days</span>
+                <span>$19/day</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slow Living -->
+          <article class="program-card featured" @click="openProgram('slowliving')">
+            <div class="program-image">
+              <img src="/images/program-1.jpg" alt="Slow Living">
+              <span class="program-badge">🧘 Flexible</span>
+            </div>
+            <div class="program-info">
+              <h3>Slow Living</h3>
+              <p>A bit of everything. Perfect if you're unsure or just want variety.</p>
+              <div class="program-meta">
+                <span>10+ days</span>
+                <span>$19/day</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="programs-note">
+          <p>✨ <strong>Not sure which to pick?</strong> Start with Slow Living — you can always switch or combine paths once you're here.</p>
         </div>
       </div>
     </section>
@@ -106,233 +155,200 @@
         <div class="modal-content">
           <button class="modal-close" @click="closeProgram">✕</button>
           
-          <!-- Beachside Details -->
-          <div v-if="activeProgram === 'beachside'" class="program-detail">
+          <!-- The Storyteller Details -->
+          <div v-if="activeProgram === 'storyteller'" class="program-detail">
             <div class="modal-header">
-              <span class="program-badge">🏄 Surf + Farm</span>
-              <h2>Beachside Farming Experience</h2>
-              <p class="program-tagline">Balance farm life with world-class waves — just 3 minutes from the beach.</p>
+              <span class="program-badge">📸 Creator</span>
+              <h2>The Storyteller</h2>
+              <p class="program-tagline">Share our story with the world through your lens and words.</p>
             </div>
             <div class="modal-body">
               <div class="info-box">
+                <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>⏰</span> 3 hrs/day, 4 days/week</div>
                 <div class="info-item"><span>💰</span> US$19/day</div>
-                <div class="info-item"><span>🛏️</span> Private cabin included</div>
               </div>
-              
-              <h4>🌿 The Experience</h4>
-              <p>Embark on a unique, hands-on learning experience at Mawun Valley Farm, nestled in the heart of Lombok's stunning natural beauty. Gain invaluable practical skills in permaculture, sustainable agriculture, and community living.</p>
-              <p>With Lombok's best surfing beaches just 3 minutes away, you can balance your farm experience with world-class waves at Mawun Beach, Selong Belanak, and Mawi.</p>
-              
-              <h4>🌿 Daily Farm Life</h4>
-              <ul class="detail-list">
-                <li><strong>Morning with the Animals:</strong> Feed the goats, collect eggs, and spend time with our friendly farm animals</li>
-                <li><strong>Garden Time:</strong> Get your hands in the soil — planting, harvesting, and learning about permaculture</li>
-                <li><strong>Creative Projects:</strong> Join in on painting, building, or decorating — whatever inspires you</li>
-                <li><strong>Community Moments:</strong> Share meals, stories, and experiences with fellow travelers</li>
-                <li><strong>Free Time:</strong> Surf, explore beaches, or simply relax in your cabin</li>
+              <h4>🎯 Who This Is For</h4>
+              <p>Digital nomads, photographers, videographers, content creators, social media managers, and writers who want to document sustainable living while being part of an inspiring community.</p>
+              <h4>📷 What You'll Create</h4>
+              <ul>
+                <li><strong>Photography:</strong> Farm life, landscapes, portraits, food</li>
+                <li><strong>Video:</strong> Reels, vlogs, mini-documentaries</li>
+                <li><strong>Writing:</strong> Blog posts, captions, stories</li>
+                <li><strong>Social Media:</strong> Content planning and management</li>
               </ul>
-              
               <h4>🎁 What's Included</h4>
               <div class="benefits-grid">
                 <div class="benefit">🛏️ Private Cabin</div>
                 <div class="benefit">🍳 Breakfast & Lunch</div>
+                <div class="benefit">💻 Dedicated Workspace</div>
                 <div class="benefit">🚲 Free Bikes</div>
                 <div class="benefit">🌱 Permaculture Course</div>
                 <div class="benefit">📜 Certificate</div>
-                <div class="benefit">💻 Workspace</div>
                 <div class="benefit">🍹 Free Drinks</div>
-                <div class="benefit">🎉 Farm Events (BBQs, Movie Nights)</div>
+                <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
-              
-              <h4>👤 Who This Is For</h4>
-              <ul class="check-list">
-                <li>Passionate about sustainable living and permaculture</li>
-                <li>Interest in surfing or beach life</li>
-                <li>Open-minded with a willingness to learn</li>
-                <li>Team players with good communication skills</li>
-                <li>Respectful of local culture and customs</li>
-              </ul>
-              
-              <h4>✅ Requirements</h4>
-              <p>Welcomes solo travelers, couples, and partners of participants. Minimum stay: 1 week recommended.</p>
-              
-              <h4>❌ What's Not Included</h4>
-              <p>Flights, Travel Insurance, Internal Transportation, and Visa</p>
             </div>
             <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20the%20Beachside%20Farming%20program." class="btn btn-whatsapp btn-lg" target="_blank">Apply via WhatsApp</a>
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20The%20Storyteller%20program.%20I'd%20like%20to%20stay%20for%20____%20days." class="btn btn-whatsapp btn-lg" target="_blank">Apply via WhatsApp</a>
+            </div>
+          </div>
+
+          <!-- The Grower Details -->
+          <div v-if="activeProgram === 'grower'" class="program-detail">
+            <div class="modal-header">
+              <span class="program-badge">🌱 Nature</span>
+              <h2>The Grower</h2>
+              <p class="program-tagline">Get your hands in the soil and watch things grow.</p>
+            </div>
+            <div class="modal-body">
+              <div class="info-box">
+                <div class="info-item"><span>📅</span> Minimum 10 days</div>
+                <div class="info-item"><span>⏰</span> 3 hrs/day, 4 days/week</div>
+                <div class="info-item"><span>💰</span> US$19/day</div>
+              </div>
+              <h4>🎯 Who This Is For</h4>
+              <p>Nature lovers, sustainability seekers, career-changers exploring permaculture, and anyone who finds peace in gardening and growing things.</p>
+              <h4>🌿 What You'll Do</h4>
+              <ul>
+                <li><strong>Gardening:</strong> Plant, weed, water, and cultivate</li>
+                <li><strong>Permaculture:</strong> Learn sustainable farming systems</li>
+                <li><strong>Harvesting:</strong> Pick vegetables, fruits, herbs</li>
+                <li><strong>Composting:</strong> Turn waste into garden gold</li>
+                <li><strong>Seed Saving:</strong> Preserve heirloom varieties</li>
+              </ul>
+              <h4>🎁 What's Included</h4>
+              <div class="benefits-grid">
+                <div class="benefit">🛏️ Private Cabin</div>
+                <div class="benefit">🍳 Breakfast & Lunch</div>
+                <div class="benefit">🌱 Permaculture Course</div>
+                <div class="benefit">🚲 Free Bikes</div>
+                <div class="benefit">📜 Certificate</div>
+                <div class="benefit">💻 Workspace</div>
+                <div class="benefit">🍹 Free Drinks</div>
+                <div class="benefit">🎉 Farm Events & BBQs</div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20The%20Grower%20program.%20I'd%20like%20to%20stay%20for%20____%20days." class="btn btn-whatsapp btn-lg" target="_blank">Apply via WhatsApp</a>
+            </div>
+          </div>
+
+          <!-- The Maker Details -->
+          <div v-if="activeProgram === 'maker'" class="program-detail">
+            <div class="modal-header">
+              <span class="program-badge">🔨 Builder</span>
+              <h2>The Maker</h2>
+              <p class="program-tagline">Build, fix, and create with your hands.</p>
+            </div>
+            <div class="modal-body">
+              <div class="info-box">
+                <div class="info-item"><span>📅</span> Minimum 10 days</div>
+                <div class="info-item"><span>⏰</span> 3 hrs/day, 4 days/week</div>
+                <div class="info-item"><span>💰</span> US$19/day</div>
+              </div>
+              <h4>🎯 Who This Is For</h4>
+              <p>Hands-on types, engineers escaping screens, designers who want to build physical things, woodworking enthusiasts, and anyone who finds satisfaction in making.</p>
+              <h4>🔧 What You'll Build</h4>
+              <ul>
+                <li><strong>Woodworking:</strong> Furniture, signs, structures</li>
+                <li><strong>Construction:</strong> Cabin improvements, new builds</li>
+                <li><strong>Repairs:</strong> Fixing what needs fixing</li>
+                <li><strong>Crafts:</strong> Decorations, practical items</li>
+                <li><strong>Painting:</strong> Walls, murals, details</li>
+              </ul>
+              <h4>🎁 What's Included</h4>
+              <div class="benefits-grid">
+                <div class="benefit">🛏️ Private Cabin</div>
+                <div class="benefit">🍳 Breakfast & Lunch</div>
+                <div class="benefit">🔨 Tools Provided</div>
+                <div class="benefit">🚲 Free Bikes</div>
+                <div class="benefit">🌱 Permaculture Course</div>
+                <div class="benefit">📜 Certificate</div>
+                <div class="benefit">🍹 Free Drinks</div>
+                <div class="benefit">🎉 Farm Events & BBQs</div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20The%20Maker%20program.%20I'd%20like%20to%20stay%20for%20____%20days." class="btn btn-whatsapp btn-lg" target="_blank">Apply via WhatsApp</a>
+            </div>
+          </div>
+
+          <!-- The Caretaker Details -->
+          <div v-if="activeProgram === 'caretaker'" class="program-detail">
+            <div class="modal-header">
+              <span class="program-badge">💚 Nurturing</span>
+              <h2>The Caretaker</h2>
+              <p class="program-tagline">Nurture animals, feed guests, create warmth.</p>
+            </div>
+            <div class="modal-body">
+              <div class="info-box">
+                <div class="info-item"><span>📅</span> Minimum 10 days</div>
+                <div class="info-item"><span>⏰</span> 3 hrs/day, 4 days/week</div>
+                <div class="info-item"><span>💰</span> US$19/day</div>
+              </div>
+              <h4>🎯 Who This Is For</h4>
+              <p>Warm souls who love animals, enjoy cooking and hosting, and find purpose in making others comfortable. Great for couples, first-timers, or anyone seeking a nurturing role.</p>
+              <h4>💚 What You'll Do</h4>
+              <ul>
+                <li><strong>Animal Care:</strong> Feed and care for goats, ducks, chickens</li>
+                <li><strong>Kitchen Help:</strong> Assist with meals, learn Indonesian cooking</li>
+                <li><strong>Hospitality:</strong> Welcome guests, help with check-ins</li>
+                <li><strong>Community:</strong> Organize events, create connection</li>
+              </ul>
+              <h4>🎁 What's Included</h4>
+              <div class="benefits-grid">
+                <div class="benefit">🛏️ Private Cabin</div>
+                <div class="benefit">🍳 Breakfast & Lunch</div>
+                <div class="benefit">🐐 Animal Therapy</div>
+                <div class="benefit">🚲 Free Bikes</div>
+                <div class="benefit">🌱 Permaculture Course</div>
+                <div class="benefit">📜 Certificate</div>
+                <div class="benefit">🍹 Free Drinks</div>
+                <div class="benefit">🎉 Farm Events & BBQs</div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20The%20Caretaker%20program.%20I'd%20like%20to%20stay%20for%20____%20days." class="btn btn-whatsapp btn-lg" target="_blank">Apply via WhatsApp</a>
             </div>
           </div>
 
           <!-- Slow Living Details -->
           <div v-if="activeProgram === 'slowliving'" class="program-detail">
             <div class="modal-header">
-              <span class="program-badge">🧘 Mindful</span>
-              <h2>Slow Living Experience</h2>
-              <p class="program-tagline">Find calm and groundedness. Embrace a slower pace and appreciate life's simple pleasures.</p>
+              <span class="program-badge">🧘 Flexible</span>
+              <h2>Slow Living</h2>
+              <p class="program-tagline">A bit of everything. No pressure, just presence.</p>
             </div>
             <div class="modal-body">
               <div class="info-box">
+                <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>⏰</span> 3 hrs/day, 4 days/week</div>
                 <div class="info-item"><span>💰</span> US$19/day</div>
-                <div class="info-item"><span>🛏️</span> Private cabin included</div>
               </div>
-              
-              <h4>🌿 The Experience</h4>
-              <p>At Mawun Valley Farm, nestled in the tranquil landscapes of Lombok, we offer a unique opportunity to immerse yourself in the principles of slow living. If you appreciate a slower pace, connection with nature, and meaningful interactions, join our community.</p>
-              <p class="highlight-box">Savor simple moments: enjoying a quiet breakfast with farm-sourced ingredients, taking leisurely walks through the gardens, observing the beauty of Lombok sunsets. Evenings include relaxed gatherings under the stars, sharing stories and connecting with fellow travelers.</p>
-              
-              <h4>🌿 Daily Farm Life</h4>
-              <ul class="detail-list">
-                <li><strong>Gentle Mornings:</strong> Start your day with the animals — feeding goats, greeting the ducks</li>
-                <li><strong>Garden Meditation:</strong> Tend to herbs and vegetables at your own peaceful pace</li>
-                <li><strong>Farm-to-Table:</strong> Join in preparing meals with ingredients you helped grow</li>
-                <li><strong>Sunset Gatherings:</strong> Share stories and connect with fellow travelers under the stars</li>
+              <h4>🎯 Who This Is For</h4>
+              <p>People recovering from burnout, first-timers who aren't sure what they're good at, anyone seeking variety over specialization, and those who just want to slow down and be present.</p>
+              <h4>✨ What You'll Experience</h4>
+              <ul>
+                <li><strong>Variety:</strong> Try different tasks — garden today, animals tomorrow</li>
+                <li><strong>Flexibility:</strong> Contribute based on what the farm needs</li>
+                <li><strong>Discovery:</strong> Find what you enjoy along the way</li>
+                <li><strong>Presence:</strong> No pressure, just being part of the rhythm</li>
               </ul>
-              
-              <h4>✨ Key Elements</h4>
-              <ul class="check-list">
-                <li><strong>Gentle Farm Engagement:</strong> Participate at a relaxed pace</li>
-                <li><strong>Nature Connection:</strong> Immerse in the natural beauty of the valley</li>
-                <li><strong>Community Interaction:</strong> Connect with our local team and fellow participants</li>
-                <li><strong>Mindful Moments:</strong> Presence and appreciation for simple experiences</li>
-                <li><strong>Farm-Fresh Nourishment:</strong> Wholesome meals from our land</li>
-                <li><strong>Tranquil Environment:</strong> Peace and quiet amidst natural sounds</li>
-              </ul>
-              
               <h4>🎁 What's Included</h4>
               <div class="benefits-grid">
                 <div class="benefit">🛏️ Private Cabin</div>
                 <div class="benefit">🍳 Breakfast & Lunch</div>
+                <div class="benefit">🧘 Flexible Schedule</div>
                 <div class="benefit">🚲 Free Bikes</div>
                 <div class="benefit">🌱 Permaculture Course</div>
                 <div class="benefit">📜 Certificate</div>
-                <div class="benefit">💻 Workspace</div>
+                <div class="benefit">🍹 Free Drinks</div>
+                <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
-              
-              <h4>✅ Requirements</h4>
-              <p>Welcomes solo travelers, couples, and partners of participants.</p>
             </div>
             <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20the%20Slow%20Living%20program." class="btn btn-whatsapp btn-lg" target="_blank">Apply via WhatsApp</a>
-            </div>
-          </div>
-
-          <!-- Creative Details -->
-          <div v-if="activeProgram === 'creative'" class="program-detail">
-            <div class="modal-header">
-              <span class="program-badge">📸 Creator</span>
-              <h2>Creative Content Experience</h2>
-              <p class="program-tagline">Create inspiring content while living the farm life. Perfect for writers, photographers & videographers.</p>
-            </div>
-            <div class="modal-body">
-              <div class="info-box">
-                <div class="info-item"><span>⏰</span> 3 hrs/day, 4 days/week</div>
-                <div class="info-item"><span>💰</span> US$19/day</div>
-                <div class="info-item"><span>🛏️</span> Private cabin included</div>
-              </div>
-              
-              <h4>🌿 The Experience</h4>
-              <p>Embark on a unique creative journey at Mawun Valley Farm. This program is perfect for content creators who want to document sustainable living while being part of an inspiring community.</p>
-              <p>With Lombok's best surfing beaches just 3 minutes away, you can balance content creation with world-class waves and stunning golden hour shots.</p>
-              
-              <h4>🌿 Daily Farm Life</h4>
-              <ul class="detail-list">
-                <li><strong>Capture the Moments:</strong> Document farm life through photos, videos, or writing</li>
-                <li><strong>Morning Light:</strong> Golden hour sessions with animals, gardens, and landscapes</li>
-                <li><strong>Story Gathering:</strong> Connect with guests and locals for authentic content</li>
-                <li><strong>Creative Freedom:</strong> Work on your own projects in our dedicated workspace</li>
-              </ul>
-              
-              <h4>👤 Who This Is For</h4>
-              <ul class="check-list">
-                <li>Content creators, photographers, videographers</li>
-                <li>Writers wanting to document farm life</li>
-                <li>Digital nomads who can work remotely AND create content</li>
-                <li>Open-minded with good communication skills</li>
-                <li>Respectful of local culture and customs</li>
-              </ul>
-              
-              <h4>🎁 What's Included</h4>
-              <div class="benefits-grid">
-                <div class="benefit">🛏️ Private Cabin</div>
-                <div class="benefit">🍳 Breakfast & Lunch</div>
-                <div class="benefit">🚲 Free Bikes</div>
-                <div class="benefit">🌱 Permaculture Course</div>
-                <div class="benefit">📜 Certificate</div>
-                <div class="benefit">💻 Dedicated Workspace</div>
-              </div>
-              
-              <h4>✅ Requirements</h4>
-              <p>Welcomes solo travelers, couples, and partners of participants. Please share your portfolio or previous work when applying.</p>
-            </div>
-            <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20the%20Creative%20Content%20program." class="btn btn-whatsapp btn-lg" target="_blank">Apply via WhatsApp</a>
-            </div>
-          </div>
-
-          <!-- Retreat Details -->
-          <div v-if="activeProgram === 'retreat'" class="program-detail">
-            <div class="modal-header">
-              <span class="program-badge">⭐ 8-Day Journey</span>
-              <h2>Farm Life Retreat</h2>
-              <p class="program-tagline">A transformative group experience to explore permaculture, community, and self-discovery in beautiful Lombok.</p>
-            </div>
-            <div class="modal-body">
-              <div class="info-box">
-                <div class="info-item"><span>📅</span> 8 days / 7 nights</div>
-                <div class="info-item"><span>🍽️</span> All meals included</div>
-                <div class="info-item"><span>✈️</span> Airport transfer included</div>
-              </div>
-              
-              <h4>🌿 The Experience</h4>
-              <p>Dream of a simpler, more connected life? This immersive journey in Lombok is for those seeking real connection. Join a small group of like-minded travelers to explore what it truly means to live in harmony with the land.</p>
-              <p class="highlight-box">This is more than a trip — it's a chance to build deep friendships, reconnect with nature, and find pieces of yourself in a stunning Indonesian setting.</p>
-              
-              <h4>📅 8-Day Itinerary</h4>
-              <div class="itinerary">
-                <div class="day"><span>Day 1</span><div><strong>Welcome to the Valley</strong><br>Settle into your cabin, farm-to-table welcome feast, intention setting circle</div></div>
-                <div class="day"><span>Day 2</span><div><strong>Permaculture Deep Dive</strong><br>Farm gym, comprehensive permaculture workshop, garden project, bonfire under the stars</div></div>
-                <div class="day"><span>Day 3</span><div><strong>Ocean Adventure</strong><br>Traditional fishing with local fishermen, snorkeling in crystal waters, fresh-caught seafood BBQ</div></div>
-                <div class="day"><span>Day 4</span><div><strong>Island Exploration</strong><br>Visit pristine beaches, explore bat caves, wander local markets, cultural story night</div></div>
-                <div class="day"><span>Day 5</span><div><strong>Farm Mastery</strong><br>Seed-to-harvest tour, hands-on Indonesian cooking class, movie night</div></div>
-                <div class="day"><span>Day 6</span><div><strong>Community Impact</strong><br>Small business workshop, activities with village kids, music & games</div></div>
-                <div class="day"><span>Day 7</span><div><strong>Integration & Celebration</strong><br>Free time for reflection, eco-tourism chat, farewell BBQ feast</div></div>
-                <div class="day"><span>Day 8</span><div><strong>Departure</strong><br>Farewell breakfast with the community, airport drop-off</div></div>
-              </div>
-              
-              <h4>✅ What's Included</h4>
-              <div class="benefits-grid">
-                <div class="benefit">🛏️ 8 Nights Private Cabin</div>
-                <div class="benefit">🍽️ All Meals (Breakfast, Lunch, Dinner)</div>
-                <div class="benefit">✈️ Airport Pickup & Drop-off</div>
-                <div class="benefit">🚐 All Local Transportation</div>
-                <div class="benefit">🌱 Permaculture Workshops</div>
-                <div class="benefit">👨‍🍳 Cooking Class</div>
-                <div class="benefit">🎣 Fishing & Snorkeling Trip</div>
-                <div class="benefit">🏝️ Island Tours</div>
-                <div class="benefit">📋 Pre-trip Preparation Guide</div>
-                <div class="benefit">🤝 Local Host Throughout</div>
-              </div>
-              
-              <h4>❌ What's Not Included</h4>
-              <ul class="check-list">
-                <li>Flight tickets to Lombok (LOP airport)</li>
-                <li>Visas and travel documentation</li>
-                <li>Travel insurance (required)</li>
-                <li>Personal expenses and souvenirs</li>
-              </ul>
-              
-              <h4>✅ Requirements</h4>
-              <ul class="check-list">
-                <li>Basic English communication</li>
-                <li>Over 18 years old</li>
-                <li>Open mind and adventurous spirit</li>
-              </ul>
-            </div>
-            <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20the%208-Day%20Farm%20Retreat." class="btn btn-whatsapp btn-lg" target="_blank">Apply via WhatsApp</a>
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20the%20Slow%20Living%20program.%20I'd%20like%20to%20stay%20for%20____%20days." class="btn btn-whatsapp btn-lg" target="_blank">Apply via WhatsApp</a>
             </div>
           </div>
         </div>
@@ -347,124 +363,29 @@
           <h2>Your Private Cabin</h2>
           <p>Simple, cozy spaces designed for slow mornings and deep sleep. All programs include accommodation.</p>
         </div>
-        
         <div class="cabin-features">
           <span>🚿 Outdoor Shower</span>
-          <span>🛏️ Clean Bedsheets & Towels</span>
+          <span>🛏️ Clean Bedsheets</span>
           <span>🔌 Charging Socket</span>
           <span>💨 Fan</span>
-          <span>👕 Clothes Shelf</span>
-          <span>🛋️ Comfortable Mattress</span>
+          <span>🛋️ Comfy Mattress</span>
         </div>
-
-        <div class="cabins-showcase">
-          <!-- Sandat Cabin -->
-          <div class="cabin-showcase-item">
-            <div class="cabin-gallery">
-              <div class="cabin-main-image">
-                <img :src="cabinImages.sandat[activeCabinImage.sandat]" alt="Sandat Cabin">
-              </div>
-              <div class="cabin-thumbnails">
-                <img v-for="(img, idx) in cabinImages.sandat" :key="idx" :src="img" @click="activeCabinImage.sandat = idx" :class="{ active: activeCabinImage.sandat === idx }" alt="Sandat">
-              </div>
-            </div>
-            <div class="cabin-details">
-              <h3>Sandat Cabin</h3>
-              <p class="cabin-style">Wooden exterior with balcony & patio</p>
-              <p class="cabin-bed">🛏️ Queen Bed</p>
-              <div class="cabin-features-list">
-                <span>🏔️ Farm + Mountain View</span>
-                <span>🌅 Private Balcony</span>
-                <span>🏄 Surfboard Storage</span>
-              </div>
-            </div>
+        <div class="cabins-gallery">
+          <div class="cabin-card">
+            <img src="/images/sandat-1.jpg" alt="Sandat Cabin">
+            <div class="cabin-info"><h4>Sandat Cabin</h4><p>Queen bed • Balcony • Mountain view</p></div>
           </div>
-
-          <!-- Rick's Windmill -->
-          <div class="cabin-showcase-item">
-            <div class="cabin-gallery">
-              <div class="cabin-main-image">
-                <img :src="cabinImages.windmill[activeCabinImage.windmill]" alt="Rick's Windmill">
-              </div>
-              <div class="cabin-thumbnails">
-                <img v-for="(img, idx) in cabinImages.windmill" :key="idx" :src="img" @click="activeCabinImage.windmill = idx" :class="{ active: activeCabinImage.windmill === idx }" alt="Windmill">
-              </div>
-            </div>
-            <div class="cabin-details">
-              <h3>Rick's Windmill</h3>
-              <p class="cabin-style">Unique design with black balcony</p>
-              <p class="cabin-bed">🛏️ Queen Bed</p>
-              <div class="cabin-features-list">
-                <span>🏔️ Farm + Mountain View</span>
-                <span>🌅 Black Balcony</span>
-                <span>✨ Unique Architecture</span>
-              </div>
-            </div>
+          <div class="cabin-card">
+            <img src="/images/windmill-1.jpg" alt="Rick's Windmill">
+            <div class="cabin-info"><h4>Rick's Windmill</h4><p>Queen bed • Unique design • Black balcony</p></div>
           </div>
-
-          <!-- Lime Cabin -->
-          <div class="cabin-showcase-item">
-            <div class="cabin-gallery">
-              <div class="cabin-main-image">
-                <img :src="cabinImages.lime[activeCabinImage.lime]" alt="Lime Cabin">
-              </div>
-              <div class="cabin-thumbnails">
-                <img v-for="(img, idx) in cabinImages.lime" :key="idx" :src="img" @click="activeCabinImage.lime = idx" :class="{ active: activeCabinImage.lime === idx }" alt="Lime">
-              </div>
-            </div>
-            <div class="cabin-details">
-              <h3>Lime Cabin</h3>
-              <p class="cabin-style">Bright green exterior</p>
-              <p class="cabin-bed">🛏️ Queen Bed</p>
-              <div class="cabin-features-list">
-                <span>🌿 Farm View</span>
-                <span>💚 Colorful & Cozy</span>
-                <span>🧳 Luggage Space</span>
-              </div>
-            </div>
+          <div class="cabin-card">
+            <img src="/images/cabin-lime.jpg" alt="Lime Cabin">
+            <div class="cabin-info"><h4>Lime Cabin</h4><p>Queen bed • Bright & colorful • Farm view</p></div>
           </div>
-
-          <!-- Peace Cabin -->
-          <div class="cabin-showcase-item">
-            <div class="cabin-gallery">
-              <div class="cabin-main-image">
-                <img :src="cabinImages.peace[activeCabinImage.peace]" alt="Peace Cabin">
-              </div>
-              <div class="cabin-thumbnails">
-                <img v-for="(img, idx) in cabinImages.peace" :key="idx" :src="img" @click="activeCabinImage.peace = idx" :class="{ active: activeCabinImage.peace === idx }" alt="Peace">
-              </div>
-            </div>
-            <div class="cabin-details">
-              <h3>Peace Cabin</h3>
-              <p class="cabin-style">Wooden exterior</p>
-              <p class="cabin-bed">🛏️ Queen Bed</p>
-              <div class="cabin-features-list">
-                <span>🏔️ Farm + Mountain View</span>
-                <span>🏄 Surfboard Storage</span>
-                <span>🧳 Luggage Space</span>
-              </div>
-            </div>
-          </div>
-          <!-- Jabalkap Cabin -->
-          <div class="cabin-showcase-item">
-            <div class="cabin-gallery">
-              <div class="cabin-main-image">
-                <img :src="cabinImages.jabalkap[activeCabinImage.jabalkap]" alt="Jabalkap Cabin">
-              </div>
-              <div class="cabin-thumbnails">
-                <img v-for="(img, idx) in cabinImages.jabalkap" :key="idx" :src="img" @click="activeCabinImage.jabalkap = idx" :class="{ active: activeCabinImage.jabalkap === idx }" alt="Jabalkap">
-              </div>
-            </div>
-            <div class="cabin-details">
-              <h3>Jabalkap Cabin</h3>
-              <p class="cabin-style">A-frame style</p>
-              <p class="cabin-bed">🛏️ Single Bed</p>
-              <div class="cabin-features-list">
-                <span>🏔️ Farm + Mountain View</span>
-                <span>🏄 Surfboard Storage</span>
-                <span>🧳 Luggage Space</span>
-              </div>
-            </div>
+          <div class="cabin-card">
+            <img src="/images/program-1.jpg" alt="Peace Cabin">
+            <div class="cabin-info"><h4>Peace Cabin</h4><p>Queen bed • Wooden exterior • Mountain view</p></div>
           </div>
         </div>
       </div>
@@ -480,33 +401,43 @@
         <div class="reviews-grid">
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Staying here was incredible. Fully immersed in nature and local life. The peaceful environment helped me disconnect and reset. If you're a surfer, this place is a hidden gem."</p>
-            <div class="review-author"><strong>Iyad</strong><span>Tunisia • Worldpackers</span></div>
+            <p>"Staying at Mawun Valley Farm was an incredible experience. Fully immersed in nature and local life. The peaceful environment helped me disconnect and reset. If you're a surfer, this place is a hidden gem."</p>
+            <div class="review-author"><strong>Iyad</strong><span>Tunisia • 3 weeks</span></div>
           </div>
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"We spent 1 month here and couldn't be more happy. Strong sense of community. The meals were really good, the BBQ nights were delicious!"</p>
-            <div class="review-author"><strong>Mariana</strong><span>Portugal • Worldpackers</span></div>
+            <p>"We spent 1 month here and couldn't be more happy. There's a strong sense of community. The meals were really good, the BBQ nights were delicious. We strongly recommend this farm!"</p>
+            <div class="review-author"><strong>Mariana</strong><span>Portugal • 1 month</span></div>
           </div>
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"From day one, I felt like part of the family. My cabin was super cute and cozy. The BBQ nights were the highlight—so delicious!"</p>
-            <div class="review-author"><strong>Pame</strong><span>Chile • Google Maps</span></div>
+            <p>"From day one, I felt like part of the family. My cabin was super cute and cozy. The BBQ nights were the absolute highlight—so delicious! I'm already looking forward to visiting again."</p>
+            <div class="review-author"><strong>Pame</strong><span>Chile • 2 weeks</span></div>
           </div>
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Spectacular farm! Spending time with the goats made us very happy. Definitely a place to stay and enjoy Noni's desserts!"</p>
-            <div class="review-author"><strong>Paola</strong><span>Peru • Verified Stay</span></div>
+            <p>"They have a spectacular farm! Spending time with the goats made us very happy. Definitely a place to stay and enjoy the countryside, the tranquility, and Noni's desserts!"</p>
+            <div class="review-author"><strong>Paola</strong><span>Peru • 10 days</span></div>
           </div>
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"The wooden cabins are very cozy! From BBQs and card games to movie nights and Noni's treats, there's always something to enjoy."</p>
-            <div class="review-author"><strong>Isabelle</strong><span>Netherlands • Google Maps</span></div>
+            <p>"The wooden cabins are very cozy! From delicious BBQs and fun card games to movie nights and Noni's amazing baked treats, there is always something to enjoy."</p>
+            <div class="review-author"><strong>Isabelle</strong><span>Netherlands • 2 weeks</span></div>
           </div>
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Can't speak highly enough of this family and their beautiful farm! Greeted with a community dinner—incredible food straight from the garden."</p>
-            <div class="review-author"><strong>Zoe</strong><span>Australia • Verified Stay</span></div>
+            <p>"Mawun Valley is an incredible place that gives everyone a place in the community. Everything is to be created with the host as an inspired and caring conductor."</p>
+            <div class="review-author"><strong>Alexa</strong><span>France • 1 month</span></div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Can't speak highly enough of this family and their beautiful farm! Greeted with a community dinner—incredible food cooked straight from the garden. Perfect location!"</p>
+            <div class="review-author"><strong>Zoe</strong><span>Australia • 12 days</span></div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"The cottage is really charming, the whole area is beautiful and peaceful. Next morning: coffee and delicious omelette. Paradise!"</p>
+            <div class="review-author"><strong>Marjut</strong><span>Germany</span></div>
           </div>
         </div>
       </div>
@@ -516,12 +447,13 @@
     <section class="cta-section">
       <div class="container">
         <div class="cta-content">
-          <h2>Ready to Begin Your Journey?</h2>
-          <p>Message us on WhatsApp. We'll help you find the perfect program.</p>
-          <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20staying%20at%20Mawun%20Valley%20Farm." class="btn btn-whatsapp btn-lg" target="_blank">
+          <h2>Ready to Contribute?</h2>
+          <p>Message us on WhatsApp. Tell us a bit about yourself and which path interests you.</p>
+          <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20staying%20and%20contributing%20at%20Mawun%20Valley%20Farm." class="btn btn-whatsapp btn-lg" target="_blank">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             WhatsApp Us
           </a>
+          <p class="cta-note">Minimum 10-day stay • $19/day all-inclusive</p>
         </div>
       </div>
     </section>
@@ -529,37 +461,11 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
-
-useHead({ title: 'Experience & Stay - Mawun Valley Farm' })
-
+import { ref } from 'vue'
+useHead({ title: 'Stay & Contribute - Mawun Valley Farm' })
 const activeProgram = ref(null)
-
-const cabinImages = {
-  sandat: ['/images/sandat-1.jpg', '/images/sandat-2.jpg', '/images/sandat-3.jpg', '/images/sandat-4.jpg', '/images/sandat-5.jpg', '/images/sandat-6.jpg', '/images/sandat-7.jpg'],
-  windmill: ['/images/windmill-1.jpg', '/images/windmill-2.jpg', '/images/windmill-3.jpg', '/images/windmill-4.jpg', '/images/windmill-5.jpg'],
-  lime: ['/images/lime-1.jpg', '/images/lime-2.jpg', '/images/lime-3.jpg', '/images/lime-4.jpg', '/images/lime-5.jpg'],
-  peace: ['/images/peace-1.jpg', '/images/peace-2.jpg', '/images/peace-3.jpg', '/images/peace-4.jpg', '/images/peace-5.jpg', '/images/peace-6.jpg', '/images/peace-7.jpg'],
-  jabalkap: ['/images/jabalkap-1.jpg', '/images/jabalkap-2.jpg', '/images/jabalkap-3.jpg']
-}
-
-const activeCabinImage = reactive({
-  sandat: 0,
-  windmill: 0,
-  lime: 0,
-  peace: 0,
-  jabalkap: 0
-})
-
-function openProgram(program) {
-  activeProgram.value = program
-  document.body.style.overflow = 'hidden'
-}
-
-function closeProgram() {
-  activeProgram.value = null
-  document.body.style.overflow = ''
-}
+function openProgram(program) { activeProgram.value = program; document.body.style.overflow = 'hidden' }
+function closeProgram() { activeProgram.value = null; document.body.style.overflow = '' }
 </script>
 
 <style scoped>
@@ -571,12 +477,18 @@ function closeProgram() {
 .hero h1 { color: white; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px; }
 .hero p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 32px; line-height: 1.7; }
 .section-label.light { color: var(--color-gold); }
+.hero-stats { display: flex; justify-content: center; gap: 40px; margin-bottom: 32px; flex-wrap: wrap; }
+.hero-stat { text-align: center; }
+.hero-stat-number { display: block; font-size: 2rem; font-weight: 700; color: var(--color-gold); }
+.hero-stat-label { font-size: 14px; opacity: 0.9; }
+.hero-cta .btn { padding: 16px 32px; font-size: 16px; }
 
-.stats-bar { background: var(--color-dark); padding: 30px 0; }
-.stats-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
-.stat-item { text-align: center; color: white; }
-.stat-number { display: block; font-size: 2rem; font-weight: 700; color: var(--color-gold); }
-.stat-label { font-size: 14px; opacity: 0.8; }
+.how-it-works { background: var(--color-dark); padding: 50px 0; }
+.how-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+.how-item { text-align: center; color: white; max-width: 200px; }
+.how-icon { font-size: 2.5rem; display: block; margin-bottom: 12px; }
+.how-item h4 { color: var(--color-gold); margin-bottom: 8px; font-size: 1.2rem; }
+.how-item p { font-size: 14px; opacity: 0.85; line-height: 1.6; }
 
 .programs-section { padding: 100px 0; background: var(--color-cream); }
 .section-header { text-align: center; max-width: 600px; margin: 0 auto 50px; }
@@ -593,51 +505,35 @@ function closeProgram() {
 .program-info h3 { font-size: 1.3rem; margin-bottom: 10px; }
 .program-info p { color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
 .program-meta { display: flex; gap: 16px; font-size: 13px; color: var(--color-sage); font-weight: 600; }
+.programs-note { text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.programs-note p { margin: 0; color: #555; }
 
 .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px; }
-.modal-content { background: white; border-radius: 20px; max-width: 650px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
+.modal-content { background: white; border-radius: 20px; max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
 .modal-close { position: absolute; top: 16px; right: 16px; background: var(--color-cream); border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 10; }
 .modal-header { padding: 32px 32px 0; }
-.modal-header .program-badge { position: static; display: inline-block; margin-bottom: 12px; }
-.modal-header h2 { font-size: 1.6rem; margin-bottom: 8px; }
-.program-tagline { color: #666; font-size: 15px; }
+.modal-header h2 { font-size: 1.6rem; margin: 12px 0; }
+.program-tagline { color: #666; }
 .modal-body { padding: 24px 32px; }
-.modal-body h4 { margin: 28px 0 14px; color: var(--color-dark); font-size: 1.1rem; }
-.modal-body p { line-height: 1.7; margin-bottom: 12px; }
+.modal-body h4 { margin: 24px 0 12px; color: var(--color-dark); }
+.modal-body ul { list-style: none; padding: 0; }
+.modal-body li { padding: 8px 0; padding-left: 24px; position: relative; }
+.modal-body li::before { content: "✓"; position: absolute; left: 0; color: var(--color-sage); }
 .info-box { display: flex; flex-wrap: wrap; gap: 16px; background: var(--color-cream); padding: 16px; border-radius: 12px; margin-bottom: 20px; }
 .info-item { display: flex; align-items: center; gap: 8px; font-size: 14px; }
-.highlight-box { background: var(--color-cream); padding: 16px; border-radius: 8px; border-left: 4px solid var(--color-gold); }
-.detail-list { list-style: none; padding: 0; }
-.detail-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
-.detail-list li:last-child { border-bottom: none; }
-.check-list { list-style: none; padding: 0; }
-.check-list li { padding: 8px 0 8px 28px; position: relative; }
-.check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--color-sage); font-weight: bold; }
 .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .benefit { background: var(--color-cream); padding: 12px; border-radius: 8px; font-size: 14px; }
-.itinerary .day { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #eee; }
-.itinerary .day span { background: var(--color-sage); color: white; padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; white-space: nowrap; height: fit-content; }
-.itinerary .day div { font-size: 14px; line-height: 1.5; }
-.itinerary .day strong { display: block; margin-bottom: 4px; }
 .modal-footer { padding: 0 32px 32px; }
 
 .cabins-section { padding: 100px 0; background: white; }
-.cabin-features { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 60px; }
+.cabin-features { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 50px; }
 .cabin-features span { background: var(--color-cream); padding: 10px 20px; border-radius: 25px; font-size: 14px; }
-.cabins-showcase { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1100px; margin: 0 auto; }
-.cabin-showcase-item { background: var(--color-cream); border-radius: 20px; overflow: hidden; }
-.cabin-gallery { padding: 16px 16px 0; }
-.cabin-main-image { border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
-.cabin-main-image img { width: 100%; height: 280px; object-fit: cover; }
-.cabin-thumbnails { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; }
-.cabin-thumbnails img { width: 60px; height: 45px; object-fit: cover; border-radius: 6px; cursor: pointer; opacity: 0.6; transition: all 0.2s; flex-shrink: 0; }
-.cabin-thumbnails img:hover, .cabin-thumbnails img.active { opacity: 1; }
-.cabin-details { padding: 20px 24px 24px; }
-.cabin-details h3 { font-size: 1.3rem; margin-bottom: 6px; }
-.cabin-style { color: #666; font-size: 14px; margin-bottom: 8px; }
-.cabin-bed { font-size: 15px; margin-bottom: 12px; }
-.cabin-features-list { display: flex; flex-wrap: wrap; gap: 8px; }
-.cabin-features-list span { background: white; padding: 6px 12px; border-radius: 15px; font-size: 13px; }
+.cabins-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+.cabin-card { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.cabin-card img { width: 100%; height: 200px; object-fit: cover; }
+.cabin-info { padding: 20px; background: white; }
+.cabin-info h4 { margin-bottom: 6px; }
+.cabin-info p { font-size: 14px; color: #666; }
 
 .reviews-section { padding: 100px 0; background: var(--color-cream); }
 .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
@@ -650,6 +546,7 @@ function closeProgram() {
 .cta-section { padding: 100px 0; background: var(--color-dark); text-align: center; }
 .cta-content h2 { color: white; margin-bottom: 16px; }
 .cta-content p { color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+.cta-note { margin-top: 20px !important; font-size: 14px; opacity: 0.7; }
 
 .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
 .btn-primary { background: var(--color-gold); color: var(--color-dark); }
@@ -658,14 +555,11 @@ function closeProgram() {
 .btn-whatsapp:hover { background: #128C7E; }
 .btn-lg { padding: 16px 32px; font-size: 16px; }
 
-@media (max-width: 900px) {
-  .cabins-showcase { grid-template-columns: 1fr; }
-}
 @media (max-width: 768px) {
-  .stats-grid { gap: 30px; }
+  .hero-stats { gap: 24px; }
+  .how-grid { gap: 30px; }
   .programs-grid { grid-template-columns: 1fr; }
   .modal-content { border-radius: 16px 16px 0 0; max-height: 95vh; margin-top: auto; }
   .benefits-grid { grid-template-columns: 1fr; }
-  .cabin-main-image img { height: 220px; }
 }
 </style>
