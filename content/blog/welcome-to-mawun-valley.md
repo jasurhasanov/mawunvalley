@@ -16,7 +16,7 @@ We're not a hotel. We're not a hostel. We're something different — a working f
 
 ## Our Story
 
-Mawun Valley Farm started as a dream: create a place where sustainable agriculture, community, and hospitality come together. Today, that dream is a reality — 2+ hectares of gardens, fruit trees, animals, and cozy cabins overlooking the valley.
+Mawun Valley Farm started as a dream: create a place where sustainable agriculture, community, and hospitality come together. Today, that dream is a reality — gardens, fruit trees, animals, and cozy cabins overlooking the valley.
 
 **What we grow:**
 - Vegetables (tomatoes, peppers, leafy greens, herbs)
