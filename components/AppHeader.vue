@@ -14,7 +14,7 @@
         <li><NuxtLink to="/nonis" @click="closeMenu">Noni's</NuxtLink></li>
         <li><NuxtLink to="/stay" @click="closeMenu">Stay</NuxtLink></li>
         <li class="dropdown" :class="{ open: dropdownOpen }">
-          <a href="#" class="dropdown-toggle" @click.prevent="toggleDropdown">
+          <a href="#" class="dropdown-toggle" @click.prevent.stop="toggleDropdown">
             Experience <span class="dropdown-arrow">▾</span>
           </a>
           <ul class="dropdown-menu">
@@ -61,10 +61,7 @@ const closeMenu = () => {
 }
 
 const toggleDropdown = () => {
-  // Only toggle on mobile
-  if (window.innerWidth <= 768) {
-    dropdownOpen.value = !dropdownOpen.value
-  }
+  dropdownOpen.value = !dropdownOpen.value
 }
 
 // Close menu on route change
@@ -82,6 +79,22 @@ onMounted(() => {
 <style scoped>
 .menu-overlay {
   display: none;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 0.8em;
+}
+
+.dropdown.open .dropdown-arrow {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 768px) {
@@ -116,20 +129,16 @@ onMounted(() => {
   .dropdown .dropdown-menu {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    opacity: 0;
+    transition: all 0.3s ease;
+    padding: 0 !important;
+    margin: 0;
   }
   
   .dropdown.open .dropdown-menu {
     max-height: 200px;
-  }
-  
-  .dropdown-arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-  
-  .dropdown.open .dropdown-arrow {
-    transform: rotate(180deg);
+    opacity: 1;
+    padding-top: 8px !important;
   }
 }
 </style>
