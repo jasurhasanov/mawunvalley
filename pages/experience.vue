@@ -451,6 +451,7 @@ function toggleProgram(id) {
   box-shadow: 0 4px 30px rgba(0,0,0,0.1);
   display: grid;
   grid-template-columns: 380px 1fr;
+  align-items: start;
 }
 
 .program-card.featured {
@@ -465,13 +466,14 @@ function toggleProgram(id) {
 
 .program-image {
   position: relative;
+  height: 320px;
+  flex-shrink: 0;
 }
 
 .program-image img {
   width: 100%;
-  height: 100%;
+  height: 320px;
   object-fit: cover;
-  min-height: 320px;
 }
 
 .program-badge {
