@@ -6,7 +6,7 @@ category: Budget Guide
 topic: budget
 authorType: team
 audience: solo
-image: /images/blog/sunrise.jpg
+image: /images/blog/mawun-beach.jpg
 ---
 
 Good news: South Lombok is one of Indonesia's most affordable destinations. You can live well here on **$25-40/day** — or stretch even further if you know the local secrets.

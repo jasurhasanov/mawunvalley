@@ -6,7 +6,7 @@ category: Group Travel
 topic: groups
 authorType: team
 audience: groups
-image: /images/blog/gathering.jpg
+image: /images/blog/volleyball.jpg
 ---
 
 Traveling with a group unlocks experiences that solo travelers miss — shared meals become celebrations, activities become adventures, and inside jokes last a lifetime. South Lombok is perfectly suited for group travel, offering space, activities, and that rare combination of adventure and relaxation.
