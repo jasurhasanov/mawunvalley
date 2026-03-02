@@ -510,7 +510,7 @@ function prevSlide(cabin, max) {
 .hero-bg { position: absolute; inset: 0; z-index: -1; }
 .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,62,45,0.5), rgba(44,62,45,0.8)); }
 .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
-.hero-content { max-width: 700px; padding: 0 24px; }
+.hero-content { max-width: 700px; padding: 80px 24px 0; }
 .hero h1 { color: white; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px; }
 .hero p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 32px; line-height: 1.7; }
 .section-label.light { color: var(--color-gold); }
@@ -560,7 +560,7 @@ function prevSlide(cabin, max) {
 .info-item { display: flex; align-items: center; gap: 8px; font-size: 14px; }
 .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .benefit { background: var(--color-cream); padding: 12px; border-radius: 8px; font-size: 14px; }
-.modal-footer { padding: 0 32px 32px; }
+.modal-footer { padding: 20px 32px 40px; }
 
 .cabins-section { padding: 100px 0; background: white; }
 .cabin-features { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 50px; }
