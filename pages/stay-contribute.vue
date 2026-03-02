@@ -603,6 +603,7 @@ function prevSlide(cabin, max) {
 .btn-lg { padding: 16px 32px; font-size: 16px; }
 
 @media (max-width: 768px) {
+  .modal-footer { padding-bottom: 60px !important; }
   .hero-stats { gap: 24px; }
   .how-grid { gap: 30px; }
   .programs-grid { grid-template-columns: 1fr; }
