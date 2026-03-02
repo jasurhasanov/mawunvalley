@@ -55,13 +55,13 @@
           <p>Whether you're here for a night or a season, there's a place for you.</p>
         </div>
         <div class="ways-grid">
-          <NuxtLink to="/stay" class="way-card">
+          <NuxtLink to="/stay-contribute" class="way-card">
             <div class="way-icon">🏡</div>
             <h3>Stay</h3>
             <p>Farmstay cabins with valley views. Wake up to roosters, not alarms.</p>
             <span class="way-link">View cabins →</span>
           </NuxtLink>
-          <NuxtLink to="/experience" class="way-card">
+          <NuxtLink to="/stay-contribute" class="way-card">
             <div class="way-icon">🌱</div>
             <h3>Experience</h3>
             <p>Immersive farm programs. Become part of the farm, not just a visitor.</p>
