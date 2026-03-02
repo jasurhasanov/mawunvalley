@@ -33,7 +33,7 @@
           </div>
           <div class="stat-item">
             <span class="stat-number">$19</span>
-            <span class="stat-label">Per Day</span>
+            <span class="stat-label">Per Person/Day</span>
           </div>
         </div>
       </div>
@@ -445,6 +445,27 @@
               </div>
             </div>
           </div>
+          <!-- Jabalkap Cabin -->
+          <div class="cabin-showcase-item">
+            <div class="cabin-gallery">
+              <div class="cabin-main-image">
+                <img :src="cabinImages.jabalkap[activeCabinImage.jabalkap]" alt="Jabalkap Cabin">
+              </div>
+              <div class="cabin-thumbnails">
+                <img v-for="(img, idx) in cabinImages.jabalkap" :key="idx" :src="img" @click="activeCabinImage.jabalkap = idx" :class="{ active: activeCabinImage.jabalkap === idx }" alt="Jabalkap">
+              </div>
+            </div>
+            <div class="cabin-details">
+              <h3>Jabalkap Cabin</h3>
+              <p class="cabin-style">A-frame style</p>
+              <p class="cabin-bed">🛏️ Single Bed</p>
+              <div class="cabin-features-list">
+                <span>🏔️ Farm + Mountain View</span>
+                <span>🏄 Surfboard Storage</span>
+                <span>🧳 Luggage Space</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -515,17 +536,19 @@ useHead({ title: 'Experience & Stay - Mawun Valley Farm' })
 const activeProgram = ref(null)
 
 const cabinImages = {
-  sandat: ['/images/sandat-1.jpg', '/images/sandat-2.jpg', '/images/sandat-3.jpg', '/images/sandat-4.jpg', '/images/sandat-5.jpg'],
+  sandat: ['/images/sandat-1.jpg', '/images/sandat-2.jpg', '/images/sandat-3.jpg', '/images/sandat-4.jpg', '/images/sandat-5.jpg', '/images/sandat-6.jpg', '/images/sandat-7.jpg'],
   windmill: ['/images/windmill-1.jpg', '/images/windmill-2.jpg', '/images/windmill-3.jpg', '/images/windmill-4.jpg', '/images/windmill-5.jpg'],
   lime: ['/images/lime-1.jpg', '/images/lime-2.jpg', '/images/lime-3.jpg', '/images/lime-4.jpg', '/images/lime-5.jpg'],
-  peace: ['/images/peace-1.jpg', '/images/peace-2.jpg', '/images/peace-3.jpg', '/images/peace-4.jpg', '/images/peace-5.jpg']
+  peace: ['/images/peace-1.jpg', '/images/peace-2.jpg', '/images/peace-3.jpg', '/images/peace-4.jpg', '/images/peace-5.jpg', '/images/peace-6.jpg', '/images/peace-7.jpg'],
+  jabalkap: ['/images/jabalkap-1.jpg', '/images/jabalkap-2.jpg', '/images/jabalkap-3.jpg']
 }
 
 const activeCabinImage = reactive({
   sandat: 0,
   windmill: 0,
   lime: 0,
-  peace: 0
+  peace: 0,
+  jabalkap: 0
 })
 
 function openProgram(program) {
