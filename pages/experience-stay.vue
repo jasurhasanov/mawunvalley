@@ -124,13 +124,13 @@
               <p>Embark on a unique, hands-on learning experience at Mawun Valley Farm, nestled in the heart of Lombok's stunning natural beauty. Gain invaluable practical skills in permaculture, sustainable agriculture, and community living.</p>
               <p>With Lombok's best surfing beaches just 3 minutes away, you can balance your farm experience with world-class waves at Mawun Beach, Selong Belanak, and Mawi.</p>
               
-              <h4>🤝 What You'll Do</h4>
+              <h4>🌿 Daily Farm Life</h4>
               <ul class="detail-list">
-                <li><strong>Painting & Decorating:</strong> Help with painting or decorating the property facilities</li>
-                <li><strong>Animal Care:</strong> Help look after and take care of goats, ducks, chickens, and cats</li>
-                <li><strong>Farming:</strong> Plant crops, sow seeds, harvest vegetables, and help with outside tasks</li>
-                <li><strong>Gardening:</strong> Help grow plants and cultivate our permaculture gardens</li>
-                <li><strong>Building Projects:</strong> Assist with construction and maintenance around the farm</li>
+                <li><strong>Morning with the Animals:</strong> Feed the goats, collect eggs, and spend time with our friendly farm animals</li>
+                <li><strong>Garden Time:</strong> Get your hands in the soil — planting, harvesting, and learning about permaculture</li>
+                <li><strong>Creative Projects:</strong> Join in on painting, building, or decorating — whatever inspires you</li>
+                <li><strong>Community Moments:</strong> Share meals, stories, and experiences with fellow travelers</li>
+                <li><strong>Free Time:</strong> Surf, explore beaches, or simply relax in your cabin</li>
               </ul>
               
               <h4>🎁 What's Included</h4>
@@ -183,12 +183,12 @@
               <p>At Mawun Valley Farm, nestled in the tranquil landscapes of Lombok, we offer a unique opportunity to immerse yourself in the principles of slow living. If you appreciate a slower pace, connection with nature, and meaningful interactions, join our community.</p>
               <p class="highlight-box">Savor simple moments: enjoying a quiet breakfast with farm-sourced ingredients, taking leisurely walks through the gardens, observing the beauty of Lombok sunsets. Evenings include relaxed gatherings under the stars, sharing stories and connecting with fellow travelers.</p>
               
-              <h4>🤝 What You'll Do</h4>
+              <h4>🌿 Daily Farm Life</h4>
               <ul class="detail-list">
-                <li><strong>Animal Care:</strong> Gentle morning routines with our goats, ducks, and chickens</li>
-                <li><strong>Farming:</strong> Plant crops, sow seeds, and participate in harvests at your own pace</li>
-                <li><strong>Gardening:</strong> Mindful cultivation of our herb and vegetable gardens</li>
-                <li><strong>Community Meals:</strong> Help prepare and enjoy farm-to-table cooking</li>
+                <li><strong>Gentle Mornings:</strong> Start your day with the animals — feeding goats, greeting the ducks</li>
+                <li><strong>Garden Meditation:</strong> Tend to herbs and vegetables at your own peaceful pace</li>
+                <li><strong>Farm-to-Table:</strong> Join in preparing meals with ingredients you helped grow</li>
+                <li><strong>Sunset Gatherings:</strong> Share stories and connect with fellow travelers under the stars</li>
               </ul>
               
               <h4>✨ Key Elements</h4>
@@ -237,12 +237,12 @@
               <p>Embark on a unique creative journey at Mawun Valley Farm. This program is perfect for content creators who want to document sustainable living while being part of an inspiring community.</p>
               <p>With Lombok's best surfing beaches just 3 minutes away, you can balance content creation with world-class waves and stunning golden hour shots.</p>
               
-              <h4>🤝 What You'll Create</h4>
+              <h4>🌿 Daily Farm Life</h4>
               <ul class="detail-list">
-                <li><strong>Content Writing:</strong> Write, edit and publish inspiring blog posts and articles about farm life</li>
-                <li><strong>Photography:</strong> Capture stunning photos of the farm, animals, landscapes, and daily life</li>
-                <li><strong>Video Making:</strong> Create reels, vlogs, and documentaries about sustainable living</li>
-                <li><strong>Social Media:</strong> Help manage and grow our online presence</li>
+                <li><strong>Capture the Moments:</strong> Document farm life through photos, videos, or writing</li>
+                <li><strong>Morning Light:</strong> Golden hour sessions with animals, gardens, and landscapes</li>
+                <li><strong>Story Gathering:</strong> Connect with guests and locals for authentic content</li>
+                <li><strong>Creative Freedom:</strong> Work on your own projects in our dedicated workspace</li>
               </ul>
               
               <h4>👤 Who This Is For</h4>
