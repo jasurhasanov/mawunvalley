@@ -55,7 +55,7 @@ One thing we quickly learned: grapevine tendrils are **strong**. They wrap thems
 
 ## ♻️ Nothing Goes to Waste
 
-True to [Mawun Valley Farm's](/experience) ethos, nothing was wasted. The pruned vines and leaves found new life:
+True to [Mawun Valley Farm's](/stay-contribute) ethos, nothing was wasted. The pruned vines and leaves found new life:
 
 - **Some went straight to the goats** — they loved it!
 - **Others were saved for cooking** — we're planning to make dolma with the grape leaves

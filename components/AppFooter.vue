@@ -12,8 +12,7 @@
           <ul>
             <li><NuxtLink to="/">Home</NuxtLink></li>
             <li><NuxtLink to="/nonis">Noni's</NuxtLink></li>
-            <li><NuxtLink to="/stay">Our Cabins</NuxtLink></li>
-            <li><NuxtLink to="/experience">Programs</NuxtLink></li>
+            <li><NuxtLink to="/stay-contribute">Stay &amp; Contribute</NuxtLink></li>
             <li><NuxtLink to="/retreat">Farm Retreat</NuxtLink></li>
           </ul>
         </div>

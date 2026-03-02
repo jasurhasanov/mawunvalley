@@ -8,9 +8,9 @@ authorType: team
 image: /images/blog/skijet.jpg
 ---
 
-*Learn to make cashew apple jam: Our [Cashew Apple Jam Cooking Class](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm) at [Mawun Valley Farm](/experience) teaches you to transform this rare fruit into delicious preserves.*
+*Learn to make cashew apple jam: Our [Cashew Apple Jam Cooking Class](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm) at [Mawun Valley Farm](/stay-contribute) teaches you to transform this rare fruit into delicious preserves.*
 
-While **95% of the world's cashew apple harvest goes to waste**, creative communities across tropical regions have developed remarkable uses for this forgotten fruit. At [Mawun Valley Farm](/experience), we're part of a small movement working to change that statistic — one jar of jam at a time.
+While **95% of the world's cashew apple harvest goes to waste**, creative communities across tropical regions have developed remarkable uses for this forgotten fruit. At [Mawun Valley Farm](/stay-contribute), we're part of a small movement working to change that statistic — one jar of jam at a time.
 
 Here are five uses for cashew apple that most people have never heard of, each representing a different tradition of honoring this incredible fruit.
 
@@ -108,7 +108,7 @@ The astringency takes some getting used to. First-time tasters often make a surp
 
 ### Experience It at Mawun Valley Farm
 
-During cashew season (August-December) at [the farm](/experience), we sometimes press fresh juice for guests. It's not a formal offering — just something special we share when the trees are producing and guests are curious.
+During cashew season (August-December) at [the farm](/stay-contribute), we sometimes press fresh juice for guests. It's not a formal offering — just something special we share when the trees are producing and guests are curious.
 
 If you're visiting during season and want to try fresh juice, just ask. We'll pick ripe fruit, press it on the spot, and you'll taste something that 99.9% of people never experience.
 
@@ -221,7 +221,7 @@ Every use described above transforms waste into value:
 - **Vinegar** adds culinary utility
 - **Skincare** utilizes beneficial compounds
 
-At [Mawun Valley Farm](/experience), we're committed to using what we grow. Our cashew trees aren't just decorative — they're productive. The apples feed our family, our guests, and our [cooking class](/gather) participants.
+At [Mawun Valley Farm](/stay-contribute), we're committed to using what we grow. Our cashew trees aren't just decorative — they're productive. The apples feed our family, our guests, and our [cooking class](/gather) participants.
 
 ### Continuing Traditional Knowledge
 
@@ -238,7 +238,7 @@ Learn the complete process from tree to jar. Pick fruit, process it, take home y
 [Book on Megatix](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm)
 
 ### Fresh Tasting
-Ask during your [stay](/stay) if it's harvest season — we'll press fresh juice or let you taste the raw fruit.
+Ask during your [stay](/stay-contribute) if it's harvest season — we'll press fresh juice or let you taste the raw fruit.
 
 ### Jam at Noni's
 Year-round, try our house-made cashew apple jam at [Noni's Cafe](/nonis) — on toast, in pastries, or by the jar.

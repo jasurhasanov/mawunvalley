@@ -26,7 +26,7 @@ By 8am I'm sitting with the kittens who sleep peacefully atop the amphitheatre w
 
 ## The Cozy Lodges
 
-Each lodge is named uniquely with beautiful painted signs, giving the [accommodation](/stay) that added charm. The "Lime" hut, where I am staying, is situated just next to the citrus garden — painted green and yellow to accompany the neighbouring lemons and limes.
+Each lodge is named uniquely with beautiful painted signs, giving the [accommodation](/stay-contribute) that added charm. The "Lime" hut, where I am staying, is situated just next to the citrus garden — painted green and yellow to accompany the neighbouring lemons and limes.
 
 Each cabin is warmly furnished with a fan and a plush, comfortable bed. You may view this green haven as a refined wilderness retreat, rather than just a glamping spot in rural Lombok. It lets people experience a new lifestyle, in addition to providing guests with an escape from their own.
 

@@ -13,7 +13,7 @@ image: /images/blog/farm-life.jpg
 
 *Selamat Datang. Welcome. A fifteen-minute drive from Kuta, nestled in the countryside of South Lombok, lies Mawun Valley — a blissful haven that differs from your average farm stay.*
 
-This verdant retreat offers hospitality in the form of [Noni's delicious cooking](/nonis) at her cafe, made with homegrown produce, and cosy [huts on the hill](/stay) where guests can sojourn. The family-run farm is a genuine way to connect with nature and one's inner child, and is suited for the whole family.
+This verdant retreat offers hospitality in the form of [Noni's delicious cooking](/nonis) at her cafe, made with homegrown produce, and cosy [huts on the hill](/stay-contribute) where guests can sojourn. The family-run farm is a genuine way to connect with nature and one's inner child, and is suited for the whole family.
 
 ## The Grand Entrance
 

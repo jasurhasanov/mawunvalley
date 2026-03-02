@@ -10,7 +10,7 @@ image: /images/blog/cooking-class.jpg
 
 *Learn hands-on: Join our [Cashew Apple Jam Cooking Class](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm) at Mawun Valley Farm and make your own jar to take home.*
 
-Cashew apple jam is one of the world's rarest preserves — not because the recipe is secret, but because the fruit itself is nearly impossible to find outside tropical regions. At [Mawun Valley Farm](/experience), we've been perfecting this recipe using cashew apples from our own trees, and now we're sharing the complete technique.
+Cashew apple jam is one of the world's rarest preserves — not because the recipe is secret, but because the fruit itself is nearly impossible to find outside tropical regions. At [Mawun Valley Farm](/stay-contribute), we've been perfecting this recipe using cashew apples from our own trees, and now we're sharing the complete technique.
 
 ---
 
@@ -103,7 +103,7 @@ These additions complement the tropical flavor without overwhelming it. Start wi
 
 **Expected yield:** 1kg of fruit produces approximately 600-700ml of juice.
 
-*Pro tip: The leftover pulp can be fed to chickens or added to compost. Nothing wasted at [the farm](/experience).*
+*Pro tip: The leftover pulp can be fed to chickens or added to compost. Nothing wasted at [the farm](/stay-contribute).*
 
 ### Step 3: Initial Reduction (20 minutes)
 
@@ -239,7 +239,7 @@ This recipe is straightforward. The real difficulty is sourcing the fruit.
 2. **Visit during harvest season** (August-December in Indonesia)
 3. **Know someone with cashew trees**
 
-This is exactly why we created our cooking class. At [Mawun Valley Farm](/experience), we have 6 mature cashew trees. During harvest season, guests can:
+This is exactly why we created our cooking class. At [Mawun Valley Farm](/stay-contribute), we have 6 mature cashew trees. During harvest season, guests can:
 - Pick ripe cashew apples directly from our trees
 - Learn the complete jam-making process hands-on
 - Take home a jar they made themselves

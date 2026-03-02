@@ -9,7 +9,7 @@ audience: couples
 image: /images/blog/mawun-beach.jpg
 ---
 
-South Lombok is blessed with some of Indonesia's most pristine coastline — turquoise waters, powder-white sand, dramatic cliffs, and far fewer tourists than neighboring Bali. The best part? [Staying at Mawun Valley Farm](/stay) puts you within minutes of all of it.
+South Lombok is blessed with some of Indonesia's most pristine coastline — turquoise waters, powder-white sand, dramatic cliffs, and far fewer tourists than neighboring Bali. The best part? [Staying at Mawun Valley Farm](/stay-contribute) puts you within minutes of all of it.
 
 We've spent years exploring every cove and headland along this coast. This guide shares our honest insights on the best beaches, when to visit them, and how to make the most of your beach-hopping days.
 
@@ -269,7 +269,7 @@ Sit on the lower terrace for the best unobstructed views. The infinity pool is f
 
 ## Why Stay at Mawun Valley Farm?
 
-[Mawun Valley Farm](/stay) is perfectly positioned for beach exploration:
+[Mawun Valley Farm](/stay-contribute) is perfectly positioned for beach exploration:
 
 - **3 minutes** to Mawun Beach
 - **15 minutes** to Selong Belanak

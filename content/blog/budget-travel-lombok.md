@@ -6,7 +6,7 @@ category: Budget Guide
 topic: budget
 authorType: team
 audience: solo
-image: /images/blog/sunrise.jpg
+image: /images/blog/mawun-beach.jpg
 ---
 
 Good news: South Lombok is one of Indonesia's most affordable destinations. You can live well here on **$25-40/day** — or stretch even further if you know the local secrets.
@@ -78,7 +78,7 @@ A place charging 200,000 IDR/night might offer 1,000,000/week (saving 400,000) o
 
 ### Go Inland, Save Money
 
-Beachfront commands a premium. [Staying at farm stays like Mawun Valley](/stay) often costs **half as much** as beach accommodation — and you get more character, better food, and a real community.
+Beachfront commands a premium. [Staying at farm stays like Mawun Valley](/stay-contribute) often costs **half as much** as beach accommodation — and you get more character, better food, and a real community.
 
 ### Consider Work-Exchange Programs
 
@@ -126,7 +126,7 @@ Grilled meat skewers with peanut sauce. Chicken is most common.
 
 ### Meals-Included Accommodation
 
-[Staying at Mawun Valley Farm](/stay) includes meals from [Noni's kitchen](/nonis). Do the math — it often works out **cheaper than eating out**, and you'll eat better. Fresh ingredients from the farm, proper home cooking, and no decision fatigue.
+[Staying at Mawun Valley Farm](/stay-contribute) includes meals from [Noni's kitchen](/nonis). Do the math — it often works out **cheaper than eating out**, and you'll eat better. Fresh ingredients from the farm, proper home cooking, and no decision fatigue.
 
 ### Market Shopping
 
@@ -287,7 +287,7 @@ Budget travel here isn't about deprivation. It's about prioritizing **experience
 
 ## Stay at Mawun Valley Farm
 
-[Mawun Valley Farm](/stay) offers budget-friendly accommodation with meals included:
+[Mawun Valley Farm](/stay-contribute) offers budget-friendly accommodation with meals included:
 
 - Private cabins from 200,000 IDR/night
 - Three meals daily from [Noni's kitchen](/nonis)

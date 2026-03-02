@@ -8,7 +8,7 @@
         <div class="article-hero-content">
           <span class="category">{{ doc.category }}</span>
           <h1>{{ doc.title }}</h1>
-          <p class="meta">By {{ doc.author }}</p>
+          <p class="meta">By {{ doc.author || 'Mawun Valley Team' }}</p>
         </div>
       </section>
       
@@ -26,7 +26,7 @@
             <h2>Experience Mawun Valley</h2>
             <p>Book your stay and discover the magic for yourself.</p>
             <div class="cta-buttons">
-              <NuxtLink to="/stay" class="btn btn-primary">View Cabins</NuxtLink>
+              <NuxtLink to="/stay-contribute" class="btn btn-primary">View Stays</NuxtLink>
               <a href="https://wa.me/6282258440585" class="btn btn-whatsapp" target="_blank">WhatsApp Us</a>
             </div>
           </div>
