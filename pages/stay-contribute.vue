@@ -433,7 +433,7 @@
           <div class="review-card">
             <div class="stars">★★★★★</div>
             <p>"Staying at Mawun Valley Farm was an incredible experience. Fully immersed in nature and local life. The peaceful environment helped me disconnect and reset. If you're a surfer, this place is a hidden gem."</p>
-            <div class="review-author"><strong>Iyad</strong><span>Tunisia • 3 weeks</span></div>
+            <div class="review-author"><strong>Iyad</strong><span>Tunisia • 40 days</span></div>
           </div>
           <div class="review-card">
             <div class="stars">★★★★★</div>
@@ -458,7 +458,7 @@
           <div class="review-card">
             <div class="stars">★★★★★</div>
             <p>"Mawun Valley is an incredible place that gives everyone a place in the community. Everything is to be created with the host as an inspired and caring conductor."</p>
-            <div class="review-author"><strong>Alexa</strong><span>France • 1 month</span></div>
+            <div class="review-author"><strong>Alexa</strong><span>France • 2 weeks</span></div>
           </div>
         </div>
       </div>
