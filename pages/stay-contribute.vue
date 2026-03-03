@@ -157,7 +157,7 @@
 
           <article class="program-card" @click="openProgram('storyteller')">
             <div class="program-image">
-              <img src="/images/creative-cover.jpg" alt="The Storyteller">
+              <img src="/images/beachside-cover.jpg" alt="The Storyteller">
               <span class="program-badge">📸 Creator</span>
             </div>
             <div class="program-info">
