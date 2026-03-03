@@ -69,7 +69,7 @@
           <!-- 3. Cashew Apple Jam -->
           <article class="event-card signature" @click="openEvent('cashew')">
             <div class="event-image">
-              <img src="/images/gallery-2.jpg" alt="Cashew Apple Jam Cooking Class">
+              <img src="/images/cashew-jam-cover.jpg" alt="Cashew Apple Jam Cooking Class">
               <span class="event-badge cashew">Signature</span>
             </div>
             <div class="event-info">
