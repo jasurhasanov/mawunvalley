@@ -133,7 +133,7 @@
 
           <article class="program-card" @click="openProgram('grower')">
             <div class="program-image">
-              <img src="/images/slowliving-cover.jpg" alt="The Grower">
+              <img src="/images/grower-cover.jpg" alt="The Grower">
               <span class="program-badge">🌱 Nature</span>
             </div>
             <div class="program-info">
