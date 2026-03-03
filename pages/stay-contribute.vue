@@ -15,8 +15,8 @@
             <span class="hero-stat-label">Day Minimum</span>
           </div>
           <div class="hero-stat">
-            <span class="hero-stat-number">$19</span>
-            <span class="hero-stat-label">Per Person per Day</span>
+            <span class="hero-stat-number">🏡</span>
+            <span class="hero-stat-label">Private Cabin</span>
           </div>
           <div class="hero-stat">
             <span class="hero-stat-number">3 min</span>
@@ -903,6 +903,21 @@
     </section>
 
     <!-- Application Form Section -->
+    <!-- Fee Section -->
+    <section class="fee-section">
+      <div class="container">
+        <div class="fee-box">
+          <div class="fee-amount">
+            <span class="fee-number">$19</span>
+            <span class="fee-label">per person / day</span>
+          </div>
+          <div class="fee-explainer">
+            <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="apply-section" id="apply">
       <div class="container">
         <div class="section-header">
@@ -1232,6 +1247,15 @@ async function submitApplication() {
 .review-card p { font-size: 15px; line-height: 1.7; color: #555; font-style: italic; margin-bottom: 16px; }
 .review-author strong { display: block; margin-bottom: 4px; }
 .review-author span { font-size: 13px; color: #888; }
+
+
+.fee-section { padding: 60px 0; background: var(--color-cream); }
+.fee-box { max-width: 600px; margin: 0 auto; text-align: center; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.fee-amount { margin-bottom: 20px; }
+.fee-number { font-size: 3rem; font-weight: 700; color: var(--color-terracotta); }
+.fee-label { display: block; font-size: 1.1rem; color: #666; margin-top: 4px; }
+.fee-explainer { background: var(--color-cream); padding: 20px; border-radius: 12px; }
+.fee-explainer p { margin: 0; font-size: 15px; line-height: 1.6; color: #555; }
 
 .apply-section { padding: 100px 0; background: var(--color-dark); }
 .apply-section .section-header { color: white; }
