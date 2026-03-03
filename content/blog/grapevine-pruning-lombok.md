@@ -5,6 +5,7 @@ date: 2026-02-28
 category: Farm Life
 topic: farm-life
 authorType: guest
+author: Sarah & Johnny
 image: /images/blog/grapevine-1.jpg
 ---
 

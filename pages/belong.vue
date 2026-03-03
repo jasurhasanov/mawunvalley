@@ -48,6 +48,16 @@
             <h3>Full Farm Access</h3>
             <p>Roam the farm grounds freely. Interact with goats, ducks, and cats. Use the sports field. A safe "nature classroom" for your children.</p>
           </div>
+          <div class="deliverable-card">
+            <span class="deliverable-icon">🧤</span>
+            <h3>Gardening Gear</h3>
+            <p>All gardening tools, farmer hats, gloves, and equipment provided. Just show up — we have everything you need.</p>
+          </div>
+          <div class="deliverable-card">
+            <span class="deliverable-icon">🪵</span>
+            <h3>Raised Bed Support</h3>
+            <p>Materials, tools, and hands-on support to build your own raised garden beds using wood or bamboo.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -102,6 +112,22 @@
       </div>
     </section>
 
+    <section class="availability-section">
+      <div class="container">
+        <div class="availability-box">
+          <div class="spots-visual">
+            <div class="spot taken"><span>✓</span></div>
+            <div class="spot taken"><span>✓</span></div>
+            <div class="spot available"><span>1</span></div>
+          </div>
+          <div class="availability-content">
+            <span class="urgency-label">Limited Availability</span>
+            <h2>Only 1 Spot Remaining</h2>
+            <p>We limit membership to 3 families to ensure quality care for every garden. 2 families have already joined — one spot left.</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="cta-section">
       <div class="container">
         <span class="section-label">Ready to Join?</span>
@@ -358,5 +384,97 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 
 .btn-whatsapp:hover {
   background: #128C7E;
+}
+
+.availability-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #fff8e7 0%, #ffe4c4 100%);
+}
+
+.availability-box {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 48px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border: 3px solid var(--color-terracotta);
+}
+
+.spots-visual {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.spot {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.spot.taken {
+  background: #e0e0e0;
+  color: #999;
+}
+
+.spot.available {
+  background: var(--color-terracotta);
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(196, 114, 81, 0.7); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(196, 114, 81, 0); }
+}
+
+.availability-content {
+  text-align: left;
+}
+
+.urgency-label {
+  display: inline-block;
+  background: var(--color-terracotta);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.availability-content h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.availability-content p {
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .availability-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px;
+    gap: 24px;
+  }
+  .availability-content {
+    text-align: center;
+  }
 }
 </style>

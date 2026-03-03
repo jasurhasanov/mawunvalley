@@ -5,6 +5,7 @@ date: 2026-02-25
 category: Guest Diary
 topic: guest-diary
 authorType: guest
+author: Ava
 audience: solo
 image: /images/blog/farm-life.jpg
 ---

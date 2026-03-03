@@ -5,6 +5,7 @@ date: 2026-02-26
 category: Guest Diary
 topic: guest-diary
 authorType: guest
+author: Ava
 audience: solo
 image: /images/blog/selong-belanak.jpg
 ---

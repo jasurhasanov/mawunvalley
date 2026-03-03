@@ -169,7 +169,77 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20The%20Storyteller%20path." class="btn btn-whatsapp btn-lg" target="_blank">Message Us</a>
+              <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Storyteller')">Apply Now</button>
+              <div v-else class="modal-form-wrapper">
+                <div class="form-note">
+                  <p>📝 This is an interest form — not a confirmed booking. We'll reach out to confirm dates based on availability.</p>
+                </div>
+                <form @submit.prevent="submitApplication" class="application-form">
+                  <div class="form-group">
+                    <label>Full Name(s) *</label>
+                    <input type="text" v-model="form.fullName" required placeholder="Your name (and travel companion's if applicable)">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Number of Persons *</label>
+                      <input type="number" v-model="form.persons" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Country *</label>
+                      <select v-model="form.country" required>
+                        <option value="">Select country</option>
+                        <option v-for="c in countries" :key="c" :value="c">{{ c }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>WhatsApp Number *</label>
+                      <input type="tel" v-model="form.whatsapp" required placeholder="+1234567890">
+                    </div>
+                    <div class="form-group">
+                      <label>Email *</label>
+                      <input type="email" v-model="form.email" required placeholder="you@example.com">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Tell us about yourself *</label>
+                    <textarea v-model="form.about" required placeholder="A few sentences about you, your background, and why you're interested..."></textarea>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Expected Arrival *</label>
+                      <input type="date" v-model="form.arrival" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Expected Departure *</label>
+                      <input type="date" v-model="form.departure" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Program *</label>
+                    <select v-model="form.program" required>
+                      <option value="The Storyteller">The Storyteller</option>
+                      <option value="The Grower">The Grower</option>
+                      <option value="The Maker">The Maker</option>
+                      <option value="The Caretaker">The Caretaker</option>
+                      <option value="Slow Living">Slow Living</option>
+                      <option value="Mixed">Mixed (try different things)</option>
+                    </select>
+                  </div>
+                  <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" v-model="form.agreed" required>
+                      <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
+                    {{ submitting ? 'Submitting...' : 'Submit Application' }}
+                  </button>
+                  <p v-if="submitSuccess" class="success-msg">✅ Application submitted! We'll be in touch soon.</p>
+                  <p v-if="submitError" class="error-msg">❌ Something went wrong. Please try again or contact us on WhatsApp.</p>
+                </form>
+              </div>
             </div>
           </div>
 
@@ -207,7 +277,77 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20The%20Grower%20path." class="btn btn-whatsapp btn-lg" target="_blank">Message Us</a>
+              <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Grower')">Apply Now</button>
+              <div v-else class="modal-form-wrapper">
+                <div class="form-note">
+                  <p>📝 This is an interest form — not a confirmed booking. We'll reach out to confirm dates based on availability.</p>
+                </div>
+                <form @submit.prevent="submitApplication" class="application-form">
+                  <div class="form-group">
+                    <label>Full Name(s) *</label>
+                    <input type="text" v-model="form.fullName" required placeholder="Your name (and travel companion's if applicable)">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Number of Persons *</label>
+                      <input type="number" v-model="form.persons" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Country *</label>
+                      <select v-model="form.country" required>
+                        <option value="">Select country</option>
+                        <option v-for="c in countries" :key="c" :value="c">{{ c }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>WhatsApp Number *</label>
+                      <input type="tel" v-model="form.whatsapp" required placeholder="+1234567890">
+                    </div>
+                    <div class="form-group">
+                      <label>Email *</label>
+                      <input type="email" v-model="form.email" required placeholder="you@example.com">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Tell us about yourself *</label>
+                    <textarea v-model="form.about" required placeholder="A few sentences about you, your background, and why you're interested..."></textarea>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Expected Arrival *</label>
+                      <input type="date" v-model="form.arrival" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Expected Departure *</label>
+                      <input type="date" v-model="form.departure" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Program *</label>
+                    <select v-model="form.program" required>
+                      <option value="The Storyteller">The Storyteller</option>
+                      <option value="The Grower">The Grower</option>
+                      <option value="The Maker">The Maker</option>
+                      <option value="The Caretaker">The Caretaker</option>
+                      <option value="Slow Living">Slow Living</option>
+                      <option value="Mixed">Mixed (try different things)</option>
+                    </select>
+                  </div>
+                  <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" v-model="form.agreed" required>
+                      <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
+                    {{ submitting ? 'Submitting...' : 'Submit Application' }}
+                  </button>
+                  <p v-if="submitSuccess" class="success-msg">✅ Application submitted! We'll be in touch soon.</p>
+                  <p v-if="submitError" class="error-msg">❌ Something went wrong. Please try again or contact us on WhatsApp.</p>
+                </form>
+              </div>
             </div>
           </div>
 
@@ -245,7 +385,77 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20The%20Maker%20path." class="btn btn-whatsapp btn-lg" target="_blank">Message Us</a>
+              <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Maker')">Apply Now</button>
+              <div v-else class="modal-form-wrapper">
+                <div class="form-note">
+                  <p>📝 This is an interest form — not a confirmed booking. We'll reach out to confirm dates based on availability.</p>
+                </div>
+                <form @submit.prevent="submitApplication" class="application-form">
+                  <div class="form-group">
+                    <label>Full Name(s) *</label>
+                    <input type="text" v-model="form.fullName" required placeholder="Your name (and travel companion's if applicable)">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Number of Persons *</label>
+                      <input type="number" v-model="form.persons" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Country *</label>
+                      <select v-model="form.country" required>
+                        <option value="">Select country</option>
+                        <option v-for="c in countries" :key="c" :value="c">{{ c }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>WhatsApp Number *</label>
+                      <input type="tel" v-model="form.whatsapp" required placeholder="+1234567890">
+                    </div>
+                    <div class="form-group">
+                      <label>Email *</label>
+                      <input type="email" v-model="form.email" required placeholder="you@example.com">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Tell us about yourself *</label>
+                    <textarea v-model="form.about" required placeholder="A few sentences about you, your background, and why you're interested..."></textarea>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Expected Arrival *</label>
+                      <input type="date" v-model="form.arrival" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Expected Departure *</label>
+                      <input type="date" v-model="form.departure" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Program *</label>
+                    <select v-model="form.program" required>
+                      <option value="The Storyteller">The Storyteller</option>
+                      <option value="The Grower">The Grower</option>
+                      <option value="The Maker">The Maker</option>
+                      <option value="The Caretaker">The Caretaker</option>
+                      <option value="Slow Living">Slow Living</option>
+                      <option value="Mixed">Mixed (try different things)</option>
+                    </select>
+                  </div>
+                  <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" v-model="form.agreed" required>
+                      <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
+                    {{ submitting ? 'Submitting...' : 'Submit Application' }}
+                  </button>
+                  <p v-if="submitSuccess" class="success-msg">✅ Application submitted! We'll be in touch soon.</p>
+                  <p v-if="submitError" class="error-msg">❌ Something went wrong. Please try again or contact us on WhatsApp.</p>
+                </form>
+              </div>
             </div>
           </div>
 
@@ -283,7 +493,77 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20The%20Caretaker%20path." class="btn btn-whatsapp btn-lg" target="_blank">Message Us</a>
+              <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Caretaker')">Apply Now</button>
+              <div v-else class="modal-form-wrapper">
+                <div class="form-note">
+                  <p>📝 This is an interest form — not a confirmed booking. We'll reach out to confirm dates based on availability.</p>
+                </div>
+                <form @submit.prevent="submitApplication" class="application-form">
+                  <div class="form-group">
+                    <label>Full Name(s) *</label>
+                    <input type="text" v-model="form.fullName" required placeholder="Your name (and travel companion's if applicable)">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Number of Persons *</label>
+                      <input type="number" v-model="form.persons" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Country *</label>
+                      <select v-model="form.country" required>
+                        <option value="">Select country</option>
+                        <option v-for="c in countries" :key="c" :value="c">{{ c }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>WhatsApp Number *</label>
+                      <input type="tel" v-model="form.whatsapp" required placeholder="+1234567890">
+                    </div>
+                    <div class="form-group">
+                      <label>Email *</label>
+                      <input type="email" v-model="form.email" required placeholder="you@example.com">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Tell us about yourself *</label>
+                    <textarea v-model="form.about" required placeholder="A few sentences about you, your background, and why you're interested..."></textarea>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Expected Arrival *</label>
+                      <input type="date" v-model="form.arrival" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Expected Departure *</label>
+                      <input type="date" v-model="form.departure" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Program *</label>
+                    <select v-model="form.program" required>
+                      <option value="The Storyteller">The Storyteller</option>
+                      <option value="The Grower">The Grower</option>
+                      <option value="The Maker">The Maker</option>
+                      <option value="The Caretaker">The Caretaker</option>
+                      <option value="Slow Living">Slow Living</option>
+                      <option value="Mixed">Mixed (try different things)</option>
+                    </select>
+                  </div>
+                  <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" v-model="form.agreed" required>
+                      <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
+                    {{ submitting ? 'Submitting...' : 'Submit Application' }}
+                  </button>
+                  <p v-if="submitSuccess" class="success-msg">✅ Application submitted! We'll be in touch soon.</p>
+                  <p v-if="submitError" class="error-msg">❌ Something went wrong. Please try again or contact us on WhatsApp.</p>
+                </form>
+              </div>
             </div>
           </div>
 
@@ -321,7 +601,77 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20the%20Slow%20Living%20path." class="btn btn-whatsapp btn-lg" target="_blank">Message Us</a>
+              <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('Slow Living')">Apply Now</button>
+              <div v-else class="modal-form-wrapper">
+                <div class="form-note">
+                  <p>📝 This is an interest form — not a confirmed booking. We'll reach out to confirm dates based on availability.</p>
+                </div>
+                <form @submit.prevent="submitApplication" class="application-form">
+                  <div class="form-group">
+                    <label>Full Name(s) *</label>
+                    <input type="text" v-model="form.fullName" required placeholder="Your name (and travel companion's if applicable)">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Number of Persons *</label>
+                      <input type="number" v-model="form.persons" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Country *</label>
+                      <select v-model="form.country" required>
+                        <option value="">Select country</option>
+                        <option v-for="c in countries" :key="c" :value="c">{{ c }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>WhatsApp Number *</label>
+                      <input type="tel" v-model="form.whatsapp" required placeholder="+1234567890">
+                    </div>
+                    <div class="form-group">
+                      <label>Email *</label>
+                      <input type="email" v-model="form.email" required placeholder="you@example.com">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Tell us about yourself *</label>
+                    <textarea v-model="form.about" required placeholder="A few sentences about you, your background, and why you're interested..."></textarea>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Expected Arrival *</label>
+                      <input type="date" v-model="form.arrival" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Expected Departure *</label>
+                      <input type="date" v-model="form.departure" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Program *</label>
+                    <select v-model="form.program" required>
+                      <option value="The Storyteller">The Storyteller</option>
+                      <option value="The Grower">The Grower</option>
+                      <option value="The Maker">The Maker</option>
+                      <option value="The Caretaker">The Caretaker</option>
+                      <option value="Slow Living">Slow Living</option>
+                      <option value="Mixed">Mixed (try different things)</option>
+                    </select>
+                  </div>
+                  <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" v-model="form.agreed" required>
+                      <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
+                    {{ submitting ? 'Submitting...' : 'Submit Application' }}
+                  </button>
+                  <p v-if="submitSuccess" class="success-msg">✅ Application submitted! We'll be in touch soon.</p>
+                  <p v-if="submitError" class="error-msg">❌ Something went wrong. Please try again or contact us on WhatsApp.</p>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -344,7 +694,6 @@
           <span>🛋️ Comfy Mattress</span>
         </div>
         <div class="cabins-gallery">
-          <!-- Sandat -->
           <div class="cabin-card">
             <div class="cabin-slider">
               <div class="slider-images">
@@ -358,8 +707,6 @@
             </div>
             <div class="cabin-info"><h4>Sandat Cabin</h4><p>Queen bed • Balcony • Mountain view</p></div>
           </div>
-
-          <!-- Windmill -->
           <div class="cabin-card">
             <div class="cabin-slider">
               <div class="slider-images">
@@ -373,8 +720,6 @@
             </div>
             <div class="cabin-info"><h4>Rick's Windmill</h4><p>Queen bed • Unique design • Black balcony</p></div>
           </div>
-
-          <!-- Jabalkap -->
           <div class="cabin-card">
             <div class="cabin-slider">
               <div class="slider-images">
@@ -388,8 +733,6 @@
             </div>
             <div class="cabin-info"><h4>Jabalkap Cabin</h4><p>Queen bed • Traditional style • Garden view</p></div>
           </div>
-
-          <!-- Lime -->
           <div class="cabin-card">
             <div class="cabin-slider">
               <div class="slider-images">
@@ -403,8 +746,6 @@
             </div>
             <div class="cabin-info"><h4>Lime Cabin</h4><p>Queen bed • Bright & colorful • Farm view</p></div>
           </div>
-
-          <!-- Peace -->
           <div class="cabin-card">
             <div class="cabin-slider">
               <div class="slider-images">
@@ -433,7 +774,7 @@
           <div class="review-card">
             <div class="stars">★★★★★</div>
             <p>"Staying at Mawun Valley Farm was an incredible experience. Fully immersed in nature and local life. The peaceful environment helped me disconnect and reset. If you're a surfer, this place is a hidden gem."</p>
-            <div class="review-author"><strong>Iyad</strong><span>Tunisia • 3 weeks</span></div>
+            <div class="review-author"><strong>Iyad</strong><span>Tunisia • 40 days</span></div>
           </div>
           <div class="review-card">
             <div class="stars">★★★★★</div>
@@ -458,23 +799,87 @@
           <div class="review-card">
             <div class="stars">★★★★★</div>
             <p>"Mawun Valley is an incredible place that gives everyone a place in the community. Everything is to be created with the host as an inspired and caring conductor."</p>
-            <div class="review-author"><strong>Alexa</strong><span>France • 1 month</span></div>
+            <div class="review-author"><strong>Alexa</strong><span>France • 2 weeks</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Application Form Section -->
+    <section class="apply-section" id="apply">
       <div class="container">
-        <div class="cta-content">
-          <h2>Curious?</h2>
-          <p>Message us on WhatsApp. Tell us a bit about yourself — we'd love to hear from you.</p>
-          <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20staying%20at%20Mawun%20Valley%20Farm." class="btn btn-whatsapp btn-lg" target="_blank">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            WhatsApp Us
-          </a>
-          <p class="cta-note">Minimum 10-day stay • $19/person/day all-inclusive</p>
+        <div class="section-header">
+          <span class="section-label">Interested?</span>
+          <h2>Apply to Stay</h2>
+          <p>This is an interest form — not a confirmed booking. We'll reach out to confirm dates based on availability.</p>
+        </div>
+        <div class="apply-form-wrapper">
+          <form @submit.prevent="submitApplication" class="application-form">
+            <div class="form-group">
+              <label>Full Name(s) *</label>
+              <input type="text" v-model="form.fullName" required placeholder="Your name (and travel companion's if applicable)">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Number of Persons *</label>
+                <input type="number" v-model="form.persons" min="1" max="10" required>
+              </div>
+              <div class="form-group">
+                <label>Country *</label>
+                <select v-model="form.country" required>
+                  <option value="">Select country</option>
+                  <option v-for="c in countries" :key="c" :value="c">{{ c }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>WhatsApp Number *</label>
+                <input type="tel" v-model="form.whatsapp" required placeholder="+1234567890">
+              </div>
+              <div class="form-group">
+                <label>Email *</label>
+                <input type="email" v-model="form.email" required placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Tell us about yourself *</label>
+              <textarea v-model="form.about" required placeholder="A few sentences about you, your background, and why you're interested..."></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expected Arrival *</label>
+                <input type="date" v-model="form.arrival" required>
+              </div>
+              <div class="form-group">
+                <label>Expected Departure *</label>
+                <input type="date" v-model="form.departure" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Program *</label>
+              <select v-model="form.program" required>
+                <option value="">Select a program</option>
+                <option value="The Storyteller">The Storyteller</option>
+                <option value="The Grower">The Grower</option>
+                <option value="The Maker">The Maker</option>
+                <option value="The Caretaker">The Caretaker</option>
+                <option value="Slow Living">Slow Living</option>
+                <option value="Mixed">Mixed (try different things)</option>
+              </select>
+            </div>
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" v-model="form.agreed" required>
+                <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
+              {{ submitting ? 'Submitting...' : 'Submit Application' }}
+            </button>
+            <p v-if="submitSuccess" class="success-msg">✅ Application submitted! We'll be in touch soon.</p>
+            <p v-if="submitError" class="error-msg">❌ Something went wrong. Please try again or contact us on WhatsApp.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -486,22 +891,134 @@ import { ref, reactive } from 'vue'
 useHead({ title: 'Stay & Contribute - Mawun Valley Farm' })
 
 const activeProgram = ref(null)
+const showModalForm = ref(false)
+const submitting = ref(false)
+const submitSuccess = ref(false)
+const submitError = ref(false)
+
 const cabinSlides = reactive({
-  sandat: 1,
-  windmill: 1,
-  jabalkap: 1,
-  lime: 1,
-  peace: 1
+  sandat: 1, windmill: 1, jabalkap: 1, lime: 1, peace: 1
 })
 
-function openProgram(program) { activeProgram.value = program; document.body.style.overflow = 'hidden' }
-function closeProgram() { activeProgram.value = null; document.body.style.overflow = '' }
+const form = reactive({
+  fullName: '',
+  persons: 1,
+  country: '',
+  whatsapp: '',
+  email: '',
+  about: '',
+  arrival: '',
+  departure: '',
+  program: '',
+  agreed: false
+})
+
+const countries = [
+  'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan',
+  'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi',
+  'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombia', 'Comoros', 'Congo', 'Costa Rica', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic',
+  'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic',
+  'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Eswatini', 'Ethiopia',
+  'Fiji', 'Finland', 'France',
+  'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana',
+  'Haiti', 'Honduras', 'Hong Kong', 'Hungary',
+  'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Italy', 'Ivory Coast',
+  'Jamaica', 'Japan', 'Jordan',
+  'Kazakhstan', 'Kenya', 'Kiribati', 'Kuwait', 'Kyrgyzstan',
+  'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg',
+  'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Myanmar',
+  'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'North Korea', 'North Macedonia', 'Norway',
+  'Oman',
+  'Pakistan', 'Palau', 'Palestine', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal',
+  'Qatar',
+  'Romania', 'Russia', 'Rwanda',
+  'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Korea', 'South Sudan', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Sweden', 'Switzerland', 'Syria',
+  'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu',
+  'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan',
+  'Vanuatu', 'Vatican City', 'Venezuela', 'Vietnam',
+  'Yemen',
+  'Zambia', 'Zimbabwe', 'Other'
+]
+
+function openProgram(program) {
+  activeProgram.value = program
+  showModalForm.value = false
+  submitSuccess.value = false
+  submitError.value = false
+  document.body.style.overflow = 'hidden'
+}
+
+function closeProgram() {
+  activeProgram.value = null
+  showModalForm.value = false
+  document.body.style.overflow = ''
+}
+
+function showApplicationForm(program) {
+  form.program = program
+  showModalForm.value = true
+}
 
 function nextSlide(cabin, max) {
   cabinSlides[cabin] = cabinSlides[cabin] >= max ? 1 : cabinSlides[cabin] + 1
 }
+
 function prevSlide(cabin, max) {
   cabinSlides[cabin] = cabinSlides[cabin] <= 1 ? max : cabinSlides[cabin] - 1
+}
+
+async function submitApplication() {
+  submitting.value = true
+  submitSuccess.value = false
+  submitError.value = false
+  
+  const webhookUrl = 'https://discord.com/api/webhooks/1478210670024593690/XC6TJIGYYuV72GmEwNryO5PoQX_9mFOZI5e4wkxnHUab7Kb9mGKPPJmTzNU7sNaeof7o'
+  
+  const embed = {
+    title: '🌿 New Stay & Contribute Application',
+    color: 0x6b8e5e,
+    fields: [
+      { name: '👤 Full Name(s)', value: form.fullName, inline: true },
+      { name: '👥 Persons', value: String(form.persons), inline: true },
+      { name: '🌍 Country', value: form.country, inline: true },
+      { name: '📱 WhatsApp', value: form.whatsapp, inline: true },
+      { name: '📧 Email', value: form.email, inline: true },
+      { name: '🎯 Program', value: form.program, inline: true },
+      { name: '📅 Arrival', value: form.arrival, inline: true },
+      { name: '📅 Departure', value: form.departure, inline: true },
+      { name: '📝 About', value: form.about.substring(0, 1000) }
+    ],
+    timestamp: new Date().toISOString()
+  }
+  
+  try {
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ embeds: [embed] })
+    })
+    
+    if (response.ok) {
+      submitSuccess.value = true
+      // Reset form
+      form.fullName = ''
+      form.persons = 1
+      form.country = ''
+      form.whatsapp = ''
+      form.email = ''
+      form.about = ''
+      form.arrival = ''
+      form.departure = ''
+      form.program = ''
+      form.agreed = false
+    } else {
+      submitError.value = true
+    }
+  } catch (e) {
+    submitError.value = true
+  }
+  
+  submitting.value = false
 }
 </script>
 
@@ -562,6 +1079,23 @@ function prevSlide(cabin, max) {
 .benefit { background: var(--color-cream); padding: 12px; border-radius: 8px; font-size: 14px; }
 .modal-footer { padding: 20px 32px 40px; }
 
+.modal-form-wrapper { margin-top: 16px; }
+.form-note { background: #fff8e7; border: 1px solid #f0d78c; padding: 16px; border-radius: 12px; margin-bottom: 20px; }
+.form-note p { margin: 0; font-size: 14px; color: #8b6914; }
+
+.application-form { display: flex; flex-direction: column; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-weight: 600; font-size: 14px; color: var(--color-dark); }
+.form-group input, .form-group select, .form-group textarea { padding: 12px 16px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; transition: border-color 0.2s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--color-sage); }
+.form-group textarea { min-height: 100px; resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.checkbox-group { margin-top: 8px; }
+.checkbox-label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 14px; }
+.checkbox-label input { margin-top: 3px; }
+.success-msg { color: #2e7d32; background: #e8f5e9; padding: 12px; border-radius: 8px; text-align: center; }
+.error-msg { color: #c62828; background: #ffebee; padding: 12px; border-radius: 8px; text-align: center; }
+
 .cabins-section { padding: 100px 0; background: white; }
 .cabin-features { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 50px; }
 .cabin-features span { background: var(--color-cream); padding: 10px 20px; border-radius: 25px; font-size: 14px; }
@@ -590,25 +1124,27 @@ function prevSlide(cabin, max) {
 .review-author strong { display: block; margin-bottom: 4px; }
 .review-author span { font-size: 13px; color: #888; }
 
-.cta-section { padding: 100px 0; background: var(--color-dark); text-align: center; }
-.cta-content h2 { color: white; margin-bottom: 16px; }
-.cta-content p { color: rgba(255,255,255,0.8); margin-bottom: 32px; }
-.cta-note { margin-top: 20px !important; font-size: 14px; opacity: 0.7; }
+.apply-section { padding: 100px 0; background: var(--color-dark); }
+.apply-section .section-header { color: white; }
+.apply-section .section-header h2 { color: white; }
+.apply-section .section-header p { color: rgba(255,255,255,0.8); }
+.apply-form-wrapper { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; }
 
-.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; width: 100%; }
 .btn-primary { background: var(--color-gold); color: var(--color-dark); }
 .btn-primary:hover { background: var(--color-terracotta); color: white; }
-.btn-whatsapp { background: #25D366; color: white; }
-.btn-whatsapp:hover { background: #128C7E; }
+.btn-primary:disabled { background: #ccc; cursor: not-allowed; }
 .btn-lg { padding: 16px 32px; font-size: 16px; }
 
 @media (max-width: 768px) {
-  .modal-footer { padding-bottom: 60px !important; }
   .hero-stats { gap: 24px; }
   .how-grid { gap: 30px; }
   .programs-grid { grid-template-columns: 1fr; }
   .cabins-gallery { grid-template-columns: 1fr; }
   .modal-content { border-radius: 16px 16px 0 0; max-height: 95vh; margin-top: auto; }
+  .modal-footer { padding-bottom: 60px !important; }
   .benefits-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .apply-form-wrapper { padding: 24px; margin: 0 16px; }
 }
 </style>
