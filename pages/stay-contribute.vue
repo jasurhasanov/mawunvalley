@@ -104,6 +104,9 @@
             </div>
           </div>
         </div>
+        <div class="trust-verify">
+          <p>✓ Verified on <a href="https://www.worldpackers.com/en/hosts/mawun-valley-farm" target="_blank" rel="noopener">Worldpackers</a></p>
+        </div>
       </div>
     </section>
     <!-- Programs Section -->
@@ -1145,6 +1148,10 @@ async function submitApplication() {
 .trust-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
 .trust-icon { font-size: 32px; flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: white; border-radius: 12px; }
 .trust-content h4 { font-size: 1rem; margin-bottom: 6px; color: var(--color-dark); }
+.trust-verify { text-align: center; margin-top: 32px; }
+.trust-verify p { font-size: 14px; color: #888; margin: 0; }
+.trust-verify a { color: var(--color-sage); font-weight: 600; text-decoration: none; transition: color 0.2s; }
+.trust-verify a:hover { color: var(--color-terracotta); text-decoration: underline; }
 .trust-content p { font-size: 14px; color: #666; line-height: 1.5; margin: 0; }
 .programs-section { padding: 100px 0; background: var(--color-cream); }
 .section-header { text-align: center; max-width: 600px; margin: 0 auto 50px; }
