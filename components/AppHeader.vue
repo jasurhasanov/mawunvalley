@@ -16,7 +16,6 @@
         <li><NuxtLink to="/belong" @click="closeMenu">Membership</NuxtLink></li>
         <li><NuxtLink to="/nonis" @click="closeMenu">Noni's</NuxtLink></li>
         <li><NuxtLink to="/retreat" @click="closeMenu">Retreat</NuxtLink></li>
-        <li><NuxtLink to="/blog" @click="closeMenu">Field Notes</NuxtLink></li>
         <li><NuxtLink to="/#contact" class="btn btn-primary" @click="closeMenu">Contact</NuxtLink></li>
       </ul>
       <div v-if="menuOpen" class="menu-overlay" @click="closeMenu"></div>
