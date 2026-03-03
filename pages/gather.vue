@@ -258,6 +258,10 @@
             <div class="modal-body">
               <p class="intro-text">Experience an authentic wood-fired samovar ceremony — a centuries-old Russian tradition. Gather around the glowing urn, share stories, and enjoy perfectly brewed tea just as families have done for generations.</p>
               
+              <div class="community-highlight">
+                <p>"The samovar represented something rare: dedicated time for togetherness. Workdays paused, families gathered, neighbors became friends. In a fast world, we're bringing that ritual back."</p>
+              </div>
+              
               <h4>⏰ Schedule</h4>
               <div class="schedule-box">
                 <div class="schedule-item">
@@ -1049,5 +1053,21 @@ const closeEvent = () => {
 .review-tag.samovar {
   background: #EFEBE9;
   color: #5D4037;
+}
+
+.community-highlight {
+  background: linear-gradient(135deg, #FDF8F3 0%, #FAF6F0 100%);
+  border-left: 4px solid #8B4513;
+  padding: 20px 24px;
+  margin: 20px 0;
+  border-radius: 0 12px 12px 0;
+}
+
+.community-highlight p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #5D4037;
+  font-style: italic;
+  margin: 0;
 }
 </style>
