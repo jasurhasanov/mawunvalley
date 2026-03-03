@@ -170,7 +170,8 @@
                 <div class="benefit">🚲 Free Bikes</div>
                                 <div class="benefit">🧺 Weekly Laundry</div>
                 <div class="benefit">🏐 Volleyball Court</div>
-                <div class="benefit">🍹 Free Drinks</div>
+                <div class="benefit">💧 Unlimited Water</div>
+                <div class="benefit">🛏️ Housekeeping on Request</div>
                 <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
             </div>
@@ -284,7 +285,8 @@
                 <div class="benefit">🧺 Weekly Laundry</div>
                 <div class="benefit">🏐 Volleyball Court</div>
                 <div class="benefit">💻 Workspace</div>
-                <div class="benefit">🍹 Free Drinks</div>
+                <div class="benefit">💧 Unlimited Water</div>
+                <div class="benefit">🛏️ Housekeeping on Request</div>
                 <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
             </div>
@@ -398,7 +400,8 @@
                 <div class="benefit">🚲 Free Bikes</div>
                                 <div class="benefit">🧺 Weekly Laundry</div>
                 <div class="benefit">🏐 Volleyball Court</div>
-                <div class="benefit">🍹 Free Drinks</div>
+                <div class="benefit">💧 Unlimited Water</div>
+                <div class="benefit">🛏️ Housekeeping on Request</div>
                 <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
             </div>
@@ -512,7 +515,8 @@
                 <div class="benefit">🚲 Free Bikes</div>
                                 <div class="benefit">🧺 Weekly Laundry</div>
                 <div class="benefit">🏐 Volleyball Court</div>
-                <div class="benefit">🍹 Free Drinks</div>
+                <div class="benefit">💧 Unlimited Water</div>
+                <div class="benefit">🛏️ Housekeeping on Request</div>
                 <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
             </div>
@@ -626,7 +630,8 @@
                 <div class="benefit">🚲 Free Bikes</div>
                                 <div class="benefit">🧺 Weekly Laundry</div>
                 <div class="benefit">🏐 Volleyball Court</div>
-                <div class="benefit">🍹 Free Drinks</div>
+                <div class="benefit">💧 Unlimited Water</div>
+                <div class="benefit">🛏️ Housekeeping on Request</div>
                 <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
             </div>
