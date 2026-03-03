@@ -816,28 +816,15 @@
           <div class="cabin-card">
             <div class="cabin-slider">
               <div class="slider-images">
-                <img v-for="i in 6" :key="'windmill-'+i" :src="`/images/windmill-${i}.jpg`" :class="{ active: cabinSlides.windmill === i }" alt="Rick's Windmill">
+                <img v-for="i in 7" :key="'peace-'+i" :src="`/images/peace-${i}.jpg`" :class="{ active: cabinSlides.peace === i }" alt="Peace Cabin">
               </div>
-              <button class="slider-btn prev" @click="prevSlide('windmill', 6)">‹</button>
-              <button class="slider-btn next" @click="nextSlide('windmill', 6)">›</button>
+              <button class="slider-btn prev" @click="prevSlide('peace', 7)">‹</button>
+              <button class="slider-btn next" @click="nextSlide('peace', 7)">›</button>
               <div class="slider-dots">
-                <span v-for="i in 6" :key="i" :class="{ active: cabinSlides.windmill === i }" @click="cabinSlides.windmill = i"></span>
+                <span v-for="i in 7" :key="i" :class="{ active: cabinSlides.peace === i }" @click="cabinSlides.peace = i"></span>
               </div>
             </div>
-            <div class="cabin-info"><h4>Rick's Windmill</h4><p>Queen bed • Unique design • Black balcony</p></div>
-          </div>
-          <div class="cabin-card">
-            <div class="cabin-slider">
-              <div class="slider-images">
-                <img v-for="i in 3" :key="'jabalkap-'+i" :src="`/images/jabalkap-${i}.jpg`" :class="{ active: cabinSlides.jabalkap === i }" alt="Jabalkap Cabin">
-              </div>
-              <button class="slider-btn prev" @click="prevSlide('jabalkap', 3)">‹</button>
-              <button class="slider-btn next" @click="nextSlide('jabalkap', 3)">›</button>
-              <div class="slider-dots">
-                <span v-for="i in 3" :key="i" :class="{ active: cabinSlides.jabalkap === i }" @click="cabinSlides.jabalkap = i"></span>
-              </div>
-            </div>
-            <div class="cabin-info"><h4>Jabalkap Cabin</h4><p>Queen bed • Traditional style • Garden view</p></div>
+            <div class="cabin-info"><h4>Peace Cabin</h4><p>Queen bed • Wooden exterior • Mountain view</p></div>
           </div>
           <div class="cabin-card">
             <div class="cabin-slider">
@@ -855,15 +842,28 @@
           <div class="cabin-card">
             <div class="cabin-slider">
               <div class="slider-images">
-                <img v-for="i in 7" :key="'peace-'+i" :src="`/images/peace-${i}.jpg`" :class="{ active: cabinSlides.peace === i }" alt="Peace Cabin">
+                <img v-for="i in 3" :key="'jabalkap-'+i" :src="`/images/jabalkap-${i}.jpg`" :class="{ active: cabinSlides.jabalkap === i }" alt="Jabalkap Cabin">
               </div>
-              <button class="slider-btn prev" @click="prevSlide('peace', 7)">‹</button>
-              <button class="slider-btn next" @click="nextSlide('peace', 7)">›</button>
+              <button class="slider-btn prev" @click="prevSlide('jabalkap', 3)">‹</button>
+              <button class="slider-btn next" @click="nextSlide('jabalkap', 3)">›</button>
               <div class="slider-dots">
-                <span v-for="i in 7" :key="i" :class="{ active: cabinSlides.peace === i }" @click="cabinSlides.peace = i"></span>
+                <span v-for="i in 3" :key="i" :class="{ active: cabinSlides.jabalkap === i }" @click="cabinSlides.jabalkap = i"></span>
               </div>
             </div>
-            <div class="cabin-info"><h4>Peace Cabin</h4><p>Queen bed • Wooden exterior • Mountain view</p></div>
+            <div class="cabin-info"><h4>Jabalkap Cabin</h4><p>Queen bed • Traditional style • Garden view</p></div>
+          </div>
+          <div class="cabin-card">
+            <div class="cabin-slider">
+              <div class="slider-images">
+                <img v-for="i in 6" :key="'windmill-'+i" :src="`/images/windmill-${i}.jpg`" :class="{ active: cabinSlides.windmill === i }" alt="Rick's Windmill">
+              </div>
+              <button class="slider-btn prev" @click="prevSlide('windmill', 6)">‹</button>
+              <button class="slider-btn next" @click="nextSlide('windmill', 6)">›</button>
+              <div class="slider-dots">
+                <span v-for="i in 6" :key="i" :class="{ active: cabinSlides.windmill === i }" @click="cabinSlides.windmill = i"></span>
+              </div>
+            </div>
+            <div class="cabin-info"><h4>Rick's Windmill</h4><p>Queen bed • Unique design • Black balcony</p></div>
           </div>
         </div>
       </div>
