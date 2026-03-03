@@ -42,7 +42,7 @@
               <p class="event-tagline">Every Friday, the farm comes alive</p>
               <div class="event-meta">
                 <span>📅 Every Friday</span>
-                <span>💰 IDR 130,000</span>
+                <span>💰 From IDR 130,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
             </div>
@@ -98,7 +98,7 @@
                 <span>📅 Weekends</span>
                 <span>👦 Ages 3-12</span>
               </div>
-              <a href="https://megatix.co.id/events/little-farmer-first-steps-to-farming-and-gardening" class="btn btn-primary btn-sm" target="_blank">Book on Megatix</a>
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20Little%20Farmer%20for%20my%20kids" class="btn btn-primary btn-sm" target="_blank">Book via WhatsApp</a>
             </div>
 
             <!-- Cooking Classes -->
@@ -170,13 +170,42 @@
               <p class="modal-tagline">Every Friday, the farm comes alive</p>
             </div>
             <div class="modal-body">
-              <div class="info-box">
-                <div class="info-item"><span>📅</span> Every Friday</div>
-                <div class="info-item"><span>⏰</span> 5:00 PM onwards</div>
-                <div class="info-item"><span>💰</span> IDR 130,000/person</div>
-              </div>
-              
               <p class="intro-text">Farm-to-table feast under the stars. Live music, good people, great food. All ingredients fresh from our farm and local fishermen.</p>
+              
+              <h4>⏰ Schedule</h4>
+              <div class="schedule-box">
+                <div class="schedule-item">
+                  <span class="schedule-label">When</span>
+                  <span class="schedule-value">Every Friday</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Time</span>
+                  <span class="schedule-value">5:00 PM onwards</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Duration</span>
+                  <span class="schedule-value">Until late</span>
+                </div>
+              </div>
+
+              <h4>💰 Pricing</h4>
+              <div class="pricing-grid">
+                <div class="price-tier">
+                  <span class="tier-name">All-Inclusive Ticket</span>
+                  <span class="tier-price">IDR 250,000</span>
+                  <span class="tier-note">Adults and children 13 years and above</span>
+                </div>
+                <div class="price-tier">
+                  <span class="tier-name">Farmstay Guests</span>
+                  <span class="tier-price">IDR 200,000</span>
+                  <span class="tier-note">For farmstay guests only</span>
+                </div>
+                <div class="price-tier">
+                  <span class="tier-name">Child Ticket (4-12 years)</span>
+                  <span class="tier-price">IDR 130,000</span>
+                  <span class="tier-note">Free for children 3 years and below</span>
+                </div>
+              </div>
               
               <h4>🍖 What's Included</h4>
               <ul class="included-list">
@@ -199,7 +228,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a href="https://megatix.co.id/events/bbqnights-mawun-valley" class="btn btn-primary btn-lg" target="_blank">Book on Megatix</a>
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20BBQ%20Night%20this%20Friday" class="btn btn-primary btn-lg" target="_blank">Book via WhatsApp</a>
             </div>
           </div>
 
@@ -211,16 +240,31 @@
               <p class="modal-tagline">A taste of Soviet tradition at the farm</p>
             </div>
             <div class="modal-body">
-              <div class="info-box">
-                <div class="info-item"><span>👥</span> Up to 10 guests</div>
-                <div class="info-item"><span>⏰</span> ~2 hours</div>
-                <div class="info-item"><span>💰</span> IDR 1,000,000 (flat rate)</div>
-              </div>
-              
               <p class="intro-text">Experience an authentic wood-fired samovar ceremony — a centuries-old Russian tradition. Gather around the glowing urn, share stories, and enjoy perfectly brewed tea just as families have done for generations.</p>
               
-              <div class="price-note">
-                <strong>💡 Group Pricing:</strong> Same price for 1 or 10 people — it's a complete ceremony experience.
+              <h4>⏰ Schedule</h4>
+              <div class="schedule-box">
+                <div class="schedule-item">
+                  <span class="schedule-label">When</span>
+                  <span class="schedule-value">By Reservation</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Duration</span>
+                  <span class="schedule-value">~2 hours</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Group Size</span>
+                  <span class="schedule-value">Up to 10 guests</span>
+                </div>
+              </div>
+
+              <h4>💰 Pricing</h4>
+              <div class="pricing-grid">
+                <div class="price-tier highlight">
+                  <span class="tier-name">Complete Ceremony Package</span>
+                  <span class="tier-price">IDR 1,000,000</span>
+                  <span class="tier-note">Flat rate for groups up to 10 people — same price for 1 or 10 guests</span>
+                </div>
               </div>
 
               <h4>🫖 What's Included</h4>
@@ -233,10 +277,6 @@
                 <li><strong>Firewood & Setup</strong> — Everything prepared for you</li>
                 <li><strong>Dedicated Guide</strong> — Personal host to share the history and ceremony</li>
               </ul>
-
-              <h4>🏛️ The Samovar Tradition</h4>
-              <p>The samovar (Russian: самовар, "self-boiler") has been central to Russian hospitality since the 18th century. In Soviet times, it was present in every household — tea was never rushed; it was an occasion to slow down and connect.</p>
-              <p class="tradition-note">Traditionally, tea is served strong from a small pot atop the samovar, then diluted with hot water. A spoonful of jam — eaten between sips, not stirred in — adds sweetness to the ritual.</p>
 
               <h4>🌟 Why Experience This?</h4>
               <div class="benefits-grid">
@@ -261,22 +301,32 @@
               <p class="modal-tagline">Farm-to-table magic with Mrs. Noni</p>
             </div>
             <div class="modal-body">
-              <div class="info-box">
-                <div class="info-item"><span>⏰</span> 08:00 – 12:00 (4 hours)</div>
-                <div class="info-item"><span>📅</span> By reservation</div>
-                <div class="info-item"><span>📍</span> 11 min from Kuta</div>
-              </div>
-              
               <p class="intro-text">Discover the unique taste of Lombok's cashew apples while learning the art of jam making. From harvesting the fruit straight from the tree to preparing, cooking, and tasting your own fresh jam — this is a farm-to-table experience you won't forget.</p>
               
               <p class="host-note">Guided by <strong>Mrs. Noni (Indonesia)</strong> — the owner of Mawun Valley Farm — you'll experience a warm blend of local hospitality and Azerbaijani tea culture.</p>
+
+              <h4>⏰ Schedule</h4>
+              <div class="schedule-box">
+                <div class="schedule-item">
+                  <span class="schedule-label">When</span>
+                  <span class="schedule-value">By Reservation</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Time</span>
+                  <span class="schedule-value">08:00 – 12:00</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Duration</span>
+                  <span class="schedule-value">4 hours</span>
+                </div>
+              </div>
 
               <h4>💰 Pricing</h4>
               <div class="pricing-grid">
                 <div class="price-tier">
                   <span class="tier-name">Adults & Teens (13+)</span>
                   <span class="tier-price">IDR 390,000</span>
-                  <span class="tier-note">Includes jam jar + tea</span>
+                  <span class="tier-note">Includes 100g jam jar + Azerbaijani tea</span>
                 </div>
                 <div class="price-tier">
                   <span class="tier-name">Kids (4–12 years)</span>
@@ -303,10 +353,11 @@
                 <li>Farm tour and stories from the owners</li>
               </ul>
 
-              <h4>📍 Where You'll Be</h4>
-              <div class="location-info">
+              <h4>📍 Location</h4>
+              <div class="location-box">
                 <p><strong>Harvesting:</strong> Mawun Valley Farm</p>
                 <p><strong>Cooking & Tasting:</strong> Noni's Farm Café</p>
+                <p class="loc-note">Just 11 minutes from Kuta — surrounded by nature and fresh mountain air.</p>
               </div>
 
               <h4>🌟 Why Join?</h4>
@@ -320,7 +371,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a href="https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm" class="btn btn-primary btn-lg" target="_blank">Book on Megatix</a>
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20the%20Cashew%20Apple%20Jam%20Cooking%20Class" class="btn btn-primary btn-lg" target="_blank">Book via WhatsApp</a>
             </div>
           </div>
 
@@ -762,29 +813,6 @@ const closeEvent = () => {
   padding: 30px 40px;
 }
 
-.info-box {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  padding: 20px;
-  background: #FAF6F0;
-  border-radius: 12px;
-  margin-bottom: 24px;
-}
-
-.info-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.info-item span:first-child {
-  font-size: 18px;
-}
-
 .intro-text {
   font-size: 16px;
   line-height: 1.8;
@@ -801,67 +829,51 @@ const closeEvent = () => {
   color: #666;
 }
 
-.price-note {
-  background: #FFF8E7;
-  padding: 14px 18px;
-  border-radius: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
-
-.tradition-note {
-  font-style: italic;
-  color: #7A8B6F;
-  font-size: 14px;
-}
-
 .modal-body h4 {
   font-size: 1rem;
   color: var(--color-terracotta);
   margin: 24px 0 16px;
 }
 
-.included-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.modal-body h4:first-of-type {
+  margin-top: 0;
 }
 
-.included-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid #f5f5f5;
-  padding-left: 28px;
-  position: relative;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.included-list li::before {
-  content: '✔';
-  position: absolute;
-  left: 0;
-  color: #7A8B6F;
-  font-weight: bold;
-}
-
-.benefits-grid {
+/* Schedule Box - Consistent Structure */
+.schedule-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 16px;
+  background: #FAF6F0;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
 }
 
-@media (max-width: 600px) {
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 500px) {
+  .schedule-box {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
-.benefit {
-  background: #f8f8f8;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 13px;
+.schedule-item {
   text-align: center;
+}
+
+.schedule-label {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.schedule-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
 }
 
 /* Pricing */
@@ -880,6 +892,11 @@ const closeEvent = () => {
   border-radius: 8px;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.price-tier.highlight {
+  background: #FFF8E7;
+  border: 2px solid #D4A84B;
 }
 
 .tier-name {
@@ -912,7 +929,32 @@ const closeEvent = () => {
   border-radius: 0 8px 8px 0;
 }
 
-.location-info {
+/* Included List */
+.included-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.included-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f5;
+  padding-left: 28px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.included-list li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #7A8B6F;
+  font-weight: bold;
+}
+
+/* Location Box */
+.location-box {
   background: linear-gradient(135deg, #7A8B6F, #5C6B52);
   color: white;
   padding: 20px;
@@ -920,9 +962,38 @@ const closeEvent = () => {
   margin-bottom: 24px;
 }
 
-.location-info p {
+.location-box p {
   margin: 8px 0;
   font-size: 14px;
+}
+
+.location-box .loc-note {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Benefits */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.benefit {
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-align: center;
 }
 
 .modal-footer {
@@ -935,11 +1006,6 @@ const closeEvent = () => {
   .modal-header, .modal-body, .modal-footer {
     padding-left: 24px;
     padding-right: 24px;
-  }
-  
-  .info-box {
-    flex-direction: column;
-    gap: 12px;
   }
 }
 </style>
