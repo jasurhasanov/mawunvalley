@@ -91,11 +91,11 @@
           <div class="events-grid">
             <!-- Little Farmer -->
             <div class="event-card small">
-              <div class="event-icon">👶</div>
+              <div class="event-icon">🧒</div>
               <h4>Little Farmer</h4>
               <p>Kids learn farming through play — feeding animals, planting seeds, harvesting.</p>
               <div class="event-meta">
-                <span>📅 Weekends</span>
+                <span>📅 By reservation</span>
                 <span>👦 Ages 3-12</span>
               </div>
               <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20Little%20Farmer%20for%20my%20kids" class="btn btn-outline btn-sm" target="_blank">Inquire</a>
