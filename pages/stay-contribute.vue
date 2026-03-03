@@ -52,6 +52,26 @@
       </div>
     </section>
 
+    <!-- Life at the Farm -->
+    <section class="farmlife-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Life at the Farm</span>
+          <h2>Peek Inside</h2>
+        </div>
+        <div class="farmlife-slider" ref="farmlifeSlider">
+          <div class="farmlife-track">
+            <div class="farmlife-slide" v-for="i in 10" :key="i">
+              <img :src="`/images/farmlife-${i}.jpg`" :alt="`Farm life ${i}`">
+            </div>
+          </div>
+        </div>
+        <div class="farmlife-nav">
+          <button class="farmlife-btn prev" @click="slideFarmlife(-1)">‹</button>
+          <button class="farmlife-btn next" @click="slideFarmlife(1)">›</button>
+        </div>
+      </div>
+    </section>
 
     <!-- Why Travelers Choose Us -->
     <section class="trust-section">
@@ -1026,6 +1046,18 @@ const cabinSlides = reactive({
   sandat: 1, windmill: 1, jabalkap: 1, lime: 1, peace: 1
 })
 
+const farmlifeSlider = ref(null)
+const farmlifePosition = ref(0)
+
+function slideFarmlife(direction) {
+  const slider = document.querySelector('.farmlife-track')
+  if (!slider) return
+  const slideWidth = 320 // width + gap
+  const maxScroll = slider.scrollWidth - slider.parentElement.clientWidth
+  farmlifePosition.value = Math.max(0, Math.min(maxScroll, farmlifePosition.value + (direction * slideWidth)))
+  slider.style.transform = `translateX(-${farmlifePosition.value}px)`
+}
+
 const form = reactive({
   fullName: '',
   persons: 1,
@@ -1170,6 +1202,18 @@ async function submitApplication() {
 .how-item h4 { color: var(--color-gold); margin-bottom: 8px; font-size: 1.2rem; }
 .how-item p { font-size: 14px; opacity: 0.85; line-height: 1.6; }
 
+.farmlife-section { padding: 80px 0; background: var(--color-cream); overflow: hidden; }
+.farmlife-section .section-header { text-align: center; margin-bottom: 40px; }
+.farmlife-section .section-header h2 { margin-bottom: 0; }
+.farmlife-slider { overflow: hidden; margin: 0 -20px; padding: 0 20px; }
+.farmlife-track { display: flex; gap: 20px; transition: transform 0.4s ease; }
+.farmlife-slide { flex: 0 0 300px; height: 400px; border-radius: 16px; overflow: hidden; }
+.farmlife-slide img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.farmlife-slide:hover img { transform: scale(1.05); }
+.farmlife-nav { display: flex; justify-content: center; gap: 16px; margin-top: 24px; }
+.farmlife-btn { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--color-dark); background: white; font-size: 24px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+.farmlife-btn:hover { background: var(--color-dark); color: white; }
+@media (max-width: 768px) { .farmlife-slide { flex: 0 0 260px; height: 350px; } }
 
 .trust-section { padding: 80px 0; background: white; }
 .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
