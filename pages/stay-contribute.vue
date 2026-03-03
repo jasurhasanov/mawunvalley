@@ -201,14 +201,8 @@
             <div class="modal-body">
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
-                <div class="info-item"><span>💰</span> US$19/person/day</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              <div class="info-box fee-highlight">
-                <div class="info-item fee-item-full">
-                  <span>💡</span> 
-                  <span><strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</span>
-                </div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're a photographer, videographer, writer, or content creator who finds inspiration in beautiful places and authentic experiences.</p>
@@ -233,6 +227,10 @@
               </div>
             </div>
             <div class="modal-footer">
+              <div class="modal-fee-box">
+                <div class="modal-fee-amount">$19<span>/person/day</span></div>
+                <p>Your fee supports accommodation, meals, workshops, and the sustainability of our farm.</p>
+              </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Storyteller')">Apply Now</button>
               <div v-else class="modal-form-wrapper">
                 <div class="form-note">
@@ -316,14 +314,8 @@
             <div class="modal-body">
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
-                <div class="info-item"><span>💰</span> US$19/person/day</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              <div class="info-box fee-highlight">
-                <div class="info-item fee-item-full">
-                  <span>💡</span> 
-                  <span><strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</span>
-                </div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're curious about sustainable living, love being outdoors, or just want to slow down and connect with nature.</p>
@@ -348,6 +340,10 @@
               </div>
             </div>
             <div class="modal-footer">
+              <div class="modal-fee-box">
+                <div class="modal-fee-amount">$19<span>/person/day</span></div>
+                <p>Your fee supports accommodation, meals, workshops, and the sustainability of our farm.</p>
+              </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Grower')">Apply Now</button>
               <div v-else class="modal-form-wrapper">
                 <div class="form-note">
@@ -431,14 +427,8 @@
             <div class="modal-body">
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
-                <div class="info-item"><span>💰</span> US$19/person/day</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              <div class="info-box fee-highlight">
-                <div class="info-item fee-item-full">
-                  <span>💡</span> 
-                  <span><strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</span>
-                </div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You like working with your hands, enjoy building things, or want a break from screens and digital work.</p>
@@ -463,6 +453,10 @@
               </div>
             </div>
             <div class="modal-footer">
+              <div class="modal-fee-box">
+                <div class="modal-fee-amount">$19<span>/person/day</span></div>
+                <p>Your fee supports accommodation, meals, workshops, and the sustainability of our farm.</p>
+              </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Maker')">Apply Now</button>
               <div v-else class="modal-form-wrapper">
                 <div class="form-note">
@@ -546,14 +540,8 @@
             <div class="modal-body">
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
-                <div class="info-item"><span>💰</span> US$19/person/day</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              <div class="info-box fee-highlight">
-                <div class="info-item fee-item-full">
-                  <span>💡</span> 
-                  <span><strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</span>
-                </div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You love animals, enjoy cooking, or find purpose in creating comfortable spaces for others.</p>
@@ -578,6 +566,10 @@
               </div>
             </div>
             <div class="modal-footer">
+              <div class="modal-fee-box">
+                <div class="modal-fee-amount">$19<span>/person/day</span></div>
+                <p>Your fee supports accommodation, meals, workshops, and the sustainability of our farm.</p>
+              </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Caretaker')">Apply Now</button>
               <div v-else class="modal-form-wrapper">
                 <div class="form-note">
@@ -661,14 +653,8 @@
             <div class="modal-body">
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
-                <div class="info-item"><span>💰</span> US$19/person/day</div>
                 <div class="info-item"><span>🌿</span> Completely flexible</div>
               </div>
-              <div class="info-box fee-highlight">
-                <div class="info-item fee-item-full">
-                  <span>💡</span> 
-                  <span><strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</span>
-                </div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're recovering from burnout, don't know what you want yet, or simply want to slow down without any expectations.</p>
@@ -693,6 +679,10 @@
               </div>
             </div>
             <div class="modal-footer">
+              <div class="modal-fee-box">
+                <div class="modal-fee-amount">$19<span>/person/day</span></div>
+                <p>Your fee supports accommodation, meals, workshops, and the sustainability of our farm.</p>
+              </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('Slow Living')">Apply Now</button>
               <div v-else class="modal-form-wrapper">
                 <div class="form-note">
@@ -1202,6 +1192,10 @@ async function submitApplication() {
 .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .benefit { background: var(--color-cream); padding: 12px; border-radius: 8px; font-size: 14px; }
 .modal-footer { padding: 20px 32px 40px; }
+.modal-fee-box { background: linear-gradient(135deg, #f8f4ef 0%, #f0e9df 100%); padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 20px; border: 1px solid rgba(193, 127, 89, 0.2); }
+.modal-fee-amount { font-size: 2rem; font-weight: 700; color: var(--color-terracotta); margin-bottom: 8px; }
+.modal-fee-amount span { font-size: 1rem; font-weight: 400; color: #666; }
+.modal-fee-box p { margin: 0; font-size: 13px; color: #666; line-height: 1.5; }
 
 .modal-form-wrapper { margin-top: 16px; }
 .form-note { background: #fff8e7; border: 1px solid #f0d78c; padding: 16px; border-radius: 12px; margin-bottom: 20px; }
