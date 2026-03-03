@@ -162,8 +162,8 @@
                 <div class="benefit">🍳 Breakfast & Lunch</div>
                 <div class="benefit">💻 Dedicated Workspace</div>
                 <div class="benefit">🚲 Free Bikes</div>
-                <div class="benefit">🌱 Permaculture Course</div>
-                <div class="benefit">📜 Certificate</div>
+                                <div class="benefit">🧺 Weekly Laundry</div>
+                <div class="benefit">🏐 Volleyball Court</div>
                 <div class="benefit">🍹 Free Drinks</div>
                 <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
@@ -268,9 +268,9 @@
               <div class="benefits-grid">
                 <div class="benefit">🛏️ Private Cabin</div>
                 <div class="benefit">🍳 Breakfast & Lunch</div>
-                <div class="benefit">🌱 Permaculture Course</div>
-                <div class="benefit">🚲 Free Bikes</div>
-                <div class="benefit">📜 Certificate</div>
+                                <div class="benefit">🚲 Free Bikes</div>
+                <div class="benefit">🧺 Weekly Laundry</div>
+                <div class="benefit">🏐 Volleyball Court</div>
                 <div class="benefit">💻 Workspace</div>
                 <div class="benefit">🍹 Free Drinks</div>
                 <div class="benefit">🎉 Farm Events & BBQs</div>
@@ -378,8 +378,8 @@
                 <div class="benefit">🍳 Breakfast & Lunch</div>
                 <div class="benefit">🔨 Tools Available</div>
                 <div class="benefit">🚲 Free Bikes</div>
-                <div class="benefit">🌱 Permaculture Course</div>
-                <div class="benefit">📜 Certificate</div>
+                                <div class="benefit">🧺 Weekly Laundry</div>
+                <div class="benefit">🏐 Volleyball Court</div>
                 <div class="benefit">🍹 Free Drinks</div>
                 <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
@@ -486,8 +486,8 @@
                 <div class="benefit">🍳 Breakfast & Lunch</div>
                 <div class="benefit">🐐 Animal Friends</div>
                 <div class="benefit">🚲 Free Bikes</div>
-                <div class="benefit">🌱 Permaculture Course</div>
-                <div class="benefit">📜 Certificate</div>
+                                <div class="benefit">🧺 Weekly Laundry</div>
+                <div class="benefit">🏐 Volleyball Court</div>
                 <div class="benefit">🍹 Free Drinks</div>
                 <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
@@ -594,8 +594,8 @@
                 <div class="benefit">🍳 Breakfast & Lunch</div>
                 <div class="benefit">🧘 Zero Pressure</div>
                 <div class="benefit">🚲 Free Bikes</div>
-                <div class="benefit">🌱 Permaculture Course</div>
-                <div class="benefit">📜 Certificate</div>
+                                <div class="benefit">🧺 Weekly Laundry</div>
+                <div class="benefit">🏐 Volleyball Court</div>
                 <div class="benefit">🍹 Free Drinks</div>
                 <div class="benefit">🎉 Farm Events & BBQs</div>
               </div>
