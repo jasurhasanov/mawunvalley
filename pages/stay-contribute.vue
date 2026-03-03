@@ -15,8 +15,8 @@
             <span class="hero-stat-label">Day Minimum</span>
           </div>
           <div class="hero-stat">
-            <span class="hero-stat-number">🏡</span>
-            <span class="hero-stat-label">Private Cabin</span>
+            <span class="hero-stat-number">200+</span>
+            <span class="hero-stat-label">Fruit Trees</span>
           </div>
           <div class="hero-stat">
             <span class="hero-stat-number">3 min</span>
