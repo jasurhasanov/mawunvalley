@@ -11,12 +11,12 @@
         <p>Join our community for 10+ days. Stay in a private cabin, share meals, and experience daily life on a permaculture farm in South Lombok.</p>
         <div class="hero-stats">
           <div class="hero-stat">
-            <span class="hero-stat-number">10+</span>
-            <span class="hero-stat-label">Day Minimum</span>
-          </div>
-          <div class="hero-stat">
             <span class="hero-stat-number">200+</span>
             <span class="hero-stat-label">Fruit Trees</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">50+</span>
+            <span class="hero-stat-label">Animals</span>
           </div>
           <div class="hero-stat">
             <span class="hero-stat-number">3 min</span>
