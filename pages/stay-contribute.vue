@@ -967,11 +967,11 @@
     <section class="fee-section">
       <div class="container">
         <div class="fee-box">
-          <div class="fee-amount">
+          <div class="fee-left">
             <span class="fee-number">$19</span>
-            <span class="fee-label">per person / day</span>
+            <span class="fee-unit">per person / day</span>
           </div>
-          <div class="fee-explainer">
+          <div class="fee-right">
             <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</p>
           </div>
         </div>
@@ -1320,12 +1320,13 @@ async function submitApplication() {
 
 
 .fee-section { padding: 60px 0; background: var(--color-cream); }
-.fee-box { max-width: 600px; margin: 0 auto; text-align: center; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-.fee-amount { margin-bottom: 20px; }
-.fee-number { font-size: 3rem; font-weight: 700; color: var(--color-terracotta); }
-.fee-label { display: block; font-size: 1.1rem; color: #666; margin-top: 4px; }
-.fee-explainer { background: var(--color-cream); padding: 20px; border-radius: 12px; }
-.fee-explainer p { margin: 0; font-size: 15px; line-height: 1.6; color: #555; }
+.fee-box { max-width: 800px; margin: 0 auto; background: white; padding: 40px 48px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); display: flex; align-items: center; gap: 40px; }
+.fee-left { flex-shrink: 0; text-align: left; }
+.fee-number { font-size: 3.5rem; font-weight: 700; color: var(--color-terracotta); line-height: 1; }
+.fee-unit { display: block; font-size: 1rem; color: #666; margin-top: 4px; }
+.fee-right { flex: 1; text-align: left; border-left: 1px solid #e8e4df; padding-left: 40px; }
+.fee-right p { margin: 0; font-size: 1rem; line-height: 1.7; color: #555; }
+@media (max-width: 600px) { .fee-box { flex-direction: column; gap: 24px; padding: 32px 24px; text-align: center; } .fee-left { text-align: center; } .fee-right { border-left: none; border-top: 1px solid #e8e4df; padding-left: 0; padding-top: 24px; text-align: center; } }
 
 .apply-section { padding: 100px 0; background: var(--color-dark); }
 .apply-section .section-header { color: white; }
