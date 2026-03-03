@@ -33,7 +33,7 @@
           <!-- 1. BBQ Nights -->
           <article class="event-card signature" @click="openEvent('bbq')">
             <div class="event-image">
-              <img src="/images/gallery-4.jpg" alt="BBQ Nights">
+              <img src="/images/bbq-nights.jpg" alt="BBQ Nights">
               <span class="event-badge">Weekly</span>
             </div>
             <div class="event-info">
