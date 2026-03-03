@@ -228,8 +228,23 @@
             </div>
             <div class="modal-footer">
               <div class="modal-fee-box">
-                <div class="modal-fee-amount">$19<span>/person/day</span></div>
-                <p>Your fee supports accommodation, meals, workshops, and the sustainability of our farm.</p>
+                <div class="fee-col fee-amount-col">
+                  <span class="fee-label">Amount</span>
+                  <span class="fee-price">US$ 19</span>
+                  <span class="fee-period">Per day</span>
+                </div>
+                <div class="fee-col fee-pays-col">
+                  <span class="fee-label">Fee pays for</span>
+                  <ul>
+                    <li>Accommodation & meals</li>
+                    <li>Workshop materials</li>
+                    <li>Farm sustainability</li>
+                  </ul>
+                </div>
+                <div class="fee-col fee-desc-col">
+                  <span class="fee-label">Description</span>
+                  <p>Your contribution supports our community-based project. It covers your stay, meals, hands-on workshops, and helps sustain the farm.</p>
+                </div>
               </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Storyteller')">Apply Now</button>
               <div v-else class="modal-form-wrapper">
@@ -341,8 +356,23 @@
             </div>
             <div class="modal-footer">
               <div class="modal-fee-box">
-                <div class="modal-fee-amount">$19<span>/person/day</span></div>
-                <p>Your fee supports accommodation, meals, workshops, and the sustainability of our farm.</p>
+                <div class="fee-col fee-amount-col">
+                  <span class="fee-label">Amount</span>
+                  <span class="fee-price">US$ 19</span>
+                  <span class="fee-period">Per day</span>
+                </div>
+                <div class="fee-col fee-pays-col">
+                  <span class="fee-label">Fee pays for</span>
+                  <ul>
+                    <li>Accommodation & meals</li>
+                    <li>Workshop materials</li>
+                    <li>Farm sustainability</li>
+                  </ul>
+                </div>
+                <div class="fee-col fee-desc-col">
+                  <span class="fee-label">Description</span>
+                  <p>Your contribution supports our community-based project. It covers your stay, meals, hands-on workshops, and helps sustain the farm.</p>
+                </div>
               </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Grower')">Apply Now</button>
               <div v-else class="modal-form-wrapper">
@@ -454,8 +484,23 @@
             </div>
             <div class="modal-footer">
               <div class="modal-fee-box">
-                <div class="modal-fee-amount">$19<span>/person/day</span></div>
-                <p>Your fee supports accommodation, meals, workshops, and the sustainability of our farm.</p>
+                <div class="fee-col fee-amount-col">
+                  <span class="fee-label">Amount</span>
+                  <span class="fee-price">US$ 19</span>
+                  <span class="fee-period">Per day</span>
+                </div>
+                <div class="fee-col fee-pays-col">
+                  <span class="fee-label">Fee pays for</span>
+                  <ul>
+                    <li>Accommodation & meals</li>
+                    <li>Workshop materials</li>
+                    <li>Farm sustainability</li>
+                  </ul>
+                </div>
+                <div class="fee-col fee-desc-col">
+                  <span class="fee-label">Description</span>
+                  <p>Your contribution supports our community-based project. It covers your stay, meals, hands-on workshops, and helps sustain the farm.</p>
+                </div>
               </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Maker')">Apply Now</button>
               <div v-else class="modal-form-wrapper">
@@ -567,8 +612,23 @@
             </div>
             <div class="modal-footer">
               <div class="modal-fee-box">
-                <div class="modal-fee-amount">$19<span>/person/day</span></div>
-                <p>Your fee supports accommodation, meals, workshops, and the sustainability of our farm.</p>
+                <div class="fee-col fee-amount-col">
+                  <span class="fee-label">Amount</span>
+                  <span class="fee-price">US$ 19</span>
+                  <span class="fee-period">Per day</span>
+                </div>
+                <div class="fee-col fee-pays-col">
+                  <span class="fee-label">Fee pays for</span>
+                  <ul>
+                    <li>Accommodation & meals</li>
+                    <li>Workshop materials</li>
+                    <li>Farm sustainability</li>
+                  </ul>
+                </div>
+                <div class="fee-col fee-desc-col">
+                  <span class="fee-label">Description</span>
+                  <p>Your contribution supports our community-based project. It covers your stay, meals, hands-on workshops, and helps sustain the farm.</p>
+                </div>
               </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Caretaker')">Apply Now</button>
               <div v-else class="modal-form-wrapper">
@@ -680,8 +740,23 @@
             </div>
             <div class="modal-footer">
               <div class="modal-fee-box">
-                <div class="modal-fee-amount">$19<span>/person/day</span></div>
-                <p>Your fee supports accommodation, meals, workshops, and the sustainability of our farm.</p>
+                <div class="fee-col fee-amount-col">
+                  <span class="fee-label">Amount</span>
+                  <span class="fee-price">US$ 19</span>
+                  <span class="fee-period">Per day</span>
+                </div>
+                <div class="fee-col fee-pays-col">
+                  <span class="fee-label">Fee pays for</span>
+                  <ul>
+                    <li>Accommodation & meals</li>
+                    <li>Workshop materials</li>
+                    <li>Farm sustainability</li>
+                  </ul>
+                </div>
+                <div class="fee-col fee-desc-col">
+                  <span class="fee-label">Description</span>
+                  <p>Your contribution supports our community-based project. It covers your stay, meals, hands-on workshops, and helps sustain the farm.</p>
+                </div>
               </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('Slow Living')">Apply Now</button>
               <div v-else class="modal-form-wrapper">
@@ -1192,10 +1267,16 @@ async function submitApplication() {
 .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .benefit { background: var(--color-cream); padding: 12px; border-radius: 8px; font-size: 14px; }
 .modal-footer { padding: 20px 32px 40px; }
-.modal-fee-box { background: linear-gradient(135deg, #f8f4ef 0%, #f0e9df 100%); padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 20px; border: 1px solid rgba(193, 127, 89, 0.2); }
-.modal-fee-amount { font-size: 2rem; font-weight: 700; color: var(--color-terracotta); margin-bottom: 8px; }
-.modal-fee-amount span { font-size: 1rem; font-weight: 400; color: #666; }
-.modal-fee-box p { margin: 0; font-size: 13px; color: #666; line-height: 1.5; }
+.modal-fee-box { background: #f9f7f4; padding: 24px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e8e4df; display: grid; grid-template-columns: 1fr 1.2fr 2fr; gap: 24px; text-align: left; }
+.fee-col { }
+.fee-label { display: block; font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.fee-price { display: block; font-size: 1.8rem; font-weight: 700; color: var(--color-terracotta); line-height: 1.2; }
+.fee-period { display: block; font-size: 14px; color: #666; }
+.fee-pays-col ul { list-style: disc; margin: 0; padding-left: 18px; }
+.fee-pays-col li { font-size: 13px; color: #555; margin-bottom: 4px; }
+.fee-pays-col li::before { content: none; }
+.fee-desc-col p { margin: 0; font-size: 13px; color: #555; line-height: 1.6; }
+@media (max-width: 600px) { .modal-fee-box { grid-template-columns: 1fr; gap: 16px; } }
 
 .modal-form-wrapper { margin-top: 16px; }
 .form-note { background: #fff8e7; border: 1px solid #f0d78c; padding: 16px; border-radius: 12px; margin-bottom: 20px; }
