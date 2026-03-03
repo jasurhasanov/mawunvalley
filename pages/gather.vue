@@ -15,7 +15,7 @@
       <div class="container">
         <div class="intro-content">
           <h2>Events & Activities</h2>
-          <p class="lead">From weekly BBQ nights to cooking classes to kids' programs — the farm comes alive when we gather together.</p>
+          <p class="lead">From weekly BBQ nights to traditional tea ceremonies to hands-on cooking classes — the farm comes alive when we gather together.</p>
         </div>
       </div>
     </section>
@@ -23,7 +23,8 @@
     <section class="events-section">
       <div class="container">
         <div class="events-grid">
-          <!-- BBQ Night -->
+          
+          <!-- 1. BBQ Nights -->
           <div class="event-card featured">
             <div class="event-badge">Weekly</div>
             <div class="event-icon">🔥</div>
@@ -38,35 +39,100 @@
             <a href="https://megatix.co.id/events/bbqnights-mawun-valley" class="btn btn-primary" target="_blank">Book on Megatix</a>
           </div>
 
-          <!-- Cashew Apple Jam Cooking Class -->
-          <div class="event-card featured">
-            <div class="event-badge">Seasonal</div>
-            <div class="event-icon">🥜</div>
-            <h3>Cashew Apple Jam Cooking Class</h3>
-            <p class="event-tagline">A signature farm experience</p>
-            <p>Our farm is home to <strong>6 large cashew trees</strong>. During harvest season, join us to learn the traditional art of making cashew apple jam — a rare delicacy you won't find anywhere else. Pick fresh cashew apples, process them, and create your own jar to take home.</p>
+          <!-- 2. Samovar Tea Ceremony - NEW -->
+          <div class="event-card featured samovar-card">
+            <div class="event-badge samovar-badge">Cultural</div>
+            <div class="event-icon">☕</div>
+            <h3>Guided Samovar Tea Ceremony</h3>
+            <p class="event-tagline">A taste of Soviet tradition at the farm</p>
+            <p>Experience an authentic wood-fired samovar ceremony — a centuries-old Russian tradition. Gather around the glowing urn, share stories, and enjoy perfectly brewed tea just as families have done for generations.</p>
             <div class="event-details">
-              <span>📅 Mid Aug - Mid Dec</span>
-              <span>⏰ 3 hours</span>
-              <span>💰 IDR 150,000</span>
+              <span>🫖 3 Premium Teas</span>
+              <span>🥞 10 Fresh Crepes</span>
+              <span>🍯 Farm-Made Jam</span>
             </div>
-            <a href="https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm" class="btn btn-primary" target="_blank">Book on Megatix</a>
+            <div class="event-details">
+              <span>👥 Up to 10 guests</span>
+              <span>⏰ ~2 hours</span>
+              <span>💰 IDR 1,000,000</span>
+            </div>
+            <p class="group-note">Flat rate for groups — same price for 1 or 10 people</p>
+            <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20a%20Samovar%20Tea%20Ceremony" class="btn btn-primary" target="_blank">Book via WhatsApp</a>
           </div>
 
-          <!-- Cooking Classes -->
-          <div class="event-card">
-            <div class="event-icon">🍳</div>
-            <h3>Cooking Classes</h3>
-            <p class="event-tagline">From soil to plate</p>
-            <p>Harvest ingredients from the farm, learn traditional and modern techniques, and enjoy what you've created. Take home recipes and memories.</p>
-            <div class="event-details">
-              <span>📅 By reservation</span>
-              <span>⏰ 3 hours</span>
-            </div>
-            <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20a%20cooking%20class" class="btn btn-outline-dark" target="_blank">Inquire</a>
+        </div>
+
+        <!-- Cashew Apple Jam - Full Featured Section -->
+        <div class="featured-experience cashew-experience">
+          <div class="experience-header">
+            <span class="experience-badge">🌿 Signature Experience</span>
+            <h2>Cashew Apple Jam Cooking Class</h2>
+            <p class="experience-tagline">Farm-to-Table Magic with Mrs. Noni</p>
           </div>
 
-          <!-- Little Farmer -->
+          <div class="experience-intro">
+            <p>Discover the unique taste of Lombok's cashew apples while learning the art of jam making in a hands-on cooking class. From harvesting the fruit straight from the tree to preparing, cooking, and tasting your own fresh jam, this is a farm-to-table experience you won't forget.</p>
+            <p class="host-note">Guided by <strong>Mrs. Noni (Indonesia)</strong> — the owner of Mawun Valley Farm — you'll experience a warm blend of local hospitality and Azerbaijani tea culture.</p>
+          </div>
+
+          <div class="included-section">
+            <h3>🥭 What's Included</h3>
+            <div class="included-list">
+              <div class="included-item"><span class="check">✔</span> Guided harvesting of yellow and orange cashew apples</div>
+              <div class="included-item"><span class="check">✔</span> Step-by-step jam-making workshop at Noni's Farm Café</div>
+              <div class="included-item"><span class="check">✔</span> Tasting session with toasted bread and Azerbaijani black tea</div>
+              <div class="included-item"><span class="check">✔</span> One 100g jar of cashew apple jam to take home (Adults & Teens)</div>
+              <div class="included-item"><span class="check">✔</span> One pot of Azerbaijani tea for every Adult & Teen ticket</div>
+              <div class="included-item"><span class="check">✔</span> Fresh drinking water for all guests</div>
+              <div class="included-item"><span class="check">✔</span> Farm tour and stories from the owners</div>
+            </div>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <h4>⏰ Schedule</h4>
+              <p class="schedule-time">08:00 – 12:00</p>
+              <p class="schedule-duration">Standard Time (4 hours)</p>
+              <p class="schedule-flex">Flexible hours available upon request</p>
+            </div>
+            <div class="info-card">
+              <h4>💰 Pricing</h4>
+              <div class="price-tier">
+                <p class="tier-name">Adults & Teens (13+)</p>
+                <p class="tier-price">IDR 390,000 <span>per person</span></p>
+                <p class="tier-note">Includes jam jar + tea</p>
+              </div>
+              <div class="price-tier">
+                <p class="tier-name">Kids (4–12 years)</p>
+                <p class="tier-price">IDR 190,000 <span>per child</span></p>
+              </div>
+              <div class="price-tier">
+                <p class="tier-name">Toddlers (3 & below)</p>
+                <p class="tier-price free">Free</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="important-note">
+            <p><strong>👉 Important:</strong> All members of a group or family must book a ticket (except toddlers under 3).</p>
+          </div>
+
+          <div class="location-section">
+            <h4>📍 Where You'll Be</h4>
+            <p><strong>Harvesting:</strong> Mawun Valley Farm</p>
+            <p><strong>Cooking & Tasting:</strong> Noni's Farm Café</p>
+            <p class="loc-note">Just 11 minutes from Kuta — surrounded by nature and fresh mountain air.</p>
+          </div>
+
+          <div class="book-cta">
+            <a href="https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm" class="btn btn-primary btn-large" target="_blank">Book Now on Megatix</a>
+          </div>
+        </div>
+
+        <!-- Remaining Events Grid -->
+        <div class="events-grid secondary-events">
+          
+          <!-- 4. Little Farmer -->
           <div class="event-card">
             <div class="event-icon">👶</div>
             <h3>Little Farmer</h3>
@@ -79,7 +145,20 @@
             <a href="https://megatix.co.id/events/little-farmer-first-steps-to-farming-and-gardening" class="btn btn-primary" target="_blank">Book on Megatix</a>
           </div>
 
-          <!-- Private Events -->
+          <!-- 5. Cooking Classes -->
+          <div class="event-card">
+            <div class="event-icon">🍳</div>
+            <h3>Cooking Classes</h3>
+            <p class="event-tagline">From soil to plate</p>
+            <p>Harvest ingredients from the farm, learn traditional and modern techniques, and enjoy what you've created. Take home recipes and memories.</p>
+            <div class="event-details">
+              <span>📅 By reservation</span>
+              <span>⏰ 3 hours</span>
+            </div>
+            <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20a%20cooking%20class" class="btn btn-outline-dark" target="_blank">Inquire</a>
+          </div>
+
+          <!-- 6. Private Events -->
           <div class="event-card">
             <div class="event-icon">🎉</div>
             <h3>Private Events</h3>
@@ -91,6 +170,7 @@
             </div>
             <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20hosting%20a%20private%20event" class="btn btn-outline-dark" target="_blank">Inquire</a>
           </div>
+
         </div>
       </div>
     </section>
@@ -198,7 +278,7 @@ useHead({ title: 'Gather - Events & Activities | Mawun Valley Farm' })
 .lead {
   font-size: 1.2rem;
   color: #666;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -210,6 +290,10 @@ useHead({ title: 'Gather - Events & Activities | Mawun Valley Farm' })
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
+}
+
+.secondary-events {
+  margin-top: 40px;
 }
 
 .event-card {
@@ -225,6 +309,10 @@ useHead({ title: 'Gather - Events & Activities | Mawun Valley Farm' })
   border: 2px solid var(--color-gold);
 }
 
+.event-card.samovar-card {
+  border-color: #8B4513;
+}
+
 .event-badge {
   position: absolute;
   top: 16px;
@@ -236,6 +324,10 @@ useHead({ title: 'Gather - Events & Activities | Mawun Valley Farm' })
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.event-badge.samovar-badge {
+  background: #8B4513;
 }
 
 .event-icon {
@@ -254,9 +346,16 @@ useHead({ title: 'Gather - Events & Activities | Mawun Valley Farm' })
   margin-bottom: 16px;
 }
 
-.event-card > p:not(.event-tagline) {
+.event-card > p:not(.event-tagline):not(.group-note) {
   color: #666;
   line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.group-note {
+  font-size: 13px;
+  color: #7A8B6F;
+  font-style: italic;
   margin-bottom: 20px;
 }
 
@@ -265,7 +364,7 @@ useHead({ title: 'Gather - Events & Activities | Mawun Valley Farm' })
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .event-details span {
@@ -275,6 +374,244 @@ useHead({ title: 'Gather - Events & Activities | Mawun Valley Farm' })
   font-size: 14px;
 }
 
+/* Featured Experience Styles */
+.featured-experience {
+  background: linear-gradient(135deg, #FAF6F0 0%, #fff 100%);
+  border: 2px solid #E8E4DC;
+  border-radius: 16px;
+  padding: 40px;
+  margin: 40px 0;
+  text-align: left;
+}
+
+.cashew-experience {
+  border-color: #7A8B6F;
+}
+
+.experience-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px dashed #E8E4DC;
+}
+
+.experience-badge {
+  background: #7A8B6F;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.experience-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.experience-tagline {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  color: #C66B3D;
+}
+
+.experience-intro {
+  max-width: 800px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.experience-intro p {
+  line-height: 1.8;
+  color: #555;
+  font-size: 16px;
+}
+
+.host-note {
+  font-style: italic;
+  color: #7A8B6F;
+  margin-top: 16px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #C66B3D;
+}
+
+.included-section {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 28px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.included-section h3 {
+  color: #C66B3D;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.included-list {
+  display: grid;
+  gap: 12px;
+}
+
+.included-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #FAFAFA;
+  border-radius: 8px;
+}
+
+.included-item .check {
+  color: #7A8B6F;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 28px 0;
+}
+
+.info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.info-card h4 {
+  color: #C66B3D;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.schedule-time {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.schedule-duration {
+  color: #666;
+  font-size: 14px;
+}
+
+.schedule-flex {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #E8E4DC;
+  font-size: 13px;
+  color: #7A8B6F;
+  font-style: italic;
+}
+
+.price-tier {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.price-tier:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.tier-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.tier-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #C66B3D;
+}
+
+.tier-price span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #888;
+}
+
+.tier-price.free {
+  color: #7A8B6F;
+}
+
+.tier-note {
+  font-size: 12px;
+  color: #7A8B6F;
+  margin-top: 4px;
+}
+
+.important-note {
+  background: #FFF8E7;
+  border-left: 4px solid #D4A84B;
+  padding: 18px 22px;
+  margin: 24px 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.important-note p {
+  margin: 0;
+  font-size: 14px;
+  color: #6B5B00;
+}
+
+.location-section {
+  background: linear-gradient(135deg, #7A8B6F 0%, #5C6B52 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.location-section h4 {
+  color: white;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.location-section p {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.loc-note {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-style: italic;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.book-cta {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 2px dashed #E8E4DC;
+}
+
+.btn-large {
+  font-size: 17px;
+  padding: 16px 40px;
+}
+
+/* Buttons */
 .btn-primary {
   display: inline-block;
   background: var(--color-terracotta);
@@ -306,6 +643,7 @@ useHead({ title: 'Gather - Events & Activities | Mawun Valley Farm' })
   color: white;
 }
 
+/* Reviews */
 .reviews-section {
   padding: 80px 0;
   background: var(--color-light);
@@ -347,5 +685,19 @@ useHead({ title: 'Gather - Events & Activities | Mawun Valley Farm' })
 .review-author {
   font-weight: 600;
   font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .featured-experience {
+    padding: 24px;
+  }
+  
+  .experience-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
