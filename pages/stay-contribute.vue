@@ -801,6 +801,11 @@
             <p>"Mawun Valley is an incredible place that gives everyone a place in the community. Everything is to be created with the host as an inspired and caring conductor."</p>
             <div class="review-author"><strong>Alexa</strong><span>France • 2 weeks</span></div>
           </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Ten days on the farm 🐐🐓🌾 Waking up every day to the rooster's calls, feeling the ground beneath my feet, learning Indonesian, learning about sustainability, animals, and nature. Trying new things like riding a motorbike or surfing, hiking mountains, getting blisters on my hands, feeding goats, playing football, meeting beautiful people… Just nature. The best detox ever."</p>
+            <div class="review-author"><strong>Sara</strong><span>Spain • 10 days</span></div>
+          </div>
         </div>
       </div>
     </section>
