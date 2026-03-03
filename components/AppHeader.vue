@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 
 const route = useRoute()
 const isScrolled = ref(false)
@@ -39,10 +39,25 @@ const isHomePage = computed(() => {
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
+  // Prevent body scroll when menu is open
+  if (menuOpen.value) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
 }
 
 const closeMenu = () => {
   menuOpen.value = false
+  document.body.style.overflow = ''
+}
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
+  // Close menu on scroll
+  if (menuOpen.value) {
+    closeMenu()
+  }
 }
 
 watch(() => route.path, () => {
@@ -50,9 +65,11 @@ watch(() => route.path, () => {
 })
 
 onMounted(() => {
-  window.addEventListener('scroll', () => {
-    isScrolled.value = window.scrollY > 50
-  })
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
