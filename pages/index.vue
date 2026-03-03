@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="hero" id="hero">
-      <div class="hero-bg"><img src="/images/amphitheater.jpg" alt="Mawun Valley Farm"></div>
+      <div class="hero-bg"><img src="/images/hero-new.jpg" alt="Mawun Valley Farm"></div>
       <div class="hero-content">
         <p class="hero-subtitle handwritten">Est. 35 years of welcome</p>
         <h1>Slow Down.<br>Connect Deeply.</h1>
