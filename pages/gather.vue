@@ -369,6 +369,18 @@
                 <div class="benefit">👨‍👩‍👧 Family-Friendly</div>
                 <div class="benefit">🍃 Relaxing Setting</div>
               </div>
+
+              <h4>💬 What Guests Say</h4>
+              <div class="reviews-inline">
+                <div class="review-inline">
+                  <p class="review-quote">"After a wonderful morning at the farm, we learned how to make jam from cashew apples, what grows in the garden, and what you can use different herbs for. So interesting — not only for the boys, but also for us! Everything is told in English, so they learn so many new words every day. Life is the greatest teacher 🙌🏻"</p>
+                  <p class="review-source">— Melissa, Netherlands</p>
+                </div>
+                <div class="review-inline">
+                  <p class="review-quote">"Mud, rain, goats, sambal, coconut milk… and a posh bus that didn't quite survive the trip. Today was place-based learning in its truest form: farming, cooking, teamwork, maths, science, problem-solving, plus an unscheduled lesson in patience. Not washed out, just well weathered."</p>
+                  <p class="review-source">— Natalia, Harmony Alternative School (20+ students)</p>
+                </div>
+              </div>
             </div>
             <div class="modal-footer">
               <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20the%20Cashew%20Apple%20Jam%20Cooking%20Class" class="btn btn-primary btn-lg" target="_blank">Book via WhatsApp</a>
@@ -1007,5 +1019,33 @@ const closeEvent = () => {
     padding-left: 24px;
     padding-right: 24px;
   }
+}
+
+/* Inline Reviews */
+.reviews-inline {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.review-inline {
+  background: #f8f8f8;
+  padding: 16px;
+  border-radius: 10px;
+  border-left: 3px solid var(--color-gold);
+}
+
+.review-quote {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.review-source {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
 }
 </style>
