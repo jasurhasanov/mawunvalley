@@ -119,18 +119,6 @@
         </div>
 
         <div class="programs-grid">
-          <article class="program-card" @click="openProgram('storyteller')">
-            <div class="program-image">
-              <img src="/images/creative-cover.jpg" alt="The Storyteller">
-              <span class="program-badge">📸 Creator</span>
-            </div>
-            <div class="program-info">
-              <h3>The Storyteller</h3>
-              <p>Love capturing moments? There's always something beautiful happening — sunsets, farm life, community dinners.</p>
-              <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
-            </div>
-          </article>
-
           <article class="program-card" @click="openProgram('grower')">
             <div class="program-image">
               <img src="/images/grower-cover.jpg" alt="The Grower">
@@ -139,6 +127,18 @@
             <div class="program-info">
               <h3>The Grower</h3>
               <p>Curious about where food comes from? Join us in the garden when you feel like getting your hands dirty.</p>
+              <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
+            </div>
+          </article>
+
+          <article class="program-card" @click="openProgram('caretaker')">
+            <div class="program-image">
+              <img src="/images/caretaker-cover.jpg" alt="The Caretaker">
+              <span class="program-badge">💚 Nurturing</span>
+            </div>
+            <div class="program-info">
+              <h3>The Caretaker</h3>
+              <p>Our goats, ducks, and chickens would love to meet you. Help out in the kitchen if cooking brings you joy.</p>
               <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
             </div>
           </article>
@@ -155,14 +155,14 @@
             </div>
           </article>
 
-          <article class="program-card" @click="openProgram('caretaker')">
+          <article class="program-card" @click="openProgram('storyteller')">
             <div class="program-image">
-              <img src="/images/caretaker-cover.jpg" alt="The Caretaker">
-              <span class="program-badge">💚 Nurturing</span>
+              <img src="/images/creative-cover.jpg" alt="The Storyteller">
+              <span class="program-badge">📸 Creator</span>
             </div>
             <div class="program-info">
-              <h3>The Caretaker</h3>
-              <p>Our goats, ducks, and chickens would love to meet you. Help out in the kitchen if cooking brings you joy.</p>
+              <h3>The Storyteller</h3>
+              <p>Love capturing moments? There's always something beautiful happening — sunsets, farm life, community dinners.</p>
               <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
             </div>
           </article>
