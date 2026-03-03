@@ -127,7 +127,7 @@
             <div class="program-info">
               <h3>The Storyteller</h3>
               <p>Love capturing moments? There's always something beautiful happening — sunsets, farm life, community dinners.</p>
-              <div class="program-meta"><span>10+ days</span><span>$19/day</span></div>
+              <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
             </div>
           </article>
 
@@ -139,7 +139,7 @@
             <div class="program-info">
               <h3>The Grower</h3>
               <p>Curious about where food comes from? Join us in the garden when you feel like getting your hands dirty.</p>
-              <div class="program-meta"><span>10+ days</span><span>$19/day</span></div>
+              <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
             </div>
           </article>
 
@@ -151,7 +151,7 @@
             <div class="program-info">
               <h3>The Maker</h3>
               <p>Like building things? We're always creating something new — cabins, furniture, art. Jump in when inspiration strikes.</p>
-              <div class="program-meta"><span>10+ days</span><span>$19/day</span></div>
+              <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
             </div>
           </article>
 
@@ -163,7 +163,7 @@
             <div class="program-info">
               <h3>The Caretaker</h3>
               <p>Our goats, ducks, and chickens would love to meet you. Help out in the kitchen if cooking brings you joy.</p>
-              <div class="program-meta"><span>10+ days</span><span>$19/day</span></div>
+              <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
             </div>
           </article>
 
@@ -175,7 +175,7 @@
             <div class="program-info">
               <h3>Slow Living</h3>
               <p>Not sure yet? That's perfect. Come with no plan — try a bit of everything or nothing at all.</p>
-              <div class="program-meta"><span>10+ days</span><span>$19/day</span></div>
+              <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
             </div>
           </article>
         </div>
@@ -202,6 +202,7 @@
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
+                <div class="info-item"><span>🌴</span> 3 min to beach</div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're a photographer, videographer, writer, or content creator who finds inspiration in beautiful places and authentic experiences.</p>
@@ -227,22 +228,12 @@
             </div>
             <div class="modal-footer">
               <div class="modal-fee-box">
-                <div class="fee-col fee-amount-col">
-                  <span class="fee-label">Amount</span>
-                  <span class="fee-price">US$ 19</span>
-                  <span class="fee-period">Per day</span>
+                <div class="modal-fee-left">
+                  <span class="modal-fee-number">$19</span>
+                  <span class="modal-fee-unit">per person / day</span>
                 </div>
-                <div class="fee-col fee-pays-col">
-                  <span class="fee-label">Fee pays for</span>
-                  <ul>
-                    <li>Accommodation & meals</li>
-                    <li>Workshop materials</li>
-                    <li>Farm sustainability</li>
-                  </ul>
-                </div>
-                <div class="fee-col fee-desc-col">
-                  <span class="fee-label">Description</span>
-                  <p>Your contribution supports our community-based project. It covers your stay, meals, hands-on workshops, and helps sustain the farm.</p>
+                <div class="modal-fee-right">
+                  <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</p>
                 </div>
               </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Storyteller')">Apply Now</button>
@@ -329,6 +320,7 @@
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
+                <div class="info-item"><span>🌴</span> 3 min to beach</div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're curious about sustainable living, love being outdoors, or just want to slow down and connect with nature.</p>
@@ -354,22 +346,12 @@
             </div>
             <div class="modal-footer">
               <div class="modal-fee-box">
-                <div class="fee-col fee-amount-col">
-                  <span class="fee-label">Amount</span>
-                  <span class="fee-price">US$ 19</span>
-                  <span class="fee-period">Per day</span>
+                <div class="modal-fee-left">
+                  <span class="modal-fee-number">$19</span>
+                  <span class="modal-fee-unit">per person / day</span>
                 </div>
-                <div class="fee-col fee-pays-col">
-                  <span class="fee-label">Fee pays for</span>
-                  <ul>
-                    <li>Accommodation & meals</li>
-                    <li>Workshop materials</li>
-                    <li>Farm sustainability</li>
-                  </ul>
-                </div>
-                <div class="fee-col fee-desc-col">
-                  <span class="fee-label">Description</span>
-                  <p>Your contribution supports our community-based project. It covers your stay, meals, hands-on workshops, and helps sustain the farm.</p>
+                <div class="modal-fee-right">
+                  <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</p>
                 </div>
               </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Grower')">Apply Now</button>
@@ -456,6 +438,7 @@
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
+                <div class="info-item"><span>🌴</span> 3 min to beach</div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You like working with your hands, enjoy building things, or want a break from screens and digital work.</p>
@@ -481,22 +464,12 @@
             </div>
             <div class="modal-footer">
               <div class="modal-fee-box">
-                <div class="fee-col fee-amount-col">
-                  <span class="fee-label">Amount</span>
-                  <span class="fee-price">US$ 19</span>
-                  <span class="fee-period">Per day</span>
+                <div class="modal-fee-left">
+                  <span class="modal-fee-number">$19</span>
+                  <span class="modal-fee-unit">per person / day</span>
                 </div>
-                <div class="fee-col fee-pays-col">
-                  <span class="fee-label">Fee pays for</span>
-                  <ul>
-                    <li>Accommodation & meals</li>
-                    <li>Workshop materials</li>
-                    <li>Farm sustainability</li>
-                  </ul>
-                </div>
-                <div class="fee-col fee-desc-col">
-                  <span class="fee-label">Description</span>
-                  <p>Your contribution supports our community-based project. It covers your stay, meals, hands-on workshops, and helps sustain the farm.</p>
+                <div class="modal-fee-right">
+                  <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</p>
                 </div>
               </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Maker')">Apply Now</button>
@@ -583,6 +556,7 @@
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
+                <div class="info-item"><span>🌴</span> 3 min to beach</div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You love animals, enjoy cooking, or find purpose in creating comfortable spaces for others.</p>
@@ -608,22 +582,12 @@
             </div>
             <div class="modal-footer">
               <div class="modal-fee-box">
-                <div class="fee-col fee-amount-col">
-                  <span class="fee-label">Amount</span>
-                  <span class="fee-price">US$ 19</span>
-                  <span class="fee-period">Per day</span>
+                <div class="modal-fee-left">
+                  <span class="modal-fee-number">$19</span>
+                  <span class="modal-fee-unit">per person / day</span>
                 </div>
-                <div class="fee-col fee-pays-col">
-                  <span class="fee-label">Fee pays for</span>
-                  <ul>
-                    <li>Accommodation & meals</li>
-                    <li>Workshop materials</li>
-                    <li>Farm sustainability</li>
-                  </ul>
-                </div>
-                <div class="fee-col fee-desc-col">
-                  <span class="fee-label">Description</span>
-                  <p>Your contribution supports our community-based project. It covers your stay, meals, hands-on workshops, and helps sustain the farm.</p>
+                <div class="modal-fee-right">
+                  <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</p>
                 </div>
               </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('The Caretaker')">Apply Now</button>
@@ -735,22 +699,12 @@
             </div>
             <div class="modal-footer">
               <div class="modal-fee-box">
-                <div class="fee-col fee-amount-col">
-                  <span class="fee-label">Amount</span>
-                  <span class="fee-price">US$ 19</span>
-                  <span class="fee-period">Per day</span>
+                <div class="modal-fee-left">
+                  <span class="modal-fee-number">$19</span>
+                  <span class="modal-fee-unit">per person / day</span>
                 </div>
-                <div class="fee-col fee-pays-col">
-                  <span class="fee-label">Fee pays for</span>
-                  <ul>
-                    <li>Accommodation & meals</li>
-                    <li>Workshop materials</li>
-                    <li>Farm sustainability</li>
-                  </ul>
-                </div>
-                <div class="fee-col fee-desc-col">
-                  <span class="fee-label">Description</span>
-                  <p>Your contribution supports our community-based project. It covers your stay, meals, hands-on workshops, and helps sustain the farm.</p>
+                <div class="modal-fee-right">
+                  <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our newly established farm.</p>
                 </div>
               </div>
               <button v-if="!showModalForm" class="btn btn-primary btn-lg" @click="showApplicationForm('Slow Living')">Apply Now</button>
@@ -1262,16 +1216,13 @@ async function submitApplication() {
 .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .benefit { background: var(--color-cream); padding: 12px; border-radius: 8px; font-size: 14px; }
 .modal-footer { padding: 20px 32px 40px; }
-.modal-fee-box { background: #f9f7f4; padding: 24px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e8e4df; display: grid; grid-template-columns: 1fr 1.2fr 2fr; gap: 24px; text-align: left; }
-.fee-col { }
-.fee-label { display: block; font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-.fee-price { display: block; font-size: 1.8rem; font-weight: 700; color: var(--color-terracotta); line-height: 1.2; }
-.fee-period { display: block; font-size: 14px; color: #666; }
-.fee-pays-col ul { list-style: disc; margin: 0; padding-left: 18px; }
-.fee-pays-col li { font-size: 13px; color: #555; margin-bottom: 4px; }
-.fee-pays-col li::before { content: none; }
-.fee-desc-col p { margin: 0; font-size: 13px; color: #555; line-height: 1.6; }
-@media (max-width: 600px) { .modal-fee-box { grid-template-columns: 1fr; gap: 16px; } }
+.modal-fee-box { background: #f9f7f4; padding: 24px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e8e4df; display: flex; align-items: center; gap: 32px; }
+.modal-fee-left { flex-shrink: 0; text-align: left; }
+.modal-fee-number { font-size: 2.5rem; font-weight: 700; color: var(--color-terracotta); line-height: 1; display: block; }
+.modal-fee-unit { display: block; font-size: 0.9rem; color: #666; margin-top: 4px; }
+.modal-fee-right { flex: 1; text-align: left; border-left: 1px solid #e0dcd7; padding-left: 32px; }
+.modal-fee-right p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: #555; }
+@media (max-width: 600px) { .modal-fee-box { flex-direction: column; gap: 20px; text-align: center; } .modal-fee-left { text-align: center; } .modal-fee-right { border-left: none; border-top: 1px solid #e0dcd7; padding-left: 0; padding-top: 20px; text-align: center; } }
 
 .modal-form-wrapper { margin-top: 16px; }
 .form-note { background: #fff8e7; border: 1px solid #f0d78c; padding: 16px; border-radius: 12px; margin-bottom: 20px; }
