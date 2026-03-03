@@ -152,11 +152,16 @@
           <span class="section-label">Life at the Farm</span>
           <h2>Peek Inside</h2>
         </div>
-        <div class="gallery-grid">
-          <div class="gallery-item"><img src="/images/gallery-1.jpg" alt="Farm life"></div>
-          <div class="gallery-item"><img src="/images/gallery-2.jpg" alt="Farm animals"></div>
-          <div class="gallery-item"><img src="/images/gallery-3.jpg" alt="Farm scenery"></div>
-          <div class="gallery-item"><img src="/images/gallery-4.jpg" alt="Farm activities"></div>
+        <div class="farmlife-slider">
+          <div class="farmlife-track" :style="{ transform: `translateX(-${farmlifePosition}px)` }">
+            <div class="farmlife-slide" v-for="i in 10" :key="i">
+              <img :src="`/images/farmlife-${i}.jpg`" :alt="`Farm life ${i}`">
+            </div>
+          </div>
+        </div>
+        <div class="farmlife-nav">
+          <button class="farmlife-btn prev" @click="slideFarmlife(-1)">‹</button>
+          <button class="farmlife-btn next" @click="slideFarmlife(1)">›</button>
         </div>
       </div>
     </section>
@@ -266,9 +271,21 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 useHead({
   title: 'Mawun Valley Farm - Slow Down, Connect Deeply'
 })
+
+const farmlifePosition = ref(0)
+
+function slideFarmlife(direction) {
+  const slider = document.querySelector('.farmlife-track')
+  if (!slider) return
+  const slideWidth = 320
+  const maxScroll = slider.scrollWidth - slider.parentElement.clientWidth
+  farmlifePosition.value = Math.max(0, Math.min(maxScroll, farmlifePosition.value + (direction * slideWidth)))
+}
 </script>
 
 <style scoped>
@@ -470,5 +487,17 @@ useHead({
   background: white;
   color: var(--color-sage);
 }
+
+/* Farmlife Slider */
+.gallery { padding: 80px 0; background: var(--color-cream); overflow: hidden; }
+.farmlife-slider { overflow: hidden; margin: 0 -20px; padding: 0 20px; }
+.farmlife-track { display: flex; gap: 20px; transition: transform 0.4s ease; }
+.farmlife-slide { flex: 0 0 300px; height: 400px; border-radius: 16px; overflow: hidden; }
+.farmlife-slide img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.farmlife-slide:hover img { transform: scale(1.05); }
+.farmlife-nav { display: flex; justify-content: center; gap: 16px; margin-top: 24px; }
+.farmlife-btn { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--color-dark); background: white; font-size: 24px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+.farmlife-btn:hover { background: var(--color-dark); color: white; }
+@media (max-width: 768px) { .farmlife-slide { flex: 0 0 260px; height: 350px; } }
 </style>
 <!-- Updated Sun Mar  1 08:11:39 UTC 2026 -->
