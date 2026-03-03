@@ -184,7 +184,7 @@
                 </div>
                 <div class="schedule-item">
                   <span class="schedule-label">Duration</span>
-                  <span class="schedule-value">Until late</span>
+                  <span class="schedule-value">~2.5 hours</span>
                 </div>
               </div>
 
@@ -212,7 +212,7 @@
                 <li>BBQ spread with farm-fresh ingredients</li>
                 <li>Fresh seafood from local fishermen</li>
                 <li>Vegetarian options available</li>
-                <li>Live music and good vibes</li>
+                <li>Relaxing music that fits the natural atmosphere</li>
                 <li>Meet other travelers and locals</li>
                 <li>Beautiful sunset views</li>
               </ul>
@@ -220,7 +220,7 @@
               <h4>🌟 Why Join?</h4>
               <div class="benefits-grid">
                 <div class="benefit">🥩 Farm-Fresh Food</div>
-                <div class="benefit">🎵 Live Music</div>
+                <div class="benefit">🎵 Relaxing Music</div>
                 <div class="benefit">🌅 Sunset Views</div>
                 <div class="benefit">👥 Community Vibes</div>
                 <div class="benefit">🍺 Good Company</div>
