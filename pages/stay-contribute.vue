@@ -52,6 +52,37 @@
       </div>
     </section>
 
+    <!-- Why the Daily Fee -->
+    <section class="fee-section">
+      <div class="container">
+        <div class="fee-content">
+          <div class="fee-header">
+            <span class="section-label">Transparency</span>
+            <h2>Why the Daily Fee?</h2>
+            <p class="fee-intro">Your $19/day directly sustains our community project and ensures a meaningful experience for everyone.</p>
+          </div>
+          <div class="fee-grid">
+            <div class="fee-item">
+              <span class="fee-icon">🏡</span>
+              <h4>Your Stay</h4>
+              <p>Private cabin accommodation, daily breakfast & lunch, workspace, and free bikes</p>
+            </div>
+            <div class="fee-item">
+              <span class="fee-icon">🌱</span>
+              <h4>Learning & Materials</h4>
+              <p>Hands-on permaculture workshops with our farmers, plus all tools and materials needed</p>
+            </div>
+            <div class="fee-item">
+              <span class="fee-icon">💚</span>
+              <h4>Project Sustainability</h4>
+              <p>This fee is our sole income source — your contribution keeps the farm running and growing</p>
+            </div>
+          </div>
+          <p class="fee-note">Thank you for being part of our community's growth. Every stay makes a difference.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Programs Section -->
     <section class="programs-section" id="programs">
       <div class="container">
