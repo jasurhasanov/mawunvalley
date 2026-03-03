@@ -157,7 +157,7 @@
 
           <article class="program-card" @click="openProgram('caretaker')">
             <div class="program-image">
-              <img src="/images/hero-1.jpg" alt="The Caretaker">
+              <img src="/images/caretaker-cover.jpg" alt="The Caretaker">
               <span class="program-badge">💚 Nurturing</span>
             </div>
             <div class="program-info">
