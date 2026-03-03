@@ -52,6 +52,60 @@
       </div>
     </section>
 
+
+    <!-- Why Travelers Choose Us -->
+    <section class="trust-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Trusted by Travelers</span>
+          <h2>Why People Choose Us</h2>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <span class="trust-icon">⭐</span>
+            <div class="trust-content">
+              <h4>Top-Rated Host</h4>
+              <p>Recognized for exceptional hospitality and consistently high guest ratings.</p>
+            </div>
+          </div>
+          <div class="trust-card">
+            <span class="trust-icon">🌱</span>
+            <div class="trust-content">
+              <h4>Sustainable Project</h4>
+              <p>12 travelers confirmed we're actively contributing to a more sustainable future.</p>
+            </div>
+          </div>
+          <div class="trust-card">
+            <span class="trust-icon">✅</span>
+            <div class="trust-content">
+              <h4>High Acceptance Rate</h4>
+              <p>We're actively welcoming new travelers and respond to applications quickly.</p>
+            </div>
+          </div>
+          <div class="trust-card">
+            <span class="trust-icon">🌿</span>
+            <div class="trust-content">
+              <h4>Connect with Nature</h4>
+              <p>14 travelers recommend this experience for reconnecting with nature.</p>
+            </div>
+          </div>
+          <div class="trust-card">
+            <span class="trust-icon">🌍</span>
+            <div class="trust-content">
+              <h4>International Community</h4>
+              <p>12 travelers recommend us for meeting people from all around the world.</p>
+            </div>
+          </div>
+          <div class="trust-card">
+            <span class="trust-icon">👫</span>
+            <div class="trust-content">
+              <h4>Couples Welcome</h4>
+              <p>We happily accept couples and friends traveling together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Programs Section -->
     <section class="programs-section" id="programs">
       <div class="container">
@@ -1084,6 +1138,14 @@ async function submitApplication() {
 .how-item h4 { color: var(--color-gold); margin-bottom: 8px; font-size: 1.2rem; }
 .how-item p { font-size: 14px; opacity: 0.85; line-height: 1.6; }
 
+
+.trust-section { padding: 80px 0; background: white; }
+.trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+.trust-card { display: flex; align-items: flex-start; gap: 16px; background: var(--color-cream); padding: 24px; border-radius: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.trust-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+.trust-icon { font-size: 32px; flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: white; border-radius: 12px; }
+.trust-content h4 { font-size: 1rem; margin-bottom: 6px; color: var(--color-dark); }
+.trust-content p { font-size: 14px; color: #666; line-height: 1.5; margin: 0; }
 .programs-section { padding: 100px 0; background: var(--color-cream); }
 .section-header { text-align: center; max-width: 600px; margin: 0 auto 50px; }
 .section-header h2 { margin-bottom: 16px; }
@@ -1178,6 +1240,7 @@ async function submitApplication() {
 
 @media (max-width: 768px) {
   .hero-stats { gap: 24px; }
+  .trust-grid { grid-template-columns: 1fr; }
   .how-grid { gap: 30px; }
   .programs-grid { grid-template-columns: 1fr; }
   .cabins-gallery { grid-template-columns: 1fr; }
