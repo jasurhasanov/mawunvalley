@@ -178,8 +178,19 @@
                 <div class="info-item"><span>💰</span> US$19/person/day</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              <div class="fee-note-inline">
-                <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our community project.</p>
+              <div class="fee-breakdown">
+                <div class="fee-breakdown-header">
+                  <span class="fee-heart">💚</span>
+                  <span>Where Your $19/Day Goes</span>
+                </div>
+                <div class="fee-breakdown-items">
+                  <span class="fee-tag">🏡 Cabin</span>
+                  <span class="fee-tag">🍳 Meals</span>
+                  <span class="fee-tag">🌱 Workshops</span>
+                  <span class="fee-tag">🚲 Bikes</span>
+                  <span class="fee-tag">🤝 Community</span>
+                </div>
+                <p class="fee-breakdown-note">You're not just paying for a stay — you're sustaining a dream.</p>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're a photographer, videographer, writer, or content creator who finds inspiration in beautiful places and authentic experiences.</p>
@@ -289,8 +300,19 @@
                 <div class="info-item"><span>💰</span> US$19/person/day</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              <div class="fee-note-inline">
-                <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our community project.</p>
+              <div class="fee-breakdown">
+                <div class="fee-breakdown-header">
+                  <span class="fee-heart">💚</span>
+                  <span>Where Your $19/Day Goes</span>
+                </div>
+                <div class="fee-breakdown-items">
+                  <span class="fee-tag">🏡 Cabin</span>
+                  <span class="fee-tag">🍳 Meals</span>
+                  <span class="fee-tag">🌱 Workshops</span>
+                  <span class="fee-tag">🚲 Bikes</span>
+                  <span class="fee-tag">🤝 Community</span>
+                </div>
+                <p class="fee-breakdown-note">You're not just paying for a stay — you're sustaining a dream.</p>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're curious about sustainable living, love being outdoors, or just want to slow down and connect with nature.</p>
@@ -400,8 +422,19 @@
                 <div class="info-item"><span>💰</span> US$19/person/day</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              <div class="fee-note-inline">
-                <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our community project.</p>
+              <div class="fee-breakdown">
+                <div class="fee-breakdown-header">
+                  <span class="fee-heart">💚</span>
+                  <span>Where Your $19/Day Goes</span>
+                </div>
+                <div class="fee-breakdown-items">
+                  <span class="fee-tag">🏡 Cabin</span>
+                  <span class="fee-tag">🍳 Meals</span>
+                  <span class="fee-tag">🌱 Workshops</span>
+                  <span class="fee-tag">🚲 Bikes</span>
+                  <span class="fee-tag">🤝 Community</span>
+                </div>
+                <p class="fee-breakdown-note">You're not just paying for a stay — you're sustaining a dream.</p>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You like working with your hands, enjoy building things, or want a break from screens and digital work.</p>
@@ -511,8 +544,19 @@
                 <div class="info-item"><span>💰</span> US$19/person/day</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              <div class="fee-note-inline">
-                <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our community project.</p>
+              <div class="fee-breakdown">
+                <div class="fee-breakdown-header">
+                  <span class="fee-heart">💚</span>
+                  <span>Where Your $19/Day Goes</span>
+                </div>
+                <div class="fee-breakdown-items">
+                  <span class="fee-tag">🏡 Cabin</span>
+                  <span class="fee-tag">🍳 Meals</span>
+                  <span class="fee-tag">🌱 Workshops</span>
+                  <span class="fee-tag">🚲 Bikes</span>
+                  <span class="fee-tag">🤝 Community</span>
+                </div>
+                <p class="fee-breakdown-note">You're not just paying for a stay — you're sustaining a dream.</p>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You love animals, enjoy cooking, or find purpose in creating comfortable spaces for others.</p>
@@ -622,8 +666,19 @@
                 <div class="info-item"><span>💰</span> US$19/person/day</div>
                 <div class="info-item"><span>🌿</span> Completely flexible</div>
               </div>
-              <div class="fee-note-inline">
-                <p>💡 <strong>Your fee supports:</strong> Accommodation, meals, workshops, materials, and the sustainability of our community project.</p>
+              <div class="fee-breakdown">
+                <div class="fee-breakdown-header">
+                  <span class="fee-heart">💚</span>
+                  <span>Where Your $19/Day Goes</span>
+                </div>
+                <div class="fee-breakdown-items">
+                  <span class="fee-tag">🏡 Cabin</span>
+                  <span class="fee-tag">🍳 Meals</span>
+                  <span class="fee-tag">🌱 Workshops</span>
+                  <span class="fee-tag">🚲 Bikes</span>
+                  <span class="fee-tag">🤝 Community</span>
+                </div>
+                <p class="fee-breakdown-note">You're not just paying for a stay — you're sustaining a dream.</p>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're recovering from burnout, don't know what you want yet, or simply want to slow down without any expectations.</p>
