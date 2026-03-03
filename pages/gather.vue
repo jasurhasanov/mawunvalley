@@ -167,6 +167,12 @@
             <p class="review-text">"Mud, rain, goats, sambal, coconut milk… Today was place-based learning in its truest form: farming, cooking, teamwork, maths, science, problem-solving, plus an unscheduled lesson in patience. Not washed out, just well weathered."</p>
             <p class="review-author">— Natalia, Harmony Alternative School</p>
           </div>
+          <div class="review-card">
+            <span class="review-tag stay">🏡 Stay & Contribute</span>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Ten days on the farm 🐐🐓🌾 Waking up every day to the rooster's calls, feeling the ground beneath my feet, learning Indonesian, learning about sustainability, animals, and nature. Trying new things like riding a motorbike or surfing, hiking mountains, getting blisters on my hands, feeding goats, playing football, meeting beautiful people… Just nature. The best detox ever."</p>
+            <p class="review-author">— Sara, Spain</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1048,5 +1054,10 @@ const closeEvent = () => {
 .review-tag.samovar {
   background: #EFEBE9;
   color: #5D4037;
+}
+
+.review-tag.stay {
+  background: #E3F2FD;
+  color: #1565C0;
 }
 </style>
