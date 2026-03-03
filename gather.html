@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gather - Events & Activities | Mawun Valley Farm</title>
-  <meta name="description" content="BBQ Nights, Cashew Apple Jam Cooking Classes, farm-to-table cooking, Little Farmer for kids. Come together at Mawun Valley Farm.">
+  <meta name="description" content="BBQ Nights, Samovar Tea Ceremony, Cashew Apple Jam Cooking Classes, Little Farmer for kids. Come together at Mawun Valley Farm.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="pages.css">
   <style>
-    .cashew-full-experience {
+    .cashew-full-experience, .samovar-full-experience {
       background: linear-gradient(135deg, #FAF6F0 0%, #fff 100%);
       border: 2px solid #E8E4DC;
       border-radius: 16px;
@@ -20,13 +20,17 @@
       margin: 40px 0;
       text-align: left;
     }
-    .cashew-header {
+    .samovar-full-experience {
+      background: linear-gradient(135deg, #FDF8F3 0%, #fff 100%);
+      border-color: #D4A84B;
+    }
+    .experience-header {
       text-align: center;
       margin-bottom: 32px;
       padding-bottom: 24px;
       border-bottom: 2px dashed #E8E4DC;
     }
-    .cashew-header .event-badge {
+    .experience-header .event-badge {
       background: #7A8B6F;
       color: white;
       padding: 6px 16px;
@@ -38,27 +42,30 @@
       display: inline-block;
       margin-bottom: 16px;
     }
-    .cashew-header h2 {
+    .samovar-full-experience .experience-header .event-badge {
+      background: #8B4513;
+    }
+    .experience-header h2 {
       font-size: 32px;
       color: #333;
       margin-bottom: 8px;
     }
-    .cashew-header .tagline {
+    .experience-header .tagline {
       font-family: 'Caveat', cursive;
       font-size: 24px;
       color: #C66B3D;
     }
-    .cashew-intro {
+    .experience-intro {
       max-width: 800px;
       margin: 0 auto 32px;
       text-align: center;
     }
-    .cashew-intro p {
+    .experience-intro p {
       line-height: 1.8;
       color: #555;
       font-size: 16px;
     }
-    .cashew-intro .host-note {
+    .experience-intro .host-note {
       font-style: italic;
       color: #7A8B6F;
       margin-top: 16px;
@@ -268,6 +275,26 @@
       font-size: 17px;
       padding: 16px 40px;
     }
+    .single-price {
+      text-align: center;
+      padding: 24px;
+    }
+    .single-price .amount {
+      font-size: 36px;
+      font-weight: 700;
+      color: #8B4513;
+      margin-bottom: 8px;
+    }
+    .single-price .group-note {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 4px;
+    }
+    .single-price .subtext {
+      font-size: 13px;
+      color: #7A8B6F;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -309,23 +336,168 @@
     <div class="container">
       <div class="intro-content">
         <h2>Events & Activities</h2>
-        <p class="lead">From weekly BBQ nights to cooking classes to kids' programs — the farm comes alive when we gather together.</p>
+        <p class="lead">From weekly BBQ nights to traditional tea ceremonies to hands-on cooking classes — the farm comes alive when we gather together.</p>
       </div>
     </div>
   </section>
 
   <section class="events-section">
     <div class="container">
-      
-      <!-- Featured: Cashew Apple Jam Experience -->
+
+      <!-- 1. BBQ Nights -->
+      <div class="event-card featured">
+        <div class="event-badge">Weekly</div>
+        <div class="event-icon">🔥</div>
+        <h3>#BBQNights</h3>
+        <p class="event-tagline">Every Friday, the farm comes alive</p>
+        <p>Farm-to-table feast under the stars. Live music, good people, great food. All ingredients fresh from our farm and local fishermen.</p>
+        <div class="event-details">
+          <span>📅 Every Friday</span>
+          <span>⏰ 5:00 PM onwards</span>
+          <span>💰 IDR 130,000</span>
+        </div>
+        <a href="https://megatix.co.id/events/bbqnights-mawun-valley" class="btn btn-primary" target="_blank">Book on Megatix</a>
+      </div>
+
+      <!-- 2. Samovar Tea Ceremony - NEW -->
+      <div class="samovar-full-experience">
+        <div class="experience-header">
+          <span class="event-badge">☕ Cultural Experience</span>
+          <h2>Guided Samovar Tea Ceremony</h2>
+          <p class="tagline">A Taste of Soviet Tradition at the Farm</p>
+        </div>
+
+        <div class="experience-intro">
+          <p>Step back in time with an authentic Samovar tea ceremony — a centuries-old tradition from the heart of Russia and the Soviet era. The samovar, a beautifully crafted metal urn heated by wood fire, has been the centerpiece of gatherings, conversations, and hospitality for generations.</p>
+          <p class="host-note">At Mawun Valley Farm, we bring this cherished tradition to tropical Lombok. Gather around the glowing samovar, watch the steam rise, and share stories over cups of perfectly brewed tea — just as families have done for centuries.</p>
+        </div>
+
+        <!-- What's Included -->
+        <div class="included-section">
+          <h3>🫖 What's Included</h3>
+          <div class="included-list">
+            <div class="included-item">
+              <span class="check">✔</span>
+              <span><strong>Wood-fired Samovar</strong> — Traditional charcoal/wood heated brass samovar, ceremonially prepared</span>
+            </div>
+            <div class="included-item">
+              <span class="check">✔</span>
+              <span><strong>3 Premium Tea Selections</strong> — Curated variety of black, herbal, and specialty teas</span>
+            </div>
+            <div class="included-item">
+              <span class="check">✔</span>
+              <span><strong>Farm-Made Jam</strong> — Our signature homemade jam, perfect for Russian-style tea drinking</span>
+            </div>
+            <div class="included-item">
+              <span class="check">✔</span>
+              <span><strong>10 Fresh Crepes (Blini)</strong> — Traditional thin pancakes, served warm</span>
+            </div>
+            <div class="included-item">
+              <span class="check">✔</span>
+              <span><strong>Complete Tea Service</strong> — Authentic tea set, glassware, and all ceremony accessories</span>
+            </div>
+            <div class="included-item">
+              <span class="check">✔</span>
+              <span><strong>Firewood & Setup</strong> — Everything prepared for an authentic experience</span>
+            </div>
+            <div class="included-item">
+              <span class="check">✔</span>
+              <span><strong>Dedicated Guide</strong> — Personal host to guide you through the ceremony and share its history</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="info-grid">
+          <div class="info-card">
+            <h4>💰 Pricing</h4>
+            <div class="single-price">
+              <p class="amount">IDR 1,000,000</p>
+              <p class="group-note">For groups of up to 10 people</p>
+              <p class="subtext">Same price whether 1 person or 10 — it's a complete ceremony experience</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h4>⏰ Schedule</h4>
+            <p class="schedule-time">By Reservation</p>
+            <p class="schedule-duration">Duration: ~2 hours</p>
+            <p class="schedule-flex">Morning or afternoon sessions available — contact us to arrange your preferred time</p>
+          </div>
+        </div>
+
+        <!-- The Samovar Tradition -->
+        <div style="background: #FDF5E6; border-radius: 12px; padding: 28px; margin: 28px 0;">
+          <h3 style="color: #8B4513; font-size: 20px; margin-bottom: 16px;">🏛️ The Samovar Tradition</h3>
+          <p style="line-height: 1.8; color: #555; margin-bottom: 16px;">The samovar (Russian: самовар, meaning "self-boiler") has been central to Russian and Central Asian hospitality since the 18th century. More than just a tea maker, it's a symbol of warmth, family, and togetherness.</p>
+          <p style="line-height: 1.8; color: #555; margin-bottom: 16px;">In Soviet times, the samovar was present in every household — from modest apartments to grand dachas. Tea was never rushed; it was an occasion to slow down, connect, and share life's moments.</p>
+          <p style="line-height: 1.8; color: #7A8B6F; font-style: italic;">Traditionally, tea is served strong from a small pot atop the samovar, then diluted with hot water from the main urn. A spoonful of jam — eaten between sips, not stirred in — adds sweetness to the ritual.</p>
+        </div>
+
+        <!-- Why Join -->
+        <div class="why-join-section">
+          <h3>🌟 Why Experience This?</h3>
+          <div class="why-grid">
+            <div class="why-item">
+              <span class="icon">🏺</span>
+              <div class="content">
+                <h5>Living History</h5>
+                <p>Experience a tradition that has brought people together for over 300 years</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="icon">🔥</span>
+              <div class="content">
+                <h5>Authentic Fire-Heated</h5>
+                <p>Real wood-fired samovar — the traditional way, not electric</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="icon">👥</span>
+              <div class="content">
+                <h5>Perfect for Groups</h5>
+                <p>Ideal for families, friends, or small celebrations — up to 10 guests</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="icon">🍯</span>
+              <div class="content">
+                <h5>Farm-Fresh Treats</h5>
+                <p>Homemade jam and fresh crepes made right here on the farm</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="icon">📸</span>
+              <div class="content">
+                <h5>Unique & Memorable</h5>
+                <p>A one-of-a-kind experience you won't find elsewhere in Lombok</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="icon">🌿</span>
+              <div class="content">
+                <h5>Farm Atmosphere</h5>
+                <p>Enjoy amidst nature, fresh air, and the peaceful farm setting</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book CTA -->
+        <div class="book-cta">
+          <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20a%20Samovar%20Tea%20Ceremony%20at%20Mawun%20Valley%20Farm" class="btn btn-primary">Book via WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 3. Cashew Apple Jam Experience -->
       <div class="cashew-full-experience">
-        <div class="cashew-header">
+        <div class="experience-header">
           <span class="event-badge">🌿 Signature Experience</span>
           <h2>Cashew Apple Jam Cooking Class</h2>
           <p class="tagline">Farm-to-Table Magic with Mrs. Noni</p>
         </div>
 
-        <div class="cashew-intro">
+        <div class="experience-intro">
           <p>Discover the unique taste of Lombok's cashew apples while learning the art of jam making in a hands-on cooking class. From harvesting the fruit straight from the tree to preparing, cooking, and tasting your own fresh jam, this is a farm-to-table experience you won't forget.</p>
           <p class="host-note">Guided by <strong>Mrs. Noni (Indonesia)</strong> — the owner of Mawun Valley Farm — you'll experience a warm blend of local hospitality and Azerbaijani tea culture.</p>
         </div>
@@ -460,33 +632,7 @@
         </div>
       </div>
 
-      <!-- Other Events Grid -->
-      <div class="event-card featured">
-        <div class="event-badge">Weekly</div>
-        <div class="event-icon">🔥</div>
-        <h3>#BBQNights</h3>
-        <p class="event-tagline">Every Friday, the farm comes alive</p>
-        <p>Farm-to-table feast under the stars. Live music, good people, great food. All ingredients fresh from our farm and local fishermen.</p>
-        <div class="event-details">
-          <span>📅 Every Friday</span>
-          <span>⏰ 5:00 PM onwards</span>
-          <span>💰 IDR 130,000</span>
-        </div>
-        <a href="https://megatix.co.id/events/bbqnights-mawun-valley" class="btn btn-primary" target="_blank">Book on Megatix</a>
-      </div>
-
-      <div class="event-card">
-        <div class="event-icon">🍳</div>
-        <h3>Cooking Classes</h3>
-        <p class="event-tagline">From soil to plate</p>
-        <p>Harvest ingredients from the farm, learn traditional and modern techniques, and enjoy what you've created. Take home recipes and memories.</p>
-        <div class="event-details">
-          <span>📅 By reservation</span>
-          <span>⏰ 3 hours</span>
-        </div>
-        <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20a%20cooking%20class" class="btn btn-outline-dark">Inquire</a>
-      </div>
-
+      <!-- 4. Little Farmer -->
       <div class="event-card">
         <div class="event-icon">👶</div>
         <h3>Little Farmer</h3>
@@ -499,6 +645,20 @@
         <a href="https://megatix.co.id/events/little-farmer-first-steps-to-farming-and-gardening" class="btn btn-primary" target="_blank">Book on Megatix</a>
       </div>
 
+      <!-- 5. Cooking Classes -->
+      <div class="event-card">
+        <div class="event-icon">🍳</div>
+        <h3>Cooking Classes</h3>
+        <p class="event-tagline">From soil to plate</p>
+        <p>Harvest ingredients from the farm, learn traditional and modern techniques, and enjoy what you've created. Take home recipes and memories.</p>
+        <div class="event-details">
+          <span>📅 By reservation</span>
+          <span>⏰ 3 hours</span>
+        </div>
+        <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20a%20cooking%20class" class="btn btn-outline-dark">Inquire</a>
+      </div>
+
+      <!-- 6. Private Events -->
       <div class="event-card">
         <div class="event-icon">🎉</div>
         <h3>Private Events</h3>
@@ -510,6 +670,7 @@
         </div>
         <a href="https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20hosting%20a%20private%20event" class="btn btn-outline-dark">Inquire</a>
       </div>
+
     </div>
   </section>
 
@@ -540,6 +701,7 @@
       </div>
     </div>
   </section>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
@@ -552,7 +714,7 @@
           <h4>Explore</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-        <li><a href="nonis.html">Noni's</a></li>
+            <li><a href="nonis.html">Noni's</a></li>
             <li><a href="stay.html">Our Cabins</a></li>
             <li><a href="experience.html">Programs</a></li>
             <li><a href="retreat.html">Farm Retreat</a></li>
