@@ -105,7 +105,7 @@
           </div>
         </div>
         <div class="trust-verify">
-          <p>✓ Verified on <a href="https://www.worldpackers.com/en/hosts/mawun-valley-farm" target="_blank" rel="noopener">Worldpackers</a></p>
+          <p>✓ Verified on <a href="https://www.worldpackers.com/positions/88082" target="_blank" rel="noopener">Worldpackers</a></p>
         </div>
       </div>
     </section>
