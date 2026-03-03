@@ -203,7 +203,6 @@
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're a photographer, videographer, writer, or content creator who finds inspiration in beautiful places and authentic experiences.</p>
               <h4>📷 Ways You Could Get Involved</h4>
@@ -330,7 +329,6 @@
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
-              </div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're curious about sustainable living, love being outdoors, or just want to slow down and connect with nature.</p>
@@ -459,7 +457,6 @@
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You like working with your hands, enjoy building things, or want a break from screens and digital work.</p>
               <h4>🔧 Ways You Could Get Involved</h4>
@@ -587,7 +584,6 @@
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>🌿</span> Flexible involvement</div>
               </div>
-              </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You love animals, enjoy cooking, or find purpose in creating comfortable spaces for others.</p>
               <h4>💚 Ways You Could Get Involved</h4>
@@ -714,7 +710,6 @@
               <div class="info-box">
                 <div class="info-item"><span>📅</span> Minimum 10 days</div>
                 <div class="info-item"><span>🌿</span> Completely flexible</div>
-              </div>
               </div>
               <h4>🎯 You Might Enjoy This If...</h4>
               <p>You're recovering from burnout, don't know what you want yet, or simply want to slow down without any expectations.</p>
