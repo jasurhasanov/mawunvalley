@@ -169,7 +169,7 @@
 
           <article class="program-card featured" @click="openProgram('slowliving')">
             <div class="program-image">
-              <img src="/images/program-1.jpg" alt="Slow Living">
+              <img src="/images/slowliving-cover-new.jpg" alt="Slow Living">
               <span class="program-badge">🧘 Flexible</span>
             </div>
             <div class="program-info">
