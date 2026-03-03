@@ -57,27 +57,27 @@
         <div class="ways-grid">
           <NuxtLink to="/stay-contribute" class="way-card">
             <div class="way-icon">🏡</div>
-            <h3>Stay</h3>
-            <p>Farmstay cabins with valley views. Wake up to roosters, not alarms.</p>
-            <span class="way-link">View cabins →</span>
-          </NuxtLink>
-          <NuxtLink to="/stay-contribute" class="way-card">
-            <div class="way-icon">🌱</div>
-            <h3>Experience</h3>
-            <p>Immersive farm programs. Become part of the farm, not just a visitor.</p>
+            <h3>Stay & Contribute</h3>
+            <p>Live the farm life. Private cabin, meals, and ways to get involved.</p>
             <span class="way-link">Explore programs →</span>
           </NuxtLink>
           <NuxtLink to="/gather" class="way-card">
             <div class="way-icon">🍽️</div>
-            <h3>Gather</h3>
+            <h3>Farm Events</h3>
             <p>BBQ nights, cooking classes, Little Farmer for kids. Come together.</p>
             <span class="way-link">See events →</span>
           </NuxtLink>
           <NuxtLink to="/belong" class="way-card">
             <div class="way-icon">👨‍👩‍👧</div>
-            <h3>Belong</h3>
-            <p>Family Farm Membership. More than visitors — become family.</p>
-            <span class="way-link">Join us →</span>
+            <h3>Membership</h3>
+            <p>Family Farm Membership. Your own garden plot and full farm access.</p>
+            <span class="way-link">Learn more →</span>
+          </NuxtLink>
+          <NuxtLink to="/nonis" class="way-card">
+            <div class="way-icon">🍰</div>
+            <h3>Noni's</h3>
+            <p>Farm-to-table café. Fresh pastries, great coffee, and Noni's famous cheesecake.</p>
+            <span class="way-link">Visit Noni's →</span>
           </NuxtLink>
         </div>
       </div>
