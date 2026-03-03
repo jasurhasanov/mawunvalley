@@ -49,7 +49,7 @@
             <p>Roam the farm grounds freely. Interact with goats, ducks, and cats. Use the sports field. A safe "nature classroom" for your children.</p>
           </div>
           <div class="deliverable-card">
-            <span class="deliverable-icon">🧑‍🌾</span>
+            <span class="deliverable-icon">🧤</span>
             <h3>Gardening Gear</h3>
             <p>All gardening tools, farmer hats, gloves, and equipment provided. Just show up — we have everything you need.</p>
           </div>
