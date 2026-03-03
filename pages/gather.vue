@@ -98,7 +98,7 @@
                 <span>📅 Weekends</span>
                 <span>👦 Ages 3-12</span>
               </div>
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20Little%20Farmer%20for%20my%20kids" class="btn btn-primary btn-sm" target="_blank">Book via WhatsApp</a>
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20Little%20Farmer%20for%20my%20kids" class="btn btn-outline btn-sm" target="_blank">Inquire</a>
             </div>
 
             <!-- Cooking Classes -->
