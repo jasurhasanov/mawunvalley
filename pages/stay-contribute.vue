@@ -145,7 +145,7 @@
 
           <article class="program-card" @click="openProgram('maker')">
             <div class="program-image">
-              <img src="/images/beachside-cover.jpg" alt="The Maker">
+              <img src="/images/maker-cover.jpg" alt="The Maker">
               <span class="program-badge">🔨 Builder</span>
             </div>
             <div class="program-info">
