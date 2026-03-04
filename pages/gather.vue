@@ -81,6 +81,24 @@
               <span class="click-hint">Click for details →</span>
             </div>
           </article>
+
+          <!-- 4. Weekly Volleyball -->
+          <article class="event-card signature" @click="openEvent('volleyball')">
+            <div class="event-image">
+              <img src="/images/farmlife-5.jpg" alt="Weekly Volleyball Games">
+              <span class="event-badge volleyball">Weekly</span>
+            </div>
+            <div class="event-info">
+              <div class="event-icon">🏐</div>
+              <h3>Weekly Volleyball</h3>
+              <p class="event-tagline">Thursday sunset games on the farm</p>
+              <div class="event-meta">
+                <span>📅 Every Thursday</span>
+                <span>💰 IDR 100,000</span>
+              </div>
+              <span class="click-hint">Click for details →</span>
+            </div>
+          </article>
         </div>
 
         <!-- Other Events -->
@@ -394,6 +412,75 @@
             </div>
           </div>
 
+          <!-- Weekly Volleyball Modal -->
+          <div v-if="activeEvent === 'volleyball'" class="event-detail">
+            <div class="modal-header">
+              <span class="event-badge volleyball">🏐 Weekly Event</span>
+              <h2>Weekly Volleyball</h2>
+              <p class="modal-tagline">Thursday sunset games on the farm</p>
+            </div>
+            <div class="modal-body">
+              <p class="intro-text">Join our friendly volleyball community! Every Thursday afternoon, we gather on the farm's grass court for casual games, good vibes, and beautiful sunset views. All skill levels welcome.</p>
+              
+              <h4>⏰ Schedule</h4>
+              <div class="schedule-box">
+                <div class="schedule-item">
+                  <span class="schedule-label">When</span>
+                  <span class="schedule-value">Every Thursday</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Time</span>
+                  <span class="schedule-value">4:00 PM</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Duration</span>
+                  <span class="schedule-value">~1.5 hours</span>
+                </div>
+              </div>
+
+              <h4>💰 Pricing</h4>
+              <div class="pricing-grid">
+                <div class="price-tier highlight">
+                  <span class="tier-name">Per Person</span>
+                  <span class="tier-price">IDR 100,000</span>
+                  <span class="tier-note">Per game session</span>
+                </div>
+              </div>
+              
+              <h4>🏐 What's Included</h4>
+              <ul class="included-list">
+                <li><strong>Grass volleyball court</strong> with new net</li>
+                <li><strong>Volleyball</strong> provided</li>
+                <li><strong>1L cold water</strong> to stay hydrated</li>
+                <li><strong>Choice of drink</strong> — hot or cold from Noni's Farm Café</li>
+                <li><strong>Outdoor shower & toilets</strong> available</li>
+                <li><strong>Chill farm atmosphere</strong> — sunset views included</li>
+              </ul>
+
+              <h4>📲 How to Join</h4>
+              <div class="location-box">
+                <p><strong>Step 1:</strong> Click the button below to join our WhatsApp group</p>
+                <p><strong>Step 2:</strong> Introduce yourself in the group</p>
+                <p><strong>Step 3:</strong> Show up on Thursday at 4 PM!</p>
+                <p class="loc-note">Games happen rain or shine — we'll update in the group if conditions change.</p>
+              </div>
+
+              <h4>🌟 Why Join?</h4>
+              <div class="benefits-grid">
+                <div class="benefit">🏐 All Levels Welcome</div>
+                <div class="benefit">🌅 Sunset Views</div>
+                <div class="benefit">👥 Meet New People</div>
+                <div class="benefit">🏃 Stay Active</div>
+                <div class="benefit">☕ Drinks Included</div>
+                <div class="benefit">🌿 Farm Vibes</div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <a href="https://chat.whatsapp.com/YOUR_GROUP_LINK" class="btn btn-primary btn-lg" target="_blank">Join WhatsApp Group</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </Teleport>
@@ -587,6 +674,10 @@ const closeEvent = () => {
 }
 
 .event-info {
+
+.event-badge.volleyball {
+  background: #2196F3;
+}
   padding: 24px;
   text-align: center;
 }
