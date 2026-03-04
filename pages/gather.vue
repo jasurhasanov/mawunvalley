@@ -477,7 +477,7 @@
 
             </div>
             <div class="modal-footer">
-              <a href="https://chat.whatsapp.com/YOUR_GROUP_LINK" class="btn btn-primary btn-lg" target="_blank">Join WhatsApp Group</a>
+              <a href="https://chat.whatsapp.com/KJUwA3D4G0K2ssq9xmyoVz" class="btn btn-primary btn-lg" target="_blank">Join WhatsApp Group</a>
             </div>
           </div>
 
