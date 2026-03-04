@@ -357,7 +357,7 @@ onUnmounted(() => {
 .hero-logo {
   max-width: 180px;
   margin-bottom: 24px;
-  filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgba(0,0,0,0.3));
+  filter: invert(1) brightness(2) drop-shadow(0 2px 12px rgba(0,0,0,0.3));
 }
 .hero-tagline {
   font-size: 1.1rem;
@@ -368,7 +368,8 @@ onUnmounted(() => {
   margin-top: 12px;
 }
 .hero-content h1 {
-  font-size: 3.2rem;
+  font-family: var(--font-handwritten), cursive;
+  font-size: 3.8rem;
   font-weight: 600;
   margin-bottom: 16px;
   line-height: 1.2;
@@ -655,7 +656,7 @@ onUnmounted(() => {
   box-shadow: 0 12px 32px rgba(0,0,0,0.1);
 }
 .exp-icon {
-  font-size: 3.2rem;
+  font-size: 3.8rem;
   margin-bottom: 20px;
 }
 .experience-card h3 {
@@ -811,6 +812,7 @@ onUnmounted(() => {
     min-height: 450px;
   }
   .hero-content h1 {
+  font-family: var(--font-handwritten), cursive;
     font-size: 2.2rem;
   }
   .hero-logo {
