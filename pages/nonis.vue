@@ -4,33 +4,30 @@
     <section class="nonis-hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <span class="hero-label">Restaurant & Café</span>
-        <h1>Where the Farm Meets Your Table</h1>
-        <p class="nonis-subtitle">Farm-to-table café at Mawun Valley</p>
+        <span class="hero-label">Noni's Resto & Pastry</span>
+        <h1>Less But Better</h1>
       </div>
       <div class="scroll-hint">
         <span></span>
       </div>
     </section>
-
     <!-- Story -->
     <section class="nonis-story">
       <div class="container">
         <div class="story-content">
           <img src="/images/nonis-logo-dark.png" alt="Noni's Resto & Pastry" class="nonis-logo-story">
           <span class="section-label">Our Story</span>
-          <h2>Less Items, More Quality</h2>
+          <h2>Born from the Farm</h2>
           <p>At Mawun Valley Farm, we embrace the quiet beauty of <strong>slow living</strong> — cultivating peace, open spaces, and a deep connection to nature.</p>
           <p>From this same vision, Noni's was born. Whether it's a creamy <strong>Burnt Cheesecake</strong> or a soothing <strong>Lemongrass Ginger Tea</strong>, everything is crafted with the same dedication we put into nurturing our farm.</p>
           <blockquote class="philosophy-quote">
             <span class="quote-mark">"</span>
-            Less but better — in everything we make.
+            Slow down. Taste the difference.
             <span class="quote-mark">"</span>
           </blockquote>
         </div>
       </div>
     </section>
-
     <!-- Hours & Info -->
     <section class="nonis-info">
       <div class="container">
@@ -56,13 +53,11 @@
         </div>
       </div>
     </section>
-
     <!-- Menu -->
     <section class="nonis-menu" id="menu">
       <div class="container">
         <span class="section-label">Our Menu</span>
         <h2>Farm-to-Table Goodness</h2>
-        
         <!-- Sticky Menu Nav -->
         <nav class="menu-nav">
           <a href="#breakfast" class="menu-nav-item" :class="{ active: activeCategory === 'breakfast' }" @click.prevent="scrollToCategory('breakfast')">🍳 Breakfast</a>
@@ -70,7 +65,6 @@
           <a href="#drinks" class="menu-nav-item" :class="{ active: activeCategory === 'drinks' }" @click.prevent="scrollToCategory('drinks')">🍵 Drinks</a>
           <a href="#pastry" class="menu-nav-item" :class="{ active: activeCategory === 'pastry' }" @click.prevent="scrollToCategory('pastry')">🍰 Pastry</a>
         </nav>
-        
         <!-- Breakfast -->
         <div id="breakfast" class="menu-category">
           <h3 class="category-title">🍳 Breakfast</h3>
@@ -106,7 +100,6 @@
             </div>
           </div>
         </div>
-
         <!-- Signature Meals -->
         <div id="meals" class="menu-category">
           <h3 class="category-title">🍽️ Signature Meals</h3>
@@ -127,7 +120,6 @@
             </div>
           </div>
         </div>
-
         <!-- Drinks -->
         <div id="drinks" class="menu-category">
           <h3 class="category-title">🍵 Drinks</h3>
@@ -190,7 +182,6 @@
             </div>
           </div>
         </div>
-
         <!-- Pastry -->
         <div id="pastry" class="menu-category pastry-highlight">
           <h3 class="category-title">🍰 Pastry</h3>
@@ -207,7 +198,6 @@
         </div>
       </div>
     </section>
-
     <!-- Experiences -->
     <section class="nonis-experiences">
       <div class="container">
@@ -235,7 +225,6 @@
         </div>
       </div>
     </section>
-
     <!-- CTA -->
     <section class="nonis-cta">
       <div class="container">
@@ -250,10 +239,8 @@
         </div>
       </div>
     </section>
-
     <!-- Divider -->
     <div class="section-divider"></div>
-
     <!-- Guest Reviews -->
     <section class="reviews-section">
       <div class="container">
@@ -275,17 +262,13 @@
     </section>
   </div>
 </template>
-
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-
 useHead({
   title: "Noni's Resto & Pastry - Mawun Valley Farm"
 })
-
 const activeCategory = ref('breakfast')
 const showAllReviews = ref(false)
-
 const reviews = [
   { text: "Veggies straight from the farm, jam made from fruits grown in the garden—and the incredible hospitality of the hosts! This was the best experience we had in Lombok.", author: "Dmitri Gorski" },
   { text: "Stopped for cheesecake, stayed for the lovely atmosphere and friendly hosts. The goats and cats were fun to watch. Highly recommend!", author: "Jade" },
@@ -294,11 +277,9 @@ const reviews = [
   { text: "The owner is friendly, the cakes are delicious. If you bring your kids, it's great to see nature and animals. I highly recommend this place!", author: "Rosella Cla" },
   { text: "I had the cheesecake tonight. Super creamy, better than expected. I would've taken a picture, but I already ate it.", author: "Lux Living" }
 ]
-
 const visibleReviews = computed(() => {
   return showAllReviews.value ? reviews : reviews.slice(0, 3)
 })
-
 const scrollToCategory = (category) => {
   activeCategory.value = category
   const el = document.getElementById(category)
@@ -308,7 +289,6 @@ const scrollToCategory = (category) => {
     window.scrollTo({ top: y, behavior: 'smooth' })
   }
 }
-
 // Update active category on scroll
 const handleScroll = () => {
   const categories = ['breakfast', 'meals', 'drinks', 'pastry']
@@ -323,16 +303,13 @@ const handleScroll = () => {
     }
   }
 }
-
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
-
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 </script>
-
 <style scoped>
 /* Hero */
 .nonis-hero {
@@ -345,7 +322,6 @@ onUnmounted(() => {
   justify-content: center;
   background: url('/images/nonis-hero.jpg') center/cover no-repeat;
 }
-
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -356,7 +332,6 @@ onUnmounted(() => {
     rgba(0,0,0,0.5) 100%
   );
 }
-
 .hero-content {
   position: relative;
   text-align: center;
@@ -364,7 +339,6 @@ onUnmounted(() => {
   padding: 20px;
   padding-top: 80px;
 }
-
 .hero-label {
   display: inline-block;
   font-size: 0.85rem;
@@ -379,7 +353,6 @@ onUnmounted(() => {
   backdrop-filter: blur(4px);
   background: rgba(255,255,255,0.1);
 }
-
 .hero-content h1 {
   font-size: 3.2rem;
   font-weight: 600;
@@ -388,21 +361,18 @@ onUnmounted(() => {
   text-shadow: 0 2px 12px rgba(0,0,0,0.3);
   color: white;
 }
-
 .nonis-subtitle {
   font-size: 1.2rem;
   font-weight: 400;
   opacity: 0.95;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
-
 .scroll-hint {
   position: absolute;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
 }
-
 .scroll-hint span {
   display: block;
   width: 24px;
@@ -411,7 +381,6 @@ onUnmounted(() => {
   border-radius: 14px;
   position: relative;
 }
-
 .scroll-hint span::after {
   content: '';
   position: absolute;
@@ -424,42 +393,35 @@ onUnmounted(() => {
   border-radius: 2px;
   animation: scrollDown 2s infinite;
 }
-
 @keyframes scrollDown {
   0% { opacity: 1; top: 6px; }
   100% { opacity: 0; top: 20px; }
 }
-
 /* Story */
 .nonis-story {
   padding: 80px 0;
   background: var(--color-warm-white);
 }
-
 .story-content {
   max-width: 650px;
   margin: 0 auto;
   text-align: center;
 }
-
 .nonis-logo-story {
   max-width: 200px;
   margin-bottom: 28px;
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
 }
-
 .story-content h2 {
   margin-bottom: 28px;
   font-size: 2.2rem;
 }
-
 .story-content p {
   line-height: 1.85;
   color: #555;
   margin-bottom: 18px;
   font-size: 1.05rem;
 }
-
 .philosophy-quote {
   margin-top: 32px;
   padding: 24px 32px;
@@ -471,54 +433,45 @@ onUnmounted(() => {
   color: var(--color-terracotta);
   font-weight: 500;
 }
-
 .quote-mark {
   font-size: 2rem;
   opacity: 0.3;
   vertical-align: middle;
 }
-
 /* Info */
 .nonis-info {
   padding: 70px 0;
   background: white;
 }
-
 .info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   text-align: center;
 }
-
 .info-card {
   padding: 40px 24px;
   border-radius: 16px;
   background: var(--color-cream);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .info-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
-
 .info-icon {
   font-size: 2.8rem;
   margin-bottom: 16px;
 }
-
 .info-card h3 {
   margin-bottom: 10px;
   font-size: 1.1rem;
 }
-
 .hours {
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--color-terracotta);
 }
-
 .whatsapp-link {
   display: inline-flex;
   align-items: center;
@@ -531,27 +484,22 @@ onUnmounted(() => {
   border-radius: 24px;
   transition: all 0.3s ease;
 }
-
 .whatsapp-link:hover {
   background: #25D366;
   color: white;
 }
-
 /* Menu */
 .nonis-menu {
   padding: 80px 0;
   background: var(--color-cream);
 }
-
 .nonis-menu > .container > .section-label,
 .nonis-menu > .container > h2 {
   text-align: center;
 }
-
 .nonis-menu > .container > h2 {
   margin-bottom: 32px;
 }
-
 /* Sticky Menu Nav */
 .menu-nav {
   display: flex;
@@ -567,7 +515,6 @@ onUnmounted(() => {
   z-index: 50;
   flex-wrap: wrap;
 }
-
 .menu-nav-item {
   padding: 10px 20px;
   border-radius: 24px;
@@ -579,43 +526,35 @@ onUnmounted(() => {
   transition: all 0.3s ease;
   white-space: nowrap;
 }
-
 .menu-nav-item:hover {
   background: var(--color-cream);
 }
-
 .menu-nav-item.active {
   background: var(--color-terracotta);
   color: white;
 }
-
 .menu-category {
   margin-bottom: 56px;
   scroll-margin-top: 140px;
 }
-
 .category-title {
   font-size: 1.5rem;
   margin-bottom: 8px;
 }
-
 .category-note {
   color: #888;
   font-size: 14px;
   margin-bottom: 24px;
 }
-
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
-
 .menu-grid.single {
   max-width: 420px;
   margin: 0 auto;
 }
-
 .menu-item {
   background: white;
   padding: 24px;
@@ -623,22 +562,18 @@ onUnmounted(() => {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid transparent;
 }
-
 .menu-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
-
 .menu-item.featured {
   border-left: 4px solid var(--color-gold);
   background: linear-gradient(135deg, white 0%, #fffdf8 100%);
 }
-
 .menu-item.signature {
   background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
   border: 2px solid var(--color-gold);
 }
-
 .item-header {
   display: flex;
   justify-content: space-between;
@@ -646,18 +581,15 @@ onUnmounted(() => {
   margin-bottom: 10px;
   gap: 12px;
 }
-
 .item-name {
   font-weight: 600;
   font-size: 1.05rem;
   line-height: 1.3;
 }
-
 .star {
   display: inline-block;
   margin-left: 4px;
 }
-
 .item-price {
   color: var(--color-dark);
   font-weight: 700;
@@ -667,42 +599,34 @@ onUnmounted(() => {
   border-radius: 16px;
   white-space: nowrap;
 }
-
 .signature .item-price {
   background: rgba(255,255,255,0.7);
 }
-
 .item-desc {
   font-size: 14px;
   color: #666;
   line-height: 1.65;
 }
-
 .pastry-highlight {
   text-align: center;
 }
-
 /* Experiences */
 .nonis-experiences {
   padding: 80px 0;
   background: white;
 }
-
 .nonis-experiences .section-label,
 .nonis-experiences h2 {
   text-align: center;
 }
-
 .nonis-experiences h2 {
   margin-bottom: 48px;
 }
-
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
-
 .experience-card {
   text-align: center;
   padding: 36px 28px;
@@ -712,36 +636,30 @@ onUnmounted(() => {
   transition: all 0.3s ease;
   display: block;
 }
-
 .experience-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.1);
 }
-
 .exp-icon {
   font-size: 3.2rem;
   margin-bottom: 20px;
 }
-
 .experience-card h3 {
   margin-bottom: 12px;
   color: var(--color-dark);
   font-size: 1.3rem;
 }
-
 .experience-card p {
   color: #666;
   line-height: 1.7;
   margin-bottom: 16px;
   font-size: 15px;
 }
-
 .exp-link {
   color: var(--color-terracotta);
   font-weight: 600;
   font-size: 14px;
 }
-
 /* CTA */
 .nonis-cta {
   padding: 90px 0;
@@ -749,26 +667,22 @@ onUnmounted(() => {
   text-align: center;
   color: white;
 }
-
 .nonis-cta h2 {
   color: white;
   margin-bottom: 12px;
   font-size: 2.2rem;
 }
-
 .nonis-cta .tagline {
   font-size: 1.25rem;
   opacity: 0.95;
   margin-bottom: 36px;
 }
-
 .cta-buttons {
   display: flex;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
 }
-
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
@@ -783,13 +697,11 @@ onUnmounted(() => {
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
 }
-
 .btn-whatsapp:hover {
   background: #128C7E;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
-
 .btn-outline {
   padding: 16px 32px;
   border: 2px solid white;
@@ -800,35 +712,29 @@ onUnmounted(() => {
   color: white;
   transition: all 0.3s ease;
 }
-
 .btn-outline:hover {
   background: white;
   color: #6b8f5c;
 }
-
 /* Divider */
 .section-divider {
   height: 1px;
   background: linear-gradient(to right, transparent, rgba(0,0,0,0.08), transparent);
 }
-
 /* Reviews */
 .reviews-section {
   padding: 80px 0;
   background: var(--color-warm-white);
 }
-
 .section-header {
   text-align: center;
   margin-bottom: 48px;
 }
-
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
-
 .review-card {
   background: white;
   padding: 28px;
@@ -836,18 +742,15 @@ onUnmounted(() => {
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   transition: transform 0.3s ease;
 }
-
 .review-card:hover {
   transform: translateY(-4px);
 }
-
 .stars {
   color: #f5a623;
   margin-bottom: 12px;
   font-size: 16px;
   letter-spacing: 2px;
 }
-
 .review-text {
   font-size: 15px;
   line-height: 1.75;
@@ -855,13 +758,11 @@ onUnmounted(() => {
   margin-bottom: 16px;
   font-style: italic;
 }
-
 .review-author {
   font-weight: 600;
   font-size: 14px;
   color: var(--color-dark);
 }
-
 .show-more-btn {
   display: block;
   margin: 32px auto 0;
@@ -876,89 +777,71 @@ onUnmounted(() => {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .show-more-btn:hover {
   background: var(--color-terracotta);
   color: white;
 }
-
 /* Responsive */
 @media (max-width: 1024px) {
   .experience-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-  
   .reviews-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 768px) {
   .nonis-hero {
     height: 65vh;
     min-height: 450px;
   }
-  
   .hero-content h1 {
     font-size: 2.2rem;
   }
-  
   .hero-label {
     font-size: 0.75rem;
     padding: 6px 16px;
   }
-  
   .nonis-subtitle {
     font-size: 1rem;
   }
-  
   .nonis-logo-story {
     max-width: 160px;
   }
-  
   .info-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
   .info-card {
     padding: 32px 20px;
   }
-  
   .menu-nav {
     gap: 6px;
     padding: 10px;
     top: 70px;
   }
-  
   .menu-nav-item {
     padding: 8px 14px;
     font-size: 13px;
   }
-  
   .menu-grid {
     grid-template-columns: 1fr;
   }
-  
   .experience-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
   .reviews-grid {
     grid-template-columns: 1fr;
   }
-  
   .nonis-cta h2 {
     font-size: 1.8rem;
   }
-  
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
   .btn-whatsapp,
   .btn-outline {
     width: 100%;
@@ -966,7 +849,6 @@ onUnmounted(() => {
     justify-content: center;
   }
 }
-
 @media (max-width: 480px) {
   .nonis-story,
   .nonis-info,
@@ -976,20 +858,16 @@ onUnmounted(() => {
   .reviews-section {
     padding: 60px 0;
   }
-  
   .story-content h2 {
     font-size: 1.8rem;
   }
-  
   .philosophy-quote {
     padding: 20px;
     font-size: 1.1rem;
   }
-  
   .menu-nav {
     border-radius: 16px;
   }
-  
   .menu-nav-item {
     flex: 1 1 auto;
     text-align: center;
