@@ -67,7 +67,7 @@
         <span class="section-label light">Investment</span>
         <h2>Simple, Transparent Pricing</h2>
         <div class="price-box">
-          <div class="price-amount">IDR 12,000,000</div>
+          <div class="price-amount apply-text">Apply to Learn More</div>
           <div class="price-term">6-Month Membership</div>
           <ul class="price-details">
             <li><span class="check">✓</span> One-time upfront payment</li>
@@ -270,6 +270,23 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 }
 
 .price-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-terracotta);
+  margin-bottom: 8px;
+}
+
+.price-amount.apply-text {
+  font-size: 1.6rem;
+  color: var(--color-sage);
+}
+
+.price-amount.apply-text {
+  font-size: 1.8rem;
+  color: var(--color-sage);
+}
+
+.price-amount-old {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-terracotta);
