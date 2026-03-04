@@ -1,15 +1,5 @@
 <template>
   <div>
-    <header class="page-hero">
-      <div class="page-hero-bg">
-        <img src="/images/gallery-4.jpg" alt="Farm events">
-      </div>
-      <div class="page-hero-content">
-        <span class="section-label light">Gather</span>
-        <h1>Come Together</h1>
-        <p class="handwritten">"Where community happens"</p>
-      </div>
-    </header>
 
     <section class="page-intro">
       <div class="container">
