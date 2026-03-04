@@ -9,6 +9,13 @@
   --color-warm-white: #fffef9;
   --color-white: #ffffff;
   --color-whatsapp: #25D366;
+  --color-text-muted: #666666;
+  --color-text-light: #888888;
+  --color-border: #e8e4dc;
+  --color-hero-dark: #1e3a2f;
+  --color-hero-light: #2d5a4a;
+  --color-highlight: #fff8e7;
+  --color-highlight-border: #f0d78c;
   --font-heading: 'Quicksand', sans-serif;
   --font-body: 'Open Sans', sans-serif;
   --font-handwritten: 'Caveat', cursive;

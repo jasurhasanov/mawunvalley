@@ -435,7 +435,7 @@ const closeEvent = () => {
   height: auto;
   min-height: 280px;
   padding: 100px 20px 80px;
-  background: linear-gradient(135deg, #2d5016 0%, #4a7c23 100%);
+  background: linear-gradient(135deg, var(--color-hero-dark) 0%, var(--color-hero-light) 100%);
 }
 .page-hero-bg {
   position: absolute;
@@ -495,7 +495,7 @@ const closeEvent = () => {
 
 .lead {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-text-muted);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -507,7 +507,7 @@ const closeEvent = () => {
 }
 
 .section-header p {
-  color: #888;
+  color: var(--color-text-light);
   font-size: 14px;
 }
 
@@ -583,7 +583,7 @@ const closeEvent = () => {
 }
 
 .event-badge.cashew {
-  background: #7A8B6F;
+  background: var(--color-sage);
 }
 
 .event-info {
@@ -599,7 +599,7 @@ const closeEvent = () => {
 .event-info h3 {
   font-size: 1.3rem;
   margin-bottom: 8px;
-  color: #333;
+  color: var(--color-dark);
 }
 
 .event-tagline {
@@ -619,7 +619,7 @@ const closeEvent = () => {
 
 .event-meta span {
   font-size: 13px;
-  color: #666;
+  color: var(--color-text-muted);
 }
 
 .click-hint {
@@ -639,13 +639,13 @@ const closeEvent = () => {
 .other-events {
   margin-top: 60px;
   padding-top: 40px;
-  border-top: 2px dashed #E8E4DC;
+  border-top: 2px dashed var(--color-border);
 }
 
 .other-events-title {
   text-align: center;
   margin-bottom: 30px;
-  color: #666;
+  color: var(--color-text-muted);
   font-size: 1.2rem;
 }
 
@@ -671,7 +671,7 @@ const closeEvent = () => {
 }
 
 .event-card.small p {
-  color: #666;
+  color: var(--color-text-muted);
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 16px;
@@ -745,14 +745,14 @@ const closeEvent = () => {
 }
 
 .stars {
-  color: #D4A84B;
+  color: var(--color-gold);
   margin-bottom: 8px;
 }
 
 .review-text {
   font-size: 14px;
   line-height: 1.7;
-  color: #555;
+  color: var(--color-text-muted);
   margin-bottom: 12px;
   font-style: italic;
 }
@@ -791,7 +791,7 @@ const closeEvent = () => {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: #f5f5f5;
+  background: var(--color-cream);
   border: none;
   width: 40px;
   height: 40px;
@@ -813,7 +813,7 @@ const closeEvent = () => {
 .modal-header {
   padding: 40px 40px 30px;
   text-align: center;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .modal-header .event-badge {
@@ -825,7 +825,7 @@ const closeEvent = () => {
 .modal-header h2 {
   font-size: 1.8rem;
   margin-bottom: 8px;
-  color: #333;
+  color: var(--color-dark);
 }
 
 .modal-tagline {
@@ -841,17 +841,17 @@ const closeEvent = () => {
 .intro-text {
   font-size: 16px;
   line-height: 1.8;
-  color: #555;
+  color: var(--color-text-muted);
   margin-bottom: 24px;
 }
 
 .host-note {
-  background: #f8f8f8;
+  background: var(--color-cream);
   border-left: 4px solid var(--color-terracotta);
   padding: 16px;
   margin-bottom: 24px;
   font-style: italic;
-  color: #666;
+  color: var(--color-text-muted);
 }
 
 .modal-body h4 {
@@ -869,7 +869,7 @@ const closeEvent = () => {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  background: #FAF6F0;
+  background: var(--color-cream);
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 24px;
@@ -889,7 +889,7 @@ const closeEvent = () => {
 .schedule-label {
   display: block;
   font-size: 12px;
-  color: #888;
+  color: var(--color-text-light);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 4px;
@@ -898,7 +898,7 @@ const closeEvent = () => {
 .schedule-value {
   font-size: 16px;
   font-weight: 600;
-  color: #333;
+  color: var(--color-dark);
 }
 
 /* Pricing */
@@ -913,15 +913,15 @@ const closeEvent = () => {
   justify-content: space-between;
   align-items: center;
   padding: 14px 18px;
-  background: #f8f8f8;
+  background: var(--color-cream);
   border-radius: 8px;
   flex-wrap: wrap;
   gap: 8px;
 }
 
 .price-tier.highlight {
-  background: #FFF8E7;
-  border: 2px solid #D4A84B;
+  background: var(--color-highlight);
+  border: 2px solid var(--color-gold);
 }
 
 .tier-name {
@@ -936,18 +936,18 @@ const closeEvent = () => {
 }
 
 .tier-price.free {
-  color: #7A8B6F;
+  color: var(--color-sage);
 }
 
 .tier-note {
   width: 100%;
   font-size: 12px;
-  color: #888;
+  color: var(--color-text-light);
 }
 
 .important-note {
-  background: #FFF8E7;
-  border-left: 4px solid #D4A84B;
+  background: var(--color-highlight);
+  border-left: 4px solid var(--color-gold);
   padding: 14px 18px;
   margin-bottom: 24px;
   font-size: 14px;
@@ -974,13 +974,13 @@ const closeEvent = () => {
   content: '✔';
   position: absolute;
   left: 0;
-  color: #7A8B6F;
+  color: var(--color-sage);
   font-weight: bold;
 }
 
 /* Location Box */
 .location-box {
-  background: linear-gradient(135deg, #7A8B6F, #5C6B52);
+  background: linear-gradient(135deg, var(--color-sage), #5C6B52);
   color: white;
   padding: 20px;
   border-radius: 12px;
@@ -1014,7 +1014,7 @@ const closeEvent = () => {
 }
 
 .benefit {
-  background: #f8f8f8;
+  background: var(--color-cream);
   padding: 12px;
   border-radius: 8px;
   font-size: 13px;
@@ -1024,7 +1024,7 @@ const closeEvent = () => {
 .modal-footer {
   padding: 24px 40px 40px;
   text-align: center;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--color-border);
 }
 
 @media (max-width: 600px) {
@@ -1060,7 +1060,7 @@ const closeEvent = () => {
 }
 
 .community-highlight {
-  background: linear-gradient(135deg, #FDF8F3 0%, #FAF6F0 100%);
+  background: linear-gradient(135deg, #FDF8F3 0%, var(--color-cream) 100%);
   border-left: 4px solid #8B4513;
   padding: 20px 24px;
   margin: 20px 0;

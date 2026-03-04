@@ -148,7 +148,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 
 <style scoped>
 .membership-hero {
-  background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-terracotta) 100%);
+  background: linear-gradient(135deg, var(--color-hero-dark) 0%, var(--color-hero-light) 100%);
   min-height: 280px;
   padding: 100px 20px 80px;
   text-align: center;
@@ -190,7 +190,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 .vision-content > p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #555;
+  color: var(--color-text-muted);
 }
 
 .vision-highlight {
@@ -243,7 +243,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 }
 
 .deliverable-card p {
-  color: #666;
+  color: var(--color-text-muted);
   line-height: 1.7;
   margin: 0;
 }
@@ -296,7 +296,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 
 .price-term {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--color-text-muted);
   margin-bottom: 24px;
 }
 
@@ -326,7 +326,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 .price-note {
   margin-top: 20px;
   font-size: 0.9rem;
-  color: #888;
+  color: var(--color-text-light);
   text-align: center;
 }
 
@@ -336,7 +336,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 }
 
 .section-desc {
-  color: #666;
+  color: var(--color-text-muted);
   max-width: 600px;
   margin: 16px auto 0;
 }
@@ -362,7 +362,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 }
 
 .term-card p {
-  color: #666;
+  color: var(--color-text-muted);
   line-height: 1.7;
   margin: 0;
   font-size: 0.95rem;
@@ -379,7 +379,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 }
 
 .cta-section > .container > p {
-  color: #666;
+  color: var(--color-text-muted);
   margin-bottom: 32px;
   max-width: 500px;
   margin-left: auto;
@@ -406,7 +406,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 
 .availability-section {
   padding: 60px 0;
-  background: linear-gradient(135deg, #fff8e7 0%, #ffe4c4 100%);
+  background: linear-gradient(135deg, var(--color-highlight) 0%, #ffe4c4 100%);
 }
 
 .availability-box {
@@ -479,7 +479,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 }
 
 .availability-content p {
-  color: #666;
+  color: var(--color-text-muted);
   line-height: 1.7;
   margin: 0;
 }

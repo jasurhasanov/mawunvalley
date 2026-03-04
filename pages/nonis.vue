@@ -340,7 +340,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a3a2f 0%, #2d5a4a 100%);
+  background: linear-gradient(135deg, var(--color-hero-dark) 0%, var(--color-hero-light) 100%);
 }
 
 .hero-overlay {
@@ -429,7 +429,7 @@ onUnmounted(() => {
 
 .story-content p {
   line-height: 1.85;
-  color: #555;
+  color: var(--color-text-muted);
   margin-bottom: 18px;
   font-size: 1.05rem;
 }
@@ -574,7 +574,7 @@ onUnmounted(() => {
 }
 
 .category-note {
-  color: #888;
+  color: var(--color-text-light);
   font-size: 14px;
   margin-bottom: 24px;
 }
@@ -648,7 +648,7 @@ onUnmounted(() => {
 
 .item-desc {
   font-size: 14px;
-  color: #666;
+  color: var(--color-text-muted);
   line-height: 1.65;
 }
 
@@ -704,7 +704,7 @@ onUnmounted(() => {
 }
 
 .experience-card p {
-  color: #666;
+  color: var(--color-text-muted);
   line-height: 1.7;
   margin-bottom: 16px;
   font-size: 15px;
@@ -719,7 +719,7 @@ onUnmounted(() => {
 /* CTA */
 .nonis-cta {
   padding: 90px 0;
-  background: #6b8f5c;
+  background: var(--color-sage);
   text-align: center;
   color: white;
 }
@@ -777,7 +777,7 @@ onUnmounted(() => {
 
 .btn-outline:hover {
   background: white;
-  color: #6b8f5c;
+  color: var(--color-sage);
 }
 
 /* Divider */
@@ -825,7 +825,7 @@ onUnmounted(() => {
 .review-text {
   font-size: 15px;
   line-height: 1.75;
-  color: #555;
+  color: var(--color-text-muted);
   margin-bottom: 16px;
   font-style: italic;
 }
