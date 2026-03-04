@@ -51,7 +51,7 @@
           <!-- 2. Samovar Tea Ceremony -->
           <article class="event-card signature" @click="openEvent('samovar')">
             <div class="event-image">
-              <img src="/images/gallery-3.jpg" alt="Samovar Tea Ceremony">
+              <img src="/images/samovar-tea.png" alt="Samovar Tea Ceremony">
               <span class="event-badge samovar">Cultural</span>
             </div>
             <div class="event-info">
