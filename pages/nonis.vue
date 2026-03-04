@@ -4,7 +4,7 @@
     <section class="nonis-hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <img src="/images/nonis-logo.png" alt="Noni's" class="hero-logo">
+        <img src="/images/nonis-logo-hero.png" alt="Noni's" class="hero-logo">
         <h1>Less But Better</h1>
         <p class="hero-tagline">Resto & Pastry</p>
       </div>
@@ -357,7 +357,7 @@ onUnmounted(() => {
 .hero-logo {
   max-width: 180px;
   margin-bottom: 24px;
-  filter: invert(1) brightness(2) drop-shadow(0 2px 12px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
 }
 .hero-tagline {
   font-size: 1.1rem;
