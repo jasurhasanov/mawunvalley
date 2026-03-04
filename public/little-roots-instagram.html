@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Roots — Instagram Carousel</title>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      color: #2d3e2f;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    .slides-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    .slide-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .slide-label {
+      font-weight: 600;
+      color: #666;
+      font-size: 14px;
+    }
+    .slide {
+      width: 360px;
+      height: 450px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      position: relative;
+    }
+    .slide-full {
+      width: 1080px;
+      height: 1350px;
+      position: absolute;
+      left: -9999px;
+    }
+    .download-btn {
+      background: #7A8B6F;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .download-btn:hover { background: #5C6B52; }
+    .slide-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+    .slide-full .slide-content { padding: 120px; }
+    .slide-1 { background: linear-gradient(160deg, #7A8B6F 0%, #5C6B52 100%); color: white; }
+    .slide-1 .emoji { font-size: 60px; margin-bottom: 24px; }
+    .slide-full .slide-1 .emoji { font-size: 180px; margin-bottom: 72px; }
+    .slide-1 h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 16px; font-weight: 600; }
+    .slide-full .slide-1 h2 { font-size: 126px; margin-bottom: 48px; }
+    .slide-1 .tagline { font-size: 18px; opacity: 0.9; line-height: 1.6; }
+    .slide-full .slide-1 .tagline { font-size: 54px; }
+    .slide-1 .location { margin-top: 40px; font-size: 13px; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase; }
+    .slide-full .slide-1 .location { margin-top: 120px; font-size: 39px; }
+    .slide-2 { background: #FAF6F0; color: #2d3e2f; }
+    .slide-2 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 30px; }
+    .slide-full .slide-2 h3 { font-size: 84px; margin-bottom: 90px; }
+    .basics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
+    .slide-full .basics-grid { gap: 60px; }
+    .basic-item { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .slide-full .basic-item { padding: 60px; border-radius: 36px; }
+    .basic-item .icon { font-size: 28px; margin-bottom: 8px; }
+    .slide-full .basic-item .icon { font-size: 84px; margin-bottom: 24px; }
+    .basic-item .label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .slide-full .basic-item .label { font-size: 33px; letter-spacing: 3px; margin-bottom: 12px; }
+    .basic-item .value { font-size: 16px; font-weight: 700; color: #2d3e2f; }
+    .slide-full .basic-item .value { font-size: 48px; }
+    .slide-3 { background: #2d3e2f; color: white; }
+    .slide-3 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 24px; line-height: 1.3; }
+    .slide-full .slide-3 h3 { font-size: 78px; margin-bottom: 72px; }
+    .slide-3 p { font-size: 15px; line-height: 1.8; opacity: 0.9; }
+    .slide-full .slide-3 p { font-size: 45px; }
+    .slide-3 .handwritten { font-family: 'Caveat', cursive; font-size: 22px; margin-top: 30px; opacity: 0.85; }
+    .slide-full .slide-3 .handwritten { font-size: 66px; margin-top: 90px; }
+    .slide-4 { background: linear-gradient(160deg, #e8c9a0 0%, #d4a574 100%); color: #2d3e2f; }
+    .slide-4 h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 24px; }
+    .slide-full .slide-4 h3 { font-size: 72px; margin-bottom: 72px; }
+    .schedule-list { text-align: left; width: 100%; }
+    .schedule-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(45,62,47,0.15); }
+    .slide-full .schedule-item { gap: 36px; padding: 36px 0; }
+    .schedule-item:last-child { border-bottom: none; }
+    .schedule-time { font-weight: 700; min-width: 50px; font-size: 14px; }
+    .slide-full .schedule-time { min-width: 150px; font-size: 42px; }
+    .schedule-activity { font-size: 14px; }
+    .slide-full .schedule-activity { font-size: 42px; }
+    .slide-5 { background: #FAF6F0; color: #2d3e2f; }
+    .slide-5 h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 8px; }
+    .slide-full .slide-5 h3 { font-size: 72px; margin-bottom: 24px; }
+    .slide-5 .sub { font-size: 13px; color: #666; margin-bottom: 24px; }
+    .slide-full .slide-5 .sub { font-size: 39px; margin-bottom: 72px; }
+    .activities-list { width: 100%; }
+    .activity-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; text-align: left; border-bottom: 1px solid #e8e4dc; }
+    .slide-full .activity-row { gap: 42px; padding: 42px 0; }
+    .activity-row:last-child { border-bottom: none; }
+    .activity-row .icon { font-size: 28px; }
+    .slide-full .activity-row .icon { font-size: 84px; }
+    .activity-row .text { font-size: 15px; font-weight: 600; }
+    .slide-full .activity-row .text { font-size: 45px; }
+    .slide-6 { background: #7A8B6F; color: white; }
+    .slide-6 .emoji { font-size: 50px; margin-bottom: 20px; }
+    .slide-full .slide-6 .emoji { font-size: 150px; margin-bottom: 60px; }
+    .slide-6 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 16px; }
+    .slide-full .slide-6 h3 { font-size: 78px; margin-bottom: 48px; }
+    .slide-6 p { font-size: 15px; line-height: 1.8; opacity: 0.95; }
+    .slide-full .slide-6 p { font-size: 45px; }
+    .slide-6 .note { margin-top: 24px; font-size: 13px; opacity: 0.8; font-style: italic; }
+    .slide-full .slide-6 .note { margin-top: 72px; font-size: 39px; }
+    .slide-7 { background: #2d3e2f; color: white; }
+    .slide-7 h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 24px; }
+    .slide-full .slide-7 h3 { font-size: 72px; margin-bottom: 72px; }
+    .commitment-list { text-align: left; width: 100%; }
+    .commit-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; }
+    .slide-full .commit-item { gap: 36px; padding: 36px 0; }
+    .commit-item .icon { font-size: 22px; }
+    .slide-full .commit-item .icon { font-size: 66px; }
+    .commit-item .text { font-size: 14px; line-height: 1.5; }
+    .slide-full .commit-item .text { font-size: 42px; }
+    .commit-item .text strong { display: block; margin-bottom: 2px; }
+    .slide-full .commit-item .text strong { margin-bottom: 6px; }
+    .slide-8 { background: linear-gradient(160deg, #c17f59 0%, #a66b48 100%); color: white; }
+    .slide-8 h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 24px; }
+    .slide-full .slide-8 h3 { font-size: 72px; margin-bottom: 72px; }
+    .price-box { background: white; color: #2d3e2f; padding: 28px; border-radius: 16px; width: 100%; }
+    .slide-full .price-box { padding: 84px; border-radius: 48px; }
+    .price-main { font-size: 28px; font-weight: 700; color: #c17f59; margin-bottom: 6px; }
+    .slide-full .price-main { font-size: 84px; margin-bottom: 18px; }
+    .price-per { font-size: 13px; color: #666; margin-bottom: 16px; }
+    .slide-full .price-per { font-size: 39px; margin-bottom: 48px; }
+    .price-total { background: #FAF6F0; padding: 12px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; }
+    .slide-full .price-total { padding: 36px; border-radius: 24px; font-size: 42px; margin-bottom: 48px; }
+    .price-total strong { color: #2d3e2f; }
+    .includes-list { text-align: left; font-size: 12px; color: #666; }
+    .slide-full .includes-list { font-size: 36px; }
+    .includes-list div { padding: 4px 0; }
+    .slide-full .includes-list div { padding: 12px 0; }
+    .slide-9 { background: #FAF6F0; color: #2d3e2f; }
+    .slide-9 .emoji { font-size: 50px; margin-bottom: 20px; }
+    .slide-full .slide-9 .emoji { font-size: 150px; margin-bottom: 60px; }
+    .slide-9 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 16px; }
+    .slide-full .slide-9 h3 { font-size: 78px; margin-bottom: 48px; }
+    .slide-9 p { font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 24px; }
+    .slide-full .slide-9 p { font-size: 45px; margin-bottom: 72px; }
+    .slide-9 .cta-box { background: #7A8B6F; color: white; padding: 16px 28px; border-radius: 30px; font-weight: 600; font-size: 14px; }
+    .slide-full .slide-9 .cta-box { padding: 48px 84px; border-radius: 90px; font-size: 42px; }
+    .slide-9 .website { margin-top: 20px; font-size: 13px; color: #888; }
+    .slide-full .slide-9 .website { margin-top: 60px; font-size: 39px; }
+  </style>
+</head>
+<body>
+  <h1>Little Roots — Instagram Carousel</h1>
+  <p class="subtitle">Click download under each slide to save as PNG (1080x1350)</p>
+  <div class="slides-container">
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 1 — Cover</span>
+      <div class="slide slide-1" id="slide1-preview">
+        <div class="slide-content">
+          <div class="emoji">🌱</div>
+          <h2>Little Roots</h2>
+          <p class="tagline">A weekly gathering for<br>homeschooling families</p>
+          <p class="location">Mawun Valley Farm</p>
+        </div>
+      </div>
+      <div class="slide-full slide-1" id="slide1">
+        <div class="slide-content">
+          <div class="emoji">🌱</div>
+          <h2>Little Roots</h2>
+          <p class="tagline">A weekly gathering for<br>homeschooling families</p>
+          <p class="location">Mawun Valley Farm</p>
+        </div>
+      </div>
+      <button class="download-btn" onclick="downloadSlide('slide1', 'little-roots-1-cover')">Download Slide 1</button>
+    </div>
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 2 — The Basics</span>
+      <div class="slide slide-2" id="slide2-preview">
+        <div class="slide-content">
+          <h3>The Basics</h3>
+          <div class="basics-grid">
+            <div class="basic-item"><div class="icon">👦👧</div><div class="label">Ages</div><div class="value">6–7 years</div></div>
+            <div class="basic-item"><div class="icon">👥</div><div class="label">Group Size</div><div class="value">Max 6 kids</div></div>
+            <div class="basic-item"><div class="icon">📅</div><div class="label">When</div><div class="value">Wednesdays</div></div>
+            <div class="basic-item"><div class="icon">⏰</div><div class="label">Time</div><div class="value">9AM–12PM</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-full slide-2" id="slide2">
+        <div class="slide-content">
+          <h3>The Basics</h3>
+          <div class="basics-grid">
+            <div class="basic-item"><div class="icon">👦👧</div><div class="label">Ages</div><div class="value">6–7 years</div></div>
+            <div class="basic-item"><div class="icon">👥</div><div class="label">Group Size</div><div class="value">Max 6 kids</div></div>
+            <div class="basic-item"><div class="icon">📅</div><div class="label">When</div><div class="value">Wednesdays</div></div>
+            <div class="basic-item"><div class="icon">⏰</div><div class="label">Time</div><div class="value">9AM–12PM</div></div>
+          </div>
+        </div>
+      </div>
+      <button class="download-btn" onclick="downloadSlide('slide2', 'little-roots-2-basics')">Download Slide 2</button>
+    </div>
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 3 — The Idea</span>
+      <div class="slide slide-3" id="slide3-preview">
+        <div class="slide-content">
+          <h3>More than a playdate</h3>
+          <p>No rotating faces. No drop-ins.<br><br>Just the same kids, every week, building real friendships through sports, creativity, and shared adventures.</p>
+          <p class="handwritten">"Growing friendships, one Wednesday at a time"</p>
+        </div>
+      </div>
+      <div class="slide-full slide-3" id="slide3">
+        <div class="slide-content">
+          <h3>More than a playdate</h3>
+          <p>No rotating faces. No drop-ins.<br><br>Just the same kids, every week, building real friendships through sports, creativity, and shared adventures.</p>
+          <p class="handwritten">"Growing friendships, one Wednesday at a time"</p>
+        </div>
+      </div>
+      <button class="download-btn" onclick="downloadSlide('slide3', 'little-roots-3-idea')">Download Slide 3</button>
+    </div>
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 4 — Schedule</span>
+      <div class="slide slide-4" id="slide4-preview">
+        <div class="slide-content">
+          <h3>A Typical Wednesday</h3>
+          <div class="schedule-list">
+            <div class="schedule-item"><span class="schedule-time">9:00</span><span class="schedule-activity">Welcome Circle</span></div>
+            <div class="schedule-item"><span class="schedule-time">9:15</span><span class="schedule-activity">⚽ Sports & Games Hour</span></div>
+            <div class="schedule-item"><span class="schedule-time">10:15</span><span class="schedule-activity">🍿 Snack Break</span></div>
+            <div class="schedule-item"><span class="schedule-time">10:30</span><span class="schedule-activity">🎯 Weekly Activity (rotates)</span></div>
+            <div class="schedule-item"><span class="schedule-time">11:45</span><span class="schedule-activity">Closing Circle</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-full slide-4" id="slide4">
+        <div class="slide-content">
+          <h3>A Typical Wednesday</h3>
+          <div class="schedule-list">
+            <div class="schedule-item"><span class="schedule-time">9:00</span><span class="schedule-activity">Welcome Circle</span></div>
+            <div class="schedule-item"><span class="schedule-time">9:15</span><span class="schedule-activity">⚽ Sports & Games Hour</span></div>
+            <div class="schedule-item"><span class="schedule-time">10:15</span><span class="schedule-activity">🍿 Snack Break</span></div>
+            <div class="schedule-item"><span class="schedule-time">10:30</span><span class="schedule-activity">🎯 Weekly Activity (rotates)</span></div>
+            <div class="schedule-item"><span class="schedule-time">11:45</span><span class="schedule-activity">Closing Circle</span></div>
+          </div>
+        </div>
+      </div>
+      <button class="download-btn" onclick="downloadSlide('slide4', 'little-roots-4-schedule')">Download Slide 4</button>
+    </div>
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 5 — Activities</span>
+      <div class="slide slide-5" id="slide5-preview">
+        <div class="slide-content">
+          <h3>4-Week Rotation</h3>
+          <p class="sub">Each week brings something different</p>
+          <div class="activities-list">
+            <div class="activity-row"><span class="icon">🔨</span><span class="text">Woodworking & Building</span></div>
+            <div class="activity-row"><span class="icon">🎬</span><span class="text">Cinema Day</span></div>
+            <div class="activity-row"><span class="icon">🌱</span><span class="text">Farm & Nature</span></div>
+            <div class="activity-row"><span class="icon">🎨</span><span class="text">Creative & Craft</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-full slide-5" id="slide5">
+        <div class="slide-content">
+          <h3>4-Week Rotation</h3>
+          <p class="sub">Each week brings something different</p>
+          <div class="activities-list">
+            <div class="activity-row"><span class="icon">🔨</span><span class="text">Woodworking & Building</span></div>
+            <div class="activity-row"><span class="icon">🎬</span><span class="text">Cinema Day</span></div>
+            <div class="activity-row"><span class="icon">🌱</span><span class="text">Farm & Nature</span></div>
+            <div class="activity-row"><span class="icon">🎨</span><span class="text">Creative & Craft</span></div>
+          </div>
+        </div>
+      </div>
+      <button class="download-btn" onclick="downloadSlide('slide5', 'little-roots-5-activities')">Download Slide 5</button>
+    </div>
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 6 — Sports</span>
+      <div class="slide slide-6" id="slide6-preview">
+        <div class="slide-content">
+          <div class="emoji">⚽</div>
+          <h3>Sports Every Week</h3>
+          <p>Football, relay races, obstacle courses, frisbee, parachute games, and tag on our grass court.</p>
+          <p class="note">Board games & building challenges on rainy days</p>
+        </div>
+      </div>
+      <div class="slide-full slide-6" id="slide6">
+        <div class="slide-content">
+          <div class="emoji">⚽</div>
+          <h3>Sports Every Week</h3>
+          <p>Football, relay races, obstacle courses, frisbee, parachute games, and tag on our grass court.</p>
+          <p class="note">Board games & building challenges on rainy days</p>
+        </div>
+      </div>
+      <button class="download-btn" onclick="downloadSlide('slide6', 'little-roots-6-sports')">Download Slide 6</button>
+    </div>
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 7 — Commitment</span>
+      <div class="slide slide-7" id="slide7-preview">
+        <div class="slide-content">
+          <h3>What We Ask</h3>
+          <div class="commitment-list">
+            <div class="commit-item"><span class="icon">📆</span><span class="text"><strong>3-month commitment</strong>Enough time for real friendships</span></div>
+            <div class="commit-item"><span class="icon">✅</span><span class="text"><strong>Same 6 kids</strong>No rotating, no guests</span></div>
+            <div class="commit-item"><span class="icon">👨‍👩‍👧</span><span class="text"><strong>Parent present</strong>Stay on farm for the full 3 hours</span></div>
+            <div class="commit-item"><span class="icon">🌧️</span><span class="text"><strong>Rain or shine</strong>We play in all weather</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-full slide-7" id="slide7">
+        <div class="slide-content">
+          <h3>What We Ask</h3>
+          <div class="commitment-list">
+            <div class="commit-item"><span class="icon">📆</span><span class="text"><strong>3-month commitment</strong>Enough time for real friendships</span></div>
+            <div class="commit-item"><span class="icon">✅</span><span class="text"><strong>Same 6 kids</strong>No rotating, no guests</span></div>
+            <div class="commit-item"><span class="icon">👨‍👩‍👧</span><span class="text"><strong>Parent present</strong>Stay on farm for the full 3 hours</span></div>
+            <div class="commit-item"><span class="icon">🌧️</span><span class="text"><strong>Rain or shine</strong>We play in all weather</span></div>
+          </div>
+        </div>
+      </div>
+      <button class="download-btn" onclick="downloadSlide('slide7', 'little-roots-7-commitment')">Download Slide 7</button>
+    </div>
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 8 — Pricing</span>
+      <div class="slide slide-8" id="slide8-preview">
+        <div class="slide-content">
+          <h3>Investment</h3>
+          <div class="price-box">
+            <div class="price-main">IDR 200,000</div>
+            <div class="price-per">per child, per session</div>
+            <div class="price-total">3 months = <strong>IDR 2,400,000</strong></div>
+            <div class="includes-list">
+              <div>✓ All snacks & drinks</div>
+              <div>✓ All materials & supplies</div>
+              <div>✓ Sports equipment</div>
+              <div>✓ Cinema popcorn</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-full slide-8" id="slide8">
+        <div class="slide-content">
+          <h3>Investment</h3>
+          <div class="price-box">
+            <div class="price-main">IDR 200,000</div>
+            <div class="price-per">per child, per session</div>
+            <div class="price-total">3 months = <strong>IDR 2,400,000</strong></div>
+            <div class="includes-list">
+              <div>✓ All snacks & drinks</div>
+              <div>✓ All materials & supplies</div>
+              <div>✓ Sports equipment</div>
+              <div>✓ Cinema popcorn</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="download-btn" onclick="downloadSlide('slide8', 'little-roots-8-pricing')">Download Slide 8</button>
+    </div>
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 9 — Apply</span>
+      <div class="slide slide-9" id="slide9-preview">
+        <div class="slide-content">
+          <div class="emoji">🌿</div>
+          <h3>Join Little Roots</h3>
+          <p>Spots limited to 6 children.<br>Apply now for the next term.</p>
+          <div class="cta-box">Apply Online</div>
+          <p class="website">mawunvalley.com/little-roots</p>
+        </div>
+      </div>
+      <div class="slide-full slide-9" id="slide9">
+        <div class="slide-content">
+          <div class="emoji">🌿</div>
+          <h3>Join Little Roots</h3>
+          <p>Spots limited to 6 children.<br>Apply now for the next term.</p>
+          <div class="cta-box">Apply Online</div>
+          <p class="website">mawunvalley.com/little-roots</p>
+        </div>
+      </div>
+      <button class="download-btn" onclick="downloadSlide('slide9', 'little-roots-9-apply')">Download Slide 9</button>
+    </div>
+  </div>
+  <script>
+    async function downloadSlide(slideId, filename) {
+      const slide = document.getElementById(slideId);
+      slide.style.left = '0';
+      slide.style.position = 'fixed';
+      slide.style.top = '0';
+      slide.style.zIndex = '9999';
+      try {
+        const canvas = await html2canvas(slide, { scale: 1, useCORS: true, backgroundColor: null, width: 1080, height: 1350 });
+        const link = document.createElement('a');
+        link.download = filename + '.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } finally {
+        slide.style.left = '-9999px';
+        slide.style.position = 'absolute';
+        slide.style.top = '';
+        slide.style.zIndex = '';
+      }
+    }
+  </script>
+</body>
+</html>
