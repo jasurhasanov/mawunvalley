@@ -8,7 +8,7 @@ authorType: team
 image: /images/blog/skijet.jpg
 ---
 
-*Learn to make cashew apple jam: Our [Cashew Apple Jam Cooking Class](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm) at [Mawun Valley Farm](/stay-contribute) teaches you to transform this rare fruit into delicious preserves.*
+*Learn to make cashew apple jam: Our [Cashew Apple Jam Cooking Class](/gather) at [Mawun Valley Farm](/stay-contribute) teaches you to transform this rare fruit into delicious preserves.*
 
 While **95% of the world's cashew apple harvest goes to waste**, creative communities across tropical regions have developed remarkable uses for this forgotten fruit. At [Mawun Valley Farm](/stay-contribute), we're part of a small movement working to change that statistic — one jar of jam at a time.
 
@@ -235,7 +235,7 @@ During harvest season (August-December), we offer multiple ways to experience th
 
 ### Cashew Apple Jam Cooking Class
 Learn the complete process from tree to jar. Pick fruit, process it, take home your creation.
-[Book on Megatix](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm)
+[View Our Events](/gather)
 
 ### Fresh Tasting
 Ask during your [stay](/stay-contribute) if it's harvest season — we'll press fresh juice or let you taste the raw fruit.

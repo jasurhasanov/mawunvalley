@@ -256,7 +256,7 @@ Most visitors to Indonesia eat cashew nuts without ever seeing a cashew tree or 
 
 **Best timing:** August-December for harvest season experiences
 
-**Cooking class:** [Book on Megatix](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm)
+**Cooking class:** [View Our Events](/gather)
 
 **Questions?** [Message Us on WhatsApp](https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20learning%20about%20cashew%20farming%20at%20Mawun%20Valley%20Farm!)
 

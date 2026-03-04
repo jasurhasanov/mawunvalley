@@ -8,7 +8,7 @@ authorType: team
 image: /images/blog/cooking-class.jpg
 ---
 
-*Learn hands-on: Join our [Cashew Apple Jam Cooking Class](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm) at Mawun Valley Farm and make your own jar to take home.*
+*Learn hands-on: Join our [Cashew Apple Jam Cooking Class](/gather) at Mawun Valley Farm and make your own jar to take home.*
 
 Cashew apple jam is one of the world's rarest preserves — not because the recipe is secret, but because the fruit itself is nearly impossible to find outside tropical regions. At [Mawun Valley Farm](/stay-contribute), we've been perfecting this recipe using cashew apples from our own trees, and now we're sharing the complete technique.
 
@@ -258,7 +258,7 @@ This is exactly why we created our cooking class. At [Mawun Valley Farm](/stay-c
 
 This is one of the most unique culinary experiences available in Indonesia. You'll learn a skill that's nearly impossible to acquire elsewhere, using fruit you simply cannot find outside tropical regions.
 
-[Book on Megatix](https://megatix.co.id/events/cashew-apple-jam-cooking-class-at-mawun-valley-farm) | [Message Us on WhatsApp](https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20the%20Cashew%20Apple%20Jam%20Cooking%20Class!)
+[View Our Events](/gather) | [Message Us on WhatsApp](https://wa.me/6282258440585?text=Hi!%20I'm%20interested%20in%20the%20Cashew%20Apple%20Jam%20Cooking%20Class!)
 
 ---
 
