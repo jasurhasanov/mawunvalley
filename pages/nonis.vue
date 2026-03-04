@@ -205,19 +205,19 @@
         <span class="section-label">Farm Experiences</span>
         <h2>Beyond the Cafe</h2>
         <div class="experience-grid">
-          <a href="/experience" class="experience-card">
+          <a href="/gather" class="experience-card">
             <div class="exp-icon">🔥</div>
             <h3>BBQ Night</h3>
             <p>Gather around the fire for a communal BBQ experience under the stars. Fresh ingredients, good company, unforgettable evenings.</p>
             <span class="exp-link">Learn more →</span>
           </a>
-          <a href="/experience" class="experience-card">
+          <a href="/gather" class="experience-card">
             <div class="exp-icon">👨‍🍳</div>
             <h3>Cooking Classes</h3>
             <p>Learn to cook traditional Indonesian dishes using fresh ingredients straight from our farm. Take the flavors home with you.</p>
             <span class="exp-link">Learn more →</span>
           </a>
-          <a href="/experience" class="experience-card">
+          <a href="/gather" class="experience-card">
             <div class="exp-icon">🍯</div>
             <h3>Farm-Made Jams</h3>
             <p>Our seasonal jams are made from fruits grown right here. Take a jar home or enjoy them with our crêpes and toast.</p>
