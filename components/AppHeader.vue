@@ -13,6 +13,7 @@
         <li><NuxtLink to="/" @click="closeMenu">Home</NuxtLink></li>
         <li><NuxtLink to="/stay-contribute" @click="closeMenu">Stay & Contribute</NuxtLink></li>
         <li><NuxtLink to="/gather" @click="closeMenu">Farm Events</NuxtLink></li>
+        <li><NuxtLink to="/little-roots" @click="closeMenu">Little Roots</NuxtLink></li>
         <li><NuxtLink to="/belong" @click="closeMenu">Membership</NuxtLink></li>
         <li><NuxtLink to="/nonis" @click="closeMenu">Noni's</NuxtLink></li>
         <li><NuxtLink to="/#contact" class="btn btn-primary" @click="closeMenu">Contact</NuxtLink></li>
@@ -29,7 +30,7 @@ const route = useRoute()
 const isScrolled = ref(false)
 const menuOpen = ref(false)
 
-const heroPages = ['/', '/nonis', '/gather', '/stay-contribute', '/retreat', '/belong']
+const heroPages = ['/', '/nonis', '/gather', '/stay-contribute', '/retreat', '/belong', '/little-roots']
 
 const isHomePage = computed(() => {
   return heroPages.includes(route.path)
