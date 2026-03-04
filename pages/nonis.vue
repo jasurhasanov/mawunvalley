@@ -4,8 +4,9 @@
     <section class="nonis-hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <span class="hero-label">Noni's Resto & Pastry</span>
+        <img src="/images/nonis-logo.png" alt="Noni's" class="hero-logo">
         <h1>Less But Better</h1>
+        <p class="hero-tagline">Resto & Pastry</p>
       </div>
       <div class="scroll-hint">
         <span></span>
@@ -15,7 +16,7 @@
     <section class="nonis-story">
       <div class="container">
         <div class="story-content">
-          <img src="/images/nonis-logo-dark.png" alt="Noni's Resto & Pastry" class="nonis-logo-story">
+          
           <span class="section-label">Our Story</span>
           <h2>Born from the Farm</h2>
           <p>At Mawun Valley Farm, we embrace the quiet beauty of <strong>slow living</strong> — cultivating peace, open spaces, and a deep connection to nature.</p>
@@ -352,6 +353,19 @@ onUnmounted(() => {
   border-radius: 24px;
   backdrop-filter: blur(4px);
   background: rgba(255,255,255,0.1);
+}
+.hero-logo {
+  max-width: 180px;
+  margin-bottom: 24px;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgba(0,0,0,0.3));
+}
+.hero-tagline {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-top: 12px;
 }
 .hero-content h1 {
   font-size: 3.2rem;
@@ -798,6 +812,13 @@ onUnmounted(() => {
   }
   .hero-content h1 {
     font-size: 2.2rem;
+  }
+  .hero-logo {
+    max-width: 140px;
+  }
+  .hero-tagline {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
   }
   .hero-label {
     font-size: 0.75rem;
