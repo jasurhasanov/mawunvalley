@@ -6,7 +6,7 @@ category: Family Life
 topic: family
 authorType: team
 audience: families
-image: /images/blog/volleyball.jpg
+image: /images/blog/grapevine-7.jpg
 ---
 
 The irony of modern parenting: we moved to paradise, and our kids still want screens. South Lombok offers beaches, farms, adventures, and wildlife — yet the pull of devices remains powerful.

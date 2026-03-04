@@ -5,7 +5,7 @@ date: 2026-02-05
 category: Tropical Fruits
 topic: cashew
 authorType: team
-image: /images/blog/cliff-jumping.jpg
+image: /images/blog/cooking-class.jpg
 ---
 
 Everyone knows the cashew nut. It's a snack, a butter, a milk alternative, an ingredient in countless dishes worldwide. But ask the same people about **cashew apple**, and you'll get blank stares.

@@ -6,7 +6,7 @@ category: Solo Travel
 topic: solo
 authorType: team
 audience: solo
-image: /images/blog/ocean-view.jpg
+image: /images/blog/mawun-beach.jpg
 ---
 
 Solo travel is one of life's great adventures — and South Lombok is an exceptional destination for it. Far from the crowds and chaos of more developed tourist areas, you'll find a place where solo travelers can find both solitude and connection, adventure and safety.

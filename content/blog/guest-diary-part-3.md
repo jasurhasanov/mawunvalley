@@ -7,7 +7,7 @@ topic: guest-diary
 authorType: guest
 author: Ava
 audience: solo
-image: /images/blog/volleyball.jpg
+image: /images/blog/cliff-jumping.jpg
 ---
 
 *About the Author: Ava is a traveller from the UK documenting her stay at Mawun Valley Farm. This is the final part of her 3-part diary series. [Start from Part 1](/blog/guest-diary-part-1)*

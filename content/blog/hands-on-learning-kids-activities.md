@@ -6,7 +6,7 @@ category: Education
 topic: family
 authorType: team
 audience: families
-image: /images/blog/cooking-class.jpg
+image: /images/blog/grapevine-3.jpg
 ---
 
 Watch a child build something for the first time — a birdhouse, a clay pot, a simple meal. There's a moment when it clicks: **I made this. This exists because of me.** That moment teaches more than a hundred worksheets.

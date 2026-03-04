@@ -6,7 +6,7 @@ category: Community
 topic: animals
 authorType: team
 audience: solo
-image: /images/blog/farm-life.jpg
+image: /images/blog/grapevine-4.jpg
 ---
 
 You're walking along a beach in South Lombok when you spot an injured dog. Or a kitten appears at your guesthouse, clearly unwell. Or you witness an animal hit by a motorbike. What do you do?

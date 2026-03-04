@@ -6,7 +6,7 @@ category: Homeschooling
 topic: family
 authorType: team
 audience: families
-image: /images/blog/farm-life.jpg
+image: /images/blog/grapevine-5.jpg
 ---
 
 Look at any playground, and you'll see children drawn to nature — the muddy corner, the climbing tree, the patch of wild grass. This isn't random. It's millions of years of evolution telling us something important: **children are designed to learn in nature, not despite it.**

@@ -6,7 +6,7 @@ category: Homeschooling
 topic: family
 authorType: team
 audience: families
-image: /images/blog/volleyball.jpg
+image: /images/blog/grapevine-6.jpg
 ---
 
 "But what about socialization?" 
