@@ -14,101 +14,104 @@
     .slides-container { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
     .slide-wrapper { display: flex; flex-direction: column; align-items: center; gap: 16px; }
     .slide-label { font-weight: 600; color: #666; font-size: 14px; }
-    
-    /* Preview slide - will be scaled 3x for export */
-    .slide { 
-      width: 360px; 
-      height: 450px; 
-      border-radius: 8px; 
-      overflow: hidden; 
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12); 
-    }
-    
+    .slide { width: 360px; height: 450px; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
     .download-btn { background: #7A8B6F; color: white; border: none; padding: 12px 28px; border-radius: 25px; font-weight: 600; cursor: pointer; font-size: 14px; }
     .download-btn:hover { background: #5C6B52; }
     
+    /* Content fills the entire slide */
     .slide-content {
       width: 100%; height: 100%;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; padding: 40px;
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 50px 36px;
     }
     
+    .spacer { flex: 1; }
+    .content-block { flex-shrink: 0; width: 100%; }
+    
     /* Logo icon */
-    .logo-icon { width: 100px; height: 100px; margin-bottom: 24px; }
+    .logo-icon { width: 110px; height: 110px; }
     
     /* Slide 1 - Cover */
     .slide-1 { background: linear-gradient(160deg, #7A8B6F 0%, #5C6B52 100%); color: white; }
-    .slide-1 h2 { font-family: 'Playfair Display', serif; font-size: 44px; margin-bottom: 14px; font-weight: 600; }
-    .slide-1 .tagline { font-size: 18px; opacity: 0.9; line-height: 1.5; }
-    .slide-1 .location { margin-top: 36px; font-size: 12px; opacity: 0.7; letter-spacing: 3px; text-transform: uppercase; }
+    .slide-1 h2 { font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 14px; font-weight: 600; }
+    .slide-1 .tagline { font-size: 20px; opacity: 0.9; line-height: 1.5; }
+    .slide-1 .location { font-size: 13px; opacity: 0.7; letter-spacing: 3px; text-transform: uppercase; }
     
     /* Slide 2 - Basics */
     .slide-2 { background: #FAF6F0; color: #2d3e2f; }
-    .slide-2 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 28px; }
-    .basics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; }
-    .basic-item { background: white; padding: 18px 14px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .basic-item .icon { font-size: 28px; margin-bottom: 8px; display: block; }
-    .basic-item .label { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; display: block; }
-    .basic-item .value { font-size: 15px; font-weight: 700; color: #2d3e2f; display: block; }
+    .slide-2 .slide-content { padding: 40px 30px; }
+    .slide-2 h3 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px; }
+    .basics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; }
+    .basic-item { background: white; padding: 20px 16px; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .basic-item .icon { font-size: 32px; margin-bottom: 10px; display: block; }
+    .basic-item .label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: block; }
+    .basic-item .value { font-size: 17px; font-weight: 700; color: #2d3e2f; display: block; }
     
     /* Slide 3 - Idea */
     .slide-3 { background: #2d3e2f; color: white; }
-    .slide-3 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 24px; line-height: 1.3; }
-    .slide-3 .body-text { font-size: 16px; line-height: 1.7; opacity: 0.9; }
-    .slide-3 .handwritten { font-family: 'Caveat', cursive; font-size: 24px; margin-top: 28px; opacity: 0.85; }
+    .slide-3 h3 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px; line-height: 1.3; }
+    .slide-3 .body-text { font-size: 18px; line-height: 1.8; opacity: 0.9; }
+    .slide-3 .handwritten { font-family: 'Caveat', cursive; font-size: 28px; opacity: 0.85; }
     
     /* Slide 4 - Schedule */
     .slide-4 { background: linear-gradient(160deg, #e8c9a0 0%, #d4a574 100%); color: #2d3e2f; }
-    .slide-4 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 24px; }
+    .slide-4 .slide-content { padding: 40px 30px; justify-content: flex-start; }
+    .slide-4 h3 { font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 24px; }
     .schedule-list { text-align: left; width: 100%; }
-    .schedule-item { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(45,62,47,0.15); align-items: center; }
+    .schedule-item { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(45,62,47,0.15); align-items: center; }
     .schedule-item:last-child { border-bottom: none; }
-    .schedule-time { font-weight: 700; min-width: 50px; font-size: 15px; }
-    .schedule-activity { font-size: 15px; }
+    .schedule-time { font-weight: 700; min-width: 55px; font-size: 17px; }
+    .schedule-activity { font-size: 17px; }
     
     /* Slide 5 - Activities */
     .slide-5 { background: #FAF6F0; color: #2d3e2f; }
-    .slide-5 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 8px; }
-    .slide-5 .sub { font-size: 13px; color: #666; margin-bottom: 24px; }
+    .slide-5 .slide-content { padding: 40px 30px; justify-content: flex-start; }
+    .slide-5 h3 { font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 8px; }
+    .slide-5 .sub { font-size: 15px; color: #666; margin-bottom: 24px; }
     .activities-list { width: 100%; }
-    .activity-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; text-align: left; border-bottom: 1px solid #e8e4dc; }
+    .activity-row { display: flex; align-items: center; gap: 16px; padding: 16px 0; text-align: left; border-bottom: 1px solid #e8e4dc; }
     .activity-row:last-child { border-bottom: none; }
-    .activity-row .icon { font-size: 30px; }
-    .activity-row .text { font-size: 16px; font-weight: 600; }
+    .activity-row .icon { font-size: 36px; }
+    .activity-row .text { font-size: 18px; font-weight: 600; }
     
     /* Slide 6 - Sports */
     .slide-6 { background: #7A8B6F; color: white; }
-    .slide-6 .emoji { font-size: 60px; margin-bottom: 20px; }
-    .slide-6 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 16px; }
-    .slide-6 .body-text { font-size: 16px; line-height: 1.7; opacity: 0.95; }
-    .slide-6 .note { margin-top: 24px; font-size: 14px; opacity: 0.8; font-style: italic; }
+    .slide-6 .emoji { font-size: 70px; }
+    .slide-6 h3 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 16px; }
+    .slide-6 .body-text { font-size: 18px; line-height: 1.7; opacity: 0.95; }
+    .slide-6 .note { font-size: 16px; opacity: 0.8; font-style: italic; }
     
     /* Slide 7 - Commitment */
     .slide-7 { background: #2d3e2f; color: white; }
-    .slide-7 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 24px; }
+    .slide-7 .slide-content { padding: 40px 30px; justify-content: flex-start; }
+    .slide-7 h3 { font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 24px; }
     .commitment-list { text-align: left; width: 100%; }
-    .commit-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; }
-    .commit-item .icon { font-size: 24px; }
-    .commit-item .text { font-size: 15px; line-height: 1.4; }
-    .commit-item .text strong { display: block; margin-bottom: 3px; }
+    .commit-item { display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; }
+    .commit-item .icon { font-size: 28px; }
+    .commit-item .text { font-size: 17px; line-height: 1.4; }
+    .commit-item .text strong { display: block; margin-bottom: 4px; }
     
     /* Slide 8 - Pricing */
     .slide-8 { background: linear-gradient(160deg, #c17f59 0%, #a66b48 100%); color: white; }
-    .slide-8 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 24px; }
-    .price-box { background: white; color: #2d3e2f; padding: 28px; border-radius: 16px; width: 100%; }
-    .price-main { font-size: 30px; font-weight: 700; color: #c17f59; margin-bottom: 6px; }
-    .price-per { font-size: 13px; color: #666; margin-bottom: 16px; }
-    .price-total { background: #FAF6F0; padding: 12px; border-radius: 8px; font-size: 15px; margin-bottom: 16px; }
+    .slide-8 .slide-content { padding: 40px 30px; }
+    .slide-8 h3 { font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 24px; }
+    .price-box { background: white; color: #2d3e2f; padding: 28px; border-radius: 18px; width: 100%; }
+    .price-main { font-size: 34px; font-weight: 700; color: #c17f59; margin-bottom: 6px; }
+    .price-per { font-size: 14px; color: #666; margin-bottom: 18px; }
+    .price-total { background: #FAF6F0; padding: 14px; border-radius: 10px; font-size: 17px; margin-bottom: 18px; }
     .price-total strong { color: #2d3e2f; }
-    .includes-list { text-align: left; font-size: 13px; color: #666; }
-    .includes-list div { padding: 4px 0; }
+    .includes-list { text-align: left; font-size: 15px; color: #666; }
+    .includes-list div { padding: 5px 0; }
     
     /* Slide 9 - Apply */
     .slide-9 { background: #FAF6F0; color: #2d3e2f; }
-    .slide-9 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 14px; }
-    .slide-9 .body-text { font-size: 16px; color: #666; line-height: 1.6; margin-bottom: 24px; }
-    .slide-9 .cta-box { background: #7A8B6F; color: white; padding: 16px 32px; border-radius: 30px; font-weight: 600; font-size: 15px; display: inline-block; }
-    .slide-9 .website { margin-top: 20px; font-size: 14px; color: #888; }
+    .slide-9 h3 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 16px; }
+    .slide-9 .body-text { font-size: 18px; color: #666; line-height: 1.6; }
+    .slide-9 .cta-box { background: #7A8B6F; color: white; padding: 18px 36px; border-radius: 32px; font-weight: 600; font-size: 17px; display: inline-block; }
+    .slide-9 .website { font-size: 15px; color: #888; }
   </style>
 </head>
 <body>
@@ -120,10 +123,20 @@
     <div class="slide-wrapper">
       <span class="slide-label">Slide 1 — Cover</span>
       <div class="slide slide-1" id="slide1"><div class="slide-content">
-        <img src="/images/mawun-icon.png" alt="Mawun Valley" class="logo-icon">
-        <h2>Little Roots</h2>
-        <p class="tagline">A weekly gathering for<br>homeschooling families</p>
-        <p class="location">Mawun Valley Farm</p>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <img src="/images/mawun-icon.png" alt="Mawun Valley" class="logo-icon">
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <h2>Little Roots</h2>
+          <p class="tagline">A weekly gathering for<br>homeschooling families</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <p class="location">Mawun Valley Farm</p>
+        </div>
+        <div class="spacer"></div>
       </div></div>
       <button class="download-btn" onclick="downloadSlide('slide1', 'little-roots-1-cover')">Download Slide 1</button>
     </div>
@@ -147,9 +160,19 @@
     <div class="slide-wrapper">
       <span class="slide-label">Slide 3 — The Idea</span>
       <div class="slide slide-3" id="slide3"><div class="slide-content">
-        <h3>More than a playdate</h3>
-        <p class="body-text">No rotating faces. No drop-ins.<br><br>Just the same kids, every week, building real friendships through sports, creativity, and shared adventures.</p>
-        <p class="handwritten">"Growing friendships, one Wednesday at a time"</p>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <h3>More than a playdate</h3>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <p class="body-text">No rotating faces. No drop-ins.<br><br>Just the same kids, every week, building real friendships through sports, creativity, and shared adventures.</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <p class="handwritten">"Growing friendships, one Wednesday at a time"</p>
+        </div>
+        <div class="spacer"></div>
       </div></div>
       <button class="download-btn" onclick="downloadSlide('slide3', 'little-roots-3-idea')">Download Slide 3</button>
     </div>
@@ -190,10 +213,20 @@
     <div class="slide-wrapper">
       <span class="slide-label">Slide 6 — Sports</span>
       <div class="slide slide-6" id="slide6"><div class="slide-content">
-        <div class="emoji">⚽</div>
-        <h3>Sports Every Week</h3>
-        <p class="body-text">Football, relay races, obstacle courses, frisbee, parachute games, and tag on our grass court.</p>
-        <p class="note">Board games & building challenges on rainy days</p>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <div class="emoji">⚽</div>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <h3>Sports Every Week</h3>
+          <p class="body-text">Football, relay races, obstacle courses, frisbee, parachute games, and tag on our grass court.</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <p class="note">Board games & building challenges on rainy days</p>
+        </div>
+        <div class="spacer"></div>
       </div></div>
       <button class="download-btn" onclick="downloadSlide('slide6', 'little-roots-6-sports')">Download Slide 6</button>
     </div>
@@ -237,11 +270,21 @@
     <div class="slide-wrapper">
       <span class="slide-label">Slide 9 — Apply</span>
       <div class="slide slide-9" id="slide9"><div class="slide-content">
-        <img src="/images/mawun-icon.png" alt="Mawun Valley" class="logo-icon">
-        <h3>Join Little Roots</h3>
-        <p class="body-text">Spots limited to 6 children.<br>Apply now for the next term.</p>
-        <div class="cta-box">Apply Online</div>
-        <p class="website">mawunvalley.com/little-roots</p>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <img src="/images/mawun-icon.png" alt="Mawun Valley" class="logo-icon">
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <h3>Join Little Roots</h3>
+          <p class="body-text">Spots limited to 6 children.<br>Apply now for the next term.</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <div class="cta-box">Apply Online</div>
+          <p class="website" style="margin-top: 16px;">mawunvalley.com/little-roots</p>
+        </div>
+        <div class="spacer"></div>
       </div></div>
       <button class="download-btn" onclick="downloadSlide('slide9', 'little-roots-9-apply')">Download Slide 9</button>
     </div>
@@ -251,7 +294,6 @@
     async function downloadSlide(slideId, filename) {
       const slide = document.getElementById(slideId);
       try {
-        // Scale 3x to get 1080x1350 from 360x450
         const canvas = await html2canvas(slide, { 
           scale: 3, 
           useCORS: true, 
