@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Volleyball — Social Media Carousel</title>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Lato', sans-serif; background: #f5f5f5; padding: 40px 20px; }
+    h1 { text-align: center; font-family: 'Playfair Display', serif; color: #2d3e2f; margin-bottom: 10px; }
+    .subtitle { text-align: center; color: #666; margin-bottom: 40px; }
+    .slides-container { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
+    .slide-wrapper { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .slide-label { font-weight: 600; color: #666; font-size: 14px; }
+    .slide { width: 360px; height: 450px; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+    .download-btn { background: #2196F3; color: white; border: none; padding: 12px 28px; border-radius: 25px; font-weight: 600; cursor: pointer; font-size: 14px; }
+    .download-btn:hover { background: #1976D2; }
+    
+    .slide-content {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 50px 36px;
+    }
+    
+    .spacer { flex: 1; }
+    .content-block { flex-shrink: 0; width: 100%; }
+    
+    /* Logo icon */
+    .logo-icon { width: 100px; height: 100px; border-radius: 50%; }
+    
+    /* Slide 1 - Cover */
+    .slide-1 { background: linear-gradient(160deg, #2196F3 0%, #1565C0 100%); color: white; }
+    .slide-1 .emoji { font-size: 70px; }
+    .slide-1 h2 { font-family: 'Playfair Display', serif; font-size: 40px; margin-bottom: 14px; font-weight: 600; }
+    .slide-1 .tagline { font-size: 18px; opacity: 0.9; line-height: 1.5; }
+    .slide-1 .location { font-size: 13px; opacity: 0.7; letter-spacing: 3px; text-transform: uppercase; }
+    
+    /* Slide 2 - When */
+    .slide-2 { background: #FAF6F0; color: #2d3e2f; }
+    .slide-2 h3 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 28px; }
+    .info-grid { display: grid; grid-template-columns: 1fr; gap: 16px; width: 100%; }
+    .info-item { background: white; padding: 22px 18px; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 16px; }
+    .info-item .icon { font-size: 32px; }
+    .info-item .text { text-align: left; }
+    .info-item .label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .info-item .value { font-size: 20px; font-weight: 700; color: #2d3e2f; }
+    
+    /* Slide 3 - What's included */
+    .slide-3 { background: #2d3e2f; color: white; }
+    .slide-3 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 24px; }
+    .includes-list { text-align: left; width: 100%; }
+    .include-row { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .include-row:last-child { border-bottom: none; }
+    .include-row .icon { font-size: 24px; }
+    .include-row .text { font-size: 16px; opacity: 0.95; }
+    
+    /* Slide 4 - Price */
+    .slide-4 { background: linear-gradient(160deg, #FF9800 0%, #F57C00 100%); color: white; }
+    .slide-4 .emoji { font-size: 50px; margin-bottom: 16px; }
+    .slide-4 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 20px; }
+    .price-big { font-size: 52px; font-weight: 700; margin-bottom: 8px; }
+    .price-note { font-size: 18px; opacity: 0.9; }
+    .price-sub { font-size: 14px; opacity: 0.8; margin-top: 20px; line-height: 1.6; }
+    
+    /* Slide 5 - How to join */
+    .slide-5 { background: #FAF6F0; color: #2d3e2f; }
+    .slide-5 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 24px; }
+    .steps-list { text-align: left; width: 100%; }
+    .step-row { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; }
+    .step-num { background: #2196F3; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+    .step-text { font-size: 16px; line-height: 1.5; padding-top: 4px; }
+    
+    /* Slide 6 - CTA */
+    .slide-6 { background: linear-gradient(160deg, #2196F3 0%, #1565C0 100%); color: white; }
+    .slide-6 .emoji { font-size: 60px; }
+    .slide-6 h3 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 16px; }
+    .slide-6 .body-text { font-size: 18px; opacity: 0.9; line-height: 1.6; }
+    .slide-6 .cta-box { background: white; color: #1565C0; padding: 18px 36px; border-radius: 32px; font-weight: 700; font-size: 16px; display: inline-block; }
+    .slide-6 .website { font-size: 14px; opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <h1>Weekly Volleyball — Social Media Carousel</h1>
+  <p class="subtitle">Click download under each slide to save as PNG (1080x1350)</p>
+  <div class="slides-container">
+    
+    <!-- Slide 1 - Cover -->
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 1 — Cover</span>
+      <div class="slide slide-1" id="slide1"><div class="slide-content">
+        <div class="spacer"></div>
+        <div class="content-block">
+          <div class="emoji">🏐</div>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <h2>Weekly Volleyball</h2>
+          <p class="tagline">Thursday sunset games<br>on the farm</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <p class="location">Mawun Valley Farm</p>
+        </div>
+        <div class="spacer"></div>
+      </div></div>
+      <button class="download-btn" onclick="downloadSlide('slide1', 'volleyball-1-cover')">Download Slide 1</button>
+    </div>
+
+    <!-- Slide 2 - When -->
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 2 — When & Where</span>
+      <div class="slide slide-2" id="slide2"><div class="slide-content">
+        <div class="spacer"></div>
+        <div class="content-block">
+          <h3>Join Us</h3>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="icon">📅</span>
+              <div class="text">
+                <div class="label">When</div>
+                <div class="value">Every Thursday</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="icon">⏰</span>
+              <div class="text">
+                <div class="label">Time</div>
+                <div class="value">4:00 PM</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="icon">⏱️</span>
+              <div class="text">
+                <div class="label">Duration</div>
+                <div class="value">~1.5 hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+      </div></div>
+      <button class="download-btn" onclick="downloadSlide('slide2', 'volleyball-2-when')">Download Slide 2</button>
+    </div>
+
+    <!-- Slide 3 - What's included -->
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 3 — What's Included</span>
+      <div class="slide slide-3" id="slide3"><div class="slide-content">
+        <div class="spacer"></div>
+        <div class="content-block">
+          <h3>What's Included</h3>
+          <div class="includes-list">
+            <div class="include-row"><span class="icon">🏐</span><span class="text">Grass court with new net</span></div>
+            <div class="include-row"><span class="icon">💧</span><span class="text">1L cold water</span></div>
+            <div class="include-row"><span class="icon">☕</span><span class="text">Choice of drink from café</span></div>
+            <div class="include-row"><span class="icon">🚿</span><span class="text">Outdoor shower & toilets</span></div>
+            <div class="include-row"><span class="icon">🌅</span><span class="text">Sunset views included</span></div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+      </div></div>
+      <button class="download-btn" onclick="downloadSlide('slide3', 'volleyball-3-included')">Download Slide 3</button>
+    </div>
+
+    <!-- Slide 4 - Price -->
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 4 — Pricing</span>
+      <div class="slide slide-4" id="slide4"><div class="slide-content">
+        <div class="spacer"></div>
+        <div class="content-block">
+          <div class="emoji">💰</div>
+          <h3>Per Person</h3>
+          <div class="price-big">IDR 100k</div>
+          <p class="price-note">per game session</p>
+          <p class="price-sub">All skill levels welcome!<br>Just show up and play.</p>
+        </div>
+        <div class="spacer"></div>
+      </div></div>
+      <button class="download-btn" onclick="downloadSlide('slide4', 'volleyball-4-price')">Download Slide 4</button>
+    </div>
+
+    <!-- Slide 5 - How to join -->
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 5 — How to Join</span>
+      <div class="slide slide-5" id="slide5"><div class="slide-content">
+        <div class="spacer"></div>
+        <div class="content-block">
+          <h3>How to Join</h3>
+          <div class="steps-list">
+            <div class="step-row">
+              <span class="step-num">1</span>
+              <span class="step-text">Join our WhatsApp group<br>(link in comments)</span>
+            </div>
+            <div class="step-row">
+              <span class="step-num">2</span>
+              <span class="step-text">Say hi and introduce yourself</span>
+            </div>
+            <div class="step-row">
+              <span class="step-num">3</span>
+              <span class="step-text">Show up Thursday at 4 PM!</span>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block" style="font-size: 14px; color: #888; font-style: italic;">
+          Rain or shine — we'll update the group if plans change
+        </div>
+        <div class="spacer"></div>
+      </div></div>
+      <button class="download-btn" onclick="downloadSlide('slide5', 'volleyball-5-howtojoin')">Download Slide 5</button>
+    </div>
+
+    <!-- Slide 6 - CTA -->
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 6 — CTA</span>
+      <div class="slide slide-6" id="slide6"><div class="slide-content">
+        <div class="spacer"></div>
+        <div class="content-block">
+          <div class="emoji">🏐</div>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <h3>See You Thursday!</h3>
+          <p class="body-text">All levels welcome.<br>Bring a friend.</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="content-block">
+          <div class="cta-box">Join WhatsApp Group</div>
+          <p class="website" style="margin-top: 16px;">Link in comments ↓</p>
+        </div>
+        <div class="spacer"></div>
+      </div></div>
+      <button class="download-btn" onclick="downloadSlide('slide6', 'volleyball-6-cta')">Download Slide 6</button>
+    </div>
+
+  </div>
+  <script>
+    async function downloadSlide(slideId, filename) {
+      const slide = document.getElementById(slideId);
+      try {
+        const canvas = await html2canvas(slide, { 
+          scale: 3, 
+          useCORS: true, 
+          backgroundColor: null,
+          logging: false
+        });
+        const link = document.createElement('a');
+        link.download = filename + '.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch (err) {
+        console.error('Download failed:', err);
+        alert('Download failed. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>
