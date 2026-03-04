@@ -433,8 +433,8 @@ const closeEvent = () => {
 
 .page-hero.no-image {
   height: auto;
-  min-height: 200px;
-  padding: 80px 20px 60px;
+  min-height: 280px;
+  padding: 100px 20px 80px;
   background: linear-gradient(135deg, #2d5016 0%, #4a7c23 100%);
 }
 .page-hero-bg {

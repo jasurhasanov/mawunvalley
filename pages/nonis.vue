@@ -334,13 +334,13 @@ onUnmounted(() => {
 /* Hero */
 .nonis-hero {
   position: relative;
-  height: 75vh;
-  min-height: 500px;
-  max-height: 800px;
+  height: auto;
+  min-height: 280px;
+  padding: 100px 20px 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('/images/nonis-hero.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%);
 }
 
 .hero-overlay {
