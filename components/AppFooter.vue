@@ -14,6 +14,7 @@
             <li><NuxtLink to="/nonis">Noni's</NuxtLink></li>
             <li><NuxtLink to="/stay-contribute">Stay &amp; Contribute</NuxtLink></li>
             <li><NuxtLink to="/retreat">Farm Retreat</NuxtLink></li>
+            <li><NuxtLink to="/little-roots">Little Roots</NuxtLink></li>
           </ul>
         </div>
         <div class="footer-links">
