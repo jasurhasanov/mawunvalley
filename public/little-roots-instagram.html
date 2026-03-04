@@ -14,136 +14,101 @@
     .slides-container { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
     .slide-wrapper { display: flex; flex-direction: column; align-items: center; gap: 16px; }
     .slide-label { font-weight: 600; color: #666; font-size: 14px; }
-    .slide { width: 360px; height: 450px; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
-    .slide-full { width: 1080px; height: 1350px; position: absolute; left: -9999px; }
+    
+    /* Preview slide - will be scaled 3x for export */
+    .slide { 
+      width: 360px; 
+      height: 450px; 
+      border-radius: 8px; 
+      overflow: hidden; 
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12); 
+    }
+    
     .download-btn { background: #7A8B6F; color: white; border: none; padding: 12px 28px; border-radius: 25px; font-weight: 600; cursor: pointer; font-size: 14px; }
     .download-btn:hover { background: #5C6B52; }
     
     .slide-content {
       width: 100%; height: 100%;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; padding: 30px;
+      text-align: center; padding: 40px;
     }
-    .slide-full .slide-content { padding: 80px; }
     
     /* Logo icon */
-    .logo-icon { width: 80px; height: 80px; margin-bottom: 20px; }
-    .slide-full .logo-icon { width: 280px; height: 280px; margin-bottom: 60px; }
+    .logo-icon { width: 100px; height: 100px; margin-bottom: 24px; }
     
     /* Slide 1 - Cover */
     .slide-1 { background: linear-gradient(160deg, #7A8B6F 0%, #5C6B52 100%); color: white; }
-    .slide-1 h2 { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 12px; font-weight: 600; }
-    .slide-full .slide-1 h2 { font-size: 120px; margin-bottom: 40px; }
-    .slide-1 .tagline { font-size: 16px; opacity: 0.9; line-height: 1.5; }
-    .slide-full .slide-1 .tagline { font-size: 52px; line-height: 1.4; }
-    .slide-1 .location { margin-top: 30px; font-size: 11px; opacity: 0.7; letter-spacing: 3px; text-transform: uppercase; }
-    .slide-full .slide-1 .location { margin-top: 80px; font-size: 36px; letter-spacing: 8px; }
+    .slide-1 h2 { font-family: 'Playfair Display', serif; font-size: 44px; margin-bottom: 14px; font-weight: 600; }
+    .slide-1 .tagline { font-size: 18px; opacity: 0.9; line-height: 1.5; }
+    .slide-1 .location { margin-top: 36px; font-size: 12px; opacity: 0.7; letter-spacing: 3px; text-transform: uppercase; }
     
     /* Slide 2 - Basics */
     .slide-2 { background: #FAF6F0; color: #2d3e2f; }
-    .slide-2 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 24px; }
-    .slide-full .slide-2 h3 { font-size: 80px; margin-bottom: 70px; }
+    .slide-2 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 28px; }
     .basics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; }
-    .slide-full .basics-grid { gap: 50px; }
-    .basic-item { background: white; padding: 16px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .slide-full .basic-item { padding: 50px; border-radius: 36px; }
-    .basic-item .icon { font-size: 24px; margin-bottom: 6px; display: block; }
-    .slide-full .basic-item .icon { font-size: 72px; margin-bottom: 20px; }
+    .basic-item { background: white; padding: 18px 14px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .basic-item .icon { font-size: 28px; margin-bottom: 8px; display: block; }
     .basic-item .label { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; display: block; }
-    .slide-full .basic-item .label { font-size: 30px; letter-spacing: 3px; margin-bottom: 12px; }
-    .basic-item .value { font-size: 14px; font-weight: 700; color: #2d3e2f; display: block; }
-    .slide-full .basic-item .value { font-size: 44px; }
+    .basic-item .value { font-size: 15px; font-weight: 700; color: #2d3e2f; display: block; }
     
     /* Slide 3 - Idea */
     .slide-3 { background: #2d3e2f; color: white; }
-    .slide-3 h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; line-height: 1.3; }
-    .slide-full .slide-3 h3 { font-size: 76px; margin-bottom: 60px; }
-    .slide-3 .body-text { font-size: 14px; line-height: 1.7; opacity: 0.9; max-width: 280px; }
-    .slide-full .slide-3 .body-text { font-size: 44px; max-width: 900px; line-height: 1.6; }
-    .slide-3 .handwritten { font-family: 'Caveat', cursive; font-size: 20px; margin-top: 24px; opacity: 0.85; }
-    .slide-full .slide-3 .handwritten { font-size: 64px; margin-top: 70px; }
+    .slide-3 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 24px; line-height: 1.3; }
+    .slide-3 .body-text { font-size: 16px; line-height: 1.7; opacity: 0.9; }
+    .slide-3 .handwritten { font-family: 'Caveat', cursive; font-size: 24px; margin-top: 28px; opacity: 0.85; }
     
     /* Slide 4 - Schedule */
     .slide-4 { background: linear-gradient(160deg, #e8c9a0 0%, #d4a574 100%); color: #2d3e2f; }
-    .slide-4 h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 20px; }
-    .slide-full .slide-4 h3 { font-size: 70px; margin-bottom: 60px; }
+    .slide-4 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 24px; }
     .schedule-list { text-align: left; width: 100%; }
-    .schedule-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(45,62,47,0.15); align-items: center; }
-    .slide-full .schedule-item { gap: 40px; padding: 32px 0; }
+    .schedule-item { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(45,62,47,0.15); align-items: center; }
     .schedule-item:last-child { border-bottom: none; }
-    .schedule-time { font-weight: 700; min-width: 45px; font-size: 13px; }
-    .slide-full .schedule-time { min-width: 140px; font-size: 42px; }
-    .schedule-activity { font-size: 13px; }
-    .slide-full .schedule-activity { font-size: 42px; }
+    .schedule-time { font-weight: 700; min-width: 50px; font-size: 15px; }
+    .schedule-activity { font-size: 15px; }
     
     /* Slide 5 - Activities */
     .slide-5 { background: #FAF6F0; color: #2d3e2f; }
-    .slide-5 h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 6px; }
-    .slide-full .slide-5 h3 { font-size: 70px; margin-bottom: 20px; }
-    .slide-5 .sub { font-size: 12px; color: #666; margin-bottom: 20px; }
-    .slide-full .slide-5 .sub { font-size: 38px; margin-bottom: 60px; }
+    .slide-5 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 8px; }
+    .slide-5 .sub { font-size: 13px; color: #666; margin-bottom: 24px; }
     .activities-list { width: 100%; }
-    .activity-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; text-align: left; border-bottom: 1px solid #e8e4dc; }
-    .slide-full .activity-row { gap: 40px; padding: 38px 0; }
+    .activity-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; text-align: left; border-bottom: 1px solid #e8e4dc; }
     .activity-row:last-child { border-bottom: none; }
-    .activity-row .icon { font-size: 26px; }
-    .slide-full .activity-row .icon { font-size: 80px; }
-    .activity-row .text { font-size: 14px; font-weight: 600; }
-    .slide-full .activity-row .text { font-size: 46px; }
+    .activity-row .icon { font-size: 30px; }
+    .activity-row .text { font-size: 16px; font-weight: 600; }
     
     /* Slide 6 - Sports */
     .slide-6 { background: #7A8B6F; color: white; }
-    .slide-6 .emoji { font-size: 50px; margin-bottom: 16px; }
-    .slide-full .slide-6 .emoji { font-size: 160px; margin-bottom: 50px; }
-    .slide-6 h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 14px; }
-    .slide-full .slide-6 h3 { font-size: 76px; margin-bottom: 44px; }
-    .slide-6 .body-text { font-size: 14px; line-height: 1.7; opacity: 0.95; max-width: 280px; }
-    .slide-full .slide-6 .body-text { font-size: 44px; max-width: 900px; }
-    .slide-6 .note { margin-top: 20px; font-size: 12px; opacity: 0.8; font-style: italic; }
-    .slide-full .slide-6 .note { margin-top: 60px; font-size: 38px; }
+    .slide-6 .emoji { font-size: 60px; margin-bottom: 20px; }
+    .slide-6 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 16px; }
+    .slide-6 .body-text { font-size: 16px; line-height: 1.7; opacity: 0.95; }
+    .slide-6 .note { margin-top: 24px; font-size: 14px; opacity: 0.8; font-style: italic; }
     
     /* Slide 7 - Commitment */
     .slide-7 { background: #2d3e2f; color: white; }
-    .slide-7 h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 20px; }
-    .slide-full .slide-7 h3 { font-size: 70px; margin-bottom: 60px; }
+    .slide-7 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 24px; }
     .commitment-list { text-align: left; width: 100%; }
-    .commit-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; }
-    .slide-full .commit-item { gap: 36px; padding: 32px 0; }
-    .commit-item .icon { font-size: 20px; }
-    .slide-full .commit-item .icon { font-size: 64px; }
-    .commit-item .text { font-size: 13px; line-height: 1.4; }
-    .slide-full .commit-item .text { font-size: 42px; line-height: 1.4; }
-    .commit-item .text strong { display: block; margin-bottom: 2px; }
-    .slide-full .commit-item .text strong { margin-bottom: 8px; }
+    .commit-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; }
+    .commit-item .icon { font-size: 24px; }
+    .commit-item .text { font-size: 15px; line-height: 1.4; }
+    .commit-item .text strong { display: block; margin-bottom: 3px; }
     
     /* Slide 8 - Pricing */
     .slide-8 { background: linear-gradient(160deg, #c17f59 0%, #a66b48 100%); color: white; }
-    .slide-8 h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 20px; }
-    .slide-full .slide-8 h3 { font-size: 70px; margin-bottom: 60px; }
-    .price-box { background: white; color: #2d3e2f; padding: 24px; border-radius: 16px; width: 100%; }
-    .slide-full .price-box { padding: 70px; border-radius: 48px; }
-    .price-main { font-size: 26px; font-weight: 700; color: #c17f59; margin-bottom: 4px; }
-    .slide-full .price-main { font-size: 80px; margin-bottom: 16px; }
-    .price-per { font-size: 12px; color: #666; margin-bottom: 14px; }
-    .slide-full .price-per { font-size: 38px; margin-bottom: 44px; }
-    .price-total { background: #FAF6F0; padding: 10px; border-radius: 8px; font-size: 13px; margin-bottom: 14px; }
-    .slide-full .price-total { padding: 32px; border-radius: 24px; font-size: 42px; margin-bottom: 44px; }
+    .slide-8 h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 24px; }
+    .price-box { background: white; color: #2d3e2f; padding: 28px; border-radius: 16px; width: 100%; }
+    .price-main { font-size: 30px; font-weight: 700; color: #c17f59; margin-bottom: 6px; }
+    .price-per { font-size: 13px; color: #666; margin-bottom: 16px; }
+    .price-total { background: #FAF6F0; padding: 12px; border-radius: 8px; font-size: 15px; margin-bottom: 16px; }
     .price-total strong { color: #2d3e2f; }
-    .includes-list { text-align: left; font-size: 11px; color: #666; }
-    .slide-full .includes-list { font-size: 36px; }
-    .includes-list div { padding: 3px 0; }
-    .slide-full .includes-list div { padding: 12px 0; }
+    .includes-list { text-align: left; font-size: 13px; color: #666; }
+    .includes-list div { padding: 4px 0; }
     
     /* Slide 9 - Apply */
     .slide-9 { background: #FAF6F0; color: #2d3e2f; }
-    .slide-9 h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 12px; }
-    .slide-full .slide-9 h3 { font-size: 76px; margin-bottom: 40px; }
-    .slide-9 .body-text { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 20px; }
-    .slide-full .slide-9 .body-text { font-size: 44px; margin-bottom: 60px; }
-    .slide-9 .cta-box { background: #7A8B6F; color: white; padding: 14px 28px; border-radius: 30px; font-weight: 600; font-size: 13px; display: inline-block; }
-    .slide-full .slide-9 .cta-box { padding: 44px 80px; border-radius: 80px; font-size: 44px; }
-    .slide-9 .website { margin-top: 16px; font-size: 12px; color: #888; }
-    .slide-full .slide-9 .website { margin-top: 50px; font-size: 38px; }
+    .slide-9 h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 14px; }
+    .slide-9 .body-text { font-size: 16px; color: #666; line-height: 1.6; margin-bottom: 24px; }
+    .slide-9 .cta-box { background: #7A8B6F; color: white; padding: 16px 32px; border-radius: 30px; font-weight: 600; font-size: 15px; display: inline-block; }
+    .slide-9 .website { margin-top: 20px; font-size: 14px; color: #888; }
   </style>
 </head>
 <body>
@@ -154,13 +119,7 @@
     <!-- Slide 1 -->
     <div class="slide-wrapper">
       <span class="slide-label">Slide 1 — Cover</span>
-      <div class="slide slide-1"><div class="slide-content">
-        <img src="/images/mawun-icon.png" alt="Mawun Valley" class="logo-icon">
-        <h2>Little Roots</h2>
-        <p class="tagline">A weekly gathering for<br>homeschooling families</p>
-        <p class="location">Mawun Valley Farm</p>
-      </div></div>
-      <div class="slide-full slide-1" id="slide1"><div class="slide-content">
+      <div class="slide slide-1" id="slide1"><div class="slide-content">
         <img src="/images/mawun-icon.png" alt="Mawun Valley" class="logo-icon">
         <h2>Little Roots</h2>
         <p class="tagline">A weekly gathering for<br>homeschooling families</p>
@@ -172,16 +131,7 @@
     <!-- Slide 2 -->
     <div class="slide-wrapper">
       <span class="slide-label">Slide 2 — The Basics</span>
-      <div class="slide slide-2"><div class="slide-content">
-        <h3>The Basics</h3>
-        <div class="basics-grid">
-          <div class="basic-item"><span class="icon">👦👧</span><span class="label">Ages</span><span class="value">6–7 years</span></div>
-          <div class="basic-item"><span class="icon">👥</span><span class="label">Group Size</span><span class="value">Max 6 kids</span></div>
-          <div class="basic-item"><span class="icon">📅</span><span class="label">When</span><span class="value">Wednesdays</span></div>
-          <div class="basic-item"><span class="icon">⏰</span><span class="label">Time</span><span class="value">9AM–12PM</span></div>
-        </div>
-      </div></div>
-      <div class="slide-full slide-2" id="slide2"><div class="slide-content">
+      <div class="slide slide-2" id="slide2"><div class="slide-content">
         <h3>The Basics</h3>
         <div class="basics-grid">
           <div class="basic-item"><span class="icon">👦👧</span><span class="label">Ages</span><span class="value">6–7 years</span></div>
@@ -196,12 +146,7 @@
     <!-- Slide 3 -->
     <div class="slide-wrapper">
       <span class="slide-label">Slide 3 — The Idea</span>
-      <div class="slide slide-3"><div class="slide-content">
-        <h3>More than a playdate</h3>
-        <p class="body-text">No rotating faces. No drop-ins.<br><br>Just the same kids, every week, building real friendships through sports, creativity, and shared adventures.</p>
-        <p class="handwritten">"Growing friendships, one Wednesday at a time"</p>
-      </div></div>
-      <div class="slide-full slide-3" id="slide3"><div class="slide-content">
+      <div class="slide slide-3" id="slide3"><div class="slide-content">
         <h3>More than a playdate</h3>
         <p class="body-text">No rotating faces. No drop-ins.<br><br>Just the same kids, every week, building real friendships through sports, creativity, and shared adventures.</p>
         <p class="handwritten">"Growing friendships, one Wednesday at a time"</p>
@@ -212,17 +157,7 @@
     <!-- Slide 4 -->
     <div class="slide-wrapper">
       <span class="slide-label">Slide 4 — Schedule</span>
-      <div class="slide slide-4"><div class="slide-content">
-        <h3>A Typical Wednesday</h3>
-        <div class="schedule-list">
-          <div class="schedule-item"><span class="schedule-time">9:00</span><span class="schedule-activity">Welcome Circle</span></div>
-          <div class="schedule-item"><span class="schedule-time">9:15</span><span class="schedule-activity">⚽ Sports & Games Hour</span></div>
-          <div class="schedule-item"><span class="schedule-time">10:15</span><span class="schedule-activity">🍿 Snack Break</span></div>
-          <div class="schedule-item"><span class="schedule-time">10:30</span><span class="schedule-activity">🎯 Weekly Activity (rotates)</span></div>
-          <div class="schedule-item"><span class="schedule-time">11:45</span><span class="schedule-activity">Closing Circle</span></div>
-        </div>
-      </div></div>
-      <div class="slide-full slide-4" id="slide4"><div class="slide-content">
+      <div class="slide slide-4" id="slide4"><div class="slide-content">
         <h3>A Typical Wednesday</h3>
         <div class="schedule-list">
           <div class="schedule-item"><span class="schedule-time">9:00</span><span class="schedule-activity">Welcome Circle</span></div>
@@ -238,17 +173,7 @@
     <!-- Slide 5 -->
     <div class="slide-wrapper">
       <span class="slide-label">Slide 5 — Activities</span>
-      <div class="slide slide-5"><div class="slide-content">
-        <h3>4-Week Rotation</h3>
-        <p class="sub">Each week brings something different</p>
-        <div class="activities-list">
-          <div class="activity-row"><span class="icon">🔨</span><span class="text">Woodworking & Building</span></div>
-          <div class="activity-row"><span class="icon">🎬</span><span class="text">Cinema Day</span></div>
-          <div class="activity-row"><span class="icon">🌱</span><span class="text">Farm & Nature</span></div>
-          <div class="activity-row"><span class="icon">🎨</span><span class="text">Creative & Craft</span></div>
-        </div>
-      </div></div>
-      <div class="slide-full slide-5" id="slide5"><div class="slide-content">
+      <div class="slide slide-5" id="slide5"><div class="slide-content">
         <h3>4-Week Rotation</h3>
         <p class="sub">Each week brings something different</p>
         <div class="activities-list">
@@ -264,13 +189,7 @@
     <!-- Slide 6 -->
     <div class="slide-wrapper">
       <span class="slide-label">Slide 6 — Sports</span>
-      <div class="slide slide-6"><div class="slide-content">
-        <div class="emoji">⚽</div>
-        <h3>Sports Every Week</h3>
-        <p class="body-text">Football, relay races, obstacle courses, frisbee, parachute games, and tag on our grass court.</p>
-        <p class="note">Board games & building challenges on rainy days</p>
-      </div></div>
-      <div class="slide-full slide-6" id="slide6"><div class="slide-content">
+      <div class="slide slide-6" id="slide6"><div class="slide-content">
         <div class="emoji">⚽</div>
         <h3>Sports Every Week</h3>
         <p class="body-text">Football, relay races, obstacle courses, frisbee, parachute games, and tag on our grass court.</p>
@@ -282,16 +201,7 @@
     <!-- Slide 7 -->
     <div class="slide-wrapper">
       <span class="slide-label">Slide 7 — Commitment</span>
-      <div class="slide slide-7"><div class="slide-content">
-        <h3>What We Ask</h3>
-        <div class="commitment-list">
-          <div class="commit-item"><span class="icon">📆</span><span class="text"><strong>3-month commitment</strong>Enough time for real friendships</span></div>
-          <div class="commit-item"><span class="icon">✅</span><span class="text"><strong>Same 6 kids</strong>No rotating, no guests</span></div>
-          <div class="commit-item"><span class="icon">👨‍👩‍👧</span><span class="text"><strong>Parent present</strong>Stay on farm for the full 3 hours</span></div>
-          <div class="commit-item"><span class="icon">🌧️</span><span class="text"><strong>Rain or shine</strong>We play in all weather</span></div>
-        </div>
-      </div></div>
-      <div class="slide-full slide-7" id="slide7"><div class="slide-content">
+      <div class="slide slide-7" id="slide7"><div class="slide-content">
         <h3>What We Ask</h3>
         <div class="commitment-list">
           <div class="commit-item"><span class="icon">📆</span><span class="text"><strong>3-month commitment</strong>Enough time for real friendships</span></div>
@@ -306,21 +216,7 @@
     <!-- Slide 8 -->
     <div class="slide-wrapper">
       <span class="slide-label">Slide 8 — Pricing</span>
-      <div class="slide slide-8"><div class="slide-content">
-        <h3>Investment</h3>
-        <div class="price-box">
-          <div class="price-main">IDR 200,000</div>
-          <div class="price-per">per child, per session</div>
-          <div class="price-total">3 months = <strong>IDR 2,400,000</strong></div>
-          <div class="includes-list">
-            <div>✓ All snacks & drinks</div>
-            <div>✓ All materials & supplies</div>
-            <div>✓ Sports equipment</div>
-            <div>✓ Cinema popcorn</div>
-          </div>
-        </div>
-      </div></div>
-      <div class="slide-full slide-8" id="slide8"><div class="slide-content">
+      <div class="slide slide-8" id="slide8"><div class="slide-content">
         <h3>Investment</h3>
         <div class="price-box">
           <div class="price-main">IDR 200,000</div>
@@ -340,14 +236,7 @@
     <!-- Slide 9 -->
     <div class="slide-wrapper">
       <span class="slide-label">Slide 9 — Apply</span>
-      <div class="slide slide-9"><div class="slide-content">
-        <img src="/images/mawun-icon.png" alt="Mawun Valley" class="logo-icon">
-        <h3>Join Little Roots</h3>
-        <p class="body-text">Spots limited to 6 children.<br>Apply now for the next term.</p>
-        <div class="cta-box">Apply Online</div>
-        <p class="website">mawunvalley.com/little-roots</p>
-      </div></div>
-      <div class="slide-full slide-9" id="slide9"><div class="slide-content">
+      <div class="slide slide-9" id="slide9"><div class="slide-content">
         <img src="/images/mawun-icon.png" alt="Mawun Valley" class="logo-icon">
         <h3>Join Little Roots</h3>
         <p class="body-text">Spots limited to 6 children.<br>Apply now for the next term.</p>
@@ -361,21 +250,21 @@
   <script>
     async function downloadSlide(slideId, filename) {
       const slide = document.getElementById(slideId);
-      slide.style.left = '0';
-      slide.style.position = 'fixed';
-      slide.style.top = '0';
-      slide.style.zIndex = '9999';
       try {
-        const canvas = await html2canvas(slide, { scale: 1, useCORS: true, backgroundColor: null, width: 1080, height: 1350 });
+        // Scale 3x to get 1080x1350 from 360x450
+        const canvas = await html2canvas(slide, { 
+          scale: 3, 
+          useCORS: true, 
+          backgroundColor: null,
+          logging: false
+        });
         const link = document.createElement('a');
         link.download = filename + '.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
-      } finally {
-        slide.style.left = '-9999px';
-        slide.style.position = 'absolute';
-        slide.style.top = '';
-        slide.style.zIndex = '';
+      } catch (err) {
+        console.error('Download failed:', err);
+        alert('Download failed. Please try again.');
       }
     }
   </script>
