@@ -149,6 +149,7 @@ useHead({ title: 'Family Farm Membership | Mawun Valley Farm' })
 <style scoped>
 .membership-hero {
   background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-terracotta) 100%);
+  min-height: 280px;
   padding: 100px 20px 80px;
   text-align: center;
   color: white;

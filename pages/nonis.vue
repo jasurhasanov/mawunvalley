@@ -870,8 +870,8 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   .nonis-hero {
-    height: 65vh;
-    min-height: 450px;
+    height: auto;
+    min-height: 280px;
   }
   
   .nonis-logo-img {
