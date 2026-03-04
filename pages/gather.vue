@@ -85,7 +85,7 @@
           <!-- 4. Weekly Volleyball -->
           <article class="event-card signature" @click="openEvent('volleyball')">
             <div class="event-image">
-              <img src="/images/farmlife-5.jpg" alt="Weekly Volleyball Games">
+              <img src="/images/volleyball.png" alt="Weekly Volleyball Games">
               <span class="event-badge volleyball">Weekly</span>
             </div>
             <div class="event-info">
