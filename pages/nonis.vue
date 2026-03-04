@@ -259,6 +259,7 @@
         <button v-if="!showAllReviews && reviews.length > 3" class="show-more-btn" @click="showAllReviews = true">
           Show more reviews ({{ reviews.length - 3 }} more)
         </button>
+        <a href="https://maps.app.goo.gl/nUa11TMCBcccJKcC7" target="_blank" class="google-maps-link">Read more reviews on Google Maps →</a>
       </div>
     </section>
   </div>
@@ -793,10 +794,20 @@ onUnmounted(() => {
   transition: all 0.3s ease;
 }
 .show-more-btn:hover {
-  background: var(--color-terracotta);
-  color: white;
+.google-maps-link {
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+  color: var(--color-terracotta);
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
-/* Responsive */
+.google-maps-link:hover {
+  color: var(--color-gold);
+}
+  background: var(--color-terracotta);
 @media (max-width: 1024px) {
   .experience-grid {
     grid-template-columns: repeat(3, 1fr);
