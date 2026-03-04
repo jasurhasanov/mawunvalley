@@ -546,6 +546,7 @@ onUnmounted(() => {
   background: var(--color-cream);
 }
 .menu-nav-item.active {
+  background: var(--color-sage);
   color: white;
 }
 .menu-category {
