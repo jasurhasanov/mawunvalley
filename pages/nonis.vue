@@ -259,7 +259,7 @@
         <button v-if="!showAllReviews && reviews.length > 3" class="show-more-btn" @click="showAllReviews = true">
           Show more reviews ({{ reviews.length - 3 }} more)
         </button>
-        <a href="https://maps.app.goo.gl/nUa11TMCBcccJKcC7" target="_blank" class="google-maps-link">Read more reviews on Google Maps →</a>
+        <a href="https://maps.app.goo.gl/nUa11TMCBcccJKcC7" target="_blank" class="google-maps-link">All Google Maps Reviews</a>
       </div>
     </section>
   </div>
@@ -546,7 +546,6 @@ onUnmounted(() => {
   background: var(--color-cream);
 }
 .menu-nav-item.active {
-  background: var(--color-terracotta);
   color: white;
 }
 .menu-category {
@@ -794,6 +793,9 @@ onUnmounted(() => {
   transition: all 0.3s ease;
 }
 .show-more-btn:hover {
+  background: var(--color-terracotta);
+  color: white;
+}
 .google-maps-link {
   display: block;
   text-align: center;
@@ -807,7 +809,6 @@ onUnmounted(() => {
 .google-maps-link:hover {
   color: var(--color-gold);
 }
-  background: var(--color-terracotta);
 @media (max-width: 1024px) {
   .experience-grid {
     grid-template-columns: repeat(3, 1fr);
