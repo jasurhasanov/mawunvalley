@@ -4,8 +4,9 @@
     <section class="nonis-hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <img src="/images/nonis-logo-dark.png" alt="Noni's Resto & Pastry" class="nonis-logo-img">
-        <p class="nonis-subtitle">Where the Farm Meets Your Table</p>
+        <span class="hero-label">Restaurant & Café</span>
+        <h1>Where the Farm Meets Your Table</h1>
+        <p class="nonis-subtitle">Farm-to-table café at Mawun Valley</p>
       </div>
       <div class="scroll-hint">
         <span></span>
@@ -16,6 +17,7 @@
     <section class="nonis-story">
       <div class="container">
         <div class="story-content">
+          <img src="/images/nonis-logo-dark.png" alt="Noni's Resto & Pastry" class="nonis-logo-story">
           <span class="section-label">Our Story</span>
           <h2>Less Items, More Quality</h2>
           <p>At Mawun Valley Farm, we embrace the quiet beauty of <strong>slow living</strong> — cultivating peace, open spaces, and a deep connection to nature.</p>
@@ -301,12 +303,13 @@ const scrollToCategory = (category) => {
   activeCategory.value = category
   const el = document.getElementById(category)
   if (el) {
-    const offset = 120
+    const offset = 120 // Account for sticky nav
     const y = el.getBoundingClientRect().top + window.pageYOffset - offset
     window.scrollTo({ top: y, behavior: 'smooth' })
   }
 }
 
+// Update active category on scroll
 const handleScroll = () => {
   const categories = ['breakfast', 'meals', 'drinks', 'pastry']
   for (const cat of categories) {
@@ -334,13 +337,13 @@ onUnmounted(() => {
 /* Hero */
 .nonis-hero {
   position: relative;
-  height: auto;
-  min-height: 280px;
-  padding: 100px 20px 80px;
+  height: 75vh;
+  min-height: 500px;
+  max-height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-hero-dark) 0%, var(--color-hero-light) 100%);
+  background: url('/images/nonis-hero.jpg') center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -359,19 +362,36 @@ onUnmounted(() => {
   text-align: center;
   color: white;
   padding: 20px;
+  padding-top: 80px;
 }
 
-.nonis-logo-img {
-  max-width: 280px;
+.hero-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
   margin-bottom: 20px;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  padding: 8px 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 24px;
+  backdrop-filter: blur(4px);
+  background: rgba(255,255,255,0.1);
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  color: white;
 }
 
 .nonis-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  letter-spacing: 3px;
-  text-transform: uppercase;
   opacity: 0.95;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
@@ -422,6 +442,12 @@ onUnmounted(() => {
   text-align: center;
 }
 
+.nonis-logo-story {
+  max-width: 200px;
+  margin-bottom: 28px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+}
+
 .story-content h2 {
   margin-bottom: 28px;
   font-size: 2.2rem;
@@ -429,7 +455,7 @@ onUnmounted(() => {
 
 .story-content p {
   line-height: 1.85;
-  color: var(--color-text-muted);
+  color: #555;
   margin-bottom: 18px;
   font-size: 1.05rem;
 }
@@ -574,7 +600,7 @@ onUnmounted(() => {
 }
 
 .category-note {
-  color: var(--color-text-light);
+  color: #888;
   font-size: 14px;
   margin-bottom: 24px;
 }
@@ -648,7 +674,7 @@ onUnmounted(() => {
 
 .item-desc {
   font-size: 14px;
-  color: var(--color-text-muted);
+  color: #666;
   line-height: 1.65;
 }
 
@@ -704,7 +730,7 @@ onUnmounted(() => {
 }
 
 .experience-card p {
-  color: var(--color-text-muted);
+  color: #666;
   line-height: 1.7;
   margin-bottom: 16px;
   font-size: 15px;
@@ -719,7 +745,7 @@ onUnmounted(() => {
 /* CTA */
 .nonis-cta {
   padding: 90px 0;
-  background: var(--color-sage);
+  background: #6b8f5c; /* Darker sage for better contrast */
   text-align: center;
   color: white;
 }
@@ -777,7 +803,7 @@ onUnmounted(() => {
 
 .btn-outline:hover {
   background: white;
-  color: var(--color-sage);
+  color: #6b8f5c;
 }
 
 /* Divider */
@@ -825,7 +851,7 @@ onUnmounted(() => {
 .review-text {
   font-size: 15px;
   line-height: 1.75;
-  color: var(--color-text-muted);
+  color: #555;
   margin-bottom: 16px;
   font-style: italic;
 }
@@ -870,17 +896,25 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   .nonis-hero {
-    height: auto;
-    min-height: 280px;
+    height: 65vh;
+    min-height: 450px;
   }
   
-  .nonis-logo-img {
-    max-width: 220px;
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-label {
+    font-size: 0.75rem;
+    padding: 6px 16px;
   }
   
   .nonis-subtitle {
     font-size: 1rem;
-    letter-spacing: 2px;
+  }
+  
+  .nonis-logo-story {
+    max-width: 160px;
   }
   
   .info-grid {
