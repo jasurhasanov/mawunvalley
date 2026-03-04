@@ -340,7 +340,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%);
+  background: linear-gradient(135deg, #1a3a2f 0%, #2d5a4a 100%);
 }
 
 .hero-overlay {
