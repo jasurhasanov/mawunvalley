@@ -323,6 +323,7 @@ useHead({
 }
 
 .story-image img {
+  object-position: top;
   width: 100%;
   height: 450px;
   object-fit: cover;
@@ -475,6 +476,7 @@ useHead({
   
   .intro-image img,
   .story-image img {
+  object-position: top;
     height: 350px;
   }
   
