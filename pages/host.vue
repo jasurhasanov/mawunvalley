@@ -63,7 +63,7 @@
             <span class="section-label">Her Journey</span>
             <h2>From Corporate to Countryside</h2>
             <p>Originally from Java, from a mixed family of a <strong>Sundanese mom and Javanese father</strong>, Noni's path has been anything but ordinary.</p>
-            <p>She previously worked at an international company in Malaysia and taught at university after completing her MBA. But her heart called her to something different — to create a space where people could slow down and connect deeply.</p>
+            <p>She previously worked at an international company in Malaysia and taught at university after completing her MBA. After 6 years abroad enjoying four seasons and snowy winters, they decided it was time to call Indonesia home — for their son to grow up experiencing its culture, food, languages, and natural beauty.</p>
             <p>That vision became <strong>Mawun Valley Farm</strong>.</p>
           </div>
           <div class="story-image">
