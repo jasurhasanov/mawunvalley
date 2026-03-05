@@ -215,7 +215,7 @@ useHead({
 
 .intro-image img {
   width: 100%;
-  height: 500px;
+  height: 550px;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.15);
@@ -323,9 +323,9 @@ useHead({
 }
 
 .story-image img {
-  object-position: center 30%;
+  object-position: center 40%;
   width: 100%;
-  height: 500px;
+  height: 550px;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.15);
@@ -476,7 +476,7 @@ useHead({
   
   .intro-image img,
   .story-image img {
-  object-position: center 30%;
+  object-position: center 40%;
     height: 350px;
   }
   
