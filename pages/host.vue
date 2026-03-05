@@ -103,6 +103,10 @@
             <span class="passion-emoji">🎤</span>
             <span>Singing</span>
           </div>
+          <div class="passion-item">
+            <span class="passion-emoji">🏊</span>
+            <span>Swimming</span>
+          </div>
         </div>
       </div>
     </section>
