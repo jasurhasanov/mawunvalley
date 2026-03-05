@@ -475,9 +475,13 @@ useHead({
     gap: 40px;
   }
   
-  .intro-image img,
+  .intro-image img {
+    object-position: center 60%;
+    height: 350px;
+  }
+  
   .story-image img {
-  object-position: center 25%;
+    object-position: center 25%;
     height: 350px;
   }
   
