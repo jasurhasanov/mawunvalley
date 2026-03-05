@@ -371,3 +371,25 @@ Start with a week or two to test the waters. If it works for you, extend. Many n
 ---
 
 *Related guides: [Budget Travel Lombok](/blog/budget-travel-lombok) | [Solo Travel Guide](/blog/solo-travel-guide-lombok) | [Slow Travel Philosophy](/blog/slow-travel-lombok-guide)*
+
+---
+
+## Frequently Asked Questions
+
+### Is Lombok good for digital nomads?
+Yes, increasingly so. While not as developed as Bali, South Lombok offers solid WiFi, affordable living, beautiful beaches, and a growing community of remote workers seeking quieter alternatives.
+
+### How's the WiFi in Lombok?
+Variable but improving. Most cafés in Kuta have usable WiFi (10-30 Mbps). For reliable connectivity, consider accommodation with dedicated work spaces or get a local SIM with data (Telkomsel has best coverage).
+
+### What's the cost of living for digital nomads?
+Budget: IDR 8-12 million/month ($500-750). Comfortable: IDR 15-25 million/month ($900-1,500). This includes accommodation, food, transport, and coworking/café fees.
+
+### Are there coworking spaces in Lombok?
+Limited compared to Bali, but some exist in Kuta. Many digital nomads work from cafés or their accommodation. [Mawun Valley Farm](/stay-contribute) offers reliable WiFi in a peaceful setting popular with remote workers.
+
+### What's the visa situation for long-term stays?
+Tourist visas allow 30-60 days (extendable). For longer stays, look into B211 social/business visas or the new digital nomad visa scheme. Always check current regulations as they change frequently.
+
+### How's the expat/nomad community?
+Growing but still intimate. You'll meet people at surf breaks, cafés, and community events. Thursday volleyball and Friday BBQ at [Mawun Valley](/gather) are great for meeting other travelers and expats.

@@ -326,3 +326,25 @@ Our [cooking classes](/gather) can be adapted for families:
 ---
 
 *Related: [Beach Guide](/blog/beach-hopping-south-lombok) | [Adventure Activities](/blog/adventure-activities-south-lombok) | [Budget Planning](/blog/budget-travel-lombok)*
+
+---
+
+## Frequently Asked Questions
+
+### Is South Lombok suitable for young children?
+Yes, South Lombok is excellent for families. Beaches like Selong Belanak and Tanjung Aan have calm, shallow water perfect for kids. The pace is relaxed and the locals are very welcoming to children.
+
+### What ages are best for visiting Lombok?
+All ages can enjoy Lombok. Toddlers love the calm beaches, school-age kids enjoy snorkeling and animal encounters, and teenagers appreciate the surf and adventure activities.
+
+### Are there kid-friendly restaurants in South Lombok?
+Most restaurants in Kuta and the beach areas are family-friendly. [Noni's Farm Café](/nonis) at Mawun Valley Farm is particularly good for kids — they can see animals, explore the farm, and enjoy fresh, healthy food.
+
+### What should families pack for Lombok?
+Sun protection (reef-safe sunscreen, hats, rash guards), comfortable water shoes, basic first aid supplies, insect repellent, and any specific items your children need. Most essentials are available locally.
+
+### Is healthcare accessible for families?
+Basic healthcare is available in Kuta and Praya. For serious emergencies, Mataram has better facilities. Travel insurance with medical evacuation coverage is strongly recommended for families.
+
+### Where should families stay in South Lombok?
+For families wanting more than beach resorts, [Mawun Valley Farm](/stay-contribute) offers educational experiences, animal encounters, and safe outdoor space — a memorable alternative to standard hotels.

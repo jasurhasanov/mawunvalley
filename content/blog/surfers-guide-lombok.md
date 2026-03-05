@@ -473,3 +473,25 @@ Some schools operate from Kuta, taking students to appropriate beaches:
 ---
 
 *Related: [Post-Surf Recovery Guide](/blog/post-surf-recovery-lombok) | [Beach Guide](/blog/beach-hopping-south-lombok) | [Budget Travel Lombok](/blog/budget-travel-lombok)*
+
+---
+
+## Frequently Asked Questions
+
+### When is the best time to surf in Lombok?
+The dry season (May-October) offers the most consistent swells and offshore winds. June-August typically has the biggest waves. Beginners may prefer shoulder seasons with smaller swells.
+
+### Is Lombok good for beginner surfers?
+Yes! Selong Belanak is one of the best beginner beaches in Indonesia with gentle, rolling waves. Tanjung Aan also offers mellow conditions suitable for learning.
+
+### Can I rent surfboards in South Lombok?
+Absolutely. Board rentals are available at all major beaches (around IDR 50,000-100,000 per hour). Surf schools at Selong Belanak offer lessons with equipment included.
+
+### How do I get to the surf spots from Kuta Lombok?
+Scooter is the easiest option. Selong Belanak is 15 minutes, Gerupuk is 20 minutes, Mawi is 25 minutes. Roads are generally good but watch for potholes.
+
+### What's the water temperature in Lombok?
+Warm year-round, typically 27-30°C (80-86°F). Most surfers don't need a wetsuit. A rash guard is recommended for sun protection.
+
+### Are there surf camps in Lombok?
+Yes, several surf camps operate in South Lombok. For a more relaxed alternative, [Mawun Valley Farm](/stay-contribute) offers accommodation near the best breaks with a community atmosphere popular among surfers.

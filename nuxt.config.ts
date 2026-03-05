@@ -99,6 +99,70 @@ export default defineNuxtConfig({
           })
         },
         
+        
+        // Structured Data - LocalBusiness (Farm Stay)
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LodgingBusiness",
+            "name": "Mawun Valley Farm",
+            "description": "A family-run regenerative farm in South Lombok offering immersive stays, farm-to-table dining at Noni's Café, community events, and meaningful experiences.",
+            "url": "https://www.mawunvalley.com",
+            "telephone": "+62-822-5844-0585",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Mawun Valley",
+              "addressLocality": "Kuta",
+              "addressRegion": "Lombok Tengah",
+              "postalCode": "83573",
+              "addressCountry": "ID"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "-8.9156",
+              "longitude": "116.2347"
+            },
+            "image": "https://www.mawunvalley.com/images/og-image.jpg",
+            "amenityFeature": [
+              {"@type": "LocationFeatureSpecification", "name": "Farm-to-table restaurant"},
+              {"@type": "LocationFeatureSpecification", "name": "Free WiFi"},
+              {"@type": "LocationFeatureSpecification", "name": "Organic garden"},
+              {"@type": "LocationFeatureSpecification", "name": "Animal encounters"}
+            ],
+            "hasMap": "https://maps.google.com/?q=Mawun+Valley+Farm"
+          })
+        },
+        
+        // Structured Data - Restaurant (Noni's Café)
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "Noni's Farm Café",
+            "description": "Farm-to-table café serving fresh Indonesian cuisine and signature baked goods including the famous Burnt Cheesecake.",
+            "url": "https://www.mawunvalley.com/nonis",
+            "telephone": "+62-822-5844-0585",
+            "servesCuisine": ["Indonesian", "Farm-to-table", "Vegetarian friendly"],
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Mawun Valley Farm",
+              "addressLocality": "Kuta",
+              "addressRegion": "Lombok Tengah",
+              "addressCountry": "ID"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "08:00",
+              "closes": "21:00"
+            }
+          })
+        },
+
         // Structured Data - SiteNavigationElement for sitelinks
         {
           type: 'application/ld+json',

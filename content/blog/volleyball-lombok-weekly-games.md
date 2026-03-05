@@ -180,3 +180,25 @@ Every Thursday at 4 PM, we're at Mawun Valley Farm, setting up the net and welco
 Check our [events page](/gather) to join the WhatsApp group, or simply show up. We'd love to meet you.
 
 See you on the court.
+
+---
+
+## Frequently Asked Questions
+
+### What time does volleyball start?
+Games begin at 4:00 PM every Thursday and typically run until around 5:30 PM, perfectly timed for sunset.
+
+### Do I need to bring my own volleyball?
+No, we provide all equipment including the volleyball. Just bring yourself, comfortable clothes, and shoes with grip.
+
+### How much does it cost?
+IDR 100,000 per person, which includes court access, volleyball, 1 liter of cold water, and one drink from Noni's Farm Café.
+
+### Do I need to be good at volleyball?
+Absolutely not! All skill levels are welcome. The games are friendly and casual — we mix teams and focus on fun over competition.
+
+### How do I get to Mawun Valley Farm?
+We're located about 20 minutes from Kuta Lombok. Head west toward Mawun Beach and follow signs to Mawun Valley Farm. Google Maps has accurate directions.
+
+### What if it rains?
+Light rain? We play. Heavy rain? We'll update the WhatsApp group. The grass court drains well, so games often continue shortly after rain stops.

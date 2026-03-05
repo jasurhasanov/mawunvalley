@@ -1,14 +1,62 @@
 <template>
   <div class="blog-post">
     <ContentDoc v-slot="{ doc }">
+      <Head>
+        <Title>{{ doc.title }} | Mawun Valley Farm</Title>
+        <Meta name="description" :content="doc.description" />
+        <Meta property="og:title" :content="doc.title" />
+        <Meta property="og:description" :content="doc.description" />
+        <Meta property="og:image" :content="'https://www.mawunvalley.com' + doc.image" />
+        <Meta property="og:type" content="article" />
+        <Meta property="article:published_time" :content="doc.date" />
+        <Meta property="article:author" :content="doc.author || 'Mawun Valley Team'" />
+        <Meta name="twitter:card" content="summary_large_image" />
+        <Meta name="twitter:title" :content="doc.title" />
+        <Meta name="twitter:description" :content="doc.description" />
+        <Meta name="twitter:image" :content="'https://www.mawunvalley.com' + doc.image" />
+        <Link rel="canonical" :href="'https://www.mawunvalley.com' + doc._path" />
+      </Head>
+      
+      <!-- Article Schema -->
+      <component :is="'script'" type="application/ld+json">
+        {{ JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": doc.title,
+          "description": doc.description,
+          "image": "https://www.mawunvalley.com" + doc.image,
+          "datePublished": doc.date,
+          "dateModified": doc.date,
+          "author": {
+            "@type": "Person",
+            "name": doc.author || "Mawun Valley Team"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Mawun Valley Farm",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.mawunvalley.com/images/logo.png"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.mawunvalley.com" + doc._path
+          }
+        }) }}
+      </component>
+
       <section class="article-hero" v-if="doc.image">
         <div class="article-hero-bg">
           <img :src="doc.image" :alt="doc.title">
         </div>
         <div class="article-hero-content">
-          <span class="category">{{ doc.category }}</span>
+          <span class="category" v-if="doc.category">{{ doc.category }}</span>
           <h1>{{ doc.title }}</h1>
-          <p class="meta">By {{ doc.author || 'Mawun Valley Team' }}</p>
+          <p class="meta">
+            <span>By {{ doc.author || 'Mawun Valley Team' }}</span>
+            <span v-if="doc.date" class="date">• {{ formatDate(doc.date) }}</span>
+          </p>
         </div>
       </section>
       
@@ -21,6 +69,27 @@
           </div>
 
           <ContentRenderer :value="doc" class="prose" />
+
+          <!-- Related Posts Section -->
+          <div class="related-posts" v-if="relatedPosts && relatedPosts.length > 0">
+            <h2>You Might Also Enjoy</h2>
+            <div class="related-grid">
+              <NuxtLink 
+                v-for="post in relatedPosts" 
+                :key="post._path" 
+                :to="post._path"
+                class="related-card"
+              >
+                <div class="related-image" v-if="post.image">
+                  <img :src="post.image" :alt="post.title" loading="lazy">
+                </div>
+                <div class="related-content">
+                  <h3>{{ post.title }}</h3>
+                  <p>{{ post.description?.substring(0, 100) }}...</p>
+                </div>
+              </NuxtLink>
+            </div>
+          </div>
 
           <div class="article-cta">
             <h2>Experience Mawun Valley</h2>
@@ -35,6 +104,31 @@
     </ContentDoc>
   </div>
 </template>
+
+<script setup>
+const route = useRoute()
+
+// Fetch related posts based on tags or just recent posts
+const { data: relatedPosts } = await useAsyncData(
+  `related-${route.path}`,
+  () => queryContent('/blog')
+    .where({ _path: { $ne: route.path } })
+    .sort({ date: -1 })
+    .limit(3)
+    .find()
+)
+
+// Format date helper
+const formatDate = (dateString) => {
+  if (!dateString) return ''
+  const date = new Date(dateString)
+  return date.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  })
+}
+</script>
 
 <style scoped>
 .article-hero {
@@ -95,6 +189,10 @@
 .meta {
   opacity: 0.9;
   font-size: 1.1rem;
+}
+
+.meta .date {
+  margin-left: 8px;
 }
 
 .article-content {
@@ -175,6 +273,65 @@
   margin-bottom: 0.5rem;
 }
 
+/* Related Posts */
+.related-posts {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid var(--color-cream);
+}
+
+.related-posts h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-dark);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.related-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.related-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.related-content {
+  padding: 16px;
+}
+
+.related-content h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--color-dark);
+  line-height: 1.4;
+}
+
+.related-content p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* CTA Section */
 .article-cta {
   margin-top: 60px;
   padding: 40px;
@@ -230,5 +387,11 @@
 
 .btn-whatsapp:hover {
   background: #128C7E;
+}
+
+@media (max-width: 768px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

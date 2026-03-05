@@ -198,3 +198,25 @@ The roosters will wake you either way. What you do with the day that follows is 
 ---
 
 *Related reading: [Slow Travel Lombok Guide](/blog/slow-travel-lombok-guide) • [Permaculture at Mawun Valley](/blog/permaculture-lombok)*
+
+---
+
+## Frequently Asked Questions
+
+### What time do you wake up on an Indonesian farm?
+Early! Roosters start around 5 AM, and farm work typically begins by 6 AM to take advantage of cooler morning temperatures. Most people adjust within a few days.
+
+### Do I need farming experience?
+Not at all. Most guests have never worked on a farm before. Everything is learned through observation and participation. We're happy to teach anyone who's interested.
+
+### What kind of work is involved?
+Daily activities include animal feeding, garden maintenance (watering, weeding, harvesting), and general farm tasks. Work is physical but not grueling — typically 3-4 hours in the morning.
+
+### Is farm life in Indonesia suitable for vegetarians/vegans?
+Yes! Farm-to-table eating actually makes plant-based diets easier. Our gardens produce abundant vegetables, and the café offers vegetarian options daily.
+
+### What's the accommodation like on a working farm?
+Simple but comfortable. At [Mawun Valley Farm](/stay-contribute), we offer private rooms and cabins with fans, mosquito nets, and private bathrooms. It's not luxury, but it's cozy and clean.
+
+### Can I combine farm life with beach activities?
+Absolutely! We're only 5 minutes from Mawun Beach and 15 minutes from Selong Belanak. Many guests spend mornings on the farm and afternoons at the beach.

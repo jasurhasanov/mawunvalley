@@ -359,3 +359,25 @@ At [the farm](/stay-contribute), simply mention at dinner what you're doing tomo
 ---
 
 *Related: [Budget Travel Guide](/blog/budget-travel-lombok) | [Safety & Logistics](/blog/beach-hopping-south-lombok) | [Slow Travel](/blog/slow-travel-lombok-guide)*
+
+---
+
+## Frequently Asked Questions
+
+### Is Lombok safe for solo travelers?
+Yes, Lombok is generally very safe for solo travelers. The local Sasak people are friendly and welcoming. Standard travel precautions apply — watch your belongings and be aware of your surroundings, especially at night.
+
+### How do I get around Lombok alone?
+Renting a scooter is the most popular option (around IDR 70,000-100,000 per day). You can also use Grab/Gojek for rides, or arrange private drivers for day trips.
+
+### Where should solo travelers stay in South Lombok?
+Kuta Lombok is the main hub with the most accommodation options. For a more immersive experience, farm stays like [Mawun Valley](/stay-contribute) offer community and connection that solo travelers often crave.
+
+### What's the best time to visit Lombok solo?
+Dry season (May-October) offers the best weather. For solo travelers, this period also has more tourists, making it easier to meet people. Shoulder seasons (April, November) offer a good balance.
+
+### How much budget do I need per day?
+Budget travelers can manage on IDR 300,000-500,000 per day (accommodation, food, transport). Mid-range is IDR 500,000-1,000,000. This excludes activities and tours.
+
+### Is English widely spoken?
+In tourist areas like Kuta and Senggigi, basic English is common. In rural areas, less so. Learning a few Indonesian phrases helps and is appreciated by locals.
