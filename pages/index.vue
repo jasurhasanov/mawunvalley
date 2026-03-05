@@ -4,7 +4,7 @@
     <section class="hero" id="hero">
       <div class="hero-bg"><picture><source media="(max-width: 1024px)" srcset="/images/hero-mobile.png"><img src="/images/hero-gemini-v3.png" alt="Mawun Valley Farm"></picture></div>
       <div class="hero-content">
-        <p class="hero-subtitle handwritten">Est. 35 years of welcome</p>
+        <p class="hero-subtitle handwritten">Where slow living begins</p>
         <h1>Slow Down.<br>Connect Deeply.</h1>
         <p class="tagline">A family farm in the valley, minutes from the sea.</p>
         <a href="#ways" class="btn btn-primary btn-lg">Discover the Farm</a>
