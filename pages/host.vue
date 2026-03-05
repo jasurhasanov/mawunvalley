@@ -41,7 +41,7 @@
               <p>English & Azerbaijani</p>
             </div>
             <div class="language-card">
-              <span class="lang-emoji">🇮🇩</span>
+              <span class="lang-emoji flag-id"><span class="flag-red"></span><span class="flag-white"></span></span>
               <h3>Indonesian</h3>
               <p>Bahasa Indonesia</p>
             </div>
@@ -255,13 +255,32 @@ useHead({
   border-radius: 16px;
   text-align: center;
 }
-
 .lang-emoji {
   font-size: 2.5rem;
   display: block;
   margin-bottom: 16px;
 }
 
+.flag-id {
+  display: flex;
+  flex-direction: column;
+  width: 48px;
+  height: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 0 auto 16px;
+}
+
+.flag-red {
+  flex: 1;
+  background: #FF0000;
+}
+
+.flag-white {
+  flex: 1;
+  background: #FFFFFF;
+}
 .language-card h3 {
   font-size: 1.1rem;
   margin-bottom: 8px;
