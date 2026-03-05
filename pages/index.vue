@@ -166,6 +166,25 @@
       </div>
     </section>
 
+    <!-- Meet Your Host -->
+    <section class="meet-host" id="host">
+      <div class="container">
+        <div class="host-grid">
+          <div class="host-image">
+            <img src="/images/noni-1.jpg" alt="Noni - Your Host at Mawun Valley">
+          </div>
+          <div class="host-content">
+            <span class="section-label">Meet Your Host</span>
+            <h2>Noni</h2>
+            <p>A proud Indonesian with a global perspective — having lived in Azerbaijan, Kazakhstan, and Malaysia. She's the heart behind Mawun Valley Farm and the mastermind behind the famous cheesecake at Noni's Resto.</p>
+            <p>Fluent in English, Azerbaijani, Indonesian, and local languages, she brings warmth and genuine hospitality to every guest.</p>
+            <NuxtLink to="/host" class="btn btn-primary">Get to Know Noni →</NuxtLink>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <!-- Testimonials -->
     <section class="testimonials" id="reviews">
       <div class="container">
@@ -499,5 +518,71 @@ function slideFarmlife(direction) {
 .farmlife-btn { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--color-dark); background: white; font-size: 24px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
 .farmlife-btn:hover { background: var(--color-dark); color: white; }
 @media (max-width: 768px) { .farmlife-slide { flex: 0 0 260px; height: 350px; } }
+/* Meet Your Host */
+.meet-host {
+  padding: 80px 0;
+  background: var(--color-cream);
+}
+
+.host-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.host-image img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.host-content h2 {
+  font-family: var(--font-handwritten), cursive;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: var(--color-terracotta);
+}
+
+.host-content p {
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+.host-content .btn-primary {
+  display: inline-block;
+  margin-top: 16px;
+  background: var(--color-gold);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.host-content .btn-primary:hover {
+  background: var(--color-terracotta);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .host-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .host-image img {
+    height: 350px;
+  }
+  
+  .host-content h2 {
+    font-size: 2.5rem;
+  }
+}
+
 </style>
 <!-- Updated Sun Mar  1 08:11:39 UTC 2026 -->

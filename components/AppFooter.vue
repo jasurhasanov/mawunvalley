@@ -15,6 +15,7 @@
             <li><NuxtLink to="/stay-contribute">Stay &amp; Contribute</NuxtLink></li>
             <li><NuxtLink to="/retreat">Farm Retreat</NuxtLink></li>
             <li><NuxtLink to="/little-roots">Little Roots</NuxtLink></li>
+            <li><NuxtLink to="/host">Your Host</NuxtLink></li>
           </ul>
         </div>
         <div class="footer-links">
