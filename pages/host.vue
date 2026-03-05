@@ -214,6 +214,7 @@ useHead({
 }
 
 .intro-image img {
+  object-position: center 60%;
   width: 100%;
   height: 550px;
   object-fit: cover;
