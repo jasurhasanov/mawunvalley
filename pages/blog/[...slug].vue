@@ -46,6 +46,22 @@
         }) }}
       </component>
 
+      <!-- FAQ Schema (if FAQs exist) -->
+      <component v-if="doc.faqs && doc.faqs.length" :is="'script'" type="application/ld+json">
+        {{ JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": doc.faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        }) }}
+      </component>
+
       <section class="article-hero" v-if="doc.image">
         <div class="article-hero-bg">
           <img :src="doc.image" :alt="doc.title">
@@ -69,6 +85,17 @@
           </div>
 
           <ContentRenderer :value="doc" class="prose" />
+
+          <!-- FAQ Section (rendered from frontmatter) -->
+          <div v-if="doc.faqs && doc.faqs.length" class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div v-for="(faq, index) in doc.faqs" :key="index" class="faq-item">
+                <h3>{{ faq.question }}</h3>
+                <p>{{ faq.answer }}</p>
+              </div>
+            </div>
+          </div>
 
           <!-- Related Posts Section -->
           <div class="related-posts" v-if="relatedPosts && relatedPosts.length > 0">
@@ -273,6 +300,48 @@ const formatDate = (dateString) => {
   margin-bottom: 0.5rem;
 }
 
+/* FAQ Section */
+.faq-section {
+  margin-top: 60px;
+  padding: 40px;
+  background: var(--color-cream);
+  border-radius: 16px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-dark);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faq-item {
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.faq-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* Related Posts */
 .related-posts {
   margin-top: 60px;
@@ -392,6 +461,10 @@ const formatDate = (dateString) => {
 @media (max-width: 768px) {
   .related-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .faq-section {
+    padding: 24px;
   }
 }
 </style>
