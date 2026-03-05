@@ -250,6 +250,10 @@ useHead({
 }
 
 .language-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 32px 24px;
   background: var(--color-cream);
   border-radius: 16px;
