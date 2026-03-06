@@ -40,6 +40,47 @@
     .slide-1 .tagline { font-size: 18px; opacity: 0.9; line-height: 1.5; }
     .slide-1 .location { font-size: 13px; opacity: 0.7; letter-spacing: 3px; text-transform: uppercase; }
     
+    /* Slide 1 Alt - Photo Cover */
+    .slide-1-alt { 
+      position: relative;
+      background: url('/images/volleyball.png') center center;
+      background-size: cover;
+      color: white; 
+    }
+    .slide-1-alt::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.8) 100%);
+    }
+    .slide-1-alt .slide-content {
+      position: relative;
+      z-index: 1;
+      justify-content: flex-end;
+      padding-bottom: 60px;
+    }
+    .slide-1-alt h2 { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 42px; 
+      margin-bottom: 12px; 
+      font-weight: 600; 
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .slide-1-alt .tagline { 
+      font-size: 18px; 
+      opacity: 0.95; 
+      line-height: 1.5; 
+      text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    }
+    .slide-1-alt .location { 
+      margin-top: 20px;
+      font-size: 12px; 
+      opacity: 0.85; 
+      letter-spacing: 3px; 
+      text-transform: uppercase; 
+      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    }
+    
     /* Slide 2 - When */
     .slide-2 { background: #FAF6F0; color: #2d3e2f; }
     .slide-2 h3 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 28px; }
@@ -89,9 +130,22 @@
   <p class="subtitle">Click download under each slide to save as PNG (1080x1350)</p>
   <div class="slides-container">
     
+    <!-- Slide 1 Alt - Photo Cover -->
+    <div class="slide-wrapper">
+      <span class="slide-label">Slide 1 — Cover (Photo)</span>
+      <div class="slide slide-1-alt" id="slide1alt"><div class="slide-content">
+        <div class="content-block">
+          <h2>Weekly Volleyball</h2>
+          <p class="tagline">Thursday sunset games on the farm</p>
+          <p class="location">Mawun Valley Farm</p>
+        </div>
+      </div></div>
+      <button class="download-btn" onclick="downloadSlide('slide1alt', 'volleyball-1-cover-photo')">Download Slide 1 (Photo)</button>
+    </div>
+    
     <!-- Slide 1 - Cover -->
     <div class="slide-wrapper">
-      <span class="slide-label">Slide 1 — Cover</span>
+      <span class="slide-label">Slide 1 — Cover (Blue)</span>
       <div class="slide slide-1" id="slide1"><div class="slide-content">
         <div class="spacer"></div>
         <div class="content-block">
@@ -108,7 +162,7 @@
         </div>
         <div class="spacer"></div>
       </div></div>
-      <button class="download-btn" onclick="downloadSlide('slide1', 'volleyball-1-cover')">Download Slide 1</button>
+      <button class="download-btn" onclick="downloadSlide('slide1', 'volleyball-1-cover-blue')">Download Slide 1 (Blue)</button>
     </div>
 
     <!-- Slide 2 - When -->
