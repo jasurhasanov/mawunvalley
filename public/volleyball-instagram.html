@@ -30,9 +30,6 @@
     .spacer { flex: 1; }
     .content-block { flex-shrink: 0; width: 100%; }
     
-    /* Logo icon */
-    .logo-icon { width: 100px; height: 100px; border-radius: 50%; }
-    
     /* Slide 1 - Cover */
     .slide-1 { background: linear-gradient(160deg, #2196F3 0%, #1565C0 100%); color: white; }
     .slide-1 .emoji { font-size: 70px; }
@@ -40,7 +37,7 @@
     .slide-1 .tagline { font-size: 18px; opacity: 0.9; line-height: 1.5; }
     .slide-1 .location { font-size: 13px; opacity: 0.7; letter-spacing: 3px; text-transform: uppercase; }
     
-    /* Slide 1 Alt - Photo Cover */
+    /* Slide 1 Alt - Photo Cover - Text at top, location badge at bottom */
     .slide-1-alt { 
       position: relative;
       background: url('/images/volleyball.png') center center;
@@ -50,35 +47,51 @@
     .slide-1-alt::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%);
+      top: 0; left: 0; right: 0;
+      height: 45%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    }
+    .slide-1-alt::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 20%;
+      background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
     }
     .slide-1-alt .slide-content {
       position: relative;
       z-index: 1;
-      justify-content: flex-end;
-      padding-bottom: 60px;
+      justify-content: space-between;
+      padding: 40px 30px;
+    }
+    .slide-1-alt .top-text {
+      text-align: center;
     }
     .slide-1-alt h2 { 
       font-family: 'Playfair Display', serif; 
-      font-size: 42px; 
-      margin-bottom: 12px; 
+      font-size: 38px; 
+      margin-bottom: 8px; 
       font-weight: 600; 
-      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+      text-shadow: 0 2px 15px rgba(0,0,0,0.6);
     }
     .slide-1-alt .tagline { 
-      font-size: 18px; 
+      font-size: 16px; 
       opacity: 0.95; 
-      line-height: 1.5; 
-      text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+      line-height: 1.4; 
+      text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+    }
+    .slide-1-alt .bottom-badge {
+      text-align: center;
     }
     .slide-1-alt .location { 
-      margin-top: 20px;
-      font-size: 12px; 
-      opacity: 0.85; 
-      letter-spacing: 3px; 
-      text-transform: uppercase; 
-      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+      display: inline-block;
+      background: rgba(0,0,0,0.4);
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 11px; 
+      letter-spacing: 2px; 
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
     }
     
     /* Slide 2 - When */
@@ -134,10 +147,13 @@
     <div class="slide-wrapper">
       <span class="slide-label">Slide 1 — Cover (Photo)</span>
       <div class="slide slide-1-alt" id="slide1alt"><div class="slide-content">
-        <div class="content-block">
+        <div class="top-text">
           <h2>Weekly Volleyball</h2>
-          <p class="tagline">Thursday sunset games on the farm</p>
-          <p class="location">Mawun Valley Farm</p>
+          <p class="tagline">Thursday sunset games</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="bottom-badge">
+          <span class="location">Mawun Valley Farm</span>
         </div>
       </div></div>
       <button class="download-btn" onclick="downloadSlide('slide1alt', 'volleyball-1-cover-photo')">Download Slide 1 (Photo)</button>
