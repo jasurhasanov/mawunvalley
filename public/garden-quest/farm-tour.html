@@ -300,6 +300,86 @@ body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(-
   .header h1 { font-size: 1.8rem; }
 }
 </style>
+
+/* Editor Mode */
+.edit-mode .tour-point {
+  cursor: grab;
+  border: 2px dashed #ff0 !important;
+}
+.edit-mode .tour-point:active {
+  cursor: grabbing;
+}
+.editor-bar {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 2000;
+  gap: 15px;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.edit-mode .editor-bar { display: flex; }
+.editor-bar button {
+  background: var(--gold);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+}
+.editor-bar button:hover { background: #e8b584; }
+.editor-bar .pos-display {
+  font-family: monospace;
+  background: #444;
+  padding: 5px 10px;
+  border-radius: 4px;
+  min-width: 180px;
+}
+.css-output {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1a1a1a;
+  color: #0f0;
+  padding: 20px;
+  border-radius: 15px;
+  z-index: 3000;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow: auto;
+  font-family: monospace;
+  font-size: 12px;
+  white-space: pre;
+  box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+}
+.css-output.active { display: block; }
+.css-output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+.css-output-header h3 { color: #fff; margin: 0; }
+.css-output-header button { background: #c00; }
+.css-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 2500;
+}
+.css-overlay.active { display: block; }
 </head>
 <body>
 
@@ -398,6 +478,22 @@ body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(-
 <a href="/garden-quest/" class="back-link">🎮 Play Garden Quest Game</a>
 
 <!-- Info Panel -->
+
+<!-- Editor Mode UI -->
+<div class="editor-bar">
+  <span>📍 Editor Mode</span>
+  <span class="pos-display" id="posDisplay">Drag icons to position</span>
+  <button onclick="copyCSS()">📋 Copy CSS</button>
+  <button onclick="location.href=location.pathname">✅ Done</button>
+</div>
+<div class="css-overlay" id="cssOverlay" onclick="closeCSSOutput()"></div>
+<div class="css-output" id="cssOutput">
+  <div class="css-output-header">
+    <h3>📋 Updated CSS Positions</h3>
+    <button onclick="closeCSSOutput()">Close</button>
+  </div>
+  <div id="cssContent"></div>
+</div>
 <div class="info-panel" id="infoPanel">
   <div class="info-header">
     <button class="close-btn" onclick="closePanel()">×</button>
@@ -528,7 +624,105 @@ function closePanel() {
   document.getElementById('infoPanel').classList.remove('active');
   document.querySelectorAll('.tour-point').forEach(p => p.classList.remove('active'));
 }
-</script>
 
+// Editor Mode (add ?edit=true to URL)
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('edit') !== 'true') return;
+  
+  document.body.classList.add('edit-mode');
+  
+  const mapContainer = document.querySelector('.map-container');
+  const posDisplay = document.getElementById('posDisplay');
+  let dragging = null;
+  let offsetX, offsetY;
+  
+  document.querySelectorAll('.tour-point').forEach(point => {
+    point.addEventListener('mousedown', startDrag);
+    point.addEventListener('touchstart', startDrag, { passive: false });
+  });
+  
+  function startDrag(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dragging = this;
+    const rect = mapContainer.getBoundingClientRect();
+    const pointRect = this.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    offsetX = clientX - pointRect.left;
+    offsetY = clientY - pointRect.top;
+  }
+  
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('touchmove', drag, { passive: false });
+  
+  function drag(e) {
+    if (!dragging) return;
+    e.preventDefault();
+    
+    const rect = mapContainer.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    
+    let x = ((clientX - rect.left - offsetX + 14) / rect.width) * 100;
+    let y = ((clientY - rect.top - offsetY + 14) / rect.height) * 100;
+    
+    x = Math.max(0, Math.min(100, x));
+    y = Math.max(0, Math.min(100, y));
+    
+    dragging.style.left = x + '%';
+    dragging.style.top = y + '%';
+    
+    const cls = [...dragging.classList].find(c => c.startsWith('tp-'));
+    posDisplay.textContent = cls + ': ' + y.toFixed(1) + '% / ' + x.toFixed(1) + '%';
+  }
+  
+  document.addEventListener('mouseup', endDrag);
+  document.addEventListener('touchend', endDrag);
+  
+  function endDrag() {
+    dragging = null;
+  }
+})();
+
+function copyCSS() {
+  const points = document.querySelectorAll('.tour-point');
+  let css = '/* Updated positions */\n';
+  
+  points.forEach(p => {
+    const cls = [...p.classList].find(c => c.startsWith('tp-'));
+    if (!cls) return;
+    const top = p.style.top || getComputedStyle(p).top;
+    const left = p.style.left || getComputedStyle(p).left;
+    const container = document.querySelector('.map-container');
+    const rect = container.getBoundingClientRect();
+    
+    let topPct, leftPct;
+    if (p.style.top) {
+      topPct = p.style.top;
+      leftPct = p.style.left;
+    } else {
+      topPct = (parseFloat(top) / rect.height * 100).toFixed(1) + '%';
+      leftPct = (parseFloat(left) / rect.width * 100).toFixed(1) + '%';
+    }
+    
+    css += '.' + cls + ' { top: ' + topPct + '; left: ' + leftPct + '; }\n';
+  });
+  
+  document.getElementById('cssContent').textContent = css;
+  document.getElementById('cssOutput').classList.add('active');
+  document.getElementById('cssOverlay').classList.add('active');
+  
+  navigator.clipboard.writeText(css).then(() => {
+    alert('CSS copied to clipboard!');
+  });
+}
+
+function closeCSSOutput() {
+  document.getElementById('cssOutput').classList.remove('active');
+  document.getElementById('cssOverlay').classList.remove('active');
+}
+</script>
 </body>
 </html>
