@@ -3,175 +3,587 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Garden Quest — Mawun Valley</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Garden Quest — Mawun Valley Adventure</title>
+<meta name="description" content="An immersive botanical adventure through Mawun Valley's living garden. Pick up your quest journal at reception and explore 10 checkpoints.">
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#FAF8F5;--sage:#7D8B6F;--sage-light:#A8B89A;--earth:#5C4D3C;--earth-light:#8B7355;--gold:#d4a574;--terracotta:#c17f59;--white:#FFF;--success:#4CAF50;--error:#e57373}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);line-height:1.7;min-height:100vh}
-.header{background:linear-gradient(135deg,var(--sage),var(--sage-light));padding:40px 20px;text-align:center;color:var(--white)}
-.header h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;margin-bottom:10px}
-.header p{opacity:0.9;font-size:1rem}
-.difficulty-bar{display:flex;justify-content:center;gap:10px;padding:20px;background:var(--white);border-bottom:1px solid rgba(125,139,111,0.2);flex-wrap:wrap}
-.diff-btn{padding:10px 25px;border:2px solid var(--sage);background:transparent;color:var(--sage);border-radius:30px;cursor:pointer;font-family:'Outfit',sans-serif;font-size:0.9rem;transition:all 0.3s}
-.diff-btn:hover,.diff-btn.active{background:var(--sage);color:var(--white)}
-.diff-btn.hard{border-color:var(--gold);color:var(--gold)}
-.diff-btn.hard:hover,.diff-btn.hard.active{background:var(--gold);color:var(--white)}
-.diff-btn.impossible{border-color:var(--terracotta);color:var(--terracotta)}
-.diff-btn.impossible:hover,.diff-btn.impossible.active{background:var(--terracotta);color:var(--white)}
-.progress-section{padding:20px;background:var(--white)}
-.progress-info{display:flex;justify-content:space-between;margin-bottom:10px;font-size:0.9rem;color:var(--earth-light)}
-.progress-bar{height:8px;background:rgba(125,139,111,0.2);border-radius:10px;overflow:hidden}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--sage),var(--sage-light));border-radius:10px;transition:width 0.5s ease;width:0%}
-.map-section{padding:20px;background:var(--cream)}
-.map-container{position:relative;max-width:100%;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(92,77,60,0.15)}
-.map-container img{width:100%;display:block}
-.checkpoint{position:absolute;width:40px;height:40px;border-radius:50%;background:var(--sage);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.3s;box-shadow:0 2px 10px rgba(0,0,0,0.3);border:3px solid var(--white);z-index:10}
-.checkpoint:hover{transform:scale(1.2)}
-.checkpoint.locked{background:#999;cursor:not-allowed}
-.checkpoint.completed{background:var(--success)}
-.checkpoint.current{background:var(--gold);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(212,165,116,0.7)}50%{box-shadow:0 0 0 15px rgba(212,165,116,0)}}
-.cp-1{top:88%;left:40%}.cp-2{top:68%;left:12%}.cp-3{top:55%;left:22%}.cp-4{top:50%;left:35%}.cp-5{top:42%;left:25%}.cp-6{top:38%;left:35%}.cp-7{top:28%;left:55%}.cp-8{top:38%;left:60%}.cp-9{top:48%;left:55%}.cp-10{top:78%;left:75%}
-.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;visibility:hidden;transition:all 0.3s;padding:20px}
-.modal-overlay.active{opacity:1;visibility:visible}
-.modal{background:var(--white);border-radius:20px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(0.9);transition:transform 0.3s}
-.modal-overlay.active .modal{transform:scale(1)}
-.modal-header{background:linear-gradient(135deg,var(--sage),var(--sage-light));padding:25px;color:var(--white);text-align:center;position:relative}
-.modal-header .checkpoint-num{font-size:3rem;margin-bottom:10px}
-.modal-header h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem}
-.modal-header p{opacity:0.9;font-size:0.9rem;margin-top:5px}
-.modal-body{padding:30px}
-.challenge-intro{text-align:center;margin-bottom:25px;color:var(--earth-light);font-style:italic}
-.question{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--earth);margin-bottom:25px;text-align:center;line-height:1.5}
-.options{display:flex;flex-direction:column;gap:12px}
-.option{padding:15px 20px;border:2px solid rgba(125,139,111,0.3);border-radius:12px;cursor:pointer;transition:all 0.3s;text-align:left;background:var(--white)}
-.option:hover{border-color:var(--sage);background:rgba(125,139,111,0.05)}
-.option.selected{border-color:var(--sage);background:rgba(125,139,111,0.1)}
-.option.correct{border-color:var(--success);background:rgba(76,175,80,0.1)}
-.option.wrong{border-color:var(--error);background:rgba(229,115,115,0.1)}
-.submit-btn{width:100%;padding:15px;background:var(--sage);color:var(--white);border:none;border-radius:12px;font-size:1rem;font-family:'Outfit',sans-serif;cursor:pointer;margin-top:20px;transition:all 0.3s}
-.submit-btn:hover{background:var(--earth)}
-.submit-btn:disabled{background:#ccc;cursor:not-allowed}
-.result-message{text-align:center;padding:20px;border-radius:12px;margin-top:20px;display:none}
-.result-message.success{background:rgba(76,175,80,0.1);color:var(--success);display:block}
-.result-message.error{background:rgba(229,115,115,0.1);color:var(--error);display:block}
-.result-message h3{font-size:1.2rem;margin-bottom:10px}
-.fun-fact{background:rgba(212,165,116,0.1);border-left:4px solid var(--gold);padding:15px 20px;margin-top:20px;border-radius:0 12px 12px 0}
-.fun-fact h4{color:var(--gold);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
-.fun-fact p{color:var(--earth);font-size:0.95rem}
-.close-btn{position:absolute;top:15px;right:15px;background:rgba(255,255,255,0.2);border:none;width:35px;height:35px;border-radius:50%;color:var(--white);font-size:1.2rem;cursor:pointer}
-.next-btn{width:100%;padding:15px;background:var(--gold);color:var(--white);border:none;border-radius:12px;font-size:1rem;font-family:'Outfit',sans-serif;cursor:pointer;margin-top:15px;display:none}
-.next-btn.show{display:block}
-.reward-content{text-align:center;padding:40px}
-.reward-content .trophy{font-size:5rem;margin-bottom:20px}
-.reward-content h2{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--earth);margin-bottom:15px}
-.reward-content p{color:var(--earth-light);margin-bottom:10px}
-.score-display{font-size:2.5rem;color:var(--gold);font-weight:600;margin:20px 0}
-.badge-container{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin:25px 0}
-.badge{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;background:linear-gradient(135deg,var(--gold),var(--terracotta));box-shadow:0 4px 15px rgba(212,165,116,0.4)}
-.legend{padding:20px;background:var(--white);border-top:1px solid rgba(125,139,111,0.2)}
-.legend h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--earth);margin-bottom:15px;text-align:center}
-.legend-items{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-.legend-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--earth-light)}
-.legend-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--white);box-shadow:0 1px 3px rgba(0,0,0,0.2)}
-.legend-dot.locked{background:#999}.legend-dot.current{background:var(--gold)}.legend-dot.completed{background:var(--success)}
-.instructions{padding:30px 20px;background:var(--white);text-align:center;border-bottom:1px solid rgba(125,139,111,0.2)}
-.instructions h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--earth);margin-bottom:15px}
-.instructions p{color:var(--earth-light);max-width:600px;margin:0 auto 20px;font-size:0.95rem}
-.start-btn{padding:15px 40px;background:var(--gold);color:var(--white);border:none;border-radius:30px;font-size:1.1rem;font-family:'Outfit',sans-serif;cursor:pointer;transition:all 0.3s}
-.start-btn:hover{background:var(--terracotta);transform:translateY(-2px)}
-.journal-links{padding:20px;background:var(--cream);text-align:center}
-.journal-links h3{font-family:'Cormorant Garamond',serif;color:var(--earth);margin-bottom:15px}
-.journal-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.journal-btn{padding:10px 20px;border-radius:20px;text-decoration:none;font-size:0.9rem;transition:all 0.3s}
-.journal-btn.easy{background:var(--sage);color:white}
-.journal-btn.hard{background:var(--gold);color:white}
-.journal-btn.impossible{background:var(--terracotta);color:white}
-.journal-btn:hover{transform:translateY(-2px);opacity:0.9}
-@media(max-width:600px){.header h1{font-size:2rem}.checkpoint{width:32px;height:32px;font-size:0.85rem}.modal-header .checkpoint-num{font-size:2.5rem}}
+:root {
+  --cream: #FAF8F5;
+  --sage: #7D8B6F;
+  --sage-light: #A8B89A;
+  --earth: #2d3a2d;
+  --earth-light: #8B7355;
+  --gold: #d4a574;
+  --terracotta: #c17f59;
+  --white: #FFF;
+  --dark-green: #1a2a1a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--earth); line-height: 1.7; }
+
+/* Site Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+.site-logo img { height: 45px; }
+.site-nav { display: flex; gap: 30px; align-items: center; }
+.site-nav a { color: var(--earth); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+.site-nav a:hover { color: var(--gold); }
+.nav-cta { background: var(--gold) !important; color: white !important; padding: 10px 20px; border-radius: 25px; }
+.nav-cta:hover { background: var(--terracotta) !important; }
+.mobile-menu { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+.mobile-menu span { display: block; width: 25px; height: 2px; background: var(--earth); margin: 5px 0; }
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--sage) 0%, var(--sage-light) 50%, var(--gold) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 20px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="50" opacity="0.05">🌿</text></svg>');
+  background-size: 80px;
+  opacity: 0.3;
+}
+.hero-content { position: relative; z-index: 1; max-width: 800px; }
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  color: var(--white);
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: white;
+  padding: 18px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+.hero-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(0,0,0,0.3); background: #128C7E; }
+.hero-cta svg { width: 24px; height: 24px; fill: currentColor; }
+.scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* Section */
+.section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: var(--earth);
+  margin-bottom: 15px;
+}
+.section-header p {
+  color: var(--earth-light);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* How It Works */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.step {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 30px rgba(92,77,60,0.08);
+  transition: all 0.3s;
+}
+.step:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(92,77,60,0.12); }
+.step-num {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--sage), var(--sage-light));
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 auto 20px;
+}
+.step h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--earth);
+  margin-bottom: 10px;
+}
+.step p { color: var(--earth-light); font-size: 0.95rem; }
+
+/* Journal Preview */
+.journal-preview {
+  background: var(--white);
+  padding: 80px 20px;
+}
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.preview-card {
+  background: linear-gradient(135deg, var(--cream), var(--white));
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(92,77,60,0.1);
+  transition: all 0.3s;
+}
+.preview-card:hover { transform: translateY(-5px) rotate(-1deg); }
+.preview-card.featured { transform: scale(1.05); }
+.preview-card.featured:hover { transform: scale(1.05) translateY(-5px); }
+.preview-header { padding: 30px; text-align: center; }
+.preview-header.easy { background: linear-gradient(135deg, var(--sage), var(--sage-light)); }
+.preview-header.hard { background: linear-gradient(135deg, var(--gold), #e8c9a8); }
+.preview-header.impossible { background: linear-gradient(135deg, var(--terracotta), #e65c00); }
+.preview-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: var(--white);
+  margin-bottom: 5px;
+}
+.preview-header p { color: rgba(255,255,255,0.9); font-size: 0.9rem; }
+.preview-body { padding: 25px; }
+.preview-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(125,139,111,0.1);
+  font-size: 0.9rem;
+  color: var(--earth-light);
+}
+.preview-feature:last-child { border-bottom: none; }
+.preview-feature span { font-size: 1.2rem; }
+
+/* Map Section */
+.map-preview {
+  background: linear-gradient(135deg, var(--sage), var(--sage-light));
+  padding: 80px 20px;
+  text-align: center;
+}
+.map-preview h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 15px;
+}
+.map-preview > p {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+.map-container {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.map-container img { width: 100%; display: block; }
+
+.checkpoints-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto 0;
+}
+.checkpoint-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+  color: var(--white);
+}
+.checkpoint-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.checkpoint-card p { font-size: 0.85rem; opacity: 0.8; }
+
+/* CTA Section */
+.cta-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: var(--cream);
+}
+.cta-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: var(--earth);
+  margin-bottom: 20px;
+}
+.cta-section p {
+  color: var(--earth-light);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: var(--white);
+  padding: 18px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+.cta-button:hover { background: #128C7E; transform: translateY(-3px); }
+.cta-button svg { width: 24px; height: 24px; fill: currentColor; }
+
+/* Site Footer */
+.site-footer {
+  background: linear-gradient(135deg, var(--earth) 0%, var(--dark-green) 100%);
+  color: rgba(255,255,255,0.85);
+  padding: 60px 20px 30px;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand img { height: 50px; filter: brightness(0) invert(1); margin-bottom: 15px; }
+.footer-brand p { font-size: 0.9rem; opacity: 0.8; line-height: 1.6; }
+.footer-links h4 { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+.footer-links ul { list-style: none; }
+.footer-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; display: block; padding: 5px 0; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.7; }
+
+/* Testimonial */
+.testimonial {
+  background: var(--white);
+  padding: 60px 20px;
+  text-align: center;
+}
+.testimonial blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--earth);
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+.testimonial cite { color: var(--sage); font-size: 1rem; }
+
+/* Explore Link */
+.explore-section {
+  background: var(--cream);
+  padding: 60px 20px;
+  text-align: center;
+}
+.explore-section h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--earth);
+  margin-bottom: 15px;
+}
+.explore-section p { color: var(--earth-light); margin-bottom: 20px; }
+.explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--sage);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.explore-btn:hover { background: var(--earth); transform: translateY(-2px); }
+
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .mobile-menu { display: block; }
+  .hero h1 { font-size: 2.5rem; }
+  .section { padding: 50px 20px; }
+  .preview-card.featured { transform: none; }
+  .footer-content { grid-template-columns: 1fr; text-align: center; }
+}
 </style>
 </head>
 <body>
-<header class="header"><h1>🌿 Garden Quest</h1><p>Explore Mawun Valley's Living Garden</p></header>
-<div class="difficulty-bar">
-<button class="diff-btn active" data-diff="easy">🌱 Easy</button>
-<button class="diff-btn hard" data-diff="hard">🌿 Hard</button>
-<button class="diff-btn impossible" data-diff="impossible">🌋 Impossible</button>
-</div>
-<div class="progress-section"><div class="progress-info"><span>Progress: <span id="completedCount">0</span>/10 checkpoints</span><span>Score: <span id="scoreDisplay">0</span> points</span></div><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div>
-<div class="instructions" id="instructions"><h2>Welcome, Explorer! 🗺️</h2><p>Walk through Mawun Valley's garden and complete challenges at each checkpoint. Answer questions about our plants to unlock the next location!</p><button class="start-btn" onclick="startQuest()">Begin Your Quest</button></div>
-<div class="journal-links"><h3>📓 Printable Journals</h3><div class="journal-btns"><a href="journal-easy.html" class="journal-btn easy">🌱 Easy</a><a href="journal-hard.html" class="journal-btn hard">🌿 Hard</a><a href="journal-impossible.html" class="journal-btn impossible">🌋 Impossible</a></div></div>
-<div class="map-section" id="mapSection" style="display:none"><div class="map-container"><img src="map.png" alt="Mawun Valley Garden Map">
-<div class="checkpoint cp-1 current" data-cp="1" onclick="openChallenge(1)">1</div>
-<div class="checkpoint cp-2 locked" data-cp="2" onclick="openChallenge(2)">2</div>
-<div class="checkpoint cp-3 locked" data-cp="3" onclick="openChallenge(3)">3</div>
-<div class="checkpoint cp-4 locked" data-cp="4" onclick="openChallenge(4)">4</div>
-<div class="checkpoint cp-5 locked" data-cp="5" onclick="openChallenge(5)">5</div>
-<div class="checkpoint cp-6 locked" data-cp="6" onclick="openChallenge(6)">6</div>
-<div class="checkpoint cp-7 locked" data-cp="7" onclick="openChallenge(7)">7</div>
-<div class="checkpoint cp-8 locked" data-cp="8" onclick="openChallenge(8)">8</div>
-<div class="checkpoint cp-9 locked" data-cp="9" onclick="openChallenge(9)">9</div>
-<div class="checkpoint cp-10 locked" data-cp="10" onclick="openChallenge(10)">🏆</div>
-</div></div>
-<div class="legend" id="legend" style="display:none"><h3>Map Legend</h3><div class="legend-items"><div class="legend-item"><div class="legend-dot current"></div> Current</div><div class="legend-item"><div class="legend-dot completed"></div> Completed</div><div class="legend-item"><div class="legend-dot locked"></div> Locked</div></div></div>
-<div class="modal-overlay" id="modalOverlay"><div class="modal"><div class="modal-header"><button class="close-btn" onclick="closeModal()">×</button><div class="checkpoint-num" id="modalCheckpointNum">1</div><h2 id="modalTitle">Reception</h2><p id="modalSubtitle">Start your journey here</p></div><div class="modal-body"><p class="challenge-intro" id="challengeIntro">Walk to this location and answer the challenge:</p><p class="question" id="questionText">Loading...</p><div class="options" id="optionsContainer"></div><button class="submit-btn" id="submitBtn" onclick="submitAnswer()" disabled>Check Answer</button><div class="result-message" id="resultMessage"><h3 id="resultTitle"></h3><p id="resultText"></p></div><div class="fun-fact" id="funFact" style="display:none"><h4>🌱 Did You Know?</h4><p id="funFactText"></p></div><button class="next-btn" id="nextBtn" onclick="nextCheckpoint()">Continue →</button></div></div></div>
-<div class="modal-overlay" id="rewardOverlay"><div class="modal"><div class="reward-content"><div class="trophy">🏆</div><h2>Quest Complete!</h2><p>You explored all of Mawun Valley's Garden!</p><div class="score-display" id="finalScore">0 Points</div><div class="badge-container" id="badges"></div><p id="rankMessage">Garden Master!</p><button class="start-btn" onclick="resetQuest()">Play Again</button></div></div></div>
-<script>
-let currentCheckpoint=1,completedCheckpoints=[],score=0,currentDifficulty='easy',selectedOption=null;
-const points={easy:10,hard:25,impossible:50};
-const checkpoints={
-1:{name:"Reception",subtitle:"Start your journey",intro:"Welcome! Let's test what you know:",
-easy:{question:"Which fruit is known as the 'King of Tropical Fruits'?",options:["Banana","Mango","Papaya","Coconut"],correct:1,fact:"Mango trees in Lombok can live for over 100 years!"},
-hard:{question:"The mango originated from which region?",options:["Central America","Southeast Asia","South Asia","Africa"],correct:2,fact:"Mangoes have been cultivated in South Asia for over 4,000 years."},
-impossible:{question:"What enzyme in papaya is used for meat tenderization?",options:["Bromelain","Papain","Ficin","Actinidin"],correct:1,fact:"Papain is so effective that workers must wear gloves!"}},
-2:{name:"Herbal Remedies",subtitle:"Traditional healing",intro:"This garden holds centuries of wisdom:",
-easy:{question:"Which herb helps with digestion?",options:["Rosemary","Ginger","Basil","Mint"],correct:1,fact:"Ginger has been used in Indonesian medicine for 2,500 years!"},
-hard:{question:"What compound in ginger gives it anti-inflammatory properties?",options:["Capsaicin","Curcumin","Gingerol","Allicin"],correct:2,fact:"Gingerol is similar to capsaicin and piperine!"},
-impossible:{question:"Which Indonesian herbal medicine system uses these plants?",options:["Ayurveda","Jamu","Kampo","Siddha"],correct:1,fact:"Jamu dates back to the 8th century Mataram Kingdom."}},
-3:{name:"Banana Garden",subtitle:"Dozens of varieties",intro:"Indonesia has incredible banana diversity:",
-easy:{question:"What mineral are bananas high in?",options:["Iron","Calcium","Potassium","Zinc"],correct:2,fact:"One banana has 400mg potassium — 9% daily needs!"},
-hard:{question:"How many times does a banana plant fruit before dying?",options:["Once","Twice","Three times","Continuously"],correct:0,fact:"Each plant fruits once, then dies for its 'pups'!"},
-impossible:{question:"The banana plant is technically a:",options:["Shrub","Vine","Herbaceous perennial","Grass"],correct:2,fact:"The 'trunk' is a pseudostem of packed leaf sheaths!"}},
-4:{name:"Vegetable Garden",subtitle:"Soil to table",intro:"Fresh vegetables for Noni's kitchen:",
-easy:{question:"Which vegetable is technically a fruit?",options:["Carrot","Tomato","Onion","Garlic"],correct:1,fact:"The tomato debate went to the US Supreme Court in 1893!"},
-hard:{question:"Garlic's smell comes from sulfur compounds released when:",options:["It ripens","Exposed to sunlight","Cells are damaged","It's heated"],correct:2,fact:"Alliinase converts alliin into allicin when cells are crushed!"},
-impossible:{question:"Scoville range of Lombok's hottest chili?",options:["5,000-10,000 SHU","30,000-50,000 SHU","100,000-350,000 SHU","1,000,000+ SHU"],correct:2,fact:"'Lombok' means 'chili' in Javanese and Sasak!"}},
-5:{name:"Pineapple Garden",subtitle:"Sweet treasures",intro:"Spiky fruits with incredible secrets:",
-easy:{question:"How long to grow a pineapple?",options:["3 months","6 months","18-24 months","5 years"],correct:2,fact:"Each plant produces only ONE fruit at a time!"},
-hard:{question:"What enzyme in pineapple tenderizes meat?",options:["Papain","Bromelain","Rennet","Lipase"],correct:1,fact:"Pineapple workers often lose their fingerprints!"},
-impossible:{question:"The pineapple is botanically classified as:",options:["Single fruit","Multiple fruit","Aggregate fruit","Composite fruit"],correct:1,fact:"A pineapple is 100-200 individual flowers fused together!"}},
-6:{name:"Strawberry Fields",subtitle:"Tropical berries",intro:"Yes, strawberries grow in Lombok!",
-easy:{question:"Where are strawberry seeds located?",options:["Inside","On the outside","In the stem","In leaves"],correct:1,fact:"Those dots are individual fruits called achenes!"},
-hard:{question:"Strawberries belong to which plant family?",options:["Nightshade","Citrus","Rose","Mint"],correct:2,fact:"Strawberries are cousins of roses, apples, and almonds!"},
-impossible:{question:"Strawberries grow from which part of the flower?",options:["The ovary","The receptacle","The stamen","The sepal"],correct:1,fact:"The red part is the swollen receptacle!"}},
-7:{name:"Citrus Garden",subtitle:"Lemon, lime, orange",intro:"Citrus brings sunshine and vitamin C:",
-easy:{question:"What vitamin are citrus fruits famous for?",options:["Vitamin A","Vitamin B","Vitamin C","Vitamin D"],correct:2,fact:"One orange provides 100% daily vitamin C!"},
-hard:{question:"Oranges were first cultivated in:",options:["Mediterranean","Southeast Asia","Central America","Africa"],correct:1,fact:"'Orange' comes from Sanskrit 'nāranga'!"},
-impossible:{question:"Citrus segment walls uniquely have:",options:["Edibility","Pectin","Juice vesicles","Photosynthesis"],correct:2,fact:"Juice comes from tiny 'juice vesicles'!"}},
-8:{name:"Mixed Fruits",subtitle:"Tropical abundance",intro:"Dragon fruit, rambutan, passion fruit:",
-easy:{question:"When does dragon fruit bloom?",options:["Morning","Afternoon","Night","All day"],correct:2,fact:"Dragon fruit flowers bloom for only ONE night!"},
-hard:{question:"What does 'rambutan' mean?",options:["Red ball","Sweet fruit","Hairy","Tropical gem"],correct:2,fact:"'Rambut' means 'hair' in Indonesian!"},
-impossible:{question:"Passion fruit is named after:",options:["Its taste","Love mythology","Christian Passion","An explorer"],correct:2,fact:"Missionaries saw crucifixion symbolism in the flower!"}},
-9:{name:"Jabuticaba Garden",subtitle:"Brazilian treasure",intro:"One of the world's strangest fruits:",
-easy:{question:"Where does jabuticaba grow on the tree?",options:["On branches","Underground","On the trunk","From leaves"],correct:2,fact:"Jabuticaba grows directly from the trunk!"},
-hard:{question:"Jabuticaba is native to:",options:["Indonesia","Thailand","Brazil","Mexico"],correct:2,fact:"This fruit ferments within 3-4 days of harvest!"},
-impossible:{question:"Fruits growing on trunks is called:",options:["Epiphytism","Cauliflory","Vivipary","Parthenocarpy"],correct:1,fact:"Cauliflory evolved for ground-dwelling animals!"}},
-10:{name:"Flower Jungle",subtitle:"The Finish Line 🏆",intro:"You made it to the final checkpoint!",
-easy:{question:"Which flower is used for cooking AND pest control?",options:["Rose","Marigold","Orchid","Hibiscus"],correct:1,fact:"Marigolds contain pyrethrin, a natural insecticide!"},
-hard:{question:"What compound in lavender is calming?",options:["Caffeine","Linalool","Menthol","Thymol"],correct:1,fact:"Linalool affects the same receptors as anxiety meds!"},
-impossible:{question:"The 'Flower Jungle' reflects which principle?",options:["Monoculture","Companion planting","Hydroponics","Vertical farming"],correct:1,fact:"Companion planting mimics natural ecosystems!"}}
-};
-document.querySelectorAll('.diff-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.diff-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');currentDifficulty=btn.dataset.diff;});});
-function startQuest(){document.getElementById('instructions').style.display='none';document.getElementById('mapSection').style.display='block';document.getElementById('legend').style.display='block';}
-function openChallenge(cp){const checkpoint=document.querySelector('[data-cp="'+cp+'"]');if(checkpoint.classList.contains('locked'))return;const data=checkpoints[cp];const diffData=data[currentDifficulty];document.getElementById('modalCheckpointNum').textContent=cp===10?'🏆':cp;document.getElementById('modalTitle').textContent=data.name;document.getElementById('modalSubtitle').textContent=data.subtitle;document.getElementById('challengeIntro').textContent=data.intro;document.getElementById('questionText').textContent=diffData.question;selectedOption=null;document.getElementById('submitBtn').disabled=true;document.getElementById('submitBtn').style.display='block';document.getElementById('resultMessage').className='result-message';document.getElementById('funFact').style.display='none';document.getElementById('nextBtn').classList.remove('show');const container=document.getElementById('optionsContainer');container.innerHTML='';diffData.options.forEach((opt,i)=>{const div=document.createElement('div');div.className='option';div.textContent=opt;div.onclick=()=>selectOption(i,div);container.appendChild(div);});document.getElementById('modalOverlay').classList.add('active');}
-function selectOption(index,element){document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));element.classList.add('selected');selectedOption=index;document.getElementById('submitBtn').disabled=false;}
-function submitAnswer(){const cp=parseInt(document.getElementById('modalCheckpointNum').textContent)||10;const diffData=checkpoints[cp][currentDifficulty];const correct=selectedOption===diffData.correct;const options=document.querySelectorAll('.option');options.forEach((o,i)=>{o.style.pointerEvents='none';if(i===diffData.correct)o.classList.add('correct');if(i===selectedOption&&!correct)o.classList.add('wrong');});const resultMsg=document.getElementById('resultMessage');const resultTitle=document.getElementById('resultTitle');const resultText=document.getElementById('resultText');if(correct){resultMsg.className='result-message success';resultTitle.textContent='🎉 Correct!';resultText.textContent='You earned '+points[currentDifficulty]+' points!';score+=points[currentDifficulty];if(!completedCheckpoints.includes(cp)){completedCheckpoints.push(cp);const checkpoint=document.querySelector('[data-cp="'+cp+'"]');checkpoint.classList.remove('current');checkpoint.classList.add('completed');if(cp<10){const nextCp=document.querySelector('[data-cp="'+(cp+1)+'"]');nextCp.classList.remove('locked');nextCp.classList.add('current');currentCheckpoint=cp+1;}}}else{resultMsg.className='result-message error';resultTitle.textContent='❌ Not quite!';resultText.textContent='Correct answer: '+diffData.options[diffData.correct];}document.getElementById('funFactText').textContent=diffData.fact;document.getElementById('funFact').style.display='block';document.getElementById('submitBtn').style.display='none';document.getElementById('nextBtn').classList.add('show');document.getElementById('nextBtn').textContent=cp===10?'See Results! 🏆':'Continue →';updateProgress();}
-function nextCheckpoint(){closeModal();if(completedCheckpoints.length===10)showReward();}
-function closeModal(){document.getElementById('modalOverlay').classList.remove('active');}
-function updateProgress(){document.getElementById('completedCount').textContent=completedCheckpoints.length;document.getElementById('scoreDisplay').textContent=score;document.getElementById('progressFill').style.width=(completedCheckpoints.length*10)+'%';}
-function showReward(){document.getElementById('finalScore').textContent=score+' Points';const badgesContainer=document.getElementById('badges');badgesContainer.innerHTML='';const badges=['🌱','🌿','🌳'];if(score>=100)badges.push('⭐');if(score>=200)badges.push('🏅');if(score>=400)badges.push('👑');badges.forEach(b=>{const div=document.createElement('div');div.className='badge';div.textContent=b;badgesContainer.appendChild(div);});let rank='Garden Explorer';if(score>=100)rank='Plant Enthusiast';if(score>=200)rank='Botanical Scholar';if(score>=350)rank='Nature Master';if(score>=500)rank='Garden Legend!';document.getElementById('rankMessage').textContent='You are a '+rank+'!';document.getElementById('rewardOverlay').classList.add('active');}
-function resetQuest(){currentCheckpoint=1;completedCheckpoints=[];score=0;document.querySelectorAll('.checkpoint').forEach((cp,i)=>{cp.classList.remove('completed','current','locked');if(i===0)cp.classList.add('current');else cp.classList.add('locked');});updateProgress();document.getElementById('rewardOverlay').classList.remove('active');document.getElementById('instructions').style.display='block';document.getElementById('mapSection').style.display='none';document.getElementById('legend').style.display='none';}
-</script>
+
+<!-- Site Header -->
+<header class="site-header">
+  <a href="https://mawunvalley.com" class="site-logo">
+    <img src="/images/logo.png" alt="Mawun Valley Farm">
+  </a>
+  <nav class="site-nav">
+    <a href="https://mawunvalley.com">Home</a>
+    <a href="https://mawunvalley.com/stay-contribute">Stay</a>
+    <a href="https://mawunvalley.com/nonis">Noni's</a>
+    <a href="https://mawunvalley.com/little-roots">Little Roots</a>
+    <a href="farm-tour.html">Farm Tour</a>
+    <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20visit%20Mawun%20Valley." class="nav-cta">Book Visit</a>
+  </nav>
+  <button class="mobile-menu" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🌿 An Immersive Garden Experience</div>
+    <h1>Garden Quest</h1>
+    <p class="hero-subtitle">Explore Mawun Valley's living garden through an adventure of discovery, botanical trivia, and hidden treasures. Available exclusively at the farm.</p>
+    <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20visit%20Mawun%20Valley%20and%20play%20Garden%20Quest!" class="hero-cta">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>Book Your Visit</span>
+    </a>
+  </div>
+  <div class="scroll-hint">↓ Discover the adventure</div>
+</section>
+
+<!-- How It Works -->
+<section class="section">
+  <div class="section-header">
+    <h2>How It Works</h2>
+    <p>A self-guided botanical adventure through our tropical garden</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Check In</h3>
+      <p>Pick up your Quest Journal at Reception when you arrive at Mawun Valley</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Choose Your Challenge</h3>
+      <p>Easy, Hard, or Impossible — select the difficulty that matches your botanical knowledge</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Explore & Discover</h3>
+      <p>Walk through 10 garden checkpoints, answer challenges, and learn amazing plant facts</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Claim Your Badge</h3>
+      <p>Complete all checkpoints and receive your Garden Explorer stamp at Reception</p>
+    </div>
+  </div>
+</section>
+
+<!-- Journal Preview -->
+<section class="journal-preview">
+  <div class="section-header">
+    <h2>Choose Your Difficulty</h2>
+    <p>Three beautifully designed quest journals, each with unique challenges</p>
+  </div>
+  <div class="preview-grid">
+    <div class="preview-card">
+      <div class="preview-header easy">
+        <h3>🌱 Easy</h3>
+        <p>Perfect for families</p>
+      </div>
+      <div class="preview-body">
+        <div class="preview-feature"><span>✓</span> Fun plant identification</div>
+        <div class="preview-feature"><span>✓</span> Simple trivia questions</div>
+        <div class="preview-feature"><span>✓</span> 10 points per checkpoint</div>
+        <div class="preview-feature"><span>✓</span> Kid-friendly facts</div>
+      </div>
+    </div>
+    <div class="preview-card featured">
+      <div class="preview-header hard">
+        <h3>🌿 Hard</h3>
+        <p>For plant enthusiasts</p>
+      </div>
+      <div class="preview-body">
+        <div class="preview-feature"><span>✓</span> Botanical origins & history</div>
+        <div class="preview-feature"><span>✓</span> Plant science questions</div>
+        <div class="preview-feature"><span>✓</span> 25 points per checkpoint</div>
+        <div class="preview-feature"><span>✓</span> Deep-dive fun facts</div>
+      </div>
+    </div>
+    <div class="preview-card">
+      <div class="preview-header impossible">
+        <h3>🌋 Impossible</h3>
+        <p>Expert botanists only</p>
+      </div>
+      <div class="preview-body">
+        <div class="preview-feature"><span>✓</span> PhD-level challenges</div>
+        <div class="preview-feature"><span>✓</span> Scientific terminology</div>
+        <div class="preview-feature"><span>✓</span> 50 points per checkpoint</div>
+        <div class="preview-feature"><span>✓</span> Legendary status awaits</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-preview">
+  <h2>Your Quest Awaits</h2>
+  <p>10 checkpoints across Mawun Valley's living garden</p>
+  <div class="map-container">
+    <img src="map.png" alt="Mawun Valley Garden Map">
+  </div>
+  <div class="checkpoints-grid">
+    <div class="checkpoint-card"><h4>1. Reception</h4><p>Begin your journey</p></div>
+    <div class="checkpoint-card"><h4>2. Herbal Remedies</h4><p>Traditional healing plants</p></div>
+    <div class="checkpoint-card"><h4>3. Banana Garden</h4><p>Dozens of varieties</p></div>
+    <div class="checkpoint-card"><h4>4. Vegetable Garden</h4><p>From soil to table</p></div>
+    <div class="checkpoint-card"><h4>5. Pineapple Garden</h4><p>Sweet treasures</p></div>
+    <div class="checkpoint-card"><h4>6. Strawberry Fields</h4><p>Tropical berries</p></div>
+    <div class="checkpoint-card"><h4>7. Citrus Garden</h4><p>Lemon, lime, orange</p></div>
+    <div class="checkpoint-card"><h4>8. Mixed Fruits</h4><p>Tropical abundance</p></div>
+    <div class="checkpoint-card"><h4>9. Jabuticaba Garden</h4><p>Brazilian treasure</p></div>
+    <div class="checkpoint-card"><h4>🏆 Flower Jungle</h4><p>The finish line!</p></div>
+  </div>
+</section>
+
+<!-- Explore Virtual Tour -->
+<section class="explore-section">
+  <h3>🗺️ Explore the Farm Online</h3>
+  <p>Can't visit yet? Take a virtual tour of our entire farm with our interactive map</p>
+  <a href="farm-tour.html" class="explore-btn">
+    <span>Virtual Farm Tour</span>
+    <span>→</span>
+  </a>
+</section>
+
+<!-- Testimonial -->
+<section class="testimonial">
+  <blockquote>"The Garden Quest turned our farm visit into an unforgettable adventure. My kids learned so much about plants while having a blast!"</blockquote>
+  <cite>— Happy Guest, Mawun Valley</cite>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <h2>Ready for Your Adventure?</h2>
+  <p>Garden Quest is available exclusively at Mawun Valley. Message us on WhatsApp to plan your visit and pick up your quest journal at Reception.</p>
+  <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20visit%20Mawun%20Valley%20and%20play%20Garden%20Quest!" class="cta-button">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>Book Your Visit on WhatsApp</span>
+  </a>
+</section>
+
+<!-- Site Footer -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="/images/logo.png" alt="Mawun Valley Farm">
+      <p>Slow Down, Connect Deeply.</p>
+      <p>A family-run permaculture farm in South Lombok, Indonesia.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="https://mawunvalley.com">Home</a></li>
+        <li><a href="https://mawunvalley.com/nonis">Noni's</a></li>
+        <li><a href="https://mawunvalley.com/stay-contribute">Stay & Contribute</a></li>
+        <li><a href="https://mawunvalley.com/little-roots">Little Roots</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Experiences</h4>
+      <ul>
+        <li><a href="/garden-quest/">Garden Quest</a></li>
+        <li><a href="/garden-quest/farm-tour.html">Virtual Farm Tour</a></li>
+        <li><a href="https://mawunvalley.com/gather">Farm Events</a></li>
+        <li><a href="https://mawunvalley.com/belong">Membership</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://instagram.com/mawunvalley">Instagram</a></li>
+        <li><a href="https://wa.me/6282258440585">WhatsApp</a></li>
+        <li><a href="https://mawunvalley.com/#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Mawun Valley Farm. All rights reserved. 🇮🇩</p>
+  </div>
+</footer>
+
 </body>
 </html>
