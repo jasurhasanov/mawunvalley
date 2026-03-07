@@ -543,7 +543,7 @@
                 <li><strong>Outdoor cinema setup</strong> — projector, quality speaker, big screen</li>
                 <li><strong>Fresh popcorn</strong> — classic movie snack</li>
                 <li><strong>Choice of drink</strong> — from Noni's Resto & Pastry</li>
-                <li><strong>Amphitheater seating</strong> — terraced stone seats with cushions</li>
+                <li><strong>Amphitheater seating</strong> — terraced wooden seats with cushions</li>
                 <li><strong>Garden lounge area</strong> — carpets and low chairs on the grass</li>
                 <li><strong>Tropical night atmosphere</strong> — stars, fireflies, nature sounds</li>
               </ul>
