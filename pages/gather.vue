@@ -492,19 +492,21 @@
                 <li>Beautiful printed journal to keep</li>
                 <li>Earn your Garden Explorer badge at the end</li>
               </ul>
-
-              <h4>📍 Checkpoints</h4>
+              <h4>✨ Perfect For</h4>
               <div class="benefits-grid">
-                <div class="benefit">1. Reception</div>
-                <div class="benefit">2. Herbal Remedies</div>
-                <div class="benefit">3. Banana Garden</div>
-                <div class="benefit">4. Vegetable Garden</div>
-                <div class="benefit">5. Pineapple Garden</div>
-                <div class="benefit">6. Strawberry Fields</div>
-                <div class="benefit">7. Citrus Garden</div>
-                <div class="benefit">8. Mixed Fruits</div>
-                <div class="benefit">9. Jabuticaba</div>
-                <div class="benefit">🏆 Flower Jungle</div>
+                <div class="benefit">🌴 Nature lovers</div>
+                <div class="benefit">📸 Photographers</div>
+                <div class="benefit">👨‍👩‍👧‍👦 Families</div>
+                <div class="benefit">🧠 Curious minds</div>
+                <div class="benefit">🎓 School groups</div>
+                <div class="benefit">🧘 Slow travelers</div>
+              </div>
+
+              <h4>🎯 Difficulty Levels</h4>
+              <div class="benefits-grid">
+                <div class="benefit">🟢 Easy — Fun plant facts</div>
+                <div class="benefit">🟡 Hard — Deeper botanical knowledge</div>
+                <div class="benefit">🔴 Impossible — Expert-level challenges</div>
               </div>
 
             </div>
