@@ -43,7 +43,27 @@ body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(-
 .site-nav { display: flex; gap: 30px; align-items: center; }
 .site-nav a { color: var(--earth); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
 .site-nav a:hover { color: var(--gold); }
-.nav-cta { background: var(--gold) !important; color: white !important; padding: 10px 20px; border-radius: 25px; }
+.btn-tour {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #7D8B6F 0%, #87a878 50%, #d4a574 100%);
+  color: white !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 25px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(125, 139, 111, 0.3);
+}
+.btn-tour:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(125, 139, 111, 0.4);
+  color: white !important;
+}
 
 .header {
   background: linear-gradient(135deg, var(--sage), var(--sage-light));
@@ -301,7 +321,7 @@ body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(-
     <a href="/little-roots">Little Roots</a>
     <a href="/belong">Membership</a>
     <a href="/nonis">Noni's</a>
-    <a href="/#contact" class="nav-cta">Contact</a>
+    <a href="/garden-quest/farm-tour.html" class="btn-tour">🗺️ Virtual Tour</a>
   </nav>
 </header>
 
