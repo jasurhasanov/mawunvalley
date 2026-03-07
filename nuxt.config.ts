@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         { property: 'og:site_name', content: 'Mawun Valley Farm' },
         { property: 'og:title', content: 'Mawun Valley Farm — Slow Down, Connect Deeply' },
         { property: 'og:description', content: 'A family-run regenerative farm in Lombok offering immersive stays, farm-to-table dining, community events, and meaningful experiences.' },
-        { property: 'og:image', content: 'https://www.mawunvalley.com/images/og-image.jpg' },
+        { property: 'og:image', content: 'https://www.mawunvalley.com/images/og-image.jpg?v=2' },
         { property: 'og:url', content: 'https://www.mawunvalley.com' },
         { property: 'og:locale', content: 'en_US' },
         
@@ -32,7 +32,7 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Mawun Valley Farm — Slow Down, Connect Deeply' },
         { name: 'twitter:description', content: 'A family-run regenerative farm in Lombok offering immersive stays, farm-to-table dining, and meaningful experiences.' },
-        { name: 'twitter:image', content: 'https://www.mawunvalley.com/images/og-image.jpg' },
+        { name: 'twitter:image', content: 'https://www.mawunvalley.com/images/og-image.jpg?v=2' },
         
         // Theme color
         { name: 'theme-color', content: '#c17f59' },
