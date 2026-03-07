@@ -24,6 +24,7 @@
             <li><NuxtLink to="/gather">Farm Events</NuxtLink></li>
             <li><NuxtLink to="/belong">Membership</NuxtLink></li>
             <li><NuxtLink to="/blog">Field Notes</NuxtLink></li>
+            <li><a href="/garden-quest/farm-tour.html">Virtual Farm Tour</a></li>
             <li><NuxtLink to="/#contact">Contact Us</NuxtLink></li>
           </ul>
         </div>
