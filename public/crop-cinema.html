@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Cinema Image</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; text-align: center; }
+    h1 { color: #333; }
+    .upload-area { margin: 20px auto; padding: 40px; border: 3px dashed #9C27B0; border-radius: 12px; background: white; max-width: 500px; }
+    input[type="file"] { margin: 20px 0; }
+    .preview-container { margin: 30px auto; max-width: 800px; }
+    canvas { border: 2px solid #9C27B0; border-radius: 8px; max-width: 100%; }
+    .btn { background: #9C27B0; color: white; border: none; padding: 16px 32px; border-radius: 30px; font-size: 16px; font-weight: bold; cursor: pointer; margin: 10px; }
+    .btn:hover { background: #7B1FA2; }
+    .info { color: #666; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <h1>🎬 Crop Cinema Image</h1>
+  <p>Upload the image and download it cropped with the screen centered (4:5 ratio for Instagram)</p>
+  
+  <div class="upload-area">
+    <p>Upload your cinema image:</p>
+    <input type="file" id="imageInput" accept="image/*">
+  </div>
+  
+  <div class="preview-container">
+    <h3>Preview (cropped 4:5 with screen centered):</h3>
+    <canvas id="canvas"></canvas>
+    <p class="info">Crop: Left 20% removed to center the screen</p>
+  </div>
+  
+  <button class="btn" onclick="downloadImage()">Download Cropped Image</button>
+  
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let img = null;
+    
+    document.getElementById('imageInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        img = new Image();
+        img.onload = function() {
+          cropImage();
+        };
+        img.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+    
+    function cropImage() {
+      if (!img) return;
+      
+      const origW = img.width;
+      const origH = img.height;
+      
+      // Target 4:5 ratio (1080x1350)
+      const targetRatio = 4 / 5;
+      
+      // Crop from left to center the screen (remove ~20% from left)
+      const cropLeft = origW * 0.18;
+      const cropTop = origH * 0.02;
+      
+      // Calculate crop dimensions maintaining 4:5 ratio
+      let cropW = origW - cropLeft - (origW * 0.02);
+      let cropH = cropW / targetRatio;
+      
+      if (cropH > origH - cropTop) {
+        cropH = origH - cropTop;
+        cropW = cropH * targetRatio;
+      }
+      
+      // Set canvas to output size
+      canvas.width = 1080;
+      canvas.height = 1350;
+      
+      // Draw cropped image
+      ctx.drawImage(img, cropLeft, cropTop, cropW, cropH, 0, 0, 1080, 1350);
+    }
+    
+    function downloadImage() {
+      if (!img) {
+        alert('Please upload an image first!');
+        return;
+      }
+      const link = document.createElement('a');
+      link.download = 'outdoor-cinema-cropped.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+  </script>
+</body>
+</html>

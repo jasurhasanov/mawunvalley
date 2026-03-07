@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBQ Nights — Facebook Event Cover</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        :root {
+            --color-gold: #d4a574;
+            --color-gold-light: #e8c9a8;
+            --color-terracotta: #c17f59;
+            --color-dark: #2c3e2d;
+            --color-cream: #faf8f5;
+            --color-warm-white: #fffef9;
+            --color-fire-orange: #e8723a;
+            --color-ember: #c4451c;
+            --color-charcoal: #1a1a1a;
+            --color-smoke: #2d2d2d;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--color-cream);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-dark);
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle { color: #666; text-align: center; margin-bottom: 30px; }
+        .cover-wrapper {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .cover {
+            width: 100%;
+            aspect-ratio: 1920 / 1005;
+            max-width: 960px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-smoke) 40%, #3d2a1a 100%);
+        }
+        .cover-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            color: white;
+        }
+        .cover::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: radial-gradient(ellipse at center bottom, rgba(232, 114, 58, 0.4) 0%, rgba(196, 69, 28, 0.2) 30%, transparent 70%);
+            pointer-events: none;
+        }
+        .cover::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .flame-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px rgba(232, 114, 58, 0.6));
+        }
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            background: linear-gradient(180deg, #ffffff 0%, var(--color-gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .event-subtitle {
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .event-schedule {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .schedule-item { display: flex; flex-direction: column; align-items: center; }
+        .schedule-label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 5px;
+        }
+        .schedule-value { font-size: 22px; font-weight: 600; color: white; }
+        .divider { width: 1px; height: 40px; background: rgba(255,255,255,0.3); }
+        .location {
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+            padding: 10px 25px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+        }
+        .download-section { text-align: center; }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: var(--color-gold);
+            color: var(--color-dark);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .download-btn:hover {
+            background: var(--color-terracotta);
+            color: white;
+            transform: translateY(-2px);
+        }
+        .download-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .note { margin-top: 20px; color: #888; font-size: 14px; }
+        @media (max-width: 768px) {
+            .event-title { font-size: 42px; letter-spacing: 2px; }
+            .event-subtitle { font-size: 18px; letter-spacing: 4px; }
+            .flame-icon { font-size: 40px; }
+            .event-schedule { gap: 20px; flex-wrap: wrap; justify-content: center; }
+            .schedule-value { font-size: 18px; }
+            .location { font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BBQ Nights — Facebook Event Cover</h1>
+        <p class="subtitle">1920 × 1005 pixels (Facebook Event Cover size)</p>
+        <div class="cover-wrapper">
+            <div class="cover" id="cover">
+                <div class="cover-content">
+                    <div class="flame-icon">🔥</div>
+                    <div class="event-title">BBQ Nights</div>
+                    <div class="event-subtitle">Every Friday</div>
+                    <div class="event-schedule">
+                        <div class="schedule-item">
+                            <span class="schedule-label">Gates Open</span>
+                            <span class="schedule-value">5:00 PM</span>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="schedule-item">
+                            <span class="schedule-label">Dinner Served</span>
+                            <span class="schedule-value">6:35 PM</span>
+                        </div>
+                    </div>
+                    <div class="location">Mawun Valley Farm • Lombok</div>
+                </div>
+            </div>
+        </div>
+        <div class="download-section">
+            <button class="download-btn" onclick="downloadCover()">
+                <span>📥</span> Download Cover (1920×1005)
+            </button>
+            <p class="note">Click to download as PNG for your Facebook event</p>
+        </div>
+    </div>
+    <script>
+        async function downloadCover() {
+            const btn = document.querySelector('.download-btn');
+            const cover = document.getElementById('cover');
+            btn.disabled = true;
+            btn.innerHTML = '<span>⏳</span> Generating...';
+            try {
+                const canvas = await html2canvas(cover, {
+                    scale: 1920 / cover.offsetWidth,
+                    useCORS: true,
+                    backgroundColor: null,
+                    logging: false
+                });
+                const link = document.createElement('a');
+                link.download = 'bbqnights-facebook-cover.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                btn.innerHTML = '<span>✅</span> Downloaded!';
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = '<span>📥</span> Download Cover (1920×1005)';
+                }, 2000);
+            } catch (err) {
+                console.error(err);
+                btn.innerHTML = '<span>❌</span> Error - Try Again';
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

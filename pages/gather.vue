@@ -28,7 +28,43 @@
         </div>
 
         <div class="signature-grid">
-          <!-- 1. BBQ Nights -->
+          <!-- 1. Outdoor Cinema -->
+          <article class="event-card signature" @click="openEvent('cinema')">
+            <div class="event-image">
+              <img src="/images/outdoor-cinema.png" alt="Outdoor Cinema">
+              <span class="event-badge cinema">Weekly</span>
+            </div>
+            <div class="event-info">
+              <div class="event-icon">🎬</div>
+              <h3>Outdoor Cinema</h3>
+              <p class="event-tagline">Movies under the stars at Mawun Amphitheater</p>
+              <div class="event-meta">
+                <span>📅 Every Wednesday</span>
+                <span>💰 IDR 150,000</span>
+              </div>
+              <span class="click-hint">Click for details →</span>
+            </div>
+          </article>
+
+          <!-- 2. Weekly Volleyball -->
+          <article class="event-card signature" @click="openEvent('volleyball')">
+            <div class="event-image">
+              <img src="/images/volleyball.png" alt="Weekly Volleyball Games">
+              <span class="event-badge volleyball">Weekly</span>
+            </div>
+            <div class="event-info">
+              <div class="event-icon">🏐</div>
+              <h3>Weekly Volleyball</h3>
+              <p class="event-tagline">Thursday sunset games on the farm</p>
+              <div class="event-meta">
+                <span>📅 Every Thursday</span>
+                <span>💰 IDR 100,000</span>
+              </div>
+              <span class="click-hint">Click for details →</span>
+            </div>
+          </article>
+
+          <!-- 3. BBQ Nights -->
           <article class="event-card signature" @click="openEvent('bbq')">
             <div class="event-image">
               <img src="/images/bbq-nights.jpg" alt="BBQ Nights">
@@ -46,7 +82,7 @@
             </div>
           </article>
 
-          <!-- 2. Samovar Tea Ceremony -->
+          <!-- 4. Samovar Tea Ceremony -->
           <article class="event-card signature" @click="openEvent('samovar')">
             <div class="event-image">
               <img src="/images/samovar-tea.png" alt="Samovar Tea Ceremony">
@@ -64,7 +100,7 @@
             </div>
           </article>
 
-          <!-- 3. Cashew Apple Jam -->
+          <!-- 5. Cashew Apple Jam -->
           <article class="event-card signature" @click="openEvent('cashew')">
             <div class="event-image">
               <img src="/images/cashew-jam-cover.jpg" alt="Cashew Apple Jam Cooking Class">
@@ -81,26 +117,7 @@
               <span class="click-hint">Click for details →</span>
             </div>
           </article>
-
-          <!-- 4. Weekly Volleyball -->
-          <article class="event-card signature" @click="openEvent('volleyball')">
-            <div class="event-image">
-              <img src="/images/volleyball.png" alt="Weekly Volleyball Games">
-              <span class="event-badge volleyball">Weekly</span>
-            </div>
-            <div class="event-info">
-              <div class="event-icon">🏐</div>
-              <h3>Weekly Volleyball</h3>
-              <p class="event-tagline">Thursday sunset games on the farm</p>
-              <div class="event-meta">
-                <span>📅 Every Thursday</span>
-                <span>💰 IDR 100,000</span>
-              </div>
-              <span class="click-hint">Click for details →</span>
-            </div>
-          </article>
         </div>
-
         <!-- Other Events -->
         <div class="other-events">
           <h3 class="other-events-title">More Activities</h3>
@@ -479,6 +496,78 @@
             <div class="modal-footer">
               <a href="https://chat.whatsapp.com/KJUwA3D4G0K2ssq9xmyoVz" class="btn btn-primary btn-lg" target="_blank">Join WhatsApp Group</a>
             </div>
+
+          </div>
+          <!-- Outdoor Cinema Modal -->
+          <div v-if="activeEvent === 'cinema'" class="event-detail">
+            <div class="modal-header">
+              <span class="event-badge cinema">🎬 Weekly Event</span>
+              <h2>Outdoor Cinema</h2>
+              <p class="modal-tagline">Movies under the stars at Mawun Amphitheater</p>
+            </div>
+            <div class="modal-body">
+              <p class="intro-text">Experience cinema like never before — in our open-air amphitheater surrounded by nature. Settle into the terraced seating or lounge on carpets and cushions in the garden. Popcorn, drinks, and a magical atmosphere included.</p>
+              
+              <h4>⏰ Schedule</h4>
+              <div class="schedule-box">
+                <div class="schedule-item">
+                  <span class="schedule-label">When</span>
+                  <span class="schedule-value">Every Wednesday</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Time</span>
+                  <span class="schedule-value">6:00 – 8:00 PM</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Duration</span>
+                  <span class="schedule-value">~2 hours</span>
+                </div>
+              </div>
+
+              <h4>💰 Pricing</h4>
+              <div class="pricing-grid">
+                <div class="price-tier highlight">
+                  <span class="tier-name">Per Person</span>
+                  <span class="tier-price">IDR 150,000</span>
+                  <span class="tier-note">All-inclusive ticket</span>
+                </div>
+              </div>
+              
+              <div class="important-note">
+                <strong>👥 Limited Seats:</strong> Only 15 spots available per screening. For larger groups, contact us — we may accommodate more if everyone is together.
+              </div>
+
+              <h4>🎬 What's Included</h4>
+              <ul class="included-list">
+                <li><strong>Outdoor cinema setup</strong> — projector, quality speaker, big screen</li>
+                <li><strong>Fresh popcorn</strong> — classic movie snack</li>
+                <li><strong>Choice of drink</strong> — from Noni's Resto & Pastry</li>
+                <li><strong>Amphitheater seating</strong> — terraced wooden seats with cushions</li>
+                <li><strong>Garden lounge area</strong> — carpets and low chairs on the grass</li>
+                <li><strong>Tropical night atmosphere</strong> — stars, fireflies, nature sounds</li>
+              </ul>
+
+              <h4>📍 Location</h4>
+              <div class="location-box">
+                <p><strong>Venue:</strong> Mawun Amphitheater</p>
+                <p><strong>Setting:</strong> Open-air wooden amphitheater + garden seating</p>
+                <p class="loc-note">Bring a light jacket — evenings can be cool in the valley.</p>
+              </div>
+
+              <h4>🌟 Why Join?</h4>
+              <div class="benefits-grid">
+                <div class="benefit">🌙 Under the Stars</div>
+                <div class="benefit">🍿 Popcorn Included</div>
+                <div class="benefit">🎥 Quality Setup</div>
+                <div class="benefit">🌿 Nature Setting</div>
+                <div class="benefit">👥 Intimate Group</div>
+                <div class="benefit">☕ Drinks Included</div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20Outdoor%20Cinema%20this%20Wednesday" class="btn btn-primary btn-lg" target="_blank">Book via WhatsApp</a>
+            </div>
           </div>
 
         </div>
@@ -677,6 +766,10 @@ const closeEvent = () => {
 
 .event-badge.volleyball {
   background: #2196F3;
+}
+
+.event-badge.cinema {
+  background: #9C27B0;
 }
   padding: 24px;
   text-align: center;
