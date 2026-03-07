@@ -103,7 +103,7 @@
           <!-- 5. Outdoor Cinema -->
           <article class="event-card signature" @click="openEvent('cinema')">
             <div class="event-image">
-              <img src="/images/amphitheater.jpg" alt="Outdoor Cinema">
+              <img src="/images/outdoor-cinema.png" alt="Outdoor Cinema">
               <span class="event-badge cinema">Weekly</span>
             </div>
             <div class="event-info">
