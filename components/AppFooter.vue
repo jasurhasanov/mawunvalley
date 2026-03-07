@@ -8,24 +8,28 @@
           <p>A family-run permaculture farm in South Lombok, Indonesia. 35 years of warm welcomes.</p>
         </div>
         <div class="footer-links">
-          <h4>Explore</h4>
+          <h4>Experience</h4>
           <ul>
-            <li><NuxtLink to="/">Home</NuxtLink></li>
-            <li><NuxtLink to="/nonis">Noni's</NuxtLink></li>
+            <li><NuxtLink to="/nonis">Noni's Resto &amp; Pastry</NuxtLink></li>
             <li><NuxtLink to="/stay-contribute">Stay &amp; Contribute</NuxtLink></li>
+            <li><NuxtLink to="/gather">Farm Events</NuxtLink></li>
             <li><NuxtLink to="/retreat">Farm Retreat</NuxtLink></li>
             <li><NuxtLink to="/little-roots">Little Roots</NuxtLink></li>
-            <li><NuxtLink to="/host">Your Host</NuxtLink></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/garden-quest/">Garden Quest</a></li>
+            <li><a href="/garden-quest/farm-tour.html">Virtual Farm Tour</a></li>
+            <li><NuxtLink to="/blog">Field Notes</NuxtLink></li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Connect</h4>
           <ul>
-            <li><NuxtLink to="/gather">Farm Events</NuxtLink></li>
+            <li><NuxtLink to="/host">Your Host</NuxtLink></li>
             <li><NuxtLink to="/belong">Membership</NuxtLink></li>
-            <li><NuxtLink to="/blog">Field Notes</NuxtLink></li>
-            <li><a href="/garden-quest/">Garden Quest</a></li>
-            <li><a href="/garden-quest/farm-tour.html">Virtual Farm Tour</a></li>
             <li><NuxtLink to="/#contact">Contact Us</NuxtLink></li>
           </ul>
         </div>
@@ -67,7 +71,7 @@
 
 .footer-content {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
   gap: 50px;
   margin-bottom: 50px;
 }
