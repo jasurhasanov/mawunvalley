@@ -10,6 +10,7 @@
         <h1>Garden Quest</h1>
         <p class="hero-subtitle">Explore our living garden through an adventure of discovery</p>
         <p class="handwritten">"Learn, explore, and connect with nature"</p>
+        <a href="/garden-quest/game.html" class="hero-play-btn">🎮 Play the Game</a>
       </div>
     </header>
 
@@ -128,7 +129,7 @@ useHead({
 .page-hero-content{position:relative;z-index:1;max-width:700px;padding:0 20px}
 .page-hero-content h1{font-size:clamp(3rem,8vw,5rem);margin-bottom:15px}
 .hero-subtitle{font-size:1.3rem;opacity:0.95;margin-bottom:20px}
-.handwritten{font-style:italic;opacity:0.9}
+.handwritten{font-style:italic;opacity:0.9}.hero-play-btn{display:inline-flex;align-items:center;gap:10px;background:white;color:var(--color-sage);padding:16px 35px;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;margin-top:25px;transition:all 0.3s;box-shadow:0 8px 30px rgba(0,0,0,0.2)}.hero-play-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.25)}
 .section-label{display:inline-block;font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--color-gold);margin-bottom:10px}
 .section-label.light{color:rgba(255,255,255,0.8)}
 section{padding:80px 20px}
