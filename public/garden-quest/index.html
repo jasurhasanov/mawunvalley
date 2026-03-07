@@ -322,12 +322,25 @@ body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(-
   .section { padding: 50px 20px; }
   .preview-card.featured { transform: none; }
 }
+.back-link {
+  display: inline-block;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+.back-link:hover {
+  color: #fff;
+  transform: translateX(-5px);
+}
 </style>
 </head>
 <body>
 
 <section class="hero">
   <div class="hero-content">
+    <a href="/" class="back-link">← Back to Main Site</a>
     <div class="hero-badge">🌿 An Immersive Garden Experience</div>
     <h1>Garden Quest</h1>
     <p class="hero-subtitle">Explore Mawun Valley's living garden through an adventure of discovery, botanical trivia, and hidden treasures. Available exclusively at the farm.</p>
