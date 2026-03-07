@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ROOTS Reward Spinner</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm; }
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20mm;
+  background: #fff;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: #2d5a47;
+  font-size: 24pt;
+  margin-bottom: 5mm;
+}
+.subtitle {
+  color: #666;
+  margin-bottom: 15mm;
+}
+.wheel-container {
+  position: relative;
+  width: 200mm;
+  height: 200mm;
+}
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3mm solid #2d5a47;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.segment {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform-origin: 100% 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.segment-content {
+  transform: rotate(22.5deg) translateX(-20mm);
+  text-align: center;
+  font-weight: 600;
+  font-size: 11pt;
+  line-height: 1.3;
+}
+.seg1 { background: #d4a574; transform: rotate(0deg); }
+.seg2 { background: #4a7c59; color: white; transform: rotate(45deg); }
+.seg3 { background: #f5e6d3; transform: rotate(90deg); }
+.seg4 { background: #2d5a47; color: white; transform: rotate(135deg); }
+.seg5 { background: #d4a574; transform: rotate(180deg); }
+.seg6 { background: #4a7c59; color: white; transform: rotate(225deg); }
+.seg7 { background: #f5e6d3; transform: rotate(270deg); }
+.seg8 { background: #2d5a47; color: white; transform: rotate(315deg); }
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40mm;
+  height: 40mm;
+  background: #1a3a2f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4a574;
+  font-family: 'Playfair Display', serif;
+  font-size: 14pt;
+  font-weight: 700;
+  border: 2mm solid #d4a574;
+}
+.pointer {
+  position: absolute;
+  top: -15mm;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10mm solid transparent;
+  border-right: 10mm solid transparent;
+  border-top: 20mm solid #1a3a2f;
+  z-index: 10;
+}
+
+.instructions {
+  margin-top: 15mm;
+  text-align: center;
+  max-width: 150mm;
+}
+.instructions h3 {
+  font-family: 'Playfair Display', serif;
+  color: #2d5a47;
+  margin-bottom: 3mm;
+}
+.instructions p {
+  font-size: 10pt;
+  line-height: 1.8;
+  color: #555;
+}
+.legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+  margin-top: 8mm;
+  font-size: 9pt;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+}
+.legend-dot {
+  width: 4mm;
+  height: 4mm;
+  border-radius: 50%;
+}
+</style>
+</head>
+<body>
+
+<h1>🎡 ROOTS Reward Spinner</h1>
+<p class="subtitle">For explorers who used a Skip token</p>
+
+<div class="wheel-container">
+  <div class="pointer"></div>
+  <div class="wheel">
+    <div class="segment seg1"><div class="segment-content">🎉<br>FULL<br>DISCOUNT!</div></div>
+    <div class="segment seg2"><div class="segment-content">🍹<br>FREE<br>DRINK</div></div>
+    <div class="segment seg3"><div class="segment-content">😅<br>TRY<br>AGAIN</div></div>
+    <div class="segment seg4"><div class="segment-content">🎊<br>HALF<br>DISCOUNT</div></div>
+    <div class="segment seg5"><div class="segment-content">🎉<br>FULL<br>DISCOUNT!</div></div>
+    <div class="segment seg6"><div class="segment-content">🍰<br>FREE<br>DESSERT</div></div>
+    <div class="segment seg7"><div class="segment-content">😅<br>TRY<br>AGAIN</div></div>
+    <div class="segment seg8"><div class="segment-content">🎊<br>HALF<br>DISCOUNT</div></div>
+  </div>
+  <div class="center-circle">SPIN!</div>
+</div>
+
+<div class="instructions">
+  <h3>How to Use</h3>
+  <p>
+    Print this wheel, attach to cardboard, and add a spinner arrow in the center.<br>
+    Guests who used a SKIP token spin once to determine their reward!
+  </p>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#d4a574"></div> Full Discount (10/15/20%)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#2d5a47"></div> Half Discount (5/7.5/10%)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#4a7c59"></div> Free Item</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f5e6d3"></div> Try Again Tomorrow</div>
+  </div>
+</div>
+
+</body>
+</html>
