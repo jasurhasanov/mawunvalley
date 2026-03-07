@@ -5,7 +5,7 @@
         <div class="footer-brand">
           <img src="/images/logo.png" alt="Mawun Valley Farm" class="footer-logo">
           <p>Slow Down, Connect Deeply.</p>
-          <p>A family-run permaculture farm in South Lombok, Indonesia. 35 years of warm welcomes.</p>
+          <p>A family-run permaculture farm in South Lombok, Indonesia.</p>
         </div>
         <div class="footer-links">
           <h4>Experience</h4>
