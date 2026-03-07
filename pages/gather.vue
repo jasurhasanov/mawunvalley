@@ -498,6 +498,7 @@
               <a href="https://chat.whatsapp.com/KJUwA3D4G0K2ssq9xmyoVz" class="btn btn-primary btn-lg" target="_blank">Join WhatsApp Group</a>
             </div>
 
+          </div>
           <!-- Outdoor Cinema Modal -->
           <div v-if="activeEvent === 'cinema'" class="event-detail">
             <div class="modal-header">
@@ -568,7 +569,6 @@
             <div class="modal-footer">
               <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20Outdoor%20Cinema%20this%20Wednesday" class="btn btn-primary btn-lg" target="_blank">Book via WhatsApp</a>
             </div>
-          </div>
           </div>
 
         </div>
