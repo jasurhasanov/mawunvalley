@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ROOTS Quest Journal — Standard</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A5; margin: 12mm; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #2d3a2e;
+  background: #fff;
+}
+.page {
+  width: 148mm;
+  min-height: 210mm;
+  padding: 10mm;
+  page-break-after: always;
+  position: relative;
+}
+.page:last-child { page-break-after: avoid; }
+
+/* COVER */
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(180deg, #2d5a47 0%, #1a3a2f 100%);
+  color: #faf8f5;
+}
+.cover-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 42pt;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #d4a574;
+  margin-bottom: 5mm;
+}
+.cover-subtitle {
+  font-size: 10pt;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 15mm;
+}
+.cover-badge {
+  background: #d4a574;
+  color: #1a3a2f;
+  padding: 3mm 8mm;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 10pt;
+  margin-bottom: 8mm;
+}
+.cover-reward {
+  font-family: 'Playfair Display', serif;
+  font-size: 24pt;
+  color: #d4a574;
+  margin-bottom: 20mm;
+}
+.cover-details {
+  font-size: 9pt;
+  opacity: 0.7;
+  line-height: 2;
+}
+.cover-footer {
+  position: absolute;
+  bottom: 10mm;
+  font-size: 8pt;
+  opacity: 0.5;
+}
+
+/* INTRO PAGE */
+.intro { padding: 8mm; }
+.intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18pt;
+  color: #2d5a47;
+  margin-bottom: 5mm;
+  text-align: center;
+}
+.intro-text {
+  font-size: 10pt;
+  line-height: 1.8;
+  margin-bottom: 8mm;
+}
+.rules-box {
+  background: #f5f5f0;
+  border-left: 3px solid #d4a574;
+  padding: 5mm;
+  margin-bottom: 8mm;
+}
+.rules-box h3 {
+  font-size: 10pt;
+  font-weight: 600;
+  margin-bottom: 3mm;
+  color: #2d5a47;
+}
+.rules-box ul {
+  font-size: 9pt;
+  padding-left: 5mm;
+  line-height: 1.8;
+}
+.help-tokens {
+  display: flex;
+  justify-content: space-around;
+  margin: 8mm 0;
+}
+.token {
+  text-align: center;
+  width: 30%;
+}
+.token-icon {
+  width: 15mm;
+  height: 15mm;
+  border: 2px solid #2d5a47;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2mm;
+  font-size: 14pt;
+}
+.token-name { font-size: 8pt; font-weight: 600; }
+.token-desc { font-size: 7pt; opacity: 0.7; }
+
+/* QUEST PAGES */
+.quest {
+  padding: 6mm;
+  border: 1px solid #e0e0d8;
+}
+.quest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0d8;
+  padding-bottom: 3mm;
+  margin-bottom: 4mm;
+}
+.quest-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 12pt;
+  color: #d4a574;
+}
+.quest-checkpoint {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+}
+.checkpoint-dot {
+  width: 8mm;
+  height: 8mm;
+  background: #2d5a47;
+  border-radius: 50%;
+  color: white;
+  font-size: 8pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.checkpoint-name {
+  font-weight: 600;
+  font-size: 10pt;
+}
+
+.quest-location {
+  background: #f5f5f0;
+  padding: 4mm;
+  border-radius: 3mm;
+  margin-bottom: 5mm;
+  font-size: 9pt;
+}
+.location-label {
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  margin-bottom: 1mm;
+}
+
+.quest-riddle {
+  font-family: 'Playfair Display', serif;
+  font-size: 13pt;
+  line-height: 1.6;
+  margin-bottom: 5mm;
+  color: #1a3a2f;
+}
+
+.quest-hint {
+  background: #fff8e7;
+  border: 1px dashed #d4a574;
+  padding: 3mm;
+  font-size: 8pt;
+  margin-bottom: 5mm;
+}
+.hint-label {
+  font-weight: 600;
+  color: #d4a574;
+}
+
+.answer-box {
+  border: 2px solid #2d5a47;
+  border-radius: 2mm;
+  padding: 4mm;
+  min-height: 15mm;
+  margin-bottom: 4mm;
+}
+.answer-label {
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  margin-bottom: 2mm;
+}
+
+.fun-fact {
+  background: #e8f0e8;
+  padding: 3mm;
+  font-size: 8pt;
+  border-radius: 2mm;
+}
+.fact-label {
+  font-weight: 600;
+  color: #2d5a47;
+}
+
+/* COMPLETION PAGE */
+.completion {
+  text-align: center;
+  padding: 8mm;
+}
+.completion h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16pt;
+  color: #2d5a47;
+  margin-bottom: 5mm;
+}
+.completion-icon {
+  font-size: 40pt;
+  margin-bottom: 5mm;
+}
+.completion-text {
+  font-size: 10pt;
+  margin-bottom: 8mm;
+  line-height: 1.8;
+}
+.score-box {
+  border: 2px solid #2d5a47;
+  padding: 5mm;
+  margin-bottom: 5mm;
+}
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 2mm 0;
+  border-bottom: 1px dotted #ccc;
+  font-size: 9pt;
+}
+.score-row:last-child { border-bottom: none; }
+.verification-box {
+  background: #f5f5f0;
+  padding: 5mm;
+  margin-top: 5mm;
+}
+.verification-box h3 {
+  font-size: 9pt;
+  margin-bottom: 3mm;
+}
+.stamp-area {
+  border: 2px dashed #2d5a47;
+  height: 25mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8pt;
+  opacity: 0.5;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="page cover">
+  <div class="cover-logo">ROOTS</div>
+  <div class="cover-subtitle">The Mawun Valley Quest</div>
+  <div class="cover-badge">🌱 STANDARD LEVEL</div>
+  <div class="cover-reward">Win 10% Off</div>
+  <div class="cover-details">
+    6 Challenges • No Time Limit<br>
+    Explore at your own pace
+  </div>
+  <div class="cover-footer">Noni's @ Mawun Valley • Lombok, Indonesia</div>
+</div>
+
+<!-- INTRO PAGE -->
+<div class="page intro">
+  <h2>Welcome, Explorer!</h2>
+  <p class="intro-text">
+    You're about to embark on a journey through our living garden. Each checkpoint holds a riddle about the plants, fruits, and secrets of Mawun Valley. Solve them all and claim your reward!
+  </p>
+  
+  <div class="rules-box">
+    <h3>📋 How to Play</h3>
+    <ul>
+      <li>Follow the numbered checkpoints on your map</li>
+      <li>Read the riddle and explore the area for clues</li>
+      <li>Write your answer in the box provided</li>
+      <li>Stuck? Use one of your 3 Help Tokens below</li>
+      <li>Return to Reception when complete</li>
+    </ul>
+  </div>
+
+  <h3 style="text-align:center; font-size:10pt; margin-bottom:4mm;">Your 3 Help Tokens</h3>
+  <p style="font-size:8pt; text-align:center; margin-bottom:4mm; opacity:0.7;">Cross one off each time you use it</p>
+  
+  <div class="help-tokens">
+    <div class="token">
+      <div class="token-icon">🗣️</div>
+      <div class="token-name">Ask a Farmer</div>
+      <div class="token-desc">Any staff can help</div>
+    </div>
+    <div class="token">
+      <div class="token-icon">💡</div>
+      <div class="token-name">Extra Hint</div>
+      <div class="token-desc">Ask at Reception</div>
+    </div>
+    <div class="token">
+      <div class="token-icon">⏭️</div>
+      <div class="token-name">Skip</div>
+      <div class="token-desc">Spin wheel at end</div>
+    </div>
+  </div>
+
+  <div style="background:#fff8e7; padding:4mm; border-radius:2mm; font-size:9pt; text-align:center;">
+    ⚠️ <strong>Used a Skip?</strong> You'll spin the Reward Wheel at the end instead of automatic discount!
+  </div>
+</div>
+
+<!-- QUEST 1 -->
+<div class="page quest">
+  <div class="quest-header">
+    <div class="quest-number">Quest 1 of 6</div>
+    <div class="quest-checkpoint">
+      <div class="checkpoint-dot">1</div>
+      <div class="checkpoint-name">Herbal Remedies</div>
+    </div>
+  </div>
+
+  <div class="quest-location">
+    <div class="location-label">📍 Find this spot</div>
+    Near the parking lot entrance, look for the raised wooden garden beds filled with medicinal plants.
+  </div>
+
+  <div class="quest-riddle">
+    "I'm golden inside and knobbly outside. Grate me for tea when your stomach feels stormy. I've warmed bellies across Asia for 5,000 years. What am I?"
+  </div>
+
+  <div class="quest-hint">
+    <span class="hint-label">💡 Hint:</span> This root is essential in Indonesian "jamu" drinks.
+  </div>
+
+  <div class="answer-box">
+    <div class="answer-label">✏️ Your Answer</div>
+  </div>
+
+  <div class="fun-fact">
+    <span class="fact-label">🌿 Garden Fact:</span> We harvest this fresh every morning for our kitchen!
+  </div>
+</div>
+
+<!-- QUEST 2 -->
+<div class="page quest">
+  <div class="quest-header">
+    <div class="quest-number">Quest 2 of 6</div>
+    <div class="quest-checkpoint">
+      <div class="checkpoint-dot">2</div>
+      <div class="checkpoint-name">Banana Garden</div>
+    </div>
+  </div>
+
+  <div class="quest-location">
+    <div class="location-label">📍 Find this spot</div>
+    The yellow zone along Mango Street. You'll see tall banana plants with huge leaves.
+  </div>
+
+  <div class="quest-riddle">
+    "In Indonesia, I'm fried golden and crispy, sold on every street corner. 'Pisang ___' is my name. Fill in the missing word!"
+  </div>
+
+  <div class="quest-hint">
+    <span class="hint-label">💡 Hint:</span> The missing word means "fried" in Indonesian.
+  </div>
+
+  <div class="answer-box">
+    <div class="answer-label">✏️ Your Answer</div>
+  </div>
+
+  <div class="fun-fact">
+    <span class="fact-label">🌿 Garden Fact:</span> Indonesia grows over 100 varieties of bananas!
+  </div>
+</div>
+
+<!-- QUEST 3 -->
+<div class="page quest">
+  <div class="quest-header">
+    <div class="quest-number">Quest 3 of 6</div>
+    <div class="quest-checkpoint">
+      <div class="checkpoint-dot">3</div>
+      <div class="checkpoint-name">Pineapple Garden</div>
+    </div>
+  </div>
+
+  <div class="quest-location">
+    <div class="location-label">📍 Find this spot</div>
+    Look for the spiky-crowned plants near Strawberry Fields and Soapberries Street.
+  </div>
+
+  <div class="quest-riddle">
+    "Each of us takes years to grow, and our mother plant produces only ONE of us in her lifetime. How many years does it take to grow a single pineapple?"
+  </div>
+
+  <div class="quest-hint">
+    <span class="hint-label">💡 Hint:</span> It's somewhere between 1 and 4 years.
+  </div>
+
+  <div class="answer-box">
+    <div class="answer-label">✏️ Your Answer (number)</div>
+  </div>
+
+  <div class="fun-fact">
+    <span class="fact-label">🌿 Garden Fact:</span> After fruiting, the mother plant dies but leaves behind "pups" — baby plants!
+  </div>
+</div>
+
+<!-- QUEST 4 -->
+<div class="page quest">
+  <div class="quest-header">
+    <div class="quest-number">Quest 4 of 6</div>
+    <div class="quest-checkpoint">
+      <div class="checkpoint-dot">4</div>
+      <div class="checkpoint-name">Citrus Garden</div>
+    </div>
+  </div>
+
+  <div class="quest-location">
+    <div class="location-label">📍 Find this spot</div>
+    The orange zone near The Farmhouse, filled with citrus trees.
+  </div>
+
+  <div class="quest-riddle">
+    "I look like an apple, I'm often green or pink, and I have MORE vitamin C than any citrus fruit here. Surprisingly, I'm not even a citrus! What am I?"
+  </div>
+
+  <div class="quest-hint">
+    <span class="hint-label">💡 Hint:</span> Look in the Mixed Fruits Garden nearby — I might be hiding there too!
+  </div>
+
+  <div class="answer-box">
+    <div class="answer-label">✏️ Your Answer</div>
+  </div>
+
+  <div class="fun-fact">
+    <span class="fact-label">🌿 Garden Fact:</span> This fruit has 4x more vitamin C than oranges!
+  </div>
+</div>
+
+<!-- QUEST 5 -->
+<div class="page quest">
+  <div class="quest-header">
+    <div class="quest-number">Quest 5 of 6</div>
+    <div class="quest-checkpoint">
+      <div class="checkpoint-dot">5</div>
+      <div class="checkpoint-name">Goats & Friends</div>
+    </div>
+  </div>
+
+  <div class="quest-location">
+    <div class="location-label">📍 Find this spot</div>
+    The animal corner on the west side, near Chill Hill. Our friendly goats live here!
+  </div>
+
+  <div class="quest-riddle">
+    "Our goat friends create something precious for the garden — a natural fertilizer that helps plants grow strong. What is the general name for this natural plant food made from animal waste?"
+  </div>
+
+  <div class="quest-hint">
+    <span class="hint-label">💡 Hint:</span> It rhymes with "toast" + another word.
+  </div>
+
+  <div class="answer-box">
+    <div class="answer-label">✏️ Your Answer</div>
+  </div>
+
+  <div class="fun-fact">
+    <span class="fact-label">🌿 Garden Fact:</span> Goat manure is considered "cold" — it can go directly on plants without burning them!
+  </div>
+</div>
+
+<!-- QUEST 6 -->
+<div class="page quest">
+  <div class="quest-header">
+    <div class="quest-number">Quest 6 of 6</div>
+    <div class="quest-checkpoint">
+      <div class="checkpoint-dot">6</div>
+      <div class="checkpoint-name">Mawun Amphitheater</div>
+    </div>
+  </div>
+
+  <div class="quest-location">
+    <div class="location-label">📍 Find this spot</div>
+    The central gathering area with the fire pit and wooden benches. Look up at the main sign!
+  </div>
+
+  <div class="quest-riddle">
+    "FINAL CHALLENGE: I am the name of this place — and also a tropical fruit known for healing. My juice is bitter but my benefits are sweet. Look at the restaurant sign for my name!"
+  </div>
+
+  <div class="quest-hint">
+    <span class="hint-label">💡 Hint:</span> The restaurant is called "___'s Resto & Pastry"
+  </div>
+
+  <div class="answer-box">
+    <div class="answer-label">✏️ Your Answer</div>
+  </div>
+
+  <div class="fun-fact">
+    <span class="fact-label">🌿 Garden Fact:</span> Noni fruit has been used in Polynesian medicine for over 2,000 years!
+  </div>
+</div>
+
+<!-- COMPLETION PAGE -->
+<div class="page completion">
+  <div class="completion-icon">🏆</div>
+  <h2>Quest Complete!</h2>
+  <p class="completion-text">
+    Congratulations, explorer! You've journeyed through the Mawun Valley garden and discovered its secrets. Now return to Reception to verify your answers and claim your reward!
+  </p>
+
+  <div class="score-box">
+    <div class="score-row">
+      <span>Quests Completed</span>
+      <span>____ / 6</span>
+    </div>
+    <div class="score-row">
+      <span>Help Tokens Used</span>
+      <span>____ / 3</span>
+    </div>
+    <div class="score-row">
+      <span>Skips Used</span>
+      <span>____</span>
+    </div>
+  </div>
+
+  <p style="font-size:9pt; margin-bottom:5mm;">
+    ✅ <strong>No skips?</strong> → Receive your 10% discount code!<br>
+    🎡 <strong>Used a skip?</strong> → Spin the Reward Wheel!
+  </p>
+
+  <div class="verification-box">
+    <h3>Staff Verification</h3>
+    <div class="stamp-area">STAFF STAMP HERE</div>
+  </div>
+
+  <p style="font-size:8pt; margin-top:5mm; opacity:0.6;">
+    Thank you for exploring with us! 🌿<br>
+    @mawunvalley • @nonislombok
+  </p>
+</div>
+
+</body>
+</html>
