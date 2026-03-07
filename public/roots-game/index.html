@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ROOTS — The Mawun Valley Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-dark: #1a3a2f;
+  --green-mid: #2d5a47;
+  --green-light: #4a7c59;
+  --gold: #d4a574;
+  --cream: #faf8f5;
+  --earth: #8b6914;
+  --danger: #c9302c;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--green-dark);
+  min-height: 100vh;
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+/* INTRO SCREEN */
+.screen { display: none; min-height: 100vh; padding: 20px; }
+.screen.active { display: flex; flex-direction: column; }
+
+#intro {
+  background: linear-gradient(180deg, var(--green-dark) 0%, #0d1f18 100%);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#intro::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="50" opacity="0.03">🌿</text></svg>');
+  background-size: 80px;
+  animation: float 20s linear infinite;
+}
+@keyframes float { from { transform: translateY(0); } to { transform: translateY(-80px); } }
+
+.logo-container { position: relative; z-index: 1; margin-bottom: 30px; }
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-shadow: 0 4px 30px rgba(212, 165, 116, 0.3);
+  margin-bottom: 10px;
+}
+.logo-sub {
+  font-size: 0.9rem;
+  letter-spacing: 0.4em;
+  color: var(--cream);
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+.tagline {
+  font-size: 1.1rem;
+  color: var(--cream);
+  opacity: 0.8;
+  margin-bottom: 50px;
+  max-width: 300px;
+}
+
+/* DIFFICULTY CARDS */
+.difficulty-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  z-index: 1;
+}
+.diff-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+.diff-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 40px rgba(212, 165, 116, 0.2);
+}
+.diff-card.standard { border-left: 4px solid #4ade80; }
+.diff-card.hard { border-left: 4px solid #fbbf24; }
+.diff-card.impossible { border-left: 4px solid #ef4444; }
+
+.diff-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.diff-name { font-weight: 600; font-size: 1.1rem; }
+.diff-reward {
+  background: var(--gold);
+  color: var(--green-dark);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.diff-desc { font-size: 0.85rem; opacity: 0.7; line-height: 1.5; }
+.diff-meta { display: flex; gap: 15px; margin-top: 12px; font-size: 0.75rem; opacity: 0.5; }
+
+/* GAME SCREEN */
+#game {
+  background: var(--green-dark);
+  padding: 0;
+}
+.game-header {
+  background: rgba(0,0,0,0.3);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.game-level {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+.game-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.progress-dots {
+  display: flex;
+  gap: 4px;
+}
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.3s;
+}
+.progress-dot.complete { background: var(--gold); }
+.progress-dot.current { background: var(--cream); transform: scale(1.3); }
+.timer {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+.timer.warning { color: #fbbf24; animation: pulse 1s infinite; }
+.timer.danger { color: #ef4444; animation: pulse 0.5s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+/* CHALLENGE CARD */
+.challenge-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.challenge-number {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.challenge-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.1);
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.location-icon { font-size: 1.5rem; }
+.location-name { font-weight: 600; }
+.location-hint { font-size: 0.8rem; opacity: 0.6; }
+
+.challenge-question {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  color: var(--cream);
+}
+.challenge-hint {
+  background: rgba(212, 165, 116, 0.15);
+  border-left: 3px solid var(--gold);
+  padding: 15px;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+/* ANSWER INPUT */
+.answer-section { margin-top: auto; }
+.answer-input {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  color: var(--cream);
+  font-family: inherit;
+  margin-bottom: 15px;
+  transition: all 0.3s;
+}
+.answer-input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.15);
+}
+.answer-input::placeholder { color: rgba(255,255,255,0.4); }
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold) 0%, #c49660 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4); }
+.submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* FEEDBACK */
+.feedback {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+.feedback.show { display: flex; }
+.feedback-card {
+  background: var(--green-mid);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  max-width: 320px;
+  animation: popIn 0.4s ease;
+}
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.feedback-icon { font-size: 4rem; margin-bottom: 20px; }
+.feedback-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 10px; }
+.feedback-text { opacity: 0.8; margin-bottom: 25px; line-height: 1.6; }
+.feedback-btn {
+  background: var(--gold);
+  color: var(--green-dark);
+  border: none;
+  padding: 14px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* WIN SCREEN */
+#win {
+  background: linear-gradient(180deg, var(--green-dark) 0%, #0d1f18 100%);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.win-badge {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, var(--gold) 0%, #c49660 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  box-shadow: 0 0 60px rgba(212, 165, 116, 0.5);
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from { box-shadow: 0 0 30px rgba(212, 165, 116, 0.3); }
+  to { box-shadow: 0 0 60px rgba(212, 165, 116, 0.6); }
+}
+.win-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--gold);
+}
+.win-subtitle { opacity: 0.8; margin-bottom: 40px; max-width: 280px; }
+.discount-code {
+  background: rgba(255,255,255,0.1);
+  border: 2px dashed var(--gold);
+  border-radius: 12px;
+  padding: 20px 40px;
+  margin-bottom: 15px;
+}
+.discount-label { font-size: 0.8rem; opacity: 0.6; margin-bottom: 5px; }
+.discount-value {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+.discount-note { font-size: 0.85rem; opacity: 0.6; margin-bottom: 30px; }
+.claim-btn {
+  background: var(--gold);
+  color: var(--green-dark);
+  border: none;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* LOSE SCREEN */
+#lose {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.lose-icon { font-size: 5rem; margin-bottom: 20px; opacity: 0.8; }
+.lose-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; }
+.lose-text { opacity: 0.7; margin-bottom: 30px; max-width: 280px; }
+.retry-btn {
+  background: transparent;
+  border: 2px solid var(--cream);
+  color: var(--cream);
+  padding: 14px 40px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.home-btn {
+  background: none;
+  border: none;
+  color: var(--cream);
+  opacity: 0.5;
+  cursor: pointer;
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<!-- INTRO SCREEN -->
+<div id="intro" class="screen active">
+  <div class="logo-container">
+    <div class="logo">ROOTS</div>
+    <div class="logo-sub">The Mawun Valley Quest</div>
+  </div>
+  <p class="tagline">Explore the garden. Solve the mysteries. Claim your reward.</p>
+  
+  <div class="difficulty-grid">
+    <div class="diff-card standard" onclick="startGame('standard')">
+      <div class="diff-header">
+        <span class="diff-name">🌱 Standard</span>
+        <span class="diff-reward">10% OFF</span>
+      </div>
+      <p class="diff-desc">Perfect for first-time explorers. Learn the garden basics.</p>
+      <div class="diff-meta">
+        <span>⏱️ No time limit</span>
+        <span>📍 6 challenges</span>
+      </div>
+    </div>
+    
+    <div class="diff-card hard" onclick="startGame('hard')">
+      <div class="diff-header">
+        <span class="diff-name">🌿 Hard</span>
+        <span class="diff-reward">15% OFF</span>
+      </div>
+      <p class="diff-desc">For the curious minds. Requires deeper exploration.</p>
+      <div class="diff-meta">
+        <span>⏱️ 45 minutes</span>
+        <span>📍 8 challenges</span>
+      </div>
+    </div>
+    
+    <div class="diff-card impossible" onclick="startGame('impossible')">
+      <div class="diff-header">
+        <span class="diff-name">🔥 Mission Impossible</span>
+        <span class="diff-reward">20% OFF</span>
+      </div>
+      <p class="diff-desc">Only for botanical experts. Think fast, dig deep.</p>
+      <div class="diff-meta">
+        <span>⏱️ 30 minutes</span>
+        <span>📍 10 challenges</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GAME SCREEN -->
+<div id="game" class="screen">
+  <div class="game-header">
+    <div>
+      <div class="game-level" id="levelDisplay">Standard Mode</div>
+      <div class="progress-dots" id="progressDots"></div>
+    </div>
+    <div class="timer" id="timer">--:--</div>
+  </div>
+  
+  <div class="challenge-container">
+    <div class="challenge-number" id="challengeNum">Challenge 1 of 6</div>
+    
+    <div class="challenge-location" id="location">
+      <span class="location-icon">🌿</span>
+      <div>
+        <div class="location-name">Herbal Remedies</div>
+        <div class="location-hint">Near the parking lot entrance</div>
+      </div>
+    </div>
+    
+    <p class="challenge-question" id="question">Loading challenge...</p>
+    
+    <div class="challenge-hint" id="hint">💡 Hint will appear here</div>
+    
+    <div class="answer-section">
+      <input type="text" class="answer-input" id="answerInput" placeholder="Type your answer..." autocomplete="off">
+      <button class="submit-btn" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
+    </div>
+  </div>
+</div>
+
+<!-- FEEDBACK OVERLAY -->
+<div class="feedback" id="feedback">
+  <div class="feedback-card">
+    <div class="feedback-icon" id="feedbackIcon">✅</div>
+    <div class="feedback-title" id="feedbackTitle">Correct!</div>
+    <p class="feedback-text" id="feedbackText">Great job! Moving to the next challenge.</p>
+    <button class="feedback-btn" id="feedbackBtn" onclick="nextChallenge()">Continue</button>
+  </div>
+</div>
+
+<!-- WIN SCREEN -->
+<div id="win" class="screen">
+  <div class="win-badge">🏆</div>
+  <h1 class="win-title">Quest Complete!</h1>
+  <p class="win-subtitle">You've proven yourself a true garden explorer.</p>
+  <div class="discount-code">
+    <div class="discount-label">Your Reward Code</div>
+    <div class="discount-value" id="discountCode">ROOTS10</div>
+  </div>
+  <p class="discount-note">Show this code at Noni's Resto & Pastry</p>
+  <button class="claim-btn" onclick="shareWin()">Share Your Victory 🎉</button>
+</div>
+
+<!-- LOSE SCREEN -->
+<div id="lose" class="screen">
+  <div class="lose-icon">⏱️</div>
+  <h1 class="lose-title">Time's Up!</h1>
+  <p class="lose-text">The garden keeps its secrets... for now. Want to try again?</p>
+  <button class="retry-btn" onclick="location.reload()">Try Again</button>
+  <button class="home-btn" onclick="goHome()">Choose Different Level</button>
+</div>
+
+<script>
+// GAME DATA
+const challenges = {
+  standard: [
+    {
+      location: "🌿 Herbal Remedies",
+      hint: "Near the parking lot, look for raised wooden beds",
+      question: "This golden root is used for digestion and adds zing to tea. What is it?",
+      answers: ["ginger", "jahe"],
+      funFact: "Ginger has been used for over 5,000 years in traditional medicine!"
+    },
+    {
+      location: "🍌 Banana Garden",
+      hint: "The yellow zone on Mango Street",
+      question: "In Indonesian, fried banana is called 'pisang ___'. Complete the word.",
+      answers: ["goreng"],
+      funFact: "Indonesia has over 100 varieties of bananas!"
+    },
+    {
+      location: "🍍 Pineapple Garden",
+      hint: "Look for the spiky crowns near Strawberry Fields",
+      question: "How many years does it take for a pineapple plant to produce ONE fruit?",
+      answers: ["2", "two", "3", "three", "2-3"],
+      funFact: "Each pineapple plant only produces one fruit in its lifetime!"
+    },
+    {
+      location: "🍊 Citrus Garden",
+      hint: "The orange zone near The Farmhouse",
+      question: "Which citrus fruit has MORE vitamin C than oranges? It's green and tropical.",
+      answers: ["guava", "jambu"],
+      funFact: "Guava has 4x more vitamin C than oranges!"
+    },
+    {
+      location: "🐐 Goats & Friends",
+      hint: "The animal corner with the friendly goats",
+      question: "Goat manure is excellent for gardens. What do we call this natural fertilizer?",
+      answers: ["compost", "manure", "fertilizer", "pupuk"],
+      funFact: "Goat manure is one of the best natural fertilizers!"
+    },
+    {
+      location: "🔥 Mawun Amphitheater",
+      hint: "The gathering place with the fire pit",
+      question: "What is the name of this farm? (Look at the big sign!)",
+      answers: ["noni", "nonis", "noni's", "mawun valley", "mawunvalley"],
+      funFact: "Noni is a tropical fruit known for its healing properties!"
+    }
+  ],
+  hard: [
+    {
+      location: "🌿 Herbal Remedies",
+      hint: "The medicinal garden near the entrance",
+      question: "This herb is sacred in Hinduism and called 'holy ___'. Its leaves are used in tea for stress relief.",
+      answers: ["basil", "tulsi"],
+      funFact: "Holy Basil (Tulsi) is called 'The Queen of Herbs' in Ayurveda."
+    },
+    {
+      location: "🍇 Jabuticaba Garden",
+      hint: "Look for the tree with fruits growing directly on its trunk",
+      question: "Jabuticaba is unique because its fruits grow directly on what part of the tree?",
+      answers: ["trunk", "bark", "stem", "batang"],
+      funFact: "Jabuticaba is called 'Brazilian grape tree' and fruits appear like magic on the trunk!"
+    },
+    {
+      location: "🌸 Markisa Garden",
+      hint: "Where the passion vines climb",
+      question: "Passion fruit is called 'markisa' in Indonesian. Its flower was named by missionaries who saw symbols of what event in its shape?",
+      answers: ["passion", "crucifixion", "passion of christ", "cross"],
+      funFact: "The 10 petals represent the 10 faithful apostles, the corona represents the crown of thorns."
+    },
+    {
+      location: "🥬 Vegetable Garden",
+      hint: "The blue zone with leafy greens",
+      question: "This leafy green grows in water, has hollow stems, and is called 'kangkung' in Indonesian. What's its English name?",
+      answers: ["water spinach", "morning glory", "kangkong"],
+      funFact: "Water spinach is one of the most nutritious vegetables and grows incredibly fast!"
+    },
+    {
+      location: "🐐 Goats & Friends",
+      hint: "Visit our four-legged friends",
+      question: "ASK A STAFF MEMBER: What is the name of our oldest goat?",
+      answers: ["*ask*"],
+      funFact: "Our goats are part of the family and help with natural lawn maintenance!"
+    },
+    {
+      location: "🌴 Mixed Fruits Garden",
+      hint: "The pink zone with tropical treasures",
+      question: "This scaly fruit blooms only at night with huge white flowers. Dragons supposedly loved it. Name this fruit.",
+      answers: ["dragon fruit", "dragonfruit", "pitaya", "buah naga"],
+      funFact: "Dragon fruit flowers bloom for just ONE night and are pollinated by bats and moths!"
+    },
+    {
+      location: "🍋 Lime Area",
+      hint: "Near Noni's Resto",
+      question: "In Indonesian cooking, lime leaves are essential. What is the Indonesian name for kaffir lime?",
+      answers: ["jeruk purut", "jeruk", "purut"],
+      funFact: "Kaffir lime leaves are used in cooking while the fruit juice is too sour to drink!"
+    },
+    {
+      location: "🌻 Flower Jungle",
+      hint: "The colorful corner near reception",
+      question: "These orange flowers repel garden pests naturally and their petals are edible. What flower?",
+      answers: ["marigold", "calendula", "kenikir"],
+      funFact: "Marigolds are planted between vegetables as natural pest control!"
+    }
+  ],
+  impossible: [
+    {
+      location: "🌿 Herbal Remedies",
+      hint: "Where ancient wisdom meets modern healing",
+      question: "This plant's scientific name means 'to make whole' in Latin. Its gel heals burns. What is it?",
+      answers: ["aloe vera", "aloe", "lidah buaya"],
+      funFact: "Aloe vera contains over 75 active compounds!"
+    },
+    {
+      location: "🍌 Banana Garden",
+      hint: "Count carefully in the yellow zone",
+      question: "PHYSICAL CHALLENGE: Find and photograph a banana flower (the purple hanging bud). What shape is it?",
+      answers: ["heart", "teardrop", "cone", "torpedo", "hati"],
+      funFact: "The banana flower is edible and used in salads across Southeast Asia!"
+    },
+    {
+      location: "🌴 Mixed Fruits Garden",
+      hint: "The pink paradise of tropical fruits",
+      question: "This fruit is called 'King of Fruits', has a strong smell, and is banned in hotels. Name it.",
+      answers: ["durian"],
+      funFact: "Durian's smell is so strong it's banned on public transport in Singapore!"
+    },
+    {
+      location: "🍇 Jabuticaba Garden",
+      hint: "The Brazilian wonder tree",
+      question: "Jabuticaba ferments quickly and must be eaten within 3 days of harvest. What DRINK is traditionally made from it?",
+      answers: ["wine", "liqueur", "alcohol", "vinho"],
+      funFact: "Jabuticaba wine is a delicacy in Brazil with a unique grape-like flavor!"
+    },
+    {
+      location: "🥬 Vegetable Garden",
+      hint: "The salad section",
+      question: "CIPHER CHALLENGE: Decode this → OILRAG. Unscramble to find a pungent bulb.",
+      answers: ["garlic", "bawang putih"],
+      funFact: "Garlic has been used as currency, medicine, and vampire repellent throughout history!"
+    },
+    {
+      location: "🌸 Flower Jungle",
+      hint: "Beauty with purpose",
+      question: "This flower's name comes from Mary's gold. Calculate: (petals on a marigold ÷ 2) × 3 = ?",
+      answers: ["21", "24", "18"],
+      funFact: "The answer varies because marigolds typically have 12-16 petals!"
+    },
+    {
+      location: "🍊 Citrus Garden",
+      hint: "Where vitamin C reigns supreme",
+      question: "RIDDLE: I'm sour but not a lemon, green but not unripe, essential for sambal, and smaller than my citrus cousins. What am I?",
+      answers: ["lime", "jeruk nipis", "calamansi", "limau"],
+      funFact: "Indonesian sambal isn't complete without a squeeze of fresh lime!"
+    },
+    {
+      location: "🐐 Goats & Friends",
+      hint: "Learn from the animals",
+      question: "OBSERVATION: Goats have rectangular pupils. This gives them nearly ___-degree vision. Fill in the number.",
+      answers: ["340", "320", "330", "350"],
+      funFact: "Goats can see almost completely around themselves without moving their heads!"
+    },
+    {
+      location: "🌿 Herbal Remedies",
+      hint: "The healing corner",
+      question: "This Indonesian herbal drink combines turmeric, ginger, and tamarind. It's called 'jamu'. What color is traditional turmeric jamu?",
+      answers: ["yellow", "orange", "golden", "kuning"],
+      funFact: "Jamu has been Indonesia's traditional medicine for over 1,000 years!"
+    },
+    {
+      location: "🔥 Mawun Amphitheater",
+      hint: "Final challenge - reflect on your journey",
+      question: "FINAL: Combine the first letter of: Ginger, Aloe, Rambutan, Dragon fruit, Eggplant, Noni. What word do these spell?",
+      answers: ["garden"],
+      funFact: "You've explored the living GARDEN! Congratulations, true explorer!"
+    }
+  ]
+};
+
+const rewards = {
+  standard: { discount: "10%", code: "ROOTS10" },
+  hard: { discount: "15%", code: "ROOTS15" },
+  impossible: { discount: "20%", code: "ROOTSVIP" }
+};
+
+const timeLimits = {
+  standard: null,
+  hard: 45 * 60,
+  impossible: 30 * 60
+};
+
+// GAME STATE
+let currentLevel = 'standard';
+let currentChallenge = 0;
+let timeRemaining = null;
+let timerInterval = null;
+let wrongAttempts = 0;
+
+// START GAME
+function startGame(level) {
+  currentLevel = level;
+  currentChallenge = 0;
+  wrongAttempts = 0;
+  
+  showScreen('game');
+  document.getElementById('levelDisplay').textContent = 
+    level === 'standard' ? '🌱 Standard Mode' :
+    level === 'hard' ? '🌿 Hard Mode' :
+    '🔥 Mission Impossible';
+  
+  // Setup progress dots
+  const dotsContainer = document.getElementById('progressDots');
+  dotsContainer.innerHTML = '';
+  for (let i = 0; i < challenges[level].length; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'progress-dot' + (i === 0 ? ' current' : '');
+    dotsContainer.appendChild(dot);
+  }
+  
+  // Setup timer
+  if (timeLimits[level]) {
+    timeRemaining = timeLimits[level];
+    updateTimerDisplay();
+    timerInterval = setInterval(tick, 1000);
+  } else {
+    document.getElementById('timer').textContent = '∞';
+  }
+  
+  loadChallenge();
+}
+
+function loadChallenge() {
+  const challenge = challenges[currentLevel][currentChallenge];
+  const total = challenges[currentLevel].length;
+  
+  document.getElementById('challengeNum').textContent = `Challenge ${currentChallenge + 1} of ${total}`;
+  document.getElementById('location').innerHTML = `
+    <span class="location-icon">${challenge.location.split(' ')[0]}</span>
+    <div>
+      <div class="location-name">${challenge.location.split(' ').slice(1).join(' ')}</div>
+      <div class="location-hint">${challenge.hint}</div>
+    </div>
+  `;
+  document.getElementById('question').textContent = challenge.question;
+  document.getElementById('hint').innerHTML = `💡 ${challenge.hint}`;
+  document.getElementById('answerInput').value = '';
+  document.getElementById('answerInput').focus();
+  
+  // Update progress dots
+  const dots = document.querySelectorAll('.progress-dot');
+  dots.forEach((dot, i) => {
+    dot.className = 'progress-dot';
+    if (i < currentChallenge) dot.classList.add('complete');
+    if (i === currentChallenge) dot.classList.add('current');
+  });
+}
+
+function checkAnswer() {
+  const input = document.getElementById('answerInput').value.toLowerCase().trim();
+  const challenge = challenges[currentLevel][currentChallenge];
+  
+  // Special case for "ask staff" questions
+  if (challenge.answers.includes('*ask*')) {
+    showFeedback(true, challenge.funFact);
+    return;
+  }
+  
+  const isCorrect = challenge.answers.some(ans => 
+    input.includes(ans.toLowerCase()) || ans.toLowerCase().includes(input)
+  );
+  
+  if (isCorrect) {
+    showFeedback(true, challenge.funFact);
+  } else {
+    wrongAttempts++;
+    if (wrongAttempts >= 3) {
+      showFeedback(false, `The answer was: ${challenge.answers[0].toUpperCase()}`);
+    } else {
+      shakeInput();
+    }
+  }
+}
+
+function shakeInput() {
+  const input = document.getElementById('answerInput');
+  input.style.animation = 'none';
+  input.offsetHeight;
+  input.style.animation = 'shake 0.5s ease';
+}
+
+function showFeedback(success, text) {
+  const feedback = document.getElementById('feedback');
+  document.getElementById('feedbackIcon').textContent = success ? '✅' : '💡';
+  document.getElementById('feedbackTitle').textContent = success ? 'Correct!' : 'Not Quite...';
+  document.getElementById('feedbackText').textContent = text;
+  document.getElementById('feedbackBtn').textContent = success ? 'Continue' : 'Try Again';
+  document.getElementById('feedbackBtn').onclick = success ? nextChallenge : closeFeedback;
+  feedback.classList.add('show');
+}
+
+function closeFeedback() {
+  document.getElementById('feedback').classList.remove('show');
+  wrongAttempts = 0;
+}
+
+function nextChallenge() {
+  document.getElementById('feedback').classList.remove('show');
+  wrongAttempts = 0;
+  currentChallenge++;
+  
+  if (currentChallenge >= challenges[currentLevel].length) {
+    winGame();
+  } else {
+    loadChallenge();
+  }
+}
+
+function tick() {
+  timeRemaining--;
+  updateTimerDisplay();
+  
+  if (timeRemaining <= 0) {
+    clearInterval(timerInterval);
+    loseGame();
+  }
+}
+
+function updateTimerDisplay() {
+  const minutes = Math.floor(timeRemaining / 60);
+  const seconds = timeRemaining % 60;
+  const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  const timer = document.getElementById('timer');
+  timer.textContent = display;
+  
+  timer.className = 'timer';
+  if (timeRemaining <= 60) timer.classList.add('danger');
+  else if (timeRemaining <= 300) timer.classList.add('warning');
+}
+
+function winGame() {
+  clearInterval(timerInterval);
+  const reward = rewards[currentLevel];
+  document.getElementById('discountCode').textContent = reward.code;
+  showScreen('win');
+}
+
+function loseGame() {
+  showScreen('lose');
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function goHome() {
+  clearInterval(timerInterval);
+  showScreen('intro');
+}
+
+function shareWin() {
+  const code = document.getElementById('discountCode').textContent;
+  const text = `🏆 I just completed ROOTS - The Mawun Valley Quest and earned ${rewards[currentLevel].discount} off at Noni's! Code: ${code}\n\n🌿 Can you beat my time? Play at Mawun Valley, Lombok!`;
+  
+  if (navigator.share) {
+    navigator.share({ title: 'ROOTS Quest Victory!', text: text });
+  } else {
+    navigator.clipboard.writeText(text);
+    alert('Victory message copied! Share it with friends.');
+  }
+}
+
+// Enter key to submit
+document.getElementById('answerInput').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') checkAnswer();
+});
+</script>
+
+</body>
+</html>
