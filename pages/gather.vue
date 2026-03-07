@@ -117,6 +117,24 @@
               <span class="click-hint">Click for details →</span>
             </div>
           </article>
+
+          <!-- 6. Garden Quest -->
+          <a href="/garden-quest/" class="event-card signature garden-quest-card" style="text-decoration: none; color: inherit;">
+            <div class="event-image">
+              <img src="/garden-quest/map.png" alt="Garden Quest Adventure">
+              <span class="event-badge quest">Adventure</span>
+            </div>
+            <div class="event-info">
+              <div class="event-icon">🌿</div>
+              <h3>Garden Quest</h3>
+              <p class="event-tagline">A botanical adventure through our living garden</p>
+              <div class="event-meta">
+                <span>🗺️ 10 Checkpoints</span>
+                <span>📓 Printed Journal</span>
+              </div>
+              <span class="click-hint">Explore the quest →</span>
+            </div>
+          </a>
         </div>
         <!-- Other Events -->
         <div class="other-events">
@@ -759,6 +777,9 @@ const closeEvent = () => {
 }
 
 .event-badge.cashew {
+.event-badge.quest {
+  background: linear-gradient(135deg, #7D8B6F, #A8B89A);
+}
   background: var(--color-sage);
 }
 
