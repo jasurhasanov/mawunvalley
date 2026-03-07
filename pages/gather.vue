@@ -551,7 +551,7 @@
               <h4>📍 Location</h4>
               <div class="location-box">
                 <p><strong>Venue:</strong> Mawun Amphitheater</p>
-                <p><strong>Setting:</strong> Open-air stone amphitheater + garden seating</p>
+                <p><strong>Setting:</strong> Open-air wooden amphitheater + garden seating</p>
                 <p class="loc-note">Bring a light jacket — evenings can be cool in the valley.</p>
               </div>
 
