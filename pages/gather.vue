@@ -119,7 +119,7 @@
           </article>
 
           <!-- 6. Garden Quest -->
-          <a href="/garden-quest/" class="event-card signature garden-quest-card" style="text-decoration: none; color: inherit;">
+          <article class="event-card signature" @click="openEvent('quest')">
             <div class="event-image">
               <img src="/garden-quest/map.png" alt="Garden Quest Adventure">
               <span class="event-badge quest">Adventure</span>
@@ -447,6 +447,71 @@
             </div>
           </div>
 
+
+          <!-- Garden Quest Modal -->
+          <div v-if="activeEvent === 'quest'" class="event-detail">
+            <div class="modal-header">
+              <span class="event-badge quest">🌿 Adventure</span>
+              <h2>Garden Quest</h2>
+              <p class="modal-tagline">A botanical adventure through our living garden</p>
+            </div>
+            <div class="modal-body">
+              <p class="intro-text">Explore Mawun Valley's living garden through an immersive quest of discovery. Pick up your printed journal at Reception, visit 10 checkpoints, answer botanical challenges, and earn your Garden Explorer badge!</p>
+              
+              <h4>⏰ Schedule</h4>
+              <div class="schedule-box">
+                <div class="schedule-item">
+                  <span class="schedule-label">When</span>
+                  <span class="schedule-value">Available Daily</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Duration</span>
+                  <span class="schedule-value">Self-paced (1-2 hours)</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Start Point</span>
+                  <span class="schedule-value">Reception</span>
+                </div>
+              </div>
+
+              <h4>💰 Pricing</h4>
+              <div class="pricing-grid">
+                <div class="price-tier">
+                  <span class="tier-name">Per Person</span>
+                  <span class="tier-price">IDR 150,000</span>
+                  <span class="tier-note">Includes printed quest journal</span>
+                </div>
+              </div>
+              
+              <h4>🗺️ The Quest</h4>
+              <ul class="included-list">
+                <li>10 garden checkpoints to discover</li>
+                <li>Choose your difficulty: Easy, Hard, or Impossible</li>
+                <li>Botanical trivia and plant identification challenges</li>
+                <li>Learn about tropical fruits, vegetables, and herbs</li>
+                <li>Beautiful printed journal to keep</li>
+                <li>Earn your Garden Explorer badge at the end</li>
+              </ul>
+
+              <h4>📍 Checkpoints</h4>
+              <div class="benefits-grid">
+                <div class="benefit">1. Reception</div>
+                <div class="benefit">2. Herbal Remedies</div>
+                <div class="benefit">3. Banana Garden</div>
+                <div class="benefit">4. Vegetable Garden</div>
+                <div class="benefit">5. Pineapple Garden</div>
+                <div class="benefit">6. Strawberry Fields</div>
+                <div class="benefit">7. Citrus Garden</div>
+                <div class="benefit">8. Mixed Fruits</div>
+                <div class="benefit">9. Jabuticaba</div>
+                <div class="benefit">🏆 Flower Jungle</div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <a href="/garden-quest/" class="btn btn-primary btn-lg">Explore Garden Quest →</a>
+            </div>
+          </div>
           <!-- Weekly Volleyball Modal -->
           <div v-if="activeEvent === 'volleyball'" class="event-detail">
             <div class="modal-header">
