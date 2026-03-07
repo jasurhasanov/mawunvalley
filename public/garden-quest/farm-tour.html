@@ -326,15 +326,15 @@ body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(-
     
     <!-- Gardens -->
     <div class="tour-point gardens tp-herbal" data-id="herbal">🌿</div>
-    <div class="tour-point gardens tp-banana" data-id="banana">🍌</div>
+    <div class="tour-point fruits tp-banana" data-id="banana">🍌</div>
     <div class="tour-point gardens tp-veg1" data-id="veg1">🥬</div>
     <div class="tour-point gardens tp-veg-top" data-id="vegtop">🥕</div>
     <div class="tour-point gardens tp-veg2" data-id="veg2">🍅</div>
     <div class="tour-point gardens tp-pineapple" data-id="pineapple">🍍</div>
     <div class="tour-point gardens tp-strawberry" data-id="strawberry">🍓</div>
     <div class="tour-point gardens tp-flower-jungle" data-id="flower">🌸</div>
-    <div class="tour-point gardens tp-compost" data-id="compost">♻️</div>
-    <div class="tour-point gardens tp-nursery" data-id="nursery">🌱</div>
+    <div class="tour-point facilities tp-compost" data-id="compost">♻️</div>
+    <div class="tour-point facilities tp-nursery" data-id="nursery">🌱</div>
     
     <!-- Fruits -->
     <div class="tour-point fruits tp-citrus" data-id="citrus">🍋</div>
@@ -344,7 +344,7 @@ body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(-
     
     <!-- Dining -->
     <div class="tour-point dining tp-nonis" data-id="nonis">🍽️</div>
-    <div class="tour-point dining tp-water-well" data-id="waterwell">💧</div>
+    <div class="tour-point facilities tp-water-well" data-id="waterwell">💧</div>
     
     <!-- Stay -->
     <div class="tour-point stay tp-farmhouse" data-id="farmhouse">🏡</div>
@@ -365,7 +365,7 @@ body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(-
     <div class="tour-point facilities tp-toilets" data-id="toilets">🚻</div>
     <div class="tour-point facilities tp-amphitheater" data-id="amphitheater">🎭</div>
     <div class="tour-point facilities tp-chill-hill" data-id="chillhill">🌅</div>
-    <div class="tour-point facilities tp-windmill" data-id="windmill">🌀</div>
+    <div class="tour-point stay tp-windmill" data-id="windmill">🌀</div>
   </div>
 </div>
 
@@ -447,21 +447,21 @@ body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(-
 <script>
 const locations = {
   herbal: { category: "gardens", title: "Herbal Remedies", subtitle: "Traditional healing plants", description: "Our Herbal Remedies garden features medicinal plants used in Jamu, Indonesia's ancient herbal medicine tradition. Find ginger, turmeric, lemongrass, and dozens of healing herbs.", highlights: [{ icon: "🌿", text: "20+ herbs" }, { icon: "💊", text: "Jamu tradition" }, { icon: "📚", text: "Guided tours" }], tip: "Ask about our morning Jamu tasting — fresh traditional tonics to start your day." },
-  banana: { category: "gardens", title: "Banana Garden", subtitle: "Dozens of varieties", description: "Indonesia has incredible banana diversity. Our garden showcases many varieties — from tiny sweet pisang susu to large cooking bananas.", highlights: [{ icon: "🍌", text: "12+ varieties" }, { icon: "🌱", text: "Full lifecycle" }, { icon: "🍳", text: "Cooking types" }], tip: "Visit early morning when farmers might be harvesting ripe bunches." },
+  banana: { category: "fruits", title: "Banana Garden", subtitle: "Dozens of varieties", description: "Indonesia has incredible banana diversity. Our garden showcases many varieties — from tiny sweet pisang susu to large cooking bananas.", highlights: [{ icon: "🍌", text: "12+ varieties" }, { icon: "🌱", text: "Full lifecycle" }, { icon: "🍳", text: "Cooking types" }], tip: "Visit early morning when farmers might be harvesting ripe bunches." },
   veg1: { category: "gardens", title: "Vegetable Garden", subtitle: "From soil to table", description: "Fresh vegetables for Noni's kitchen. Tomatoes, eggplant, chili peppers — all organic and harvested at peak freshness.", highlights: [{ icon: "🥬", text: "Organic" }, { icon: "🍳", text: "Farm to table" }, { icon: "🌶️", text: "Local chilies" }], tip: "Lombok means 'chili' in Javanese — the island is named after the pepper!" },
   vegtop: { category: "gardens", title: "Upper Garden", subtitle: "Root vegetables & herbs", description: "This elevated garden focuses on root vegetables and aromatic herbs that thrive in our tropical climate.", highlights: [{ icon: "🧄", text: "Fresh garlic" }, { icon: "🧅", text: "Local onions" }, { icon: "🌿", text: "Aromatics" }], tip: "Our garlic has a milder, sweeter flavor than imported varieties." },
   veg2: { category: "gardens", title: "Lower Garden", subtitle: "Seasonal produce", description: "Our largest vegetable plot rotates seasonal crops. Water spinach, long beans, and gourds thrive here.", highlights: [{ icon: "🥒", text: "Seasonal" }, { icon: "💧", text: "Drip irrigation" }, { icon: "🦎", text: "Natural pests" }], tip: "We use companion planting instead of pesticides." },
   pineapple: { category: "gardens", title: "Pineapple Garden", subtitle: "Sweet tropical treasures", description: "Each pineapple plant produces only ONE fruit, taking 18-24 months to mature. See the full lifecycle here.", highlights: [{ icon: "🍍", text: "18-24 months" }, { icon: "1️⃣", text: "One per plant" }, { icon: "🔬", text: "Bromelain" }], tip: "Pineapple workers often lose fingerprints from the powerful enzymes!" },
   strawberry: { category: "gardens", title: "Strawberry Fields", subtitle: "Tropical berries", description: "Yes, strawberries grow in tropical Lombok! Our elevated beds provide perfect conditions.", highlights: [{ icon: "🍓", text: "Tropical" }, { icon: "🌹", text: "Rose family" }, { icon: "📸", text: "Photo spot" }], tip: "Strawberries are cousins of roses — look at those similar flowers!" },
   flower: { category: "gardens", title: "Flower Jungle", subtitle: "Colors & pollinators", description: "A riot of color attracting butterflies, bees, and birds. Marigolds, zinnias, and tropical blooms.", highlights: [{ icon: "🦋", text: "Butterflies" }, { icon: "🐝", text: "Pollinators" }, { icon: "📸", text: "Photos" }], tip: "Marigolds are natural pest repellents in our vegetable gardens!" },
-  compost: { category: "gardens", title: "Compost Area", subtitle: "Closing the loop", description: "All organic waste returns here to become rich compost. The heart of our sustainable practice.", highlights: [{ icon: "♻️", text: "Zero waste" }, { icon: "🪱", text: "Worm bins" }, { icon: "🌱", text: "Rich soil" }], tip: "Our compost is ready in 3 months and returns to nourish the plants." },
-  nursery: { category: "gardens", title: "Nursery Plant", subtitle: "Where it begins", description: "Seedlings get their start here before transplanting. See the beginning of farm-to-table.", highlights: [{ icon: "🌱", text: "Baby plants" }, { icon: "🏷️", text: "Labeled" }, { icon: "💚", text: "Growing" }], tip: "Ask about taking home a seedling as a living souvenir!" },
+  compost: { category: "facilities", title: "Compost Area", subtitle: "Closing the loop", description: "All organic waste returns here to become rich compost. The heart of our sustainable practice.", highlights: [{ icon: "♻️", text: "Zero waste" }, { icon: "🪱", text: "Worm bins" }, { icon: "🌱", text: "Rich soil" }], tip: "Our compost is ready in 3 months and returns to nourish the plants." },
+  nursery: { category: "facilities", title: "Nursery Plant", subtitle: "Where it begins", description: "Seedlings get their start here before transplanting. See the beginning of farm-to-table.", highlights: [{ icon: "🌱", text: "Baby plants" }, { icon: "🏷️", text: "Labeled" }, { icon: "💚", text: "Growing" }], tip: "Ask about taking home a seedling as a living souvenir!" },
   citrus: { category: "fruits", title: "Citrus Garden", subtitle: "Lemon, lime, orange", description: "Our citrus grove includes local limes, sweet oranges, and fragrant lemon trees.", highlights: [{ icon: "🍋", text: "Lemons" }, { icon: "🍊", text: "Oranges" }, { icon: "💚", text: "Vitamin C" }], tip: "Oranges originated in Southeast Asia — 'orange' comes from Sanskrit!" },
   mixed: { category: "fruits", title: "Mixed Fruits", subtitle: "Tropical abundance", description: "Dragon fruit, rambutan, passion fruit, mango, guava and more — the heart of our fruit collection.", highlights: [{ icon: "🥭", text: "Mango" }, { icon: "🐉", text: "Dragon fruit" }, { icon: "🔴", text: "Rambutan" }], tip: "Dragon fruit flowers bloom for only ONE night!" },
   jabuticaba: { category: "fruits", title: "Jabuticaba", subtitle: "Brazilian treasure", description: "One of the world's strangest fruits — grows directly on the tree trunk! Extremely rare.", highlights: [{ icon: "🫐", text: "Trunk fruit" }, { icon: "🇧🇷", text: "From Brazil" }, { icon: "⏰", text: "3-day fresh" }], tip: "This phenomenon is called 'cauliflory' — cacao does it too!" },
   harkisa: { category: "fruits", title: "Harkisa Garden", subtitle: "Exotic varieties", description: "Named after a local fruit, this garden hosts unusual tropical specimens.", highlights: [{ icon: "🌳", text: "Mature trees" }, { icon: "🍃", text: "Shaded" }, { icon: "🦜", text: "Bird watching" }], tip: "Early morning is best for spotting birds feeding on ripe fruits." },
-  nonis: { category: "dining", title: "Noni's Resto", subtitle: "Farm-to-table dining", description: "Our restaurant serves dishes made with ingredients harvested steps away. Indonesian favorites, pastries, healthy options.", highlights: [{ icon: "🍽️", text: "Farm fresh" }, { icon: "🥐", text: "Pastries" }, { icon: "☕", text: "Local coffee" }], tip: "Try the daily harvest special — based on what's ripe that morning!" },
-  waterwell: { category: "dining", title: "Water Well", subtitle: "Fresh spring water", description: "Our traditional well provides fresh, natural water. A reminder of sustainable practices.", highlights: [{ icon: "💧", text: "Natural" }, { icon: "🪣", text: "Traditional" }, { icon: "📸", text: "Photo spot" }], tip: "This cool water irrigates our gardens and supplies the restaurant." },
+  nonis: { category: "dining", title: "Noni's Resto & Pastry", subtitle: "Farm-to-table dining", description: "Our restaurant serves dishes made with ingredients harvested steps away. Indonesian favorites, pastries, healthy options.", highlights: [{ icon: "🍽️", text: "Farm fresh" }, { icon: "🥐", text: "Pastries" }, { icon: "☕", text: "Local coffee" }], tip: "Try the daily harvest special — based on what's ripe that morning!" },
+  waterwell: { category: "facilities", title: "Water Well", subtitle: "Fresh spring water", description: "Our traditional well provides fresh, natural water. A reminder of sustainable practices.", highlights: [{ icon: "💧", text: "Natural" }, { icon: "🪣", text: "Traditional" }, { icon: "📸", text: "Photo spot" }], tip: "This cool water irrigates our gardens and supplies the restaurant." },
   farmhouse: { category: "stay", title: "The Farmhouse", subtitle: "Main accommodation", description: "Our signature accommodation offers comfort surrounded by nature. Rooster calls, cricket songs, farm breakfast.", highlights: [{ icon: "🛏️", text: "Comfortable" }, { icon: "🌅", text: "Sunrise" }, { icon: "🍳", text: "Breakfast" }], tip: "Book east-facing for spectacular sunrise views!" },
   lime: { category: "stay", title: "Lime", subtitle: "Citrus retreat", description: "Named after the citrus grove nearby. Easy access to fruit gardens and morning walks.", highlights: [{ icon: "🏠", text: "Private" }, { icon: "🍋", text: "Garden view" }, { icon: "🌿", text: "Peaceful" }], tip: "Pick your own limes for morning water!" },
   jabalkap: { category: "stay", title: "Jabalkap", subtitle: "Traditional hut", description: "Traditional Indonesian architecture with modern comfort.", highlights: [{ icon: "🛖", text: "Traditional" }, { icon: "🌴", text: "Palm-shaded" }, { icon: "🦎", text: "Nature sounds" }], tip: "Ask staff about the name's meaning in Sasak!" },
@@ -475,8 +475,8 @@ const locations = {
   prayer: { category: "facilities", title: "Prayer Room", subtitle: "Musholla", description: "A peaceful space for prayers. Clean, quiet, correct qibla direction.", highlights: [{ icon: "🕌", text: "Prayer space" }, { icon: "🧎", text: "Clean" }, { icon: "🧭", text: "Qibla" }], tip: "Prayer times posted at Reception." },
   toilets: { category: "facilities", title: "Toilets", subtitle: "Restrooms", description: "Clean, well-maintained facilities with eco-friendly fixtures.", highlights: [{ icon: "🚻", text: "Clean" }, { icon: "♿", text: "Accessible" }, { icon: "💧", text: "Eco" }], tip: "We use biodegradable products to protect water systems." },
   amphitheater: { category: "facilities", title: "Amphitheater", subtitle: "Events & gatherings", description: "Open-air venue for events, movie nights, yoga, community gatherings.", highlights: [{ icon: "🎭", text: "Events" }, { icon: "🎬", text: "Movies" }, { icon: "🧘", text: "Yoga" }], tip: "Check weekly schedule for sunset yoga and live music!" },
-  chillhill: { category: "facilities", title: "Chill Hill", subtitle: "Viewpoint", description: "Highest point with panoramic views. Bring a book or just breathe.", highlights: [{ icon: "🌅", text: "Panoramic" }, { icon: "📖", text: "Reading" }, { icon: "🧘", text: "Meditation" }], tip: "THE spot for sunset — arrive 30 min early!" },
-  windmill: { category: "facilities", title: "Rick's Windmill", subtitle: "Iconic landmark", description: "A charming windmill and one of our most photographed spots.", highlights: [{ icon: "🌀", text: "Iconic" }, { icon: "📸", text: "Photos" }, { icon: "💨", text: "Breeze" }], tip: "Looks magical during golden hour!" }
+  chillhill: { category: "facilities", title: "The Heal", subtitle: "Viewpoint", description: "Highest point with panoramic views. Bring a book or just breathe.", highlights: [{ icon: "🌅", text: "Panoramic" }, { icon: "📖", text: "Reading" }, { icon: "🧘", text: "Meditation" }], tip: "THE spot for sunset — arrive 30 min early!" },
+  windmill: { category: "stay", title: "Rick's Windmill", subtitle: "Iconic landmark", description: "A charming windmill and one of our most photographed spots.", highlights: [{ icon: "🌀", text: "Iconic" }, { icon: "📸", text: "Photos" }, { icon: "💨", text: "Breeze" }], tip: "Looks magical during golden hour!" }
 };
 
 document.querySelectorAll('.cat-btn').forEach(btn => {
