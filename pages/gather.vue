@@ -134,7 +134,7 @@
               </div>
               <span class="click-hint">Explore the quest →</span>
             </div>
-          </a>
+          </article>
         </div>
         <!-- Other Events -->
         <div class="other-events">
