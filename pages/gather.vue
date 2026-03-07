@@ -28,61 +28,25 @@
         </div>
 
         <div class="signature-grid">
-          <!-- 1. BBQ Nights -->
-          <article class="event-card signature" @click="openEvent('bbq')">
+          <!-- 1. Outdoor Cinema -->
+          <article class="event-card signature" @click="openEvent('cinema')">
             <div class="event-image">
-              <img src="/images/bbq-nights.jpg" alt="BBQ Nights">
-              <span class="event-badge">Weekly</span>
+              <img src="/images/outdoor-cinema.png" alt="Outdoor Cinema">
+              <span class="event-badge cinema">Weekly</span>
             </div>
             <div class="event-info">
-              <div class="event-icon">🔥</div>
-              <h3>#BBQNights</h3>
-              <p class="event-tagline">Every Friday, the farm comes alive</p>
+              <div class="event-icon">🎬</div>
+              <h3>Outdoor Cinema</h3>
+              <p class="event-tagline">Movies under the stars at Mawun Amphitheater</p>
               <div class="event-meta">
-                <span>📅 Every Friday</span>
-                <span>💰 From IDR 130,000</span>
+                <span>📅 Every Wednesday</span>
+                <span>💰 IDR 150,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
             </div>
           </article>
 
-          <!-- 2. Samovar Tea Ceremony -->
-          <article class="event-card signature" @click="openEvent('samovar')">
-            <div class="event-image">
-              <img src="/images/samovar-tea.png" alt="Samovar Tea Ceremony">
-              <span class="event-badge samovar">Cultural</span>
-            </div>
-            <div class="event-info">
-              <div class="event-icon">☕</div>
-              <h3>Guided Samovar Tea Ceremony</h3>
-              <p class="event-tagline">A taste of Soviet tradition</p>
-              <div class="event-meta">
-                <span>👥 Up to 10 guests</span>
-                <span>💰 IDR 1,000,000</span>
-              </div>
-              <span class="click-hint">Click for details →</span>
-            </div>
-          </article>
-
-          <!-- 3. Cashew Apple Jam -->
-          <article class="event-card signature" @click="openEvent('cashew')">
-            <div class="event-image">
-              <img src="/images/cashew-jam-cover.jpg" alt="Cashew Apple Jam Cooking Class">
-              <span class="event-badge cashew">Signature</span>
-            </div>
-            <div class="event-info">
-              <div class="event-icon">🌿</div>
-              <h3>Cashew Apple Jam Cooking Class</h3>
-              <p class="event-tagline">Farm-to-table magic with Mrs. Noni</p>
-              <div class="event-meta">
-                <span>⏰ 4 hours</span>
-                <span>💰 From IDR 190,000</span>
-              </div>
-              <span class="click-hint">Click for details →</span>
-            </div>
-          </article>
-
-          <!-- 4. Weekly Volleyball -->
+          <!-- 2. Weekly Volleyball -->
           <article class="event-card signature" @click="openEvent('volleyball')">
             <div class="event-image">
               <img src="/images/volleyball.png" alt="Weekly Volleyball Games">
@@ -100,25 +64,60 @@
             </div>
           </article>
 
-          <!-- 5. Outdoor Cinema -->
-          <article class="event-card signature" @click="openEvent('cinema')">
+          <!-- 3. BBQ Nights -->
+          <article class="event-card signature" @click="openEvent('bbq')">
             <div class="event-image">
-              <img src="/images/outdoor-cinema.png" alt="Outdoor Cinema">
-              <span class="event-badge cinema">Weekly</span>
+              <img src="/images/bbq-nights.jpg" alt="BBQ Nights">
+              <span class="event-badge">Weekly</span>
             </div>
             <div class="event-info">
-              <div class="event-icon">🎬</div>
-              <h3>Outdoor Cinema</h3>
-              <p class="event-tagline">Movies under the stars at Mawun Amphitheater</p>
+              <div class="event-icon">🔥</div>
+              <h3>#BBQNights</h3>
+              <p class="event-tagline">Every Friday, the farm comes alive</p>
               <div class="event-meta">
-                <span>📅 Every Wednesday</span>
-                <span>💰 IDR 150,000</span>
+                <span>📅 Every Friday</span>
+                <span>💰 From IDR 130,000</span>
+              </div>
+              <span class="click-hint">Click for details →</span>
+            </div>
+          </article>
+
+          <!-- 4. Samovar Tea Ceremony -->
+          <article class="event-card signature" @click="openEvent('samovar')">
+            <div class="event-image">
+              <img src="/images/samovar-tea.png" alt="Samovar Tea Ceremony">
+              <span class="event-badge samovar">Cultural</span>
+            </div>
+            <div class="event-info">
+              <div class="event-icon">☕</div>
+              <h3>Guided Samovar Tea Ceremony</h3>
+              <p class="event-tagline">A taste of Soviet tradition</p>
+              <div class="event-meta">
+                <span>👥 Up to 10 guests</span>
+                <span>💰 IDR 1,000,000</span>
+              </div>
+              <span class="click-hint">Click for details →</span>
+            </div>
+          </article>
+
+          <!-- 5. Cashew Apple Jam -->
+          <article class="event-card signature" @click="openEvent('cashew')">
+            <div class="event-image">
+              <img src="/images/cashew-jam-cover.jpg" alt="Cashew Apple Jam Cooking Class">
+              <span class="event-badge cashew">Signature</span>
+            </div>
+            <div class="event-info">
+              <div class="event-icon">🌿</div>
+              <h3>Cashew Apple Jam Cooking Class</h3>
+              <p class="event-tagline">Farm-to-table magic with Mrs. Noni</p>
+              <div class="event-meta">
+                <span>⏰ 4 hours</span>
+                <span>💰 From IDR 190,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
             </div>
           </article>
         </div>
-
         <!-- Other Events -->
         <div class="other-events">
           <h3 class="other-events-title">More Activities</h3>
