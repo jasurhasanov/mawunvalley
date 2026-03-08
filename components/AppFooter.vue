@@ -63,11 +63,10 @@
 }
 .site-footer .footer-content {
   max-width: 1000px !important;
-  margin: 0 auto !important;
+  margin: 0 auto 30px !important;
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
   gap: 30px !important;
-  margin-bottom: 30px !important;
 }
 .site-footer .footer-brand img { 
   height: 40px !important; 
@@ -79,16 +78,18 @@
   opacity: 0.8 !important; 
   color: rgba(255,255,255,0.85) !important;
   font-family: 'Outfit', sans-serif !important;
+  font-weight: 400 !important;
   line-height: 1.7 !important;
 }
 .site-footer .footer-links h4 { 
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important; 
   color: #d4a574 !important; 
   font-size: 0.75rem !important; 
   text-transform: uppercase !important; 
   letter-spacing: 1px !important; 
   margin-bottom: 12px !important; 
-  font-family: 'Outfit', sans-serif !important;
-  font-weight: 400 !important;
 }
 .site-footer .footer-links ul { 
   list-style: none !important; 
@@ -104,6 +105,7 @@
   display: block !important; 
   padding: 4px 0 !important;
   font-family: 'Outfit', sans-serif !important;
+  font-weight: 400 !important;
   transition: color 0.3s !important;
 }
 .site-footer .footer-links a:hover { 
@@ -117,5 +119,6 @@
   opacity: 0.7 !important;
   color: rgba(255,255,255,0.85) !important;
   font-family: 'Outfit', sans-serif !important;
+  font-weight: 400 !important;
 }
 </style>
