@@ -16,42 +16,43 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
 .download-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
 .download-btn:disabled{opacity:0.7;cursor:wait}
 .progress-text{color:white;margin-top:10px;font-size:0.9rem;display:none}
-.journal{max-width:800px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
-.page{padding:40px;min-height:600px;border-bottom:3px dashed var(--sage-light);background:var(--white)}
-.cover{background:linear-gradient(135deg,var(--sage),var(--sage-light));padding:60px 40px;text-align:center;color:var(--white);min-height:500px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.journal{max-width:700px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
+.page{width:700px;height:900px;padding:40px;background:var(--white);border-bottom:3px dashed var(--sage-light);display:flex;flex-direction:column}
+.page.cover-page{background:linear-gradient(135deg,var(--sage),var(--sage-light));color:white;text-align:center;justify-content:space-between;position:relative}
 .difficulty-badge{position:absolute;top:20px;right:20px;background:rgba(255,255,255,0.2);padding:8px 20px;border-radius:20px;font-size:0.9rem}
-.cover h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;margin-bottom:10px}
-.cover-emoji{font-size:3.5rem;margin-bottom:15px}
-.cover p{font-size:1rem;opacity:0.9;max-width:400px;margin:0 auto}
-.name-field{margin-top:30px;padding-top:25px;border-top:1px dashed rgba(255,255,255,0.4)}
+.cover-top{flex:1;display:flex;flex-direction:column;justify-content:center}
+.cover-emoji{font-size:4rem;margin-bottom:15px}
+.cover-page h1{font-family:'Cormorant Garamond',serif;font-size:2.8rem;margin-bottom:10px}
+.cover-page .tagline{font-size:1.1rem;opacity:0.9;margin-bottom:20px}
+.name-field{padding:20px;border-top:1px dashed rgba(255,255,255,0.4)}
 .name-field label{display:block;font-size:0.8rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.1em}
-.name-line{width:220px;height:2px;background:rgba(255,255,255,0.5);margin:0 auto}
-.instructions{padding:40px;background:var(--cream);text-align:center;min-height:400px;display:flex;flex-direction:column;justify-content:center}
-.instructions h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--earth);margin-bottom:20px}
-.instructions ol{text-align:left;max-width:500px;margin:0 auto;color:var(--earth-light);font-size:1rem}
-.instructions li{margin-bottom:12px;padding-left:8px}
-.checkpoint-page{padding:35px;min-height:550px}
-.checkpoint-header{display:flex;align-items:center;gap:15px;margin-bottom:25px}
+.name-line{width:250px;height:2px;background:rgba(255,255,255,0.5);margin:0 auto}
+.how-to-play{background:rgba(255,255,255,0.15);border-radius:15px;padding:20px;text-align:left}
+.how-to-play h3{font-size:1rem;margin-bottom:12px;text-align:center}
+.how-to-play ol{font-size:0.85rem;padding-left:20px;opacity:0.95}
+.how-to-play li{margin-bottom:6px}
+.checkpoint-page{justify-content:flex-start}
+.checkpoint-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
 .checkpoint-num{width:55px;height:55px;background:var(--sage);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:600;flex-shrink:0}
-.checkpoint-title h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--earth)}
-.checkpoint-title p{color:var(--sage);font-size:0.9rem}
-.walk-instruction{background:rgba(125,139,111,0.1);padding:15px;border-radius:10px;margin-bottom:25px;font-style:italic;color:var(--earth-light);font-size:0.95rem}
+.checkpoint-title h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--earth)}
+.checkpoint-title p{color:var(--sage);font-size:0.95rem}
+.walk-instruction{background:rgba(125,139,111,0.1);padding:15px;border-radius:10px;margin-bottom:20px;font-style:italic;color:var(--earth-light);font-size:0.95rem}
 .question-box{background:var(--cream);padding:25px;border-radius:12px;margin-bottom:20px}
 .question-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--sage);margin-bottom:10px}
-.question-text{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--earth);line-height:1.4}
-.options-list{list-style:none;margin-bottom:25px}
-.option-item{display:flex;align-items:center;gap:15px;padding:15px;border:2px solid rgba(125,139,111,0.2);border-radius:10px;margin-bottom:10px}
+.question-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--earth);line-height:1.4}
+.options-list{list-style:none;margin-bottom:20px;flex:1}
+.option-item{display:flex;align-items:center;gap:15px;padding:14px;border:2px solid rgba(125,139,111,0.2);border-radius:10px;margin-bottom:10px}
 .option-checkbox{width:24px;height:24px;border:2px solid var(--sage);border-radius:50%;flex-shrink:0}
 .option-text{color:var(--earth);font-size:1rem}
-.fun-fact-box{background:linear-gradient(135deg,rgba(125,139,111,0.1),rgba(168,184,154,0.1));padding:20px;border-left:4px solid var(--sage);border-radius:0 10px 10px 0}
+.fun-fact-box{background:linear-gradient(135deg,rgba(125,139,111,0.1),rgba(168,184,154,0.1));padding:18px;border-left:4px solid var(--sage);border-radius:0 10px 10px 0}
 .fun-fact-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--sage);margin-bottom:8px}
 .fun-fact-text{color:var(--earth-light);font-size:0.9rem;line-height:1.5}
-.completion-page{padding:50px;text-align:center;background:linear-gradient(135deg,var(--cream),var(--white));min-height:500px;display:flex;flex-direction:column;justify-content:center}
-.completion-page h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--earth);margin-bottom:15px}
-.trophy{font-size:5rem;margin-bottom:20px}
-.score-box{display:inline-block;background:var(--sage);color:var(--white);padding:15px 40px;border-radius:30px;font-size:1.2rem;margin:20px 0}
-.stamp-area{margin-top:30px;padding:30px;border:3px dashed var(--sage);border-radius:15px;display:inline-block}
-.stamp-area p{color:var(--sage);font-size:0.9rem}
+.completion-page{text-align:center;justify-content:center;background:linear-gradient(135deg,var(--cream),var(--white))}
+.completion-page h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--earth);margin-bottom:15px}
+.trophy{font-size:6rem;margin-bottom:20px}
+.score-box{display:inline-block;background:var(--sage);color:var(--white);padding:18px 50px;border-radius:30px;font-size:1.3rem;margin:25px 0}
+.stamp-area{margin-top:30px;padding:40px 60px;border:3px dashed var(--sage);border-radius:15px;display:inline-block}
+.stamp-area p{color:var(--sage);font-size:1rem}
 </style>
 </head>
 <body>
@@ -62,29 +63,32 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
 </div>
 
 <div class="journal">
-  <section class="page cover" data-page="01-cover">
+  
+  <!-- Page 1: Cover + How to Play -->
+  <section class="page cover-page" data-page="01-cover">
     <div class="difficulty-badge">🔥 Hard Mode</div>
-    <div class="cover-emoji">🗺️</div>
-    <h1>Garden Quest Journal</h1>
-    <p>Your adventure through Mawun Valley's Living Garden awaits!</p>
-    <div class="name-field">
-      <label>Explorer's Name</label>
-      <div class="name-line"></div>
+    <div class="cover-top">
+      <div class="cover-emoji">🗺️</div>
+      <h1>Garden Quest Journal</h1>
+      <p class="tagline">Your adventure through Mawun Valley's Living Garden</p>
+      <div class="name-field">
+        <label>Explorer's Name</label>
+        <div class="name-line"></div>
+      </div>
+    </div>
+    <div class="how-to-play">
+      <h3>📋 How to Play</h3>
+      <ol>
+        <li><strong>Visit each checkpoint</strong> — Walk to the numbered locations</li>
+        <li><strong>Answer the challenge</strong> — Circle your answer</li>
+        <li><strong>Learn fun facts</strong> — Discover plant secrets</li>
+        <li><strong>Complete all 10</strong> — Return to Reception for your badge!</li>
+      </ol>
     </div>
   </section>
 
-  <section class="page instructions" data-page="02-instructions">
-    <h2>How to Play</h2>
-    <ol>
-      <li><strong>Visit each checkpoint</strong> — Walk to the numbered locations on the map</li>
-      <li><strong>Read the question</strong> — Each checkpoint has a plant challenge</li>
-      <li><strong>Circle your answer</strong> — Pick one option</li>
-      <li><strong>Learn the fun fact</strong> — Discover amazing plant secrets</li>
-      <li><strong>Collect all 10!</strong> — Complete every checkpoint to win</li>
-    </ol>
-  </section>
-
-  <section class="page checkpoint-page" data-page="03-checkpoint-1">
+  <!-- Page 2: Checkpoint 1 -->
+  <section class="page checkpoint-page" data-page="02-checkpoint-1">
     <div class="checkpoint-header">
       <div class="checkpoint-num">1</div>
       <div class="checkpoint-title"><h3>Reception</h3><p>Start your journey here</p></div>
@@ -92,13 +96,13 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     <div class="walk-instruction">📍 Walk to the Reception desk near the Parking Lot</div>
     <div class="question-box">
       <p class="question-label">Challenge Question</p>
-      <p class="question-text">What is the botanical classification of mango?</p>
+      <p class="question-text">Which fruit is known as the 'King of Tropical Fruits'?</p>
     </div>
     <ul class="options-list">
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Berry</span></li>
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Drupe</span></li>
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Pome</span></li>
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Hesperidium</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Banana</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Mango</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Papaya</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Coconut</span></li>
     </ul>
     <div class="fun-fact-box">
       <p class="fun-fact-label">🌱 Did You Know?</p>
@@ -106,7 +110,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <section class="page checkpoint-page" data-page="04-checkpoint-2">
+  <!-- Page 3: Checkpoint 2 -->
+  <section class="page checkpoint-page" data-page="03-checkpoint-2">
     <div class="checkpoint-header">
       <div class="checkpoint-num">2</div>
       <div class="checkpoint-title"><h3>Herbal Remedies</h3><p>Traditional healing plants</p></div>
@@ -114,13 +119,13 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     <div class="walk-instruction">📍 Walk up Jackfruit Street to the Herbal Remedies area</div>
     <div class="question-box">
       <p class="question-label">Challenge Question</p>
-      <p class="question-text">What compound in ginger provides its medicinal properties?</p>
+      <p class="question-text">Which herb is commonly used to help with digestion?</p>
     </div>
     <ul class="options-list">
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Capsaicin</span></li>
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Gingerol</span></li>
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Curcumin</span></li>
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Allicin</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Rosemary</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Ginger</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Basil</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Mint</span></li>
     </ul>
     <div class="fun-fact-box">
       <p class="fun-fact-label">🌱 Did You Know?</p>
@@ -128,7 +133,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <section class="page checkpoint-page" data-page="05-checkpoint-3">
+  <!-- Page 4: Checkpoint 3 -->
+  <section class="page checkpoint-page" data-page="04-checkpoint-3">
     <div class="checkpoint-header">
       <div class="checkpoint-num">3</div>
       <div class="checkpoint-title"><h3>Banana Garden</h3><p>Dozens of varieties</p></div>
@@ -136,13 +142,13 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     <div class="walk-instruction">📍 Continue up Mango Street to the Banana Garden</div>
     <div class="question-box">
       <p class="question-label">Challenge Question</p>
-      <p class="question-text">What enzyme in pineapple tenderizes meat?</p>
+      <p class="question-text">What mineral are bananas famously high in?</p>
     </div>
     <ul class="options-list">
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Papain</span></li>
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Bromelain</span></li>
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Rennet</span></li>
-      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Lipase</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Iron</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Calcium</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Potassium</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Zinc</span></li>
     </ul>
     <div class="fun-fact-box">
       <p class="fun-fact-label">🌱 Did You Know?</p>
@@ -150,7 +156,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <section class="page checkpoint-page" data-page="06-checkpoint-4">
+  <!-- Page 5: Checkpoint 4 -->
+  <section class="page checkpoint-page" data-page="05-checkpoint-4">
     <div class="checkpoint-header">
       <div class="checkpoint-num">4</div>
       <div class="checkpoint-title"><h3>Vegetable Garden</h3><p>From soil to table</p></div>
@@ -172,7 +179,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <section class="page checkpoint-page" data-page="07-checkpoint-5">
+  <!-- Page 6: Checkpoint 5 -->
+  <section class="page checkpoint-page" data-page="06-checkpoint-5">
     <div class="checkpoint-header">
       <div class="checkpoint-num">5</div>
       <div class="checkpoint-title"><h3>Pineapple Garden</h3><p>Sweet treasures</p></div>
@@ -194,7 +202,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <section class="page checkpoint-page" data-page="08-checkpoint-6">
+  <!-- Page 7: Checkpoint 6 -->
+  <section class="page checkpoint-page" data-page="07-checkpoint-6">
     <div class="checkpoint-header">
       <div class="checkpoint-num">6</div>
       <div class="checkpoint-title"><h3>Strawberry Fields</h3><p>Tropical berries</p></div>
@@ -216,7 +225,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <section class="page checkpoint-page" data-page="09-checkpoint-7">
+  <!-- Page 8: Checkpoint 7 -->
+  <section class="page checkpoint-page" data-page="08-checkpoint-7">
     <div class="checkpoint-header">
       <div class="checkpoint-num">7</div>
       <div class="checkpoint-title"><h3>Citrus Garden</h3><p>Lemon, lime, orange</p></div>
@@ -238,7 +248,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <section class="page checkpoint-page" data-page="10-checkpoint-8">
+  <!-- Page 9: Checkpoint 8 -->
+  <section class="page checkpoint-page" data-page="09-checkpoint-8">
     <div class="checkpoint-header">
       <div class="checkpoint-num">8</div>
       <div class="checkpoint-title"><h3>Mixed Fruits Garden</h3><p>Tropical abundance</p></div>
@@ -260,7 +271,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <section class="page checkpoint-page" data-page="11-checkpoint-9">
+  <!-- Page 10: Checkpoint 9 -->
+  <section class="page checkpoint-page" data-page="10-checkpoint-9">
     <div class="checkpoint-header">
       <div class="checkpoint-num">9</div>
       <div class="checkpoint-title"><h3>Jabuticaba Garden</h3><p>Brazilian treasure</p></div>
@@ -282,7 +294,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <section class="page checkpoint-page" data-page="12-checkpoint-10">
+  <!-- Page 11: Checkpoint 10 -->
+  <section class="page checkpoint-page" data-page="11-checkpoint-10">
     <div class="checkpoint-header">
       <div class="checkpoint-num">🏆</div>
       <div class="checkpoint-title"><h3>Flower Jungle</h3><p>The Finish Line!</p></div>
@@ -304,7 +317,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <section class="page completion-page" data-page="13-completion">
+  <!-- Page 12: Completion -->
+  <section class="page completion-page" data-page="12-completion">
     <div class="trophy">🏆</div>
     <h2>Quest Complete!</h2>
     <p>You explored all of Mawun Valley's Living Garden!</p>
@@ -313,6 +327,7 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
       <p>🌿 Staff stamp here 🌿</p>
     </div>
   </section>
+
 </div>
 
 <script>
@@ -330,13 +345,15 @@ async function downloadZip() {
   try {
     for (let i = 0; i < pages.length; i++) {
       const page = pages[i];
-      const pageName = page.dataset.page || `page-${i+1}`;
+      const pageName = page.dataset.page;
       progressText.textContent = `Generating page ${i+1} of ${pages.length}...`;
       
       const canvas = await html2canvas(page, {
         scale: 2,
         backgroundColor: '#FFFFFF',
-        useCORS: true
+        useCORS: true,
+        width: 700,
+        height: 900
       });
       
       const imgData = canvas.toDataURL('image/png').split(',')[1];
