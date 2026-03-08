@@ -4,12 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Garden Quest Journal — Hard 🌿</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-.download-bar { text-align: center; padding: 20px; background: #7D8B6F; }
-.download-btn { background: white; color: #2d3a2d; border: none; padding: 12px 30px; font-size: 1.1rem; font-weight: 600; border-radius: 30px; cursor: pointer; font-family: inherit; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-.download-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-@media print { .download-bar { display: none; } }
 :root{--cream:#FAF8F5;--gold:#d4a574;--gold-light:#e8c9a8;--earth:#5C4D3C;--earth-light:#8B7355;--white:#FFF}
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);line-height:1.6}
 .journal{max-width:800px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
@@ -51,7 +48,7 @@
 </style>
 </head>
 <body>
-<div class="download-bar"><button onclick="window.print()" class="download-btn">📥 Download PDF</button></div>
+<div class="download-bar" id="downloadBar"><button class="download-btn" onclick="downloadPNG()">📥 Download PNG</button></div>
 <div class="journal">
 <section class="cover"><div class="difficulty-badge">🌿 Hard Mode</div><div class="cover-emoji">🏔️</div><h1>Garden Quest Journal</h1><p>A deeper dive into botanical knowledge. Are you ready?</p><div class="name-field"><label>Explorer's Name</label><div class="name-line"></div></div></section>
 <section class="instructions"><h2>Hard Mode Challenge</h2><p>25 points per correct answer — Maximum score: 250 points</p><div class="difficulty-note">⚡ Questions require knowledge of plant science, origins, and compounds</div></section>
@@ -67,6 +64,25 @@
 <section class="checkpoint-page"><div class="checkpoint-header"><div class="checkpoint-num">🏆</div><div class="checkpoint-title"><h3>Flower Jungle</h3><p>Final Challenge!</p></div></div><div class="walk-instruction">📍 Your final stop: Flower Jungle</div><div class="question-box"><p class="question-label">Hard Challenge</p><p class="question-text">What compound in lavender is responsible for its calming effects?</p></div><ul class="options-list"><li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Caffeine</span></li><li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Linalool</span></li><li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Menthol</span></li><li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Thymol</span></li></ul><div class="fun-fact-box"><p class="fun-fact-label">🌿 Deep Dive</p><p class="fun-fact-text">Linalool affects the same brain receptors as some anxiety medications!</p></div></section>
 <section class="completion-page"><div class="trophy">🥇</div><h2>Hard Mode Complete!</h2><p>You've proven your botanical knowledge!</p><div class="score-box">___/250 Points</div><div class="stamp-area"><p>🌿 Botanist certification 🌿</p></div></section>
 </div>
-<button class="download-btn" onclick="window.print()">📥 Print/PDF</button>
+<script>
+async function downloadPNG() {
+  const btn = document.querySelector(".download-btn");
+  const bar = document.getElementById("downloadBar");
+  btn.disabled = true;
+  btn.textContent = "⏳ Generating...";
+  bar.style.display = "none";
+  try {
+    const element = document.querySelector(".journal");
+    const canvas = await html2canvas(element, { scale: 2, backgroundColor: "#FAF8F5", useCORS: true });
+    const link = document.createElement("a");
+    link.download = "garden-quest-journal.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  } catch (err) { alert("Error generating image"); console.error(err); }
+  bar.style.display = "block";
+  btn.disabled = false;
+  btn.textContent = "📥 Download PNG";
+}
+</script>
 </body>
 </html>

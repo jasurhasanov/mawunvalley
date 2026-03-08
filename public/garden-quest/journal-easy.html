@@ -4,12 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Garden Quest Journal — Easy 🌱</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-.download-bar { text-align: center; padding: 20px; background: #7D8B6F; }
-.download-btn { background: white; color: #2d3a2d; border: none; padding: 12px 30px; font-size: 1.1rem; font-weight: 600; border-radius: 30px; cursor: pointer; font-family: inherit; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-.download-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-@media print { .download-bar { display: none; } }
 :root{--cream:#FAF8F5;--sage:#7D8B6F;--sage-light:#A8B89A;--earth:#5C4D3C;--earth-light:#8B7355;--white:#FFF}
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);line-height:1.6}
 .journal{max-width:800px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
@@ -48,11 +45,11 @@
 .stamp-area{margin-top:30px;padding:25px;border:2px dashed var(--sage);border-radius:10px;display:inline-block}
 .stamp-area p{color:var(--sage);font-size:0.85rem}
 @media print{.journal{box-shadow:none}.checkpoint-page{page-break-inside:avoid}.download-btn{display:none}}
-.download-btn{position:fixed;bottom:25px;right:25px;background:var(--sage);color:var(--white);border:none;padding:12px 22px;border-radius:25px;cursor:pointer;font-family:'Outfit',sans-serif;box-shadow:0 4px 15px rgba(125,139,111,0.4);z-index:100}
+.download-bar{text-align:center;padding:20px;background:var(--sage);margin-bottom:0}.download-btn{background:white;color:var(--earth);border:none;padding:14px 35px;font-size:1.1rem;font-weight:600;border-radius:30px;cursor:pointer;font-family:inherit;box-shadow:0 4px 15px rgba(0,0,0,0.2)}.download-btn:hover{transform:translateY(-2px)}.download-btn:disabled{opacity:0.7;cursor:wait}
 </style>
 </head>
 <body>
-<div class="download-bar"><button onclick="window.print()" class="download-btn">📥 Download PDF</button></div>
+<div class="download-bar" id="downloadBar"><button class="download-btn" onclick="downloadPNG()">📥 Download PNG</button></div>
 <div class="journal">
 <section class="cover"><div class="difficulty-badge">🌱 Easy Mode</div><div class="cover-emoji">🗺️</div><h1>Garden Quest Journal</h1><p>Your adventure through Mawun Valley's Living Garden awaits!</p><div class="name-field"><label>Explorer's Name</label><div class="name-line"></div></div></section>
 <section class="instructions"><h2>How to Play</h2><ol><li><strong>Visit each checkpoint</strong> — Walk to the numbered locations</li><li><strong>Read the question</strong> — Each checkpoint has a plant challenge</li><li><strong>Circle your answer</strong> — Pick one option</li><li><strong>Learn the fun fact</strong> — Discover plant secrets</li><li><strong>Collect all 10!</strong> — Complete every checkpoint</li></ol></section>
@@ -68,6 +65,25 @@
 <section class="checkpoint-page"><div class="checkpoint-header"><div class="checkpoint-num">🏆</div><div class="checkpoint-title"><h3>Flower Jungle</h3><p>The Finish Line!</p></div></div><div class="walk-instruction">📍 Your final stop: the colorful Flower Jungle</div><div class="question-box"><p class="question-label">Final Challenge</p><p class="question-text">Which flower is used for cooking AND pest control?</p></div><ul class="options-list"><li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Rose</span></li><li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Marigold</span></li><li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Orchid</span></li><li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Hibiscus</span></li></ul><div class="fun-fact-box"><p class="fun-fact-label">🌱 Did You Know?</p><p class="fun-fact-text">Marigolds contain pyrethrin, a natural insecticide!</p></div></section>
 <section class="completion-page"><div class="trophy">🏆</div><h2>Quest Complete!</h2><p>You explored all of Mawun Valley's Living Garden!</p><div class="score-box">___/10 Correct</div><div class="stamp-area"><p>🌿 Staff stamp here 🌿</p></div></section>
 </div>
-<button class="download-btn" onclick="window.print()">📥 Print/PDF</button>
+<script>
+async function downloadPNG() {
+  const btn = document.querySelector(".download-btn");
+  const bar = document.getElementById("downloadBar");
+  btn.disabled = true;
+  btn.textContent = "⏳ Generating...";
+  bar.style.display = "none";
+  try {
+    const element = document.querySelector(".journal");
+    const canvas = await html2canvas(element, { scale: 2, backgroundColor: "#FAF8F5", useCORS: true });
+    const link = document.createElement("a");
+    link.download = "garden-quest-journal.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  } catch (err) { alert("Error generating image"); console.error(err); }
+  bar.style.display = "block";
+  btn.disabled = false;
+  btn.textContent = "📥 Download PNG";
+}
+</script>
 </body>
 </html>
