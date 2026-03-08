@@ -66,40 +66,40 @@
 .footer {
   background: linear-gradient(135deg, #2d3a2d 0%, #1a2a1a 100%);
   color: var(--color-white);
-  padding: 80px 0 30px;
+  padding: 50px 0 25px;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-  gap: 50px;
-  margin-bottom: 50px;
+  gap: 40px;
+  margin-bottom: 30px;
 }
 
 .footer-brand {
-  max-width: 280px;
+  max-width: 260px;
 }
 
 .footer-logo {
-  height: 60px;
-  margin-bottom: 20px;
+  height: 45px;
+  margin-bottom: 12px;
   filter: brightness(0) invert(1) !important;
   background: none !important;
 }
 
 .footer-brand p {
-  font-size: 15px;
-  opacity: 0.85;
-  line-height: 1.6;
-  margin-bottom: 12px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-bottom: 8px;
 }
 
 .footer h4 {
   color: var(--color-gold);
-  font-size: 13px;
-  margin-bottom: 20px;
+  font-size: 0.75rem;
+  margin-bottom: 12px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .footer-links ul {
@@ -109,45 +109,45 @@
 }
 
 .footer-links li {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .footer-links a {
   color: rgba(255,255,255,0.8);
-  font-size: 14px;
+  font-size: 0.85rem;
   transition: all 0.2s;
   text-decoration: none;
 }
 
 .footer-links a:hover {
   color: var(--color-gold);
-  padding-left: 5px;
+  padding-left: 4px;
 }
 
 .social-links-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .social-link-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: rgba(255,255,255,0.8);
   text-decoration: none;
   transition: all 0.3s;
-  font-size: 14px;
+  font-size: 0.85rem;
 }
 
 .social-link-item:hover {
   color: var(--color-gold);
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
 .social-link-item svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
@@ -157,27 +157,27 @@
 
 .footer-bottom {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
-  font-size: 13px;
-  opacity: 0.6;
+  font-size: 0.8rem;
+  opacity: 0.7;
 }
 
 @media (max-width: 1024px) {
   .footer-content {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 30px;
   }
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 60px 0 25px;
+    padding: 40px 0 20px;
   }
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 35px;
+    gap: 25px;
   }
   .footer-brand {
     max-width: 100%;
