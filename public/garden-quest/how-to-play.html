@@ -5,6 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How to Play Garden Quest — Mawun Valley</title>
 <style>
+.download-bar {
+  text-align: center;
+  padding: 20px;
+  background: #7D8B6F;
+}
+.download-btn {
+  background: white;
+  color: #2d3a2d;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+@media print {
+  .download-bar { display: none; }
+}
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -212,6 +237,10 @@ h1 {
 </style>
 </head>
 <body>
+
+<div class="download-bar">
+  <button onclick="window.print()" class="download-btn">📥 Download PDF</button>
+</div>
 
 <div class="card">
   <div class="header">
