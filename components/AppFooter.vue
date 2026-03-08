@@ -54,6 +54,13 @@
   color: rgba(255,255,255,0.85);
   padding: 40px 20px 20px;
   font-family: 'Outfit', sans-serif;
+  line-height: 1.7;
+}
+
+.site-footer * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .footer-content {
@@ -74,8 +81,6 @@
 .footer-brand p {
   font-size: 0.85rem;
   opacity: 0.8;
-  margin: 0 0 4px 0;
-  line-height: 1.5;
 }
 
 .footer-links h4 {
@@ -89,12 +94,6 @@
 
 .footer-links ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin: 0;
 }
 
 .footer-links a {
