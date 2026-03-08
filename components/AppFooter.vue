@@ -80,33 +80,40 @@
 
 .footer-brand p {
   font-size: 0.85rem;
-  opacity: 0.8;
+  color: rgba(255,255,255,0.85);
+  opacity: 1;
+  line-height: 1.4;
+  margin-bottom: 2px;
 }
 
 .footer-links h4 {
-  color: #d4a574;
+  color: #d4a574 !important;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 12px;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
 }
 
 .footer-links ul {
   list-style: none;
 }
 
-.footer-links a {
-  color: rgba(255,255,255,0.8);
+.footer-links a,
+.footer-links :deep(a) {
+  color: rgba(255,255,255,0.85) !important;
   text-decoration: none;
   font-size: 0.85rem;
   display: block;
   padding: 4px 0;
   transition: color 0.3s;
+  font-family: 'Outfit', sans-serif;
 }
 
-.footer-links a:hover {
-  color: #d4a574;
+.footer-links a:hover,
+.footer-links :deep(a):hover {
+  color: #d4a574 !important;
 }
 
 .footer-bottom {
@@ -115,5 +122,6 @@
   border-top: 1px solid rgba(255,255,255,0.1);
   font-size: 0.8rem;
   opacity: 0.7;
+  color: rgba(255,255,255,0.85);
 }
 </style>
