@@ -74,6 +74,7 @@
               <div class="event-icon">🔥</div>
               <h3>#BBQNights</h3>
               <p class="event-tagline">Every Friday, the farm comes alive</p>
+              <p class="urgency-note">🔥 Only 10 spots for outside guests — always sells out!</p>
               <div class="event-meta">
                 <span>📅 Every Friday</span>
                 <span>💰 From IDR 130,000</span>
@@ -872,6 +873,17 @@ const closeEvent = () => {
   font-size: 1.3rem;
   margin-bottom: 8px;
   color: var(--color-dark);
+}
+
+.urgency-note {
+  background: rgba(212, 165, 116, 0.15);
+  border: 1px solid var(--color-gold);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  color: var(--color-terracotta);
+  font-weight: 500;
 }
 
 .event-tagline {

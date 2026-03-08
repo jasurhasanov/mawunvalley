@@ -23,6 +23,7 @@
             <span class="hero-stat-label">To Beach</span>
           </div>
         </div>
+        <p class="urgency-note">🏡 Only 5 cabins on the farm — we're usually fully booked. Apply to check availability.</p>
         <div class="hero-cta">
           <a href="#programs" class="btn btn-primary btn-lg">Find Your Rhythm</a>
         </div>
@@ -1195,6 +1196,7 @@ async function submitApplication() {
 .hero-stat-number { display: block; font-size: 2rem; font-weight: 700; color: var(--color-gold); }
 .hero-stat-label { font-size: 14px; opacity: 0.9; }
 .hero-cta .btn { padding: 16px 32px; font-size: 16px; }
+.urgency-note { background: rgba(212, 165, 116, 0.2); border: 1px solid var(--color-gold); padding: 12px 24px; border-radius: 8px; font-size: 0.95rem; margin-bottom: 20px; display: inline-block; }
 
 .how-it-works { background: var(--color-dark); padding: 50px 0; }
 .how-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }

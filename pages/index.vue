@@ -7,7 +7,7 @@
         <p class="hero-subtitle handwritten">Where slow living begins</p>
         <h1>Slow Down.<br>Connect Deeply.</h1>
         <p class="tagline">A family farm in the valley, minutes from the sea.</p>
-        <a href="#ways" class="btn btn-primary btn-lg">Discover the Farm</a>
+        <NuxtLink to="/stay-contribute" class="btn btn-primary btn-lg">Apply to Stay</NuxtLink>
       </div>
       <div class="scroll-indicator"><span></span></div>
     </section>
