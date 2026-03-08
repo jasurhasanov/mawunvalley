@@ -78,12 +78,12 @@
   opacity: 0.8 !important; 
   color: rgba(255,255,255,0.85) !important;
   font-family: 'Outfit', sans-serif !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   line-height: 1.7 !important;
 }
 .site-footer .footer-links h4 { 
   font-family: 'Outfit', sans-serif !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   line-height: 1.7 !important; 
   color: #d4a574 !important; 
   font-size: 0.75rem !important; 
@@ -105,7 +105,7 @@
   display: block !important; 
   padding: 4px 0 !important;
   font-family: 'Outfit', sans-serif !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   transition: color 0.3s !important;
 }
 .site-footer .footer-links a:hover { 
@@ -119,6 +119,6 @@
   opacity: 0.7 !important;
   color: rgba(255,255,255,0.85) !important;
   font-family: 'Outfit', sans-serif !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
 }
 </style>
