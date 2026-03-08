@@ -119,16 +119,16 @@
             </div>
           </article>
 
-          <!-- 6. Garden Quest -->
+          <!-- 6. The Garden Code -->
           <article class="event-card signature" @click="openEvent('quest')">
             <div class="event-image">
-              <img src="/garden-quest/map.png" alt="Garden Quest Adventure">
+              <img src="/garden-quest/map.png" alt="The Garden Code Adventure">
               <span class="event-badge quest">Adventure</span>
             </div>
             <div class="event-info">
               <div class="event-icon">🌿</div>
-              <h3>Garden Quest</h3>
-              <p class="event-tagline">A botanical adventure through our living garden</p>
+              <h3>The Garden Code</h3>
+              <p class="event-tagline">Crack it. Claim your reward.</p>
               <div class="event-meta">
                 <span>🗺️ 10 Checkpoints</span>
                 <span>📓 Printed Journal</span>
@@ -449,12 +449,12 @@
           </div>
 
 
-          <!-- Garden Quest Modal -->
+          <!-- The Garden Code Modal -->
           <div v-if="activeEvent === 'quest'" class="event-detail">
             <div class="modal-header">
               <span class="event-badge quest">🌿 Adventure</span>
-              <h2>Garden Quest</h2>
-              <p class="modal-tagline">A botanical adventure through our living garden</p>
+              <h2>The Garden Code</h2>
+              <p class="modal-tagline">Crack it. Claim your reward.</p>
             </div>
             <div class="modal-body">
               <p class="intro-text">Explore Mawun Valley's living garden through an immersive quest of discovery. Pick up your printed journal at Reception, visit 10 checkpoints, answer botanical challenges, and earn your Garden Explorer badge!</p>
@@ -512,7 +512,7 @@
 
             </div>
             <div class="modal-footer">
-              <a href="/garden-quest/" class="btn btn-primary btn-lg">Explore Garden Quest →</a>
+              <a href="/garden-quest/" class="btn btn-primary btn-lg">Explore The Garden Code →</a>
             </div>
           </div>
           <!-- Weekly Volleyball Modal -->

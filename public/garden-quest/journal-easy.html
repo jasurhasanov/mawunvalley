@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Garden Quest Journal — Easy 🌱</title>
+<title>The Garden Code — Easy 🌱</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
@@ -69,8 +69,8 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     <div class="difficulty-badge">🌱 Easy Mode</div>
     <div class="cover-top">
       <div class="cover-emoji">🗺️</div>
-      <h1>Garden Quest Journal</h1>
-      <p class="tagline">Your adventure through Mawun Valley's Living Garden</p>
+      <h1>The Garden Code</h1>
+      <p class="tagline">Crack it. Claim your reward.</p>
       <div class="name-field">
         <label>Explorer's Name</label>
         <div class="name-line"></div>
@@ -320,7 +320,7 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
   <!-- Page 12: Completion -->
   <section class="page completion-page" data-page="12-completion">
     <div class="trophy">🏆</div>
-    <h2>Quest Complete!</h2>
+    <h2>Code Cracked!</h2>
     <p>You explored all of Mawun Valley's Living Garden!</p>
     <div class="score-box">___/10 Correct</div>
     <div class="stamp-area">
@@ -365,7 +365,7 @@ async function downloadZip() {
     
     const link = document.createElement('a');
     link.href = URL.createObjectURL(content);
-    link.download = 'garden-quest-easy-journal.zip';
+    link.download = 'garden-code-easy.zip';
     link.click();
     
   } catch (err) {
