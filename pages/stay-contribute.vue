@@ -1187,7 +1187,7 @@ async function submitApplication() {
 .hero-bg { position: absolute; inset: 0; z-index: -1; }
 .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,62,45,0.5), rgba(44,62,45,0.8)); }
 .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
-.hero-content { max-width: 700px; padding: 80px 24px 0; }
+.hero-content { max-width: 700px; padding: 80px 24px 60px; }
 .hero h1 { color: white; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px; }
 .hero p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 32px; line-height: 1.7; }
 .section-label.light { color: var(--color-gold); }
@@ -1198,7 +1198,7 @@ async function submitApplication() {
 .hero-cta .btn { padding: 16px 32px; font-size: 16px; }
 .urgency-note { background: rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 16px; display: inline-block; opacity: 0.9; letter-spacing: 0.3px; backdrop-filter: blur(4px); }
 
-.how-it-works { background: var(--color-dark); padding: 50px 0; }
+.how-it-works { background: var(--color-dark); padding: 60px 0; margin-top: 0; }
 .how-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
 .how-item { text-align: center; color: white; max-width: 200px; }
 .how-icon { font-size: 2.5rem; display: block; margin-bottom: 12px; }
