@@ -163,6 +163,7 @@
           <button class="farmlife-btn prev" @click="slideFarmlife(-1)">‹</button>
           <button class="farmlife-btn next" @click="slideFarmlife(1)">›</button>
         </div>
+        <p class="photo-credit">Photos by Giulia Lauria from Italy 📸</p>
       </div>
     </section>
 
@@ -515,6 +516,14 @@ function slideFarmlife(direction) {
 .farmlife-slide img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
 .farmlife-slide:hover img { transform: scale(1.05); }
 .farmlife-nav { display: flex; justify-content: center; gap: 16px; margin-top: 24px; }
+.photo-credit {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: 16px;
+  opacity: 0.8;
+}
 .farmlife-btn { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--color-dark); background: white; font-size: 24px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
 .farmlife-btn:hover { background: var(--color-dark); color: white; }
 @media (max-width: 768px) { .farmlife-slide { flex: 0 0 260px; height: 350px; } }
