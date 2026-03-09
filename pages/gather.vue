@@ -122,7 +122,7 @@
           <!-- 6. The Garden Code -->
           <article class="event-card signature" @click="openEvent('quest')">
             <div class="event-image">
-              <img src="/garden-quest/map.png" alt="The Garden Code Adventure">
+              <img src="/images/garden-code-cover.jpg" alt="The Garden Code Adventure">
               <span class="event-badge quest">Adventure</span>
             </div>
             <div class="event-info">
