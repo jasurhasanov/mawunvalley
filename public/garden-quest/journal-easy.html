@@ -6,9 +6,9 @@
 <title>The Garden Code — Easy 🌱</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#FAF8F5;--sage:#7D8B6F;--sage-light:#A8B89A;--earth:#5C4D3C;--earth-light:#8B7355;--white:#FFF}
+:root{--cream:#FAF8F5;--sage:#7D8B6F;--sage-light:#A8B89A;--sage-dark:#5a6b4f;--earth:#5C4D3C;--earth-light:#8B7355;--white:#FFF;--gold:#d4a574}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);line-height:1.6}
 .download-bar{text-align:center;padding:25px;background:var(--sage)}
@@ -18,19 +18,146 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
 .progress-text{color:white;margin-top:10px;font-size:0.9rem;display:none}
 .journal{max-width:700px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
 .page{width:700px;height:900px;padding:40px;background:var(--white);border-bottom:3px dashed var(--sage-light);display:flex;flex-direction:column}
-.page.cover-page{background:linear-gradient(135deg,var(--sage),var(--sage-light));color:white;text-align:center;justify-content:space-between;position:relative}
-.difficulty-badge{position:absolute;top:20px;right:20px;background:rgba(255,255,255,0.2);padding:8px 20px;border-radius:20px;font-size:0.9rem}
-.cover-top{flex:1;display:flex;flex-direction:column;justify-content:center}
-.cover-emoji{font-size:4rem;margin-bottom:15px}
-.cover-page h1{font-family:'Cormorant Garamond',serif;font-size:2.8rem;margin-bottom:10px}
-.cover-page .tagline{font-size:1.1rem;opacity:0.9;margin-bottom:20px}
-.name-field{padding:20px;border-top:1px dashed rgba(255,255,255,0.4)}
-.name-field label{display:block;font-size:0.8rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.1em}
-.name-line{width:250px;height:2px;background:rgba(255,255,255,0.5);margin:0 auto}
-.how-to-play{background:rgba(255,255,255,0.15);border-radius:15px;padding:20px;text-align:left}
-.how-to-play h3{font-size:1rem;margin-bottom:12px;text-align:center}
-.how-to-play ol{font-size:0.85rem;padding-left:20px;opacity:0.95}
-.how-to-play li{margin-bottom:6px}
+
+/* STUNNING COVER DESIGN */
+.page.cover-page{
+  background: linear-gradient(160deg, #4a5d3e 0%, #6b7f5a 25%, #8fa67a 50%, #a8c090 75%, #c4d9ae 100%);
+  color:white;
+  text-align:center;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+  padding:0;
+}
+.cover-page::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 30%),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.08) 0%, transparent 25%),
+    radial-gradient(circle at 50% 50%, rgba(0,0,0,0.1) 0%, transparent 50%);
+}
+.cover-page::after{
+  content:'🌿';
+  position:absolute;
+  font-size:200px;
+  opacity:0.06;
+  top:-30px;
+  right:-50px;
+  transform:rotate(15deg);
+}
+.cover-border{
+  position:absolute;
+  top:15px;left:15px;right:15px;bottom:15px;
+  border:2px solid rgba(255,255,255,0.3);
+  border-radius:20px;
+  pointer-events:none;
+}
+.cover-inner{
+  position:relative;
+  z-index:1;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  padding:50px 40px 40px;
+}
+.cover-badge{
+  position:absolute;
+  top:30px;
+  right:30px;
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
+  padding:10px 25px;
+  border-radius:25px;
+  font-size:0.9rem;
+  font-weight:500;
+  letter-spacing:0.05em;
+  border:1px solid rgba(255,255,255,0.3);
+}
+.cover-top{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.brand-mark{
+  font-size:0.75rem;
+  text-transform:uppercase;
+  letter-spacing:0.3em;
+  opacity:0.8;
+  margin-bottom:15px;
+}
+.cover-icon{
+  width:120px;
+  height:120px;
+  background:rgba(255,255,255,0.15);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:50px;
+  margin-bottom:25px;
+  border:2px solid rgba(255,255,255,0.2);
+  box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
+.cover-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.5rem;
+  font-weight:600;
+  line-height:1.1;
+  margin-bottom:12px;
+  text-shadow:0 2px 20px rgba(0,0,0,0.2);
+}
+.cover-tagline{
+  font-size:1.3rem;
+  opacity:0.95;
+  font-weight:300;
+  letter-spacing:0.1em;
+  margin-bottom:8px;
+}
+.cover-subtitle{
+  font-size:0.9rem;
+  opacity:0.7;
+  font-style:italic;
+}
+.name-section{
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(5px);
+  border-radius:15px;
+  padding:25px 30px;
+  margin:30px 0;
+  border:1px solid rgba(255,255,255,0.15);
+}
+.name-label{
+  font-size:0.7rem;
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+  opacity:0.8;
+  margin-bottom:12px;
+}
+.name-line{
+  width:280px;
+  height:2px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  margin:0 auto;
+}
+.how-to-play{
+  background:rgba(0,0,0,0.15);
+  backdrop-filter:blur(10px);
+  border-radius:15px;
+  padding:25px;
+  text-align:left;
+  border:1px solid rgba(255,255,255,0.1);
+}
+.how-to-play h3{
+  font-size:0.85rem;
+  text-transform:uppercase;
+  letter-spacing:0.15em;
+  margin-bottom:15px;
+  text-align:center;
+  opacity:0.9;
+}
+.how-to-play ol{font-size:0.85rem;padding-left:22px;opacity:0.9}
+.how-to-play li{margin-bottom:8px;line-height:1.4}
+.how-to-play strong{font-weight:600}
+
+/* REST OF STYLES */
 .checkpoint-page{justify-content:flex-start}
 .checkpoint-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
 .checkpoint-num{width:55px;height:55px;background:var(--sage);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:600;flex-shrink:0}
@@ -64,30 +191,33 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
 
 <div class="journal">
   
-  <!-- Page 1: Cover + How to Play -->
   <section class="page cover-page" data-page="01-cover">
-    <div class="difficulty-badge">🌱 Easy Mode</div>
-    <div class="cover-top">
-      <div class="cover-emoji">🗺️</div>
-      <h1>The Garden Code</h1>
-      <p class="tagline">Crack it. Claim your reward.</p>
-      <div class="name-field">
-        <label>Explorer's Name</label>
+    <div class="cover-border"></div>
+    <div class="cover-badge">🌱 Easy Mode — 10 pts</div>
+    <div class="cover-inner">
+      <div class="cover-top">
+        <p class="brand-mark">Mawun Valley Farm Presents</p>
+        <div class="cover-icon">🗺️</div>
+        <h1 class="cover-title">The Garden Code</h1>
+        <p class="cover-tagline">Crack it. Claim your reward.</p>
+        <p class="cover-subtitle">A botanical treasure hunt through paradise</p>
+      </div>
+      <div class="name-section">
+        <p class="name-label">Explorer's Name</p>
         <div class="name-line"></div>
       </div>
-    </div>
-    <div class="how-to-play">
-      <h3>📋 How to Play</h3>
-      <ol>
-        <li><strong>Visit each checkpoint</strong> — Walk to the numbered locations</li>
-        <li><strong>Answer the challenge</strong> — Circle your answer</li>
-        <li><strong>Learn fun facts</strong> — Discover plant secrets</li>
-        <li><strong>Complete all 10</strong> — Return to Reception for your badge!</li>
-      </ol>
+      <div class="how-to-play">
+        <h3>🌿 Your Mission</h3>
+        <ol>
+          <li><strong>Explore 10 checkpoints</strong> across the living garden</li>
+          <li><strong>Solve each challenge</strong> — observe, think, discover</li>
+          <li><strong>Collect points</strong> and unlock plant secrets</li>
+          <li><strong>Return to Reception</strong> to claim your badge!</li>
+        </ol>
+      </div>
     </div>
   </section>
 
-  <!-- Page 2: Checkpoint 1 -->
   <section class="page checkpoint-page" data-page="02-checkpoint-1">
     <div class="checkpoint-header">
       <div class="checkpoint-num">1</div>
@@ -110,7 +240,6 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <!-- Page 3: Checkpoint 2 -->
   <section class="page checkpoint-page" data-page="03-checkpoint-2">
     <div class="checkpoint-header">
       <div class="checkpoint-num">2</div>
@@ -133,7 +262,6 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <!-- Page 4: Checkpoint 3 -->
   <section class="page checkpoint-page" data-page="04-checkpoint-3">
     <div class="checkpoint-header">
       <div class="checkpoint-num">3</div>
@@ -156,7 +284,6 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <!-- Page 5: Checkpoint 4 -->
   <section class="page checkpoint-page" data-page="05-checkpoint-4">
     <div class="checkpoint-header">
       <div class="checkpoint-num">4</div>
@@ -179,7 +306,6 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <!-- Page 6: Checkpoint 5 -->
   <section class="page checkpoint-page" data-page="06-checkpoint-5">
     <div class="checkpoint-header">
       <div class="checkpoint-num">5</div>
@@ -202,7 +328,6 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <!-- Page 7: Checkpoint 6 -->
   <section class="page checkpoint-page" data-page="07-checkpoint-6">
     <div class="checkpoint-header">
       <div class="checkpoint-num">6</div>
@@ -225,7 +350,6 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <!-- Page 8: Checkpoint 7 -->
   <section class="page checkpoint-page" data-page="08-checkpoint-7">
     <div class="checkpoint-header">
       <div class="checkpoint-num">7</div>
@@ -248,7 +372,6 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <!-- Page 9: Checkpoint 8 -->
   <section class="page checkpoint-page" data-page="09-checkpoint-8">
     <div class="checkpoint-header">
       <div class="checkpoint-num">8</div>
@@ -271,7 +394,6 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <!-- Page 10: Checkpoint 9 -->
   <section class="page checkpoint-page" data-page="10-checkpoint-9">
     <div class="checkpoint-header">
       <div class="checkpoint-num">9</div>
@@ -294,7 +416,6 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <!-- Page 11: Checkpoint 10 -->
   <section class="page checkpoint-page" data-page="11-checkpoint-10">
     <div class="checkpoint-header">
       <div class="checkpoint-num">🏆</div>
@@ -317,12 +438,11 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
     </div>
   </section>
 
-  <!-- Page 12: Completion -->
   <section class="page completion-page" data-page="12-completion">
     <div class="trophy">🏆</div>
     <h2>Code Cracked!</h2>
     <p>You explored all of Mawun Valley's Living Garden!</p>
-    <div class="score-box">___/10 Correct</div>
+    <div class="score-box">___/100 Points</div>
     <div class="stamp-area">
       <p>🌿 Staff stamp here 🌿</p>
     </div>
@@ -335,44 +455,26 @@ async function downloadZip() {
   const btn = document.querySelector('.download-btn');
   const progressText = document.getElementById('progressText');
   const pages = document.querySelectorAll('.page');
-  
   btn.disabled = true;
   btn.textContent = '⏳ Generating...';
   progressText.style.display = 'block';
-  
   const zip = new JSZip();
-  
   try {
     for (let i = 0; i < pages.length; i++) {
       const page = pages[i];
       const pageName = page.dataset.page;
-      progressText.textContent = `Generating page ${i+1} of ${pages.length}...`;
-      
-      const canvas = await html2canvas(page, {
-        scale: 2,
-        backgroundColor: '#FFFFFF',
-        useCORS: true,
-        width: 700,
-        height: 900
-      });
-      
+      progressText.textContent = 'Generating page ' + (i+1) + ' of ' + pages.length + '...';
+      const canvas = await html2canvas(page, {scale: 2, backgroundColor: '#FFFFFF', useCORS: true, width: 700, height: 900});
       const imgData = canvas.toDataURL('image/png').split(',')[1];
-      zip.file(`${pageName}.png`, imgData, {base64: true});
+      zip.file(pageName + '.png', imgData, {base64: true});
     }
-    
     progressText.textContent = 'Creating ZIP file...';
     const content = await zip.generateAsync({type: 'blob'});
-    
     const link = document.createElement('a');
     link.href = URL.createObjectURL(content);
     link.download = 'garden-code-easy.zip';
     link.click();
-    
-  } catch (err) {
-    alert('Error generating images. Please try again.');
-    console.error(err);
-  }
-  
+  } catch (err) { alert('Error generating images.'); console.error(err); }
   progressText.style.display = 'none';
   btn.disabled = false;
   btn.textContent = '📥 Download All Pages (ZIP)';
