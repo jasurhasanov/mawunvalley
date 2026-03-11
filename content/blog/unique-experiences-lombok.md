@@ -27,7 +27,7 @@ The experience hits a rare sweet spot: mentally engaging but physically relaxing
 
 Unlike tourist attractions designed for quick photo ops, The Garden Code demands attention. You'll examine leaves, count fruit clusters, and read informational signs to crack the harder questions. By the end, you'll know things about tropical agriculture that you'll actually remember.
 
-The tangible reward — a beautifully printed journal plus a Garden Explorer badge — feels earned rather than given. It's the satisfaction of completion that escape room enthusiasts understand, delivered in an open-air tropical setting.
+The reward — earning your Garden Explorer badge after completing all 10 checkpoints — feels genuinely earned rather than given. It's the satisfaction of completion that escape room enthusiasts understand, delivered in an open-air tropical setting.
 
 **Practical Info:**
 - Price: IDR 150,000 per person

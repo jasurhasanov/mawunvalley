@@ -47,7 +47,7 @@ Unlike an indoor escape room with artificial theming, The Garden Code happens in
 
 You're not escaping a zombie apocalypse or solving a murder mystery — you're connecting with nature while exercising your brain. For many visitors, this turns out to be more rewarding than any themed room could be.
 
-The printed journal you receive becomes a keepsake. Parents love that their kids have something tangible to take home, not just a photo in front of a "You Escaped!" sign.
+The printed journal guides your adventure, making each discovery feel earned. Parents love watching their kids engage with nature and real-world problem-solving, not just stare at screens.
 
 ### Practical Details
 
@@ -182,7 +182,7 @@ Early morning or late afternoon is more comfortable for outdoor activities in Lo
 
 If you came to this article hoping to find a traditional escape room in Lombok, the honest answer is that options are limited. The island's tourism focuses on natural beauty rather than indoor entertainment.
 
-But if you're open to outdoor alternatives, you'll find experiences that are arguably better. [The Garden Code](/gather) at Mawun Valley Farm offers genuine puzzle-solving with educational value, beautiful surroundings, and a tangible keepsake to take home.
+But if you're open to outdoor alternatives, you'll find experiences that are arguably better. [The Garden Code](/gather) at Mawun Valley Farm offers genuine puzzle-solving with educational value, beautiful surroundings, and the satisfaction of earning your Garden Explorer badge.
 
 Combined with Lombok's beaches, surf, and slower pace of life, these brain-teasing activities add variety to your trip without feeling forced or commercial.
 

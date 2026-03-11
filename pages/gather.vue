@@ -490,7 +490,6 @@
                 <li>Choose your difficulty: Easy, Hard, or Impossible</li>
                 <li>Botanical trivia and plant identification challenges</li>
                 <li>Learn about tropical fruits, vegetables, and herbs</li>
-                <li>Beautiful printed journal to keep</li>
                 <li>Earn your Garden Explorer badge at the end</li>
               </ul>
               <h4>✨ Perfect For</h4>
