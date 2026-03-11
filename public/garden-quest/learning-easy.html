@@ -24,9 +24,9 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);
 .download-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
 .download-btn:disabled{opacity:0.7;cursor:wait}
 .progress-text{color:white;margin-top:10px;font-size:0.9rem;display:none}
-.guide{max-width:595px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
-.page{width:595px;min-height:842px;padding:35px 40px;background:var(--white);border-bottom:3px dashed var(--sage-light);display:flex;flex-direction:column}
-.page.cover-page{background:linear-gradient(135deg,var(--sage),var(--sage-light));color:white;text-align:center;justify-content:center;min-height:842px}
+.guide{max-width:700px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
+.page{width:700px;min-height:900px;padding:35px 40px;background:var(--white);border-bottom:3px dashed var(--sage-light);display:flex;flex-direction:column}
+.page.cover-page{background:linear-gradient(135deg,var(--sage),var(--sage-light));color:white;text-align:center;justify-content:center;min-height:900px}
 .cover-emoji{font-size:4rem;margin-bottom:15px}
 .cover-page h1{font-family:'Cormorant Garamond',serif;font-size:2.6rem;margin-bottom:10px}
 .cover-page .tagline{font-size:1.2rem;opacity:0.95;margin-bottom:25px}
@@ -176,7 +176,7 @@ if(sessionStorage.getItem("mv_auth")==="1"){document.getElementById("pwOverlay")
   </section>
 </div>
 <script>
-async function downloadZip(){const btn=document.querySelector('.download-btn'),progressText=document.getElementById('progressText'),pages=document.querySelectorAll('.page');btn.disabled=true;btn.textContent='⏳ Generating...';progressText.style.display='block';const zip=new JSZip();try{for(let i=0;i<pages.length;i++){const page=pages[i],pageName=page.dataset.page;progressText.textContent=`Generating page ${i+1} of ${pages.length}...`;const canvas=await html2canvas(page,{scale:2,backgroundColor:'#FFFFFF',useCORS:true,width:595,height:page.scrollHeight});const imgData=canvas.toDataURL('image/png').split(',')[1];zip.file(`${pageName}.png`,imgData,{base64:true});}progressText.textContent='Creating ZIP...';const content=await zip.generateAsync({type:'blob'});const link=document.createElement('a');link.href=URL.createObjectURL(content);link.download='garden-code-learning-easy.zip';link.click();}catch(err){alert('Error generating images.');}progressText.style.display='none';btn.disabled=false;btn.textContent='📥 Download Learning Guide (ZIP)';}
+async function downloadZip(){const btn=document.querySelector('.download-btn'),progressText=document.getElementById('progressText'),pages=document.querySelectorAll('.page');btn.disabled=true;btn.textContent='⏳ Generating...';progressText.style.display='block';const zip=new JSZip();try{for(let i=0;i<pages.length;i++){const page=pages[i],pageName=page.dataset.page;progressText.textContent=`Generating page ${i+1} of ${pages.length}...`;const canvas=await html2canvas(page,{scale:2,backgroundColor:'#FFFFFF',useCORS:true,width:700,height:900});const imgData=canvas.toDataURL('image/png').split(',')[1];zip.file(`${pageName}.png`,imgData,{base64:true});}progressText.textContent='Creating ZIP...';const content=await zip.generateAsync({type:'blob'});const link=document.createElement('a');link.href=URL.createObjectURL(content);link.download='garden-code-learning-easy.zip';link.click();}catch(err){alert('Error generating images.');}progressText.style.display='none';btn.disabled=false;btn.textContent='📥 Download Learning Guide (ZIP)';}
 </script>
 </body>
 </html>
