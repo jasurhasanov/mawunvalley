@@ -31,18 +31,16 @@ h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;mar
 <a href="../game-kit.html" class="back-link">← Back to Game Kit</a>
 <h1>🎮 How to Play</h1>
 <p style="text-align:center"><span class="badge">Display at Reception</span></p>
-<p class="subtitle">2 double-sided A5 cards — print, cut in half!</p>
+<p class="subtitle">Single A5 card — matches original design!</p>
 
-<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A4 PDF (Double-sided)</button>
+<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A5 PDF</button>
 <p class="progress" id="progress"></p>
 
 <div class="instructions">
 <h3>🖨️ Print Instructions</h3>
 <ol>
-<li>Download the PDF (2 A4 pages)</li>
-<li>Print <strong>double-sided</strong>, flip on <strong>short edge</strong></li>
-<li>Cut each A4 in half vertically</li>
-<li>You now have <strong>2 identical double-sided A5 cards!</strong></li>
+<li>Download the PDF (single A5 page)</li>
+<li>Print on A5 paper, or print 2-per-page on A4</li>
 <li>Laminate for durability — display at Reception!</li>
 </ol>
 </div>
@@ -51,156 +49,85 @@ h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;mar
 <div id="render-container" class="hidden"></div>
 
 <script>
-function renderFront() {
+function renderA5() {
   const w = 421, h = 595;
   
-  return '<div style="width:'+w+'px;height:'+h+'px;background:white;font-family:Outfit,sans-serif;padding:20px;border:3px solid #7D8B6F;border-radius:12px;">' +
-    // Header
-    '<div style="text-align:center;margin-bottom:15px;padding-bottom:12px;border-bottom:2px dashed #d4a574;">' +
-      '<div style="font-size:2rem;margin-bottom:5px;">🌿</div>' +
-      '<h1 style="font-family:Cormorant Garamond,serif;font-size:1.8rem;color:#2d3a2d;margin-bottom:2px;">How to Play</h1>' +
+  return '<div style="width:'+w+'px;height:'+h+'px;background:white;font-family:Outfit,sans-serif;padding:28px;border:3px solid #7D8B6F;border-radius:15px;">' +
+    
+    // Header - matches original
+    '<div style="text-align:center;margin-bottom:22px;padding-bottom:16px;border-bottom:2px dashed #d4a574;">' +
+      '<div style="font-size:2.2rem;margin-bottom:6px;">🌿</div>' +
+      '<h1 style="font-family:Cormorant Garamond,serif;font-size:1.7rem;color:#2d3a2d;margin-bottom:3px;">How to Play</h1>' +
       '<p style="color:#7D8B6F;font-size:0.85rem;">The Garden Code Adventure</p>' +
     '</div>' +
     
-    // Steps
-    '<div style="margin-bottom:15px;">' +
-      '<h2 style="font-family:Cormorant Garamond,serif;font-size:1.1rem;color:#7D8B6F;margin-bottom:10px;">🗺️ Your Journey</h2>' +
+    // Steps - matches original style
+    '<div style="margin-bottom:18px;">' +
+      '<h2 style="font-family:Cormorant Garamond,serif;font-size:1.15rem;color:#7D8B6F;margin-bottom:12px;">🗺️ Your Journey</h2>' +
       '<div style="display:flex;flex-direction:column;gap:8px;">' +
         '<div style="display:flex;gap:10px;align-items:flex-start;">' +
-          '<div style="width:24px;height:24px;background:#7D8B6F;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.75rem;flex-shrink:0;">1</div>' +
-          '<p style="font-size:0.82rem;line-height:1.35;color:#2d3a2d;">Pick up your <strong>Code Journal</strong> at Reception</p>' +
+          '<div style="width:24px;height:24px;background:linear-gradient(135deg,#7D8B6F,#87a878);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.75rem;flex-shrink:0;">1</div>' +
+          '<span style="font-size:0.82rem;line-height:1.4;color:#2d3a2d;">Pick up your <strong>Code Journal</strong> at Reception and choose difficulty</span>' +
         '</div>' +
         '<div style="display:flex;gap:10px;align-items:flex-start;">' +
-          '<div style="width:24px;height:24px;background:#7D8B6F;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.75rem;flex-shrink:0;">2</div>' +
-          '<p style="font-size:0.82rem;line-height:1.35;color:#2d3a2d;">Follow the map to find <strong>10 checkpoints</strong></p>' +
+          '<div style="width:24px;height:24px;background:linear-gradient(135deg,#7D8B6F,#87a878);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.75rem;flex-shrink:0;">2</div>' +
+          '<span style="font-size:0.82rem;line-height:1.4;color:#2d3a2d;">Follow the map to find <strong>10 checkpoints</strong> in the garden</span>' +
         '</div>' +
         '<div style="display:flex;gap:10px;align-items:flex-start;">' +
-          '<div style="width:24px;height:24px;background:#7D8B6F;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.75rem;flex-shrink:0;">3</div>' +
-          '<p style="font-size:0.82rem;line-height:1.35;color:#2d3a2d;">At each checkpoint, <strong>answer the question</strong></p>' +
+          '<div style="width:24px;height:24px;background:linear-gradient(135deg,#7D8B6F,#87a878);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.75rem;flex-shrink:0;">3</div>' +
+          '<span style="font-size:0.82rem;line-height:1.4;color:#2d3a2d;">At each checkpoint, <strong>answer the botanical challenge</strong></span>' +
         '</div>' +
         '<div style="display:flex;gap:10px;align-items:flex-start;">' +
-          '<div style="width:24px;height:24px;background:#7D8B6F;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.75rem;flex-shrink:0;">4</div>' +
-          '<p style="font-size:0.82rem;line-height:1.35;color:#2d3a2d;">Return to Reception to <strong>check answers!</strong></p>' +
+          '<div style="width:24px;height:24px;background:linear-gradient(135deg,#7D8B6F,#87a878);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.75rem;flex-shrink:0;">4</div>' +
+          '<span style="font-size:0.82rem;line-height:1.4;color:#2d3a2d;">Return to Reception to <strong>check answers</strong> and claim reward!</span>' +
         '</div>' +
       '</div>' +
     '</div>' +
     
-    // Lifelines
-    '<div style="background:#f8f6f0;border-radius:10px;padding:12px;border:2px solid #e8e4dc;margin-bottom:12px;">' +
-      '<h2 style="font-family:Cormorant Garamond,serif;font-size:1rem;color:#d4a574;margin-bottom:10px;text-align:center;">🆘 3 Lifelines Available!</h2>' +
-      '<div style="display:flex;gap:8px;">' +
-        '<div style="flex:1;text-align:center;padding:10px 6px;background:white;border-radius:8px;">' +
-          '<div style="font-size:1.5rem;margin-bottom:3px;">🌿</div>' +
-          '<div style="font-weight:600;color:#2d3a2d;font-size:0.7rem;">Observe</div>' +
-          '<div style="font-size:0.62rem;color:#8B7355;">Look at the plant</div>' +
-        '</div>' +
-        '<div style="flex:1;text-align:center;padding:10px 6px;background:white;border-radius:8px;">' +
-          '<div style="font-size:1.5rem;margin-bottom:3px;">👥</div>' +
-          '<div style="font-weight:600;color:#2d3a2d;font-size:0.7rem;">Ask Friend</div>' +
-          '<div style="font-size:0.62rem;color:#8B7355;">Discuss together</div>' +
-        '</div>' +
-        '<div style="flex:1;text-align:center;padding:10px 6px;background:white;border-radius:8px;">' +
-          '<div style="font-size:1.5rem;margin-bottom:3px;">🤝</div>' +
-          '<div style="font-weight:600;color:#2d3a2d;font-size:0.7rem;">Ask Staff</div>' +
-          '<div style="font-size:0.62rem;color:#8B7355;">Get a hint</div>' +
-        '</div>' +
-      '</div>' +
-    '</div>' +
-    
-    // Difficulty levels - compact
-    '<div style="background:#FAF8F5;border-radius:10px;padding:12px;margin-bottom:12px;">' +
-      '<h2 style="font-family:Cormorant Garamond,serif;font-size:1rem;color:#7D8B6F;margin-bottom:8px;text-align:center;">🎯 Choose Difficulty</h2>' +
-      '<div style="display:flex;gap:8px;">' +
-        '<div style="flex:1;text-align:center;padding:8px;background:#e8f5e9;border:2px solid #81c784;border-radius:8px;">' +
-          '<div style="font-weight:600;font-size:0.75rem;color:#2e7d32;">🟢 EASY</div>' +
-          '<div style="font-family:Cormorant Garamond,serif;font-size:1.3rem;font-weight:600;color:#2e7d32;">10 pts</div>' +
-        '</div>' +
-        '<div style="flex:1;text-align:center;padding:8px;background:#fff8e1;border:2px solid #ffca28;border-radius:8px;">' +
-          '<div style="font-weight:600;font-size:0.75rem;color:#f57f17;">🟡 HARD</div>' +
-          '<div style="font-family:Cormorant Garamond,serif;font-size:1.3rem;font-weight:600;color:#f57f17;">25 pts</div>' +
-        '</div>' +
-        '<div style="flex:1;text-align:center;padding:8px;background:#ffebee;border:2px solid #ef5350;border-radius:8px;">' +
-          '<div style="font-weight:600;font-size:0.75rem;color:#c62828;">🔴 IMPOSSIBLE</div>' +
-          '<div style="font-family:Cormorant Garamond,serif;font-size:1.3rem;font-weight:600;color:#c62828;">50 pts</div>' +
-        '</div>' +
-      '</div>' +
-    '</div>' +
-    
-    // Footer
-    '<div style="text-align:center;padding:12px;background:#7D8B6F;color:white;border-radius:10px;">' +
-      '<div style="font-size:1rem;font-weight:600;">🏆 Complete all 10 checkpoints!</div>' +
-      '<div style="font-size:0.8rem;opacity:0.9;">Earn your Code Cracker badge</div>' +
-    '</div>' +
-    
-    '<p style="text-align:center;font-size:0.65rem;color:#888;margin-top:8px;">▶ Turn over for badges</p>' +
-  '</div>';
-}
-
-function renderBack() {
-  const w = 421, h = 595;
-  
-  return '<div style="width:'+w+'px;height:'+h+'px;background:white;font-family:Outfit,sans-serif;padding:20px;border:3px solid #7D8B6F;border-radius:12px;">' +
-    // Header
-    '<div style="text-align:center;margin-bottom:18px;padding-bottom:12px;border-bottom:2px dashed #d4a574;">' +
-      '<div style="font-size:2rem;margin-bottom:5px;">🏆</div>' +
-      '<h1 style="font-family:Cormorant Garamond,serif;font-size:1.8rem;color:#2d3a2d;margin-bottom:2px;">Earn Your Badge!</h1>' +
-      '<p style="color:#7D8B6F;font-size:0.85rem;">Rewards for Code Crackers</p>' +
-    '</div>' +
-    
-    // Badges - larger and more visual
-    '<div style="margin-bottom:20px;">' +
-      '<div style="display:flex;flex-direction:column;gap:12px;">' +
-        '<div style="display:flex;align-items:center;gap:15px;padding:15px;background:linear-gradient(135deg,#fff9e6,#fff3cd);border:2px solid #ffc107;border-radius:12px;">' +
-          '<span style="font-size:2.8rem;">🥉</span>' +
-          '<div style="flex:1;">' +
-            '<div style="font-weight:700;color:#2d3a2d;font-size:1.1rem;">Explorer Badge</div>' +
-            '<div style="font-size:0.85rem;color:#8B7355;">Get <strong>70%+</strong> correct answers</div>' +
-          '</div>' +
-          '<div style="text-align:right;color:#7D8B6F;font-size:0.8rem;">7/10+</div>' +
-        '</div>' +
-        '<div style="display:flex;align-items:center;gap:15px;padding:15px;background:linear-gradient(135deg,#f5f5f5,#e8e8e8);border:2px solid #9e9e9e;border-radius:12px;">' +
-          '<span style="font-size:2.8rem;">🥈</span>' +
-          '<div style="flex:1;">' +
-            '<div style="font-weight:700;color:#2d3a2d;font-size:1.1rem;">Master Badge</div>' +
-            '<div style="font-size:0.85rem;color:#8B7355;">Get <strong>90%+</strong> correct answers</div>' +
-          '</div>' +
-          '<div style="text-align:right;color:#7D8B6F;font-size:0.8rem;">9/10+</div>' +
-        '</div>' +
-        '<div style="display:flex;align-items:center;gap:15px;padding:15px;background:linear-gradient(135deg,#fffde7,#fff59d);border:2px solid #fdd835;border-radius:12px;">' +
-          '<span style="font-size:2.8rem;">🥇</span>' +
-          '<div style="flex:1;">' +
-            '<div style="font-weight:700;color:#2d3a2d;font-size:1.1rem;">Legend Badge</div>' +
-            '<div style="font-size:0.85rem;color:#8B7355;">Get <strong>100%</strong> perfect score!</div>' +
-          '</div>' +
-          '<div style="text-align:right;color:#d4a574;font-size:0.8rem;">10/10 ⭐</div>' +
-        '</div>' +
-      '</div>' +
-    '</div>' +
-    
-    // Bonus info
-    '<div style="background:#f0f7f0;border-radius:10px;padding:15px;margin-bottom:15px;border:2px solid #c8e6c9;">' +
-      '<h3 style="font-family:Cormorant Garamond,serif;font-size:1.1rem;color:#7D8B6F;margin-bottom:10px;text-align:center;">📚 After the Game</h3>' +
-      '<p style="font-size:0.85rem;color:#2d3a2d;text-align:center;line-height:1.5;">Return to Reception to check your answers and receive your <strong>Learning Guide</strong> with bonus botanical facts!</p>' +
-    '</div>' +
-    
-    // Tips
-    '<div style="background:#FAF8F5;border-radius:10px;padding:12px;margin-bottom:12px;">' +
-      '<h3 style="font-family:Cormorant Garamond,serif;font-size:1rem;color:#d4a574;margin-bottom:8px;text-align:center;">💡 Pro Tips</h3>' +
+    // Help Section - matches original
+    '<div style="background:linear-gradient(135deg,#f8f6f0,#FAF8F5);border-radius:12px;padding:14px;margin-bottom:16px;border:2px solid #e8e4dc;">' +
+      '<h2 style="font-family:Cormorant Garamond,serif;font-size:1.05rem;color:#d4a574;margin-bottom:12px;text-align:center;">🆘 Need Help? Use Your 3 Lifelines!</h2>' +
       '<div style="display:flex;gap:10px;">' +
-        '<div style="flex:1;font-size:0.78rem;color:#5C4D3C;text-align:center;padding:8px;background:white;border-radius:8px;">' +
-          '<strong>Take your time!</strong><br>No rush — enjoy the garden' +
+        '<div style="flex:1;text-align:center;padding:12px 8px;background:white;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">' +
+          '<div style="font-size:1.6rem;margin-bottom:5px;">🌿</div>' +
+          '<div style="font-weight:600;color:#2d3a2d;font-size:0.75rem;margin-bottom:2px;">Observe Nature</div>' +
+          '<div style="font-size:0.65rem;color:#8B7355;">Look at the plant for clues</div>' +
         '</div>' +
-        '<div style="flex:1;font-size:0.78rem;color:#5C4D3C;text-align:center;padding:8px;background:white;border-radius:8px;">' +
-          '<strong>Read carefully</strong><br>Clues are in the plants' +
+        '<div style="flex:1;text-align:center;padding:12px 8px;background:white;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">' +
+          '<div style="font-size:1.6rem;margin-bottom:5px;">👥</div>' +
+          '<div style="font-weight:600;color:#2d3a2d;font-size:0.75rem;margin-bottom:2px;">Ask a Friend</div>' +
+          '<div style="font-size:0.65rem;color:#8B7355;">Discuss with your group</div>' +
+        '</div>' +
+        '<div style="flex:1;text-align:center;padding:12px 8px;background:white;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">' +
+          '<div style="font-size:1.6rem;margin-bottom:5px;">🤝</div>' +
+          '<div style="font-weight:600;color:#2d3a2d;font-size:0.75rem;margin-bottom:2px;">Ask Staff</div>' +
+          '<div style="font-size:0.65rem;color:#8B7355;">Get a hint from team</div>' +
         '</div>' +
       '</div>' +
     '</div>' +
     
-    // Footer
-    '<div style="text-align:center;padding:12px;background:linear-gradient(135deg,#7D8B6F,#87a878);color:white;border-radius:10px;">' +
-      '<div style="font-size:0.95rem;font-weight:600;">🌿 Happy Exploring! 🌿</div>' +
-      '<div style="font-size:0.75rem;opacity:0.9;margin-top:3px;">mawunvalley.com/garden-quest</div>' +
+    // Scoring - matches original
+    '<div style="display:flex;gap:10px;margin-bottom:16px;">' +
+      '<div style="flex:1;text-align:center;padding:10px;background:#e8f5e9;border:2px solid #81c784;border-radius:10px;">' +
+        '<div style="font-weight:600;font-size:0.75rem;color:#2e7d32;margin-bottom:3px;">🟢 EASY</div>' +
+        '<div style="font-family:Cormorant Garamond,serif;font-size:1.4rem;font-weight:600;color:#2e7d32;">10 pts</div>' +
+      '</div>' +
+      '<div style="flex:1;text-align:center;padding:10px;background:#fff8e1;border:2px solid #ffca28;border-radius:10px;">' +
+        '<div style="font-weight:600;font-size:0.75rem;color:#f57f17;margin-bottom:3px;">🟡 HARD</div>' +
+        '<div style="font-family:Cormorant Garamond,serif;font-size:1.4rem;font-weight:600;color:#f57f17;">25 pts</div>' +
+      '</div>' +
+      '<div style="flex:1;text-align:center;padding:10px;background:#ffebee;border:2px solid #ef5350;border-radius:10px;">' +
+        '<div style="font-weight:600;font-size:0.75rem;color:#c62828;margin-bottom:3px;">🔴 IMPOSSIBLE</div>' +
+        '<div style="font-family:Cormorant Garamond,serif;font-size:1.4rem;font-weight:600;color:#c62828;">50 pts</div>' +
+      '</div>' +
     '</div>' +
+    
+    // Footer - matches original
+    '<div style="text-align:center;padding:14px;background:#7D8B6F;color:white;border-radius:10px;">' +
+      '<div style="font-size:1.05rem;font-weight:600;margin-bottom:3px;">🏆 Complete all 10 checkpoints</div>' +
+      '<div style="font-size:0.85rem;opacity:0.95;">Earn your Code Cracker badge!</div>' +
+    '</div>' +
+    
   '</div>';
 }
 
@@ -215,47 +142,26 @@ async function generatePDF() {
   preview.innerHTML = '';
   
   const jsPDF = window.jspdf.jsPDF;
-  const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+  const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a5' });
   
-  // Page 1 (A4 front): 2x Front side
-  progress.textContent = 'Rendering front side...';
-  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
-    '<div style="width:50%;height:100%;display:flex;align-items:center;justify-content:center;">'+renderFront()+'</div>' +
-    '<div style="width:50%;height:100%;display:flex;align-items:center;justify-content:center;">'+renderFront()+'</div>' +
-  '</div>';
+  progress.textContent = 'Rendering A5 card...';
+  container.innerHTML = '<div id="a5card" style="width:421px;height:595px;background:white;">'+renderA5()+'</div>';
   
   await new Promise(function(r) { setTimeout(r, 500); });
   
-  var canvas = await html2canvas(document.getElementById('a4sheet'), {
+  var canvas = await html2canvas(document.getElementById('a5card'), {
     scale: 2, backgroundColor: '#FFFFFF', useCORS: true
   });
   
-  pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
-  preview.innerHTML += '<p class="sheet-label">A4 Front: How to Play (×2)</p><img src="'+canvas.toDataURL()+'">';
-  
-  // Page 2 (A4 back): 2x Back side
-  progress.textContent = 'Rendering back side...';
-  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
-    '<div style="width:50%;height:100%;display:flex;align-items:center;justify-content:center;">'+renderBack()+'</div>' +
-    '<div style="width:50%;height:100%;display:flex;align-items:center;justify-content:center;">'+renderBack()+'</div>' +
-  '</div>';
-  
-  await new Promise(function(r) { setTimeout(r, 500); });
-  
-  canvas = await html2canvas(document.getElementById('a4sheet'), {
-    scale: 2, backgroundColor: '#FFFFFF', useCORS: true
-  });
-  
-  pdf.addPage();
-  pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
-  preview.innerHTML += '<p class="sheet-label">A4 Back: Badges & Tips (×2)</p><img src="'+canvas.toDataURL()+'">';
+  pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 148, 210);
+  preview.innerHTML += '<p class="sheet-label">A5 How to Play Card</p><img src="'+canvas.toDataURL()+'">';
   
   progress.textContent = 'Saving PDF...';
-  pdf.save('how-to-play-cards.pdf');
+  pdf.save('how-to-play-a5.pdf');
   
-  progress.textContent = '✅ PDF Downloaded! Cut in half for 2 double-sided cards.';
+  progress.textContent = '✅ PDF Downloaded!';
   btn.disabled = false;
-  btn.textContent = '📥 Download A4 PDF (Double-sided)';
+  btn.textContent = '📥 Download A5 PDF';
 }
 </script>
 </body>
