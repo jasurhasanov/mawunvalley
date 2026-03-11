@@ -50,6 +50,8 @@ h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;mar
 <div class="preview" id="preview"></div>
 <div id="render-container" class="hidden"></div>
 
+<img id="coverImg" src="../cover-impossible.png" style="display:none" crossorigin="anonymous">
+
 <script>
 const COLOR = '#6B4E71';
 const COLOR_LIGHT = '#9B7FA0';
@@ -57,18 +59,19 @@ const TITLE = 'The Garden Code';
 const BADGE = '💀 Impossible';
 const POINTS = '50 pts';
 const MAX_POINTS = '500';
+const COVER_IMG = '../cover-impossible.png';
 
 const QUESTIONS = [
-  { loc: 'Reception', q: 'Mangiferin belongs to which compound class?', opts: ['A. Alkaloids', 'B. Xanthones', 'C. Terpenes', 'D. Flavonoids'] },
-  { loc: 'Herbal Remedies', q: "Curcumin's bioavailability is limited by rapid:", opts: ['A. Renal excretion', 'B. Hepatic glucuronidation', 'C. Protein binding', 'D. Absorption'] },
-  { loc: 'Banana Garden', q: 'Triploid banana chromosome number?', opts: ['A. 22', 'B. 33', 'C. 44', 'D. 66'] },
+  { loc: 'Reception', q: 'Mangiferin in mango belongs to which compound class?', opts: ['A. Alkaloids', 'B. Xanthones', 'C. Terpenes', 'D. Flavonoids'] },
+  { loc: 'Herbal Remedies', q: 'Curcumin bioavailability is limited by rapid:', opts: ['A. Renal excretion', 'B. Hepatic glucuronidation', 'C. Plasma binding', 'D. Intestinal absorption'] },
+  { loc: 'Banana Garden', q: 'Triploid bananas (3n) have how many chromosomes?', opts: ['A. 22', 'B. 33', 'C. 44', 'D. 66'] },
   { loc: 'Vegetable Garden', q: 'Tomato ripening is regulated by which phytohormone?', opts: ['A. Auxin', 'B. Gibberellin', 'C. Ethylene', 'D. Abscisic acid'] },
-  { loc: 'Pineapple Garden', q: 'CAM photosynthesis stands for:', opts: ['A. Carbon Assimilation', 'B. Crassulacean Acid Metabolism', 'C. Chloroplast Activity', 'D. Cyclic Adenine'] },
-  { loc: 'Strawberry Fields', q: 'Octoploid strawberry has how many chromosome sets?', opts: ['A. 4', 'B. 6', 'C. 8', 'D. 10'] },
-  { loc: 'Citrus Garden', q: 'Limonene is classified as a:', opts: ['A. Sesquiterpene', 'B. Monoterpene', 'C. Diterpene', 'D. Triterpene'] },
-  { loc: 'Mixed Fruits', q: 'Dragon fruit belongs to which family?', opts: ['A. Passifloraceae', 'B. Cactaceae', 'C. Bromeliaceae', 'D. Musaceae'] },
-  { loc: 'Jabuticaba Garden', q: "Which sugar is attached to jabuticaba's anthocyanins?", opts: ['A. Fructose', 'B. Glucose', 'C. Sucrose', 'D. Maltose'] },
-  { loc: 'Flower Jungle', q: 'Linalool acts on which receptor?', opts: ['A. Dopamine D2', 'B. GABA-A', 'C. Serotonin 5-HT1A', 'D. Acetylcholine'] },
+  { loc: 'Pineapple Garden', q: 'Pineapple uses CAM photosynthesis. CAM stands for:', opts: ['A. Carbon Assimilation Mode', 'B. Crassulacean Acid Metabolism', 'C. Chloroplast Activity', 'D. Cyclic Adenine Metabolism'] },
+  { loc: 'Strawberry Fields', q: 'Cultivated strawberry is octoploid. How many sets?', opts: ['A. 4', 'B. 6', 'C. 8', 'D. 10'] },
+  { loc: 'Citrus Garden', q: 'Limonene in citrus peel is classified as a:', opts: ['A. Sesquiterpene', 'B. Monoterpene', 'C. Diterpene', 'D. Triterpene'] },
+  { loc: 'Mixed Fruits', q: 'Dragon fruit (Hylocereus) belongs to which family?', opts: ['A. Passifloraceae', 'B. Cactaceae', 'C. Bromeliaceae', 'D. Musaceae'] },
+  { loc: 'Jabuticaba Garden', q: 'Jabuticaba anthocyanins are typically attached to:', opts: ['A. Fructose', 'B. Glucose', 'C. Sucrose', 'D. Maltose'] },
+  { loc: 'Flower Jungle', q: 'Linalool acts on which receptor for calming effects?', opts: ['A. Dopamine D2', 'B. GABA-A', 'C. Serotonin 5-HT1A', 'D. Acetylcholine'] },
 ];
 
 const IMPOSITION = [
@@ -84,56 +87,56 @@ function renderPage(pageNum) {
   const pageWidth = 421;
   const pageHeight = 595;
   
-  let html = `<div style="width:${pageWidth}px;height:${pageHeight}px;background:white;font-family:'Outfit',sans-serif;overflow:hidden;position:relative;">`;
+  let html = '<div style="width:'+pageWidth+'px;height:'+pageHeight+'px;background:white;font-family:Outfit,sans-serif;overflow:hidden;position:relative;">';
   
   if (pageNum === 1) {
-    html += `
-      <div style="height:100%;background:linear-gradient(135deg,${COLOR},${COLOR_LIGHT});color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;">
-        <div style="background:rgba(255,255,255,0.2);padding:6px 16px;border-radius:15px;font-size:0.7rem;margin-bottom:15px;">${BADGE} — ${POINTS} each</div>
-        <div style="font-size:2.5rem;margin-bottom:10px;">☠️</div>
-        <h1 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:8px;">${TITLE}</h1>
-        <p style="font-size:0.85rem;opacity:0.9;margin-bottom:20px;">Crack it. Claim your reward.</p>
-        <div style="border-top:1px dashed rgba(255,255,255,0.4);padding-top:15px;width:80%;">
-          <p style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Explorer's Name</p>
-          <div style="width:150px;height:2px;background:rgba(255,255,255,0.5);margin:0 auto;"></div>
-        </div>
-        <div style="position:absolute;bottom:15px;font-size:0.65rem;opacity:0.7;">Mawun Valley Farm • Lombok</div>
-      </div>`;
+    html += '<div style="height:100%;position:relative;color:white;text-align:center;">' +
+      '<img src="'+COVER_IMG+'" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;" crossorigin="anonymous">' +
+      '<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.7) 100%);"></div>' +
+      '<div style="position:absolute;bottom:0;left:0;right:0;padding:25px;z-index:1;">' +
+        '<div style="display:inline-block;background:rgba(107,78,113,0.9);padding:6px 16px;border-radius:15px;font-size:0.7rem;margin-bottom:12px;">'+BADGE+' — '+POINTS+' each</div>' +
+        '<h1 style="font-family:Cormorant Garamond,serif;font-size:2rem;margin-bottom:6px;text-shadow:0 2px 15px rgba(0,0,0,0.5);">'+TITLE+'</h1>' +
+        '<p style="font-size:0.8rem;opacity:0.9;margin-bottom:15px;text-shadow:0 2px 10px rgba(0,0,0,0.5);">Crack it. Claim your reward.</p>' +
+        '<div style="border-top:1px dashed rgba(255,255,255,0.4);padding-top:12px;">' +
+          '<p style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;text-shadow:0 1px 5px rgba(0,0,0,0.5);">Explorer\'s Name</p>' +
+          '<div style="width:140px;height:2px;background:rgba(255,255,255,0.5);margin:0 auto;"></div>' +
+        '</div>' +
+        '<div style="margin-top:15px;font-size:0.6rem;opacity:0.8;text-shadow:0 1px 5px rgba(0,0,0,0.5);">Mawun Valley Farm • Lombok</div>' +
+      '</div>' +
+    '</div>';
   } else if (pageNum === 12) {
-    html += `
-      <div style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:25px;background:linear-gradient(135deg,#FAF8F5,white);">
-        <div style="font-size:4rem;margin-bottom:15px;">🏆</div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#2d3a2d;margin-bottom:10px;">Legend Status!</h2>
-        <p style="color:#666;font-size:0.85rem;margin-bottom:20px;">Only 3% complete Impossible Mode!</p>
-        <div style="background:${COLOR};color:white;padding:12px 35px;border-radius:25px;font-size:1rem;margin-bottom:25px;">___/${MAX_POINTS} Points</div>
-        <div style="border:2px dashed ${COLOR};border-radius:12px;padding:25px 40px;">
-          <p style="color:${COLOR};font-size:0.85rem;">☠️ Staff stamp here ☠️</p>
-        </div>
-      </div>`;
+    html += '<div style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:25px;background:linear-gradient(135deg,#FAF8F5,white);">' +
+      '<div style="font-size:4rem;margin-bottom:15px;">🏆</div>' +
+      '<h2 style="font-family:Cormorant Garamond,serif;font-size:1.8rem;color:#2d3a2d;margin-bottom:10px;">Code Cracked!</h2>' +
+      '<p style="color:#666;font-size:0.85rem;margin-bottom:20px;">Impossible Mode — PhD Botanist!</p>' +
+      '<div style="background:'+COLOR+';color:white;padding:12px 35px;border-radius:25px;font-size:1rem;margin-bottom:25px;">___/'+MAX_POINTS+' Points</div>' +
+      '<div style="border:2px dashed '+COLOR+';border-radius:12px;padding:25px 40px;">' +
+        '<p style="color:'+COLOR+';font-size:0.85rem;">☠️ Staff stamp here ☠️</p>' +
+      '</div>' +
+    '</div>';
   } else {
     const qIndex = pageNum - 2;
     const q = QUESTIONS[qIndex];
     const checkNum = pageNum - 1;
-    html += `
-      <div style="height:100%;padding:20px;display:flex;flex-direction:column;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-          <div style="width:36px;height:36px;background:${COLOR};color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;">${checkNum === 10 ? '🏆' : checkNum}</div>
-          <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#2d3a2d;margin:0;">${q.loc}</h3></div>
-        </div>
-        <div style="background:#FAF8F5;padding:15px;border-radius:10px;margin-bottom:12px;">
-          <p style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;color:${COLOR};margin-bottom:5px;">PhD Challenge</p>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:#2d3a2d;line-height:1.4;">${q.q}</p>
-        </div>
-        <div style="flex:1;">
-          ${q.opts.map(opt => `
-            <div style="display:flex;align-items:center;gap:10px;padding:10px;border:2px solid rgba(107,78,113,0.2);border-radius:8px;margin-bottom:8px;">
-              <div style="width:18px;height:18px;border:2px solid ${COLOR};border-radius:50%;flex-shrink:0;"></div>
-              <span style="color:#2d3a2d;font-size:0.85rem;">${opt}</span>
-            </div>
-          `).join('')}
-        </div>
-        <div style="text-align:center;font-size:0.6rem;color:#999;margin-top:auto;">Page ${pageNum} of 12</div>
-      </div>`;
+    html += '<div style="height:100%;padding:20px;display:flex;flex-direction:column;">' +
+      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">' +
+        '<div style="width:36px;height:36px;background:'+COLOR+';color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;">'+(checkNum === 10 ? '🏆' : checkNum)+'</div>' +
+        '<div><h3 style="font-family:Cormorant Garamond,serif;font-size:1.1rem;color:#2d3a2d;margin:0;">'+q.loc+'</h3></div>' +
+      '</div>' +
+      '<div style="background:#FAF8F5;padding:15px;border-radius:10px;margin-bottom:12px;">' +
+        '<p style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;color:'+COLOR+';margin-bottom:5px;">PhD Challenge</p>' +
+        '<p style="font-family:Cormorant Garamond,serif;font-size:0.95rem;color:#2d3a2d;line-height:1.4;">'+q.q+'</p>' +
+      '</div>' +
+      '<div style="flex:1;">';
+    q.opts.forEach(function(opt) {
+      html += '<div style="display:flex;align-items:center;gap:10px;padding:10px;border:2px solid rgba(107,78,113,0.2);border-radius:8px;margin-bottom:8px;">' +
+        '<div style="width:18px;height:18px;border:2px solid '+COLOR+';border-radius:50%;flex-shrink:0;"></div>' +
+        '<span style="color:#2d3a2d;font-size:0.85rem;">'+opt+'</span>' +
+      '</div>';
+    });
+    html += '</div>' +
+      '<div style="text-align:center;font-size:0.6rem;color:#999;margin-top:auto;">Page '+pageNum+' of 12</div>' +
+    '</div>';
   }
   html += '</div>';
   return html;
@@ -149,30 +152,35 @@ async function generatePDF() {
   btn.textContent = '⏳ Generating PDF...';
   preview.innerHTML = '';
   
-  const { jsPDF } = window.jspdf;
+  progress.textContent = 'Loading cover image...';
+  await new Promise(function(r) {
+    const img = document.getElementById('coverImg');
+    if (img.complete) r();
+    else img.onload = r;
+  });
+  
+  const jsPDF = window.jspdf.jsPDF;
   const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
   
   for (let i = 0; i < IMPOSITION.length; i++) {
     const imp = IMPOSITION[i];
-    progress.textContent = `Rendering Sheet ${imp.sheet} ${imp.side}...`;
+    progress.textContent = 'Rendering Sheet '+imp.sheet+' '+imp.side+'...';
     
-    container.innerHTML = `
-      <div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">
-        <div style="width:50%;height:100%;border-right:1px dashed #eee;">${renderPage(imp.left)}</div>
-        <div style="width:50%;height:100%;">${renderPage(imp.right)}</div>
-      </div>
-    `;
+    container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
+      '<div style="width:50%;height:100%;border-right:1px dashed #eee;">'+renderPage(imp.left)+'</div>' +
+      '<div style="width:50%;height:100%;">'+renderPage(imp.right)+'</div>' +
+    '</div>';
     
-    await new Promise(r => setTimeout(r, 300));
+    await new Promise(function(r) { setTimeout(r, 500); });
     
     const canvas = await html2canvas(document.getElementById('a4sheet'), {
-      scale: 2, backgroundColor: '#FFFFFF', useCORS: true
+      scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
     });
     
     if (i > 0) pdf.addPage();
     pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
     
-    preview.innerHTML += `<p class="sheet-label">Sheet ${imp.sheet} - ${imp.side.toUpperCase()}</p><img src="${canvas.toDataURL()}">`;
+    preview.innerHTML += '<p class="sheet-label">Sheet '+imp.sheet+' - '+imp.side.toUpperCase()+'</p><img src="'+canvas.toDataURL()+'">';
   }
   
   progress.textContent = 'Saving PDF...';
