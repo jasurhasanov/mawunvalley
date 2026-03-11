@@ -171,13 +171,13 @@ function checkPw(){
 var p=document.getElementById("pwInput").value;
 if(p==="4Ever@MawunValley"){
 document.getElementById("pwOverlay").style.display="none";
-sessionStorage.setItem("mv_auth","1");
+sessionStorage.setItem("mv_auth_v2","1");
 }else{
 document.getElementById("pwError").style.display="block";
 document.getElementById("pwInput").value="";
 }
 }
-if(sessionStorage.getItem("mv_auth")==="1"){
+if(sessionStorage.getItem("mv_auth_v2")==="1"){
 document.getElementById("pwOverlay").style.display="none";
 }
 </script>
