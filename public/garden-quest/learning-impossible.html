@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Garden Code — Impossible Mode Learning Guide</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F5;--purple:#6B4E71;--purple-light:#9B7FA0;--earth:#5C4D3C;--earth-light:#8B7355;--white:#FFF;--gold:#d4a574}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);line-height:1.6}
+.pw-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(45,58,45,0.97);display:flex;align-items:center;justify-content:center;z-index:9999}
+.pw-box{background:white;padding:50px;border-radius:20px;text-align:center;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.pw-box h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:10px;color:#2d3a2d}
+.pw-box p{color:#666;margin-bottom:25px}
+.pw-box input{width:100%;padding:15px;border:2px solid #ddd;border-radius:10px;font-size:1rem;margin-bottom:15px;text-align:center}
+.pw-box button{background:#6B4E71;color:white;border:none;padding:15px 40px;border-radius:25px;font-size:1rem;cursor:pointer}
+.pw-box button:hover{background:#5C4D3C}
+.pw-error{color:#c00;font-size:0.9rem;margin-top:10px;display:none}
+.download-bar{text-align:center;padding:25px;background:var(--purple)}
+.download-btn{background:white;color:var(--earth);border:none;padding:16px 40px;font-size:1.1rem;font-weight:600;border-radius:30px;cursor:pointer;font-family:inherit;box-shadow:0 4px 15px rgba(0,0,0,0.2);transition:all 0.3s}
+.download-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+.download-btn:disabled{opacity:0.7;cursor:wait}
+.progress-text{color:white;margin-top:10px;font-size:0.9rem;display:none}
+.guide{max-width:700px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
+.page{width:700px;min-height:900px;padding:32px 38px;background:var(--white);border-bottom:3px dashed var(--purple-light);display:flex;flex-direction:column}
+.page.cover-page{background:linear-gradient(135deg,var(--purple),var(--purple-light));color:white;text-align:center;justify-content:center;min-height:900px}
+.cover-emoji{font-size:4rem;margin-bottom:15px}
+.cover-page h1{font-family:'Cormorant Garamond',serif;font-size:2.6rem;margin-bottom:10px}
+.cover-page .tagline{font-size:1.2rem;opacity:0.95;margin-bottom:25px}
+.cover-page .subtitle{font-size:1rem;opacity:0.85;max-width:450px;margin:0 auto 30px;line-height:1.6}
+.badge{display:inline-block;background:rgba(255,255,255,0.2);padding:12px 30px;border-radius:25px;font-size:1rem;margin-top:20px}
+.content-page{justify-content:flex-start}
+.page-header{text-align:center;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--purple-light)}
+.page-header h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--purple)}
+.checkpoint-block{margin-bottom:18px;padding:16px;background:var(--cream);border-radius:12px;border-left:4px solid var(--purple)}
+.checkpoint-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.checkpoint-num{width:32px;height:32px;background:var(--purple);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:600;flex-shrink:0}
+.checkpoint-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--earth)}
+.question{font-size:0.85rem;color:var(--earth-light);margin-bottom:6px;font-style:italic}
+.answer-box{background:linear-gradient(135deg,var(--purple),var(--purple-light));color:white;padding:8px 16px;border-radius:8px;display:inline-block;font-weight:600;margin-bottom:10px;font-size:0.9rem}
+.bonus-facts{padding-left:12px}
+.bonus-fact{position:relative;padding-left:18px;margin-bottom:6px;font-size:0.8rem;color:var(--earth-light);line-height:1.4}
+.bonus-fact::before{content:'🔬';position:absolute;left:0;font-size:0.7rem}
+.footer-note{text-align:center;padding:20px;background:linear-gradient(135deg,var(--purple),var(--purple-light));color:white;margin-top:auto}
+.footer-note p{font-size:0.9rem;opacity:0.95}
+</style>
+</head>
+<body>
+<div class="pw-overlay" id="pwOverlay">
+<div class="pw-box">
+<h2>🔐 Staff Access Only</h2>
+<p>Enter the password to view this page</p>
+<input type="password" id="pwInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPw()">
+<button onclick="checkPw()">Unlock</button>
+<p class="pw-error" id="pwError">Incorrect password</p>
+</div>
+</div>
+<script>
+function checkPw(){var p=document.getElementById("pwInput").value;if(p==="4Ever@MawunValley"){document.getElementById("pwOverlay").style.display="none";sessionStorage.setItem("mv_auth","1");}else{document.getElementById("pwError").style.display="block";document.getElementById("pwInput").value="";}}
+if(sessionStorage.getItem("mv_auth")==="1"){document.getElementById("pwOverlay").style.display="none";}
+</script>
+<div class="download-bar">
+  <button class="download-btn" onclick="downloadZip()">📥 Download Learning Guide (ZIP)</button>
+  <p class="progress-text" id="progressText">Generating pages...</p>
+</div>
+<div class="guide">
+  <section class="page cover-page" data-page="01-cover">
+    <div class="cover-emoji">💀📚</div>
+    <h1>After-Game Reflection</h1>
+    <p class="tagline">Impossible Mode Learning Guide</p>
+    <p class="subtitle">You attempted the PhD-level challenges! This guide reveals the answers and provides graduate-level botanical insights that would impress any professor.</p>
+    <div class="badge">☠️ Only 3% complete this mode — 50 pts each</div>
+  </section>
+  <section class="page content-page" data-page="02-checkpoints-1-3">
+    <div class="page-header"><h2>🔬 Checkpoints 1-3: PhD-Level Insights</h2></div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">1</div><div class="checkpoint-name">Reception</div></div>
+      <p class="question">Mangiferin belongs to which class of compounds?</p>
+      <div class="answer-box">✓ B. Xanthones</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Mangiferin (C₁₉H₁₈O₁₁) is a C-glucosylxanthone being studied for antidiabetic properties — it may inhibit α-glucosidase enzymes.</p>
+        <p class="bonus-fact">Unlike most compounds, mangiferin is concentrated in mango bark and leaves, not the fruit — traditional medicine knew this first.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">2</div><div class="checkpoint-name">Herbal Remedies</div></div>
+      <p class="question">Curcumin's bioavailability is limited due to rapid:</p>
+      <div class="answer-box">✓ B. Hepatic glucuronidation</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">The liver conjugates curcumin with glucuronic acid, reducing systemic bioavailability to less than 1%.</p>
+        <p class="bonus-fact">Piperine from black pepper inhibits glucuronidation, increasing curcumin absorption by 2000%!</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">3</div><div class="checkpoint-name">Banana Garden</div></div>
+      <p class="question">Triploid banana chromosome number?</p>
+      <div class="answer-box">✓ B. 33</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">With n=11, triploid bananas (3n=33) cannot undergo normal meiosis — why commercial bananas are seedless.</p>
+        <p class="bonus-fact">This sterility makes all Cavendish bananas vulnerable to diseases like Panama TR4.</p>
+      </div>
+    </div>
+  </section>
+  <section class="page content-page" data-page="03-checkpoints-4-6">
+    <div class="page-header"><h2>🔬 Checkpoints 4-6: PhD-Level Insights</h2></div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">4</div><div class="checkpoint-name">Vegetable Garden</div></div>
+      <p class="question">Tomato ripening is regulated by which phytohormone?</p>
+      <div class="answer-box">✓ C. Ethylene</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Ethylene (C₂H₄) activates ripening genes through the RIN-MADS transcription factor.</p>
+        <p class="bonus-fact">The CRISPR "non-browning" tomato works by modifying ethylene sensitivity genes.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">5</div><div class="checkpoint-name">Pineapple Garden</div></div>
+      <p class="question">What does CAM photosynthesis stand for?</p>
+      <div class="answer-box">✓ B. Crassulacean Acid Metabolism</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">CAM plants fix CO₂ at night into malic acid, releasing it during the day for the Calvin cycle.</p>
+        <p class="bonus-fact">Pineapple's CAM uses 80% less water than C3 crops — ideal for climate-adaptive agriculture.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">6</div><div class="checkpoint-name">Strawberry Fields</div></div>
+      <p class="question">Octoploid strawberry has how many chromosome sets?</p>
+      <div class="answer-box">✓ C. 8</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Fragaria × ananassa (8n=56) arose from hybridizing F. virginiana and F. chiloensis in 1750s France.</p>
+        <p class="bonus-fact">Higher ploidy often correlates with larger fruit size.</p>
+      </div>
+    </div>
+  </section>
+  <section class="page content-page" data-page="04-checkpoints-7-10">
+    <div class="page-header"><h2>🔬 Checkpoints 7-10: PhD-Level Insights</h2></div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">7</div><div class="checkpoint-name">Citrus Garden</div></div>
+      <p class="question">Limonene is classified as a:</p>
+      <div class="answer-box">✓ B. Monoterpene</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Limonene (C₁₀H₁₆) has two isoprene units. D-limonene = orange scent; L-limonene = pine scent.</p>
+        <p class="bonus-fact">D-limonene is being researched as a "green solvent" and anticancer agent.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">8</div><div class="checkpoint-name">Mixed Fruits Garden</div></div>
+      <p class="question">Dragon fruit belongs to which plant family?</p>
+      <div class="answer-box">✓ B. Cactaceae</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Hylocereus is an epiphytic cactus using aerial roots — doesn't parasitize host trees.</p>
+        <p class="bonus-fact">Dragon fruit's color comes from betalains (not anthocyanins) — stable across pH ranges.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">9</div><div class="checkpoint-name">Jabuticaba Garden</div></div>
+      <p class="question">Which sugar is attached to jabuticaba's anthocyanins?</p>
+      <div class="answer-box">✓ B. Glucose</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Cyanidin-3-O-glucoside is primary. Glucosylation increases water solubility and stability.</p>
+        <p class="bonus-fact">Jabuticaba skin has 310mg/100g anthocyanins — superior to blueberries!</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">🏆</div><div class="checkpoint-name">Flower Jungle</div></div>
+      <p class="question">Linalool acts on which neurotransmitter receptor?</p>
+      <div class="answer-box">✓ B. GABA-A</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Linalool modulates GABA-A receptors similarly to benzodiazepines, enhancing chloride ion influx.</p>
+        <p class="bonus-fact">Inhaled linalool reduces anxiety without motor impairment — aromatherapy has real neurochemical basis.</p>
+      </div>
+    </div>
+    <div class="footer-note"><p>💀 You've mastered PhD-level botanical knowledge. Consider a career in plant science!</p></div>
+  </section>
+</div>
+<script>
+async function downloadZip(){const btn=document.querySelector('.download-btn'),progressText=document.getElementById('progressText'),pages=document.querySelectorAll('.page');btn.disabled=true;btn.textContent='⏳ Generating...';progressText.style.display='block';const zip=new JSZip();try{for(let i=0;i<pages.length;i++){const page=pages[i],pageName=page.dataset.page;progressText.textContent=`Generating page ${i+1} of ${pages.length}...`;const canvas=await html2canvas(page,{scale:2,backgroundColor:'#FFFFFF',useCORS:true,width:700,height:900});const imgData=canvas.toDataURL('image/png').split(',')[1];zip.file(`${pageName}.png`,imgData,{base64:true});}progressText.textContent='Creating ZIP...';const content=await zip.generateAsync({type:'blob'});const link=document.createElement('a');link.href=URL.createObjectURL(content);link.download='garden-code-learning-impossible.zip';link.click();}catch(err){alert('Error generating images.');}progressText.style.display='none';btn.disabled=false;btn.textContent='📥 Download Learning Guide (ZIP)';}
+</script>
+</body>
+</html>

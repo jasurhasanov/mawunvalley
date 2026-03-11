@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Garden Code — Easy Mode Learning Guide</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F5;--sage:#7D8B6F;--sage-light:#A8B89A;--earth:#5C4D3C;--earth-light:#8B7355;--white:#FFF;--gold:#d4a574}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);line-height:1.6}
+.pw-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(45,58,45,0.97);display:flex;align-items:center;justify-content:center;z-index:9999}
+.pw-box{background:white;padding:50px;border-radius:20px;text-align:center;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.pw-box h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:10px;color:#2d3a2d}
+.pw-box p{color:#666;margin-bottom:25px}
+.pw-box input{width:100%;padding:15px;border:2px solid #ddd;border-radius:10px;font-size:1rem;margin-bottom:15px;text-align:center}
+.pw-box button{background:#7D8B6F;color:white;border:none;padding:15px 40px;border-radius:25px;font-size:1rem;cursor:pointer}
+.pw-box button:hover{background:#5C4D3C}
+.pw-error{color:#c00;font-size:0.9rem;margin-top:10px;display:none}
+.download-bar{text-align:center;padding:25px;background:var(--sage)}
+.download-btn{background:white;color:var(--earth);border:none;padding:16px 40px;font-size:1.1rem;font-weight:600;border-radius:30px;cursor:pointer;font-family:inherit;box-shadow:0 4px 15px rgba(0,0,0,0.2);transition:all 0.3s}
+.download-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+.download-btn:disabled{opacity:0.7;cursor:wait}
+.progress-text{color:white;margin-top:10px;font-size:0.9rem;display:none}
+.guide{max-width:700px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
+.page{width:700px;min-height:900px;padding:35px 40px;background:var(--white);border-bottom:3px dashed var(--sage-light);display:flex;flex-direction:column}
+.page.cover-page{background:linear-gradient(135deg,var(--sage),var(--sage-light));color:white;text-align:center;justify-content:center;min-height:900px}
+.cover-emoji{font-size:4rem;margin-bottom:15px}
+.cover-page h1{font-family:'Cormorant Garamond',serif;font-size:2.6rem;margin-bottom:10px}
+.cover-page .tagline{font-size:1.2rem;opacity:0.95;margin-bottom:25px}
+.cover-page .subtitle{font-size:1rem;opacity:0.85;max-width:450px;margin:0 auto 30px;line-height:1.6}
+.badge{display:inline-block;background:rgba(255,255,255,0.2);padding:12px 30px;border-radius:25px;font-size:1rem;margin-top:20px}
+.content-page{justify-content:flex-start}
+.page-header{text-align:center;margin-bottom:25px;padding-bottom:15px;border-bottom:2px solid var(--sage-light)}
+.page-header h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--sage)}
+.checkpoint-block{margin-bottom:25px;padding:20px;background:var(--cream);border-radius:12px;border-left:4px solid var(--sage)}
+.checkpoint-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.checkpoint-num{width:36px;height:36px;background:var(--sage);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:600;flex-shrink:0}
+.checkpoint-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--earth)}
+.question{font-size:0.9rem;color:var(--earth-light);margin-bottom:8px;font-style:italic}
+.answer-box{background:linear-gradient(135deg,var(--sage),var(--sage-light));color:white;padding:10px 18px;border-radius:8px;display:inline-block;font-weight:600;margin-bottom:12px}
+.bonus-facts{padding-left:15px}
+.bonus-fact{position:relative;padding-left:20px;margin-bottom:8px;font-size:0.88rem;color:var(--earth-light);line-height:1.5}
+.bonus-fact::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:0.8rem}
+.footer-note{text-align:center;padding:25px;background:linear-gradient(135deg,var(--sage),var(--sage-light));color:white;margin-top:auto}
+.footer-note p{font-size:0.95rem;opacity:0.95}
+</style>
+</head>
+<body>
+<div class="pw-overlay" id="pwOverlay">
+<div class="pw-box">
+<h2>🔐 Staff Access Only</h2>
+<p>Enter the password to view this page</p>
+<input type="password" id="pwInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPw()">
+<button onclick="checkPw()">Unlock</button>
+<p class="pw-error" id="pwError">Incorrect password</p>
+</div>
+</div>
+<script>
+function checkPw(){var p=document.getElementById("pwInput").value;if(p==="4Ever@MawunValley"){document.getElementById("pwOverlay").style.display="none";sessionStorage.setItem("mv_auth","1");}else{document.getElementById("pwError").style.display="block";document.getElementById("pwInput").value="";}}
+if(sessionStorage.getItem("mv_auth")==="1"){document.getElementById("pwOverlay").style.display="none";}
+</script>
+<div class="download-bar">
+  <button class="download-btn" onclick="downloadZip()">📥 Download Learning Guide (ZIP)</button>
+  <p class="progress-text" id="progressText">Generating pages...</p>
+</div>
+<div class="guide">
+  <section class="page cover-page" data-page="01-cover">
+    <div class="cover-emoji">🌱📚</div>
+    <h1>After-Game Reflection</h1>
+    <p class="tagline">Easy Mode Learning Guide</p>
+    <p class="subtitle">Congratulations on completing The Garden Code! This guide contains all the answers plus fascinating bonus facts to deepen your botanical knowledge.</p>
+    <div class="badge">🏆 You explored all 10 checkpoints!</div>
+  </section>
+  <section class="page content-page" data-page="02-checkpoints-1-3">
+    <div class="page-header"><h2>🌿 Checkpoints 1-3: Answers & Discoveries</h2></div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">1</div><div class="checkpoint-name">Reception</div></div>
+      <p class="question">Which fruit is known as the 'King of Tropical Fruits'?</p>
+      <div class="answer-box">✓ B. Mango</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">India produces nearly half of the world's mangoes — over 20 million tonnes annually!</p>
+        <p class="bonus-fact">There are over 1,000 different mango varieties worldwide, each with unique flavor profiles.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">2</div><div class="checkpoint-name">Herbal Remedies</div></div>
+      <p class="question">Which herb is commonly used to help with digestion?</p>
+      <div class="answer-box">✓ B. Ginger</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Ginger can survive up to 10 months underground before harvest — the longer it grows, the spicier!</p>
+        <p class="bonus-fact">Ancient sailors chewed ginger root to prevent seasickness — still recommended today.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">3</div><div class="checkpoint-name">Banana Garden</div></div>
+      <p class="question">What mineral are bananas famously high in?</p>
+      <div class="answer-box">✓ C. Potassium</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Bananas are slightly radioactive due to potassium — but you'd need 10 million at once for danger!</p>
+        <p class="bonus-fact">Banana plants can "walk" up to 40cm as new shoots grow away from the parent plant.</p>
+      </div>
+    </div>
+  </section>
+  <section class="page content-page" data-page="03-checkpoints-4-6">
+    <div class="page-header"><h2>🌿 Checkpoints 4-6: Answers & Discoveries</h2></div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">4</div><div class="checkpoint-name">Vegetable Garden</div></div>
+      <p class="question">Which vegetable is technically a fruit?</p>
+      <div class="answer-box">✓ B. Tomato</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Tomatoes were once believed poisonous in Europe because acidic tomatoes leached lead from plates!</p>
+        <p class="bonus-fact">A tomato has more genes than a human — about 31,760 compared to our 20,000-25,000.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">5</div><div class="checkpoint-name">Pineapple Garden</div></div>
+      <p class="question">How long does it take for a pineapple to grow?</p>
+      <div class="answer-box">✓ C. 18-24 months</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">A pineapple is actually 100-200 flowers fused together — each "eye" was a separate flower!</p>
+        <p class="bonus-fact">In the 1700s, pineapples were so rare you could rent one just to display at parties.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">6</div><div class="checkpoint-name">Strawberry Fields</div></div>
+      <p class="question">Where are strawberry seeds located?</p>
+      <div class="answer-box">✓ B. On the outside</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">An average strawberry has about 200 seeds on its surface — each can grow into a new plant!</p>
+        <p class="bonus-fact">Strawberries are the only fruit with seeds on the outside.</p>
+      </div>
+    </div>
+  </section>
+  <section class="page content-page" data-page="04-checkpoints-7-10">
+    <div class="page-header"><h2>🌿 Checkpoints 7-10: Answers & Discoveries</h2></div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">7</div><div class="checkpoint-name">Citrus Garden</div></div>
+      <p class="question">What vitamin are citrus fruits famous for?</p>
+      <div class="answer-box">✓ C. Vitamin C</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">The discovery that citrus prevents scurvy saved millions of sailors' lives.</p>
+        <p class="bonus-fact">Citrus peels contain 10x more vitamin C than the juice!</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">8</div><div class="checkpoint-name">Mixed Fruits Garden</div></div>
+      <p class="question">When does the dragon fruit flower bloom?</p>
+      <div class="answer-box">✓ C. Night</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Dragon fruit flowers bloom at midnight, last only one night, and smell like jasmine.</p>
+        <p class="bonus-fact">Some farms hire workers for "midnight pollination shifts"!</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">9</div><div class="checkpoint-name">Jabuticaba Garden</div></div>
+      <p class="question">Where does jabuticaba fruit grow on the tree?</p>
+      <div class="answer-box">✓ C. Directly on the trunk</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Jabuticaba can fruit up to 6 times per year, making the trunk look covered in purple pearls!</p>
+        <p class="bonus-fact">The fruit ferments within 3-4 days — why it's rarely exported and remains Brazil's secret.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">🏆</div><div class="checkpoint-name">Flower Jungle (Final)</div></div>
+      <p class="question">Which flower is used for cooking AND natural pest control?</p>
+      <div class="answer-box">✓ B. Marigold</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Marigold roots release thiophene, killing soil nematodes for up to 3 years!</p>
+        <p class="bonus-fact">In Mexico, marigolds guide spirits home in Day of the Dead celebrations.</p>
+      </div>
+    </div>
+    <div class="footer-note"><p>🌱 Thank you for exploring! Share what you learned with friends and family.</p></div>
+  </section>
+</div>
+<script>
+async function downloadZip(){const btn=document.querySelector('.download-btn'),progressText=document.getElementById('progressText'),pages=document.querySelectorAll('.page');btn.disabled=true;btn.textContent='⏳ Generating...';progressText.style.display='block';const zip=new JSZip();try{for(let i=0;i<pages.length;i++){const page=pages[i],pageName=page.dataset.page;progressText.textContent=`Generating page ${i+1} of ${pages.length}...`;const canvas=await html2canvas(page,{scale:2,backgroundColor:'#FFFFFF',useCORS:true,width:700,height:900});const imgData=canvas.toDataURL('image/png').split(',')[1];zip.file(`${pageName}.png`,imgData,{base64:true});}progressText.textContent='Creating ZIP...';const content=await zip.generateAsync({type:'blob'});const link=document.createElement('a');link.href=URL.createObjectURL(content);link.download='garden-code-learning-easy.zip';link.click();}catch(err){alert('Error generating images.');}progressText.style.display='none';btn.disabled=false;btn.textContent='📥 Download Learning Guide (ZIP)';}
+</script>
+</body>
+</html>
