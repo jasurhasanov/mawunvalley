@@ -30,19 +30,19 @@ h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;mar
 <body>
 <a href="../game-kit.html" class="back-link">← Back to Game Kit</a>
 <h1>🔥 Hard Learning Guide</h1>
-<p style="text-align:center"><span class="badge">After-Game Reflection • Deep Dives</span></p>
-<p class="subtitle">A5 booklet — print double-sided, fold in half!</p>
+<p style="text-align:center"><span class="badge">After-Game Reflection • Full Content</span></p>
+<p class="subtitle">6-page A5 booklet — print double-sided!</p>
 
-<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A4 PDF (Double-sided)</button>
+<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A4 PDF (3 sheets)</button>
 <p class="progress" id="progress"></p>
 
 <div class="instructions">
 <h3>🖨️ Print Instructions</h3>
 <ol>
-<li>Download the PDF (2 A4 pages)</li>
+<li>Download the PDF (3 A4 pages)</li>
 <li>Print <strong>double-sided</strong>, flip on <strong>short edge</strong></li>
-<li>Fold in half to make an A5 booklet</li>
-<li>Give to guests after they complete the game!</li>
+<li>Stack sheets in order, fold in half</li>
+<li>Staple spine for a 6-page A5 booklet!</li>
 </ol>
 </div>
 
@@ -57,21 +57,52 @@ var CREAM = '#FAF8F5';
 var EARTH = '#5C4D3C';
 var ACCENT = '#7D8B6F';
 
+// FULL ORIGINAL CONTENT
 var DATA = {
   title: 'After-Game Reflection',
   subtitle: 'Hard Mode Learning Guide',
   badge: '🔥 Hard • 10 checkpoints',
   checkpoints: [
-    { num: 1, loc: 'Reception', q: 'Mango origin region?', a: 'South Asia', facts: ['Cultivated 4,000+ years.', 'Buddhist monks spread them.'] },
-    { num: 2, loc: 'Herbal Remedies', q: 'Ginger anti-inflammatory?', a: 'Gingerol', facts: ['Similar to capsaicin.', 'Becomes shogaol when dried!'] },
-    { num: 3, loc: 'Banana Garden', q: 'Times plant fruits?', a: 'Once', facts: ['Plant fruits once then dies.', 'New pups continue cycle.'] },
-    { num: 4, loc: 'Vegetable Garden', q: 'Garlic smell released?', a: 'Cells damaged', facts: ['Crushing releases alliinase.', 'Creates antibacterial allicin!'] },
-    { num: 5, loc: 'Pineapple Garden', q: 'Meat-tenderizing enzyme?', a: 'Bromelain', facts: ['Dissolves fingerprints!', 'Used in medicine too.'] },
-    { num: 6, loc: 'Strawberry Fields', q: 'Plant family?', a: 'Rose family', facts: ['Cousins of roses & apples!', 'Family: Rosaceae.'] },
-    { num: 7, loc: 'Citrus Garden', q: 'Orange first cultivated?', a: 'Southeast Asia', facts: ['Sanskrit "naranga".', 'Hybrid pomelo + mandarin.'] },
-    { num: 8, loc: 'Mixed Fruits', q: 'Rambutan meaning?', a: 'Hairy', facts: ['"Rambut" = hair in Malay.', 'Related to lychee.'] },
-    { num: 9, loc: 'Jabuticaba', q: 'Native country?', a: 'Brazil', facts: ['Ferments in 3-4 days!', 'Used for wine & liqueur.'] },
-    { num: 10, loc: 'Flower Jungle', q: 'Lavender calming compound?', a: 'Linalool', facts: ['Same receptors as anxiety meds!', 'Also in mint & cinnamon.'] }
+    { num: 1, loc: 'Reception', 
+      q: 'The mango originated from which region?', 
+      a: 'C. South Asia', 
+      facts: ['The earliest mango cultivation dates to 4000 BCE in India — one of humanity\'s oldest cultivated fruits.', 'Buddhist monks carried mangoes to Southeast Asia around 400 BCE, considering them sacred.'] },
+    { num: 2, loc: 'Herbal Remedies', 
+      q: 'What compound gives ginger its anti-inflammatory properties?', 
+      a: 'C. Gingerol', 
+      facts: ['Gingerol is chemically related to capsaicin (from chili peppers), which is why ginger has a slight heat.', 'When ginger is dried, gingerol converts to shogaol, which is actually twice as spicy!'] },
+    { num: 3, loc: 'Banana Garden', 
+      q: 'How many times does a banana plant fruit in its lifetime?', 
+      a: 'A. Once', 
+      facts: ['After fruiting, the parent plant dies, but new "pups" grow from the base to continue the cycle.', 'A banana plant grows its entire trunk (technically a "pseudostem") in just 9 months before fruiting.'] },
+    { num: 4, loc: 'Vegetable Garden', 
+      q: 'Garlic releases its distinctive smell when what happens?', 
+      a: 'C. Cells are damaged', 
+      facts: ['When garlic cells are damaged, the enzyme alliinase converts alliin into allicin — the compound responsible for garlic smell.', 'Allicin is also a powerful antibacterial that was used to treat wounds before modern antibiotics!'] },
+    { num: 5, loc: 'Pineapple Garden', 
+      q: 'Which enzyme in pineapple is used to tenderize meat?', 
+      a: 'B. Bromelain', 
+      facts: ['Bromelain is so powerful at breaking down protein that pineapple workers often lose their fingerprints!', 'This enzyme is why your tongue may feel tingly after eating fresh pineapple — it\'s literally digesting you back!'] },
+    { num: 6, loc: 'Strawberry Fields', 
+      q: 'Strawberries are a member of which plant family?', 
+      a: 'C. Rose family', 
+      facts: ['The Rosaceae family includes roses, apples, pears, almonds, and strawberries — all cousins!', 'This is why strawberry flowers look similar to wild rose flowers — white petals with yellow centers.'] },
+    { num: 7, loc: 'Citrus Garden', 
+      q: 'Where was the orange first cultivated?', 
+      a: 'B. Southeast Asia', 
+      facts: ['The word "orange" comes from Sanskrit "nāranga" through Persian and Arabic to English.', 'The sweet orange we eat today is actually an ancient hybrid between pomelo and mandarin.'] },
+    { num: 8, loc: 'Mixed Fruits Garden', 
+      q: 'What does "rambutan" mean in Malay?', 
+      a: 'C. Hairy', 
+      facts: ['"Rambut" means "hair" in Malay, referring to the soft spines covering the fruit.', 'Rambutan is closely related to lychee and longan — they\'re all in the soapberry family.'] },
+    { num: 9, loc: 'Jabuticaba Garden', 
+      q: 'Jabuticaba is native to which country?', 
+      a: 'C. Brazil', 
+      facts: ['The fruit ferments within 3-4 days of harvest, which is why it\'s rarely exported outside Brazil.', 'Brazilians make wine, liqueurs, and jam from jabuticaba because of its short shelf life.'] },
+    { num: '🏆', loc: 'Flower Jungle (Final)', 
+      q: 'Which compound in lavender is responsible for its calming effect?', 
+      a: 'B. Linalool', 
+      facts: ['Linalool affects the same brain receptors as anti-anxiety medications but without the side effects.', 'This compound is also found in mint, cinnamon, and over 200 other plants.'] }
   ]
 };
 
@@ -91,52 +122,55 @@ function renderA5(pageNum) {
         '<p style="margin-top:15px;font-size:0.85rem;opacity:0.85;">You cracked the Hard Code!</p>' +
       '</div>' +
     '</div>';
+  } else if (pageNum === 6) {
+    html += '<div style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;background:linear-gradient(135deg,'+COLOR+',#c17f59);color:white;text-align:center;">' +
+      '<div style="font-size:3rem;margin-bottom:20px;">🔥</div>' +
+      '<h2 style="font-family:Cormorant Garamond,serif;font-size:1.8rem;margin-bottom:15px;">True Botanist Achievement!</h2>' +
+      '<p style="font-size:1rem;opacity:0.95;max-width:300px;line-height:1.6;margin-bottom:25px;">You\'ve mastered the deeper knowledge of our garden. Share these discoveries!</p>' +
+      '<div style="background:rgba(255,255,255,0.2);padding:15px 30px;border-radius:12px;">' +
+        '<p style="font-size:0.9rem;opacity:0.9;">Visit us at</p>' +
+        '<p style="font-size:1.1rem;font-weight:600;">mawunvalley.com</p>' +
+      '</div>' +
+    '</div>';
   } else {
     var pageConfigs = {
-      2: [0, 1, 2, 3],
-      3: [4, 5, 6],
-      4: [7, 8, 9]
+      2: [0, 1],
+      3: [2, 3],
+      4: [4, 5],
+      5: [6, 7, 8, 9]
     };
     
     var indices = pageConfigs[pageNum] || [];
     var cps = indices.map(function(i) { return DATA.checkpoints[i]; });
-    var isLastPage = pageNum === 4;
     var itemCount = cps.length;
+    var isFourItems = itemCount === 4;
     
-    var blockPadding = itemCount === 4 ? '7px 10px' : '10px 12px';
-    var factSize = itemCount === 4 ? '0.6rem' : '0.68rem';
-    var blockGap = itemCount === 4 ? '6px' : '10px';
-    
-    html += '<div style="height:100%;padding:12px 16px;display:flex;flex-direction:column;">' +
-      '<div style="text-align:center;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid '+COLOR_LIGHT+';">' +
-        '<h2 style="font-family:Cormorant Garamond,serif;font-size:1rem;color:'+COLOR+';">🔥 Answers & Deep Dives</h2>' +
+    html += '<div style="height:100%;padding:'+(isFourItems ? '15px' : '20px')+';display:flex;flex-direction:column;">' +
+      '<div style="text-align:center;margin-bottom:'+(isFourItems ? '10px' : '15px')+';padding-bottom:8px;border-bottom:2px solid '+COLOR_LIGHT+';">' +
+        '<h2 style="font-family:Cormorant Garamond,serif;font-size:'+(isFourItems ? '1rem' : '1.1rem')+';color:'+COLOR+';">🔥 Answers & Deep Dives</h2>' +
       '</div>' +
-      '<div style="flex:1;display:flex;flex-direction:column;gap:'+blockGap+';">';
+      '<div style="flex:1;display:flex;flex-direction:column;gap:'+(isFourItems ? '8px' : '15px')+';">';
     
     cps.forEach(function(cp) {
-      html += '<div style="background:'+CREAM+';padding:'+blockPadding+';border-radius:8px;border-left:3px solid '+COLOR+';flex:1;display:flex;flex-direction:column;justify-content:center;">' +
-        '<div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;">' +
-          '<div style="width:20px;height:20px;background:'+COLOR+';color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:600;">'+cp.num+'</div>' +
-          '<span style="font-family:Cormorant Garamond,serif;font-size:0.85rem;color:'+EARTH+';font-weight:600;">'+cp.loc+'</span>' +
-          '<span style="margin-left:auto;background:'+COLOR+';color:white;padding:2px 8px;border-radius:5px;font-size:0.65rem;font-weight:600;">✓ '+cp.a+'</span>' +
+      var fs = isFourItems ? '0.72rem' : '0.85rem';
+      var factFs = isFourItems ? '0.68rem' : '0.8rem';
+      var pad = isFourItems ? '10px 12px' : '15px';
+      
+      html += '<div style="background:'+CREAM+';padding:'+pad+';border-radius:10px;border-left:4px solid '+COLOR+';flex:1;display:flex;flex-direction:column;justify-content:center;">' +
+        '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">' +
+          '<div style="width:'+(isFourItems ? '28px' : '32px')+';height:'+(isFourItems ? '28px' : '32px')+';background:'+COLOR+';color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:'+(isFourItems ? '0.75rem' : '0.85rem')+';font-weight:600;">'+cp.num+'</div>' +
+          '<span style="font-family:Cormorant Garamond,serif;font-size:'+(isFourItems ? '1rem' : '1.15rem')+';color:'+EARTH+';font-weight:600;">'+cp.loc+'</span>' +
         '</div>' +
-        '<p style="font-size:0.68rem;color:#8B7355;font-style:italic;margin-bottom:3px;">'+cp.q+'</p>' +
-        '<div style="font-size:'+factSize+';color:#8B7355;line-height:1.3;">' +
-          '<span style="color:'+ACCENT+';">✦</span> '+cp.facts[0]+' <span style="color:'+ACCENT+';">✦</span> '+cp.facts[1] +
+        '<p style="font-size:'+fs+';color:#5C4D3C;font-style:italic;margin-bottom:8px;">'+cp.q+'</p>' +
+        '<div style="background:linear-gradient(135deg,'+COLOR+',#c17f59);color:white;padding:6px 14px;border-radius:8px;display:inline-block;font-weight:600;font-size:'+fs+';margin-bottom:10px;">✓ '+cp.a+'</div>' +
+        '<div style="font-size:'+factFs+';color:#5C4D3C;line-height:1.45;">' +
+          '<p style="margin-bottom:5px;"><span style="color:'+ACCENT+';font-weight:600;">✦</span> '+cp.facts[0]+'</p>' +
+          '<p><span style="color:'+ACCENT+';font-weight:600;">✦</span> '+cp.facts[1]+'</p>' +
         '</div>' +
       '</div>';
     });
     
-    html += '</div>';
-    
-    if (isLastPage) {
-      html += '<div style="text-align:center;padding:8px;background:linear-gradient(135deg,'+COLOR+',#c17f59);color:white;border-radius:8px;margin-top:8px;">' +
-        '<p style="font-size:0.75rem;">🔥 True Botanist Achievement! 🔥</p>' +
-        '<p style="font-size:0.65rem;opacity:0.85;">mawunvalley.com</p>' +
-      '</div>';
-    }
-    
-    html += '</div>';
+    html += '</div></div>';
   }
   
   html += '</div>';
@@ -163,43 +197,55 @@ async function generatePDF() {
   var jsPDF = window.jspdf.jsPDF;
   var pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
   
-  progress.textContent = 'Rendering front side (pages 4 & 1)...';
-  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
-    '<div style="width:50%;height:100%;">'+renderA5(4)+'</div>' +
-    '<div style="width:50%;height:100%;">'+renderA5(1)+'</div>' +
-  '</div>';
+  var sheets = [
+    { front: [6, 1], back: [2, 5] },
+    { front: [4, 3], back: null }
+  ];
   
-  await new Promise(function(r) { setTimeout(r, 800); });
-  
-  var canvas = await html2canvas(document.getElementById('a4sheet'), {
-    scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
-  });
-  
-  pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
-  preview.innerHTML += '<p class="sheet-label">Front: Pages 4 & 1</p><img src="'+canvas.toDataURL()+'">';
-  
-  progress.textContent = 'Rendering back side (pages 2 & 3)...';
-  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
-    '<div style="width:50%;height:100%;">'+renderA5(2)+'</div>' +
-    '<div style="width:50%;height:100%;">'+renderA5(3)+'</div>' +
-  '</div>';
-  
-  await new Promise(function(r) { setTimeout(r, 800); });
-  
-  canvas = await html2canvas(document.getElementById('a4sheet'), {
-    scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
-  });
-  
-  pdf.addPage();
-  pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
-  preview.innerHTML += '<p class="sheet-label">Back: Pages 2 & 3</p><img src="'+canvas.toDataURL()+'">';
+  for (var s = 0; s < sheets.length; s++) {
+    var sheet = sheets[s];
+    
+    progress.textContent = 'Rendering sheet '+(s+1)+' front...';
+    container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
+      '<div style="width:50%;height:100%;">'+renderA5(sheet.front[0])+'</div>' +
+      '<div style="width:50%;height:100%;">'+renderA5(sheet.front[1])+'</div>' +
+    '</div>';
+    
+    await new Promise(function(r) { setTimeout(r, 800); });
+    
+    var canvas = await html2canvas(document.getElementById('a4sheet'), {
+      scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
+    });
+    
+    if (s > 0) pdf.addPage();
+    pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
+    preview.innerHTML += '<p class="sheet-label">Sheet '+(s+1)+' Front</p><img src="'+canvas.toDataURL()+'">';
+    
+    if (sheet.back) {
+      progress.textContent = 'Rendering sheet '+(s+1)+' back...';
+      container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
+        '<div style="width:50%;height:100%;">'+renderA5(sheet.back[0])+'</div>' +
+        '<div style="width:50%;height:100%;">'+renderA5(sheet.back[1])+'</div>' +
+      '</div>';
+      
+      await new Promise(function(r) { setTimeout(r, 800); });
+      
+      canvas = await html2canvas(document.getElementById('a4sheet'), {
+        scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
+      });
+      
+      pdf.addPage();
+      pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
+      preview.innerHTML += '<p class="sheet-label">Sheet '+(s+1)+' Back</p><img src="'+canvas.toDataURL()+'">';
+    }
+  }
   
   progress.textContent = 'Saving PDF...';
   pdf.save('learning-guide-hard-booklet.pdf');
   
   progress.textContent = '✅ PDF Downloaded!';
   btn.disabled = false;
-  btn.textContent = '📥 Download A4 PDF (Double-sided)';
+  btn.textContent = '📥 Download A4 PDF (3 sheets)';
 }
 </script>
 </body>

@@ -30,19 +30,19 @@ h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;mar
 <body>
 <a href="../game-kit.html" class="back-link">← Back to Game Kit</a>
 <h1>💀 Impossible Learning Guide</h1>
-<p style="text-align:center"><span class="badge">After-Game Reflection • Expert Knowledge</span></p>
-<p class="subtitle">A5 booklet — print double-sided, fold in half!</p>
+<p style="text-align:center"><span class="badge">After-Game Reflection • Full Content</span></p>
+<p class="subtitle">6-page A5 booklet — print double-sided!</p>
 
-<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A4 PDF (Double-sided)</button>
+<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A4 PDF (3 sheets)</button>
 <p class="progress" id="progress"></p>
 
 <div class="instructions">
 <h3>🖨️ Print Instructions</h3>
 <ol>
-<li>Download the PDF (2 A4 pages)</li>
+<li>Download the PDF (3 A4 pages)</li>
 <li>Print <strong>double-sided</strong>, flip on <strong>short edge</strong></li>
-<li>Fold in half to make an A5 booklet</li>
-<li>Give to guests after they complete the game!</li>
+<li>Stack sheets in order, fold in half</li>
+<li>Staple spine for a 6-page A5 booklet!</li>
 </ol>
 </div>
 
@@ -57,21 +57,52 @@ var CREAM = '#FAF8F5';
 var EARTH = '#5C4D3C';
 var ACCENT = '#d4a574';
 
+// FULL ORIGINAL CONTENT
 var DATA = {
   title: 'After-Game Reflection',
   subtitle: 'Impossible Mode Learning Guide',
   badge: '💀 Impossible • 10 checkpoints',
   checkpoints: [
-    { num: 1, loc: 'Reception', q: 'Mango genome mapped?', a: '2013', facts: ['Mapped in India for breeding.', 'Over 500 varieties studied.'] },
-    { num: 2, loc: 'Herbal Remedies', q: 'First ginger cultivation?', a: '~3000 BCE', facts: ['First in Southeast Asia.', 'Reached Europe via silk road.'] },
-    { num: 3, loc: 'Banana Garden', q: 'Diploid chromosome count?', a: '22', facts: ['Wild bananas are seeded.', 'Commercial ones triploid.'] },
-    { num: 4, loc: 'Vegetable Garden', q: 'Capsaicin receptor?', a: 'TRPV1', facts: ['Same as heat pain receptor!', 'Birds cannot feel it.'] },
-    { num: 5, loc: 'Pineapple Garden', q: 'First European to document?', a: 'Columbus 1493', facts: ['Called it "pina de Indes".', 'Named after pine cone.'] },
-    { num: 6, loc: 'Strawberry Fields', q: 'Modern strawberry origin?', a: '1750s France', facts: ['Hybrid of 2 American species.', 'Created accidentally.'] },
-    { num: 7, loc: 'Citrus Garden', q: 'Citrus originated where?', a: 'Himalayan foothills', facts: ['NE India/Myanmar.', 'All from 3 ancestors.'] },
-    { num: 8, loc: 'Mixed Fruits', q: 'Dragon fruit native region?', a: 'Central America', facts: ['French brought to Asia.', 'Vietnam exports most now.'] },
-    { num: 9, loc: 'Jabuticaba', q: 'Portuguese arrival?', a: '16th century', facts: ['Name from Tupi language.', 'Jabuti = tortoise.'] },
-    { num: 10, loc: 'Flower Jungle', q: 'Chrysanthemum day Japan?', a: 'September 9th', facts: ['Imperial flower symbol.', 'Petals eaten for longevity.'] }
+    { num: 1, loc: 'Reception', 
+      q: 'Mangiferin belongs to which class of compounds?', 
+      a: 'B. Xanthones', 
+      facts: ['Mangiferin (C₁₉H₁₈O₁₁) is a C-glucosylxanthone being studied for antidiabetic properties.', 'Unlike most compounds, mangiferin is concentrated in mango bark and leaves, not the fruit.'] },
+    { num: 2, loc: 'Herbal Remedies', 
+      q: 'What is the approximate biosynthetic pathway length for gingerol production?', 
+      a: 'B. 8-10 enzymatic steps', 
+      facts: ['Gingerol synthesis involves PKS (polyketide synthase), P450 enzymes, and methyltransferases.', 'The pathway shares enzymes with curcumin synthesis — ginger and turmeric are cousins!'] },
+    { num: 3, loc: 'Banana Garden', 
+      q: 'The Cavendish banana is susceptible to which current disease threat?', 
+      a: 'C. Fusarium TR4', 
+      facts: ['Tropical Race 4 is spreading globally and scientists fear it could make bananas extinct commercially.', 'The previous dominant variety (Gros Michel) was wiped out by TR1 in the 1950s — history may repeat.'] },
+    { num: 4, loc: 'Vegetable Garden', 
+      q: 'What is the Scoville Heat Unit (SHU) range for a Carolina Reaper?', 
+      a: 'C. 1.5-2.2 million SHU', 
+      facts: ['The Carolina Reaper held the Guinness record from 2013-2023, bred by Ed Currie.', 'Pure capsaicin measures 16 million SHU — police pepper spray is about 5 million.'] },
+    { num: 5, loc: 'Pineapple Garden', 
+      q: 'What is the specific gravity requirement for harvesting pineapples?', 
+      a: 'B. 1.05-1.10', 
+      facts: ['This translates to 12-14° Brix sugar content — measuring sweetness scientifically.', 'Commercial growers use ethylene gas (100 ppm) to synchronize flowering and harvest.'] },
+    { num: 6, loc: 'Strawberry Fields', 
+      q: 'The modern garden strawberry (Fragaria × ananassa) is what ploidy level?', 
+      a: 'C. Octoploid', 
+      facts: ['Octoploid means 8 sets of chromosomes (56 total) — created by hybridizing two different species.', 'This happened accidentally in 1750s France when F. virginiana and F. chiloensis cross-pollinated.'] },
+    { num: 7, loc: 'Citrus Garden', 
+      q: 'What is the primary site of limonene biosynthesis in citrus?', 
+      a: 'B. Oil glands (flavedo)', 
+      facts: ['The flavedo is the colored outer layer of citrus peel where terpene synthase enzymes are active.', 'Limonene comprises 90-95% of orange peel oil and is used in 16,000+ commercial products.'] },
+    { num: 8, loc: 'Mixed Fruits Garden', 
+      q: 'What is the photoperiod requirement for dragon fruit flowering?', 
+      a: 'B. Long nights (>12 hours)', 
+      facts: ['Dragon fruit is a "short-day plant" that requires long, uninterrupted darkness to trigger flowering.', 'Commercial growers use artificial lighting to manipulate flowering cycles for off-season production.'] },
+    { num: 9, loc: 'Jabuticaba Garden', 
+      q: 'What is the principal anthocyanin in jabuticaba?', 
+      a: 'C. Cyanidin-3-glucoside', 
+      facts: ['This compound gives the dark purple color and has potent antioxidant activity.', 'Studies show jabuticaba has higher anthocyanin content than açaí or blueberries by weight.'] },
+    { num: '🏆', loc: 'Flower Jungle (Final)', 
+      q: 'What is the approximate number of genes in the chrysanthemum genome?', 
+      a: 'B. ~71,000 genes', 
+      facts: ['Chrysanthemum has one of the largest plant genomes — hexaploid with 54 chromosomes.', 'For comparison, humans have ~20,000 genes, making this flower genetically more complex than us!'] }
   ]
 };
 
@@ -91,52 +122,55 @@ function renderA5(pageNum) {
         '<p style="margin-top:15px;font-size:0.85rem;opacity:0.85;">You conquered the Impossible!</p>' +
       '</div>' +
     '</div>';
+  } else if (pageNum === 6) {
+    html += '<div style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;background:linear-gradient(135deg,'+COLOR+',#6B3B5B);color:white;text-align:center;">' +
+      '<div style="font-size:3rem;margin-bottom:20px;">💀</div>' +
+      '<h2 style="font-family:Cormorant Garamond,serif;font-size:1.8rem;margin-bottom:15px;">Legendary Botanist Status!</h2>' +
+      '<p style="font-size:1rem;opacity:0.95;max-width:300px;line-height:1.6;margin-bottom:25px;">You\'ve mastered expert-level botanical knowledge. Truly impressive!</p>' +
+      '<div style="background:rgba(255,255,255,0.2);padding:15px 30px;border-radius:12px;">' +
+        '<p style="font-size:0.9rem;opacity:0.9;">Visit us at</p>' +
+        '<p style="font-size:1.1rem;font-weight:600;">mawunvalley.com</p>' +
+      '</div>' +
+    '</div>';
   } else {
     var pageConfigs = {
-      2: [0, 1, 2, 3],
-      3: [4, 5, 6],
-      4: [7, 8, 9]
+      2: [0, 1],
+      3: [2, 3],
+      4: [4, 5],
+      5: [6, 7, 8, 9]
     };
     
     var indices = pageConfigs[pageNum] || [];
     var cps = indices.map(function(i) { return DATA.checkpoints[i]; });
-    var isLastPage = pageNum === 4;
     var itemCount = cps.length;
+    var isFourItems = itemCount === 4;
     
-    var blockPadding = itemCount === 4 ? '7px 10px' : '10px 12px';
-    var factSize = itemCount === 4 ? '0.6rem' : '0.68rem';
-    var blockGap = itemCount === 4 ? '6px' : '10px';
-    
-    html += '<div style="height:100%;padding:12px 16px;display:flex;flex-direction:column;">' +
-      '<div style="text-align:center;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid '+COLOR_LIGHT+';">' +
-        '<h2 style="font-family:Cormorant Garamond,serif;font-size:1rem;color:'+COLOR+';">💀 Answers & Expert Knowledge</h2>' +
+    html += '<div style="height:100%;padding:'+(isFourItems ? '15px' : '20px')+';display:flex;flex-direction:column;">' +
+      '<div style="text-align:center;margin-bottom:'+(isFourItems ? '10px' : '15px')+';padding-bottom:8px;border-bottom:2px solid '+COLOR_LIGHT+';">' +
+        '<h2 style="font-family:Cormorant Garamond,serif;font-size:'+(isFourItems ? '1rem' : '1.1rem')+';color:'+COLOR+';">💀 Answers & Expert Knowledge</h2>' +
       '</div>' +
-      '<div style="flex:1;display:flex;flex-direction:column;gap:'+blockGap+';">';
+      '<div style="flex:1;display:flex;flex-direction:column;gap:'+(isFourItems ? '8px' : '15px')+';">';
     
     cps.forEach(function(cp) {
-      html += '<div style="background:'+CREAM+';padding:'+blockPadding+';border-radius:8px;border-left:3px solid '+COLOR+';flex:1;display:flex;flex-direction:column;justify-content:center;">' +
-        '<div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;">' +
-          '<div style="width:20px;height:20px;background:'+COLOR+';color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:600;">'+cp.num+'</div>' +
-          '<span style="font-family:Cormorant Garamond,serif;font-size:0.85rem;color:'+EARTH+';font-weight:600;">'+cp.loc+'</span>' +
-          '<span style="margin-left:auto;background:'+COLOR+';color:white;padding:2px 8px;border-radius:5px;font-size:0.65rem;font-weight:600;">✓ '+cp.a+'</span>' +
+      var fs = isFourItems ? '0.72rem' : '0.85rem';
+      var factFs = isFourItems ? '0.68rem' : '0.8rem';
+      var pad = isFourItems ? '10px 12px' : '15px';
+      
+      html += '<div style="background:'+CREAM+';padding:'+pad+';border-radius:10px;border-left:4px solid '+COLOR+';flex:1;display:flex;flex-direction:column;justify-content:center;">' +
+        '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">' +
+          '<div style="width:'+(isFourItems ? '28px' : '32px')+';height:'+(isFourItems ? '28px' : '32px')+';background:'+COLOR+';color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:'+(isFourItems ? '0.75rem' : '0.85rem')+';font-weight:600;">'+cp.num+'</div>' +
+          '<span style="font-family:Cormorant Garamond,serif;font-size:'+(isFourItems ? '1rem' : '1.15rem')+';color:'+EARTH+';font-weight:600;">'+cp.loc+'</span>' +
         '</div>' +
-        '<p style="font-size:0.68rem;color:#8B7355;font-style:italic;margin-bottom:3px;">'+cp.q+'</p>' +
-        '<div style="font-size:'+factSize+';color:#8B7355;line-height:1.3;">' +
-          '<span style="color:'+ACCENT+';">✦</span> '+cp.facts[0]+' <span style="color:'+ACCENT+';">✦</span> '+cp.facts[1] +
+        '<p style="font-size:'+fs+';color:#5C4D3C;font-style:italic;margin-bottom:8px;">'+cp.q+'</p>' +
+        '<div style="background:linear-gradient(135deg,'+COLOR+',#6B3B5B);color:white;padding:6px 14px;border-radius:8px;display:inline-block;font-weight:600;font-size:'+fs+';margin-bottom:10px;">✓ '+cp.a+'</div>' +
+        '<div style="font-size:'+factFs+';color:#5C4D3C;line-height:1.45;">' +
+          '<p style="margin-bottom:5px;"><span style="color:'+ACCENT+';font-weight:600;">✦</span> '+cp.facts[0]+'</p>' +
+          '<p><span style="color:'+ACCENT+';font-weight:600;">✦</span> '+cp.facts[1]+'</p>' +
         '</div>' +
       '</div>';
     });
     
-    html += '</div>';
-    
-    if (isLastPage) {
-      html += '<div style="text-align:center;padding:8px;background:linear-gradient(135deg,'+COLOR+',#6B3B5B);color:white;border-radius:8px;margin-top:8px;">' +
-        '<p style="font-size:0.75rem;">💀 Legendary Botanist Status! 💀</p>' +
-        '<p style="font-size:0.65rem;opacity:0.85;">mawunvalley.com</p>' +
-      '</div>';
-    }
-    
-    html += '</div>';
+    html += '</div></div>';
   }
   
   html += '</div>';
@@ -163,43 +197,55 @@ async function generatePDF() {
   var jsPDF = window.jspdf.jsPDF;
   var pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
   
-  progress.textContent = 'Rendering front side (pages 4 & 1)...';
-  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
-    '<div style="width:50%;height:100%;">'+renderA5(4)+'</div>' +
-    '<div style="width:50%;height:100%;">'+renderA5(1)+'</div>' +
-  '</div>';
+  var sheets = [
+    { front: [6, 1], back: [2, 5] },
+    { front: [4, 3], back: null }
+  ];
   
-  await new Promise(function(r) { setTimeout(r, 800); });
-  
-  var canvas = await html2canvas(document.getElementById('a4sheet'), {
-    scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
-  });
-  
-  pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
-  preview.innerHTML += '<p class="sheet-label">Front: Pages 4 & 1</p><img src="'+canvas.toDataURL()+'">';
-  
-  progress.textContent = 'Rendering back side (pages 2 & 3)...';
-  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
-    '<div style="width:50%;height:100%;">'+renderA5(2)+'</div>' +
-    '<div style="width:50%;height:100%;">'+renderA5(3)+'</div>' +
-  '</div>';
-  
-  await new Promise(function(r) { setTimeout(r, 800); });
-  
-  canvas = await html2canvas(document.getElementById('a4sheet'), {
-    scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
-  });
-  
-  pdf.addPage();
-  pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
-  preview.innerHTML += '<p class="sheet-label">Back: Pages 2 & 3</p><img src="'+canvas.toDataURL()+'">';
+  for (var s = 0; s < sheets.length; s++) {
+    var sheet = sheets[s];
+    
+    progress.textContent = 'Rendering sheet '+(s+1)+' front...';
+    container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
+      '<div style="width:50%;height:100%;">'+renderA5(sheet.front[0])+'</div>' +
+      '<div style="width:50%;height:100%;">'+renderA5(sheet.front[1])+'</div>' +
+    '</div>';
+    
+    await new Promise(function(r) { setTimeout(r, 800); });
+    
+    var canvas = await html2canvas(document.getElementById('a4sheet'), {
+      scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
+    });
+    
+    if (s > 0) pdf.addPage();
+    pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
+    preview.innerHTML += '<p class="sheet-label">Sheet '+(s+1)+' Front</p><img src="'+canvas.toDataURL()+'">';
+    
+    if (sheet.back) {
+      progress.textContent = 'Rendering sheet '+(s+1)+' back...';
+      container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
+        '<div style="width:50%;height:100%;">'+renderA5(sheet.back[0])+'</div>' +
+        '<div style="width:50%;height:100%;">'+renderA5(sheet.back[1])+'</div>' +
+      '</div>';
+      
+      await new Promise(function(r) { setTimeout(r, 800); });
+      
+      canvas = await html2canvas(document.getElementById('a4sheet'), {
+        scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
+      });
+      
+      pdf.addPage();
+      pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
+      preview.innerHTML += '<p class="sheet-label">Sheet '+(s+1)+' Back</p><img src="'+canvas.toDataURL()+'">';
+    }
+  }
   
   progress.textContent = 'Saving PDF...';
   pdf.save('learning-guide-impossible-booklet.pdf');
   
   progress.textContent = '✅ PDF Downloaded!';
   btn.disabled = false;
-  btn.textContent = '📥 Download A4 PDF (Double-sided)';
+  btn.textContent = '📥 Download A4 PDF (3 sheets)';
 }
 </script>
 </body>

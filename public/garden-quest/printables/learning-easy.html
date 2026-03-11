@@ -30,19 +30,19 @@ h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;mar
 <body>
 <a href="../game-kit.html" class="back-link">← Back to Game Kit</a>
 <h1>🌱 Easy Learning Guide</h1>
-<p style="text-align:center"><span class="badge">After-Game Reflection • Answers + Bonus Facts</span></p>
-<p class="subtitle">A5 booklet — print double-sided, fold in half!</p>
+<p style="text-align:center"><span class="badge">After-Game Reflection • Full Content</span></p>
+<p class="subtitle">6-page A5 booklet — print double-sided!</p>
 
-<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A4 PDF (Double-sided)</button>
+<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A4 PDF (3 sheets)</button>
 <p class="progress" id="progress"></p>
 
 <div class="instructions">
 <h3>🖨️ Print Instructions</h3>
 <ol>
-<li>Download the PDF (2 A4 pages)</li>
+<li>Download the PDF (3 A4 pages)</li>
 <li>Print <strong>double-sided</strong>, flip on <strong>short edge</strong></li>
-<li>Fold in half to make an A5 booklet</li>
-<li>Give to guests after they complete the game!</li>
+<li>Stack sheets in order, fold in half</li>
+<li>Staple spine for a 6-page A5 booklet!</li>
 </ol>
 </div>
 
@@ -51,35 +51,67 @@ h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;mar
 <img id="coverImg" src="../cover-easy.png" style="display:none" crossorigin="anonymous">
 
 <script>
-const COLOR = '#7D8B6F';
-const COLOR_LIGHT = '#A8B89A';
-const CREAM = '#FAF8F5';
-const EARTH = '#5C4D3C';
-const GOLD = '#d4a574';
+var COLOR = '#7D8B6F';
+var COLOR_LIGHT = '#A8B89A';
+var CREAM = '#FAF8F5';
+var EARTH = '#5C4D3C';
+var GOLD = '#d4a574';
 
-const DATA = {
+// FULL ORIGINAL CONTENT - not shortened
+var DATA = {
   title: 'After-Game Reflection',
   subtitle: 'Easy Mode Learning Guide',
   badge: '🌱 Easy • 10 checkpoints',
   checkpoints: [
-    { num: 1, loc: 'Reception', q: "King of Tropical Fruits?", a: 'Mango', facts: ['India produces 20M tonnes/year!', '1,000+ varieties worldwide.'] },
-    { num: 2, loc: 'Herbal Remedies', q: 'Herb for digestion?', a: 'Ginger', facts: ['Longer underground = spicier!', 'Sailors used it for seasickness.'] },
-    { num: 3, loc: 'Banana Garden', q: 'Mineral in bananas?', a: 'Potassium', facts: ['1 banana = 9% daily potassium.', 'Banana plants are giant herbs!'] },
-    { num: 4, loc: 'Vegetable Garden', q: 'Vegetable that is a fruit?', a: 'Tomato', facts: ['Supreme Court ruled it vegetable.', 'Once thought poisonous!'] },
-    { num: 5, loc: 'Pineapple Garden', q: 'Pineapple growth time?', a: '18-24 months', facts: ['Only ONE fruit per plant.', 'Once rented as party decor!'] },
-    { num: 6, loc: 'Strawberry Fields', q: 'Where are seeds?', a: 'On the outside', facts: ['~200 achenes per berry.', 'Not true berries!'] },
-    { num: 7, loc: 'Citrus Garden', q: 'Famous vitamin?', a: 'Vitamin C', facts: ['1 orange = 100% daily Vit C.', 'Sailors called "Limeys".'] },
-    { num: 8, loc: 'Mixed Fruits', q: 'Dragon fruit blooms?', a: 'Night', facts: ['Flowers open ONE night only!', 'Pollinated by bats.'] },
-    { num: 9, loc: 'Jabuticaba', q: 'Where does fruit grow?', a: 'On the trunk', facts: ['Looks like purple warts!', 'Must eat within 3 days.'] },
-    { num: 10, loc: 'Flower Jungle', q: 'Cooking + pest control?', a: 'Marigold', facts: ['Natural insecticide inside.', 'Petals are edible!'] }
+    { num: 1, loc: 'Reception', 
+      q: "Which fruit is known as the 'King of Tropical Fruits'?", 
+      a: 'B. Mango', 
+      facts: ['India produces nearly half of the world\'s mangoes — over 20 million tonnes annually!', 'There are over 1,000 different mango varieties worldwide, each with unique flavor profiles.'] },
+    { num: 2, loc: 'Herbal Remedies', 
+      q: 'Which herb is commonly used to help with digestion?', 
+      a: 'B. Ginger', 
+      facts: ['Ginger can survive up to 10 months underground before harvest — the longer it grows, the spicier it becomes!', 'Ancient sailors chewed ginger root to prevent seasickness — a remedy still recommended today.'] },
+    { num: 3, loc: 'Banana Garden', 
+      q: 'What mineral are bananas famously high in?', 
+      a: 'C. Potassium', 
+      facts: ['Bananas are slightly radioactive due to their potassium content — but you\'d need to eat 10 million at once for any danger!', 'Banana plants can "walk" up to 40cm during their lifetime as new shoots grow.'] },
+    { num: 4, loc: 'Vegetable Garden', 
+      q: 'Which vegetable is technically a fruit?', 
+      a: 'B. Tomato', 
+      facts: ['Tomatoes were once believed to be poisonous in Europe because wealthy people ate from lead plates!', 'A tomato has more genes than a human — about 31,760 compared to our 20,000-25,000.'] },
+    { num: 5, loc: 'Pineapple Garden', 
+      q: 'How long does it take for a pineapple to grow?', 
+      a: 'C. 18-24 months', 
+      facts: ['A pineapple is actually a cluster of 100-200 individual flowers fused together!', 'In the 1700s, pineapples were so rare in England that people could rent one just to display at parties.'] },
+    { num: 6, loc: 'Strawberry Fields', 
+      q: 'Where are strawberry seeds located?', 
+      a: 'B. On the outside', 
+      facts: ['An average strawberry has about 200 seeds on its surface — each can grow into a new plant!', 'Strawberries are the only fruit with seeds on the outside. The "fruit" is actually the red part.'] },
+    { num: 7, loc: 'Citrus Garden', 
+      q: 'What vitamin are citrus fruits famous for?', 
+      a: 'C. Vitamin C', 
+      facts: ['The discovery that citrus prevents scurvy saved millions of sailors\' lives and changed maritime history.', 'Citrus peels contain 10x more vitamin C than the juice — the whole fruit is healthier!'] },
+    { num: 8, loc: 'Mixed Fruits Garden', 
+      q: 'When does the dragon fruit flower bloom?', 
+      a: 'C. Night', 
+      facts: ['Dragon fruit flowers are called "moonflowers" — they bloom at midnight and last only one night!', 'Some farms hire workers for "midnight pollination shifts" because the flowers close before dawn.'] },
+    { num: 9, loc: 'Jabuticaba Garden', 
+      q: 'Where does jabuticaba fruit grow on the tree?', 
+      a: 'C. Directly on the trunk', 
+      facts: ['Jabuticaba can fruit up to 6 times per year, making the trunk look covered in purple pearls!', 'The fruit ferments within 3-4 days of harvest — why it\'s rarely exported and remains Brazil\'s secret.'] },
+    { num: '🏆', loc: 'Flower Jungle (Final)', 
+      q: 'Which flower is used for cooking AND natural pest control?', 
+      a: 'B. Marigold', 
+      facts: ['Marigold roots release thiophene, a compound that kills soil nematodes for up to 3 years!', 'In Mexico, marigolds are essential in Day of the Dead celebrations — believed to guide spirits home.'] }
   ]
 };
 
 function renderA5(pageNum) {
-  const w = 421, h = 595;
-  let html = '<div style="width:'+w+'px;height:'+h+'px;background:white;font-family:Outfit,sans-serif;overflow:hidden;position:relative;">';
+  var w = 421, h = 595;
+  var html = '<div style="width:'+w+'px;height:'+h+'px;background:white;font-family:Outfit,sans-serif;overflow:hidden;position:relative;">';
   
   if (pageNum === 1) {
+    // Cover page
     html += '<div style="height:100%;position:relative;color:white;text-align:center;">' +
       '<img src="../cover-easy.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;" crossorigin="anonymous">' +
       '<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.75) 100%);"></div>' +
@@ -91,54 +123,57 @@ function renderA5(pageNum) {
         '<p style="margin-top:15px;font-size:0.85rem;opacity:0.85;">Congratulations on completing<br>The Garden Code!</p>' +
       '</div>' +
     '</div>';
+  } else if (pageNum === 6) {
+    // Back cover / credits
+    html += '<div style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;background:linear-gradient(135deg,'+COLOR+',#87a878);color:white;text-align:center;">' +
+      '<div style="font-size:3rem;margin-bottom:20px;">🌿</div>' +
+      '<h2 style="font-family:Cormorant Garamond,serif;font-size:1.8rem;margin-bottom:15px;">Thank You for Exploring!</h2>' +
+      '<p style="font-size:1rem;opacity:0.95;max-width:300px;line-height:1.6;margin-bottom:25px;">Share what you learned with friends and family. Every plant has a story!</p>' +
+      '<div style="background:rgba(255,255,255,0.2);padding:15px 30px;border-radius:12px;">' +
+        '<p style="font-size:0.9rem;opacity:0.9;">Visit us at</p>' +
+        '<p style="font-size:1.1rem;font-weight:600;">mawunvalley.com</p>' +
+      '</div>' +
+    '</div>';
   } else {
-    // Distribute: page 2 = 1-4, page 3 = 5-7, page 4 = 8-10 + footer
+    // Content pages: 2 checkpoints per page
     var pageConfigs = {
-      2: [0, 1, 2, 3],    // Checkpoints 1-4
-      3: [4, 5, 6],       // Checkpoints 5-7
-      4: [7, 8, 9]        // Checkpoints 8-10
+      2: [0, 1],  // Checkpoints 1-2
+      3: [2, 3],  // Checkpoints 3-4
+      4: [4, 5],  // Checkpoints 5-6
+      5: [6, 7, 8, 9]  // Checkpoints 7-10 (4 items, tighter)
     };
     
     var indices = pageConfigs[pageNum] || [];
     var cps = indices.map(function(i) { return DATA.checkpoints[i]; });
-    var isLastPage = pageNum === 4;
     var itemCount = cps.length;
+    var isFourItems = itemCount === 4;
     
-    // Tighter for 4 items, roomier for 3
-    var blockPadding = itemCount === 4 ? '7px 10px' : '10px 12px';
-    var factSize = itemCount === 4 ? '0.6rem' : '0.68rem';
-    var blockGap = itemCount === 4 ? '6px' : '10px';
-    
-    html += '<div style="height:100%;padding:12px 16px;display:flex;flex-direction:column;">' +
-      '<div style="text-align:center;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid '+COLOR_LIGHT+';">' +
-        '<h2 style="font-family:Cormorant Garamond,serif;font-size:1rem;color:'+COLOR+';">🌿 Answers & Discoveries</h2>' +
+    html += '<div style="height:100%;padding:'+(isFourItems ? '15px' : '20px')+';display:flex;flex-direction:column;">' +
+      '<div style="text-align:center;margin-bottom:'+(isFourItems ? '10px' : '15px')+';padding-bottom:8px;border-bottom:2px solid '+COLOR_LIGHT+';">' +
+        '<h2 style="font-family:Cormorant Garamond,serif;font-size:'+(isFourItems ? '1rem' : '1.1rem')+';color:'+COLOR+';">🌿 Answers & Discoveries</h2>' +
       '</div>' +
-      '<div style="flex:1;display:flex;flex-direction:column;gap:'+blockGap+';">';
+      '<div style="flex:1;display:flex;flex-direction:column;gap:'+(isFourItems ? '8px' : '15px')+';">';
     
     cps.forEach(function(cp) {
-      html += '<div style="background:'+CREAM+';padding:'+blockPadding+';border-radius:8px;border-left:3px solid '+COLOR+';flex:1;display:flex;flex-direction:column;justify-content:center;">' +
-        '<div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;">' +
-          '<div style="width:20px;height:20px;background:'+COLOR+';color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:600;">'+cp.num+'</div>' +
-          '<span style="font-family:Cormorant Garamond,serif;font-size:0.85rem;color:'+EARTH+';font-weight:600;">'+cp.loc+'</span>' +
-          '<span style="margin-left:auto;background:'+COLOR+';color:white;padding:2px 8px;border-radius:5px;font-size:0.65rem;font-weight:600;">✓ '+cp.a+'</span>' +
+      var fs = isFourItems ? '0.72rem' : '0.85rem';
+      var factFs = isFourItems ? '0.68rem' : '0.8rem';
+      var pad = isFourItems ? '10px 12px' : '15px';
+      
+      html += '<div style="background:'+CREAM+';padding:'+pad+';border-radius:10px;border-left:4px solid '+COLOR+';flex:1;display:flex;flex-direction:column;justify-content:center;">' +
+        '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">' +
+          '<div style="width:'+(isFourItems ? '28px' : '32px')+';height:'+(isFourItems ? '28px' : '32px')+';background:'+COLOR+';color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:'+(isFourItems ? '0.75rem' : '0.85rem')+';font-weight:600;">'+cp.num+'</div>' +
+          '<span style="font-family:Cormorant Garamond,serif;font-size:'+(isFourItems ? '1rem' : '1.15rem')+';color:'+EARTH+';font-weight:600;">'+cp.loc+'</span>' +
         '</div>' +
-        '<p style="font-size:0.68rem;color:#8B7355;font-style:italic;margin-bottom:3px;">'+cp.q+'</p>' +
-        '<div style="font-size:'+factSize+';color:#8B7355;line-height:1.3;">' +
-          '<span style="color:'+GOLD+';">✦</span> '+cp.facts[0]+' <span style="color:'+GOLD+';">✦</span> '+cp.facts[1] +
+        '<p style="font-size:'+fs+';color:#5C4D3C;font-style:italic;margin-bottom:8px;">'+cp.q+'</p>' +
+        '<div style="background:linear-gradient(135deg,'+COLOR+',#87a878);color:white;padding:6px 14px;border-radius:8px;display:inline-block;font-weight:600;font-size:'+fs+';margin-bottom:10px;">✓ '+cp.a+'</div>' +
+        '<div style="font-size:'+factFs+';color:#5C4D3C;line-height:1.45;">' +
+          '<p style="margin-bottom:5px;"><span style="color:'+GOLD+';font-weight:600;">✦</span> '+cp.facts[0]+'</p>' +
+          '<p><span style="color:'+GOLD+';font-weight:600;">✦</span> '+cp.facts[1]+'</p>' +
         '</div>' +
       '</div>';
     });
     
-    html += '</div>';
-    
-    if (isLastPage) {
-      html += '<div style="text-align:center;padding:8px;background:linear-gradient(135deg,'+COLOR+',#87a878);color:white;border-radius:8px;margin-top:8px;">' +
-        '<p style="font-size:0.75rem;">🌿 Thank you for exploring with us! 🌿</p>' +
-        '<p style="font-size:0.65rem;opacity:0.85;">mawunvalley.com</p>' +
-      '</div>';
-    }
-    
-    html += '</div>';
+    html += '</div></div>';
   }
   
   html += '</div>';
@@ -165,45 +200,63 @@ async function generatePDF() {
   var jsPDF = window.jspdf.jsPDF;
   var pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
   
-  // Booklet imposition: Front sheet has pages 4 & 1
-  progress.textContent = 'Rendering front side (pages 4 & 1)...';
-  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
-    '<div style="width:50%;height:100%;">'+renderA5(4)+'</div>' +
-    '<div style="width:50%;height:100%;">'+renderA5(1)+'</div>' +
-  '</div>';
+  // 6-page booklet imposition:
+  // Sheet 1 front: pages 6 & 1
+  // Sheet 1 back: pages 2 & 5
+  // Sheet 2 front: pages 4 & 3
+  // (When folded and nested, reads 1,2,3,4,5,6)
   
-  await new Promise(function(r) { setTimeout(r, 800); });
+  var sheets = [
+    { front: [6, 1], back: [2, 5] },
+    { front: [4, 3], back: null }
+  ];
   
-  var canvas = await html2canvas(document.getElementById('a4sheet'), {
-    scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
-  });
-  
-  pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
-  preview.innerHTML += '<p class="sheet-label">Front: Pages 4 & 1 (Checkpoints 8-10 + Cover)</p><img src="'+canvas.toDataURL()+'">';
-  
-  // Back sheet has pages 2 & 3
-  progress.textContent = 'Rendering back side (pages 2 & 3)...';
-  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
-    '<div style="width:50%;height:100%;">'+renderA5(2)+'</div>' +
-    '<div style="width:50%;height:100%;">'+renderA5(3)+'</div>' +
-  '</div>';
-  
-  await new Promise(function(r) { setTimeout(r, 800); });
-  
-  canvas = await html2canvas(document.getElementById('a4sheet'), {
-    scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
-  });
-  
-  pdf.addPage();
-  pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
-  preview.innerHTML += '<p class="sheet-label">Back: Pages 2 & 3 (Checkpoints 1-4 & 5-7)</p><img src="'+canvas.toDataURL()+'">';
+  for (var s = 0; s < sheets.length; s++) {
+    var sheet = sheets[s];
+    
+    // Front
+    progress.textContent = 'Rendering sheet '+(s+1)+' front...';
+    container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
+      '<div style="width:50%;height:100%;">'+renderA5(sheet.front[0])+'</div>' +
+      '<div style="width:50%;height:100%;">'+renderA5(sheet.front[1])+'</div>' +
+    '</div>';
+    
+    await new Promise(function(r) { setTimeout(r, 800); });
+    
+    var canvas = await html2canvas(document.getElementById('a4sheet'), {
+      scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
+    });
+    
+    if (s > 0) pdf.addPage();
+    pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
+    preview.innerHTML += '<p class="sheet-label">Sheet '+(s+1)+' Front: Pages '+sheet.front[0]+' & '+sheet.front[1]+'</p><img src="'+canvas.toDataURL()+'">';
+    
+    // Back (if exists)
+    if (sheet.back) {
+      progress.textContent = 'Rendering sheet '+(s+1)+' back...';
+      container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
+        '<div style="width:50%;height:100%;">'+renderA5(sheet.back[0])+'</div>' +
+        '<div style="width:50%;height:100%;">'+renderA5(sheet.back[1])+'</div>' +
+      '</div>';
+      
+      await new Promise(function(r) { setTimeout(r, 800); });
+      
+      canvas = await html2canvas(document.getElementById('a4sheet'), {
+        scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
+      });
+      
+      pdf.addPage();
+      pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
+      preview.innerHTML += '<p class="sheet-label">Sheet '+(s+1)+' Back: Pages '+sheet.back[0]+' & '+sheet.back[1]+'</p><img src="'+canvas.toDataURL()+'">';
+    }
+  }
   
   progress.textContent = 'Saving PDF...';
   pdf.save('learning-guide-easy-booklet.pdf');
   
   progress.textContent = '✅ PDF Downloaded!';
   btn.disabled = false;
-  btn.textContent = '📥 Download A4 PDF (Double-sided)';
+  btn.textContent = '📥 Download A4 PDF (3 sheets)';
 }
 </script>
 </body>
