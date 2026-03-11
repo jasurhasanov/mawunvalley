@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Stickers — Printable A4 | The Garden Code</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:#1a1a1a;color:white;padding:30px}
+h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;margin-bottom:10px}
+.badge{display:inline-block;background:#d4a574;color:white;padding:5px 15px;border-radius:15px;font-size:0.85rem;margin-bottom:20px}
+.subtitle{text-align:center;color:#888;margin-bottom:30px}
+.download-btn{display:block;width:400px;margin:0 auto 40px;background:linear-gradient(135deg,#d4a574,#c17f59);color:white;border:none;padding:18px 40px;font-size:1.2rem;border-radius:30px;cursor:pointer;font-family:inherit;font-weight:600}
+.download-btn:hover{transform:translateY(-2px);box-shadow:0 5px 25px rgba(212,165,116,0.5)}
+.download-btn:disabled{opacity:0.6;cursor:wait}
+.progress{text-align:center;color:#888;margin-bottom:20px}
+.instructions{background:#2a2a2a;border-radius:15px;padding:25px;max-width:600px;margin:0 auto 40px}
+.instructions h3{color:#d4a574;margin-bottom:15px}
+.instructions ol{padding-left:20px;color:#ccc;line-height:1.8}
+.preview{max-width:900px;margin:0 auto}
+.preview img{width:100%;border-radius:10px;margin-bottom:20px;box-shadow:0 5px 20px rgba(0,0,0,0.3)}
+.sheet-label{color:#888;text-align:center;font-size:0.9rem;margin-bottom:8px}
+.back-link{display:block;text-align:center;color:#d4a574;margin-bottom:30px;text-decoration:none}
+.hidden{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<a href="../game-kit.html" class="back-link">← Back to Game Kit</a>
+<h1>🎨 Marketing Stickers</h1>
+<p style="text-align:center"><span class="badge">10 Stickers • 5 A4 Pages • 2 per page</span></p>
+<p class="subtitle">A5 stickers arranged 2-up on A4 — single-sided printing</p>
+
+<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download All Stickers (PDF)</button>
+<p class="progress" id="progress"></p>
+
+<div class="instructions">
+<h3>🖨️ Print Instructions</h3>
+<ol>
+<li>Download the PDF (5 A4 pages)</li>
+<li>Print <strong>single-sided</strong> on <strong>A4</strong></li>
+<li>Use <strong>glossy paper</strong> for best results</li>
+<li>Cut in half to get 2 A5 stickers per sheet</li>
+<li>Use as posters, handouts, or social media!</li>
+</ol>
+</div>
+
+<div class="preview" id="preview"></div>
+<div id="render-container" class="hidden"></div>
+
+<!-- Preload images -->
+<img id="img-campfire" src="../marketing/photo-campfire.png" style="display:none" crossorigin="anonymous">
+<img id="img-jungle" src="../marketing/photo-jungle.png" style="display:none" crossorigin="anonymous">
+<img id="img-desk" src="../marketing/photo-desk.png" style="display:none" crossorigin="anonymous">
+<img id="img-lab" src="../marketing/photo-lab.png" style="display:none" crossorigin="anonymous">
+<img id="img-moonlight" src="../marketing/photo-moonlight.png" style="display:none" crossorigin="anonymous">
+
+<script>
+const STICKERS = [
+  // Sticker 1: Campfire Adventure
+  { id: '1a', photo: '../marketing/photo-campfire.png', badge: '🌿 Mawun Valley Farm', headline: 'The Garden Code', sub: 'A botanical treasure hunt', cta: 'Crack the Code 🗺️', ctaColor: '#d4a574', footer: '📍 Lombok, Indonesia' },
+  // Sticker 2: Campfire Family
+  { id: '1b', photo: '../marketing/photo-campfire.png', badge: '🔥 Family Adventure', headline: 'Game Night at the Farm', sub: 'Explore • Learn • Win Prizes', cta: 'Visit Us Today', ctaColor: '#7D8B6F', footer: 'mawunvalley.com' },
+  // Sticker 3: Jungle Mystery
+  { id: '2a', photo: '../marketing/photo-jungle.png', badge: '🧭 Botanical Mystery', headline: 'Decode Nature\'s Secrets', sub: '10 checkpoints • 3 levels', cta: 'Begin Your Quest', ctaColor: '#d4a574', footer: '📍 Mawun Valley Farm' },
+  // Sticker 4: Jungle Nature
+  { id: '2b', photo: '../marketing/photo-jungle.png', badge: '🌱 Easy Mode Available', headline: 'The Garden Code', sub: 'Where adventure meets botany', cta: 'Explore the Farm', ctaColor: '#7D8B6F', footer: 'Open daily 8am - 6pm' },
+  // Sticker 5: Desk Challenge
+  { id: '3a', photo: '../marketing/photo-desk.png', badge: '🔥 Hard Mode', headline: 'Think You Know Plants?', sub: 'Test your botanical knowledge', cta: 'Accept the Challenge', ctaColor: '#d4a574', footer: '📍 Lombok, Indonesia' },
+  // Sticker 6: Desk Learning
+  { id: '3b', photo: '../marketing/photo-desk.png', badge: '📚 Learn & Play', headline: 'Botanical Discovery', sub: 'Fun for the whole family', cta: 'Book Your Visit', ctaColor: '#7D8B6F', footer: 'mawunvalley.com' },
+  // Sticker 7: Lab PhD
+  { id: '4a', photo: '../marketing/photo-lab.png', badge: '💀 Impossible Mode', headline: 'PhD Level Challenge', sub: 'Only 3% complete this level', cta: 'Prove Your Knowledge', ctaColor: '#6B4E71', footer: '📍 Mawun Valley Farm' },
+  // Sticker 8: Lab Science
+  { id: '4b', photo: '../marketing/photo-lab.png', badge: '🔬 Science Meets Fun', headline: 'The Garden Code', sub: 'Where curiosity grows', cta: 'Start Your Journey', ctaColor: '#7D8B6F', footer: 'Educational farm tour included' },
+  // Sticker 9: Moonlight Adventure
+  { id: '5a', photo: '../marketing/photo-moonlight.png', badge: '🌙 Night Explorer', headline: 'Moonlight Garden Quest', sub: 'A magical evening adventure', cta: 'Join the Quest', ctaColor: '#d4a574', footer: '📍 Lombok, Indonesia' },
+  // Sticker 10: Moonlight Family
+  { id: '5b', photo: '../marketing/photo-moonlight.png', badge: '✨ Unforgettable', headline: 'Create Memories', sub: 'An adventure for all ages', cta: 'Plan Your Visit', ctaColor: '#7D8B6F', footer: 'mawunvalley.com' }
+];
+
+function renderSticker(idx) {
+  const s = STICKERS[idx];
+  const w = 421, h = 595; // A5 portrait
+  
+  return '<div style="width:'+w+'px;height:'+h+'px;position:relative;overflow:hidden;background:#000;">' +
+    '<img src="'+s.photo+'" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;" crossorigin="anonymous">' +
+    '<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.1) 30%,rgba(0,0,0,0.1) 60%,rgba(0,0,0,0.7) 100%);"></div>' +
+    '<div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:35px;color:white;font-family:Outfit,sans-serif;">' +
+      '<div style="text-align:center;">' +
+        '<div style="display:inline-block;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);padding:10px 22px;border-radius:25px;font-size:0.9rem;letter-spacing:0.08em;margin-bottom:20px;">'+s.badge+'</div>' +
+        '<h2 style="font-family:Cormorant Garamond,serif;font-size:2.6rem;line-height:1.15;text-shadow:0 3px 20px rgba(0,0,0,0.6);margin-bottom:12px;">'+s.headline+'</h2>' +
+        '<p style="font-size:1.15rem;opacity:0.95;text-shadow:0 2px 10px rgba(0,0,0,0.5);">'+s.sub+'</p>' +
+      '</div>' +
+      '<div style="text-align:center;">' +
+        '<div style="display:inline-block;background:'+s.ctaColor+';color:white;padding:15px 35px;border-radius:30px;font-weight:600;font-size:1.2rem;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,0.3);">'+s.cta+'</div>' +
+        '<p style="font-size:1rem;opacity:0.85;">'+s.footer+'</p>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+}
+
+async function generatePDF() {
+  const btn = document.getElementById('downloadBtn');
+  const progress = document.getElementById('progress');
+  const preview = document.getElementById('preview');
+  const container = document.getElementById('render-container');
+  
+  btn.disabled = true;
+  btn.textContent = '⏳ Generating PDF...';
+  preview.innerHTML = '';
+  
+  // Wait for all images to load
+  progress.textContent = 'Loading images...';
+  const imgIds = ['img-campfire', 'img-jungle', 'img-desk', 'img-lab', 'img-moonlight'];
+  for (const id of imgIds) {
+    await new Promise(function(r) {
+      const img = document.getElementById(id);
+      if (img.complete) r();
+      else img.onload = r;
+    });
+  }
+  
+  const jsPDF = window.jspdf.jsPDF;
+  const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+  
+  // 5 pages, 2 stickers each
+  for (let page = 0; page < 5; page++) {
+    const leftIdx = page * 2;
+    const rightIdx = page * 2 + 1;
+    
+    progress.textContent = 'Rendering page '+(page+1)+' of 5...';
+    
+    // A4 landscape = 842 x 595px, each A5 = 421 x 595px
+    container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
+      '<div style="width:50%;height:100%;">'+renderSticker(leftIdx)+'</div>' +
+      '<div style="width:50%;height:100%;">'+renderSticker(rightIdx)+'</div>' +
+    '</div>';
+    
+    await new Promise(function(r) { setTimeout(r, 600); });
+    
+    const canvas = await html2canvas(document.getElementById('a4sheet'), {
+      scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
+    });
+    
+    if (page > 0) pdf.addPage();
+    pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
+    
+    preview.innerHTML += '<p class="sheet-label">Page '+(page+1)+': Stickers '+(leftIdx+1)+' & '+(rightIdx+1)+'</p><img src="'+canvas.toDataURL()+'">';
+  }
+  
+  progress.textContent = 'Saving PDF...';
+  pdf.save('garden-code-stickers-a5.pdf');
+  
+  progress.textContent = '✅ PDF Downloaded! (5 pages, 10 stickers)';
+  btn.disabled = false;
+  btn.textContent = '📥 Download All Stickers (PDF)';
+}
+</script>
+</body>
+</html>
