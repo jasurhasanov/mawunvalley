@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hard Journal — Booklet Print | The Garden Code</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:#1a1a1a;color:white;padding:30px}
+h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;margin-bottom:10px}
+.badge{display:inline-block;background:#d4a574;color:white;padding:5px 15px;border-radius:15px;font-size:0.85rem;margin-bottom:20px}
+.subtitle{text-align:center;color:#888;margin-bottom:30px}
+.download-btn{display:block;width:300px;margin:0 auto 40px;background:linear-gradient(135deg,#d4a574,#c17f59);color:white;border:none;padding:18px 40px;font-size:1.2rem;border-radius:30px;cursor:pointer;font-family:inherit;font-weight:600}
+.download-btn:hover{transform:translateY(-2px);box-shadow:0 5px 25px rgba(212,165,116,0.5)}
+.download-btn:disabled{opacity:0.6;cursor:wait}
+.progress{text-align:center;color:#888;margin-bottom:20px}
+.instructions{background:#2a2a2a;border-radius:15px;padding:25px;max-width:600px;margin:0 auto 40px}
+.instructions h3{color:#d4a574;margin-bottom:15px}
+.instructions ol{padding-left:20px;color:#ccc;line-height:1.8}
+.preview{max-width:900px;margin:0 auto}
+.preview img{width:100%;border-radius:10px;margin-bottom:20px;box-shadow:0 5px 20px rgba(0,0,0,0.3)}
+.sheet-label{color:#888;text-align:center;font-size:0.9rem;margin-bottom:8px}
+.back-link{display:block;text-align:center;color:#d4a574;margin-bottom:30px;text-decoration:none}
+.hidden{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<a href="../game-kit.html" class="back-link">← Back to Game Kit</a>
+<h1>🔥 Hard Journal Booklet</h1>
+<p style="text-align:center"><span class="badge">25 pts per question • 250 max</span></p>
+<p class="subtitle">A4 double-sided booklet — ready for printer</p>
+
+<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A4 PDF</button>
+<p class="progress" id="progress"></p>
+
+<div class="instructions">
+<h3>🖨️ Print Instructions</h3>
+<ol>
+<li>Download the PDF (6 pages = 3 A4 sheets)</li>
+<li>Print <strong>double-sided</strong>, flip on <strong>short edge</strong></li>
+<li>Use <strong>A4 Landscape</strong>, <strong>Actual Size (100%)</strong></li>
+<li>Stack the 3 printed sheets in order</li>
+<li>Fold in half — pages will be in correct order!</li>
+</ol>
+</div>
+
+<div class="preview" id="preview"></div>
+<div id="render-container" class="hidden"></div>
+
+<script>
+const COLOR = '#d4a574';
+const COLOR_LIGHT = '#e8c9a8';
+const TITLE = 'The Garden Code';
+const BADGE = '🔥 Hard Mode';
+const POINTS = '25 pts';
+const MAX_POINTS = '250';
+
+const QUESTIONS = [
+  { loc: 'Reception', q: 'The mango originated from which region?', opts: ['A. Central America', 'B. Southeast Asia', 'C. South Asia', 'D. Africa'] },
+  { loc: 'Herbal Remedies', q: "What compound in ginger gives it anti-inflammatory properties?", opts: ['A. Capsaicin', 'B. Curcumin', 'C. Gingerol', 'D. Allicin'] },
+  { loc: 'Banana Garden', q: 'How many times does a banana plant fruit before dying?', opts: ['A. Once', 'B. Twice', 'C. Three times', 'D. Continuously'] },
+  { loc: 'Vegetable Garden', q: "Garlic's smell comes from sulfur compounds released when:", opts: ['A. It ripens', 'B. Exposed to sun', 'C. Cells damaged', 'D. Heated'] },
+  { loc: 'Pineapple Garden', q: "Pineapple's meat-tenderizing enzyme is called:", opts: ['A. Papain', 'B. Bromelain', 'C. Rennet', 'D. Lipase'] },
+  { loc: 'Strawberry Fields', q: 'Strawberries are members of which plant family?', opts: ['A. Nightshade', 'B. Citrus', 'C. Rose family', 'D. Mint family'] },
+  { loc: 'Citrus Garden', q: 'The orange was first cultivated in which region?', opts: ['A. Mediterranean', 'B. Southeast Asia', 'C. Central America', 'D. Africa'] },
+  { loc: 'Mixed Fruits', q: "What does 'rambutan' mean in Malay?", opts: ['A. Red ball', 'B. Sweet fruit', 'C. Hairy', 'D. Tropical gem'] },
+  { loc: 'Jabuticaba Garden', q: 'Jabuticaba is native to which country?', opts: ['A. Indonesia', 'B. Thailand', 'C. Brazil', 'D. Mexico'] },
+  { loc: 'Flower Jungle', q: "What compound in lavender causes its calming effects?", opts: ['A. Caffeine', 'B. Linalool', 'C. Menthol', 'D. Thymol'] },
+];
+
+const IMPOSITION = [
+  { sheet: 1, side: 'front', left: 12, right: 1 },
+  { sheet: 1, side: 'back', left: 2, right: 11 },
+  { sheet: 2, side: 'front', left: 10, right: 3 },
+  { sheet: 2, side: 'back', left: 4, right: 9 },
+  { sheet: 3, side: 'front', left: 8, right: 5 },
+  { sheet: 3, side: 'back', left: 6, right: 7 },
+];
+
+function renderPage(pageNum) {
+  const pageWidth = 421;
+  const pageHeight = 595;
+  
+  let html = `<div style="width:${pageWidth}px;height:${pageHeight}px;background:white;font-family:'Outfit',sans-serif;overflow:hidden;position:relative;">`;
+  
+  if (pageNum === 1) {
+    html += `
+      <div style="height:100%;background:linear-gradient(135deg,${COLOR},${COLOR_LIGHT});color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;">
+        <div style="background:rgba(255,255,255,0.2);padding:6px 16px;border-radius:15px;font-size:0.7rem;margin-bottom:15px;">${BADGE} — ${POINTS} each</div>
+        <div style="font-size:2.5rem;margin-bottom:10px;">🗺️</div>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:8px;">${TITLE}</h1>
+        <p style="font-size:0.85rem;opacity:0.9;margin-bottom:20px;">Crack it. Claim your reward.</p>
+        <div style="border-top:1px dashed rgba(255,255,255,0.4);padding-top:15px;width:80%;">
+          <p style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Explorer's Name</p>
+          <div style="width:150px;height:2px;background:rgba(255,255,255,0.5);margin:0 auto;"></div>
+        </div>
+        <div style="position:absolute;bottom:15px;font-size:0.65rem;opacity:0.7;">Mawun Valley Farm • Lombok</div>
+      </div>`;
+  } else if (pageNum === 12) {
+    html += `
+      <div style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:25px;background:linear-gradient(135deg,#FAF8F5,white);">
+        <div style="font-size:4rem;margin-bottom:15px;">🏆</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#2d3a2d;margin-bottom:10px;">Code Cracked!</h2>
+        <p style="color:#666;font-size:0.85rem;margin-bottom:20px;">Hard Mode Complete — True Botanist!</p>
+        <div style="background:${COLOR};color:white;padding:12px 35px;border-radius:25px;font-size:1rem;margin-bottom:25px;">___/${MAX_POINTS} Points</div>
+        <div style="border:2px dashed ${COLOR};border-radius:12px;padding:25px 40px;">
+          <p style="color:${COLOR};font-size:0.85rem;">🌿 Staff stamp here 🌿</p>
+        </div>
+      </div>`;
+  } else {
+    const qIndex = pageNum - 2;
+    const q = QUESTIONS[qIndex];
+    const checkNum = pageNum - 1;
+    html += `
+      <div style="height:100%;padding:20px;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:36px;height:36px;background:${COLOR};color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;">${checkNum === 10 ? '🏆' : checkNum}</div>
+          <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#2d3a2d;margin:0;">${q.loc}</h3></div>
+        </div>
+        <div style="background:#FAF8F5;padding:15px;border-radius:10px;margin-bottom:12px;">
+          <p style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;color:${COLOR};margin-bottom:5px;">Hard Challenge</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:#2d3a2d;line-height:1.4;">${q.q}</p>
+        </div>
+        <div style="flex:1;">
+          ${q.opts.map(opt => `
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;border:2px solid rgba(212,165,116,0.2);border-radius:8px;margin-bottom:8px;">
+              <div style="width:18px;height:18px;border:2px solid ${COLOR};border-radius:50%;flex-shrink:0;"></div>
+              <span style="color:#2d3a2d;font-size:0.85rem;">${opt}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div style="text-align:center;font-size:0.6rem;color:#999;margin-top:auto;">Page ${pageNum} of 12</div>
+      </div>`;
+  }
+  html += '</div>';
+  return html;
+}
+
+async function generatePDF() {
+  const btn = document.getElementById('downloadBtn');
+  const progress = document.getElementById('progress');
+  const preview = document.getElementById('preview');
+  const container = document.getElementById('render-container');
+  
+  btn.disabled = true;
+  btn.textContent = '⏳ Generating PDF...';
+  preview.innerHTML = '';
+  
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+  
+  for (let i = 0; i < IMPOSITION.length; i++) {
+    const imp = IMPOSITION[i];
+    progress.textContent = `Rendering Sheet ${imp.sheet} ${imp.side}...`;
+    
+    container.innerHTML = `
+      <div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">
+        <div style="width:50%;height:100%;border-right:1px dashed #eee;">${renderPage(imp.left)}</div>
+        <div style="width:50%;height:100%;">${renderPage(imp.right)}</div>
+      </div>
+    `;
+    
+    await new Promise(r => setTimeout(r, 300));
+    
+    const canvas = await html2canvas(document.getElementById('a4sheet'), {
+      scale: 2, backgroundColor: '#FFFFFF', useCORS: true
+    });
+    
+    if (i > 0) pdf.addPage();
+    pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
+    
+    preview.innerHTML += `<p class="sheet-label">Sheet ${imp.sheet} - ${imp.side.toUpperCase()}</p><img src="${canvas.toDataURL()}">`;
+  }
+  
+  progress.textContent = 'Saving PDF...';
+  pdf.save('garden-code-hard-booklet.pdf');
+  
+  progress.textContent = '✅ PDF Downloaded!';
+  btn.disabled = false;
+  btn.textContent = '📥 Download A4 PDF';
+}
+</script>
+</body>
+</html>
