@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Garden Code — Booklet Print Layout</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:#1a1a1a;color:white;padding:30px}
+h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;margin-bottom:10px}
+.subtitle{text-align:center;color:#888;margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto}
+.controls{display:flex;justify-content:center;gap:15px;margin-bottom:40px;flex-wrap:wrap}
+.btn{background:linear-gradient(135deg,#7D8B6F,#87a878);color:white;border:none;padding:15px 30px;font-size:1rem;border-radius:25px;cursor:pointer;font-family:inherit;transition:all 0.3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(125,139,111,0.4)}
+.btn.gold{background:linear-gradient(135deg,#d4a574,#c17f59)}
+.btn.purple{background:linear-gradient(135deg,#6B4E71,#9B7FA0)}
+.btn:disabled{opacity:0.5;cursor:wait}
+.instructions{background:#2a2a2a;border-radius:15px;padding:25px;max-width:700px;margin:0 auto 40px;text-align:left}
+.instructions h3{color:#d4a574;margin-bottom:15px}
+.instructions ol{padding-left:20px;color:#ccc;line-height:1.8}
+.instructions li{margin-bottom:8px}
+.progress{text-align:center;padding:20px;color:#888;display:none}
+.preview{max-width:900px;margin:0 auto}
+.a4-sheet{background:white;width:842px;height:595px;margin:20px auto;display:flex;position:relative;box-shadow:0 5px 30px rgba(0,0,0,0.3)}
+.a4-half{width:50%;height:100%;overflow:hidden;position:relative}
+.a4-half.left{border-right:1px dashed #ccc}
+.page-label{position:absolute;top:5px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.7);color:white;padding:3px 10px;border-radius:10px;font-size:0.7rem;z-index:10}
+.sheet-label{text-align:center;color:#888;font-size:0.9rem;margin-bottom:5px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<h1>📖 Booklet Print Layout</h1>
+<p class="subtitle">Generate A4 sheets for double-sided booklet printing. Each A4 has 2 A5 pages. Print, stack, fold in half = perfect booklet!</p>
+
+<div class="controls">
+<button class="btn" onclick="generateBooklet('easy')">🌱 Generate Easy Booklet</button>
+<button class="btn gold" onclick="generateBooklet('hard')">🔥 Generate Hard Booklet</button>
+<button class="btn purple" onclick="generateBooklet('impossible')">💀 Generate Impossible Booklet</button>
+</div>
+
+<div class="instructions">
+<h3>📋 How to Print</h3>
+<ol>
+<li><strong>Download</strong> the 6 A4 PNG files (3 sheets × front/back)</li>
+<li><strong>Print settings:</strong> A4 Landscape, Actual Size (100%), Double-sided (flip on short edge)</li>
+<li><strong>Print order:</strong> Sheet 1 → Sheet 2 → Sheet 3</li>
+<li><strong>Stack</strong> the 3 printed sheets in order (Sheet 1 on top)</li>
+<li><strong>Fold</strong> the stack in half — pages will be in correct order!</li>
+<li><strong>Staple</strong> along the fold if desired</li>
+</ol>
+</div>
+
+<p class="progress" id="progress">Generating booklet...</p>
+<div class="preview" id="preview"></div>
+
+<!-- Hidden container for rendering pages -->
+<div id="render-container" class="hidden"></div>
+
+<script>
+// Booklet imposition for 12 pages (3 sheets, 6 A4 sides)
+// When folded: Sheet 1 outside, Sheet 3 inside
+const IMPOSITION = [
+  { sheet: 1, side: 'front', left: 12, right: 1 },
+  { sheet: 1, side: 'back', left: 2, right: 11 },
+  { sheet: 2, side: 'front', left: 10, right: 3 },
+  { sheet: 2, side: 'back', left: 4, right: 9 },
+  { sheet: 3, side: 'front', left: 8, right: 5 },
+  { sheet: 3, side: 'back', left: 6, right: 7 },
+];
+
+// Journal page content for each difficulty
+const JOURNALS = {
+  easy: {
+    color: '#7D8B6F',
+    colorLight: '#A8B89A',
+    title: 'Garden Quest Journal',
+    badge: '🌱 Easy Mode',
+    points: '10 pts',
+    maxPoints: '100',
+    questions: [
+      { loc: 'Reception', q: "Which fruit is known as the 'King of Tropical Fruits'?", opts: ['A. Banana', 'B. Mango', 'C. Papaya', 'D. Coconut'] },
+      { loc: 'Herbal Remedies', q: 'Which herb is commonly used to help with digestion?', opts: ['A. Rosemary', 'B. Ginger', 'C. Basil', 'D. Mint'] },
+      { loc: 'Banana Garden', q: 'What mineral are bananas famously high in?', opts: ['A. Iron', 'B. Calcium', 'C. Potassium', 'D. Zinc'] },
+      { loc: 'Vegetable Garden', q: 'Which vegetable is technically a fruit?', opts: ['A. Carrot', 'B. Tomato', 'C. Onion', 'D. Garlic'] },
+      { loc: 'Pineapple Garden', q: 'How long does it take for a pineapple to grow?', opts: ['A. 3 months', 'B. 6 months', 'C. 18-24 months', 'D. 5 years'] },
+      { loc: 'Strawberry Fields', q: 'Where are strawberry seeds located?', opts: ['A. Inside', 'B. On the outside', 'C. In the stem', 'D. In the leaves'] },
+      { loc: 'Citrus Garden', q: 'What vitamin are citrus fruits famous for?', opts: ['A. Vitamin A', 'B. Vitamin B', 'C. Vitamin C', 'D. Vitamin D'] },
+      { loc: 'Mixed Fruits', q: 'When does the dragon fruit flower bloom?', opts: ['A. Morning', 'B. Afternoon', 'C. Night', 'D. All day'] },
+      { loc: 'Jabuticaba Garden', q: 'Where does jabuticaba fruit grow on the tree?', opts: ['A. On branches', 'B. Underground', 'C. Directly on trunk', 'D. Hanging from leaves'] },
+      { loc: 'Flower Jungle', q: 'Which flower is used for cooking AND pest control?', opts: ['A. Rose', 'B. Marigold', 'C. Orchid', 'D. Hibiscus'] },
+    ]
+  },
+  hard: {
+    color: '#d4a574',
+    colorLight: '#e8c9a8',
+    title: 'The Garden Code',
+    badge: '🔥 Hard Mode',
+    points: '25 pts',
+    maxPoints: '250',
+    questions: [
+      { loc: 'Reception', q: 'The mango originated from which region?', opts: ['A. Central America', 'B. Southeast Asia', 'C. South Asia', 'D. Africa'] },
+      { loc: 'Herbal Remedies', q: "What compound in ginger gives it anti-inflammatory properties?", opts: ['A. Capsaicin', 'B. Curcumin', 'C. Gingerol', 'D. Allicin'] },
+      { loc: 'Banana Garden', q: 'How many times does a banana plant fruit before dying?', opts: ['A. Once', 'B. Twice', 'C. Three times', 'D. Continuously'] },
+      { loc: 'Vegetable Garden', q: "Garlic's smell comes from sulfur compounds released when:", opts: ['A. It ripens', 'B. Exposed to sun', 'C. Cells damaged', 'D. Heated'] },
+      { loc: 'Pineapple Garden', q: "Pineapple's meat-tenderizing enzyme is called:", opts: ['A. Papain', 'B. Bromelain', 'C. Rennet', 'D. Lipase'] },
+      { loc: 'Strawberry Fields', q: 'Strawberries are members of which plant family?', opts: ['A. Nightshade', 'B. Citrus', 'C. Rose family', 'D. Mint family'] },
+      { loc: 'Citrus Garden', q: 'The orange was first cultivated in which region?', opts: ['A. Mediterranean', 'B. Southeast Asia', 'C. Central America', 'D. Africa'] },
+      { loc: 'Mixed Fruits', q: "What does 'rambutan' mean in Malay?", opts: ['A. Red ball', 'B. Sweet fruit', 'C. Hairy', 'D. Tropical gem'] },
+      { loc: 'Jabuticaba Garden', q: 'Jabuticaba is native to which country?', opts: ['A. Indonesia', 'B. Thailand', 'C. Brazil', 'D. Mexico'] },
+      { loc: 'Flower Jungle', q: "What compound in lavender causes its calming effects?", opts: ['A. Caffeine', 'B. Linalool', 'C. Menthol', 'D. Thymol'] },
+    ]
+  },
+  impossible: {
+    color: '#6B4E71',
+    colorLight: '#9B7FA0',
+    title: 'The Garden Code',
+    badge: '💀 Impossible',
+    points: '50 pts',
+    maxPoints: '500',
+    questions: [
+      { loc: 'Reception', q: 'Mangiferin belongs to which compound class?', opts: ['A. Alkaloids', 'B. Xanthones', 'C. Terpenes', 'D. Flavonoids'] },
+      { loc: 'Herbal Remedies', q: "Curcumin's bioavailability is limited by rapid:", opts: ['A. Renal excretion', 'B. Hepatic glucuronidation', 'C. Protein binding', 'D. Absorption'] },
+      { loc: 'Banana Garden', q: 'Triploid banana chromosome number?', opts: ['A. 22', 'B. 33', 'C. 44', 'D. 66'] },
+      { loc: 'Vegetable Garden', q: 'Tomato ripening is regulated by which phytohormone?', opts: ['A. Auxin', 'B. Gibberellin', 'C. Ethylene', 'D. Abscisic acid'] },
+      { loc: 'Pineapple Garden', q: 'CAM photosynthesis stands for:', opts: ['A. Carbon Assimilation', 'B. Crassulacean Acid Metabolism', 'C. Chloroplast Activity', 'D. Cyclic Adenine'] },
+      { loc: 'Strawberry Fields', q: 'Octoploid strawberry has how many chromosome sets?', opts: ['A. 4', 'B. 6', 'C. 8', 'D. 10'] },
+      { loc: 'Citrus Garden', q: 'Limonene is classified as a:', opts: ['A. Sesquiterpene', 'B. Monoterpene', 'C. Diterpene', 'D. Triterpene'] },
+      { loc: 'Mixed Fruits', q: 'Dragon fruit belongs to which family?', opts: ['A. Passifloraceae', 'B. Cactaceae', 'C. Bromeliaceae', 'D. Musaceae'] },
+      { loc: 'Jabuticaba Garden', q: "Which sugar is attached to jabuticaba's anthocyanins?", opts: ['A. Fructose', 'B. Glucose', 'C. Sucrose', 'D. Maltose'] },
+      { loc: 'Flower Jungle', q: 'Linalool acts on which receptor?', opts: ['A. Dopamine D2', 'B. GABA-A', 'C. Serotonin 5-HT1A', 'D. Acetylcholine'] },
+    ]
+  }
+};
+
+function renderPage(pageNum, journal) {
+  const j = JOURNALS[journal];
+  const pageWidth = 421; // Half of A4 landscape height (595/√2 ≈ 421 for A5)
+  const pageHeight = 595; // A4 landscape width / 2
+  
+  let html = `<div style="width:${pageWidth}px;height:${pageHeight}px;background:white;font-family:'Outfit',sans-serif;overflow:hidden;position:relative;">`;
+  
+  if (pageNum === 1) {
+    // Cover page
+    html += `
+      <div style="height:100%;background:linear-gradient(135deg,${j.color},${j.colorLight});color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;">
+        <div style="background:rgba(255,255,255,0.2);padding:6px 16px;border-radius:15px;font-size:0.7rem;margin-bottom:15px;">${j.badge} — ${j.points} each</div>
+        <div style="font-size:2.5rem;margin-bottom:10px;">🗺️</div>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:8px;">${j.title}</h1>
+        <p style="font-size:0.85rem;opacity:0.9;margin-bottom:20px;">Crack it. Claim your reward.</p>
+        <div style="border-top:1px dashed rgba(255,255,255,0.4);padding-top:15px;width:80%;">
+          <p style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Explorer's Name</p>
+          <div style="width:150px;height:2px;background:rgba(255,255,255,0.5);margin:0 auto;"></div>
+        </div>
+        <div style="position:absolute;bottom:15px;font-size:0.65rem;opacity:0.7;">Mawun Valley Farm • Lombok</div>
+      </div>`;
+  } else if (pageNum === 12) {
+    // Completion page
+    html += `
+      <div style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:25px;background:linear-gradient(135deg,#FAF8F5,white);">
+        <div style="font-size:4rem;margin-bottom:15px;">🏆</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#2d3a2d;margin-bottom:10px;">Quest Complete!</h2>
+        <p style="color:#666;font-size:0.85rem;margin-bottom:20px;">You've explored all of Mawun Valley!</p>
+        <div style="background:${j.color};color:white;padding:12px 35px;border-radius:25px;font-size:1rem;margin-bottom:25px;">___/${j.maxPoints} Points</div>
+        <div style="border:2px dashed ${j.color};border-radius:12px;padding:25px 40px;">
+          <p style="color:${j.color};font-size:0.85rem;">🌿 Staff stamp here 🌿</p>
+        </div>
+      </div>`;
+  } else {
+    // Question pages (2-11)
+    const qIndex = pageNum - 2;
+    const q = j.questions[qIndex];
+    const checkNum = pageNum - 1;
+    html += `
+      <div style="height:100%;padding:20px;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:36px;height:36px;background:${j.color};color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;">${checkNum === 10 ? '🏆' : checkNum}</div>
+          <div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#2d3a2d;margin:0;">${q.loc}</h3>
+          </div>
+        </div>
+        <div style="background:#FAF8F5;padding:15px;border-radius:10px;margin-bottom:12px;">
+          <p style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;color:${j.color};margin-bottom:5px;">Challenge Question</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:#2d3a2d;line-height:1.4;">${q.q}</p>
+        </div>
+        <div style="flex:1;">
+          ${q.opts.map(opt => `
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;border:2px solid rgba(125,139,111,0.2);border-radius:8px;margin-bottom:8px;">
+              <div style="width:18px;height:18px;border:2px solid ${j.color};border-radius:50%;flex-shrink:0;"></div>
+              <span style="color:#2d3a2d;font-size:0.85rem;">${opt}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div style="text-align:center;font-size:0.6rem;color:#999;margin-top:auto;">Page ${pageNum} of 12</div>
+      </div>`;
+  }
+  
+  html += '</div>';
+  return html;
+}
+
+function renderA4Sheet(leftPage, rightPage, journal, sheetNum, side) {
+  const container = document.getElementById('render-container');
+  const a4 = document.createElement('div');
+  a4.className = 'a4-sheet';
+  a4.id = `a4-${sheetNum}-${side}`;
+  a4.innerHTML = `
+    <div class="a4-half left">${renderPage(leftPage, journal)}</div>
+    <div class="a4-half right">${renderPage(rightPage, journal)}</div>
+  `;
+  container.appendChild(a4);
+  return a4;
+}
+
+async function generateBooklet(journal) {
+  const preview = document.getElementById('preview');
+  const progress = document.getElementById('progress');
+  const container = document.getElementById('render-container');
+  const buttons = document.querySelectorAll('.btn');
+  
+  buttons.forEach(b => b.disabled = true);
+  progress.style.display = 'block';
+  progress.textContent = 'Generating booklet pages...';
+  preview.innerHTML = '';
+  container.innerHTML = '';
+  container.classList.remove('hidden');
+  
+  const zip = new JSZip();
+  
+  for (let i = 0; i < IMPOSITION.length; i++) {
+    const imp = IMPOSITION[i];
+    progress.textContent = `Rendering Sheet ${imp.sheet} ${imp.side}...`;
+    
+    const a4 = renderA4Sheet(imp.left, imp.right, journal, imp.sheet, imp.side);
+    
+    // Wait for fonts to load
+    await new Promise(r => setTimeout(r, 200));
+    
+    const canvas = await html2canvas(a4, {
+      scale: 2,
+      backgroundColor: '#FFFFFF',
+      useCORS: true,
+      width: 842,
+      height: 595
+    });
+    
+    const imgData = canvas.toDataURL('image/png').split(',')[1];
+    const filename = `sheet-${imp.sheet}-${imp.side}.png`;
+    zip.file(filename, imgData, { base64: true });
+    
+    // Add to preview
+    preview.innerHTML += `
+      <p class="sheet-label">Sheet ${imp.sheet} - ${imp.side.toUpperCase()} (Left: Page ${imp.left}, Right: Page ${imp.right})</p>
+      <img src="${canvas.toDataURL()}" style="width:100%;max-width:842px;border-radius:10px;margin-bottom:30px;">
+    `;
+  }
+  
+  container.classList.add('hidden');
+  progress.textContent = 'Creating ZIP file...';
+  
+  const content = await zip.generateAsync({ type: 'blob' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(content);
+  link.download = `garden-code-booklet-${journal}.zip`;
+  link.click();
+  
+  progress.textContent = '✅ Downloaded! See preview below.';
+  buttons.forEach(b => b.disabled = false);
+}
+</script>
+</body>
+</html>
