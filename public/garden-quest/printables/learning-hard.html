@@ -22,6 +22,7 @@ h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;mar
 .instructions ol{padding-left:20px;color:#ccc;line-height:1.8}
 .preview{max-width:900px;margin:0 auto}
 .preview img{width:100%;border-radius:10px;margin-bottom:20px;box-shadow:0 5px 20px rgba(0,0,0,0.3)}
+.sheet-label{color:#888;text-align:center;font-size:0.9rem;margin-bottom:8px}
 .back-link{display:block;text-align:center;color:#d4a574;margin-bottom:30px;text-decoration:none}
 .hidden{position:absolute;left:-9999px}
 </style>
@@ -29,18 +30,18 @@ h1{text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.2rem;mar
 <body>
 <a href="../game-kit.html" class="back-link">← Back to Game Kit</a>
 <h1>🔥 Hard Learning Guide</h1>
-<p style="text-align:center"><span class="badge">After-Game Reflection • Answers + Deep Dives</span></p>
-<p class="subtitle">4 A5 pages on 1 A4 sheet — ready for printer</p>
+<p style="text-align:center"><span class="badge">After-Game Reflection • Deep Dives</span></p>
+<p class="subtitle">2 A5 per side — print double-sided, fold in half!</p>
 
-<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A4 PDF (4-up)</button>
+<button class="download-btn" id="downloadBtn" onclick="generatePDF()">📥 Download A4 PDF (Double-sided)</button>
 <p class="progress" id="progress"></p>
 
 <div class="instructions">
 <h3>🖨️ Print Instructions</h3>
 <ol>
-<li>Download the PDF (single A4 page)</li>
-<li>Print on <strong>A4</strong>, <strong>Actual Size (100%)</strong></li>
-<li>Cut into 4 quarters to get 4 A5 reflection cards</li>
+<li>Download the PDF (2 A4 pages)</li>
+<li>Print <strong>double-sided</strong>, flip on <strong>short edge</strong></li>
+<li>Fold in half to make an A5 booklet</li>
 <li>Give to guests after they complete the game!</li>
 </ol>
 </div>
@@ -58,59 +59,72 @@ const DATA = {
   subtitle: 'Hard Mode Learning Guide',
   badge: '🔥 Hard • 25 pts each',
   checkpoints: [
-    { num: 1, loc: 'Reception', q: 'Mango origin region?', a: 'C. South Asia', facts: ['Cultivated in South Asia for 4,000+ years.'] },
-    { num: 2, loc: 'Herbal Remedies', q: 'Ginger anti-inflammatory?', a: 'C. Gingerol', facts: ['Similar to capsaicin — nature\'s healing heat!'] },
-    { num: 3, loc: 'Banana Garden', q: 'Times plant fruits?', a: 'A. Once', facts: ['Each plant fruits once, then dies for its pups.'] },
-    { num: 4, loc: 'Vegetable Garden', q: 'Garlic smell released when?', a: 'C. Cells damaged', facts: ['Crushing releases alliinase → creates allicin.'] },
-    { num: 5, loc: 'Pineapple Garden', q: 'Meat-tenderizing enzyme?', a: 'B. Bromelain', facts: ['So strong it can dissolve fingerprints!'] },
-    { num: 6, loc: 'Strawberry Fields', q: 'Plant family?', a: 'C. Rose family', facts: ['Cousins of roses, apples, and almonds!'] },
-    { num: 7, loc: 'Citrus Garden', q: 'Orange first cultivated?', a: 'B. Southeast Asia', facts: ['Name from Sanskrit "nāranga."'] },
-    { num: 8, loc: 'Mixed Fruits', q: 'Rambutan meaning?', a: 'C. Hairy', facts: ['"Rambut" = hair in Malay.'] },
-    { num: 9, loc: 'Jabuticaba', q: 'Native country?', a: 'C. Brazil', facts: ['Ferments in 3-4 days — rarely exported!'] },
-    { num: 10, loc: 'Flower Jungle', q: 'Lavender calming compound?', a: 'B. Linalool', facts: ['Affects same receptors as anxiety meds!'] }
+    { num: 1, loc: 'Reception', q: 'Mango origin region?', a: 'C. South Asia', facts: ['Cultivated in South Asia for 4,000+ years.', 'Buddhist monks spread mangoes across Asia.'] },
+    { num: 2, loc: 'Herbal Remedies', q: 'Ginger anti-inflammatory?', a: 'C. Gingerol', facts: ['Chemically similar to capsaicin.', 'Converts to shogaol when dried — even spicier!'] },
+    { num: 3, loc: 'Banana Garden', q: 'Times plant fruits?', a: 'A. Once', facts: ['Each plant fruits once, then dies.', 'New "pups" grow from the base to continue.'] },
+    { num: 4, loc: 'Vegetable Garden', q: 'Garlic smell released when?', a: 'C. Cells damaged', facts: ['Crushing releases alliinase enzyme.', 'Creates allicin — powerful antibacterial!'] },
+    { num: 5, loc: 'Pineapple Garden', q: 'Meat-tenderizing enzyme?', a: 'B. Bromelain', facts: ['So strong it dissolves fingerprints!', 'Used in medicine to reduce inflammation.'] },
+    { num: 6, loc: 'Strawberry Fields', q: 'Plant family?', a: 'C. Rose family', facts: ['Cousins of roses, apples, and almonds!', 'Family name: Rosaceae.'] },
+    { num: 7, loc: 'Citrus Garden', q: 'Orange first cultivated?', a: 'B. Southeast Asia', facts: ['Name from Sanskrit "nāranga."', 'Sweet orange is a hybrid of pomelo + mandarin.'] },
+    { num: 8, loc: 'Mixed Fruits', q: 'Rambutan meaning?', a: 'C. Hairy', facts: ['"Rambut" = hair in Malay.', 'Related to lychee and longan.'] },
+    { num: 9, loc: 'Jabuticaba', q: 'Native country?', a: 'C. Brazil', facts: ['Ferments in 3-4 days — rarely exported!', 'Used for wine, liqueur, and jam in Brazil.'] },
+    { num: 10, loc: 'Flower Jungle', q: 'Lavender calming compound?', a: 'B. Linalool', facts: ['Affects same brain receptors as anxiety meds!', 'Also found in mint and cinnamon.'] }
   ]
 };
 
 function renderA5(pageNum) {
-  const w = 421, h = 298;
-  let html = '<div style="width:'+w+'px;height:'+h+'px;background:white;font-family:Outfit,sans-serif;overflow:hidden;position:relative;border:1px solid #ddd;">';
+  const w = 421, h = 595;
+  let html = '<div style="width:'+w+'px;height:'+h+'px;background:white;font-family:Outfit,sans-serif;overflow:hidden;position:relative;">';
   
   if (pageNum === 1) {
     html += '<div style="height:100%;position:relative;color:white;text-align:center;">' +
       '<img src="'+COVER_IMG+'" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;" crossorigin="anonymous">' +
-      '<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.5) 60%,rgba(0,0,0,0.8) 100%);"></div>' +
-      '<div style="position:absolute;bottom:0;left:0;right:0;padding:15px;z-index:1;">' +
-        '<div style="font-size:1.8rem;margin-bottom:5px;">📚</div>' +
-        '<h1 style="font-family:Cormorant Garamond,serif;font-size:1.4rem;margin-bottom:4px;text-shadow:0 2px 10px rgba(0,0,0,0.5);">'+DATA.title+'</h1>' +
-        '<p style="font-size:0.75rem;opacity:0.9;margin-bottom:8px;">'+DATA.subtitle+'</p>' +
-        '<div style="display:inline-block;background:rgba(212,165,116,0.9);padding:4px 12px;border-radius:10px;font-size:0.6rem;">'+DATA.badge+'</div>' +
+      '<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.8) 100%);"></div>' +
+      '<div style="position:absolute;bottom:0;left:0;right:0;padding:30px;z-index:1;">' +
+        '<div style="font-size:3rem;margin-bottom:10px;">📚</div>' +
+        '<h1 style="font-family:Cormorant Garamond,serif;font-size:2.2rem;margin-bottom:8px;text-shadow:0 2px 15px rgba(0,0,0,0.5);">'+DATA.title+'</h1>' +
+        '<p style="font-size:1.1rem;opacity:0.95;margin-bottom:15px;">'+DATA.subtitle+'</p>' +
+        '<div style="display:inline-block;background:rgba(212,165,116,0.9);padding:8px 20px;border-radius:20px;font-size:0.85rem;">'+DATA.badge+'</div>' +
+        '<p style="margin-top:20px;font-size:0.9rem;opacity:0.8;">You cracked the Hard Code!</p>' +
       '</div>' +
     '</div>';
   } else {
     const startIdx = (pageNum - 2) * 3;
     const endIdx = Math.min(startIdx + 3, 10);
     const cps = DATA.checkpoints.slice(startIdx, endIdx);
+    const isLastPage = pageNum === 4;
     
-    html += '<div style="height:100%;padding:10px 12px;display:flex;flex-direction:column;">' +
-      '<div style="text-align:center;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid #e8c9a8;">' +
-        '<h2 style="font-family:Cormorant Garamond,serif;font-size:0.85rem;color:'+COLOR+';">Checkpoints '+(startIdx+1)+'-'+endIdx+': Answers</h2>' +
+    html += '<div style="height:100%;padding:20px;display:flex;flex-direction:column;">' +
+      '<div style="text-align:center;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #e8c9a8;">' +
+        '<h2 style="font-family:Cormorant Garamond,serif;font-size:1.2rem;color:'+COLOR+';">🌿 Checkpoints '+(startIdx+1)+'-'+endIdx+'</h2>' +
       '</div>' +
-      '<div style="flex:1;display:flex;flex-direction:column;gap:6px;">';
+      '<div style="flex:1;display:flex;flex-direction:column;gap:12px;">';
     
     cps.forEach(function(cp) {
-      html += '<div style="background:#FAF8F5;padding:6px 8px;border-radius:6px;border-left:2px solid '+COLOR+';flex:1;">' +
-        '<div style="display:flex;align-items:center;gap:5px;margin-bottom:3px;">' +
-          '<div style="width:18px;height:18px;background:'+COLOR+';color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.55rem;font-weight:600;">'+cp.num+'</div>' +
-          '<span style="font-family:Cormorant Garamond,serif;font-size:0.7rem;color:#5C4D3C;">'+cp.loc+'</span>' +
+      html += '<div style="background:#FAF8F5;padding:12px;border-radius:10px;border-left:3px solid '+COLOR+';flex:1;">' +
+        '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
+          '<div style="width:26px;height:26px;background:'+COLOR+';color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:600;">'+cp.num+'</div>' +
+          '<span style="font-family:Cormorant Garamond,serif;font-size:1rem;color:#5C4D3C;font-weight:600;">'+cp.loc+'</span>' +
         '</div>' +
-        '<div style="display:inline-block;background:'+COLOR+';color:white;padding:2px 8px;border-radius:4px;font-size:0.55rem;font-weight:600;margin-bottom:3px;">✓ '+cp.a+'</div>' +
-        '<div style="font-size:0.5rem;color:#8B7355;line-height:1.3;">' +
-          '<span style="color:#7D8B6F;">✦</span> '+cp.facts[0] +
+        '<p style="font-size:0.75rem;color:#8B7355;font-style:italic;margin-bottom:6px;">'+cp.q+'</p>' +
+        '<div style="display:inline-block;background:'+COLOR+';color:white;padding:4px 12px;border-radius:6px;font-size:0.75rem;font-weight:600;margin-bottom:8px;">✓ '+cp.a+'</div>' +
+        '<div style="font-size:0.7rem;color:#8B7355;line-height:1.4;">' +
+          '<p style="margin-bottom:3px;"><span style="color:#7D8B6F;">✦</span> '+cp.facts[0]+'</p>' +
+          '<p><span style="color:#7D8B6F;">✦</span> '+cp.facts[1]+'</p>' +
         '</div>' +
       '</div>';
     });
     
-    html += '</div></div>';
+    html += '</div>';
+    
+    if (isLastPage) {
+      html += '<div style="text-align:center;padding:15px;background:linear-gradient(135deg,'+COLOR+',#c17f59);color:white;border-radius:10px;margin-top:15px;">' +
+        '<p style="font-size:0.85rem;">🔥 True Botanist Achievement! 🔥</p>' +
+        '<p style="font-size:0.75rem;opacity:0.9;margin-top:5px;">mawunvalley.com</p>' +
+      '</div>';
+    }
+    
+    html += '</div>';
   }
   
   html += '</div>';
@@ -125,6 +139,7 @@ async function generatePDF() {
   
   btn.disabled = true;
   btn.textContent = '⏳ Generating...';
+  preview.innerHTML = '';
   
   progress.textContent = 'Loading cover image...';
   await new Promise(function(r) {
@@ -133,30 +148,46 @@ async function generatePDF() {
     else img.onload = r;
   });
   
-  progress.textContent = 'Rendering 4-up layout...';
+  const jsPDF = window.jspdf.jsPDF;
+  const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
   
-  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;background:white;">' +
-    renderA5(1) + renderA5(2) + renderA5(3) + renderA5(4) +
+  progress.textContent = 'Rendering front side...';
+  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
+    '<div style="width:50%;height:100%;">'+renderA5(4)+'</div>' +
+    '<div style="width:50%;height:100%;">'+renderA5(1)+'</div>' +
   '</div>';
   
-  await new Promise(function(r) { setTimeout(r, 800); });
+  await new Promise(function(r) { setTimeout(r, 600); });
   
-  const canvas = await html2canvas(document.getElementById('a4sheet'), {
+  let canvas = await html2canvas(document.getElementById('a4sheet'), {
     scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
   });
   
-  const jsPDF = window.jspdf.jsPDF;
-  const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
   pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
+  preview.innerHTML += '<p class="sheet-label">Front: Pages 4 & 1</p><img src="'+canvas.toDataURL()+'">';
   
-  preview.innerHTML = '<img src="'+canvas.toDataURL()+'">';
+  progress.textContent = 'Rendering back side...';
+  container.innerHTML = '<div id="a4sheet" style="width:842px;height:595px;display:flex;background:white;">' +
+    '<div style="width:50%;height:100%;">'+renderA5(2)+'</div>' +
+    '<div style="width:50%;height:100%;">'+renderA5(3)+'</div>' +
+  '</div>';
+  
+  await new Promise(function(r) { setTimeout(r, 600); });
+  
+  canvas = await html2canvas(document.getElementById('a4sheet'), {
+    scale: 2, backgroundColor: '#FFFFFF', useCORS: true, allowTaint: true
+  });
+  
+  pdf.addPage();
+  pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 297, 210);
+  preview.innerHTML += '<p class="sheet-label">Back: Pages 2 & 3</p><img src="'+canvas.toDataURL()+'">';
   
   progress.textContent = 'Saving PDF...';
-  pdf.save('learning-guide-hard-4up.pdf');
+  pdf.save('learning-guide-hard-booklet.pdf');
   
   progress.textContent = '✅ PDF Downloaded!';
   btn.disabled = false;
-  btn.textContent = '📥 Download A4 PDF (4-up)';
+  btn.textContent = '📥 Download A4 PDF (Double-sided)';
 }
 </script>
 </body>
