@@ -20,6 +20,7 @@
     <div class="footer-links">
       <h4>Explore</h4>
       <ul>
+        <li><a href="/map">Local Map</a></li>
         <li><a href="/garden-quest/">The Garden Code</a></li>
         <li><a href="/garden-quest/farm-tour.html">Virtual Farm Tour</a></li>
         <li><a href="/blog">Field Notes</a></li>
