@@ -287,7 +287,7 @@ const submitRequest = async () => {
   submitSuccess.value = false
   submitError.value = false
 
-  const webhookUrl = 'https://discord.com/api/webhooks/1481545308373516308/pruwMzs6xAk_grlm-NleR1a1G1I5b9eAfO6LikEc4vb-sT2Zcp8Nzp66x_sMvo1bWopl'
+  const webhookUrl = 'https://discord.com/api/webhooks/1481550277151821855/o3xQ8HtPBq2LbBUHUak_iqPwFYnYGuA5iqGEHRoKd4s8UQClMVFVHROT2Lj5ZAMWdC3x'
 
   const embed = {
     title: '🎁 New Gift Card Request',
