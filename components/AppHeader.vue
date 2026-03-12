@@ -16,6 +16,7 @@
         <li><NuxtLink to="/little-roots" @click="closeMenu">Little Roots</NuxtLink></li>
         <li><NuxtLink to="/belong" @click="closeMenu">Membership</NuxtLink></li>
         <li><NuxtLink to="/nonis" @click="closeMenu">Noni's</NuxtLink></li>
+        <li><NuxtLink to="/gift-cards" @click="closeMenu">Gift Cards</NuxtLink></li>
         <li><a href="/garden-quest/farm-tour.html" class="btn-tour" @click="closeMenu">🗺️ Virtual Tour</a></li>
       </ul>
       <div v-if="menuOpen" class="menu-overlay" @click="closeMenu"></div>
