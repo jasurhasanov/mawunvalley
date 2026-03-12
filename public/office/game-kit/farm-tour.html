@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtual Farm Tour — Mawun Valley</title>
+<meta name="description" content="Explore every corner of Mawun Valley with our interactive farm map. Discover gardens, animals, dining, and accommodation.">
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FAF8F5;
+  --sage: #7D8B6F;
+  --sage-light: #A8B89A;
+  --earth: #2d3a2d;
+  --earth-light: #8B7355;
+  --gold: #d4a574;
+  --terracotta: #c17f59;
+  --white: #FFF;
+  --dark-green: #1a2a1a;
+  --pink: #e8a4b8;
+  --blue: #7ba3c9;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--earth); line-height: 1.7; }
+
+/* Site Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+.site-logo img { height: 45px; }
+.site-nav { display: flex; gap: 30px; align-items: center; }
+.site-nav a { color: var(--earth); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+.site-nav a:hover { color: var(--gold); }
+.btn-tour {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #7D8B6F 0%, #87a878 50%, #d4a574 100%);
+  color: white !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 25px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(125, 139, 111, 0.3);
+}
+.btn-tour:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(125, 139, 111, 0.4);
+  color: white !important;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--sage), var(--sage-light));
+  padding: 100px 20px 30px;
+  text-align: center;
+  color: var(--white);
+}
+.header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+.header p { opacity: 0.9; font-size: 1rem; }
+
+.category-bar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 10px;
+  background: var(--white);
+  border-bottom: 1px solid rgba(125,139,111,0.2);
+  flex-wrap: wrap;
+}
+.cat-btn {
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  background: rgba(125,139,111,0.1);
+  color: var(--earth);
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+.cat-btn:hover, .cat-btn.active { background: var(--sage); color: var(--white); }
+
+.map-section { padding: 20px; background: var(--cream); }
+.map-container {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 30px rgba(92,77,60,0.15);
+}
+.map-container img { width: 100%; display: block; }
+.map-credit {
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 0.85rem;
+  color: var(--earth-light);
+  font-style: italic;
+}
+.map-credit span {
+  color: var(--sage);
+  font-weight: 500;
+}
+
+.tour-point {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  border: 2px solid var(--white);
+  z-index: 10;
+}
+.tour-point:hover { transform: scale(1.4); z-index: 20; }
+.tour-point.gardens { background: var(--sage); }
+.tour-point.fruits { background: var(--pink); }
+.tour-point.dining { background: var(--gold); }
+.tour-point.stay { background: var(--terracotta); }
+.tour-point.animals { background: #8B7355; }
+.tour-point.facilities { background: var(--blue); }
+.tour-point.active { transform: scale(1.3); box-shadow: 0 0 0 4px rgba(125,139,111,0.4); }
+
+/* Final positions - placed by Jasur */
+.tp-herbal { top: 78.26%; left: 24.12%; }
+.tp-banana { top: 69.19%; left: 24.09%; }
+.tp-veg1 { top: 57.84%; left: 29.83%; }
+.tp-veg-top { top: 12.46%; left: 18.08%; }
+.tp-veg2 { top: 61.58%; left: 46.24%; }
+.tp-pineapple { top: 48.45%; left: 24.81%; }
+.tp-strawberry { top: 48.43%; left: 30.77%; }
+.tp-flower-jungle { top: 77.07%; left: 73.38%; }
+.tp-compost { top: 10.32%; left: 26.15%; }
+.tp-nursery { top: 7.41%; left: 30.97%; }
+.tp-citrus { top: 19.85%; left: 58.20%; }
+.tp-mixed-fruits { top: 35.41%; left: 56.27%; }
+.tp-jabuticaba { top: 46.0%; left: 52.0%; }
+.tp-harkisa { top: 51.45%; left: 64.85%; }
+.tp-nonis { top: 14.11%; left: 39.93%; }
+.tp-water-well { top: 61.62%; left: 53.89%; }
+.tp-farmhouse { top: 21.60%; left: 66.58%; }
+.tp-lime { top: 11.68%; left: 51.34%; }
+.tp-jabalkap { top: 31.90%; left: 68.79%; }
+.tp-sandat { top: 54.09%; left: 71.09%; }
+.tp-peace { top: 66.58%; left: 72.16%; }
+.tp-camp { top: 6.93%; left: 36.44%; }
+.tp-golden-nook { top: 67.20%; left: 19.40%; }
+.tp-goats { top: 33.43%; left: 10.95%; }
+.tp-reception { top: 84.94%; left: 59.01%; }
+.tp-parking { top: 90.0%; left: 24.28%; }
+.tp-prayer { top: 76.63%; left: 57.06%; }
+.tp-toilets { top: 72.24%; left: 68.24%; }
+.tp-amphitheater { top: 21.91%; left: 36.56%; }
+.tp-chill-hill { top: 10.11%; left: 9.79%; }
+.tp-windmill { top: 41.70%; left: 69.91%; }
+
+
+/* Info Panel */
+.info-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-radius: 25px 25px 0 0;
+  box-shadow: 0 -5px 30px rgba(0,0,0,0.15);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  z-index: 1001;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.info-panel.active { transform: translateY(0); }
+.info-header {
+  padding: 25px;
+  position: relative;
+  border-bottom: 1px solid rgba(125,139,111,0.1);
+}
+.info-header .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(125,139,111,0.1);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--earth-light);
+}
+.info-category {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+.info-category.gardens { background: rgba(125,139,111,0.15); color: var(--sage); }
+.info-category.fruits { background: rgba(232,164,184,0.2); color: #c17f8f; }
+.info-category.dining { background: rgba(212,165,116,0.2); color: var(--terracotta); }
+.info-category.stay { background: rgba(193,127,89,0.2); color: var(--terracotta); }
+.info-category.animals { background: rgba(139,115,85,0.15); color: var(--earth-light); }
+.info-category.facilities { background: rgba(123,163,201,0.2); color: #5a8ab8; }
+.info-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--earth);
+  margin-bottom: 5px;
+}
+.info-subtitle { color: var(--earth-light); font-size: 0.95rem; }
+.info-body { padding: 25px; }
+.info-description { margin-bottom: 20px; color: var(--earth); font-size: 0.95rem; }
+.info-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.highlight {
+  background: var(--cream);
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+.highlight-icon { font-size: 1.3rem; margin-bottom: 5px; }
+.highlight-text { font-size: 0.8rem; color: var(--earth-light); }
+.info-tip {
+  background: rgba(212,165,116,0.1);
+  border-left: 3px solid var(--gold);
+  padding: 15px;
+  border-radius: 0 10px 10px 0;
+}
+.info-tip h4 { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
+.info-tip p { color: var(--earth); font-size: 0.9rem; }
+
+.legend {
+  padding: 15px;
+  background: var(--white);
+  border-top: 1px solid rgba(125,139,111,0.1);
+}
+.legend h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--earth);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.legend-items { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--earth-light); }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+.legend-dot.gardens { background: var(--sage); }
+.legend-dot.fruits { background: var(--pink); }
+.legend-dot.dining { background: var(--gold); }
+.legend-dot.stay { background: var(--terracotta); }
+.legend-dot.animals { background: #8B7355; }
+.legend-dot.facilities { background: var(--blue); }
+
+.back-link { display: block; text-align: center; padding: 15px; color: var(--sage); text-decoration: none; font-size: 0.9rem; }
+.back-link:hover { text-decoration: underline; }
+
+/* Site Footer */
+.site-footer {
+  background: linear-gradient(135deg, var(--earth) 0%, var(--dark-green) 100%);
+  color: rgba(255,255,255,0.85);
+  padding: 40px 20px 20px;
+}
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.footer-brand img { height: 40px; filter: brightness(0) invert(1); margin-bottom: 10px; }
+.footer-brand p { font-size: 0.85rem; opacity: 0.8; }
+.footer-links h4 { color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-links ul { list-style: none; }
+.footer-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; display: block; padding: 4px 0; }
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; opacity: 0.7; }
+
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .tour-point { width: 24px; height: 24px; font-size: 0.65rem; }
+  .header { padding: 90px 20px 25px; }
+  .header h1 { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Site Header -->
+<header class="site-header">
+  <a href="/" class="site-logo">
+    <img src="/images/logo.png" alt="Mawun Valley Farm">
+  </a>
+  <nav class="site-nav">
+    <a href="/">Home</a>
+    <a href="/stay-contribute">Stay & Contribute</a>
+    <a href="/gather">Farm Events</a>
+    <a href="/little-roots">Little Roots</a>
+    <a href="/belong">Membership</a>
+    <a href="/nonis">Noni's</a>
+    <a href="/office/game-kit/farm-tour.html" class="btn-tour">🗺️ Virtual Tour</a>
+  </nav>
+</header>
+
+<header class="header">
+  <h1>🗺️ Virtual Farm Tour</h1>
+  <p>Tap any point to explore Mawun Valley</p>
+</header>
+
+<div class="category-bar">
+  <button class="cat-btn active" data-cat="all">All</button>
+  <button class="cat-btn" data-cat="gardens">🌿 Gardens</button>
+  <button class="cat-btn" data-cat="fruits">🍎 Fruits</button>
+  <button class="cat-btn" data-cat="dining">🍽️ Dining</button>
+  <button class="cat-btn" data-cat="stay">🏡 Stay</button>
+  <button class="cat-btn" data-cat="animals">🐐 Animals</button>
+  <button class="cat-btn" data-cat="facilities">📍 Facilities</button>
+</div>
+
+<div class="map-section">
+  <div class="map-container">
+    <img src="map.png" alt="Mawun Valley Farm Map">
+    
+    <!-- Gardens -->
+    <div class="tour-point gardens tp-herbal" data-id="herbal">🌿</div>
+    <div class="tour-point fruits tp-banana" data-id="banana">🍌</div>
+    <div class="tour-point gardens tp-veg1" data-id="veg1">🥬</div>
+    <div class="tour-point gardens tp-veg-top" data-id="vegtop">🥕</div>
+    <div class="tour-point gardens tp-veg2" data-id="veg2">🍅</div>
+    <div class="tour-point gardens tp-pineapple" data-id="pineapple">🍍</div>
+    <div class="tour-point gardens tp-strawberry" data-id="strawberry">🍓</div>
+    <div class="tour-point gardens tp-flower-jungle" data-id="flower">🌸</div>
+    <div class="tour-point facilities tp-compost" data-id="compost">♻️</div>
+    <div class="tour-point facilities tp-nursery" data-id="nursery">🌱</div>
+    
+    <!-- Fruits -->
+    <div class="tour-point fruits tp-citrus" data-id="citrus">🍋</div>
+    <div class="tour-point fruits tp-mixed-fruits" data-id="mixed">🥭</div>
+    <div class="tour-point fruits tp-jabuticaba" data-id="jabuticaba">🫐</div>
+    <div class="tour-point fruits tp-harkisa" data-id="harkisa">🌳</div>
+    
+    <!-- Dining -->
+    <div class="tour-point dining tp-nonis" data-id="nonis">🍽️</div>
+    <div class="tour-point facilities tp-water-well" data-id="waterwell">💧</div>
+    
+    <!-- Stay -->
+    <div class="tour-point stay tp-farmhouse" data-id="farmhouse">🏡</div>
+    <div class="tour-point stay tp-lime" data-id="lime">🏠</div>
+    <div class="tour-point stay tp-jabalkap" data-id="jabalkap">🛖</div>
+    <div class="tour-point stay tp-sandat" data-id="sandat">🌺</div>
+    <div class="tour-point stay tp-peace" data-id="peace">☮️</div>
+    <div class="tour-point stay tp-camp" data-id="camp">⛺</div>
+    <div class="tour-point stay tp-golden-nook" data-id="goldennook">✨</div>
+    
+    <!-- Animals -->
+    <div class="tour-point animals tp-goats" data-id="goats">🐐</div>
+    
+    <!-- Facilities -->
+    <div class="tour-point facilities tp-reception" data-id="reception">ℹ️</div>
+    <div class="tour-point facilities tp-parking" data-id="parking">🅿️</div>
+    <div class="tour-point facilities tp-prayer" data-id="prayer">🕌</div>
+    <div class="tour-point facilities tp-toilets" data-id="toilets">🚻</div>
+    <div class="tour-point facilities tp-amphitheater" data-id="amphitheater">🎭</div>
+    <div class="tour-point facilities tp-chill-hill" data-id="chillhill">🌅</div>
+    <div class="tour-point stay tp-windmill" data-id="windmill">🌀</div>
+  </div>
+</div>
+
+<div class="map-credit">Map illustrated with 💚 by <span>Mariana & Sergio</span> from Portugal</div>
+
+<div class="legend">
+  <h4>Legend</h4>
+  <div class="legend-items">
+    <div class="legend-item"><div class="legend-dot gardens"></div> Gardens</div>
+    <div class="legend-item"><div class="legend-dot fruits"></div> Fruits</div>
+    <div class="legend-item"><div class="legend-dot dining"></div> Dining</div>
+    <div class="legend-item"><div class="legend-dot stay"></div> Stay</div>
+    <div class="legend-item"><div class="legend-dot animals"></div> Animals</div>
+    <div class="legend-item"><div class="legend-dot facilities"></div> Facilities</div>
+  </div>
+</div>
+
+<a href="/office/game-kit/" class="back-link">🎮 Play The Garden Code Game</a>
+
+<!-- Info Panel -->
+<div class="info-panel" id="infoPanel">
+  <div class="info-header">
+    <button class="close-btn" onclick="closePanel()">×</button>
+    <span class="info-category" id="infoCat">Gardens</span>
+    <h2 class="info-title" id="infoTitle">Location</h2>
+    <p class="info-subtitle" id="infoSubtitle">Description</p>
+  </div>
+  <div class="info-body">
+    <p class="info-description" id="infoDesc"></p>
+    <div class="info-highlights" id="infoHighlights"></div>
+    <div class="info-tip" id="infoTip">
+      <h4>🌿 Slow Living Tip</h4>
+      <p id="infoTipText"></p>
+    </div>
+  </div>
+</div>
+
+<!-- Site Footer -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="/images/logo.png" alt="Mawun Valley Farm">
+      <p>Slow Down, Connect Deeply.</p>
+      <p>A family-run permaculture farm in South Lombok, Indonesia.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Experience</h4>
+      <ul>
+        <li><a href="/nonis">Noni's Resto & Pastry</a></li>
+        <li><a href="/stay-contribute">Stay & Contribute</a></li>
+        <li><a href="/gather">Farm Events</a></li>
+        <li><a href="/retreat">Farm Retreat</a></li>
+        <li><a href="/little-roots">Little Roots</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/office/game-kit/">The Garden Code</a></li>
+        <li><a href="/office/game-kit/farm-tour.html">Virtual Farm Tour</a></li>
+        <li><a href="/blog">Field Notes</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="/host">Your Host</a></li>
+        <li><a href="/belong">Membership</a></li>
+        <li><a href="/#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="https://instagram.com/mawunvalley" target="_blank">@mawunvalley</a></li>
+        <li><a href="https://instagram.com/nonislombok" target="_blank">@nonislombok</a></li>
+        <li><a href="https://facebook.com/mawunvalley" target="_blank">Mawun Valley</a></li>
+        <li><a href="https://www.tiktok.com/@mawunvalley" target="_blank">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Mawun Valley Farm. All rights reserved.</div>
+</footer>
+
+<script>
+const locations = {
+  herbal: { category: "gardens", title: "Herbal Remedies", subtitle: "Traditional healing plants", description: "Our Herbal Remedies garden features medicinal plants used in Jamu, Indonesia's ancient herbal medicine tradition. Find ginger, turmeric, lemongrass, and dozens of healing herbs.", highlights: [{ icon: "🌿", text: "20+ herbs" }, { icon: "💊", text: "Jamu tradition" }, { icon: "📚", text: "Guided tours" }], tip: "Ask about our morning Jamu tasting — fresh traditional tonics to start your day." },
+  banana: { category: "fruits", title: "Banana Garden", subtitle: "Dozens of varieties", description: "Indonesia has incredible banana diversity. Our garden showcases many varieties — from tiny sweet pisang susu to large cooking bananas.", highlights: [{ icon: "🍌", text: "12+ varieties" }, { icon: "🌱", text: "Full lifecycle" }, { icon: "🍳", text: "Cooking types" }], tip: "Visit early morning when farmers might be harvesting ripe bunches." },
+  veg1: { category: "gardens", title: "Vegetable Garden", subtitle: "From soil to table", description: "Fresh vegetables for Noni's kitchen. Tomatoes, eggplant, chili peppers — all organic and harvested at peak freshness.", highlights: [{ icon: "🥬", text: "Organic" }, { icon: "🍳", text: "Farm to table" }, { icon: "🌶️", text: "Local chilies" }], tip: "Lombok means 'chili' in Javanese — the island is named after the pepper!" },
+  vegtop: { category: "gardens", title: "Upper Garden", subtitle: "Root vegetables & herbs", description: "This elevated garden focuses on root vegetables and aromatic herbs that thrive in our tropical climate.", highlights: [{ icon: "🧄", text: "Fresh garlic" }, { icon: "🧅", text: "Local onions" }, { icon: "🌿", text: "Aromatics" }], tip: "Our garlic has a milder, sweeter flavor than imported varieties." },
+  veg2: { category: "gardens", title: "Lower Garden", subtitle: "Seasonal produce", description: "Our largest vegetable plot rotates seasonal crops. Water spinach, long beans, and gourds thrive here.", highlights: [{ icon: "🥒", text: "Seasonal" }, { icon: "💧", text: "Drip irrigation" }, { icon: "🦎", text: "Natural pests" }], tip: "We use companion planting instead of pesticides." },
+  pineapple: { category: "gardens", title: "Pineapple Garden", subtitle: "Sweet tropical treasures", description: "Each pineapple plant produces only ONE fruit, taking 18-24 months to mature. See the full lifecycle here.", highlights: [{ icon: "🍍", text: "18-24 months" }, { icon: "1️⃣", text: "One per plant" }, { icon: "🔬", text: "Bromelain" }], tip: "Pineapple workers often lose fingerprints from the powerful enzymes!" },
+  strawberry: { category: "gardens", title: "Strawberry Fields", subtitle: "Tropical berries", description: "Yes, strawberries grow in tropical Lombok! Our elevated beds provide perfect conditions.", highlights: [{ icon: "🍓", text: "Tropical" }, { icon: "🌹", text: "Rose family" }, { icon: "📸", text: "Photo spot" }], tip: "Strawberries are cousins of roses — look at those similar flowers!" },
+  flower: { category: "gardens", title: "Flower Jungle", subtitle: "Colors & pollinators", description: "A riot of color attracting butterflies, bees, and birds. Marigolds, zinnias, and tropical blooms.", highlights: [{ icon: "🦋", text: "Butterflies" }, { icon: "🐝", text: "Pollinators" }, { icon: "📸", text: "Photos" }], tip: "Marigolds are natural pest repellents in our vegetable gardens!" },
+  compost: { category: "facilities", title: "Compost Area", subtitle: "Closing the loop", description: "All organic waste returns here to become rich compost. The heart of our sustainable practice.", highlights: [{ icon: "♻️", text: "Zero waste" }, { icon: "🪱", text: "Worm bins" }, { icon: "🌱", text: "Rich soil" }], tip: "Our compost is ready in 3 months and returns to nourish the plants." },
+  nursery: { category: "facilities", title: "Nursery Plant", subtitle: "Where it begins", description: "Seedlings get their start here before transplanting. See the beginning of farm-to-table.", highlights: [{ icon: "🌱", text: "Baby plants" }, { icon: "🏷️", text: "Labeled" }, { icon: "💚", text: "Growing" }], tip: "Ask about taking home a seedling as a living souvenir!" },
+  citrus: { category: "fruits", title: "Citrus Garden", subtitle: "Lemon, lime, orange", description: "Our citrus grove includes local limes, sweet oranges, and fragrant lemon trees.", highlights: [{ icon: "🍋", text: "Lemons" }, { icon: "🍊", text: "Oranges" }, { icon: "💚", text: "Vitamin C" }], tip: "Oranges originated in Southeast Asia — 'orange' comes from Sanskrit!" },
+  mixed: { category: "fruits", title: "Mixed Fruits", subtitle: "Tropical abundance", description: "Dragon fruit, rambutan, passion fruit, mango, guava and more — the heart of our fruit collection.", highlights: [{ icon: "🥭", text: "Mango" }, { icon: "🐉", text: "Dragon fruit" }, { icon: "🔴", text: "Rambutan" }], tip: "Dragon fruit flowers bloom for only ONE night!" },
+  jabuticaba: { category: "fruits", title: "Jabuticaba", subtitle: "Brazilian treasure", description: "One of the world's strangest fruits — grows directly on the tree trunk! Extremely rare.", highlights: [{ icon: "🫐", text: "Trunk fruit" }, { icon: "🇧🇷", text: "From Brazil" }, { icon: "⏰", text: "3-day fresh" }], tip: "This phenomenon is called 'cauliflory' — cacao does it too!" },
+  harkisa: { category: "fruits", title: "Harkisa Garden", subtitle: "Exotic varieties", description: "Named after a local fruit, this garden hosts unusual tropical specimens.", highlights: [{ icon: "🌳", text: "Mature trees" }, { icon: "🍃", text: "Shaded" }, { icon: "🦜", text: "Bird watching" }], tip: "Early morning is best for spotting birds feeding on ripe fruits." },
+  nonis: { category: "dining", title: "Noni's Resto & Pastry", subtitle: "Farm-to-table dining", description: "Our restaurant serves dishes made with ingredients harvested steps away. Indonesian favorites, pastries, healthy options.", highlights: [{ icon: "🍽️", text: "Farm fresh" }, { icon: "🥐", text: "Pastries" }, { icon: "☕", text: "Local coffee" }], tip: "Try the daily harvest special — based on what's ripe that morning!" },
+  waterwell: { category: "facilities", title: "Water Well", subtitle: "Fresh spring water", description: "Our traditional well provides fresh, natural water. A reminder of sustainable practices.", highlights: [{ icon: "💧", text: "Natural" }, { icon: "🪣", text: "Traditional" }, { icon: "📸", text: "Photo spot" }], tip: "This cool water irrigates our gardens and supplies the restaurant." },
+  farmhouse: { category: "stay", title: "The Farmhouse", subtitle: "Main accommodation", description: "Our signature accommodation offers comfort surrounded by nature. Rooster calls, cricket songs, farm breakfast.", highlights: [{ icon: "🛏️", text: "Comfortable" }, { icon: "🌅", text: "Sunrise" }, { icon: "🍳", text: "Breakfast" }], tip: "Book east-facing for spectacular sunrise views!" },
+  lime: { category: "stay", title: "Lime", subtitle: "Citrus retreat", description: "Named after the citrus grove nearby. Easy access to fruit gardens and morning walks.", highlights: [{ icon: "🏠", text: "Private" }, { icon: "🍋", text: "Garden view" }, { icon: "🌿", text: "Peaceful" }], tip: "Pick your own limes for morning water!" },
+  jabalkap: { category: "stay", title: "Jabalkap", subtitle: "Traditional hut", description: "Traditional Indonesian architecture with modern comfort.", highlights: [{ icon: "🛖", text: "Traditional" }, { icon: "🌴", text: "Palm-shaded" }, { icon: "🦎", text: "Nature sounds" }], tip: "Ask staff about the name's meaning in Sasak!" },
+  sandat: { category: "stay", title: "Sandat", subtitle: "Flower cottage", description: "Named after ylang-ylang flower. Peaceful, private, surrounded by blooms.", highlights: [{ icon: "🌺", text: "Flowers" }, { icon: "😴", text: "Peaceful" }, { icon: "🧘", text: "Yoga space" }], tip: "Sandat flowers are used for aromatherapy relaxation!" },
+  peace: { category: "stay", title: "Peace", subtitle: "Tranquil hideaway", description: "True to its name — ultimate slow living accommodation. Disconnect and find your center.", highlights: [{ icon: "☮️", text: "Tranquil" }, { icon: "📵", text: "Digital detox" }, { icon: "🌙", text: "Stargazing" }], tip: "No WiFi by design — embrace the disconnect!" },
+  camp: { category: "stay", title: "Camp Spot", subtitle: "Under the stars", description: "For adventurers — sleep under Lombok's star-filled sky. Facilities nearby.", highlights: [{ icon: "⛺", text: "Camping" }, { icon: "⭐", text: "Stars" }, { icon: "🔥", text: "Campfire" }], tip: "The Milky Way is visible on clear nights!" },
+  goldennook: { category: "stay", title: "Golden Nook", subtitle: "Cozy retreat", description: "A hidden gem with golden hour views photographers dream of.", highlights: [{ icon: "✨", text: "Golden hour" }, { icon: "📸", text: "Photography" }, { icon: "🌅", text: "Sunset" }], tip: "Be here at 5:30 PM for incredible light!" },
+  goats: { category: "animals", title: "Goats & Friends", subtitle: "Farm animals", description: "Meet our friendly goats! Kids and adults love this area. They're curious, playful, and hungry.", highlights: [{ icon: "🐐", text: "Friendly" }, { icon: "🥕", text: "Feeding" }, { icon: "👶", text: "Kid-friendly" }], tip: "Visit around 4 PM for feeding time excitement!" },
+  reception: { category: "facilities", title: "Reception", subtitle: "Welcome center", description: "Your journey begins here! Check in, get your The Garden Code journal, ask questions.", highlights: [{ icon: "ℹ️", text: "Info" }, { icon: "📓", text: "Journals" }, { icon: "🗺️", text: "Maps" }], tip: "Pick up your The Garden Code journal here!" },
+  parking: { category: "facilities", title: "Parking", subtitle: "Vehicle parking", description: "Safe parking for cars and motorbikes. From here, explore on foot.", highlights: [{ icon: "🅿️", text: "Free" }, { icon: "🛵", text: "Motorbikes" }, { icon: "🚗", text: "Cars" }], tip: "The farm is best explored on foot — slow down!" },
+  prayer: { category: "facilities", title: "Prayer Room", subtitle: "Musholla", description: "A peaceful space for prayers. Clean, quiet, correct qibla direction.", highlights: [{ icon: "🕌", text: "Prayer space" }, { icon: "🧎", text: "Clean" }, { icon: "🧭", text: "Qibla" }], tip: "Prayer times posted at Reception." },
+  toilets: { category: "facilities", title: "Toilets", subtitle: "Restrooms", description: "Clean, well-maintained facilities with eco-friendly fixtures.", highlights: [{ icon: "🚻", text: "Clean" }, { icon: "♿", text: "Accessible" }, { icon: "💧", text: "Eco" }], tip: "We use biodegradable products to protect water systems." },
+  amphitheater: { category: "facilities", title: "Amphitheater", subtitle: "Events & gatherings", description: "Open-air venue for events, movie nights, yoga, community gatherings.", highlights: [{ icon: "🎭", text: "Events" }, { icon: "🎬", text: "Movies" }, { icon: "🧘", text: "Yoga" }], tip: "Check weekly schedule for sunset yoga and live music!" },
+  chillhill: { category: "facilities", title: "The Heal", subtitle: "Viewpoint", description: "Highest point with panoramic views. Bring a book or just breathe.", highlights: [{ icon: "🌅", text: "Panoramic" }, { icon: "📖", text: "Reading" }, { icon: "🧘", text: "Meditation" }], tip: "THE spot for sunset — arrive 30 min early!" },
+  windmill: { category: "stay", title: "Rick's Windmill", subtitle: "Iconic landmark", description: "A charming windmill and one of our most photographed spots.", highlights: [{ icon: "🌀", text: "Iconic" }, { icon: "📸", text: "Photos" }, { icon: "💨", text: "Breeze" }], tip: "Looks magical during golden hour!" }
+};
+
+document.querySelectorAll('.cat-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.tour-point').forEach(p => {
+      p.style.display = (cat === 'all' || p.classList.contains(cat)) ? 'flex' : 'none';
+    });
+  });
+});
+
+document.querySelectorAll('.tour-point').forEach(point => {
+  point.addEventListener('click', () => {
+    const id = point.dataset.id;
+    const loc = locations[id];
+    if (!loc) return;
+    
+    document.querySelectorAll('.tour-point').forEach(p => p.classList.remove('active'));
+    point.classList.add('active');
+    
+    document.getElementById('infoCat').className = 'info-category ' + loc.category;
+    document.getElementById('infoCat').textContent = loc.category;
+    document.getElementById('infoTitle').textContent = loc.title;
+    document.getElementById('infoSubtitle').textContent = loc.subtitle;
+    document.getElementById('infoDesc').textContent = loc.description;
+    document.getElementById('infoHighlights').innerHTML = loc.highlights.map(h => '<div class="highlight"><div class="highlight-icon">' + h.icon + '</div><div class="highlight-text">' + h.text + '</div></div>').join('');
+    document.getElementById('infoTipText').textContent = loc.tip;
+    document.getElementById('infoPanel').classList.add('active');
+  });
+});
+
+function closePanel() {
+  document.getElementById('infoPanel').classList.remove('active');
+  document.querySelectorAll('.tour-point').forEach(p => p.classList.remove('active'));
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Garden Code — Hard Mode Learning Guide</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F5;--gold:#d4a574;--gold-light:#e8c9a8;--earth:#5C4D3C;--earth-light:#8B7355;--white:#FFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);line-height:1.6}
+.pw-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(45,58,45,0.97);display:flex;align-items:center;justify-content:center;z-index:9999}
+.pw-box{background:white;padding:50px;border-radius:20px;text-align:center;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.pw-box h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:10px;color:#2d3a2d}
+.pw-box p{color:#666;margin-bottom:25px}
+.pw-box input{width:100%;padding:15px;border:2px solid #ddd;border-radius:10px;font-size:1rem;margin-bottom:15px;text-align:center}
+.pw-box button{background:#d4a574;color:white;border:none;padding:15px 40px;border-radius:25px;font-size:1rem;cursor:pointer}
+.pw-box button:hover{background:#5C4D3C}
+.pw-error{color:#c00;font-size:0.9rem;margin-top:10px;display:none}
+.download-bar{text-align:center;padding:25px;background:var(--gold)}
+.download-btn{background:white;color:var(--earth);border:none;padding:16px 40px;font-size:1.1rem;font-weight:600;border-radius:30px;cursor:pointer;font-family:inherit;box-shadow:0 4px 15px rgba(0,0,0,0.2);transition:all 0.3s}
+.download-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+.download-btn:disabled{opacity:0.7;cursor:wait}
+.progress-text{color:white;margin-top:10px;font-size:0.9rem;display:none}
+.guide{max-width:700px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
+.page{width:700px;min-height:900px;padding:35px 40px;background:var(--white);border-bottom:3px dashed var(--gold-light);display:flex;flex-direction:column}
+.page.cover-page{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:white;text-align:center;justify-content:center;min-height:900px}
+.cover-emoji{font-size:4rem;margin-bottom:15px}
+.cover-page h1{font-family:'Cormorant Garamond',serif;font-size:2.6rem;margin-bottom:10px}
+.cover-page .tagline{font-size:1.2rem;opacity:0.95;margin-bottom:25px}
+.cover-page .subtitle{font-size:1rem;opacity:0.85;max-width:450px;margin:0 auto 30px;line-height:1.6}
+.badge{display:inline-block;background:rgba(255,255,255,0.2);padding:12px 30px;border-radius:25px;font-size:1rem;margin-top:20px}
+.content-page{justify-content:flex-start}
+.page-header{text-align:center;margin-bottom:25px;padding-bottom:15px;border-bottom:2px solid var(--gold-light)}
+.page-header h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold)}
+.checkpoint-block{margin-bottom:25px;padding:20px;background:var(--cream);border-radius:12px;border-left:4px solid var(--gold)}
+.checkpoint-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.checkpoint-num{width:36px;height:36px;background:var(--gold);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:600;flex-shrink:0}
+.checkpoint-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--earth)}
+.question{font-size:0.9rem;color:var(--earth-light);margin-bottom:8px;font-style:italic}
+.answer-box{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:white;padding:10px 18px;border-radius:8px;display:inline-block;font-weight:600;margin-bottom:12px}
+.bonus-facts{padding-left:15px}
+.bonus-fact{position:relative;padding-left:20px;margin-bottom:8px;font-size:0.88rem;color:var(--earth-light);line-height:1.5}
+.bonus-fact::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:0.8rem}
+.footer-note{text-align:center;padding:25px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:white;margin-top:auto}
+.footer-note p{font-size:0.95rem;opacity:0.95}
+</style>
+</head>
+<body>
+<div class="pw-overlay" id="pwOverlay">
+<div class="pw-box">
+<h2>🔐 Staff Access Only</h2>
+<p>Enter the password to view this page</p>
+<input type="password" id="pwInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPw()">
+<button onclick="checkPw()">Unlock</button>
+<p class="pw-error" id="pwError">Incorrect password</p>
+</div>
+</div>
+<script>
+function checkPw(){var p=document.getElementById("pwInput").value;if(p==="4Ever@MawunValley"){document.getElementById("pwOverlay").style.display="none";sessionStorage.setItem("mv_auth_v2","1");}else{document.getElementById("pwError").style.display="block";document.getElementById("pwInput").value="";}}
+if(sessionStorage.getItem("mv_auth_v2")==="1"){document.getElementById("pwOverlay").style.display="none";}
+</script>
+<div class="download-bar">
+  <button class="download-btn" onclick="downloadZip()">📥 Download Learning Guide (ZIP)</button>
+  <p class="progress-text" id="progressText">Generating pages...</p>
+</div>
+<div class="guide">
+  <section class="page cover-page" data-page="01-cover">
+    <div class="cover-emoji">🔥📚</div>
+    <h1>After-Game Reflection</h1>
+    <p class="tagline">Hard Mode Learning Guide</p>
+    <p class="subtitle">You tackled the deeper questions! This guide reveals all answers plus advanced botanical knowledge that even scientists find fascinating.</p>
+    <div class="badge">🏆 Hard Mode Complete — 25 pts each</div>
+  </section>
+  <section class="page content-page" data-page="02-checkpoints-1-3">
+    <div class="page-header"><h2>🌿 Checkpoints 1-3: Deep Knowledge</h2></div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">1</div><div class="checkpoint-name">Reception</div></div>
+      <p class="question">The mango originated from which region?</p>
+      <div class="answer-box">✓ C. South Asia</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">The earliest mango cultivation dates to 4000 BCE in India — one of humanity's oldest cultivated fruits.</p>
+        <p class="bonus-fact">Buddhist monks carried mangoes to Southeast Asia around 400 BCE, considering them sacred.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">2</div><div class="checkpoint-name">Herbal Remedies</div></div>
+      <p class="question">What compound in ginger gives it anti-inflammatory properties?</p>
+      <div class="answer-box">✓ C. Gingerol</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">When ginger is dried or cooked, gingerol transforms into shogaol — twice as pungent!</p>
+        <p class="bonus-fact">Gingerol inhibits the same inflammatory pathways as ibuprofen, naturally.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">3</div><div class="checkpoint-name">Banana Garden</div></div>
+      <p class="question">How many times does a banana plant fruit before dying?</p>
+      <div class="answer-box">✓ A. Once</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">After fruiting, the mother plant dies but produces "pups" — genetic clones from its base.</p>
+        <p class="bonus-fact">All Cavendish bananas are genetically identical clones — one giant organism worldwide.</p>
+      </div>
+    </div>
+  </section>
+  <section class="page content-page" data-page="03-checkpoints-4-6">
+    <div class="page-header"><h2>🌿 Checkpoints 4-6: Deep Knowledge</h2></div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">4</div><div class="checkpoint-name">Vegetable Garden</div></div>
+      <p class="question">Garlic's smell comes from sulfur compounds released when:</p>
+      <div class="answer-box">✓ C. Cells are damaged</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Garlic's smell is a defense mechanism — allicin is toxic to bacteria and pests.</p>
+        <p class="bonus-fact">Waiting 10 minutes after crushing maximizes allicin — more flavorful and medicinal.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">5</div><div class="checkpoint-name">Pineapple Garden</div></div>
+      <p class="question">Pineapple's meat-tenderizing enzyme is called:</p>
+      <div class="answer-box">✓ B. Bromelain</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Bromelain is so aggressive that pineapple workers can lose their fingerprints!</p>
+        <p class="bonus-fact">Beyond cooking, bromelain treats burns and is being studied for cancer treatment.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">6</div><div class="checkpoint-name">Strawberry Fields</div></div>
+      <p class="question">Strawberries are members of which plant family?</p>
+      <div class="answer-box">✓ C. Rose family (Rosaceae)</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Apples, pears, cherries, almonds, peaches, and roses are all strawberry cousins!</p>
+        <p class="bonus-fact">Modern garden strawberries were only created in 1750s France by crossing American species.</p>
+      </div>
+    </div>
+  </section>
+  <section class="page content-page" data-page="04-checkpoints-7-10">
+    <div class="page-header"><h2>🌿 Checkpoints 7-10: Deep Knowledge</h2></div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">7</div><div class="checkpoint-name">Citrus Garden</div></div>
+      <p class="question">The orange was first cultivated in which region?</p>
+      <div class="answer-box">✓ B. Southeast Asia</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">The word "orange" traveled Sanskrit → Persian → Spanish → English. The color was named after the fruit!</p>
+        <p class="bonus-fact">Oranges are a hybrid — ancient farmers crossed pomelo with mandarin thousands of years ago.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">8</div><div class="checkpoint-name">Mixed Fruits Garden</div></div>
+      <p class="question">What does 'rambutan' mean in Indonesian/Malay?</p>
+      <div class="answer-box">✓ C. Hairy</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">"Rambut" means "hair" — the fruit's name literally describes its fuzzy appearance!</p>
+        <p class="bonus-fact">The "hairs" change color as it ripens: green → yellow → red.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">9</div><div class="checkpoint-name">Jabuticaba Garden</div></div>
+      <p class="question">Jabuticaba is native to which country?</p>
+      <div class="answer-box">✓ C. Brazil</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">The fruit spoils within 3-4 days — why it's rarely found outside Brazil.</p>
+        <p class="bonus-fact">In Brazil, jabuticaba is fermented into wine and liqueur.</p>
+      </div>
+    </div>
+    <div class="checkpoint-block">
+      <div class="checkpoint-header"><div class="checkpoint-num">🏆</div><div class="checkpoint-name">Flower Jungle</div></div>
+      <p class="question">What compound in lavender is responsible for its calming effects?</p>
+      <div class="answer-box">✓ B. Linalool</div>
+      <div class="bonus-facts">
+        <p class="bonus-fact">Linalool is found in 200+ plants including mint, cinnamon, and citrus.</p>
+        <p class="bonus-fact">Studies show inhaled linalool reduces anxiety as effectively as Valium, without sedation.</p>
+      </div>
+    </div>
+    <div class="footer-note"><p>🔥 Hard mode conquered! You now know more about plants than most botany students.</p></div>
+  </section>
+</div>
+<script>
+async function downloadZip(){const btn=document.querySelector('.download-btn'),progressText=document.getElementById('progressText'),pages=document.querySelectorAll('.page');btn.disabled=true;btn.textContent='⏳ Generating...';progressText.style.display='block';const zip=new JSZip();try{for(let i=0;i<pages.length;i++){const page=pages[i],pageName=page.dataset.page;progressText.textContent=`Generating page ${i+1} of ${pages.length}...`;const canvas=await html2canvas(page,{scale:2,backgroundColor:'#FFFFFF',useCORS:true,width:700,height:900});const imgData=canvas.toDataURL('image/png').split(',')[1];zip.file(`${pageName}.png`,imgData,{base64:true});}progressText.textContent='Creating ZIP...';const content=await zip.generateAsync({type:'blob'});const link=document.createElement('a');link.href=URL.createObjectURL(content);link.download='garden-code-learning-hard.zip';link.click();}catch(err){alert('Error generating images.');}progressText.style.display='none';btn.disabled=false;btn.textContent='📥 Download Learning Guide (ZIP)';}
+</script>
+</body>
+</html>

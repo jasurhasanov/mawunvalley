@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Answer Key — The Garden Code</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F5;--sage:#7D8B6F;--gold:#d4a574;--purple:#6B4E71;--earth:#2d3a2d;--white:#FFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);line-height:1.6;padding:20px}
+.download-bar{text-align:center;padding:20px;background:var(--sage);border-radius:15px;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
+.download-btn{background:white;color:var(--earth);border:none;padding:14px 35px;font-size:1.1rem;font-weight:600;border-radius:30px;cursor:pointer;font-family:inherit;box-shadow:0 4px 15px rgba(0,0,0,0.2);margin:5px}
+.download-btn:hover{transform:translateY(-2px)}
+.download-btn:disabled{opacity:0.7;cursor:wait}
+.progress-text{color:white;margin-top:10px;font-size:0.9rem;display:none}
+.page{width:595px;height:842px;margin:0 auto 30px;background:white;border-radius:20px;padding:40px;box-shadow:0 10px 40px rgba(0,0,0,0.1);display:flex;flex-direction:column}
+.page.easy{border:3px solid var(--sage)}
+.page.hard{border:3px solid var(--gold)}
+.page.impossible{border:3px solid var(--purple)}
+.page.scoring{border:3px solid var(--sage)}
+.header{text-align:center;margin-bottom:20px;padding-bottom:15px;border-bottom:2px dashed currentColor}
+.header h1{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:5px}
+.header p{font-size:0.9rem;opacity:0.8}
+.easy .header{color:var(--sage);border-color:var(--sage)}
+.hard .header{color:var(--gold);border-color:var(--gold)}
+.impossible .header{color:var(--purple);border-color:var(--purple)}
+.scoring .header{color:var(--sage);border-color:var(--sage)}
+.warning{background:#fff3cd;border:2px solid #ffc107;border-radius:10px;padding:10px;margin-bottom:15px;text-align:center;font-weight:500;font-size:0.85rem}
+.answers-grid{display:grid;gap:6px;flex:1}
+.answer-row{display:grid;grid-template-columns:35px 1fr 150px;gap:10px;align-items:center;padding:10px;background:var(--cream);border-radius:8px;font-size:0.85rem}
+.checkpoint-num{width:28px;height:28px;background:currentColor;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.8rem}
+.easy .checkpoint-num{background:var(--sage)}
+.hard .checkpoint-num{background:var(--gold)}
+.impossible .checkpoint-num{background:var(--purple)}
+.location{font-weight:500}
+.location span{display:block;font-size:0.7rem;color:#888;font-weight:400}
+.answer{padding:5px 10px;border-radius:12px;text-align:center;font-weight:600;font-size:0.8rem}
+.easy .answer{background:var(--sage);color:white}
+.hard .answer{background:var(--gold);color:white}
+.impossible .answer{background:var(--purple);color:white}
+.footer-note{text-align:center;font-size:0.75rem;color:#888;margin-top:auto;padding-top:10px}
+.totals{padding:30px;background:linear-gradient(135deg,var(--sage),#87a878);border-radius:15px;color:white;flex:1;display:flex;flex-direction:column;justify-content:center}
+.totals h3{margin-bottom:20px;text-align:center;font-size:1.5rem}
+.totals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.total-box{background:rgba(255,255,255,0.2);padding:20px;border-radius:12px}
+.total-box .level{font-size:1rem;opacity:0.9;margin-bottom:8px}
+.total-box .score{font-size:1.5rem;font-weight:600}
+.badges-section{margin-top:25px;text-align:center}
+.badges-section h4{margin-bottom:15px;font-size:1.1rem}
+.badges-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.badge-item{background:rgba(255,255,255,0.15);padding:15px;border-radius:10px}
+.badge-item .emoji{font-size:2rem;margin-bottom:5px}
+.badge-item .name{font-weight:600}
+.badge-item .desc{font-size:0.8rem;opacity:0.9}
+@media print{.download-bar{display:none}.page{page-break-inside:avoid;margin-bottom:20px}}
+</style>
+</head>
+<body>
+
+<!-- Password Protection -->
+<style>
+.pw-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#2d3a2d 0%,#1a1f1a 100%);z-index:9999;display:flex;align-items:center;justify-content:center;font-family:"Outfit",sans-serif}
+.pw-box{background:white;padding:50px;border-radius:20px;text-align:center;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.pw-box h2{font-family:"Cormorant Garamond",serif;font-size:2rem;color:#5C4D3C;margin-bottom:10px}
+.pw-box p{color:#8B7355;margin-bottom:25px;font-size:0.95rem}
+.pw-box input{width:100%;padding:15px 20px;border:2px solid #e8c9a8;border-radius:10px;font-size:1rem;margin-bottom:15px;text-align:center;font-family:inherit}
+.pw-box input:focus{outline:none;border-color:#d4a574}
+.pw-box button{background:#d4a574;color:white;border:none;padding:15px 40px;border-radius:30px;font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.3s}
+.pw-box button:hover{background:#c17f59;transform:translateY(-2px)}
+.pw-error{color:#e74c3c;font-size:0.85rem;margin-top:10px;display:none}
+.pw-logo{font-size:3rem;margin-bottom:15px}
+</style>
+<div class="pw-overlay" id="pwOverlay">
+<div class="pw-box">
+<div class="pw-logo">🔐</div>
+<h2>Staff Access Only</h2>
+<p>Enter the password to view this page</p>
+<input type="password" id="pwInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPw()">
+<button onclick="checkPw()">Unlock</button>
+<p class="pw-error" id="pwError">Incorrect password</p>
+</div>
+</div>
+<script>
+function checkPw(){
+var p=document.getElementById("pwInput").value;
+if(p==="4Ever@MawunValley"){
+document.getElementById("pwOverlay").style.display="none";
+sessionStorage.setItem("mv_auth_v2","1");
+}else{
+document.getElementById("pwError").style.display="block";
+document.getElementById("pwInput").value="";
+}
+}
+if(sessionStorage.getItem("mv_auth_v2")==="1"){
+document.getElementById("pwOverlay").style.display="none";
+}
+</script>
+<!-- End Password Protection -->
+
+<div class="download-bar">
+  <button class="download-btn" onclick="downloadZip()">📥 Download All Pages (ZIP)</button>
+  <button class="download-btn" onclick="window.print()">🖨️ Print</button>
+  <p class="progress-text" id="progressText">Generating pages...</p>
+</div>
+
+<!-- Page 1: Easy Answers -->
+<div class="page easy" data-page="01-easy-answers">
+  <div class="header">
+    <h1>🟢 Easy Mode — Answer Key</h1>
+    <p>10 points per question · 100 points max</p>
+  </div>
+  <div class="warning">⚠️ CONFIDENTIAL — Staff Only</div>
+  <div class="answers-grid">
+    <div class="answer-row"><div class="checkpoint-num">1</div><div class="location">Reception<span>King of Tropical Fruits</span></div><div class="answer">B. Mango</div></div>
+    <div class="answer-row"><div class="checkpoint-num">2</div><div class="location">Herbal Remedies<span>Helps with digestion</span></div><div class="answer">B. Ginger</div></div>
+    <div class="answer-row"><div class="checkpoint-num">3</div><div class="location">Banana Garden<span>High in mineral</span></div><div class="answer">C. Potassium</div></div>
+    <div class="answer-row"><div class="checkpoint-num">4</div><div class="location">Vegetable Garden<span>Technically a fruit</span></div><div class="answer">B. Tomato</div></div>
+    <div class="answer-row"><div class="checkpoint-num">5</div><div class="location">Pineapple Garden<span>Growth time</span></div><div class="answer">C. 18-24 months</div></div>
+    <div class="answer-row"><div class="checkpoint-num">6</div><div class="location">Strawberry Fields<span>Seed location</span></div><div class="answer">B. On the outside</div></div>
+    <div class="answer-row"><div class="checkpoint-num">7</div><div class="location">Citrus Garden<span>Famous vitamin</span></div><div class="answer">C. Vitamin C</div></div>
+    <div class="answer-row"><div class="checkpoint-num">8</div><div class="location">Mixed Fruits<span>Dragon fruit bloom</span></div><div class="answer">C. Night</div></div>
+    <div class="answer-row"><div class="checkpoint-num">9</div><div class="location">Jabuticaba Garden<span>Where fruit grows</span></div><div class="answer">C. On the trunk</div></div>
+    <div class="answer-row"><div class="checkpoint-num">🏆</div><div class="location">Flower Jungle<span>Cooking + pest control</span></div><div class="answer">B. Marigold</div></div>
+  </div>
+  <p class="footer-note">The Garden Code — Easy Mode 🌿</p>
+</div>
+
+<!-- Page 2: Hard Answers -->
+<div class="page hard" data-page="02-hard-answers">
+  <div class="header">
+    <h1>🟡 Hard Mode — Answer Key</h1>
+    <p>25 points per question · 250 points max</p>
+  </div>
+  <div class="warning">⚠️ CONFIDENTIAL — Staff Only</div>
+  <div class="answers-grid">
+    <div class="answer-row"><div class="checkpoint-num">1</div><div class="location">Reception<span>Mango origin region</span></div><div class="answer">C. South Asia</div></div>
+    <div class="answer-row"><div class="checkpoint-num">2</div><div class="location">Herbal Remedies<span>Ginger compound</span></div><div class="answer">C. Gingerol</div></div>
+    <div class="answer-row"><div class="checkpoint-num">3</div><div class="location">Banana Garden<span>Times fruiting before death</span></div><div class="answer">A. Once</div></div>
+    <div class="answer-row"><div class="checkpoint-num">4</div><div class="location">Vegetable Garden<span>Garlic smell release</span></div><div class="answer">C. Cells damaged</div></div>
+    <div class="answer-row"><div class="checkpoint-num">5</div><div class="location">Pineapple Garden<span>Meat-tenderizing enzyme</span></div><div class="answer">B. Bromelain</div></div>
+    <div class="answer-row"><div class="checkpoint-num">6</div><div class="location">Strawberry Fields<span>Plant family</span></div><div class="answer">C. Rose family</div></div>
+    <div class="answer-row"><div class="checkpoint-num">7</div><div class="location">Citrus Garden<span>Orange origin</span></div><div class="answer">B. Southeast Asia</div></div>
+    <div class="answer-row"><div class="checkpoint-num">8</div><div class="location">Mixed Fruits<span>Rambutan meaning</span></div><div class="answer">C. Hairy</div></div>
+    <div class="answer-row"><div class="checkpoint-num">9</div><div class="location">Jabuticaba Garden<span>Native country</span></div><div class="answer">C. Brazil</div></div>
+    <div class="answer-row"><div class="checkpoint-num">🏆</div><div class="location">Flower Jungle<span>Lavender calming compound</span></div><div class="answer">B. Linalool</div></div>
+  </div>
+  <p class="footer-note">The Garden Code — Hard Mode 🔥</p>
+</div>
+
+<!-- Page 3: Impossible Answers -->
+<div class="page impossible" data-page="03-impossible-answers">
+  <div class="header">
+    <h1>🔴 Impossible Mode — Answer Key</h1>
+    <p>50 points per question · 500 points max</p>
+  </div>
+  <div class="warning">⚠️ CONFIDENTIAL — Staff Only</div>
+  <div class="answers-grid">
+    <div class="answer-row"><div class="checkpoint-num">1</div><div class="location">Reception<span>Mangiferin compound class</span></div><div class="answer">B. Xanthones</div></div>
+    <div class="answer-row"><div class="checkpoint-num">2</div><div class="location">Herbal Remedies<span>Curcumin bioavailability</span></div><div class="answer">B. Hepatic glucuronidation</div></div>
+    <div class="answer-row"><div class="checkpoint-num">3</div><div class="location">Banana Garden<span>Triploid chromosome #</span></div><div class="answer">B. 33</div></div>
+    <div class="answer-row"><div class="checkpoint-num">4</div><div class="location">Vegetable Garden<span>Tomato ripening hormone</span></div><div class="answer">C. Ethylene</div></div>
+    <div class="answer-row"><div class="checkpoint-num">5</div><div class="location">Pineapple Garden<span>CAM stands for</span></div><div class="answer">B. Crassulacean Acid Metabolism</div></div>
+    <div class="answer-row"><div class="checkpoint-num">6</div><div class="location">Strawberry Fields<span>Octoploid sets</span></div><div class="answer">C. 8</div></div>
+    <div class="answer-row"><div class="checkpoint-num">7</div><div class="location">Citrus Garden<span>Limonene class</span></div><div class="answer">B. Monoterpene</div></div>
+    <div class="answer-row"><div class="checkpoint-num">8</div><div class="location">Mixed Fruits<span>Dragon fruit family</span></div><div class="answer">B. Cactaceae</div></div>
+    <div class="answer-row"><div class="checkpoint-num">9</div><div class="location">Jabuticaba Garden<span>Anthocyanin sugar</span></div><div class="answer">B. Glucose</div></div>
+    <div class="answer-row"><div class="checkpoint-num">🏆</div><div class="location">Flower Jungle<span>Linalool receptor</span></div><div class="answer">B. GABA-A</div></div>
+  </div>
+  <p class="footer-note">The Garden Code — Impossible Mode 💀</p>
+</div>
+
+<!-- Page 4: Scoring Guide -->
+<div class="page scoring" data-page="04-scoring-guide">
+  <div class="header">
+    <h1>🎯 Scoring Guide</h1>
+    <p>The Garden Code — Staff Reference</p>
+  </div>
+  <div class="warning">⚠️ CONFIDENTIAL — Staff Only</div>
+  <div class="totals">
+    <h3>Point Values</h3>
+    <div class="totals-grid">
+      <div class="total-box"><div class="level">🟢 Easy</div><div class="score">10 × 10 = 100</div></div>
+      <div class="total-box"><div class="level">🟡 Hard</div><div class="score">25 × 10 = 250</div></div>
+      <div class="total-box"><div class="level">🔴 Impossible</div><div class="score">50 × 10 = 500</div></div>
+    </div>
+    <div class="badges-section">
+      <h4>🏅 Badges to Award</h4>
+      <div class="badges-grid">
+        <div class="badge-item"><div class="emoji">🌱</div><div class="name">Code Cracker</div><div class="desc">Completed Easy Mode</div></div>
+        <div class="badge-item"><div class="emoji">🌿</div><div class="name">Botanist</div><div class="desc">Completed Hard Mode</div></div>
+        <div class="badge-item"><div class="emoji">🏆</div><div class="name">Plant Scientist</div><div class="desc">Completed Impossible</div></div>
+        <div class="badge-item"><div class="emoji">⭐</div><div class="name">Perfect Score</div><div class="desc">100% on any mode</div></div>
+      </div>
+    </div>
+  </div>
+  <p class="footer-note">The Garden Code — Mawun Valley Farm 🌿</p>
+</div>
+
+<script>
+async function downloadZip() {
+  const btn = document.querySelector('.download-btn');
+  const progressText = document.getElementById('progressText');
+  const pages = document.querySelectorAll('.page');
+  
+  btn.disabled = true;
+  btn.textContent = '⏳ Generating...';
+  progressText.style.display = 'block';
+  
+  const zip = new JSZip();
+  
+  try {
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i];
+      const pageName = page.dataset.page;
+      progressText.textContent = 'Generating page ' + (i+1) + ' of ' + pages.length + '...';
+      
+      const canvas = await html2canvas(page, {
+        scale: 2,
+        backgroundColor: '#FFFFFF',
+        useCORS: true,
+        width: 700,
+        height: 900
+      });
+      
+      const imgData = canvas.toDataURL('image/png').split(',')[1];
+      zip.file(pageName + '.png', imgData, {base64: true});
+    }
+    
+    progressText.textContent = 'Creating ZIP file...';
+    const content = await zip.generateAsync({type: 'blob'});
+    
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(content);
+    link.download = 'garden-code-answer-key.zip';
+    link.click();
+    
+  } catch (err) {
+    alert('Error generating images. Please try again.');
+    console.error(err);
+  }
+  
+  progressText.style.display = 'none';
+  btn.disabled = false;
+  btn.textContent = '📥 Download All Pages (ZIP)';
+}
+</script>
+
+</body>
+</html>

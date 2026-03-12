@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Garden Code — Impossible 💀</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F5;--purple:#6B4E71;--purple-light:#9B7FA0;--cyan:#00d4ff;--earth:#5C4D3C;--earth-light:#8B7355;--white:#FFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);line-height:1.6}
+.download-bar{text-align:center;padding:25px;background:var(--purple)}
+.download-btn{background:white;color:var(--earth);border:none;padding:16px 40px;font-size:1.1rem;font-weight:600;border-radius:30px;cursor:pointer;font-family:inherit;box-shadow:0 4px 15px rgba(0,0,0,0.2);transition:all 0.3s}
+.download-btn:hover{transform:translateY(-2px)}
+.download-btn:disabled{opacity:0.7;cursor:wait}
+.progress-text{color:white;margin-top:10px;font-size:0.9rem;display:none}
+.journal{max-width:595px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
+.page{width:595px;height:842px;padding:40px;background:var(--white);border-bottom:3px dashed var(--purple-light);display:flex;flex-direction:column}
+
+/* PHOTO COVER */
+.page.cover-page{
+  background:url('cover-impossible.png') center center / cover no-repeat;
+  color:white;
+  text-align:center;
+  justify-content:space-between;
+  position:relative;
+  padding:0;
+}
+.cover-page::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
+}
+.cover-inner{
+  position:relative;
+  z-index:1;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  padding:40px;
+}
+.cover-badge{
+  align-self:flex-end;
+  background:rgba(107,78,113,0.9);
+  backdrop-filter:blur(10px);
+  padding:10px 25px;
+  border-radius:25px;
+  font-size:0.9rem;
+  font-weight:600;
+  letter-spacing:0.05em;
+  border:2px solid rgba(0,212,255,0.4);
+  box-shadow:0 4px 20px rgba(0,212,255,0.3);
+}
+.cover-content{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.brand-mark{
+  font-size:0.8rem;
+  text-transform:uppercase;
+  letter-spacing:0.35em;
+  opacity:0.85;
+  margin-bottom:15px;
+  text-shadow:0 2px 15px rgba(0,0,0,0.7);
+}
+.cover-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;
+  font-weight:700;
+  line-height:1;
+  margin-bottom:15px;
+  text-shadow:0 0 40px rgba(0,212,255,0.5), 0 4px 30px rgba(0,0,0,0.5);
+}
+.cover-tagline{
+  font-size:1.5rem;
+  font-weight:400;
+  letter-spacing:0.15em;
+  text-shadow:0 2px 15px rgba(0,0,0,0.5);
+  margin-bottom:10px;
+}
+.cover-subtitle{
+  font-size:1rem;
+  opacity:0.85;
+  font-style:italic;
+  text-shadow:0 2px 10px rgba(0,0,0,0.5);
+  margin-bottom:15px;
+}
+.warning-banner{
+  background:rgba(255,50,50,0.25);
+  backdrop-filter:blur(5px);
+  border:1px solid rgba(255,100,100,0.5);
+  border-radius:8px;
+  padding:10px 25px;
+  font-size:0.9rem;
+  font-weight:500;
+  letter-spacing:0.05em;
+  box-shadow:0 0 20px rgba(255,50,50,0.2);
+}
+.cover-bottom{margin-top:auto}
+.name-section{
+  padding:20px 30px;
+  margin-bottom:20px;
+}
+.name-label{text-shadow:0 2px 10px rgba(0,0,0,0.9);
+  font-size:0.75rem;
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+  opacity:0.9;
+  margin-bottom:10px;
+}
+.name-line{
+  width:280px;
+  height:2px;
+  background:rgba(0,212,255,0.6);
+  margin:0 auto;
+  box-shadow:0 0 10px rgba(0,212,255,0.5);
+}
+.how-to-play{
+  padding:20px 25px;
+  text-align:left;
+}
+.how-to-play h3{text-shadow:0 2px 10px rgba(0,0,0,0.9);
+  font-size:0.85rem;
+  text-transform:uppercase;
+  letter-spacing:0.15em;
+  margin-bottom:12px;
+  text-align:center;
+}
+.how-to-play ol{text-shadow:0 2px 8px rgba(0,0,0,0.9);font-size:0.85rem;padding-left:22px;opacity:0.9}
+.how-to-play li{text-shadow:0 2px 8px rgba(0,0,0,0.9);margin-bottom:6px;line-height:1.4}
+.how-to-play strong{font-weight:600}
+
+.checkpoint-page{justify-content:flex-start}
+.checkpoint-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+.checkpoint-num{width:55px;height:55px;background:var(--purple);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:600;flex-shrink:0}
+.checkpoint-title h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--earth)}
+.checkpoint-title p{color:var(--purple);font-size:0.95rem}
+.walk-instruction{background:rgba(107,78,113,0.1);padding:15px;border-radius:10px;margin-bottom:20px;font-style:italic;color:var(--earth-light);font-size:0.95rem}
+.question-box{background:var(--cream);padding:25px;border-radius:12px;margin-bottom:20px}
+.question-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--purple);margin-bottom:10px}
+.question-text{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--earth);line-height:1.4}
+.options-list{list-style:none;margin-bottom:20px;flex:1}
+.option-item{display:flex;align-items:center;gap:15px;padding:12px;border:2px solid rgba(107,78,113,0.2);border-radius:10px;margin-bottom:8px}
+.option-checkbox{width:24px;height:24px;border:2px solid var(--purple);border-radius:50%;flex-shrink:0}
+.option-text{color:var(--earth);font-size:0.95rem}
+.fun-fact-box{background:linear-gradient(135deg,rgba(107,78,113,0.1),rgba(155,127,160,0.1));padding:18px;border-left:4px solid var(--purple);border-radius:0 10px 10px 0}
+.fun-fact-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--purple);margin-bottom:8px}
+.fun-fact-text{color:var(--earth-light);font-size:0.85rem;line-height:1.5}
+.completion-page{text-align:center;justify-content:center;background:linear-gradient(135deg,var(--cream),var(--white))}
+.completion-page h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--earth);margin-bottom:15px}
+.trophy{font-size:6rem;margin-bottom:20px}
+.score-box{display:inline-block;background:var(--purple);color:var(--white);padding:18px 50px;border-radius:30px;font-size:1.3rem;margin:25px 0}
+.stamp-area{margin-top:30px;padding:40px 60px;border:3px dashed var(--purple);border-radius:15px;display:inline-block}
+.stamp-area p{color:var(--purple);font-size:1rem}
+</style>
+</head>
+<body>
+
+<!-- Password Protection -->
+<style>
+.pw-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#2d3a2d 0%,#1a1f1a 100%);z-index:9999;display:flex;align-items:center;justify-content:center;font-family:"Outfit",sans-serif}
+.pw-box{background:white;padding:50px;border-radius:20px;text-align:center;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.pw-box h2{font-family:"Cormorant Garamond",serif;font-size:2rem;color:#5C4D3C;margin-bottom:10px}
+.pw-box p{color:#8B7355;margin-bottom:25px;font-size:0.95rem}
+.pw-box input{width:100%;padding:15px 20px;border:2px solid #e8c9a8;border-radius:10px;font-size:1rem;margin-bottom:15px;text-align:center;font-family:inherit}
+.pw-box input:focus{outline:none;border-color:#d4a574}
+.pw-box button{background:#d4a574;color:white;border:none;padding:15px 40px;border-radius:30px;font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.3s}
+.pw-box button:hover{background:#c17f59;transform:translateY(-2px)}
+.pw-error{color:#e74c3c;font-size:0.85rem;margin-top:10px;display:none}
+.pw-logo{font-size:3rem;margin-bottom:15px}
+</style>
+<div class="pw-overlay" id="pwOverlay">
+<div class="pw-box">
+<div class="pw-logo">🔐</div>
+<h2>Staff Access Only</h2>
+<p>Enter the password to view this page</p>
+<input type="password" id="pwInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPw()">
+<button onclick="checkPw()">Unlock</button>
+<p class="pw-error" id="pwError">Incorrect password</p>
+</div>
+</div>
+<script>
+function checkPw(){
+var p=document.getElementById("pwInput").value;
+if(p==="4Ever@MawunValley"){
+document.getElementById("pwOverlay").style.display="none";
+sessionStorage.setItem("mv_auth_v2","1");
+}else{
+document.getElementById("pwError").style.display="block";
+document.getElementById("pwInput").value="";
+}
+}
+if(sessionStorage.getItem("mv_auth_v2")==="1"){
+document.getElementById("pwOverlay").style.display="none";
+}
+</script>
+<!-- End Password Protection -->
+
+<div class="download-bar">
+  <button class="download-btn" onclick="downloadZip()">📥 Download All Pages (ZIP)</button>
+  <p class="progress-text" id="progressText">Generating pages...</p>
+</div>
+
+<div class="journal">
+  
+  <section class="page cover-page" data-page="01-cover">
+    <div class="cover-inner">
+      <div class="cover-badge">💀 Impossible — 50 pts each</div>
+      <div class="cover-content">
+        <p class="brand-mark">Mawun Valley Farm</p>
+        <h1 class="cover-title">The Garden Code</h1>
+        <p class="cover-tagline">Crack it. Claim your reward.</p>
+        <p class="cover-subtitle">PhD-level challenges. Legend status awaits.</p>
+        <div class="warning-banner">⚠️ WARNING: Only 3% of explorers complete this mode</div>
+      </div>
+      <div class="cover-bottom">
+        <div class="name-section">
+          <p class="name-label">Scientist's Name</p>
+          <div class="name-line"></div>
+        </div>
+        <div class="how-to-play">
+          <h3>☠️ Impossible Mode</h3>
+          <ol>
+            <li><strong>10 PhD-level challenges</strong> — molecular biology, genetics, chemistry</li>
+            <li><strong>50 points per answer</strong> — maximum 500 points</li>
+            <li><strong>No hints available</strong> — pure knowledge only</li>
+            <li><strong>Complete to become a legend</strong> at Mawun Valley</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page checkpoint-page" data-page="02-checkpoint-1">
+    <div class="checkpoint-header"><div class="checkpoint-num">1</div><div class="checkpoint-title"><h3>Reception</h3><p>Start your journey</p></div></div>
+    <div class="walk-instruction">📍 Walk to the Reception desk</div>
+    <div class="question-box"><p class="question-label">PhD Challenge</p><p class="question-text">Mangiferin, found in mango leaves and bark, belongs to which class of compounds?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Alkaloids</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Xanthones</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Terpenes</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Flavonoids</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="03-checkpoint-2">
+    <div class="checkpoint-header"><div class="checkpoint-num">2</div><div class="checkpoint-title"><h3>Herbal Remedies</h3><p>Traditional healing</p></div></div>
+    <div class="walk-instruction">📍 Walk to Herbal Remedies area</div>
+    <div class="question-box"><p class="question-label">PhD Challenge</p><p class="question-text">Curcumin's bioavailability is severely limited due to its rapid:</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Renal excretion</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Hepatic glucuronidation</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Plasma protein binding</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Intestinal absorption</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="04-checkpoint-3">
+    <div class="checkpoint-header"><div class="checkpoint-num">3</div><div class="checkpoint-title"><h3>Banana Garden</h3><p>Dozens of varieties</p></div></div>
+    <div class="walk-instruction">📍 Continue to Banana Garden</div>
+    <div class="question-box"><p class="question-label">PhD Challenge</p><p class="question-text">Most commercial banana cultivars are sterile triploids (3n). What is their chromosome number?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. 22</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. 33</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. 44</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. 66</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="05-checkpoint-4">
+    <div class="checkpoint-header"><div class="checkpoint-num">4</div><div class="checkpoint-title"><h3>Vegetable Garden</h3><p>From soil to table</p></div></div>
+    <div class="walk-instruction">📍 Head to the Vegetable Garden</div>
+    <div class="question-box"><p class="question-label">PhD Challenge</p><p class="question-text">Tomato fruit ripening is regulated primarily by which gaseous phytohormone?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Auxin</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Gibberellin</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Ethylene</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Abscisic acid</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="06-checkpoint-5">
+    <div class="checkpoint-header"><div class="checkpoint-num">5</div><div class="checkpoint-title"><h3>Pineapple Garden</h3><p>Sweet treasures</p></div></div>
+    <div class="walk-instruction">📍 Walk to the Pineapple Garden</div>
+    <div class="question-box"><p class="question-label">PhD Challenge</p><p class="question-text">Pineapple uses CAM photosynthesis. What does CAM stand for?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Carbon Assimilation Mode</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Crassulacean Acid Metabolism</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Chloroplast Activity Mechanism</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Cyclic Adenine Metabolism</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="07-checkpoint-6">
+    <div class="checkpoint-header"><div class="checkpoint-num">6</div><div class="checkpoint-title"><h3>Strawberry Fields</h3><p>Tropical berries</p></div></div>
+    <div class="walk-instruction">📍 Continue to Strawberry Fields</div>
+    <div class="question-box"><p class="question-label">PhD Challenge</p><p class="question-text">Cultivated strawberry (Fragaria × ananassa) is an octoploid. How many chromosome sets?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. 4</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. 6</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. 8</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. 10</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="08-checkpoint-7">
+    <div class="checkpoint-header"><div class="checkpoint-num">7</div><div class="checkpoint-title"><h3>Citrus Garden</h3><p>Lemon, lime, orange</p></div></div>
+    <div class="walk-instruction">📍 Walk to the Citrus Garden</div>
+    <div class="question-box"><p class="question-label">PhD Challenge</p><p class="question-text">Limonene, the main aromatic compound in citrus peel, is classified as a:</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Sesquiterpene</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Monoterpene</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Diterpene</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Triterpene</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="09-checkpoint-8">
+    <div class="checkpoint-header"><div class="checkpoint-num">8</div><div class="checkpoint-title"><h3>Mixed Fruits Garden</h3><p>Tropical abundance</p></div></div>
+    <div class="walk-instruction">📍 Head to the Mixed Fruits Garden</div>
+    <div class="question-box"><p class="question-label">PhD Challenge</p><p class="question-text">Dragon fruit (Hylocereus) belongs to which plant family?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Passifloraceae</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Cactaceae</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Bromeliaceae</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Musaceae</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="10-checkpoint-9">
+    <div class="checkpoint-header"><div class="checkpoint-num">9</div><div class="checkpoint-title"><h3>Jabuticaba Garden</h3><p>Brazilian treasure</p></div></div>
+    <div class="walk-instruction">📍 Find the Jabuticaba Garden</div>
+    <div class="question-box"><p class="question-label">PhD Challenge</p><p class="question-text">Jabuticaba's dark color comes from anthocyanins. Which sugar is typically attached?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Fructose</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Glucose</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Sucrose</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Maltose</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="11-checkpoint-10">
+    <div class="checkpoint-header"><div class="checkpoint-num">🏆</div><div class="checkpoint-title"><h3>Flower Jungle</h3><p>The Finish Line!</p></div></div>
+    <div class="walk-instruction">📍 Your final stop: the colorful Flower Jungle</div>
+    <div class="question-box"><p class="question-label">Final PhD Challenge</p><p class="question-text">Linalool in lavender acts on which neurotransmitter receptor to produce calming effects?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Dopamine D2</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. GABA-A</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Serotonin 5-HT1A</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Acetylcholine nicotinic</span></li>
+    </ul>
+  </section>
+
+  <section class="page completion-page" data-page="12-completion">
+    <div class="trophy">🏆</div>
+    <h2>Code Cracked!</h2>
+    <p>Impossible Mode Complete — You're a legend!</p>
+    <div class="score-box">___/500 Points</div>
+    <div class="stamp-area"><p>☠️ Staff stamp here ☠️</p></div>
+  </section>
+
+</div>
+
+<script>
+async function downloadZip() {
+  const btn = document.querySelector('.download-btn');
+  const progressText = document.getElementById('progressText');
+  const pages = document.querySelectorAll('.page');
+  btn.disabled = true;
+  btn.textContent = '⏳ Generating...';
+  progressText.style.display = 'block';
+  const zip = new JSZip();
+  try {
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i];
+      const pageName = page.dataset.page;
+      progressText.textContent = 'Generating page ' + (i+1) + ' of ' + pages.length + '...';
+      const canvas = await html2canvas(page, {scale: 2, backgroundColor: '#FFFFFF', useCORS: true, width: 700, height: 900});
+      const imgData = canvas.toDataURL('image/png').split(',')[1];
+      zip.file(pageName + '.png', imgData, {base64: true});
+    }
+    progressText.textContent = 'Creating ZIP file...';
+    const content = await zip.generateAsync({type: 'blob'});
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(content);
+    link.download = 'garden-code-impossible.zip';
+    link.click();
+  } catch (err) { alert('Error generating images.'); console.error(err); }
+  progressText.style.display = 'none';
+  btn.disabled = false;
+  btn.textContent = '📥 Download All Pages (ZIP)';
+}
+</script>
+
+</body>
+</html>

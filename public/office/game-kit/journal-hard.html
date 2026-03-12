@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Garden Code — Hard 🔥</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F5;--gold:#d4a574;--gold-light:#e8c9a8;--earth:#5C4D3C;--earth-light:#8B7355;--white:#FFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--earth);line-height:1.6}
+.download-bar{text-align:center;padding:25px;background:var(--gold)}
+.download-btn{background:white;color:var(--earth);border:none;padding:16px 40px;font-size:1.1rem;font-weight:600;border-radius:30px;cursor:pointer;font-family:inherit;box-shadow:0 4px 15px rgba(0,0,0,0.2);transition:all 0.3s}
+.download-btn:hover{transform:translateY(-2px)}
+.download-btn:disabled{opacity:0.7;cursor:wait}
+.progress-text{color:white;margin-top:10px;font-size:0.9rem;display:none}
+.journal{max-width:595px;margin:0 auto;background:var(--white);box-shadow:0 0 40px rgba(92,77,60,0.1)}
+.page{width:595px;height:842px;padding:40px;background:var(--white);border-bottom:3px dashed var(--gold-light);display:flex;flex-direction:column}
+
+/* PHOTO COVER */
+.page.cover-page{
+  background:url('cover-hard.png') center center / cover no-repeat;
+  color:white;
+  text-align:center;
+  justify-content:space-between;
+  position:relative;
+  padding:0;
+}
+.cover-page::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%);
+}
+.cover-inner{
+  position:relative;
+  z-index:1;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  padding:40px;
+}
+.cover-badge{
+  align-self:flex-end;
+  background:rgba(212,165,116,0.9);
+  backdrop-filter:blur(10px);
+  padding:10px 25px;
+  border-radius:25px;
+  font-size:0.9rem;
+  font-weight:600;
+  letter-spacing:0.05em;
+  border:2px solid rgba(255,255,255,0.3);
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+.cover-content{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.brand-mark{
+  font-size:0.8rem;
+  text-transform:uppercase;
+  letter-spacing:0.35em;
+  opacity:0.9;
+  margin-bottom:15px;
+  text-shadow:0 2px 10px rgba(0,0,0,0.5);
+}
+.cover-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;
+  font-weight:700;
+  line-height:1;
+  margin-bottom:15px;
+  text-shadow:0 4px 30px rgba(0,0,0,0.5);
+}
+.cover-tagline{
+  font-size:1.5rem;
+  font-weight:400;
+  letter-spacing:0.15em;
+  text-shadow:0 2px 15px rgba(0,0,0,0.5);
+  margin-bottom:10px;
+}
+.cover-subtitle{
+  font-size:1rem;
+  opacity:0.85;
+  font-style:italic;
+  text-shadow:0 2px 10px rgba(0,0,0,0.5);
+}
+.cover-bottom{margin-top:auto}
+.name-section{
+  padding:20px 30px;
+  margin-bottom:20px;
+}
+.name-label{text-shadow:0 2px 10px rgba(0,0,0,0.9);
+  font-size:0.75rem;
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+  opacity:0.9;
+  margin-bottom:10px;
+}
+.name-line{
+  width:280px;
+  height:2px;
+  background:rgba(255,255,255,0.6);
+  margin:0 auto;
+}
+.how-to-play{
+  padding:20px 25px;
+  text-align:left;
+}
+.how-to-play h3{text-shadow:0 2px 10px rgba(0,0,0,0.9);
+  font-size:0.85rem;
+  text-transform:uppercase;
+  letter-spacing:0.15em;
+  margin-bottom:12px;
+  text-align:center;
+}
+.how-to-play ol{text-shadow:0 2px 8px rgba(0,0,0,0.9);font-size:0.85rem;padding-left:22px;opacity:0.95}
+.how-to-play li{text-shadow:0 2px 8px rgba(0,0,0,0.9);margin-bottom:6px;line-height:1.4}
+.how-to-play strong{font-weight:600}
+
+.checkpoint-page{justify-content:flex-start}
+.checkpoint-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+.checkpoint-num{width:55px;height:55px;background:var(--gold);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:600;flex-shrink:0}
+.checkpoint-title h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--earth)}
+.checkpoint-title p{color:var(--gold);font-size:0.95rem}
+.walk-instruction{background:rgba(212,165,116,0.1);padding:15px;border-radius:10px;margin-bottom:20px;font-style:italic;color:var(--earth-light);font-size:0.95rem}
+.question-box{background:var(--cream);padding:25px;border-radius:12px;margin-bottom:20px}
+.question-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:10px}
+.question-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--earth);line-height:1.4}
+.options-list{list-style:none;margin-bottom:20px;flex:1}
+.option-item{display:flex;align-items:center;gap:15px;padding:14px;border:2px solid rgba(212,165,116,0.2);border-radius:10px;margin-bottom:10px}
+.option-checkbox{width:24px;height:24px;border:2px solid var(--gold);border-radius:50%;flex-shrink:0}
+.option-text{color:var(--earth);font-size:1rem}
+.fun-fact-box{background:linear-gradient(135deg,rgba(212,165,116,0.1),rgba(232,201,168,0.1));padding:18px;border-left:4px solid var(--gold);border-radius:0 10px 10px 0}
+.fun-fact-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:8px}
+.fun-fact-text{color:var(--earth-light);font-size:0.9rem;line-height:1.5}
+.completion-page{text-align:center;justify-content:center;background:linear-gradient(135deg,var(--cream),var(--white))}
+.completion-page h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--earth);margin-bottom:15px}
+.trophy{font-size:6rem;margin-bottom:20px}
+.score-box{display:inline-block;background:var(--gold);color:var(--white);padding:18px 50px;border-radius:30px;font-size:1.3rem;margin:25px 0}
+.stamp-area{margin-top:30px;padding:40px 60px;border:3px dashed var(--gold);border-radius:15px;display:inline-block}
+.stamp-area p{color:var(--gold);font-size:1rem}
+</style>
+</head>
+<body>
+
+<!-- Password Protection -->
+<style>
+.pw-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#2d3a2d 0%,#1a1f1a 100%);z-index:9999;display:flex;align-items:center;justify-content:center;font-family:"Outfit",sans-serif}
+.pw-box{background:white;padding:50px;border-radius:20px;text-align:center;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.pw-box h2{font-family:"Cormorant Garamond",serif;font-size:2rem;color:#5C4D3C;margin-bottom:10px}
+.pw-box p{color:#8B7355;margin-bottom:25px;font-size:0.95rem}
+.pw-box input{width:100%;padding:15px 20px;border:2px solid #e8c9a8;border-radius:10px;font-size:1rem;margin-bottom:15px;text-align:center;font-family:inherit}
+.pw-box input:focus{outline:none;border-color:#d4a574}
+.pw-box button{background:#d4a574;color:white;border:none;padding:15px 40px;border-radius:30px;font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.3s}
+.pw-box button:hover{background:#c17f59;transform:translateY(-2px)}
+.pw-error{color:#e74c3c;font-size:0.85rem;margin-top:10px;display:none}
+.pw-logo{font-size:3rem;margin-bottom:15px}
+</style>
+<div class="pw-overlay" id="pwOverlay">
+<div class="pw-box">
+<div class="pw-logo">🔐</div>
+<h2>Staff Access Only</h2>
+<p>Enter the password to view this page</p>
+<input type="password" id="pwInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPw()">
+<button onclick="checkPw()">Unlock</button>
+<p class="pw-error" id="pwError">Incorrect password</p>
+</div>
+</div>
+<script>
+function checkPw(){
+var p=document.getElementById("pwInput").value;
+if(p==="4Ever@MawunValley"){
+document.getElementById("pwOverlay").style.display="none";
+sessionStorage.setItem("mv_auth_v2","1");
+}else{
+document.getElementById("pwError").style.display="block";
+document.getElementById("pwInput").value="";
+}
+}
+if(sessionStorage.getItem("mv_auth_v2")==="1"){
+document.getElementById("pwOverlay").style.display="none";
+}
+</script>
+<!-- End Password Protection -->
+
+<div class="download-bar">
+  <button class="download-btn" onclick="downloadZip()">📥 Download All Pages (ZIP)</button>
+  <p class="progress-text" id="progressText">Generating pages...</p>
+</div>
+
+<div class="journal">
+  
+  <section class="page cover-page" data-page="01-cover">
+    <div class="cover-inner">
+      <div class="cover-badge">🔥 Hard Mode — 25 pts each</div>
+      <div class="cover-content">
+        <p class="brand-mark">Mawun Valley Farm</p>
+        <h1 class="cover-title">The Garden Code</h1>
+        <p class="cover-tagline">Crack it. Claim your reward.</p>
+        <p class="cover-subtitle">Deeper knowledge. Greater glory.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="name-section">
+          <p class="name-label">Botanist's Name</p>
+          <div class="name-line"></div>
+        </div>
+        <div class="how-to-play">
+          <h3>🔥 Hard Mode Challenge</h3>
+          <ol>
+            <li><strong>Explore 10 checkpoints</strong> with expert-level questions</li>
+            <li><strong>Think deeper</strong> — origins, compounds, science</li>
+            <li><strong>25 points per answer</strong> — prove your knowledge</li>
+            <li><strong>Return to Reception</strong> to claim your Botanist badge!</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page checkpoint-page" data-page="02-checkpoint-1">
+    <div class="checkpoint-header"><div class="checkpoint-num">1</div><div class="checkpoint-title"><h3>Reception</h3><p>Start your journey</p></div></div>
+    <div class="walk-instruction">📍 Walk to the Reception desk</div>
+    <div class="question-box"><p class="question-label">Hard Challenge</p><p class="question-text">The mango (Mangifera indica) originated from which region?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Central America</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Southeast Asia</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. South Asia</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Africa</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="03-checkpoint-2">
+    <div class="checkpoint-header"><div class="checkpoint-num">2</div><div class="checkpoint-title"><h3>Herbal Remedies</h3><p>Traditional healing</p></div></div>
+    <div class="walk-instruction">📍 Walk to Herbal Remedies area</div>
+    <div class="question-box"><p class="question-label">Hard Challenge</p><p class="question-text">What compound in ginger gives it anti-inflammatory properties?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Capsaicin</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Curcumin</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Gingerol</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Allicin</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="04-checkpoint-3">
+    <div class="checkpoint-header"><div class="checkpoint-num">3</div><div class="checkpoint-title"><h3>Banana Garden</h3><p>Dozens of varieties</p></div></div>
+    <div class="walk-instruction">📍 Continue to Banana Garden</div>
+    <div class="question-box"><p class="question-label">Hard Challenge</p><p class="question-text">How many times does a banana plant fruit before dying?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Once</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Twice</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Three times</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Continuously</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="05-checkpoint-4">
+    <div class="checkpoint-header"><div class="checkpoint-num">4</div><div class="checkpoint-title"><h3>Vegetable Garden</h3><p>From soil to table</p></div></div>
+    <div class="walk-instruction">📍 Head to the Vegetable Garden</div>
+    <div class="question-box"><p class="question-label">Hard Challenge</p><p class="question-text">Garlic's strong smell comes from sulfur compounds released when:</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. It ripens</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. It's exposed to sunlight</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Cells are damaged</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. It's heated</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="06-checkpoint-5">
+    <div class="checkpoint-header"><div class="checkpoint-num">5</div><div class="checkpoint-title"><h3>Pineapple Garden</h3><p>Sweet treasures</p></div></div>
+    <div class="walk-instruction">📍 Walk to the Pineapple Garden</div>
+    <div class="question-box"><p class="question-label">Hard Challenge</p><p class="question-text">Pineapple contains an enzyme that can tenderize meat. What is it called?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Papain</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Bromelain</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Rennet</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Lipase</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="07-checkpoint-6">
+    <div class="checkpoint-header"><div class="checkpoint-num">6</div><div class="checkpoint-title"><h3>Strawberry Fields</h3><p>Tropical berries</p></div></div>
+    <div class="walk-instruction">📍 Continue to Strawberry Fields</div>
+    <div class="question-box"><p class="question-label">Hard Challenge</p><p class="question-text">Strawberries are members of which plant family?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Nightshade family</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Citrus family</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Rose family</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Mint family</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="08-checkpoint-7">
+    <div class="checkpoint-header"><div class="checkpoint-num">7</div><div class="checkpoint-title"><h3>Citrus Garden</h3><p>Lemon, lime, orange</p></div></div>
+    <div class="walk-instruction">📍 Walk to the Citrus Garden</div>
+    <div class="question-box"><p class="question-label">Hard Challenge</p><p class="question-text">The orange was first cultivated in which region?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Mediterranean</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Southeast Asia</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Central America</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Africa</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="09-checkpoint-8">
+    <div class="checkpoint-header"><div class="checkpoint-num">8</div><div class="checkpoint-title"><h3>Mixed Fruits Garden</h3><p>Tropical abundance</p></div></div>
+    <div class="walk-instruction">📍 Head to the Mixed Fruits Garden</div>
+    <div class="question-box"><p class="question-label">Hard Challenge</p><p class="question-text">What does 'rambutan' mean in Indonesian/Malay?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Red ball</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Sweet fruit</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Hairy</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Tropical gem</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="10-checkpoint-9">
+    <div class="checkpoint-header"><div class="checkpoint-num">9</div><div class="checkpoint-title"><h3>Jabuticaba Garden</h3><p>Brazilian treasure</p></div></div>
+    <div class="walk-instruction">📍 Find the Jabuticaba Garden</div>
+    <div class="question-box"><p class="question-label">Hard Challenge</p><p class="question-text">Jabuticaba is native to which country?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Indonesia</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Thailand</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Brazil</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Mexico</span></li>
+    </ul>
+  </section>
+
+  <section class="page checkpoint-page" data-page="11-checkpoint-10">
+    <div class="checkpoint-header"><div class="checkpoint-num">🏆</div><div class="checkpoint-title"><h3>Flower Jungle</h3><p>The Finish Line!</p></div></div>
+    <div class="walk-instruction">📍 Your final stop: the colorful Flower Jungle</div>
+    <div class="question-box"><p class="question-label">Final Hard Challenge</p><p class="question-text">What compound in lavender is responsible for its calming effects?</p></div>
+    <ul class="options-list">
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">A. Caffeine</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">B. Linalool</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">C. Menthol</span></li>
+      <li class="option-item"><div class="option-checkbox"></div><span class="option-text">D. Thymol</span></li>
+    </ul>
+  </section>
+
+  <section class="page completion-page" data-page="12-completion">
+    <div class="trophy">🏆</div>
+    <h2>Code Cracked!</h2>
+    <p>Hard Mode Complete — You're a true botanist!</p>
+    <div class="score-box">___/250 Points</div>
+    <div class="stamp-area"><p>🌿 Staff stamp here 🌿</p></div>
+  </section>
+
+</div>
+
+<script>
+async function downloadZip() {
+  const btn = document.querySelector('.download-btn');
+  const progressText = document.getElementById('progressText');
+  const pages = document.querySelectorAll('.page');
+  btn.disabled = true;
+  btn.textContent = '⏳ Generating...';
+  progressText.style.display = 'block';
+  const zip = new JSZip();
+  try {
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i];
+      const pageName = page.dataset.page;
+      progressText.textContent = 'Generating page ' + (i+1) + ' of ' + pages.length + '...';
+      const canvas = await html2canvas(page, {scale: 2, backgroundColor: '#FFFFFF', useCORS: true, width: 700, height: 900});
+      const imgData = canvas.toDataURL('image/png').split(',')[1];
+      zip.file(pageName + '.png', imgData, {base64: true});
+    }
+    progressText.textContent = 'Creating ZIP file...';
+    const content = await zip.generateAsync({type: 'blob'});
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(content);
+    link.download = 'garden-code-hard.zip';
+    link.click();
+  } catch (err) { alert('Error generating images.'); console.error(err); }
+  progressText.style.display = 'none';
+  btn.disabled = false;
+  btn.textContent = '📥 Download All Pages (ZIP)';
+}
+</script>
+
+</body>
+</html>

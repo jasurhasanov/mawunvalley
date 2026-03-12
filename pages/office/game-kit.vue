@@ -25,15 +25,15 @@
           <h2>📖 Player Journals</h2>
           <p>Printable activity booklets for players</p>
           <div class="kit-links">
-            <a href="/garden-quest/printables/booklet-easy.html" class="kit-link easy">
+            <a href="/office/game-kit/printables/booklet-easy.html" class="kit-link easy">
               <span class="level">Easy</span>
               <span class="ages">Ages 4-7</span>
             </a>
-            <a href="/garden-quest/printables/booklet-hard.html" class="kit-link hard">
+            <a href="/office/game-kit/printables/booklet-hard.html" class="kit-link hard">
               <span class="level">Hard</span>
               <span class="ages">Ages 8-12</span>
             </a>
-            <a href="/garden-quest/printables/booklet-impossible.html" class="kit-link impossible">
+            <a href="/office/game-kit/printables/booklet-impossible.html" class="kit-link impossible">
               <span class="level">Impossible</span>
               <span class="ages">Ages 13+</span>
             </a>
@@ -44,9 +44,9 @@
           <h2>📚 Learning Supplements</h2>
           <p>Educational content about farm plants</p>
           <div class="kit-links">
-            <a href="/garden-quest/learning-easy.html" class="kit-link">Learning Guide (Easy)</a>
-            <a href="/garden-quest/learning-hard.html" class="kit-link">Learning Guide (Hard)</a>
-            <a href="/garden-quest/learning-impossible.html" class="kit-link">Learning Guide (Impossible)</a>
+            <a href="/office/game-kit/learning-easy.html" class="kit-link">Learning Guide (Easy)</a>
+            <a href="/office/game-kit/learning-hard.html" class="kit-link">Learning Guide (Hard)</a>
+            <a href="/office/game-kit/learning-impossible.html" class="kit-link">Learning Guide (Impossible)</a>
           </div>
         </div>
 
@@ -54,9 +54,9 @@
           <h2>🗺️ Game Materials</h2>
           <p>Maps, guides, and resources</p>
           <div class="kit-links">
-            <a href="/garden-quest/how-to-play.html" class="kit-link">How to Play</a>
-            <a href="/garden-quest/farm-tour.html" class="kit-link">Farm Tour Script</a>
-            <a href="/garden-quest/answer-key.html" class="kit-link staff">🔑 Staff Answer Key</a>
+            <a href="/office/game-kit/how-to-play.html" class="kit-link">How to Play</a>
+            <a href="/office/game-kit/farm-tour.html" class="kit-link">Farm Tour Script</a>
+            <a href="/office/game-kit/answer-key.html" class="kit-link staff">🔑 Staff Answer Key</a>
           </div>
         </div>
 
@@ -64,8 +64,8 @@
           <h2>📱 Marketing</h2>
           <p>Promotional materials</p>
           <div class="kit-links">
-            <a href="/garden-quest/index.html" class="kit-link">Landing Page</a>
-            <a href="/garden-quest/marketing/" class="kit-link">Marketing Assets</a>
+            <a href="/garden-quest" class="kit-link">Landing Page</a>
+            <a href="/office/game-kit/marketing/" class="kit-link">Marketing Assets</a>
           </div>
         </div>
       </div>
