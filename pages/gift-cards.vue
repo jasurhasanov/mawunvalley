@@ -238,9 +238,9 @@ useHead({
 })
 
 const tiers = [
-  { value: 500000, description: 'Single experience' },
-  { value: 1500000, description: 'Multiple experiences' },
-  { value: 3000000, description: 'Premium package' }
+  { value: 750000, description: 'A taste of the farm' },
+  { value: 1500000, description: 'A day at the farm' },
+  { value: 3000000, description: 'The full experience' }
 ]
 
 const selectedTier = ref(null)
