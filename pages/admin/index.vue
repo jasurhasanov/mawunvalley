@@ -33,11 +33,11 @@
           <span class="tool-badge" v-if="newGiftRequests > 0">{{ newGiftRequests }} new</span>
         </NuxtLink>
 
-        <a href="/garden-quest/game-kit.html" class="tool-card" target="_blank">
+        <NuxtLink to="/admin/game-kit" class="tool-card">
           <div class="tool-icon">🎮</div>
           <h3>Garden Quest Kit</h3>
           <p>Print game materials, booklets, and answer keys</p>
-        </a>
+        </NuxtLink>
 
         <div class="tool-card disabled">
           <div class="tool-icon">📅</div>
