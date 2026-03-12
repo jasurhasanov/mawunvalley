@@ -25,6 +25,7 @@
           <h1>🎁 Gift Cards</h1>
         </div>
         <div class="header-actions">
+          <button @click="logout" class="btn-outline">Logout</button>
           <button @click="exportData" class="btn-secondary">Export</button>
           <label class="btn-secondary import-btn">
             Import
@@ -308,6 +309,11 @@ onMounted(() => {
   }
   loadData()
 })
+
+const logout = () => {
+  localStorage.removeItem('mawun_admin_auth')
+  window.location.href = '/office'
+}
 
 const authenticate = () => {
   if (email.value === 'kutahospitality@gmail.com' && password.value === 'mawun2024&now') {

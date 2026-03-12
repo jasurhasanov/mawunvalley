@@ -17,6 +17,7 @@
           <NuxtLink to="/office" class="back-link">← Back</NuxtLink>
           <h1>🎮 Garden Quest Kit</h1>
         </div>
+        <button @click="logout" class="btn-outline">Logout</button>
       </header>
 
       <div class="kit-grid">
@@ -88,6 +89,11 @@ onMounted(() => {
   }
 })
 
+const logout = () => {
+  localStorage.removeItem('mawun_admin_auth')
+  window.location.href = '/office'
+}
+
 const authenticate = () => {
   if (email.value === 'kutahospitality@gmail.com' && password.value === 'mawun2024&now') {
     authenticated.value = true
@@ -104,6 +110,8 @@ const authenticate = () => {
 .auth-box { background: white; padding: 40px; border-radius: 16px; text-align: center; }
 .auth-box input { padding: 14px; border: 2px solid #ddd; border-radius: 8px; width: 250px; margin-bottom: 16px; display: block; }
 .error { color: #c62828; margin-top: 12px; }
+.btn-outline { background: none; border: 1px solid #ddd; padding: 10px 20px; border-radius: 8px; cursor: pointer; color: #666; }
+.btn-outline:hover { border-color: #999; }
 .btn-primary { background: #87a878; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; }
 
 .dashboard { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
