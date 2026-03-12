@@ -293,6 +293,8 @@
 </template>
 
 <script setup>
+definePageMeta({ layout: "blank" })
+
 import { ref, computed, onMounted } from 'vue'
 
 useHead({ title: 'Gift Cards | Admin' })

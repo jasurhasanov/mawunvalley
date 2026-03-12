@@ -71,6 +71,8 @@
 </template>
 
 <script setup>
+definePageMeta({ layout: "blank" })
+
 import { ref, onMounted } from 'vue'
 
 useHead({ title: 'Staff Portal | Mawun Valley' })

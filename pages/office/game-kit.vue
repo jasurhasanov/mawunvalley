@@ -74,6 +74,8 @@
 </template>
 
 <script setup>
+definePageMeta({ layout: "blank" })
+
 import { ref, onMounted } from 'vue'
 
 useHead({ title: 'Game Kit | Admin' })
