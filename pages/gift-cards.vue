@@ -152,6 +152,7 @@
                 <option value="whatsapp-buyer">WhatsApp to me (I'll give it myself)</option>
                 <option value="email-recipient">Email to recipient</option>
                 <option value="email-buyer">Email to me</option>
+                <option value="physical">Physical card (collect at farm)</option>
               </select>
             </div>
 
@@ -186,7 +187,7 @@
           </div>
 
           <div class="form-note">
-            <p>💳 After submitting, we'll send you payment instructions via WhatsApp. Gift card will be delivered within 24 hours of payment confirmation.</p>
+            <p>💳 After submitting, we'll send you payment instructions via WhatsApp. Digital gift cards delivered within 24 hours. Physical cards ready for collection at Mawun Valley Farm within 48 hours.</p>
           </div>
 
           <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting || !selectedTier">
@@ -237,10 +238,9 @@ useHead({
 })
 
 const tiers = [
-  { value: 750000, description: 'Cinema + Volleyball combo' },
+  { value: 500000, description: 'Single experience' },
   { value: 1500000, description: 'Multiple experiences' },
-  { value: 5000000, description: 'Premium package' },
-  { value: 10000000, description: 'Ultimate farm experience' }
+  { value: 3000000, description: 'Premium package' }
 ]
 
 const selectedTier = ref(null)
