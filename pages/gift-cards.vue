@@ -3,7 +3,7 @@
     <!-- Hero -->
     <header class="page-hero">
       <div class="page-hero-bg">
-        <img src="/images/farmlife-7.jpg" alt="Mawun Valley Farm">
+        <img src="/images/gift-card-hero.png" alt="Mawun Valley Farm">
       </div>
       <div class="page-hero-content">
         <span class="section-label light">Give the Gift of</span>
