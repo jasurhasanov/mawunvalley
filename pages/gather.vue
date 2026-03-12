@@ -219,6 +219,12 @@
             <p class="review-text">"Mud, rain, goats, sambal, coconut milk… Today was place-based learning in its truest form: farming, cooking, teamwork, maths, science, problem-solving, plus an unscheduled lesson in patience. Not washed out, just well weathered."</p>
             <p class="review-author">— Natalia, Harmony Alternative School</p>
           </div>
+          <div class="review-card">
+            <span class="review-tag garden">🌱 Garden Code</span>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"We came for The Garden Code and were pleasantly surprised! The farm has such a cool vibe, so peaceful with animals everywhere. We learnt so much about the various fruits and vegetables and how they grow. A really inspiring visit — anyone around this area should check it out!"</p>
+            <p class="review-author">— Benjamin Davies, Denmark 🇩🇰</p>
+          </div>
 
         </div>
       </div>
@@ -1335,6 +1341,11 @@ const closeEvent = () => {
 .review-tag.cashew {
   background: #E8F5E9;
   color: #2E7D32;
+}
+
+.review-tag.garden {
+  background: #E8F0E4;
+  color: #5C6B4F;
 }
 
 .review-tag.samovar {
