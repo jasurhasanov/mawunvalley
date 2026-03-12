@@ -14,6 +14,7 @@
         <li><a href="/gather">Farm Events</a></li>
         <li><a href="/retreat">Farm Retreat</a></li>
         <li><a href="/little-roots">Little Roots</a></li>
+        <li><a href="/gift-cards">Gift Cards</a></li>
       </ul>
     </div>
     <div class="footer-links">
