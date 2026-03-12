@@ -86,7 +86,7 @@
           <div class="step">
             <div class="step-num">3</div>
             <h4>They Redeem</h4>
-            <p>Recipient contacts us to book any experience using their gift card balance</p>
+            <p>Recipient contacts us to book any experience using their gift card balance (subject to availability)</p>
           </div>
         </div>
       </div>
@@ -207,7 +207,7 @@
         <div class="faq-grid">
           <div class="faq-item">
             <h4>What can the gift card be used for?</h4>
-            <p>Any farm experience — cinema nights, volleyball, BBQ, cooking classes, tea ceremonies, café credit, farm shop products, or even partial farmstay credit.</p>
+            <p>Any farm experience — cinema nights, volleyball, BBQ, cooking classes, tea ceremonies, café credit, farm shop products, or farmstay credit. All redemptions are subject to availability.</p>
           </div>
           <div class="faq-item">
             <h4>How long is it valid?</h4>
