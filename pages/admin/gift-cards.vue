@@ -19,7 +19,10 @@
     <!-- Dashboard -->
     <div v-else class="dashboard">
       <header class="admin-header">
-        <h1>🎁 Gift Card Dashboard</h1>
+        <div class="header-left">
+          <NuxtLink to="/admin" class="back-link">← Admin</NuxtLink>
+          <h1>🎁 Gift Cards</h1>
+        </div>
         <div class="header-actions">
           <button @click="exportData" class="btn-secondary">Export</button>
           <label class="btn-secondary import-btn">
@@ -290,15 +293,24 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 
-useHead({ title: 'Gift Card Admin | Mawun Valley' })
+useHead({ title: 'Gift Cards | Admin' })
 
 const authenticated = ref(false)
 const password = ref('')
 const authError = ref(false)
 
+onMounted(() => {
+  // Check shared admin auth first
+  if (localStorage.getItem('mawun_admin_auth') === 'true') {
+    authenticated.value = true
+  }
+  loadData()
+})
+
 const authenticate = () => {
   if (password.value === 'mawun2024') {
     authenticated.value = true
+    localStorage.setItem('mawun_admin_auth', 'true')
   } else {
     authError.value = true
   }
@@ -340,14 +352,14 @@ const newRequest = ref({ amount: 750000, buyerName: '', buyerWhatsApp: '', buyer
 const newCard = ref({ amount: 750000, recipientName: '', buyerName: '', buyerContact: '', message: '', notes: '' })
 const redemption = ref({ amount: 0, usedFor: '', notes: '' })
 
-onMounted(() => {
+const loadData = () => {
   const r = localStorage.getItem('mawun_requests')
   const c = localStorage.getItem('mawun_gift_cards')
   const l = localStorage.getItem('mawun_redemptions')
   if (r) requests.value = JSON.parse(r)
   if (c) giftCards.value = JSON.parse(c)
   if (l) redemptionLog.value = JSON.parse(l)
-})
+}
 
 const saveData = () => {
   localStorage.setItem('mawun_requests', JSON.stringify(requests.value))
@@ -493,6 +505,10 @@ const importData = (e) => {
 .error { color: #c62828; margin-top: 12px; }
 .dashboard { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
 .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 16px; }
+.header-left { display: flex; align-items: center; gap: 16px; }
+.back-link { color: #666; text-decoration: none; font-size: 14px; }
+.back-link:hover { color: #333; }
+.admin-header h1 { margin: 0; font-size: 1.5rem; }
 .header-actions { display: flex; gap: 12px; }
 .btn-primary { background: #D4A574; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; }
 .btn-primary:hover { background: #c17f59; }
