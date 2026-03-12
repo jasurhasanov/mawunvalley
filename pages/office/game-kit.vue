@@ -3,7 +3,8 @@
     <div v-if="!authenticated" class="auth-gate">
       <div class="auth-box">
         <h1>🎮 Game Kit</h1>
-        <p>Enter password to access</p>
+        <p>Staff Login</p>
+        <input type="email" v-model="email" placeholder="Email">
         <input type="password" v-model="password" @keyup.enter="authenticate" placeholder="Password">
         <button @click="authenticate" class="btn-primary">Enter</button>
         <p v-if="authError" class="error">Incorrect password</p>
@@ -13,7 +14,7 @@
     <div v-else class="dashboard">
       <header class="admin-header">
         <div class="header-left">
-          <NuxtLink to="/admin" class="back-link">← Admin</NuxtLink>
+          <NuxtLink to="/office" class="back-link">← Back</NuxtLink>
           <h1>🎮 Garden Quest Kit</h1>
         </div>
       </header>
@@ -77,6 +78,7 @@ import { ref, onMounted } from 'vue'
 useHead({ title: 'Game Kit | Admin' })
 
 const authenticated = ref(false)
+const email = ref("")
 const password = ref('')
 const authError = ref(false)
 
@@ -87,7 +89,7 @@ onMounted(() => {
 })
 
 const authenticate = () => {
-  if (password.value === 'mawun2024') {
+  if (email.value === 'kutahospitality@gmail.com' && password.value === 'mawun2024&now') {
     authenticated.value = true
     localStorage.setItem('mawun_admin_auth', 'true')
   } else {

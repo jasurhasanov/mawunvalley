@@ -4,36 +4,41 @@
     <div v-if="!authenticated" class="auth-gate">
       <div class="auth-box">
         <div class="logo">🌿</div>
-        <h1>Mawun Valley Admin</h1>
-        <p>Enter password to access</p>
+        <h1>Mawun Valley</h1>
+        <p>Staff Portal</p>
+        <input 
+          type="email" 
+          v-model="email" 
+          placeholder="Email"
+          autofocus
+        >
         <input 
           type="password" 
           v-model="password" 
           @keyup.enter="authenticate"
           placeholder="Password"
-          autofocus
         >
         <button @click="authenticate" class="btn-primary">Enter</button>
-        <p v-if="authError" class="error">Incorrect password</p>
+        <p v-if="authError" class="error">Invalid credentials</p>
       </div>
     </div>
 
     <!-- Dashboard -->
     <div v-else class="dashboard">
       <header class="admin-header">
-        <h1>🌿 Mawun Valley Admin</h1>
+        <h1>🌿 Mawun Valley</h1>
         <button @click="logout" class="btn-outline">Logout</button>
       </header>
 
       <div class="tools-grid">
-        <NuxtLink to="/admin/gift-cards" class="tool-card">
+        <NuxtLink to="/office/gift-cards" class="tool-card">
           <div class="tool-icon">🎁</div>
           <h3>Gift Cards</h3>
           <p>Manage requests, issue cards, track redemptions</p>
           <span class="tool-badge" v-if="newGiftRequests > 0">{{ newGiftRequests }} new</span>
         </NuxtLink>
 
-        <NuxtLink to="/admin/game-kit" class="tool-card">
+        <NuxtLink to="/office/game-kit" class="tool-card">
           <div class="tool-icon">🎮</div>
           <h3>Garden Quest Kit</h3>
           <p>Print game materials, booklets, and answer keys</p>
@@ -68,17 +73,18 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-useHead({ title: 'Admin | Mawun Valley' })
+useHead({ title: 'Staff Portal | Mawun Valley' })
 
 const authenticated = ref(false)
+const email = ref('')
 const password = ref('')
 const authError = ref(false)
 const newGiftRequests = ref(0)
 
-const ADMIN_PASS = 'mawun2024'
+const VALID_EMAIL = 'kutahospitality@gmail.com'
+const VALID_PASS = 'mawun2024&now'
 
 onMounted(() => {
-  // Check if already logged in
   if (localStorage.getItem('mawun_admin_auth') === 'true') {
     authenticated.value = true
     loadStats()
@@ -86,7 +92,7 @@ onMounted(() => {
 })
 
 const authenticate = () => {
-  if (password.value === ADMIN_PASS) {
+  if (email.value === VALID_EMAIL && password.value === VALID_PASS) {
     authenticated.value = true
     authError.value = false
     localStorage.setItem('mawun_admin_auth', 'true')
@@ -140,7 +146,7 @@ const loadStats = () => {
 
 .auth-box h1 {
   font-size: 1.5rem;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   color: #333;
 }
 
@@ -154,9 +160,8 @@ const loadStats = () => {
   border: 2px solid #eee;
   border-radius: 12px;
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   font-size: 16px;
-  text-align: center;
 }
 
 .auth-box input:focus {
