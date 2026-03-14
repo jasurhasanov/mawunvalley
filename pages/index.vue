@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="hero" id="hero">
-      <div class="hero-bg"><picture><source media="(max-width: 1024px)" srcset="/images/hero-mobile.png"><img src="/images/hero-gemini-v3.png" alt="Mawun Valley Farm"></picture></div>
+      <div class="hero-bg"><picture><source media="(max-width: 1024px)" srcset="/images/hero-mobile.png"><img src="/images/hero-drone.jpg" alt="Mawun Valley Farm"></picture></div>
       <div class="hero-content">
         <p class="hero-subtitle handwritten">Where slow living begins</p>
         <h1>Slow Down.<br>Connect Deeply.</h1>
