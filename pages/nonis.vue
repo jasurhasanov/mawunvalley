@@ -36,7 +36,7 @@
           <div class="info-card">
             <div class="info-icon">🕐</div>
             <h3>Open Daily</h3>
-            <p class="hours">8:00 AM - 5:00 PM</p>
+            <p class="hours">8:00 AM - 7:00 PM</p>
           </div>
           <div class="info-card">
             <div class="info-icon">📍</div>
@@ -69,7 +69,7 @@
         <!-- Breakfast -->
         <div id="breakfast" class="menu-category">
           <h3 class="category-title">🍳 Breakfast</h3>
-          <p class="category-note">Served all day (8:00 - 17:00)</p>
+          <p class="category-note">Served all day (8:00 - 19:00)</p>
           <div class="menu-grid">
             <div class="menu-item">
               <div class="item-header">
