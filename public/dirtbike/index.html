@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dirtbike Adventures Lombok</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Caveat:wght@500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #2d5016;
+      --primary-light: #4a7c23;
+      --accent: #e85d04;
+      --accent-light: #ff7b29;
+      --sand: #f5e6d3;
+      --sand-dark: #e8d4bc;
+      --dark: #1a1a1a;
+      --white: #ffffff;
+    }
+    
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--sand);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .booklet {
+      max-width: 430px;
+      margin: 0 auto;
+      background: var(--white);
+      min-height: 100vh;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      padding: 48px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-icon {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+    }
+    
+    .hero h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    
+    .hero .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      opacity: 0.95;
+    }
+    
+    .hero .location {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    
+    /* Section Styles */
+    section {
+      padding: 32px 24px;
+    }
+    
+    section:nth-child(even) {
+      background: var(--sand);
+    }
+    
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .section-title span {
+      font-size: 1.3rem;
+    }
+    
+    /* Overview */
+    .overview p {
+      color: #444;
+      font-size: 0.95rem;
+    }
+    
+    /* Video Preview */
+    .video-section {
+      background: var(--sand);
+      text-align: center;
+    }
+    
+    .video-preview {
+      display: block;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    
+    .video-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      background: rgba(232, 93, 4, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      padding-left: 4px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.2s, background 0.2s;
+    }
+    
+    .video-preview:hover .play-button {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: var(--accent-light);
+    }
+    
+    .video-caption {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+    
+    /* Highlights */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    
+    .highlight-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    section:nth-child(even) .highlight-card {
+      background: var(--white);
+    }
+    
+    .highlight-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    
+    .highlight-card h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    /* Tour Types */
+    .tour-type {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    
+    .tour-type:last-child {
+      margin-bottom: 0;
+    }
+    
+    .tour-type h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .tour-type .duration {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+    
+    .tour-type .time-slots {
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+    }
+    
+    /* Packages */
+    .package-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    
+    .package-card:last-child {
+      margin-bottom: 0;
+    }
+    
+    .packages-subtitle {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    
+    .package-header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .package-header h4 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    
+    .package-price {
+      background: var(--accent);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    
+    .package-body {
+      padding: 16px 20px;
+    }
+    
+    .package-body h5 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      margin-top: 12px;
+    }
+    
+    .package-body h5:first-child {
+      margin-top: 0;
+    }
+    
+    .package-body ul {
+      list-style: none;
+      font-size: 0.9rem;
+      color: #444;
+    }
+    
+    .package-body li {
+      padding: 4px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .package-body li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .package-body li.excluded::before {
+      content: '✗';
+      color: #999;
+    }
+    
+    /* Premium Package */
+    .package-card.premium .package-header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    }
+    
+    .package-card.premium .package-price {
+      background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+      color: #1a1a1a;
+    }
+    
+    /* Itinerary */
+    .itinerary-block {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--accent);
+    }
+    
+    .itinerary-block h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    
+    .itinerary-block p {
+      font-size: 0.85rem;
+      color: #555;
+    }
+    
+    .route-note {
+      background: var(--primary);
+      color: white;
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      margin-top: 16px;
+    }
+    
+    .route-note strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+    
+    /* Tips */
+    .tips-list {
+      list-style: none;
+    }
+    
+    .tips-list li {
+      background: var(--white);
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .tips-list li span {
+      font-size: 1.1rem;
+    }
+    
+    /* Reviews */
+    .reviews-section {
+      background: var(--sand);
+    }
+    
+    .review-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    .review-stars {
+      color: #f4b400;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+    
+    .review-text {
+      font-size: 0.9rem;
+      color: #444;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    
+    .review-author {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .reviews-source {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 16px;
+    }
+    
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      text-align: center;
+      padding: 40px 24px;
+    }
+    
+    .cta-section h2 {
+      color: var(--white);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+    
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+    
+    .btn-whatsapp svg {
+      width: 24px;
+      height: 24px;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+    }
+    
+    footer .brand {
+      color: var(--white);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    /* Download Button (floating) */
+    .download-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(232, 93, 4, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .download-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(232, 93, 4, 0.5);
+    }
+    
+    .download-btn.loading {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    
+    @media print {
+      .download-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="booklet" id="booklet">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-icon">🏍️</div>
+        <h1>Dirtbike Adventures</h1>
+        <p class="tagline">Explore Lombok Off-Road</p>
+        <p class="location">📍 Kuta, South Lombok, Indonesia</p>
+      </div>
+    </section>
+    
+    <!-- Overview -->
+    <section class="overview">
+      <div class="section-title"><span>🌴</span> Overview</div>
+      <p>Experience the thrill of exploring Lombok's stunning landscapes on two wheels. From rugged hills and hidden beaches to traditional Sasak villages — our guided tours take you where regular tourists never go. Suitable for beginners and experienced riders alike.</p>
+    </section>
+    
+    <!-- Video Preview -->
+    <section class="video-section">
+      <div class="section-title"><span>🎬</span> See It In Action</div>
+      <a href="https://www.youtube.com/shorts/Z9UT_LlmS3o" target="_blank" class="video-preview">
+        <img src="https://img.youtube.com/vi/Z9UT_LlmS3o/hqdefault.jpg" alt="Dirtbike Adventure Video">
+        <div class="play-button">▶</div>
+      </a>
+      <p class="video-caption">Tap to watch on YouTube</p>
+    </section>
+    
+    <!-- Highlights -->
+    <section>
+      <div class="section-title"><span>✨</span> Tour Highlights</div>
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <div class="icon">🏔️</div>
+          <h4>Mandalika Hills</h4>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">🏖️</div>
+          <h4>Hidden Beaches</h4>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">🏘️</div>
+          <h4>Sasak Villages</h4>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">🌋</div>
+          <h4>Varied Terrain</h4>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tour Options -->
+    <section>
+      <div class="section-title"><span>🕒</span> Tour Options</div>
+      
+      <div class="tour-type">
+        <h3>Half-Day Adventure</h3>
+        <p class="duration">3–4 hours</p>
+        <div class="time-slots">
+          <strong>Morning:</strong> 9:30 AM – 1:00 PM<br>
+          <strong>Afternoon:</strong> 2:00 PM – 5:00 PM
+        </div>
+      </div>
+      
+      <div class="tour-type">
+        <h3>Full-Day Expedition</h3>
+        <p class="duration">~7 hours</p>
+        <div class="time-slots">
+          <strong>Start:</strong> 9:30 AM<br>
+          <strong>Finish:</strong> 5:00 PM<br>
+          <em>Includes lunch break</em>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Half-Day Packages -->
+    <section>
+      <div class="section-title"><span>🌅</span> Half-Day Packages</div>
+      <p class="packages-subtitle">3–4 hours • Morning or Afternoon</p>
+      
+      <div class="package-card">
+        <div class="package-header">
+          <h4>🌿 Package 1 — Basic Ride</h4>
+          <span class="package-price">IDR 850K</span>
+        </div>
+        <div class="package-body">
+          <h5>Includes</h5>
+          <ul>
+            <li>Dirt bike</li>
+            <li>Helmet, gloves & goggles</li>
+            <li>Fuel</li>
+            <li>Water</li>
+            <li>Tour guide</li>
+          </ul>
+          <h5>Not Included</h5>
+          <ul>
+            <li class="excluded">Protective gear</li>
+            <li class="excluded">Insurance not included</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="package-card">
+        <div class="package-header">
+          <h4>🌿 Package 2 — Gear Included</h4>
+          <span class="package-price">IDR 1,250K</span>
+        </div>
+        <div class="package-body">
+          <h5>Includes</h5>
+          <ul>
+            <li>Dirt bike (KLX 150 / CRF 150)</li>
+            <li>Helmet & safety gear</li>
+            <li>Tour guide</li>
+            <li>Drinking water</li>
+          </ul>
+          <h5>Not Included</h5>
+          <ul>
+            <li class="excluded">Insurance not included</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Full-Day Packages -->
+    <section>
+      <div class="section-title"><span>☀️</span> Full-Day Packages</div>
+      <p class="packages-subtitle">~7 hours • Includes lunch break</p>
+      
+      <div class="package-card">
+        <div class="package-header">
+          <h4>🌿 Package 1 — Guide Only</h4>
+          <span class="package-price">IDR 750K</span>
+        </div>
+        <div class="package-body">
+          <h5>Includes</h5>
+          <ul>
+            <li>Professional tour guide</li>
+            <li>3L fuel</li>
+          </ul>
+          <h5>You Bring</h5>
+          <ul>
+            <li class="excluded">Your own bike & gear</li>
+            <li class="excluded">Insurance not included</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="package-card">
+        <div class="package-header">
+          <h4>🌿 Package 2 — Explorer's Ride</h4>
+          <span class="package-price">IDR 1,250K</span>
+        </div>
+        <div class="package-body">
+          <h5>Includes</h5>
+          <ul>
+            <li>Motorbike (Honda CRF150 or similar)</li>
+            <li>Fuel & helmet</li>
+            <li>Tour guide</li>
+            <li>Local lunch</li>
+            <li>Water bottles</li>
+          </ul>
+          <h5>Not Included</h5>
+          <ul>
+            <li class="excluded">Safety gear (boots, gloves, armor)</li>
+            <li class="excluded">Insurance not included</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="package-card">
+        <div class="package-header">
+          <h4>🌿 Package 3 — Complete Adventure</h4>
+          <span class="package-price">IDR 1,750K</span>
+        </div>
+        <div class="package-body">
+          <h5>Includes</h5>
+          <ul>
+            <li>Motorbike (Honda CRF150 or similar)</li>
+            <li>Full safety gear (boots, gloves, jersey, armor)</li>
+            <li>Helmet & fuel</li>
+            <li>Tour guide</li>
+            <li>Local lunch & water</li>
+          </ul>
+          <h5>Not Included</h5>
+          <ul>
+            <li class="excluded">Insurance not included</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="package-card premium">
+        <div class="package-header">
+          <h4>⭐ Package 4 — Ultimate Experience</h4>
+          <span class="package-price">IDR 4,750K</span>
+        </div>
+        <div class="package-body">
+          <h5>Includes</h5>
+          <ul>
+            <li>Premium bike (Honda CRF250 or similar)</li>
+            <li>Full safety gear (boots, gloves, jersey, armor)</li>
+            <li>Helmet & 3L fuel</li>
+            <li>Professional tour guide</li>
+            <li>Local lunch & 3 water bottles</li>
+            <li>Exclusive T-shirt</li>
+          </ul>
+          <h5>Not Included</h5>
+          <ul>
+            <li class="excluded">Insurance not included</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Full Day Itinerary -->
+    <section>
+      <div class="section-title"><span>🗺️</span> Routes</div>
+      
+      <div class="itinerary-block">
+        <h4>Route A: Morning</h4>
+        <p>Kuta → Prabu Hill → Are Guling Hill → Lancing/Tampah Hills → Selong Belanak → Leendang Lantan → Back to Kuta</p>
+      </div>
+      
+      <div class="itinerary-block">
+        <h4>Route B: Afternoon</h4>
+        <p>Kuta → Unggut → Selar Hill → Sukadana Village → Awang Area → Sokat Beach → Bumbang Beach → Gerupuk Box Cave → Tanjung Aan Beach → Finish in Kuta</p>
+      </div>
+      
+      <div class="route-note">
+        <strong>📝 Note:</strong> Full-day tours cover both routes. Half-day tours — choose one route.
+      </div>
+    </section>
+    
+    <!-- Tips -->
+    <section>
+      <div class="section-title"><span>💡</span> Tips & Requirements</div>
+      <ul class="tips-list">
+        <li><span>🏍️</span> Must be able to ride a manual/clutch motorcycle</li>
+        <li><span>👕</span> Wear outdoor-appropriate clothing</li>
+        <li><span>☀️</span> Bring sunscreen and action camera</li>
+        <li><span>🌤️</span> Best season: May – October (dry season)</li>
+      </ul>
+    </section>
+    
+    <!-- Reviews -->
+    <section class="reviews-section">
+      <div class="section-title"><span>⭐</span> What Riders Say</div>
+      
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"An absolute must-do! Had the best day — trails were so fun with great challenging sections. The views were incredible, full of adrenaline!"</p>
+        <p class="review-author">— Conner Treadwell</p>
+      </div>
+      
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Amazing experience for my first dirt bike tour ever. The team is super friendly. I'm a beginner and was able to complete tricky terrain thanks to my guide. 10/10!"</p>
+        <p class="review-author">— Tom Woodland</p>
+      </div>
+      
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I'm an avid dirt biker for life. The tour was next level — so many good trails! They know places tourists don't know. 10/10 recommend!"</p>
+        <p class="review-author">— Eric Lacy</p>
+      </div>
+      
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Our adventure was spectacular! The guide's knowledge of hidden trails made it so much better. Perfect balance of excitement and safety."</p>
+        <p class="review-author">— Ole Hartvig Johannson</p>
+      </div>
+      
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The team is so kind and welcoming — they go out of their way to make sure you enjoy every moment. Both fun and unforgettable!"</p>
+        <p class="review-author">— Rene Sebastiaan</p>
+      </div>
+      
+      <p class="reviews-source">Reviews from Google Maps</p>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Ready to Ride? 🔥</h2>
+      <p>Book your adventure now via WhatsApp</p>
+      <a href="https://wa.me/6281246865484?text=Hi!%20I'm%20interested%20in%20booking%20a%20Dirtbike%20Adventure%20tour%20in%20Lombok." class="btn-whatsapp" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book via WhatsApp
+      </a>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+      <p class="brand">Lombok Dirtbike Adventures</p>
+      <p>Kuta, South Lombok, Indonesia</p>
+    </footer>
+  </div>
+  
+  <!-- Download Button -->
+  <button class="download-btn" onclick="downloadPDF()" title="Download PDF">
+    📥
+  </button>
+  
+  <script>
+    async function downloadPDF() {
+      const btn = document.querySelector('.download-btn');
+      btn.classList.add('loading');
+      btn.innerHTML = '⏳';
+      
+      const { jsPDF } = window.jspdf;
+      const booklet = document.getElementById('booklet');
+      const bookletRect = booklet.getBoundingClientRect();
+      
+      // Get link element positions before rendering
+      const videoLink = document.querySelector('.video-preview');
+      const whatsappLink = document.querySelector('.btn-whatsapp');
+      
+      const videoRect = videoLink ? videoLink.getBoundingClientRect() : null;
+      const whatsappRect = whatsappLink ? whatsappLink.getBoundingClientRect() : null;
+      
+      // Hide download button during capture
+      btn.style.display = 'none';
+      
+      try {
+        const canvas = await html2canvas(booklet, {
+          scale: 2,
+          useCORS: true,
+          logging: false,
+          windowWidth: 430
+        });
+        
+        const imgData = canvas.toDataURL('image/jpeg', 0.95);
+        const pdfWidth = 100; // mm
+        const pdfHeight = canvas.height * pdfWidth / canvas.width;
+        
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          unit: 'mm',
+          format: [pdfWidth, pdfHeight]
+        });
+        
+        pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+        
+        // Scale factor: PDF mm per pixel
+        const scaleFactor = pdfWidth / bookletRect.width;
+        
+        // Add YouTube video link
+        if (videoRect) {
+          const vX = (videoRect.left - bookletRect.left) * scaleFactor;
+          const vY = (videoRect.top - bookletRect.top) * scaleFactor;
+          const vW = videoRect.width * scaleFactor;
+          const vH = videoRect.height * scaleFactor;
+          pdf.link(vX, vY, vW, vH, {url: 'https://www.youtube.com/shorts/Z9UT_LlmS3o'});
+        }
+        
+        // Add WhatsApp button link
+        if (whatsappRect) {
+          const wX = (whatsappRect.left - bookletRect.left) * scaleFactor;
+          const wY = (whatsappRect.top - bookletRect.top) * scaleFactor;
+          const wW = whatsappRect.width * scaleFactor;
+          const wH = whatsappRect.height * scaleFactor;
+          pdf.link(wX, wY, wW, wH, {url: 'https://wa.me/6281246865484?text=Hi!%20I%27m%20interested%20in%20booking%20a%20Dirtbike%20Adventure%20tour%20in%20Lombok.'});
+        }
+        
+        pdf.save('Dirtbike-Adventures-Lombok.pdf');
+      } catch (error) {
+        console.error('PDF generation failed:', error);
+        alert('Failed to generate PDF. Please try again.');
+      }
+      
+      btn.style.display = 'flex';
+      btn.classList.remove('loading');
+      btn.innerHTML = '📥';
+    }
+  </script>
+</body>
+</html>
