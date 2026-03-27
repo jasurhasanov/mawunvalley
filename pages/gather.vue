@@ -679,8 +679,6 @@
             </div>
           </div>
 
-        </div>
-
           <!-- Local Cooking Classes Modal -->
           <div v-if="activeEvent === 'cooking'" class="event-detail">
             <div class="modal-header">
@@ -766,6 +764,7 @@
             </div>
           </div>
 
+        </div>
       </div>
     </Teleport>
   </div>
