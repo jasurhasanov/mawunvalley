@@ -136,6 +136,24 @@
               <span class="click-hint">Explore the quest →</span>
             </div>
           </article>
+
+          <!-- 7. Local Cooking Classes -->
+          <article class="event-card signature" @click="openEvent('cooking')">
+            <div class="event-image">
+              <img src="/images/cooking-class.jpg" alt="Local Cooking Classes">
+              <span class="event-badge cooking">🍳 Cooking</span>
+            </div>
+            <div class="event-info">
+              <div class="event-icon">🍳</div>
+              <h3>Local Cooking Classes</h3>
+              <p class="event-tagline">Farm-fresh ingredients, authentic Sasak recipes</p>
+              <div class="event-meta">
+                <span>⏰ ~2 hours</span>
+                <span>💰 From IDR 500,000</span>
+              </div>
+              <span class="click-hint">Click for details →</span>
+            </div>
+          </article>
         </div>
         <!-- Other Events -->
         <div class="other-events">
@@ -662,6 +680,92 @@
           </div>
 
         </div>
+
+          <!-- Local Cooking Classes Modal -->
+          <div v-if="activeEvent === 'cooking'" class="event-detail">
+            <div class="modal-header">
+              <span class="event-badge cooking">🍳 Cooking Class</span>
+              <h2>Local Cooking Classes</h2>
+              <p class="modal-tagline">Farm-fresh ingredients, authentic Sasak recipes</p>
+            </div>
+            <div class="modal-body">
+              <p class="intro-text">Join Mrs. Noni and her team from Noni's Resto & Pastry for a hands-on cooking experience. Learn to prepare authentic local dishes using fresh ingredients — some harvested right from our farm.</p>
+              
+              <h4>⏰ Schedule</h4>
+              <div class="schedule-box">
+                <div class="schedule-item">
+                  <span class="schedule-label">When</span>
+                  <span class="schedule-value">By Reservation</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Time</span>
+                  <span class="schedule-value">8:00 AM – 7:00 PM</span>
+                </div>
+                <div class="schedule-item">
+                  <span class="schedule-label">Duration</span>
+                  <span class="schedule-value">~2 hours</span>
+                </div>
+              </div>
+
+              <h4>💰 Pricing</h4>
+              <div class="pricing-grid">
+                <div class="price-tier">
+                  <span class="tier-name">Adults & Kids (4+)</span>
+                  <span class="tier-price">IDR 500,000</span>
+                  <span class="tier-note">Per person</span>
+                </div>
+                <div class="price-tier">
+                  <span class="tier-name">Toddlers (3 & below)</span>
+                  <span class="tier-price free">Free</span>
+                </div>
+              </div>
+              
+              <div class="important-note">
+                <strong>👉 Minimum booking:</strong> IDR 1,500,000 (covers up to 3 people). Additional guests IDR 500,000 each.
+              </div>
+
+              <h4>🥘 What's Included</h4>
+              <ul class="included-list">
+                <li><strong>Optional farm tour</strong> — explore the garden and harvest ingredients</li>
+                <li><strong>Hands-on cooking class</strong> — learn authentic Sasak techniques</li>
+                <li><strong>Enjoy your creations</strong> — taste everything you cook</li>
+                <li><strong>All ingredients & equipment</strong> — nothing to bring</li>
+                <li><strong>Local cook & helping team</strong> — guided by Mrs. Noni's team</li>
+                <li><strong>Farm facilities access</strong> — relax in nature during your class</li>
+              </ul>
+
+              <h4>🍽️ Popular Menu</h4>
+              <div class="benefits-grid">
+                <div class="benefit">🍢 Chicken Satay</div>
+                <div class="benefit">🥥 Kelaq Santen</div>
+                <div class="benefit">🫘 Orek Tempe</div>
+                <div class="benefit">🌶️ Fresh Sambal</div>
+              </div>
+              <p style="font-size: 14px; color: var(--color-text-muted); margin-top: 12px; font-style: italic;">Have a different dish in mind? Let us know — we can customize!</p>
+
+              <h4>📍 Location</h4>
+              <div class="location-box">
+                <p><strong>Venue:</strong> Mawun Valley Farm</p>
+                <p><strong>Host:</strong> Noni's Resto & Pastry team, led by Mrs. Noni</p>
+                <p class="loc-note">Just 11 minutes from Kuta — you'll also have the opportunity to explore our farm and be close to nature.</p>
+              </div>
+
+              <h4>🌟 Why Join?</h4>
+              <div class="benefits-grid">
+                <div class="benefit">👐 Hands-On Learning</div>
+                <div class="benefit">🌿 Farm-to-Table</div>
+                <div class="benefit">👨‍👩‍👧 Family-Friendly</div>
+                <div class="benefit">📸 Great Memories</div>
+                <div class="benefit">🍃 Nature Setting</div>
+                <div class="benefit">👥 Groups Welcome</div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20a%20cooking%20class" class="btn btn-primary btn-lg" target="_blank">Book via WhatsApp</a>
+            </div>
+          </div>
+
       </div>
     </Teleport>
   </div>
@@ -864,6 +968,10 @@ const closeEvent = () => {
 
 .event-badge.cinema {
   background: #9C27B0;
+}
+
+.event-badge.cooking {
+  background: #FF6B35;
 }
   padding: 24px;
   text-align: center;
