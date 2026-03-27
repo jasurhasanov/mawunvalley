@@ -262,7 +262,7 @@
               <p class="modal-tagline">Every Friday, the farm comes alive</p>
             </div>
             <div class="modal-body">
-              <p class="intro-text">Farm-to-table feast under the stars. Live music, good people, great food. All ingredients fresh from our farm and local fishermen.</p>
+              <p class="intro-text">Farm-to-table feast under the stars. Good people, great food, sounds of nature. All ingredients fresh from our farm and local fishermen.</p>
               
               <h4>⏰ Schedule</h4>
               <div class="schedule-box">
@@ -304,7 +304,7 @@
                 <li>BBQ spread with farm-fresh ingredients</li>
                 <li>Fresh seafood from local fishermen</li>
                 <li>Vegetarian options available</li>
-                <li>Relaxing music that fits the natural atmosphere</li>
+                <li>Sounds of nature and farm life</li>
                 <li>Meet other travelers and locals</li>
                 <li>Beautiful sunset views</li>
               </ul>
@@ -312,7 +312,7 @@
               <h4>🌟 Why Join?</h4>
               <div class="benefits-grid">
                 <div class="benefit">🥩 Farm-Fresh Food</div>
-                <div class="benefit">🎵 Relaxing Music</div>
+                <div class="benefit">🌿 Nature Sounds</div>
                 <div class="benefit">🌅 Sunset Views</div>
                 <div class="benefit">👥 Community Vibes</div>
                 <div class="benefit">🍺 Good Company</div>
@@ -320,7 +320,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20BBQ%20Night%20this%20Friday" class="btn btn-primary btn-lg" target="_blank">Book via WhatsApp</a>
+              <a href="https://megatix.co.id/events/bbqnights-mawun-valley" class="btn btn-primary btn-lg" target="_blank">Book Tickets</a>
             </div>
           </div>
 
