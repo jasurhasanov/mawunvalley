@@ -28,43 +28,25 @@
         </div>
 
         <div class="signature-grid">
-          <!-- 1. Outdoor Cinema -->
-          <article class="event-card signature" @click="openEvent('cinema')">
+<!-- 1. Local Cooking Classes -->
+          <article class="event-card signature" @click="openEvent('cooking')">
             <div class="event-image">
-              <img src="/images/outdoor-cinema.png" alt="Outdoor Cinema">
-              <span class="event-badge cinema">Weekly</span>
+              <img src="/images/cooking-class.jpg" alt="Local Cooking Classes">
+              <span class="event-badge cooking">🍳 Cooking</span>
             </div>
             <div class="event-info">
-              <div class="event-icon">🎬</div>
-              <h3>Outdoor Cinema</h3>
-              <p class="event-tagline">Movies under the stars at Mawun Amphitheater</p>
+              <div class="event-icon">🍳</div>
+              <h3>Local Cooking Classes</h3>
+              <p class="event-tagline">Farm-fresh ingredients, authentic Sasak recipes</p>
               <div class="event-meta">
-                <span>📅 Every Wednesday</span>
-                <span>💰 IDR 150,000</span>
+                <span>⏰ ~2 hours</span>
+                <span>💰 From IDR 500,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
             </div>
           </article>
 
-          <!-- 2. Weekly Volleyball -->
-          <article class="event-card signature" @click="openEvent('volleyball')">
-            <div class="event-image">
-              <img src="/images/volleyball.png" alt="Weekly Volleyball Games">
-              <span class="event-badge volleyball">Weekly</span>
-            </div>
-            <div class="event-info">
-              <div class="event-icon">🏐</div>
-              <h3>Weekly Volleyball</h3>
-              <p class="event-tagline">Thursday sunset games on the farm</p>
-              <div class="event-meta">
-                <span>📅 Every Thursday</span>
-                <span>💰 IDR 100,000</span>
-              </div>
-              <span class="click-hint">Click for details →</span>
-            </div>
-          </article>
-
-          <!-- 3. BBQ Nights -->
+<!-- 2. BBQ Nights -->
           <article class="event-card signature" @click="openEvent('bbq')">
             <div class="event-image">
               <img src="/images/bbq-nights.jpg" alt="BBQ Nights">
@@ -83,7 +65,7 @@
             </div>
           </article>
 
-          <!-- 4. Samovar Tea Ceremony -->
+<!-- 3. Samovar Tea Ceremony -->
           <article class="event-card signature" @click="openEvent('samovar')">
             <div class="event-image">
               <img src="/images/samovar-tea.png" alt="Samovar Tea Ceremony">
@@ -101,7 +83,7 @@
             </div>
           </article>
 
-          <!-- 5. Cashew Apple Jam -->
+<!-- 4. Cashew Apple Jam -->
           <article class="event-card signature" @click="openEvent('cashew')">
             <div class="event-image">
               <img src="/images/cashew-jam-cover.jpg" alt="Cashew Apple Jam Cooking Class">
@@ -119,7 +101,7 @@
             </div>
           </article>
 
-          <!-- 6. The Garden Code -->
+<!-- 5. The Garden Code -->
           <article class="event-card signature" @click="openEvent('quest')">
             <div class="event-image">
               <img src="/images/garden-code-cover.jpg" alt="The Garden Code Adventure">
@@ -137,24 +119,42 @@
             </div>
           </article>
 
-          <!-- 7. Local Cooking Classes -->
-          <article class="event-card signature" @click="openEvent('cooking')">
+<!-- 6. Weekly Volleyball -->
+          <article class="event-card signature" @click="openEvent('volleyball')">
             <div class="event-image">
-              <img src="/images/cooking-class.jpg" alt="Local Cooking Classes">
-              <span class="event-badge cooking">🍳 Cooking</span>
+              <img src="/images/volleyball.png" alt="Weekly Volleyball Games">
+              <span class="event-badge volleyball">Weekly</span>
             </div>
             <div class="event-info">
-              <div class="event-icon">🍳</div>
-              <h3>Local Cooking Classes</h3>
-              <p class="event-tagline">Farm-fresh ingredients, authentic Sasak recipes</p>
+              <div class="event-icon">🏐</div>
+              <h3>Weekly Volleyball</h3>
+              <p class="event-tagline">Thursday sunset games on the farm</p>
               <div class="event-meta">
-                <span>⏰ ~2 hours</span>
-                <span>💰 From IDR 500,000</span>
+                <span>📅 Every Thursday</span>
+                <span>💰 IDR 100,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
             </div>
           </article>
-        </div>
+
+<!-- 7. Outdoor Cinema -->
+          <article class="event-card signature" @click="openEvent('cinema')">
+            <div class="event-image">
+              <img src="/images/outdoor-cinema.png" alt="Outdoor Cinema">
+              <span class="event-badge cinema">Weekly</span>
+            </div>
+            <div class="event-info">
+              <div class="event-icon">🎬</div>
+              <h3>Outdoor Cinema</h3>
+              <p class="event-tagline">Movies under the stars at Mawun Amphitheater</p>
+              <div class="event-meta">
+                <span>📅 Every Wednesday</span>
+                <span>💰 IDR 150,000</span>
+              </div>
+              <span class="click-hint">Click for details →</span>
+            </div>
+          </article>
+</div>
         <!-- Other Events -->
         <div class="other-events">
           <h3 class="other-events-title">More Activities</h3>
