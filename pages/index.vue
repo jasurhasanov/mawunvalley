@@ -93,37 +93,29 @@
         </div>
         <div class="animals-grid">
           <div class="animal-card">
-            <div class="animal-image">
-              <img src="/images/animal-goat.jpg" alt="The Goats">
-            </div>
-            <div class="animal-content">
+            <img src="/images/animal-goat.jpg" alt="The Goats">
+            <div class="animal-overlay">
               <h4>The Goats</h4>
               <p><strong>Coconut</strong> eats everything—cheesecake, cat food, your lunch. <strong>Spinach & Kangkung</strong> are champion fence-jumpers who raid the veggie garden.</p>
             </div>
           </div>
           <div class="animal-card">
-            <div class="animal-image">
-              <img src="/images/animal-duck.jpg" alt="The Ducks">
-            </div>
-            <div class="animal-content">
+            <img src="/images/animal-duck.jpg" alt="The Ducks">
+            <div class="animal-overlay">
               <h4>The Ducks</h4>
               <p><strong>Onyx & Midnight</strong> and their 7 ducklings. They waddle past your cabin every morning—better than any alarm clock.</p>
             </div>
           </div>
           <div class="animal-card">
-            <div class="animal-image">
-              <img src="/images/animal-cat.jpg" alt="The Cats">
-            </div>
-            <div class="animal-content">
+            <img src="/images/animal-cat.jpg" alt="The Cats">
+            <div class="animal-overlay">
               <h4>The Cats</h4>
               <p><strong>Drama Queen</strong> rules the café. <strong>Hungry Lion</strong> leads her kittens—Scorpion, Charlie Jr & Black Panther. Plus <strong>Charlie Chaplin</strong> and <strong>Sunny</strong>.</p>
             </div>
           </div>
           <div class="animal-card">
-            <div class="animal-image">
-              <img src="/images/animal-dog.jpg" alt="Mango">
-            </div>
-            <div class="animal-content">
+            <img src="/images/animal-dog.jpg" alt="Mango">
+            <div class="animal-overlay">
               <h4>Mango</h4>
               <p>Our sweet girl and Chief Welcoming Officer. She'll greet you on arrival and probably follow you everywhere.</p>
             </div>
