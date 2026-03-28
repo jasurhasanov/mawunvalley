@@ -230,6 +230,7 @@
               <span>Mawun Valley Farm, Lombok</span>
             </div>
           </div>
+        </div>
       </div>
     </section>
     <!-- CTA -->
