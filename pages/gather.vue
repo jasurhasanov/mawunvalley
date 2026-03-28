@@ -1485,18 +1485,17 @@ const closeEvent = () => {
   margin: 0;
 }
 .urgency-widgets {
-  padding: 40px 0 0 0;
+  padding: 20px 0 0 0;
 }
 
 .widgets-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-@media (max-width: 768px) {
-  .widgets-grid {
-    grid-template-columns: 1fr;
-  }
+.widgets-grid > * {
+  flex: 1;
+  min-width: 280px;
 }
 </style>
