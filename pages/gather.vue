@@ -52,6 +52,7 @@
                 <span>💰 From IDR 500,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
+              <ViewingIndicator :min="2" :max="6" />
             </div>
           </article>
 
@@ -71,6 +72,7 @@
                 <span>💰 From IDR 130,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
+              <ViewingIndicator :min="2" :max="6" />
             </div>
           </article>
 
@@ -89,6 +91,7 @@
                 <span>💰 IDR 1,000,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
+              <ViewingIndicator :min="2" :max="6" />
             </div>
           </article>
 
@@ -107,6 +110,7 @@
                 <span>💰 From IDR 190,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
+              <ViewingIndicator :min="2" :max="6" />
             </div>
           </article>
 
@@ -143,6 +147,7 @@
                 <span>💰 IDR 100,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
+              <ViewingIndicator :min="2" :max="6" />
             </div>
           </article>
 
@@ -161,6 +166,7 @@
                 <span>💰 IDR 150,000</span>
               </div>
               <span class="click-hint">Click for details →</span>
+              <ViewingIndicator :min="2" :max="6" />
             </div>
           </article>
 </div>
