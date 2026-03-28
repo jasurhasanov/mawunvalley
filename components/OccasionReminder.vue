@@ -5,7 +5,7 @@
       <h4>{{ display.title }}</h4>
       <p>{{ display.subtitle }}</p>
     </div>
-    <NuxtLink to="/gift-cards#tiers" class="occasion-cta">Shop Gift Cards</NuxtLink>
+    <button class="occasion-cta" @click="scrollToTiers">Choose Amount ↓</button>
   </div>
 </template>
 
@@ -70,6 +70,13 @@ const display = computed(() => {
   return genericMessages[index]
 })
 
+const scrollToTiers = () => {
+  const tiersSection = document.querySelector('.tiers-section')
+  if (tiersSection) {
+    tiersSection.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
 onMounted(() => {
   today.value = new Date()
 })
@@ -117,6 +124,8 @@ onMounted(() => {
   text-decoration: none;
   white-space: nowrap;
   transition: all 0.2s;
+  border: none;
+  cursor: pointer;
 }
 
 .occasion-cta:hover {
