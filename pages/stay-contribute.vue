@@ -833,7 +833,7 @@
                 <span v-for="i in 7" :key="i" :class="{ active: cabinSlides.sandat === i }" @click="cabinSlides.sandat = i"></span>
               </div>
             </div>
-            <div class="cabin-info"><h4>Sandat Cabin</h4><p>Queen bed • Balcony • Mountain view</p></div>
+            <div class="cabin-info"><h4>Sandat Cabin</h4><p>Queen bed • Balcony • Mountain view</p><ViewingIndicator :min="3" :max="7" /></div>
           </div>
           <div class="cabin-card">
             <div class="cabin-slider">
@@ -846,7 +846,7 @@
                 <span v-for="i in 7" :key="i" :class="{ active: cabinSlides.peace === i }" @click="cabinSlides.peace = i"></span>
               </div>
             </div>
-            <div class="cabin-info"><h4>Peace Cabin</h4><p>Queen bed • Wooden exterior • Mountain view</p></div>
+            <div class="cabin-info"><h4>Peace Cabin</h4><p>Queen bed • Wooden exterior • Mountain view</p><ViewingIndicator :min="2" :max="5" /></div>
           </div>
           <div class="cabin-card">
             <div class="cabin-slider">
@@ -859,7 +859,7 @@
                 <span v-for="i in 10" :key="i" :class="{ active: cabinSlides.lime === i }" @click="cabinSlides.lime = i"></span>
               </div>
             </div>
-            <div class="cabin-info"><h4>Lime Cabin</h4><p>Queen bed • Bright & colorful • Farm view</p></div>
+            <div class="cabin-info"><h4>Lime Cabin</h4><p>Queen bed • Bright & colorful • Farm view</p><ViewingIndicator :min="2" :max="6" /></div>
           </div>
           <div class="cabin-card">
             <div class="cabin-slider">
@@ -872,7 +872,7 @@
                 <span v-for="i in 3" :key="i" :class="{ active: cabinSlides.jabalkap === i }" @click="cabinSlides.jabalkap = i"></span>
               </div>
             </div>
-            <div class="cabin-info"><h4>Jabalkap Cabin</h4><p>Queen bed • Traditional style • Garden view</p></div>
+            <div class="cabin-info"><h4>Jabalkap Cabin</h4><p>Queen bed • Traditional style • Garden view</p><ViewingIndicator :min="1" :max="4" /></div>
           </div>
           <div class="cabin-card">
             <div class="cabin-slider">
@@ -885,7 +885,7 @@
                 <span v-for="i in 6" :key="i" :class="{ active: cabinSlides.windmill === i }" @click="cabinSlides.windmill = i"></span>
               </div>
             </div>
-            <div class="cabin-info"><h4>Rick's Windmill</h4><p>Queen bed • Unique design • Black balcony</p></div>
+            <div class="cabin-info"><h4>Rick's Windmill</h4><p>Queen bed • Unique design • Black balcony</p><ViewingIndicator :min="4" :max="9" /></div>
           </div>
         </div>
       </div>
@@ -940,6 +940,13 @@
 
     <!-- Application Form Section -->
     <!-- Fee Section -->
+
+    <!-- Featured Testimonial -->
+    <section class="featured-testimonial">
+      <div class="container">
+        <TestimonialRotation />
+      </div>
+    </section>
     <section class="fee-section">
       <div class="container">
         <div class="fee-box">
@@ -1325,6 +1332,7 @@ async function submitApplication() {
 .review-author span { font-size: 13px; color: var(--color-text-light); }
 
 
+.featured-testimonial { padding: 60px 0; background: var(--color-cream); }
 .fee-section { padding: 60px 0; background: var(--color-cream); }
 .fee-box { max-width: 800px; margin: 0 auto; background: white; padding: 40px 48px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); display: flex; align-items: center; gap: 40px; }
 .fee-left { flex-shrink: 0; text-align: left; }
