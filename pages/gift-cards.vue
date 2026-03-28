@@ -28,6 +28,33 @@
       </div>
     </section>
 
+    <!-- How It Works -->
+    <section class="how-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>How It Works</h2>
+        </div>
+        
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h4>Choose & Customize</h4>
+            <p>Select an amount, add recipient details and a personal message</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h4>We Send It</h4>
+            <p>Digital gift card delivered via WhatsApp or email within 24 hours</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h4>They Redeem</h4>
+            <p>Recipient contacts us to book any experience using their gift card balance (subject to availability)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Tiers -->
     <section class="tiers-section">
       <div class="container">
@@ -65,33 +92,6 @@
               class="custom-input"
               @click.stop
             >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>How It Works</h2>
-        </div>
-        
-        <div class="steps-grid">
-          <div class="step">
-            <div class="step-num">1</div>
-            <h4>Choose & Customize</h4>
-            <p>Select an amount, add recipient details and a personal message</p>
-          </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <h4>We Send It</h4>
-            <p>Digital gift card delivered via WhatsApp or email within 24 hours</p>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <h4>They Redeem</h4>
-            <p>Recipient contacts us to book any experience using their gift card balance (subject to availability)</p>
           </div>
         </div>
       </div>
