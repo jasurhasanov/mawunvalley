@@ -922,21 +922,18 @@ onUnmounted(() => {
   }
 }
 .nonis-urgency {
-  padding: 60px 0;
+  padding: 24px 0;
   background: var(--color-warm-white, #fffef9);
 }
 
 .nonis-widgets-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 800px;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-@media (max-width: 768px) {
-  .nonis-widgets-grid {
-    grid-template-columns: 1fr;
-  }
+.nonis-widgets-grid > * {
+  flex: 1;
+  min-width: 280px;
 }
 </style>

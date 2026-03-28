@@ -1,15 +1,10 @@
 <template>
   <div class="harvest-banner">
-    <div class="harvest-header">
-      <span class="harvest-icon">🌱</span>
-      <h4>Today's Harvest</h4>
-      <span class="harvest-date">{{ formattedDate }}</span>
-    </div>
-    <div class="harvest-items">
-      <span class="harvest-item" v-for="item in todaysHarvest" :key="item.name">
-        {{ item.emoji }} {{ item.name }}
-      </span>
-    </div>
+    <span class="harvest-icon">🌱</span>
+    <span class="harvest-text">
+      <strong>Today's harvest:</strong>
+      <span class="items">{{ harvestText }}</span>
+    </span>
   </div>
 </template>
 
@@ -19,27 +14,9 @@ import { ref, computed, onMounted } from 'vue'
 const today = ref(new Date())
 
 const allHarvest = [
-  { emoji: '🥬', name: 'Water Spinach' },
-  { emoji: '🌿', name: 'Lemongrass' },
-  { emoji: '🫚', name: 'Ginger' },
-  { emoji: '🌿', name: 'Mint' },
-  { emoji: '🌿', name: 'Basil' },
-  { emoji: '🥬', name: 'Spinach' },
-  { emoji: '🍈', name: 'Papaya' },
-  { emoji: '🌶️', name: 'Chili' },
-  { emoji: '🌿', name: 'Dill' },
-  { emoji: '🧅', name: 'Spring Onion' },
-  { emoji: '🌿', name: 'Moringa' },
-  { emoji: '🌿', name: 'Tarragon' },
+  'Water Spinach', 'Lemongrass', 'Ginger', 'Mint', 'Basil', 
+  'Spinach', 'Papaya', 'Chili', 'Dill', 'Spring Onion', 'Moringa', 'Tarragon'
 ]
-
-const formattedDate = computed(() => {
-  return today.value.toLocaleDateString('en-US', {
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric'
-  })
-})
 
 // Use date as seed for consistent daily shuffle
 const todaysHarvest = computed(() => {
@@ -47,7 +24,6 @@ const todaysHarvest = computed(() => {
                   (today.value.getMonth() + 1) * 100 + 
                   today.value.getDate()
   
-  // Seeded shuffle
   const shuffled = [...allHarvest]
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = (dateNum * (i + 1) * 31) % (i + 1)
@@ -57,6 +33,8 @@ const todaysHarvest = computed(() => {
   return shuffled.slice(0, 4)
 })
 
+const harvestText = computed(() => todaysHarvest.value.join(', '))
+
 onMounted(() => {
   today.value = new Date()
 })
@@ -64,47 +42,30 @@ onMounted(() => {
 
 <style scoped>
 .harvest-banner {
-  background: linear-gradient(135deg, var(--color-hero-dark, #1e3a2f), var(--color-hero-light, #2d5a4a));
-  color: white;
-  padding: 1.25rem;
-  border-radius: 12px;
-}
-
-.harvest-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #e8f5e9, #fff);
+  border: 1px solid #a5d6a7;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
 }
 
 .harvest-icon {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
-.harvest-header h4 {
-  font-family: var(--font-heading, 'Quicksand', sans-serif);
-  font-size: 1.1rem;
-  color: white;
-  margin: 0;
-  flex: 1;
+.harvest-text {
+  color: var(--color-dark-light, #4a5d4b);
 }
 
-.harvest-date {
-  font-size: 0.8rem;
-  opacity: 0.8;
+.harvest-text strong {
+  color: var(--color-dark, #2c3e2d);
 }
 
-.harvest-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.harvest-item {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 0.4rem 0.85rem;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  backdrop-filter: blur(10px);
+.items {
+  color: var(--color-sage, #87a878);
+  font-weight: 500;
 }
 </style>
