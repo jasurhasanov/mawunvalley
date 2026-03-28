@@ -470,7 +470,7 @@ onUnmounted(() => {
 }
 /* Info */
 .nonis-info {
-  padding: 0;
+  padding: 40px 0;
   background: var(--color-cream);
 }
 
@@ -479,8 +479,13 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  padding: 16px 24px;
+  padding: 20px 32px;
   flex-wrap: wrap;
+  background: var(--color-warm-white, #fffef9);
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .info-item {
@@ -943,18 +948,21 @@ onUnmounted(() => {
   }
 }
 .nonis-urgency {
-  padding: 24px 0;
-  background: var(--color-warm-white, #fffef9);
+  padding: 40px 0;
+  background: var(--color-cream);
 }
 
 .nonis-widgets-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .nonis-widgets-grid > * {
-  flex: 1;
-  min-width: 280px;
+  flex: 1 1 300px;
+  max-width: 340px;
 }
 </style>
