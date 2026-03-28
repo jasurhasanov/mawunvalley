@@ -14,13 +14,13 @@ import { ref, computed, onMounted } from 'vue'
 
 const today = ref(new Date())
 
+// Fixed annual holidays only (lunar holidays like Eid vary yearly)
 const occasions = [
   { name: "Mother's Day", icon: "💐", month: 5, day: 11 },
   { name: "Father's Day", icon: "👔", month: 6, day: 15 },
   { name: "Valentine's Day", icon: "💝", month: 2, day: 14 },
   { name: "Christmas", icon: "🎄", month: 12, day: 25 },
   { name: "New Year", icon: "🎊", month: 1, day: 1 },
-  { name: "Eid al-Fitr", icon: "🌙", month: 3, day: 30 }, // Approximate, varies yearly
 ]
 
 const genericMessages = [
