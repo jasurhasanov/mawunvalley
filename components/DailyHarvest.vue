@@ -2,7 +2,7 @@
   <div class="harvest-banner">
     <span class="harvest-icon">🌱</span>
     <span class="harvest-text">
-      <strong>Today's harvest:</strong>
+      <strong>Today's harvest: </strong>
       <span class="items">{{ harvestText }}</span>
     </span>
   </div>
