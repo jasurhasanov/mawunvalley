@@ -13,6 +13,11 @@
     </header>
 
     <!-- Intro -->
+    <section class="occasion-section">
+      <div class="container">
+        <OccasionReminder />
+      </div>
+    </section>
     <section class="intro-section">
       <div class="container">
         <div class="intro-content">
@@ -718,5 +723,8 @@ section h2 {
   font-size: 14px;
   color: #666;
   line-height: 1.6;
+}
+.occasion-section {
+  padding: 40px 0 0 0;
 }
 </style>

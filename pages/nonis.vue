@@ -54,6 +54,16 @@
         </div>
       </div>
     </section>
+    <!-- Nonis Urgency Widgets -->
+    <section class="nonis-urgency">
+      <div class="container">
+        <div class="nonis-widgets-grid">
+          <CheesecakeBanner />
+          <DailyHarvest />
+        </div>
+      </div>
+    </section>
+
     <!-- Menu -->
     <section class="nonis-menu" id="menu">
       <div class="container">
@@ -909,6 +919,24 @@ onUnmounted(() => {
     text-align: center;
     padding: 8px 10px;
     font-size: 12px;
+  }
+}
+.nonis-urgency {
+  padding: 60px 0;
+  background: var(--color-warm-white, #fffef9);
+}
+
+.nonis-widgets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .nonis-widgets-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

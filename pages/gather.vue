@@ -9,6 +9,15 @@
     </header>
 
 
+    <section class="urgency-widgets">
+      <div class="container">
+        <div class="widgets-grid">
+          <EventCountdown />
+          <WeatherWidget />
+        </div>
+      </div>
+    </section>
+
     <section class="page-intro">
       <div class="container">
         <div class="intro-content">
@@ -1474,5 +1483,20 @@ const closeEvent = () => {
   color: #5D4037;
   font-style: italic;
   margin: 0;
+}
+.urgency-widgets {
+  padding: 40px 0 0 0;
+}
+
+.widgets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .widgets-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
