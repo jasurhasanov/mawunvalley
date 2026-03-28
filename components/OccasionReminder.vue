@@ -1,11 +1,11 @@
 <template>
-  <div class="occasion-reminder" v-if="nextOccasion">
-    <div class="occasion-icon">{{ nextOccasion.icon }}</div>
+  <div class="occasion-reminder">
+    <div class="occasion-icon">{{ display.icon }}</div>
     <div class="occasion-content">
-      <h4>{{ nextOccasion.name }} in {{ daysUntil }} {{ daysUntil === 1 ? 'day' : 'days' }}</h4>
-      <p>Gift an experience, not stuff</p>
+      <h4>{{ display.title }}</h4>
+      <p>{{ display.subtitle }}</p>
     </div>
-    <NuxtLink to="/gift-cards" class="occasion-cta">Shop Gift Cards</NuxtLink>
+    <NuxtLink to="/gift-cards#tiers" class="occasion-cta">Shop Gift Cards</NuxtLink>
   </div>
 </template>
 
@@ -20,6 +20,16 @@ const occasions = [
   { name: "Valentine's Day", icon: "💝", month: 2, day: 14 },
   { name: "Christmas", icon: "🎄", month: 12, day: 25 },
   { name: "New Year", icon: "🎊", month: 1, day: 1 },
+  { name: "Eid al-Fitr", icon: "🌙", month: 3, day: 30 }, // Approximate, varies yearly
+]
+
+const genericMessages = [
+  { icon: "🎁", title: "Don't wait for a special day", subtitle: "Gift an experience that matters — anytime" },
+  { icon: "✨", title: "Some gifts create memories", subtitle: "Give the gift of slow living at the farm" },
+  { icon: "🌴", title: "Better than stuff", subtitle: "Gift an escape to the farm — no occasion needed" },
+  { icon: "💝", title: "Surprise someone you love", subtitle: "Farm experiences they'll never forget" },
+  { icon: "🎉", title: "Celebrate just because", subtitle: "The best gifts don't need a reason" },
+  { icon: "🌿", title: "Give the gift of time", subtitle: "Slow mornings, good food, nature — wrapped up for someone special" },
 ]
 
 const nextOccasion = computed(() => {
@@ -38,16 +48,26 @@ const nextOccasion = computed(() => {
     const diff = Math.ceil((occDate - now) / (1000 * 60 * 60 * 24))
     if (diff > 0 && diff <= 30 && diff < minDays) {
       minDays = diff
-      closest = { ...occ, date: occDate }
+      closest = { ...occ, date: occDate, daysUntil: diff }
     }
   }
   
   return closest
 })
 
-const daysUntil = computed(() => {
-  if (!nextOccasion.value) return 0
-  return Math.ceil((nextOccasion.value.date - today.value) / (1000 * 60 * 60 * 24))
+const display = computed(() => {
+  if (nextOccasion.value) {
+    const days = nextOccasion.value.daysUntil
+    return {
+      icon: nextOccasion.value.icon,
+      title: `${nextOccasion.value.name} in ${days} ${days === 1 ? 'day' : 'days'}`,
+      subtitle: "Gift an experience, not stuff"
+    }
+  }
+  
+  // Random generic message
+  const index = Math.floor(Math.random() * genericMessages.length)
+  return genericMessages[index]
 })
 
 onMounted(() => {
@@ -64,7 +84,6 @@ onMounted(() => {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
 }
 
 .occasion-icon {
