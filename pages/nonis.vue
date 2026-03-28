@@ -883,6 +883,7 @@ onUnmounted(() => {
   .nonis-logo-story {
     max-width: 160px;
   }
+  .menu-nav {
     gap: 6px;
     padding: 10px;
     top: 70px;
