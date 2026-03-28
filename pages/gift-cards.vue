@@ -448,7 +448,7 @@ section h2 {
 
 /* Tiers */
 .tiers-section {
-  background: white;
+  background: var(--color-cream);
 }
 
 .tiers-grid {
@@ -476,7 +476,7 @@ section h2 {
 
 .tier-card.active {
   border-color: var(--color-terracotta);
-  background: white;
+  background: var(--color-cream);
 }
 
 .tier-amount {
@@ -503,7 +503,7 @@ section h2 {
 
 /* How It Works */
 .how-section {
-  background: var(--color-light);
+  background: var(--color-warm-white);
 }
 
 .steps-grid {
@@ -550,7 +550,7 @@ section h2 {
 
 /* Form */
 .form-section {
-  background: var(--color-cream);
+  background: var(--color-warm-white);
 }
 
 .selected-amount {
@@ -565,7 +565,7 @@ section h2 {
 }
 
 .form-section-box {
-  background: white;
+  background: var(--color-cream);
   padding: 30px;
   border-radius: 16px;
   margin-bottom: 20px;
@@ -638,7 +638,7 @@ section h2 {
 }
 
 .form-note {
-  background: white;
+  background: var(--color-cream);
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 24px;
@@ -690,6 +690,7 @@ section h2 {
 
 /* FAQ */
 .faq-section {
+  background: var(--color-cream);
   text-align: center;
 }
 
