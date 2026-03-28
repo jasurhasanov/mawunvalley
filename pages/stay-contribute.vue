@@ -150,6 +150,7 @@
               <h3>The Grower</h3>
               <p>Curious about where food comes from? Join us in the garden when you feel like getting your hands dirty.</p>
               <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
+              <ViewingIndicator :min="3" :max="8" />
             </div>
           </article>
 
@@ -162,6 +163,7 @@
               <h3>The Caretaker</h3>
               <p>Our goats, ducks, and chickens would love to meet you. Help out in the kitchen if cooking brings you joy.</p>
               <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
+              <ViewingIndicator :min="3" :max="8" />
             </div>
           </article>
 
@@ -174,6 +176,7 @@
               <h3>The Maker</h3>
               <p>Like building things? We're always creating something new — cabins, furniture, art. Jump in when inspiration strikes.</p>
               <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
+              <ViewingIndicator :min="3" :max="8" />
             </div>
           </article>
 
@@ -186,6 +189,7 @@
               <h3>The Storyteller</h3>
               <p>Love capturing moments? There's always something beautiful happening — sunsets, farm life, community dinners.</p>
               <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
+              <ViewingIndicator :min="3" :max="8" />
             </div>
           </article>
 
@@ -198,6 +202,7 @@
               <h3>Slow Living</h3>
               <p>Not sure yet? That's perfect. Come with no plan — try a bit of everything or nothing at all.</p>
               <div class="program-meta"><span>🛏️ Private Cabin</span><span>🍳 Meals Included</span></div>
+              <ViewingIndicator :min="3" :max="8" />
             </div>
           </article>
         </div>
