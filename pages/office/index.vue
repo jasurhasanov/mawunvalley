@@ -44,6 +44,12 @@
           <p>Print game materials, booklets, and answer keys</p>
         </NuxtLink>
 
+        <a href="/downloads/nonis-menu-printable.html" target="_blank" class="tool-card">
+          <div class="tool-icon">📋</div>
+          <h3>Noni's Menu</h3>
+          <p>Printable menu for the café (A4, PDF/PNG)</p>
+        </a>
+
         <div class="tool-card disabled">
           <div class="tool-icon">📅</div>
           <h3>Bookings</h3>
