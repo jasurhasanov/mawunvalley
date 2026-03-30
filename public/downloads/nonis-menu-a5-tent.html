@@ -161,6 +161,23 @@
     }
 
     .item-price {
+    }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .item-desc {
+      font-size: 6pt;
+      color: var(--color-text-light);
+      margin-top: 0.5mm;
+      line-height: 1.3;
+      padding-left: 2mm;
+    }
+
+    .item-desc-placeholder {
       color: var(--color-terracotta);
       font-weight: 500;
       font-size: 8pt;
@@ -381,37 +398,75 @@
         <div class="menu-content">
           <!-- Breakfast -->
           <section class="menu-section">
-            <h2 class="section-title">🍳 Breakfast <span style="font-weight:normal; font-size:7pt;">(8am–5pm)</span></h2>
-            <div class="menu-item"><span class="item-name">Omelette</span><span class="item-price">Rp 50K</span></div>
-            <div class="menu-item featured"><span class="item-name">Crêpes (Farm Jam) <span class="star">⭐</span></span><span class="item-price">Rp 50K</span></div>
-            <div class="menu-item"><span class="item-name">Toast & Farm-Made Delight</span><span class="item-price">Rp 50K</span></div>
-            <div class="menu-item"><span class="item-name">Farm Fresh Boiled Eggs</span><span class="item-price">Rp 50K</span></div>
+            <h2 class="section-title">🍳 Breakfast <span style="font-weight:normal; font-size:6pt;">(8am–5pm)</span></h2>
+            <div class="menu-item">
+              <div class="item-row"><span class="item-name">Omelette</span><span class="item-price">Rp 50K</span></div>
+              <p class="item-desc">Fluffy eggs with local vegetables & fresh farm herbs</p>
+            </div>
+            <div class="menu-item featured">
+              <div class="item-row"><span class="item-name">Crêpes (Farm Jam) <span class="star">⭐</span></span><span class="item-price">Rp 50K</span></div>
+              <p class="item-desc">Delicate pancakes with farm-made seasonal jam</p>
+            </div>
+            <div class="menu-item">
+              <div class="item-row"><span class="item-name">Toast & Farm-Made Delight</span><span class="item-price">Rp 50K</span></div>
+              <p class="item-desc">Toasted bread with farm-made seasonal jam</p>
+            </div>
+            <div class="menu-item">
+              <div class="item-row"><span class="item-name">Farm Fresh Boiled Eggs</span><span class="item-price">Rp 50K</span></div>
+              <p class="item-desc">With tomatoes, mint, basil & seasonal greens</p>
+            </div>
           </section>
 
           <!-- Pastry -->
           <section class="menu-section">
             <h2 class="section-title">🍰 Pastry</h2>
-            <div class="menu-item featured"><span class="item-name">Noni's Burnt Cheesecake <span class="star">⭐</span></span><span class="item-price">Rp 50K</span></div>
+            <div class="menu-item featured">
+              <div class="item-row"><span class="item-name">Noni's Burnt Cheesecake <span class="star">⭐</span></span><span class="item-price">Rp 50K</span></div>
+              <p class="item-desc">Creamy, caramelized — baked fresh daily</p>
+            </div>
           </section>
 
           <!-- Signature -->
           <section class="menu-section">
             <h2 class="section-title">🍽️ Signature Meals</h2>
-            <div class="menu-item featured"><span class="item-name">Noni's Plate <span class="star">⭐</span></span><span class="item-price">Rp 75K</span></div>
-            <div class="menu-item featured"><span class="item-name">Noni's Plate (Vegan) <span class="star">⭐</span></span><span class="item-price">Rp 75K</span></div>
+            <div class="menu-item featured">
+              <div class="item-row"><span class="item-name">Noni's Plate <span class="star">⭐</span></span><span class="item-price">Rp 75K</span></div>
+              <p class="item-desc">Chicken or fish, rice, tofu, tempeh, veggies & sambal</p>
+            </div>
+            <div class="menu-item featured">
+              <div class="item-row"><span class="item-name">Noni's Plate (Vegan) <span class="star">⭐</span></span><span class="item-price">Rp 75K</span></div>
+              <p class="item-desc">100% plant-based with tofu, tempeh, veggies & sambal</p>
+            </div>
           </section>
 
           <!-- Drinks -->
           <section class="menu-section">
             <h2 class="section-title">🍵 Drinks</h2>
-            <div class="menu-item featured"><span class="item-name">Lemongrass Ginger Tea <span class="star">⭐</span></span><span class="item-price">Rp 50K</span></div>
-            <div class="menu-item featured"><span class="item-name">Wedang Uwuh <span class="star">⭐</span></span><span class="item-price">Rp 50K</span></div>
-            <div class="menu-item featured"><span class="item-name">Ceylon Black Tea <span class="star">⭐</span></span><span class="item-price">Rp 40K</span></div>
-            <div class="menu-item"><span class="item-name">Jasmine / Green Tea</span><span class="item-price">Rp 40K</span></div>
-            <div class="menu-item"><span class="item-name">Ice Lime Tea</span><span class="item-price">Rp 40K</span></div>
-            <div class="menu-item"><span class="item-name">Ice Coffee</span><span class="item-price">Rp 40K</span></div>
-            <div class="menu-item"><span class="item-name">Lombok Coffee (Hot)</span><span class="item-price">Rp 40K</span></div>
-            <div class="menu-item"><span class="item-name">Cranberry Juice</span><span class="item-price">Rp 40K</span></div>
+            <div class="menu-item featured">
+              <div class="item-row"><span class="item-name">Lemongrass Ginger Tea <span class="star">⭐</span></span><span class="item-price">Rp 50K</span></div>
+              <p class="item-desc">Soothing tea with farm lemongrass, ginger & honey</p>
+            </div>
+            <div class="menu-item featured">
+              <div class="item-row"><span class="item-name">Wedang Uwuh <span class="star">⭐</span></span><span class="item-price">Rp 50K</span></div>
+              <p class="item-desc">Traditional Javanese herbal infusion</p>
+            </div>
+            <div class="menu-item featured">
+              <div class="item-row"><span class="item-name">Ceylon Black Tea <span class="star">⭐</span></span><span class="item-price">Rp 40K</span></div>
+              <p class="item-desc">Sri Lankan tea with herbs & fruit peels</p>
+            </div>
+            <div class="menu-item">
+              <div class="item-row"><span class="item-name">Jasmine / Green Tea</span><span class="item-price">Rp 40K</span></div>
+            </div>
+            <div class="menu-item">
+              <div class="item-row"><span class="item-name">Ice Lime Tea</span><span class="item-price">Rp 40K</span></div>
+            </div>
+            <div class="menu-item">
+              <div class="item-row"><span class="item-name">Ice / Hot Coffee</span><span class="item-price">Rp 40K</span></div>
+              <p class="item-desc">Lombok coffee · Add milk +5K</p>
+            </div>
+            <div class="menu-item">
+              <div class="item-row"><span class="item-name">Cranberry Juice</span><span class="item-price">Rp 40K</span></div>
+            </div>
           </section>
         </div>
 
