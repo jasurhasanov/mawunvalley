@@ -23,7 +23,7 @@
           <p>From this same vision, Noni's was born. Whether it's a creamy <strong>Burnt Cheesecake</strong> or a soothing <strong>Lemongrass Ginger Tea</strong>, everything is crafted with the same dedication we put into nurturing our farm.</p>
           <blockquote class="philosophy-quote">
             <span class="quote-mark">"</span>
-            Slow down. Taste the difference.
+            Slow down. Taste the moment.
             <span class="quote-mark">"</span>
           </blockquote>
         </div>
