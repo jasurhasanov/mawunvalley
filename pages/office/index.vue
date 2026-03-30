@@ -49,6 +49,11 @@
           <h3>Noni's Menu</h3>
           <p>Printable menu for the café (A4, PDF/PNG)</p>
         </a>
+        <a href="/downloads/nonis-menu-a5-tent.html" target="_blank" class="tool-card">
+          <div class="tool-icon">🏨</div>
+          <h3>Noni's A5 Tent Menu</h3>
+          <p>Standing menu for hotels (QR + promo)</p>
+        </a>
 
         <div class="tool-card disabled">
           <div class="tool-icon">📅</div>
