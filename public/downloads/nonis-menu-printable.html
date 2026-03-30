@@ -669,7 +669,6 @@
           imgHeight = pageHeight;
           // Recalculate width to maintain aspect ratio within A4
         }
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
         
         pdf.addImage(
           canvas.toDataURL('image/png', 1.0),
