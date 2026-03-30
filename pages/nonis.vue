@@ -151,14 +151,14 @@
                 <span class="item-name">Ice Coffee</span>
                 <span class="item-price">40K</span>
               </div>
-              <p class="item-desc">Cold-brewed Lombok coffee, smooth and bold. Add milk +5K.</p>
+              <p class="item-desc">A cool, bold pick-me-up on a warm day. Add milk Rp +5K.</p>
             </div>
             <div class="menu-item">
               <div class="item-header">
                 <span class="item-name">Lombok Coffee (Hot)</span>
                 <span class="item-price">40K</span>
               </div>
-              <p class="item-desc">A warming cup of locally-sourced Lombok coffee.</p>
+              <p class="item-desc">A warming cup of locally-sourced Lombok coffee. Add milk Rp +5K.</p>
             </div>
             <div class="menu-item">
               <div class="item-header">
