@@ -96,14 +96,14 @@
                 <span class="item-name">Noni's Plate <span class="star">⭐</span></span>
                 <span class="item-price">75K</span>
               </div>
-              <p class="item-desc">Noni's signature farm-to-table recipe! Crispy fried chicken or fresh fish, seasonal side, tofu, fresh farm vegetables, fried peanuts & tempeh, and Noni's signature sambal.</p>
+              <p class="item-desc">Chicken or fresh fish, cooked a different way each day. Served with rice, tofu, tempeh, seasonal farm vegetables, and Noni's signature sambal. What's on the side depends on what's ready in the garden.</p>
             </div>
             <div class="menu-item featured">
               <div class="item-header">
                 <span class="item-name">Noni's Plate (Vegan) <span class="star">⭐</span></span>
                 <span class="item-price">75K</span>
               </div>
-              <p class="item-desc">A vibrant, plant-based dish celebrating our farm's harvest. Savory tofu, seasonal vegetables, crispy peanuts & tempeh, and Noni's signature sambal. 100% plant-based.</p>
+              <p class="item-desc">100% plant-based, generously served. Tofu, tempeh, seasonal farm vegetables, and Noni's signature sambal with rice. What's on the plate depends on what's ready in the garden.</p>
             </div>
           </div>
         </div>
