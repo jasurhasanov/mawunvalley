@@ -460,7 +460,7 @@
         
         // Create canvas
         const canvas = await html2canvas(element, {
-          scale: 2,
+          scale: 4,
           useCORS: true,
           allowTaint: true,
           backgroundColor: '#faf8f5'
@@ -477,8 +477,8 @@
         const imgHeight = (canvas.height * imgWidth) / canvas.width;
         
         pdf.addImage(
-          canvas.toDataURL('image/jpeg', 0.95),
-          'JPEG',
+          canvas.toDataURL('image/png', 1.0),
+          'PNG',
           0,
           0,
           imgWidth,
