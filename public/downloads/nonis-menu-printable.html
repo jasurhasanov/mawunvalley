@@ -37,7 +37,7 @@
       width: 210mm;
       min-height: 297mm;
       margin: 0 auto;
-      padding: 10mm 15mm;
+      padding: 8mm 12mm;
       background: var(--color-cream);
       box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
@@ -238,7 +238,7 @@
     
     /* ========== FOOTER - TWO COLUMN ========== */
     .menu-footer {
-      margin-top: 5mm;
+      margin-top: 3mm;
       padding-top: 5mm;
       border-top: 1px solid var(--color-gold);
     }
@@ -660,6 +660,15 @@
         });
         
         const imgWidth = 210;
+        const pageHeight = 297;
+        let imgHeight = (canvas.height * imgWidth) / canvas.width;
+        
+        // Scale down if taller than A4
+        if (imgHeight > pageHeight) {
+          const ratio = pageHeight / imgHeight;
+          imgHeight = pageHeight;
+          // Recalculate width to maintain aspect ratio within A4
+        }
         const imgHeight = (canvas.height * imgWidth) / canvas.width;
         
         pdf.addImage(
