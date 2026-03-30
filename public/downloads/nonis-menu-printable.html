@@ -37,39 +37,122 @@
       width: 210mm;
       min-height: 297mm;
       margin: 0 auto;
-      padding: 12mm 15mm;
+      padding: 10mm 15mm;
       background: var(--color-cream);
       box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
     
-    /* Header */
+    /* ========== HEADER WITH BOTANICAL FRAME ========== */
     .menu-header {
       text-align: center;
-      padding-bottom: 6mm;
-      border-bottom: 1px solid var(--color-gold);
+      padding: 8mm 6mm;
       margin-bottom: 6mm;
+      position: relative;
     }
     
+    .header-frame {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    
+    /* Corner botanicals using CSS */
+    .header-frame::before,
+    .header-frame::after {
+      content: '🌿';
+      position: absolute;
+      font-size: 18pt;
+      opacity: 0.6;
+    }
+    
+    .header-frame::before {
+      top: 0;
+      left: 0;
+      transform: rotate(-45deg);
+    }
+    
+    .header-frame::after {
+      top: 0;
+      right: 0;
+      transform: rotate(45deg) scaleX(-1);
+    }
+    
+    .header-corners-bottom::before,
+    .header-corners-bottom::after {
+      content: '🌿';
+      position: absolute;
+      font-size: 18pt;
+      opacity: 0.6;
+    }
+    
+    .header-corners-bottom::before {
+      bottom: 0;
+      left: 0;
+      transform: rotate(45deg);
+    }
+    
+    .header-corners-bottom::after {
+      bottom: 0;
+      right: 0;
+      transform: rotate(-45deg) scaleX(-1);
+    }
+    
+    /* Decorative lines */
+    .header-line {
+      position: absolute;
+      background: linear-gradient(90deg, transparent, var(--color-sage), transparent);
+      height: 1px;
+      left: 15%;
+      right: 15%;
+    }
+    
+    .header-line.top { top: 3mm; }
+    .header-line.bottom { bottom: 3mm; }
+    
+    .header-line-vert {
+      position: absolute;
+      background: linear-gradient(180deg, transparent, var(--color-sage), transparent);
+      width: 1px;
+      top: 15%;
+      bottom: 15%;
+    }
+    
+    .header-line-vert.left { left: 3mm; }
+    .header-line-vert.right { right: 3mm; }
+    
     .logo-img {
-      height: 80px;
-      margin-bottom: 4mm;
+      height: 70px;
+      margin-bottom: 3mm;
+      position: relative;
+      z-index: 1;
     }
     
     .tagline {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 12pt;
+      font-size: 13pt;
       color: var(--color-terracotta);
       letter-spacing: 1px;
+      margin-bottom: 2mm;
+      position: relative;
+      z-index: 1;
     }
     
     .philosophy {
-      font-size: 9pt;
+      font-size: 8.5pt;
       color: var(--color-text-light);
-      margin-top: 3mm;
-      max-width: 85%;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 80%;
+      margin: 0 auto;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .header-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--color-gold);
+      margin: 4mm auto 0;
     }
     
     /* Menu Layout */
@@ -153,41 +236,80 @@
       line-height: 1.4;
     }
     
-    /* Footer */
+    /* ========== FOOTER - TWO COLUMN ========== */
     .menu-footer {
-      margin-top: 6mm;
+      margin-top: 5mm;
       padding-top: 5mm;
       border-top: 1px solid var(--color-gold);
-      text-align: center;
     }
     
-    .footer-info {
+    .footer-columns {
       display: flex;
-      justify-content: center;
-      gap: 8mm;
-      margin-bottom: 3mm;
-      font-size: 9pt;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4mm;
+    }
+    
+    .footer-left,
+    .footer-right {
+      font-size: 8.5pt;
       color: var(--color-text);
     }
     
-    .footer-info span {
+    .footer-left {
+      text-align: left;
+    }
+    
+    .footer-right {
+      text-align: right;
+    }
+    
+    .footer-item {
       display: flex;
       align-items: center;
       gap: 2mm;
+      margin-bottom: 1.5mm;
+    }
+    
+    .footer-left .footer-item {
+      justify-content: flex-start;
+    }
+    
+    .footer-right .footer-item {
+      justify-content: flex-end;
+    }
+    
+    .footer-icon {
+      font-size: 10pt;
+    }
+    
+    .footer-label {
+      font-weight: 500;
+      color: var(--color-dark);
+    }
+    
+    .footer-value {
+      color: var(--color-text-light);
+    }
+    
+    .footer-quote-section {
+      text-align: center;
+      padding-top: 4mm;
+      border-top: 1px solid rgba(135, 168, 120, 0.3);
+    }
+    
+    .footer-botanical {
+      font-size: 12pt;
+      opacity: 0.5;
+      letter-spacing: 8px;
+      margin-bottom: 2mm;
     }
     
     .footer-quote {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 10pt;
+      font-size: 11pt;
       color: var(--color-terracotta);
-      margin-top: 3mm;
-    }
-    
-    .footer-social {
-      font-size: 8pt;
-      color: var(--color-text-light);
-      margin-top: 2mm;
     }
     
     /* Decorative */
@@ -268,11 +390,19 @@
   </button>
   
   <div class="menu-page" id="menuPage">
-    <!-- Header -->
+    <!-- Header with Botanical Frame -->
     <header class="menu-header">
+      <div class="header-frame">
+        <div class="header-line top"></div>
+        <div class="header-line bottom"></div>
+        <div class="header-line-vert left"></div>
+        <div class="header-line-vert right"></div>
+      </div>
+      <div class="header-corners-bottom"></div>
       <img src="https://www.mawunvalley.com/images/nonis-logo-hero.png" alt="Noni's" class="logo-img">
       <div class="tagline">Less But Better</div>
-      <p class="philosophy">Farm-to-table café at Mawun Valley Farm. Everything we serve comes from our land or our neighbors' — simple food, made with care.</p>
+      <p class="philosophy">Farm-to-table café at Mawun Valley Farm<br>Simple food, made with care</p>
+      <div class="header-divider"></div>
     </header>
     
     <!-- Menu Content -->
@@ -435,15 +565,42 @@
       </div>
     </div>
     
-    <!-- Footer -->
+    <!-- Footer - Two Column -->
     <footer class="menu-footer">
-      <div class="footer-info">
-        <span>🕐 Open Daily 8am – 7pm</span>
-        <span>📍 Mawun Valley Farm, Lombok</span>
-        <span>📱 +62 822 5844 0585</span>
+      <div class="footer-columns">
+        <div class="footer-left">
+          <div class="footer-item">
+            <span class="footer-icon">🕐</span>
+            <span><span class="footer-label">Open Daily</span> · 8am – 7pm</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-icon">📍</span>
+            <span>Mawun Valley Farm, Lombok</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-icon">📱</span>
+            <span>+62 822 5844 0585</span>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-item">
+            <span class="footer-label">@nonislombok</span>
+            <span class="footer-icon">📷</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-label">@mawunvalley</span>
+            <span class="footer-icon">🌿</span>
+          </div>
+          <div class="footer-item">
+            <span>mawunvalley.com</span>
+            <span class="footer-icon">🌐</span>
+          </div>
+        </div>
       </div>
-      <p class="footer-quote">"Slow down. Taste the moment."</p>
-      <p class="footer-social">@nonislombok · @mawunvalley</p>
+      <div class="footer-quote-section">
+        <div class="footer-botanical">🌿 ✦ 🌿</div>
+        <p class="footer-quote">"Slow down. Taste the moment."</p>
+      </div>
     </footer>
   </div>
 
