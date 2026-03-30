@@ -219,99 +219,126 @@
       color: var(--color-text-light);
     }
 
-    /* ========== SIDE 2: PROMO - STACKED CARDS ========== */
+    /* ========== SIDE 2: PROMO - MAGAZINE STYLE ========== */
     .promo-side {
       height: 100%;
       display: flex;
       flex-direction: column;
-      background: var(--color-cream);
     }
 
-    .promo-header {
-      text-align: center;
-      padding: 5mm 4mm 4mm;
-    }
-
-    .promo-header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 14pt;
-      color: var(--color-dark);
-      margin-bottom: 1mm;
-    }
-
-    .promo-header p {
-      font-size: 9pt;
-      color: var(--color-text-light);
-      font-style: italic;
-    }
-
-    .promo-cards {
-      flex: 1;
-      padding: 0 4mm;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5mm;
-    }
-
-    .promo-card-full {
-      flex: 1;
-      border-radius: 3mm;
-      overflow: hidden;
+    /* Large Hero Image - 55% */
+    .promo-hero {
+      height: 55%;
       position: relative;
-      min-height: 32mm;
+      overflow: hidden;
     }
 
-    .promo-card-full img {
+    .promo-hero img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      position: absolute;
-      inset: 0;
     }
 
-    .promo-card-full::after {
+    .promo-hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0) 100%);
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%);
     }
 
-    .promo-card-full .card-content {
+    .promo-hero-content {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 3mm;
+      padding: 6mm;
       color: white;
       z-index: 1;
     }
 
-    .promo-card-full h3 {
+    .promo-hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 11pt;
-      margin-bottom: 0.5mm;
+      font-size: 20pt;
+      margin-bottom: 2mm;
+      line-height: 1.2;
     }
 
-    .promo-card-full p {
+    .promo-hero .tagline {
+      font-size: 10pt;
+      opacity: 0.95;
+      margin-bottom: 3mm;
+    }
+
+    .promo-hero .intro {
       font-size: 8pt;
       opacity: 0.9;
+      line-height: 1.5;
+      max-width: 90%;
     }
 
-    .promo-footer {
+    /* Bottom Section */
+    .promo-bottom {
+      flex: 1;
       padding: 4mm;
+      background: var(--color-cream);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Two Highlight Cards */
+    .highlights {
+      display: flex;
+      gap: 3mm;
+      margin-bottom: 4mm;
+    }
+
+    .highlight-card {
+      flex: 1;
+      display: flex;
+      gap: 3mm;
+      background: white;
+      border-radius: 3mm;
+      padding: 3mm;
+      align-items: center;
+    }
+
+    .highlight-card img {
+      width: 18mm;
+      height: 18mm;
+      border-radius: 2mm;
+      object-fit: cover;
+    }
+
+    .highlight-card .text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 10pt;
+      color: var(--color-dark);
+      margin-bottom: 1mm;
+    }
+
+    .highlight-card .text p {
+      font-size: 7pt;
+      color: var(--color-text-light);
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    .promo-footer {
+      margin-top: auto;
       text-align: center;
+      padding-top: 3mm;
       border-top: 1px solid rgba(0,0,0,0.08);
     }
 
     .promo-footer .location {
-      font-size: 8pt;
+      font-size: 9pt;
       color: var(--color-text);
       margin-bottom: 2mm;
     }
 
     .promo-footer .website {
       font-family: 'Playfair Display', serif;
-      font-size: 12pt;
+      font-size: 13pt;
       color: var(--color-terracotta);
       margin-bottom: 1mm;
     }
@@ -406,56 +433,49 @@
       </div>
     </div>
 
-    <!-- SIDE 2: PROMO - STACKED FULL-WIDTH CARDS -->
+    <!-- SIDE 2: PROMO - MAGAZINE STYLE -->
     <div class="a5-page" id="promoPage" style="position: relative;">
       <span class="page-label">Side 2: Promo</span>
       <div class="promo-side">
         
-        <div class="promo-header">
-          <h1>🌿 Mawun Valley Farm</h1>
-          <p>Slow living in South Lombok</p>
+        <!-- Large Hero -->
+        <div class="promo-hero">
+          <img src="https://www.mawunvalley.com/images/hero-drone.jpg" alt="Mawun Valley Farm">
+          <div class="promo-hero-content">
+            <h1>Mawun Valley Farm</h1>
+            <p class="tagline">Slow living in South Lombok</p>
+            <p class="intro">A small organic farm nestled between the hills and the sea. Come for the food, stay for the peace.</p>
+          </div>
         </div>
 
-        <div class="promo-cards">
+        <!-- Bottom Section -->
+        <div class="promo-bottom">
           
-          <div class="promo-card-full">
-            <img src="https://www.mawunvalley.com/images/hero-drone.jpg" alt="Mawun Valley">
-            <div class="card-content">
-              <h3>The Farm</h3>
-              <p>An organic farm nestled between hills and sea</p>
+          <!-- Two Highlights -->
+          <div class="highlights">
+            <div class="highlight-card">
+              <img src="https://www.mawunvalley.com/images/cabin-lime.jpg" alt="Farmstay">
+              <div class="text">
+                <h3>🏡 Farmstay</h3>
+                <p>Peaceful cabins surrounded by nature</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <img src="https://www.mawunvalley.com/images/bbq-nights.jpg" alt="Experiences">
+              <div class="text">
+                <h3>🔥 Experiences</h3>
+                <p>BBQ nights, cooking classes & tours</p>
+              </div>
             </div>
           </div>
 
-          <div class="promo-card-full">
-            <img src="https://www.mawunvalley.com/images/noni-1.jpg" alt="Noni's">
-            <div class="card-content">
-              <h3>Noni's Café</h3>
-              <p>Farm-to-table food & famous burnt cheesecake</p>
-            </div>
+          <!-- Footer -->
+          <div class="promo-footer">
+            <div class="location">📍 15 min from Kuta Lombok · On the way to Mawun Beach</div>
+            <div class="website">mawunvalley.com</div>
+            <div class="social">@mawunvalley · @nonislombok</div>
           </div>
 
-          <div class="promo-card-full">
-            <img src="https://www.mawunvalley.com/images/cabin-lime.jpg" alt="Farmstay">
-            <div class="card-content">
-              <h3>Farmstay</h3>
-              <p>Wake up to nature in peaceful cabins</p>
-            </div>
-          </div>
-
-          <div class="promo-card-full">
-            <img src="https://www.mawunvalley.com/images/bbq-nights.jpg" alt="Experiences">
-            <div class="card-content">
-              <h3>Experiences</h3>
-              <p>BBQ nights, cooking classes & farm tours</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="promo-footer">
-          <div class="location">📍 15 min from Kuta · On the way to Mawun Beach</div>
-          <div class="website">mawunvalley.com</div>
-          <div class="social">@mawunvalley · @nonislombok</div>
         </div>
 
       </div>
