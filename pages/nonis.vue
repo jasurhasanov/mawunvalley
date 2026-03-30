@@ -62,28 +62,28 @@
                 <span class="item-name">Omelette</span>
                 <span class="item-price">50K</span>
               </div>
-              <p class="item-desc">Fluffy eggs with local vegetables, finished with fresh farm herbs like mint or tarragon.</p>
+              <p class="item-desc">Fluffy eggs with local vegetables, finished with fresh farm herbs like mint or dill leaves.</p>
             </div>
             <div class="menu-item featured">
               <div class="item-header">
                 <span class="item-name">Crêpes (Farm Jam) <span class="star">⭐</span></span>
                 <span class="item-price">50K</span>
               </div>
-              <p class="item-desc">Thin, delicate pancakes served with rich farm-made seasonal jam, a sweet treat.</p>
+              <p class="item-desc">Thin, delicate pancakes served with rich farm-made seasonal jam.</p>
             </div>
             <div class="menu-item">
               <div class="item-header">
                 <span class="item-name">Toast & Farm-Made Delight</span>
                 <span class="item-price">50K</span>
               </div>
-              <p class="item-desc">Toasted bread served with rich farm-made seasonal jam, a sweet treat.</p>
+              <p class="item-desc">Toasted bread served with rich farm-made seasonal jam.</p>
             </div>
             <div class="menu-item">
               <div class="item-header">
                 <span class="item-name">Farm Fresh Boiled Eggs</span>
                 <span class="item-price">50K</span>
               </div>
-              <p class="item-desc">Boiled eggs served with fresh farm-grown vegetables, including tomatoes, mint, basil, and seasonal greens.</p>
+              <p class="item-desc">Boiled eggs served with fresh farm-grown vegetables, tomatoes, mint, basil, and seasonal greens.</p>
             </div>
           </div>
         </div>
@@ -96,14 +96,14 @@
                 <span class="item-name">Noni's Plate <span class="star">⭐</span></span>
                 <span class="item-price">75K</span>
               </div>
-              <p class="item-desc">Noni's signature farm-to-table recipe! Features crispy fried chicken or fresh fried fish, served with seasonal side, tofu, fresh farm vegetables, fried peanuts & tempeh, and Noni's signature sambal.</p>
+              <p class="item-desc">Noni's signature farm-to-table recipe! Crispy fried chicken or fresh fish, seasonal side, tofu, fresh farm vegetables, fried peanuts & tempeh, and Noni's signature sambal.</p>
             </div>
             <div class="menu-item featured">
               <div class="item-header">
                 <span class="item-name">Noni's Plate (Vegan) <span class="star">⭐</span></span>
                 <span class="item-price">75K</span>
               </div>
-              <p class="item-desc">A vibrant, plant-based dish celebrating our farm's harvest. Features savory tofu, seasonal side, fresh farm vegetables, crispy peanuts & tempeh, and Noni's signature sambal. 100% plant-based.</p>
+              <p class="item-desc">A vibrant, plant-based dish celebrating our farm's harvest. Savory tofu, seasonal vegetables, crispy peanuts & tempeh, and Noni's signature sambal. 100% plant-based.</p>
             </div>
           </div>
         </div>
@@ -123,14 +123,14 @@
                 <span class="item-name">Wedang Uwuh <span class="star">⭐</span></span>
                 <span class="item-price">50K</span>
               </div>
-              <p class="item-desc">A traditional Javanese warm herbal infusion — ginger, cinnamon bark, cloves, nutmeg leaf, secang wood, rock sugar (as side).</p>
+              <p class="item-desc">A traditional Javanese warm herbal infusion — ginger, cinnamon bark, cloves, nutmeg leaf, Indian Redwood, rock sugar (side).</p>
             </div>
             <div class="menu-item featured">
               <div class="item-header">
-                <span class="item-name">Azerbaijan Tea (hot) <span class="star">⭐</span></span>
+                <span class="item-name">Ceylon Black Tea (hot) <span class="star">⭐</span></span>
                 <span class="item-price">40K</span>
               </div>
-              <p class="item-desc">A warming black tea infused with various herbs and aromatic fruit peels.</p>
+              <p class="item-desc">Sri Lankan black tea infused with aromatic herbs and dried fruit peels.</p>
             </div>
             <div class="menu-item">
               <div class="item-header">
@@ -151,7 +151,7 @@
                 <span class="item-name">Ice Coffee</span>
                 <span class="item-price">40K</span>
               </div>
-              <p class="item-desc">Cold-brewed Lombok coffee, smooth and bold. Add milk + 5K.</p>
+              <p class="item-desc">Cold-brewed Lombok coffee, smooth and bold. Add milk +5K.</p>
             </div>
             <div class="menu-item">
               <div class="item-header">
@@ -165,7 +165,7 @@
                 <span class="item-name">Cranberry Juice</span>
                 <span class="item-price">40K</span>
               </div>
-              <p class="item-desc">Pure cranberry juice — no added sugar, no preservatives, no artificial colors.</p>
+              <p class="item-desc">Pure cranberry juice — no added sugar, no preservatives.</p>
             </div>
           </div>
         </div>
