@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Development Blueprint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      color: #2d2d2d;
+    }
+
+    /* Download Button */
+    .download-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #2d2d2d;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .download-bar h1 {
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .download-btn {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .download-btn:hover {
+      background: #43a047;
+    }
+
+    .download-btn:disabled {
+      background: #999;
+      cursor: not-allowed;
+    }
+
+    /* Book Container */
+    .book-container {
+      margin-top: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* A5 Page: 148mm × 210mm */
+    .page {
+      width: 148mm;
+      min-height: 210mm;
+      background: white;
+      padding: 15mm 12mm;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      page-break-after: always;
+      position: relative;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    /* Cover Page */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #2d5016 0%, #4a7c23 50%, #6b9b3a 100%);
+      color: white;
+    }
+
+    .cover-icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .cover h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    .cover h2 {
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.9;
+      max-width: 90%;
+      line-height: 1.6;
+    }
+
+    .cover-footer {
+      position: absolute;
+      bottom: 20mm;
+      font-size: 10px;
+      opacity: 0.7;
+    }
+
+    /* Typography */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #2d5016;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #4a7c23;
+      padding-bottom: 8px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #4a7c23;
+      margin: 16px 0 10px 0;
+    }
+
+    h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #2d2d2d;
+      margin: 12px 0 6px 0;
+    }
+
+    p {
+      font-size: 11px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      font-size: 11px;
+      line-height: 1.7;
+      margin-left: 15px;
+      margin-bottom: 10px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .quote {
+      background: #f0f7e6;
+      border-left: 3px solid #4a7c23;
+      padding: 10px 12px;
+      margin: 12px 0;
+      font-style: italic;
+      font-size: 11px;
+    }
+
+    .highlight-box {
+      background: #fef9e7;
+      border: 1px solid #f0e68c;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin: 12px 0;
+    }
+
+    .green-box {
+      background: #e8f5e9;
+      border: 1px solid #a5d6a7;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin: 12px 0;
+    }
+
+    .section-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .column-box {
+      background: #f9f9f9;
+      padding: 8px 10px;
+      border-radius: 4px;
+      font-size: 10px;
+    }
+
+    .column-box.green {
+      background: #e8f5e9;
+    }
+
+    .column-box.red {
+      background: #ffebee;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 10mm;
+      right: 12mm;
+      font-size: 10px;
+      color: #999;
+    }
+
+    .part-header {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .part-header h1 {
+      border: none;
+      font-size: 24px;
+      color: #2d5016;
+    }
+
+    .checklist {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .checklist li {
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+    }
+
+    .final-box {
+      background: linear-gradient(135deg, #2d5016, #4a7c23);
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .final-box h2 {
+      color: white;
+      margin-top: 0;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .download-bar {
+        display: none;
+      }
+      .book-container {
+        margin-top: 0;
+        gap: 0;
+      }
+      .page {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="download-bar">
+    <h1>📖 Family Development Blueprint</h1>
+    <button class="download-btn" id="downloadBtn" onclick="downloadPDF()">
+      <span>📥</span> Download A5 PDF
+    </button>
+  </div>
+
+  <div class="book-container" id="book">
+    
+    <!-- Cover Page -->
+    <div class="page cover">
+      <div class="cover-icon">🌱</div>
+      <h1>FAMILY<br>DEVELOPMENT<br>BLUEPRINT</h1>
+      <h2>Life Architecture for a Self-Directed, Aware, Capable Human</h2>
+      <div class="cover-footer">Mawun Valley Farm</div>
+    </div>
+
+    <!-- Page 1: Context -->
+    <div class="page">
+      <div class="section-icon">🧭</div>
+      <h1>PART 0: CONTEXT & FOUNDATIONAL UNDERSTANDING</h1>
+      
+      <p>This blueprint is not a "school replacement." It is a <strong>life system</strong> designed to raise a human who can:</p>
+      
+      <ul>
+        <li>Think clearly</li>
+        <li>Act independently</li>
+        <li>Create value</li>
+        <li>Understand systems</li>
+        <li>Live consciously</li>
+      </ul>
+
+      <h2>🔑 Core Realization</h2>
+      
+      <div class="two-column">
+        <div class="column-box red">
+          <strong>Traditional systems produce:</strong><br>
+          Consumers of systems
+        </div>
+        <div class="column-box green">
+          <strong>This blueprint develops:</strong><br>
+          Creators and navigators of systems
+        </div>
+      </div>
+
+      <h2>⚠️ Reality of Parenthood</h2>
+      
+      <p>We (parents):</p>
+      <ul>
+        <li>Are not always consistent</li>
+        <li>Have moods, fatigue, responsibilities</li>
+        <li>Run a farm, café, and real life</li>
+      </ul>
+
+      <div class="highlight-box">
+        <strong>❗ The system must work even when we are not at our best</strong>
+      </div>
+
+      <span class="page-number">1</span>
+    </div>
+
+    <!-- Page 2: Design Principle & Goal -->
+    <div class="page">
+      <h2>🧠 Design Principle</h2>
+      
+      <div class="quote">
+        The system should not rely on discipline alone.<br>
+        It should rely on <strong>environment, behavior, and structure</strong>.
+      </div>
+
+      <h2>⚖️ Two-Layer System</h2>
+      
+      <div class="green-box">
+        <strong>🟢 Layer 1: Life-Integrated Development</strong>
+        <ul>
+          <li>Always active</li>
+          <li>No extra time required</li>
+          <li>Happens through living</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <strong>🟡 Layer 2: Structured Development</strong>
+        <ul>
+          <li>Intentional sessions</li>
+          <li>Requires time & energy</li>
+          <li>Accelerates growth</li>
+        </ul>
+      </div>
+
+      <h2>🎯 Refined Goal</h2>
+      
+      <p>Raise a human who:</p>
+      <ul>
+        <li>Is <strong>self-directed</strong>, not dependent</li>
+        <li>Understands and can <strong>build systems</strong></li>
+        <li>Is <strong>emotionally grounded</strong></li>
+        <li>Lives with <strong>awareness and presence</strong></li>
+        <li>Knows what is <strong>enough</strong></li>
+        <li>Is not controlled by systems—but can use them</li>
+      </ul>
+
+      <span class="page-number">2</span>
+    </div>
+
+    <!-- Page 3: Part 1 Header -->
+    <div class="page">
+      <div class="part-header">
+        <div class="section-icon">🟢</div>
+        <h1>PART 1</h1>
+        <h2>Life-Integrated Development System</h2>
+        <p><em>The "Always-On" Parenting Layer</em></p>
+      </div>
+
+      <div class="quote" style="text-align: center;">
+        This is the <strong>most important part</strong>.<br>
+        Even if everything else fails—this alone can succeed.
+      </div>
+
+      <h2>🧭 1. Identity Shaping (Daily, Natural)</h2>
+
+      <div class="two-column">
+        <div class="column-box green">
+          <strong>Always reinforce:</strong>
+          <ul style="margin: 5px 0 0 15px;">
+            <li>"You can figure things out"</li>
+            <li>"You can create things"</li>
+            <li>"You are responsible"</li>
+          </ul>
+        </div>
+        <div class="column-box red">
+          <strong>Avoid:</strong>
+          <ul style="margin: 5px 0 0 15px;">
+            <li>Over-praising</li>
+            <li>Over-helping</li>
+            <li>Over-controlling</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>🔄 2. Producer Mindset (Core Filter)</h2>
+      
+      <p><strong>Constant question:</strong> "Is he consuming or producing?"</p>
+      
+      <p>Convert daily life:</p>
+      <ul>
+        <li>Watching → Explaining</li>
+        <li>Helping → Owning</li>
+        <li>Listening → Doing</li>
+      </ul>
+
+      <span class="page-number">3</span>
+    </div>
+
+    <!-- Page 4: How You Speak & Real Life -->
+    <div class="page">
+      <h2>💬 3. How You Speak</h2>
+
+      <div class="two-column">
+        <div class="column-box red">
+          <strong>❌ Replace:</strong><br>
+          "Do this"<br>
+          "Let me show you"
+        </div>
+        <div class="column-box green">
+          <strong>✅ With:</strong><br>
+          "What do you think we should do?"<br>
+          "Try first, I'll help after"
+        </div>
+      </div>
+
+      <h2>🌿 4. Use Real Life as the Classroom</h2>
+      
+      <p>Farm, café, guests = curriculum</p>
+      
+      <p><strong>Example questions:</strong></p>
+      <ul>
+        <li>"Why do guests pay us?"</li>
+        <li>"What happens if we don't clean this?"</li>
+        <li>"How can we make this better?"</li>
+      </ul>
+
+      <h2>⚖️ 5. Natural Consequences</h2>
+      
+      <div class="green-box">
+        <strong>No artificial punishment.</strong>
+        <ul>
+          <li>If he forgets → he experiences the result</li>
+          <li>If he breaks → he helps fix</li>
+        </ul>
+        <p style="margin-bottom: 0;"><em>👉 Reality becomes the teacher</em></p>
+      </div>
+
+      <h2>🧘 6. Presence & Awareness</h2>
+      
+      <p>No forcing philosophy. Instead:</p>
+      <ul>
+        <li>Quiet moments</li>
+        <li>Nature observation</li>
+        <li>Simple questions: "What do you see?" "What do you feel?"</li>
+      </ul>
+
+      <span class="page-number">4</span>
+    </div>
+
+    <!-- Page 5: Values & Daily Check -->
+    <div class="page">
+      <h2>❤️ 7. Human Values (Non-Transactional)</h2>
+      
+      <p>Balance producer mindset with:</p>
+      <ul>
+        <li>Caring for animals</li>
+        <li>Helping without reward</li>
+        <li>Respecting people</li>
+      </ul>
+      <p><em>👉 Prevents becoming purely transactional</em></p>
+
+      <h2>🔁 8. Daily Micro Outputs</h2>
+      
+      <div class="green-box">
+        <strong>Every day he should:</strong>
+        <ul>
+          <li>Create something small</li>
+          <li>Help in something real</li>
+          <li>Think about something</li>
+        </ul>
+      </div>
+
+      <h2>🧭 9. Parent Check (End of Day)</h2>
+      
+      <div class="highlight-box">
+        <strong>Ask yourself:</strong>
+        <ul class="checklist">
+          <li>Did he create something?</li>
+          <li>Did he think about something?</li>
+          <li>Did he face something slightly difficult?</li>
+          <li>Did he enjoy being alive?</li>
+        </ul>
+      </div>
+
+      <span class="page-number">5</span>
+    </div>
+
+    <!-- Page 6: Part 2 Header -->
+    <div class="page">
+      <div class="part-header">
+        <div class="section-icon">🟡</div>
+        <h1>PART 2</h1>
+        <h2>Structured Development System</h2>
+        <p><em>When Time & Energy Allow</em></p>
+      </div>
+
+      <p style="text-align: center;"><em>This layer accelerates growth—but is not the foundation.</em></p>
+
+      <h2>📅 Weekly Structure</h2>
+      
+      <p><strong>6 Active Days + 1 Reset Day</strong></p>
+      
+      <ul>
+        <li><strong>3 days</strong> → Learning + Farm</li>
+        <li><strong>2 days</strong> → Exploration</li>
+        <li><strong>1 day</strong> → Challenge</li>
+        <li><strong>1 day</strong> → Full Reset</li>
+      </ul>
+
+      <h2>⏰ Daily Structure (Ideal)</h2>
+
+      <h3>🧠 Learning Block (60–90 min)</h3>
+      
+      <p><strong>Math (Priority)</strong></p>
+      <ul>
+        <li>Real-life math: Pricing, Counting, Grouping → multiplication</li>
+      </ul>
+      
+      <p><strong>Reading</strong></p>
+      <ul>
+        <li>Stories + knowledge</li>
+        <li>Ask: "What did you understand?"</li>
+      </ul>
+      
+      <p><strong>Writing</strong></p>
+      <ul>
+        <li>Simple journaling, observations</li>
+      </ul>
+
+      <span class="page-number">6</span>
+    </div>
+
+    <!-- Page 7: Daily Structure Continued -->
+    <div class="page">
+      <h3>🌿 Real Life Work (2–4 hours)</h3>
+      <ul>
+        <li>Farm tasks</li>
+        <li>Guest interaction</li>
+        <li>Small responsibilities</li>
+      </ul>
+
+      <h3>⚽ Physical Play</h3>
+      <ul>
+        <li>Football</li>
+        <li>Running</li>
+        <li>Swimming</li>
+      </ul>
+
+      <h3>🌙 Reflection (5–10 min)</h3>
+      <ul>
+        <li>What was hard?</li>
+        <li>What was interesting?</li>
+      </ul>
+
+      <h2>🔥 Weekly Specials</h2>
+
+      <div class="highlight-box">
+        <h3>🧗 Challenge Day</h3>
+        <ul>
+          <li>Build something</li>
+          <li>Sell something</li>
+          <li>Talk to new people</li>
+        </ul>
+        <p><em>👉 Must feel slightly uncomfortable</em></p>
+      </div>
+
+      <div class="green-box">
+        <h3>🌍 Exploration Days</h3>
+        <p><strong>Visit:</strong> Mataram (systems, markets, banks), Kuta Lombok (tourism economy), Nature (beaches, hills)</p>
+        <p><strong>Focus:</strong> "How does this place work?"</p>
+      </div>
+
+      <div class="column-box">
+        <h3>🧘 Reset Day</h3>
+        <p>No pressure. Full freedom.</p>
+      </div>
+
+      <span class="page-number">7</span>
+    </div>
+
+    <!-- Page 8: Micro-Economy & Skills -->
+    <div class="page">
+      <h2>💰 Micro-Economy System</h2>
+      
+      <div class="green-box">
+        <h3>Create: "His Business"</h3>
+        <p><strong>Examples:</strong></p>
+        <ul>
+          <li>Eggs</li>
+          <li>Juice</li>
+          <li>Small farm tours</li>
+        </ul>
+        <p><strong>Rules:</strong></p>
+        <ul>
+          <li>He tracks money</li>
+          <li>He makes decisions</li>
+          <li>He experiences mistakes</li>
+        </ul>
+      </div>
+
+      <h2>🧱 Skill Tracks (Rotating)</h2>
+      
+      <ul>
+        <li><strong>Building</strong> — tools, fixing</li>
+        <li><strong>Agriculture</strong> — plant cycles</li>
+        <li><strong>Digital</strong> — photos, videos</li>
+      </ul>
+
+      <h2>🤝 Key Partners</h2>
+      
+      <ul>
+        <li>Skilled locals (builders, farmers)</li>
+        <li>Volunteers (mentors)</li>
+        <li>Business owners</li>
+      </ul>
+
+      <span class="page-number">8</span>
+    </div>
+
+    <!-- Page 9: Risks & Interventions -->
+    <div class="page">
+      <h2>⚠️ Risks & Interventions</h2>
+
+      <div class="highlight-box">
+        <h3>1. Too Much Freedom</h3>
+        <p>→ Non-negotiable learning block</p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>2. Entitlement</h3>
+        <p>→ Responsibility must be earned</p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>3. Avoiding Difficulty</h3>
+        <p>→ Weekly challenge day</p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>4. Emotional Dependence</h3>
+        <p>→ Gradual independence exposure</p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>5. Over-Productivity</h3>
+        <p>→ Protect play & reset day</p>
+      </div>
+
+      <span class="page-number">9</span>
+    </div>
+
+    <!-- Page 10: Final Integration -->
+    <div class="page">
+      <h2>🧬 Final Integration</h2>
+      
+      <p>This system builds:</p>
+
+      <div class="two-column">
+        <div class="column-box green">
+          <strong>🟢 Producer</strong><br>
+          Creates value
+        </div>
+        <div class="column-box" style="background: #e3f2fd;">
+          <strong>🔵 Thinker</strong><br>
+          Understands deeply
+        </div>
+      </div>
+      <div class="two-column">
+        <div class="column-box" style="background: #fce4ec;">
+          <strong>❤️ Human</strong><br>
+          Cares genuinely
+        </div>
+        <div class="column-box" style="background: #fff3e0;">
+          <strong>🧘 Aware</strong><br>
+          Lives consciously
+        </div>
+      </div>
+
+      <h2>🧭 Final North Star</h2>
+      
+      <div class="quote">
+        Whenever unsure, ask:<br><br>
+        <strong>"Is this making him more capable, more aware, and more independent?"</strong><br><br>
+        If yes → continue<br>
+        If not → adjust
+      </div>
+
+      <div class="final-box">
+        <h2>🔚 Final Truth</h2>
+        <p>You are not raising a child to succeed in a system.</p>
+        <p>You are raising a human who can:</p>
+        <p><strong>Enter systems • Build systems • Leave systems</strong></p>
+        <p style="margin-top: 15px; font-style: italic;">And most importantly: Live life consciously, fully, and on his own terms.</p>
+      </div>
+
+      <span class="page-number">10</span>
+    </div>
+
+  </div>
+
+  <script>
+    async function downloadPDF() {
+      const btn = document.getElementById('downloadBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<span>⏳</span> Generating PDF...';
+
+      try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          unit: 'mm',
+          format: 'a5'
+        });
+
+        const pages = document.querySelectorAll('.page');
+        const totalPages = pages.length;
+
+        for (let i = 0; i < totalPages; i++) {
+          const page = pages[i];
+          
+          // Render page to canvas
+          const canvas = await html2canvas(page, {
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: '#ffffff',
+            logging: false
+          });
+
+          // Convert to image
+          const imgData = canvas.toDataURL('image/jpeg', 0.95);
+          
+          // Add new page (except for first)
+          if (i > 0) {
+            pdf.addPage();
+          }
+
+          // A5 size: 148 x 210 mm
+          pdf.addImage(imgData, 'JPEG', 0, 0, 148, 210);
+          
+          btn.innerHTML = '<span>⏳</span> Page ' + (i + 1) + '/' + totalPages + '...';
+        }
+
+        pdf.save('Family-Development-Blueprint-A5.pdf');
+        
+      } catch (error) {
+        console.error('PDF generation error:', error);
+        alert('Error generating PDF. Please try again.');
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = '<span>📥</span> Download A5 PDF';
+    }
+  </script>
+</body>
+</html>
