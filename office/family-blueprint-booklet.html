@@ -262,10 +262,10 @@
         const totalSheets = sheets.length;
         for (let i = 0; i < totalSheets; i++) {
           const sheet = sheets[i];
-          const canvas = await html2canvas(sheet, { scale: 2, useCORS: true, allowTaint: true, backgroundColor: '#ffffff', logging: false });
-          const imgData = canvas.toDataURL('image/jpeg', 0.95);
+          const canvas = await html2canvas(sheet, { scale: 4, useCORS: true, allowTaint: true, backgroundColor: '#ffffff', logging: false });
+          const imgData = canvas.toDataURL('image/png');
           if (i > 0) pdf.addPage();
-          pdf.addImage(imgData, 'JPEG', 0, 0, 297, 210);
+          pdf.addImage(imgData, 'PNG', 0, 0, 297, 210);
           btn.textContent = '⏳ Sheet ' + (i + 1) + '/' + totalSheets;
         }
         pdf.save('Family-Blueprint-BOOKLET-A4.pdf');

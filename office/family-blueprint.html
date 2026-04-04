@@ -772,15 +772,15 @@
           
           // Render page to canvas
           const canvas = await html2canvas(page, {
-            scale: 2,
+            scale: 4,
             useCORS: true,
             allowTaint: true,
             backgroundColor: '#ffffff',
             logging: false
           });
 
-          // Convert to image
-          const imgData = canvas.toDataURL('image/jpeg', 0.95);
+          // Convert to image (PNG for best quality)
+          const imgData = canvas.toDataURL('image/png');
           
           // Add new page (except for first)
           if (i > 0) {
@@ -788,7 +788,7 @@
           }
 
           // A5 size: 148 x 210 mm
-          pdf.addImage(imgData, 'JPEG', 0, 0, 148, 210);
+          pdf.addImage(imgData, 'PNG', 0, 0, 148, 210);
           
           btn.innerHTML = '<span>⏳</span> Page ' + (i + 1) + '/' + totalPages + '...';
         }
