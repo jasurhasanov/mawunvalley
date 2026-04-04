@@ -44,6 +44,18 @@
           <p>Print game materials, booklets, and answer keys</p>
         </NuxtLink>
 
+        <a href="/office/blueprint/family-blueprint.html" target="_blank" class="tool-card">
+          <div class="tool-icon">📖</div>
+          <h3>Family Blueprint</h3>
+          <p>Development guide for raising capable humans (A5 book)</p>
+        </a>
+
+        <a href="/office/blueprint/family-blueprint-booklet.html" target="_blank" class="tool-card">
+          <div class="tool-icon">🖨️</div>
+          <h3>Blueprint Booklet</h3>
+          <p>Printable A4 booklet version for duplex printing</p>
+        </a>
+
         <a href="/downloads/nonis-menu-printable.html" target="_blank" class="tool-card">
           <div class="tool-icon">📋</div>
           <h3>Noni's Menu</h3>
