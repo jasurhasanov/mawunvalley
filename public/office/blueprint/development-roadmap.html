@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Development Roadmap: Ages 6-18</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f5f5f5; padding: 20px; color: #2d2d2d; }
+    .download-bar { position: fixed; top: 0; left: 0; right: 0; background: #1a365d; padding: 15px 20px; display: flex; justify-content: center; align-items: center; gap: 20px; z-index: 1000; }
+    .download-bar h1 { color: white; font-family: 'Playfair Display', serif; font-size: 18px; }
+    .download-btn { background: #38a169; color: white; border: none; padding: 12px 24px; font-size: 14px; font-weight: 600; border-radius: 8px; cursor: pointer; }
+    .download-btn:hover { background: #2f855a; }
+    .download-btn:disabled { background: #888; cursor: wait; }
+    .book-container { margin-top: 80px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .page { width: 148mm; min-height: 210mm; background: white; padding: 15mm 12mm; box-shadow: 0 4px 20px rgba(0,0,0,0.15); position: relative; }
+    .cover { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #3182ce 100%); color: white; }
+    .cover h1 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; line-height: 1.3; margin-bottom: 15px; }
+    .cover h2 { font-size: 14px; font-weight: 400; opacity: 0.9; line-height: 1.6; margin-bottom: 30px; }
+    .cover .age-range { font-size: 48px; font-weight: 700; margin-bottom: 20px; opacity: 0.3; }
+    .cover-footer { position: absolute; bottom: 20mm; font-size: 10px; opacity: 0.7; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #1a365d; margin-bottom: 10px; border-bottom: 2px solid #3182ce; padding-bottom: 6px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: #2c5282; margin: 12px 0 8px 0; }
+    h3 { font-size: 11px; font-weight: 600; color: #2d2d2d; margin: 8px 0 4px 0; }
+    p { font-size: 10px; line-height: 1.6; margin-bottom: 6px; }
+    ul { font-size: 10px; line-height: 1.5; margin-left: 12px; margin-bottom: 6px; }
+    li { margin-bottom: 2px; }
+    .phase-header { background: linear-gradient(135deg, #1a365d, #2c5282); color: white; padding: 20px; margin: -15mm -12mm 15px -12mm; text-align: center; }
+    .phase-header h1 { color: white; border: none; font-size: 22px; margin-bottom: 5px; }
+    .phase-header p { color: rgba(255,255,255,0.8); font-size: 12px; }
+    .age-badge { display: inline-block; background: #3182ce; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+    .milestone-box { background: #ebf8ff; border-left: 3px solid #3182ce; padding: 8px 10px; margin: 8px 0; font-size: 10px; }
+    .warning-box { background: #fff5f5; border-left: 3px solid #e53e3e; padding: 8px 10px; margin: 8px 0; font-size: 10px; }
+    .success-box { background: #f0fff4; border-left: 3px solid #38a169; padding: 8px 10px; margin: 8px 0; font-size: 10px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0; }
+    .skill-card { background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px; font-size: 9px; }
+    .skill-card h4 { font-size: 10px; color: #2c5282; margin-bottom: 4px; }
+    .quote { background: #f7fafc; border-left: 3px solid #2c5282; padding: 8px 10px; margin: 10px 0; font-style: italic; font-size: 10px; }
+    .page-number { position: absolute; bottom: 8mm; right: 12mm; font-size: 9px; color: #999; }
+    .timeline { border-left: 2px solid #3182ce; margin-left: 10px; padding-left: 15px; }
+    .timeline-item { position: relative; margin-bottom: 10px; }
+    .timeline-item::before { content: ''; position: absolute; left: -19px; top: 3px; width: 8px; height: 8px; background: #3182ce; border-radius: 50%; }
+    .principle-box { background: linear-gradient(135deg, #1a365d, #2c5282); color: white; padding: 12px; border-radius: 8px; margin: 10px 0; text-align: center; }
+    .principle-box p { color: white; margin: 0; }
+    @media print { .download-bar { display: none; } .book-container { margin-top: 0; } .page { box-shadow: none; page-break-after: always; } }
+  </style>
+</head>
+<body>
+  <div class="download-bar">
+    <h1>🧭 Development Roadmap: Ages 6-18</h1>
+    <button class="download-btn" id="downloadBtn" onclick="downloadPDF()">📥 Download A5 PDF</button>
+  </div>
+
+  <div class="book-container" id="book">
+    
+    <!-- COVER -->
+    <div class="page cover">
+      <div class="age-range">6→18</div>
+      <h1>DEVELOPMENT<br>ROADMAP</h1>
+      <h2>A Year-by-Year Compass for Raising<br>a Self-Directed, Capable Human</h2>
+      <div class="cover-footer">Mawun Valley Farm • Long-Term Vision</div>
+    </div>
+
+    <!-- PAGE 1: Introduction -->
+    <div class="page">
+      <h1>🧭 How to Use This Roadmap</h1>
+      
+      <p>This document is your <strong>long-term compass</strong>—not a rigid curriculum. Each year builds on the previous, creating a complete human by age 18.</p>
+
+      <div class="quote">
+        "The goal is not to create a successful adult. The goal is to create an adult who can define and create their own success."
+      </div>
+
+      <h2>📊 The Four Phases</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>Phase 1: Foundation (6-8)</strong><br>
+          <span style="font-size:9px;">Building core habits, basic skills, identity formation</span>
+        </div>
+        <div class="timeline-item">
+          <strong>Phase 2: Expansion (9-11)</strong><br>
+          <span style="font-size:9px;">Increasing independence, deeper skills, first projects</span>
+        </div>
+        <div class="timeline-item">
+          <strong>Phase 3: Transition (12-14)</strong><br>
+          <span style="font-size:9px;">Abstract thinking, real responsibility, identity testing</span>
+        </div>
+        <div class="timeline-item">
+          <strong>Phase 4: Launch (15-18)</strong><br>
+          <span style="font-size:9px;">Adult-level decisions, real business, full ownership</span>
+        </div>
+      </div>
+
+      <h2>🎯 Core Threads (Every Year)</h2>
+      <ul>
+        <li><strong>Producer Mindset</strong> — Creating, not just consuming</li>
+        <li><strong>System Thinking</strong> — Understanding how things work</li>
+        <li><strong>Emotional Grounding</strong> — Self-awareness and regulation</li>
+        <li><strong>Real Consequences</strong> — Learning from reality, not lectures</li>
+        <li><strong>Increasing Autonomy</strong> — More freedom = more responsibility</li>
+      </ul>
+
+      <div class="principle-box">
+        <p><strong>Key Principle:</strong> Each year, slightly increase difficulty, responsibility, and freedom—together.</p>
+      </div>
+
+      <span class="page-number">1</span>
+    </div>
+
+    <!-- PAGE 2: Phase 1 Overview -->
+    <div class="page">
+      <div class="phase-header">
+        <h1>PHASE 1: FOUNDATION</h1>
+        <p>Ages 6-8 • Building the Base</p>
+      </div>
+
+      <p>These three years establish the <strong>operating system</strong> that everything else runs on. Focus on habits, not achievements.</p>
+
+      <h2>🎯 Phase 1 Goals</h2>
+      <ul>
+        <li>Establish daily learning rhythm</li>
+        <li>Build identity as "someone who figures things out"</li>
+        <li>Create comfort with productive struggle</li>
+        <li>Develop basic numeracy and literacy</li>
+        <li>Learn to follow through on commitments</li>
+      </ul>
+
+      <h2>⚠️ Common Mistakes to Avoid</h2>
+      <div class="warning-box">
+        <ul>
+          <li>Making learning feel like punishment</li>
+          <li>Over-praising ("You're so smart!") vs. effort praise</li>
+          <li>Removing all struggle to keep them happy</li>
+          <li>Inconsistency in daily structure</li>
+        </ul>
+      </div>
+
+      <h2>✅ Success Indicators (End of Phase 1)</h2>
+      <div class="success-box">
+        <ul>
+          <li>Can sit and focus for 30+ minutes</li>
+          <li>Reads simple books independently</li>
+          <li>Understands basic money concepts</li>
+          <li>Takes responsibility for small tasks without reminders</li>
+          <li>Comfortable talking to adults (guests, workers)</li>
+        </ul>
+      </div>
+
+      <span class="page-number">2</span>
+    </div>
+
+    <!-- PAGE 3: Age 6 -->
+    <div class="page">
+      <span class="age-badge">AGE 6</span>
+      <h1>The Foundations Year</h1>
+      
+      <p><em>Core theme: Establishing rhythm and basic habits</em></p>
+
+      <h2>🧠 Cognitive Development</h2>
+      <ul>
+        <li>Concrete thinking dominates (can't think abstractly yet)</li>
+        <li>Learns best through <strong>doing</strong>, not explaining</li>
+        <li>Short attention span (15-20 min max per activity)</li>
+        <li>Beginning to understand cause and effect</li>
+      </ul>
+
+      <h2>📚 Learning Focus</h2>
+      <div class="grid-2">
+        <div class="skill-card">
+          <h4>Math</h4>
+          Counting to 100, basic addition, grouping objects, real money handling
+        </div>
+        <div class="skill-card">
+          <h4>Reading</h4>
+          Letter sounds, simple words, picture books, 10-15 min daily
+        </div>
+        <div class="skill-card">
+          <h4>Writing</h4>
+          Letter formation, name writing, simple 3-word sentences
+        </div>
+        <div class="skill-card">
+          <h4>Life Skills</h4>
+          Dressing self, basic hygiene, simple chores, animal care basics
+        </div>
+      </div>
+
+      <h2>🌿 Farm Integration</h2>
+      <ul>
+        <li>Feeding animals (with supervision)</li>
+        <li>Collecting eggs daily</li>
+        <li>Watering specific plants</li>
+        <li>Greeting guests ("Hello, welcome!")</li>
+      </ul>
+
+      <h2>💰 Micro-Economy Start</h2>
+      <div class="milestone-box">
+        <strong>First "Job":</strong> Egg collector with small weekly allowance tied to completion. Track on simple chart. Introduce concept of saving vs. spending.
+      </div>
+
+      <span class="page-number">3</span>
+    </div>
+
+    <!-- PAGE 4: Age 7 -->
+    <div class="page">
+      <span class="age-badge">AGE 7</span>
+      <h1>The Systems Year</h1>
+      
+      <p><em>Core theme: Understanding how things connect and work</em></p>
+
+      <h2>🧠 Cognitive Development</h2>
+      <ul>
+        <li>Can follow multi-step instructions</li>
+        <li>Begins understanding sequences and patterns</li>
+        <li>Longer focus periods (25-30 min possible)</li>
+        <li>Asks "why" questions constantly — encourage this</li>
+      </ul>
+
+      <h2>📚 Learning Focus</h2>
+      <div class="grid-2">
+        <div class="skill-card">
+          <h4>Math</h4>
+          Addition/subtraction to 20, intro multiplication (grouping), telling time, measuring
+        </div>
+        <div class="skill-card">
+          <h4>Reading</h4>
+          Simple chapter books, reading aloud, comprehension questions
+        </div>
+        <div class="skill-card">
+          <h4>Writing</h4>
+          Daily journal (3-5 sentences), describing observations
+        </div>
+        <div class="skill-card">
+          <h4>Systems</h4>
+          How farm produces food, how café makes money, guest cycle
+        </div>
+      </div>
+
+      <h2>🌿 Farm Integration (Expanded)</h2>
+      <ul>
+        <li>Owns specific animals (responsible for their wellbeing)</li>
+        <li>Helps prepare simple items for café</li>
+        <li>Tracks daily egg count in a notebook</li>
+        <li>Gives mini "farm tours" to guest children</li>
+      </ul>
+
+      <h2>🧗 Challenge Upgrade</h2>
+      <div class="milestone-box">
+        <strong>First Sale:</strong> Sell something he produces (eggs, juice, crafts) to real guests. Handle money, make change, experience profit/loss.
+      </div>
+
+      <h2>⚠️ Watch For</h2>
+      <div class="warning-box">
+        Comparison with other kids (especially if they're in school). Reinforce that his path is intentionally different, not "less than."
+      </div>
+
+      <span class="page-number">4</span>
+    </div>
+
+    <!-- PAGE 5: Age 8 -->
+    <div class="page">
+      <span class="age-badge">AGE 8</span>
+      <h1>The Ownership Year</h1>
+      
+      <p><em>Core theme: Taking real responsibility with real consequences</em></p>
+
+      <h2>🧠 Cognitive Development</h2>
+      <ul>
+        <li>Can plan ahead (today affects tomorrow)</li>
+        <li>Understands fairness and rules more deeply</li>
+        <li>Developing personal interests and preferences</li>
+        <li>Can work independently for 30-45 minutes</li>
+      </ul>
+
+      <h2>📚 Learning Focus</h2>
+      <div class="grid-2">
+        <div class="skill-card">
+          <h4>Math</h4>
+          Multiplication tables (2,5,10), division intro, money calculations, basic fractions
+        </div>
+        <div class="skill-card">
+          <h4>Reading</h4>
+          Chapter books, non-fiction interests, 30+ min reading sessions
+        </div>
+        <div class="skill-card">
+          <h4>Writing</h4>
+          Paragraphs, simple reports, tracking business income/expense
+        </div>
+        <div class="skill-card">
+          <h4>Projects</h4>
+          First long-term project (4+ weeks), building something real
+        </div>
+      </div>
+
+      <h2>💼 Business Expansion</h2>
+      <div class="success-box">
+        <strong>Real Micro-Business:</strong> He should have a defined "business" by now—eggs, farm tours, juice stand—with:
+        <ul>
+          <li>Simple profit tracking</li>
+          <li>Pricing decisions (his choice)</li>
+          <li>Customer interaction</li>
+          <li>Saving goal (something he wants to buy)</li>
+        </ul>
+      </div>
+
+      <h2>🔨 Skills Introduction</h2>
+      <ul>
+        <li><strong>Building:</strong> Use real tools (hammer, saw with supervision)</li>
+        <li><strong>Digital:</strong> Take photos/videos, basic editing</li>
+        <li><strong>Cooking:</strong> Simple recipes start to finish</li>
+      </ul>
+
+      <h2>🎯 End of Phase 1 Milestone</h2>
+      <div class="milestone-box">
+        By age 8, he should be able to manage a full day's routine with minimal prompting, run a small business independently, and handle basic conflicts without adult intervention.
+      </div>
+
+      <span class="page-number">5</span>
+    </div>
+
+    <!-- PAGE 6: Phase 2 Overview -->
+    <div class="page">
+      <div class="phase-header">
+        <h1>PHASE 2: EXPANSION</h1>
+        <p>Ages 9-11 • Building Real Capability</p>
+      </div>
+
+      <p>The foundation is set. Now we <strong>expand capability and independence</strong>. These years determine whether he becomes a doer or a dreamer.</p>
+
+      <h2>🎯 Phase 2 Goals</h2>
+      <ul>
+        <li>Develop genuine expertise in 2-3 areas</li>
+        <li>Handle multi-day projects independently</li>
+        <li>Manage real money with real consequences</li>
+        <li>Build relationships beyond family</li>
+        <li>Develop critical thinking (question everything)</li>
+      </ul>
+
+      <h2>🔄 Key Shifts in Phase 2</h2>
+      <div class="grid-2">
+        <div class="skill-card">
+          <h4>From → To</h4>
+          Guided tasks → Self-initiated projects
+        </div>
+        <div class="skill-card">
+          <h4>From → To</h4>
+          Playing business → Real business
+        </div>
+        <div class="skill-card">
+          <h4>From → To</h4>
+          Learning for parents → Learning for self
+        </div>
+        <div class="skill-card">
+          <h4>From → To</h4>
+          Local awareness → World awareness
+        </div>
+      </div>
+
+      <h2>⚠️ Critical Warning</h2>
+      <div class="warning-box">
+        <strong>Ages 9-11 are when children often "check out" mentally if not challenged enough.</strong> Signs: boredom, resistance, doing minimum effort. Fix: increase difficulty AND autonomy together.
+      </div>
+
+      <h2>✅ Success Indicators (End of Phase 2)</h2>
+      <div class="success-box">
+        <ul>
+          <li>Has completed at least one significant project (weeks of work)</li>
+          <li>Manages own schedule with weekly check-ins only</li>
+          <li>Has earned and saved meaningful money</li>
+          <li>Can explain complex systems (business, nature, society)</li>
+          <li>Has mentors/relationships outside family</li>
+        </ul>
+      </div>
+
+      <span class="page-number">6</span>
+    </div>
+
+    <!-- PAGE 7: Age 9 -->
+    <div class="page">
+      <span class="age-badge">AGE 9</span>
+      <h1>The Independence Year</h1>
+      
+      <p><em>Core theme: Self-direction with accountability</em></p>
+
+      <h2>🧠 Cognitive Development</h2>
+      <ul>
+        <li>Can think ahead weeks, not just days</li>
+        <li>Understands abstract concepts better</li>
+        <li>Strong sense of fairness and justice</li>
+        <li>Peer relationships become very important</li>
+      </ul>
+
+      <h2>📚 Learning Evolution</h2>
+      <div class="grid-2">
+        <div class="skill-card">
+          <h4>Math</h4>
+          All operations, percentages (for business), area/perimeter, data tracking
+        </div>
+        <div class="skill-card">
+          <h4>Reading</h4>
+          Diverse genres, first "hard" books, reading for research
+        </div>
+        <div class="skill-card">
+          <h4>Writing</h4>
+          Business plans (simple), persuasive writing, emails
+        </div>
+        <div class="skill-card">
+          <h4>Research</h4>
+          Finding information independently, evaluating sources
+        </div>
+      </div>
+
+      <h2>💼 Business Development</h2>
+      <div class="milestone-box">
+        <strong>Business Upgrade:</strong> Scale the micro-business OR start a new one. Goals:
+        <ul>
+          <li>Track weekly profit/loss</li>
+          <li>Set and work toward quarterly savings goal</li>
+          <li>Make one significant purchase with own money</li>
+        </ul>
+      </div>
+
+      <h2>🌍 Expanded World</h2>
+      <ul>
+        <li><strong>Travel:</strong> Trips to other parts of Indonesia (observe different systems)</li>
+        <li><strong>People:</strong> Regular interaction with skilled adults (apprenticeship light)</li>
+        <li><strong>Ideas:</strong> Introduce big questions: "Why are some countries poor?"</li>
+      </ul>
+
+      <h2>🔧 Skills Deep Dive</h2>
+      <p>Pick ONE area for deeper focus this year:</p>
+      <ul>
+        <li>Building/Construction (help with real farm projects)</li>
+        <li>Agriculture (own garden plot, full cycle)</li>
+        <li>Digital Creation (YouTube channel about farm life)</li>
+        <li>Hospitality (real role in guest experience)</li>
+      </ul>
+
+      <span class="page-number">7</span>
+    </div>
+
+    <!-- PAGE 8: Age 10 -->
+    <div class="page">
+      <span class="age-badge">AGE 10</span>
+      <h1>The Projects Year</h1>
+      
+      <p><em>Core theme: Completing meaningful work over extended time</em></p>
+
+      <h2>🧠 Cognitive Development</h2>
+      <ul>
+        <li>Can handle complex, multi-step projects</li>
+        <li>Beginning to think about future self</li>
+        <li>Strong opinions forming — encourage debate</li>
+        <li>Can understand multiple perspectives</li>
+      </ul>
+
+      <h2>🏗️ The Big Project</h2>
+      <div class="success-box">
+        <strong>One Major Project (3-6 months):</strong>
+        <p>Examples for your context:</p>
+        <ul>
+          <li>Build a chicken coop from scratch</li>
+          <li>Create and run a "kids farm camp" for guest children</li>
+          <li>Start a YouTube/social media about farm life</li>
+          <li>Design and plant a new garden section</li>
+        </ul>
+        <p><em>He chooses. You advise. He owns outcome.</em></p>
+      </div>
+
+      <h2>📚 Learning Integration</h2>
+      <p>Learning should now be <strong>project-driven</strong>, not subject-driven:</p>
+      <ul>
+        <li>Need math? Calculate materials for the coop</li>
+        <li>Need writing? Create promotional content</li>
+        <li>Need research? Figure out best chicken breeds</li>
+      </ul>
+
+      <h2>💰 Financial Milestone</h2>
+      <div class="milestone-box">
+        <strong>First "Real" Money Goal:</strong> Something meaningful (electronics, trip, equipment) that requires months of saving. Track progress visually. Experience delayed gratification.
+      </div>
+
+      <h2>🤝 Mentorship</h2>
+      <p>Identify 2-3 adults outside family who can teach specific skills:</p>
+      <ul>
+        <li>Local builder for construction</li>
+        <li>Farmer for agriculture</li>
+        <li>Business owner for business thinking</li>
+      </ul>
+
+      <span class="page-number">8</span>
+    </div>
+
+    <!-- PAGE 9: Age 11 -->
+    <div class="page">
+      <span class="age-badge">AGE 11</span>
+      <h1>The Pre-Launch Year</h1>
+      
+      <p><em>Core theme: Preparing for the adolescent transition</em></p>
+
+      <h2>🧠 Cognitive Development</h2>
+      <ul>
+        <li>Abstract thinking emerging strongly</li>
+        <li>Questions authority (healthy, don't suppress)</li>
+        <li>Identity exploration begins</li>
+        <li>Capable of genuine expertise in areas of interest</li>
+      </ul>
+
+      <h2>⚠️ Critical Preparation</h2>
+      <div class="warning-box">
+        <strong>Puberty is coming (12-14).</strong> This year, establish:
+        <ul>
+          <li>Open communication about body changes, emotions</li>
+          <li>Strong identity foundation ("I am someone who...")</li>
+          <li>Clear values that he's internalized, not just obeying</li>
+          <li>Trusted relationships beyond parents</li>
+        </ul>
+      </div>
+
+      <h2>💼 Business Maturity</h2>
+      <div class="success-box">
+        <strong>End of Year Goal:</strong>
+        <ul>
+          <li>Running business requires less than 2 hours/week of parental input</li>
+          <li>Has made at least one significant "mistake" and recovered</li>
+          <li>Understands profit margins, customer acquisition, value creation</li>
+        </ul>
+      </div>
+
+      <h2>🌍 Worldview Expansion</h2>
+      <ul>
+        <li><strong>Economics:</strong> Why do prices change? What is inflation?</li>
+        <li><strong>History:</strong> How did Indonesia develop? What patterns repeat?</li>
+        <li><strong>Philosophy:</strong> What makes a good life? (Simple discussions)</li>
+      </ul>
+
+      <h2>🎯 End of Phase 2 Milestone</h2>
+      <div class="milestone-box">
+        By 11, he should have: completed a major project, managed real money, developed expertise in at least one area, and be able to hold conversations with adults as a near-equal in his domains.
+      </div>
+
+      <span class="page-number">9</span>
+    </div>
+
+    <!-- PAGE 10: Phase 3 Overview -->
+    <div class="page">
+      <div class="phase-header">
+        <h1>PHASE 3: TRANSITION</h1>
+        <p>Ages 12-14 • Navigating Adolescence</p>
+      </div>
+
+      <p>The most challenging phase. Body changes, identity questions, push against authority. Your job: <strong>stay connected while letting go</strong>.</p>
+
+      <h2>🎯 Phase 3 Goals</h2>
+      <ul>
+        <li>Navigate physical/emotional changes healthily</li>
+        <li>Develop personal values (not just inherited ones)</li>
+        <li>Handle real failure and real success</li>
+        <li>Build identity independent of parents</li>
+        <li>Maintain growth mindset through challenges</li>
+      </ul>
+
+      <h2>🔄 Your Role Changes</h2>
+      <div class="grid-2">
+        <div class="skill-card">
+          <h4>From → To</h4>
+          Director → Advisor
+        </div>
+        <div class="skill-card">
+          <h4>From → To</h4>
+          Deciding for him → Guiding his decisions
+        </div>
+        <div class="skill-card">
+          <h4>From → To</h4>
+          Protecting → Preparing
+        </div>
+        <div class="skill-card">
+          <h4>From → To</h4>
+          Daily structure → Weekly check-ins
+        </div>
+      </div>
+
+      <h2>⚠️ The Adolescent Challenge</h2>
+      <div class="warning-box">
+        <strong>Expect resistance, mood swings, and identity testing.</strong> This is normal and necessary. The worst response is becoming authoritarian. The best response: firm boundaries + emotional availability.
+      </div>
+
+      <h2>✅ Success Indicators (End of Phase 3)</h2>
+      <div class="success-box">
+        <ul>
+          <li>Has weathered at least one major failure</li>
+          <li>Can articulate personal values and defend them</li>
+          <li>Maintains meaningful pursuits despite emotional turbulence</li>
+          <li>Has healthy peer relationships</li>
+          <li>Communicates openly about struggles</li>
+        </ul>
+      </div>
+
+      <span class="page-number">10</span>
+    </div>
+
+    <!-- PAGE 11: Age 12 -->
+    <div class="page">
+      <span class="age-badge">AGE 12</span>
+      <h1>The Identity Year</h1>
+      
+      <p><em>Core theme: "Who am I becoming?"</em></p>
+
+      <h2>🧠 What's Happening</h2>
+      <ul>
+        <li>Puberty typically begins (physical changes)</li>
+        <li>Emotional intensity increases dramatically</li>
+        <li>Peer opinion matters more than ever</li>
+        <li>May push back against everything</li>
+        <li>Abstract thinking fully online</li>
+      </ul>
+
+      <h2>👨‍👩‍👦 Parenting Adjustments</h2>
+      <div class="milestone-box">
+        <strong>Key shift:</strong> More questions, fewer instructions.
+        <ul>
+          <li>"What do you think you should do?"</li>
+          <li>"What would happen if...?"</li>
+          <li>"I trust you to figure this out"</li>
+        </ul>
+      </div>
+
+      <h2>💼 Work Evolution</h2>
+      <ul>
+        <li>Business should be genuinely profitable (not play money)</li>
+        <li>Consider: real job/internship outside family business</li>
+        <li>Exposure to different work environments</li>
+        <li>Understanding of employment vs. entrepreneurship</li>
+      </ul>
+
+      <h2>📚 Learning Structure</h2>
+      <p>Move toward <strong>self-directed learning</strong>:</p>
+      <ul>
+        <li>He sets weekly learning goals</li>
+        <li>You review together on weekends</li>
+        <li>Focus on depth in chosen areas, breadth elsewhere</li>
+        <li>Online courses, books, mentors — his choice</li>
+      </ul>
+
+      <h2>🗣️ Conversations to Have</h2>
+      <ul>
+        <li>Body changes and sexuality (matter-of-fact, open)</li>
+        <li>Peer pressure and decision-making</li>
+        <li>Digital life and social media</li>
+        <li>What kind of person do you want to be?</li>
+      </ul>
+
+      <span class="page-number">11</span>
+    </div>
+
+    <!-- PAGE 12: Age 13 -->
+    <div class="page">
+      <span class="age-badge">AGE 13</span>
+      <h1>The Testing Year</h1>
+      
+      <p><em>Core theme: Testing boundaries, values, and identity</em></p>
+
+      <h2>⚠️ Expect Turbulence</h2>
+      <div class="warning-box">
+        13 is often the most challenging year. He may:
+        <ul>
+          <li>Reject things he previously loved</li>
+          <li>Be moody, withdrawn, or confrontational</li>
+          <li>Question everything you've taught</li>
+          <li>Seem to "regress" in maturity</li>
+        </ul>
+        <strong>This is normal. Stay calm. Stay connected.</strong>
+      </div>
+
+      <h2>🎯 Your Focus</h2>
+      <ul>
+        <li><strong>Connection over control</strong> — Don't win battles, win the relationship</li>
+        <li><strong>Natural consequences</strong> — Let reality teach when possible</li>
+        <li><strong>Firm boundaries</strong> — Clear lines (safety, respect) that don't move</li>
+        <li><strong>Emotional availability</strong> — "I'm here when you want to talk"</li>
+      </ul>
+
+      <h2>💼 Work/Purpose</h2>
+      <div class="success-box">
+        <strong>Keep him engaged in meaningful work.</strong> Idle teenagers struggle most. Ensure:
+        <ul>
+          <li>Real responsibilities that matter</li>
+          <li>Clear contribution to family enterprise</li>
+          <li>His own projects that he owns</li>
+        </ul>
+      </div>
+
+      <h2>🧭 Values Conversations</h2>
+      <p>Don't lecture. Ask questions that make him think:</p>
+      <ul>
+        <li>"What kind of friend do you want to be?"</li>
+        <li>"What would you do if everyone else was doing X?"</li>
+        <li>"What matters more than money?"</li>
+        <li>"How do you want to be remembered?"</li>
+      </ul>
+
+      <h2>🌍 Expanded Freedom</h2>
+      <p>With demonstrated responsibility, increase autonomy:</p>
+      <ul>
+        <li>Solo trips to town</li>
+        <li>Managing own schedule for days at a time</li>
+        <li>Larger financial decisions</li>
+      </ul>
+
+      <span class="page-number">12</span>
+    </div>
+
+    <!-- PAGE 13: Age 14 -->
+    <div class="page">
+      <span class="age-badge">AGE 14</span>
+      <h1>The Emergence Year</h1>
+      
+      <p><em>Core theme: The real person begins to emerge from adolescent chaos</em></p>
+
+      <h2>🧠 What's Shifting</h2>
+      <ul>
+        <li>Worst turbulence often passing</li>
+        <li>More capable of nuanced thinking</li>
+        <li>Beginning to appreciate parents again (slightly!)</li>
+        <li>Future orientation increases</li>
+        <li>Real passions becoming clear</li>
+      </ul>
+
+      <h2>🎯 Focus Areas</h2>
+      <div class="grid-2">
+        <div class="skill-card">
+          <h4>Deep Expertise</h4>
+          Double down on his strongest area. This becomes competitive advantage.
+        </div>
+        <div class="skill-card">
+          <h4>Real World Exposure</h4>
+          Internships, apprenticeships, work experience outside family.
+        </div>
+        <div class="skill-card">
+          <h4>Leadership</h4>
+          Put him in charge of something with real stakes.
+        </div>
+        <div class="skill-card">
+          <h4>Network</h4>
+          Help him build relationships with successful adults.
+        </div>
+      </div>
+
+      <h2>💼 Business/Work Milestone</h2>
+      <div class="milestone-box">
+        <strong>By end of 14:</strong>
+        <ul>
+          <li>Has generated at least $500+ in personal revenue</li>
+          <li>Can run a project with minimal supervision</li>
+          <li>Has failed at something significant and recovered</li>
+          <li>Understands basic business concepts (revenue, cost, profit, value)</li>
+        </ul>
+      </div>
+
+      <h2>📚 Academic Considerations</h2>
+      <p>If formal qualifications matter for his path:</p>
+      <ul>
+        <li>Begin preparing for any needed certifications/exams</li>
+        <li>Identify gaps in formal knowledge</li>
+        <li>Consider selective formal courses if needed</li>
+      </ul>
+
+      <h2>🎯 End of Phase 3 Milestone</h2>
+      <div class="success-box">
+        By 14: Survived adolescent transition with relationship intact. Has clear interests/passions. Demonstrates responsibility. Ready for adult-level challenges.
+      </div>
+
+      <span class="page-number">13</span>
+    </div>
+
+    <!-- PAGE 14: Phase 4 Overview -->
+    <div class="page">
+      <div class="phase-header">
+        <h1>PHASE 4: LAUNCH</h1>
+        <p>Ages 15-18 • Becoming an Adult</p>
+      </div>
+
+      <p>The final phase. Your job is to make yourself <strong>unnecessary</strong>. By 18, he should be able to live independently — even if he chooses not to.</p>
+
+      <h2>🎯 Phase 4 Goals</h2>
+      <ul>
+        <li>Full ownership of life decisions</li>
+        <li>Genuine expertise in chosen fields</li>
+        <li>Financial capability (can support self if needed)</li>
+        <li>Clear direction (even if it changes later)</li>
+        <li>Healthy independence from parents</li>
+      </ul>
+
+      <h2>🔄 Final Role Transition</h2>
+      <div class="grid-2">
+        <div class="skill-card">
+          <h4>You Become</h4>
+          Consultant (when asked), supporter, safety net
+        </div>
+        <div class="skill-card">
+          <h4>He Becomes</h4>
+          Primary decision-maker for his own life
+        </div>
+      </div>
+
+      <h2>💡 Key Principle</h2>
+      <div class="principle-box">
+        <p><strong>Treat him as an adult who hasn't moved out yet, not a child who's getting older.</strong></p>
+      </div>
+
+      <h2>✅ Success Indicators (Age 18)</h2>
+      <div class="success-box">
+        <ul>
+          <li>Could live independently (has the skills)</li>
+          <li>Has meaningful work or clear path</li>
+          <li>Manages own finances responsibly</li>
+          <li>Makes major decisions independently</li>
+          <li>Has support network beyond family</li>
+          <li>Maintains good relationship with parents by choice</li>
+        </ul>
+      </div>
+
+      <span class="page-number">14</span>
+    </div>
+
+    <!-- PAGE 15: Age 15 -->
+    <div class="page">
+      <span class="age-badge">AGE 15</span>
+      <h1>The Specialization Year</h1>
+      
+      <p><em>Core theme: Going deep, not wide</em></p>
+
+      <h2>🎯 Strategic Focus</h2>
+      <p>By 15, it's time to <strong>specialize</strong>. Jack-of-all-trades was fine before. Now pick 1-2 areas to become genuinely excellent.</p>
+
+      <div class="milestone-box">
+        <strong>The 1000-Hour Question:</strong> What is he willing to invest 1000+ hours in over the next 3 years? This becomes his competitive advantage.
+        <ul>
+          <li>Agriculture/permaculture</li>
+          <li>Hospitality/tourism</li>
+          <li>Digital creation/marketing</li>
+          <li>Construction/building</li>
+          <li>Business/entrepreneurship</li>
+          <li>Something else entirely</li>
+        </ul>
+      </div>
+
+      <h2>💼 Real Work</h2>
+      <ul>
+        <li>Significant role in family business (not "helping"—owning outcomes)</li>
+        <li>Or: real job/internship outside family</li>
+        <li>Or: his own business at meaningful scale</li>
+      </ul>
+
+      <h2>💰 Financial Independence Practice</h2>
+      <div class="success-box">
+        <strong>Money Goals:</strong>
+        <ul>
+          <li>Covers own discretionary spending</li>
+          <li>Contributes to larger purchases (phone, travel)</li>
+          <li>Has savings account with growing balance</li>
+          <li>Understands investing basics</li>
+        </ul>
+      </div>
+
+      <h2>🌍 Expanded World</h2>
+      <ul>
+        <li>Solo travel experience (within Indonesia)</li>
+        <li>Exposure to different life paths</li>
+        <li>Mentors in his area of focus</li>
+        <li>Online communities in his interests</li>
+      </ul>
+
+      <span class="page-number">15</span>
+    </div>
+
+    <!-- PAGE 16: Age 16-17 -->
+    <div class="page">
+      <span class="age-badge">AGE 16-17</span>
+      <h1>The Capability Years</h1>
+      
+      <p><em>Core theme: Building adult-level capability</em></p>
+
+      <h2>🎯 By End of 17, He Should Be Able To:</h2>
+      <div class="grid-2">
+        <div class="skill-card">
+          <h4>Life Skills</h4>
+          Cook, clean, manage household, handle emergencies, navigate bureaucracy
+        </div>
+        <div class="skill-card">
+          <h4>Financial</h4>
+          Budget, save, invest basics, understand taxes, negotiate
+        </div>
+        <div class="skill-card">
+          <h4>Social</h4>
+          Network professionally, resolve conflicts, lead small teams
+        </div>
+        <div class="skill-card">
+          <h4>Professional</h4>
+          Create value that people pay for, deliver consistently
+        </div>
+      </div>
+
+      <h2>💼 Work at Scale</h2>
+      <div class="milestone-box">
+        <strong>Real Contribution:</strong> By 16-17, he should be making a real, measurable contribution to family enterprise OR running his own thing at real scale. Not "learning" — doing.
+      </div>
+
+      <h2>📚 Learning Path</h2>
+      <p>Three options to consider (not mutually exclusive):</p>
+      <ul>
+        <li><strong>Direct work:</strong> Full focus on business/skill development</li>
+        <li><strong>Alternative credentials:</strong> Online courses, certifications, portfolios</li>
+        <li><strong>Traditional path:</strong> University preparation if relevant for his goals</li>
+      </ul>
+      <p><em>Key: He chooses. You advise.</em></p>
+
+      <h2>🗺️ Future Planning</h2>
+      <p>Help him think through:</p>
+      <ul>
+        <li>Where do you want to be at 25?</li>
+        <li>What paths could get you there?</li>
+        <li>What do you need to learn/do/become?</li>
+        <li>What are you optimizing for? (Money? Freedom? Impact? Location?)</li>
+      </ul>
+
+      <h2>⚠️ Common Mistakes</h2>
+      <div class="warning-box">
+        <ul>
+          <li>Pushing him toward "safe" paths that aren't his</li>
+          <li>Under-challenging (too much comfort)</li>
+          <li>Over-managing his decisions</li>
+          <li>Comparing to peers on traditional paths</li>
+        </ul>
+      </div>
+
+      <span class="page-number">16</span>
+    </div>
+
+    <!-- PAGE 17: Age 18 -->
+    <div class="page">
+      <span class="age-badge">AGE 18</span>
+      <h1>The Launch Year</h1>
+      
+      <p><em>Core theme: Ready to fly — whether he stays or goes</em></p>
+
+      <h2>🎯 The Goal</h2>
+      <div class="principle-box">
+        <p><strong>At 18, he should be CAPABLE of full independence — even if he chooses to stay connected to family business/home.</strong></p>
+      </div>
+
+      <h2>✅ Readiness Checklist</h2>
+      <div class="success-box">
+        <h3>Can He...</h3>
+        <ul>
+          <li>☐ Support himself financially if needed?</li>
+          <li>☐ Manage a household (food, bills, maintenance)?</li>
+          <li>☐ Navigate adult systems (banking, legal, health)?</li>
+          <li>☐ Make major decisions and live with consequences?</li>
+          <li>☐ Build and maintain healthy relationships?</li>
+          <li>☐ Handle failure, rejection, and setbacks?</li>
+          <li>☐ Continue learning without external structure?</li>
+          <li>☐ Create value that others will pay for?</li>
+        </ul>
+      </div>
+
+      <h2>🔄 Relationship Evolution</h2>
+      <p>The parent-child relationship should now become adult-to-adult:</p>
+      <ul>
+        <li>He asks for advice (sometimes), you give it (when asked)</li>
+        <li>Major decisions are his to make</li>
+        <li>Connection is by choice, not dependency</li>
+        <li>Mutual respect as capable adults</li>
+      </ul>
+
+      <h2>🌟 What Success Looks Like</h2>
+      <div class="quote">
+        Success is not a specific outcome (college, business, career). Success is a human who can enter any system, build within it, or create his own — and most importantly, live consciously, fully, and on his own terms.
+      </div>
+
+      <span class="page-number">17</span>
+    </div>
+
+    <!-- PAGE 18: Final Wisdom -->
+    <div class="page">
+      <h1>🧭 Final Wisdom: The Long Game</h1>
+
+      <h2>What Really Matters</h2>
+      <div class="quote">
+        "The goal of parenting is not to raise a successful child. It's to raise an adult who no longer needs you — and still wants you in their life."
+      </div>
+
+      <h2>Remember Along the Way</h2>
+      <ul>
+        <li><strong>Progress isn't linear.</strong> Some years will feel like steps backward. They're not.</li>
+        <li><strong>Your relationship matters more than any curriculum.</strong> A connected child learns. A disconnected one resists.</li>
+        <li><strong>He's watching you more than listening to you.</strong> Model what you want him to become.</li>
+        <li><strong>Struggle is not damage.</strong> Appropriate challenge builds resilience.</li>
+        <li><strong>You'll make mistakes.</strong> Repair matters more than perfection.</li>
+      </ul>
+
+      <h2>The North Star (Every Decision)</h2>
+      <div class="principle-box">
+        <p><strong>"Is this making him more capable, more aware, and more independent?"</strong></p>
+        <p style="margin-top:8px;font-size:9px;opacity:0.9;">If yes → continue. If no → adjust.</p>
+      </div>
+
+      <h2>You've Already Won</h2>
+      <div class="success-box">
+        <p>Most parents never think this deeply. Most children never get this opportunity. By creating this roadmap and committing to it, you've already set him apart.</p>
+        <p style="margin-top:8px;"><strong>The rest is showing up, year after year, with love and intention.</strong></p>
+      </div>
+
+      <div style="text-align:center;margin-top:30px;color:#666;font-size:10px;">
+        <p>🌿</p>
+        <p>Mawun Valley Farm</p>
+        <p><em>Raising a human who can enter systems, build systems, leave systems — and live fully on his own terms.</em></p>
+      </div>
+
+      <span class="page-number">18</span>
+    </div>
+
+  </div>
+
+  <script>
+    async function downloadPDF() {
+      const btn = document.getElementById('downloadBtn');
+      btn.disabled = true;
+      btn.textContent = '⏳ Generating...';
+      try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a5' });
+        const pages = document.querySelectorAll('.page');
+        const totalPages = pages.length;
+        for (let i = 0; i < totalPages; i++) {
+          const page = pages[i];
+          const canvas = await html2canvas(page, { scale: 4, useCORS: true, allowTaint: true, backgroundColor: '#ffffff', logging: false });
+          const imgData = canvas.toDataURL('image/png');
+          if (i > 0) pdf.addPage();
+          pdf.addImage(imgData, 'PNG', 0, 0, 148, 210);
+          btn.textContent = '⏳ ' + (i + 1) + '/' + totalPages;
+        }
+        pdf.save('Development-Roadmap-6-to-18.pdf');
+      } catch (error) {
+        console.error('PDF error:', error);
+        alert('Error generating PDF');
+      }
+      btn.disabled = false;
+      btn.textContent = '📥 Download A5 PDF';
+    }
+  </script>
+</body>
+</html>

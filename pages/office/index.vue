@@ -50,6 +50,12 @@
           <p>Development guide for raising capable humans (A5 book)</p>
         </a>
 
+        <a href="/office/blueprint/development-roadmap.html" target="_blank" class="tool-card">
+          <div class="tool-icon">🧭</div>
+          <h3>Development Roadmap</h3>
+          <p>Year-by-year compass for ages 6-18</p>
+        </a>
+
         <a href="/office/blueprint/family-blueprint-booklet.html" target="_blank" class="tool-card">
           <div class="tool-icon">🖨️</div>
           <h3>Blueprint Booklet</h3>
