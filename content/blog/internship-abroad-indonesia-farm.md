@@ -172,7 +172,7 @@ The minimum stay is 10 days, but most students find 3-4 weeks optimal for meanin
 
 ### Cost
 
-The program costs $19 USD per day, covering:
+The program costs €17 per day, covering:
 - Private cabin accommodation
 - Daily breakfast and lunch
 - Access to all learning tracks

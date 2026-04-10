@@ -135,7 +135,7 @@ Let's compare a semester (4 months) of traditional study abroad versus intensive
 
 | Component | Cost |
 |-----------|------|
-| Program fee ($19 × 60 days) | $1,140 |
+| Program fee (€17 × 60 days) | €1,020 |
 | Dinners/extras | $300 |
 | Activities/exploration | $400 |
 | Insurance | $200 |

@@ -300,7 +300,7 @@ The Caretaker track welcomes hospitality students and anyone interested in guest
 
 **Duration:** Minimum 10 days, 1-2 months recommended for substantial learning
 
-**Cost:** $19 per day (includes accommodation, breakfast, lunch, events)
+**Cost:** €17 per day (includes accommodation, breakfast, lunch, events)
 
 **Experience:** No prior hospitality experience required — enthusiasm matters more
 

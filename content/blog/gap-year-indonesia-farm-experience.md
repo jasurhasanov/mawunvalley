@@ -171,7 +171,7 @@ This assumes budget choices throughout. Many backpackers spend more.
 
 | Expense | Daily | Monthly |
 |---------|-------|---------|
-| Program fee (all-inclusive) | $19 | $570 |
+| Program fee (all-inclusive) | €17 | €510 |
 | Dinners (not included) | $5 | $150 |
 | Personal extras | $10 | $300 |
 | **Total** | $34 | **$1,020** |

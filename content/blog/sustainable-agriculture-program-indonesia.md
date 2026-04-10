@@ -189,7 +189,7 @@ And you're still in a classroom, not a field.
 
 | Component | Cost |
 |-----------|------|
-| Program fee ($19/day × 60 days) | $1,140 |
+| Program fee (€17/day × 60 days) | €1,020 |
 | Dinners/extras | $300 |
 | Flights (from Europe/US) | $600-1,200 |
 | **Total** | **$2,040-2,640** |
