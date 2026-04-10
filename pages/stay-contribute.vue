@@ -256,7 +256,7 @@
             <div class="modal-footer">
               <div class="modal-fee-box">
                 <div class="modal-fee-left">
-                  <span class="modal-fee-number">$19</span>
+                  <span class="modal-fee-number">€17</span>
                   <span class="modal-fee-unit">per person / day</span>
                 </div>
                 <div class="modal-fee-right">
@@ -324,7 +324,7 @@
                   <div class="form-group checkbox-group">
                     <label class="checkbox-label">
                       <input type="checkbox" v-model="form.agreed" required>
-                      <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                      <span>I have read the program details and agree to the daily fee of €17 per person.</span>
                     </label>
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
@@ -374,7 +374,7 @@
             <div class="modal-footer">
               <div class="modal-fee-box">
                 <div class="modal-fee-left">
-                  <span class="modal-fee-number">$19</span>
+                  <span class="modal-fee-number">€17</span>
                   <span class="modal-fee-unit">per person / day</span>
                 </div>
                 <div class="modal-fee-right">
@@ -442,7 +442,7 @@
                   <div class="form-group checkbox-group">
                     <label class="checkbox-label">
                       <input type="checkbox" v-model="form.agreed" required>
-                      <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                      <span>I have read the program details and agree to the daily fee of €17 per person.</span>
                     </label>
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
@@ -492,7 +492,7 @@
             <div class="modal-footer">
               <div class="modal-fee-box">
                 <div class="modal-fee-left">
-                  <span class="modal-fee-number">$19</span>
+                  <span class="modal-fee-number">€17</span>
                   <span class="modal-fee-unit">per person / day</span>
                 </div>
                 <div class="modal-fee-right">
@@ -560,7 +560,7 @@
                   <div class="form-group checkbox-group">
                     <label class="checkbox-label">
                       <input type="checkbox" v-model="form.agreed" required>
-                      <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                      <span>I have read the program details and agree to the daily fee of €17 per person.</span>
                     </label>
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
@@ -610,7 +610,7 @@
             <div class="modal-footer">
               <div class="modal-fee-box">
                 <div class="modal-fee-left">
-                  <span class="modal-fee-number">$19</span>
+                  <span class="modal-fee-number">€17</span>
                   <span class="modal-fee-unit">per person / day</span>
                 </div>
                 <div class="modal-fee-right">
@@ -678,7 +678,7 @@
                   <div class="form-group checkbox-group">
                     <label class="checkbox-label">
                       <input type="checkbox" v-model="form.agreed" required>
-                      <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                      <span>I have read the program details and agree to the daily fee of €17 per person.</span>
                     </label>
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
@@ -727,7 +727,7 @@
             <div class="modal-footer">
               <div class="modal-fee-box">
                 <div class="modal-fee-left">
-                  <span class="modal-fee-number">$19</span>
+                  <span class="modal-fee-number">€17</span>
                   <span class="modal-fee-unit">per person / day</span>
                 </div>
                 <div class="modal-fee-right">
@@ -795,7 +795,7 @@
                   <div class="form-group checkbox-group">
                     <label class="checkbox-label">
                       <input type="checkbox" v-model="form.agreed" required>
-                      <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                      <span>I have read the program details and agree to the daily fee of €17 per person.</span>
                     </label>
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
@@ -956,7 +956,7 @@
       <div class="container">
         <div class="fee-box">
           <div class="fee-left">
-            <span class="fee-number">$19</span>
+            <span class="fee-number">€17</span>
             <span class="fee-unit">per person / day</span>
           </div>
           <div class="fee-right">
@@ -1031,7 +1031,7 @@
             <div class="form-group checkbox-group">
               <label class="checkbox-label">
                 <input type="checkbox" v-model="form.agreed" required>
-                <span>I have read the program details and agree to the daily fee of US$19 per person.</span>
+                <span>I have read the program details and agree to the daily fee of €17 per person.</span>
               </label>
             </div>
             <button type="submit" class="btn btn-primary btn-lg" :disabled="submitting">
