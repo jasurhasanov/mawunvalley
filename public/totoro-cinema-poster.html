@@ -18,7 +18,21 @@
       padding: 40px 20px;
     }
     h1 { color: white; font-family: 'Playfair Display', serif; margin-bottom: 10px; }
-    .subtitle { color: #aaa; margin-bottom: 30px; text-align: center; }
+    .subtitle { color: #aaa; margin-bottom: 20px; text-align: center; }
+    
+    .upload-area {
+      background: rgba(255,255,255,0.1);
+      border: 2px dashed rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 20px 30px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: white;
+    }
+    .upload-area input {
+      margin-top: 10px;
+    }
+    .upload-area.hidden { display: none; }
     
     .poster-wrapper {
       display: flex;
@@ -41,27 +55,30 @@
     .poster-content {
       width: 100%;
       height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    /* Image section - takes most of the space, crops from top */
-    .image-section {
-      flex: 1;
-      background: url('/images/totoro-poster.jpg') center bottom;
-      background-size: cover;
       position: relative;
     }
     
-    /* Dark gradient at bottom of image for text readability */
+    /* Image section - full bleed, crops from top */
+    .image-section {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-position: center bottom;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    
+    /* Dark gradient at bottom for text */
     .image-section::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      height: 60%;
-      background: linear-gradient(to top, rgba(26,26,46,1) 0%, rgba(26,26,46,0.8) 30%, transparent 100%);
+      height: 50%;
+      background: linear-gradient(to top, rgba(26,26,46,0.95) 0%, rgba(26,26,46,0.7) 40%, transparent 100%);
     }
     
     /* Event info at bottom */
@@ -114,6 +131,7 @@
       transition: background 0.2s;
     }
     .download-btn:hover { background: #7B1FA2; }
+    .download-btn:disabled { background: #666; cursor: not-allowed; }
     
     .instructions {
       color: #888;
@@ -128,10 +146,15 @@
   <h1>🎬 Outdoor Cinema Poster</h1>
   <p class="subtitle">Single-page poster for Instagram (1080x1350)</p>
   
+  <div class="upload-area" id="uploadArea">
+    <p>📷 Upload the Totoro poster image:</p>
+    <input type="file" id="imageInput" accept="image/*">
+  </div>
+  
   <div class="poster-wrapper">
     <div class="poster" id="poster">
       <div class="poster-content">
-        <div class="image-section"></div>
+        <div class="image-section" id="imageSection"></div>
         <div class="event-info">
           <div class="event-title">Outdoor Cinema</div>
           <div class="event-details">
@@ -143,15 +166,34 @@
       </div>
     </div>
     
-    <button class="download-btn" onclick="downloadPoster()">Download Poster (1080x1350)</button>
+    <button class="download-btn" id="downloadBtn" onclick="downloadPoster()" disabled>Upload image first</button>
   </div>
   
   <p class="instructions">
-    The poster uses the Totoro image with event details at the bottom.<br>
-    Image crops from the top to fit 4:5 ratio.
+    Upload the Totoro image, then download the poster.<br>
+    Image will be cropped from the top to fit 4:5 ratio.
   </p>
   
   <script>
+    const imageInput = document.getElementById('imageInput');
+    const imageSection = document.getElementById('imageSection');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const uploadArea = document.getElementById('uploadArea');
+    
+    imageInput.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        imageSection.style.backgroundImage = `url(${event.target.result})`;
+        downloadBtn.disabled = false;
+        downloadBtn.textContent = 'Download Poster (1080x1350)';
+        uploadArea.classList.add('hidden');
+      };
+      reader.readAsDataURL(file);
+    });
+    
     async function downloadPoster() {
       const poster = document.getElementById('poster');
       try {
