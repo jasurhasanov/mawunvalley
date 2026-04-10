@@ -150,6 +150,8 @@ Choose a film that relates to your team's challenges or industry for subtle prof
 - Price: IDR 150,000 per person
 - Includes: Outdoor seating, popcorn, drink
 
+[Book Outdoor Cinema tickets →](https://megatix.co.id/events/outdoor-cinema-nights-at-the-farm)
+
 ### 6. Surf Lessons: Facing Fear Together
 
 South Lombok is famous for surfing, and beginner-friendly breaks make it accessible for corporate groups. Learning to surf is an equalizer — executives and interns both start from zero.

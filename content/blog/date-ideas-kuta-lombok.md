@@ -117,6 +117,8 @@ Movies are passive in the best way. You can cuddle without conversation pressure
 - Price: IDR 150,000 per person
 - Includes: Seating, popcorn, drink
 
+[Book Outdoor Cinema tickets →](https://megatix.co.id/events/outdoor-cinema-nights-at-the-farm)
+
 ### 5. Private Samovar Tea Ceremony
 
 For a truly unusual date, book a private [samovar tea ceremony](/gather). The two of you, a glowing traditional brass samovar, three tea varieties, blini, and homemade jam — all set in the farm's peaceful atmosphere.

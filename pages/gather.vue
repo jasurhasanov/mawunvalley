@@ -690,7 +690,7 @@
 
             </div>
             <div class="modal-footer">
-              <a href="https://wa.me/6282258440585?text=Hi!%20I'd%20like%20to%20book%20Outdoor%20Cinema%20this%20Wednesday" class="btn btn-primary btn-lg" target="_blank">Book via WhatsApp</a>
+              <a href="https://megatix.co.id/events/outdoor-cinema-nights-at-the-farm" class="btn btn-primary btn-lg" target="_blank">Book Tickets</a>
             </div>
           </div>
 

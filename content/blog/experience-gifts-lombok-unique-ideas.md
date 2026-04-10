@@ -55,6 +55,8 @@ Many experience gifts are inherently social. A cooking class for two, a BBQ dinn
 
 **How to gift it:** A [Mawun Valley gift card](/gift-cards) for IDR 750,000 covers cinema night for two with extras to spare.
 
+[Book Outdoor Cinema tickets →](https://megatix.co.id/events/outdoor-cinema-nights-at-the-farm)
+
 ### 2. Farm-to-Table BBQ Experience
 
 **What it is:** Friday night BBQ feasts at the farm featuring fresh seafood, farm-raised ingredients, live music, and community atmosphere.

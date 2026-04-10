@@ -77,6 +77,8 @@ The inclusion of popcorn and drinks in the ticket price, the quality of the setu
 - Capacity: 15 people max
 - Booking: Recommended, especially in high season
 
+[Book Outdoor Cinema tickets →](https://megatix.co.id/events/outdoor-cinema-nights-at-the-farm)
+
 ## Farm-to-Table Cashew Apple Jam Making
 
 You've probably eaten cashews. But have you ever seen a cashew apple — the fruit that produces the nut? Most people haven't, because cashew apples don't transport well and are rarely sold outside growing regions.
