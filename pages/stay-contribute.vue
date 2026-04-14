@@ -1298,7 +1298,7 @@ async function submitApplication() {
 .application-form { display: flex; flex-direction: column; gap: 16px; }
 .form-group { display: flex; flex-direction: column; gap: 6px; }
 .form-group label { font-weight: 600; font-size: 14px; color: var(--color-dark); }
-.form-group input, .form-group select, .form-group textarea { padding: 12px 16px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; transition: border-color 0.2s; }
+.form-group input, .form-group select, .form-group textarea { padding: 12px 16px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; transition: border-color 0.2s; width: 100%; box-sizing: border-box; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--color-sage); }
 .form-group textarea { min-height: 100px; resize: vertical; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -1372,3 +1372,4 @@ async function submitApplication() {
   .apply-form-wrapper { padding: 24px; margin: 0 16px; }
 }
 </style>
+
