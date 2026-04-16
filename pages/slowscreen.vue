@@ -255,7 +255,7 @@
             <p>🧥 Bring a light jacket — evenings in the valley can be cool.</p>
           </div>
           
-          <a href="https://megatix.co.id/events/outdoor-cinema-nights-at-the-farm" class="btn btn-primary btn-lg" target="_blank">Book Tickets</a>
+          <a href="/gather" class="btn btn-primary btn-lg" >Book Tickets</a>
         </div>
       </div>
     </section>
