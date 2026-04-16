@@ -59,13 +59,13 @@
 <!-- 2. BBQ Nights -->
           <article class="event-card signature" @click="openEvent('bbq')">
             <div class="event-image">
-              <img src="/images/bbq-nights.jpg" alt="BBQ Nights">
+              <img src="/images/bbq-nights.jpg" alt="The Slow Table">
               <span class="event-badge">Weekly</span>
             </div>
             <div class="event-info">
               <div class="event-icon">🔥</div>
-              <h3>#BBQNights</h3>
-              <p class="event-tagline">Every Friday, the farm comes alive</p>
+              <h3>The Slow Table</h3>
+              <p class="event-tagline">Friday dinners around the fire</p>
               <p class="urgency-note">🔥 Only 10 spots for outside guests — always sells out!</p>
               <div class="event-meta">
                 <span>📅 Every Friday</span>
@@ -273,11 +273,11 @@
           <div v-if="activeEvent === 'bbq'" class="event-detail">
             <div class="modal-header">
               <span class="event-badge">🔥 Weekly Event</span>
-              <h2>#BBQNights</h2>
-              <p class="modal-tagline">Every Friday, the farm comes alive</p>
+              <h2>The Slow Table</h2>
+              <p class="modal-tagline">Where meals still mean something</p>
             </div>
             <div class="modal-body">
-              <p class="intro-text">Farm-to-table feast under the stars. Good people, great food, sounds of nature. All ingredients fresh from our farm and local fishermen.</p>
+              <p class="intro-text">Meals used to mean something. Every Friday, we set long tables under the trees, light the fire, and let the evening unfold at its own pace. Farm-fresh ingredients, plant-based options always available, and the company of others who chose to slow down for an evening.</p>
               
               <h4>⏰ Schedule</h4>
               <div class="schedule-box">
@@ -335,6 +335,7 @@
               </div>
             </div>
             <div class="modal-footer">
+              <a href="/slowtable" class="btn btn-outline btn-lg">Our Philosophy</a>
               <a href="https://megatix.co.id/events/bbqnights-mawun-valley" class="btn btn-primary btn-lg" target="_blank">Book Tickets</a>
             </div>
           </div>
