@@ -328,6 +328,7 @@ useSeoMeta({
   margin-bottom: 0.5rem;
 }
 .page-hero h1 {
+  color: white;
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 600;
@@ -335,6 +336,7 @@ useSeoMeta({
   text-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
 .hero-subtitle {
+  color: white;
   font-size: 1.25rem;
   opacity: 0.95;
   font-style: italic;
@@ -450,6 +452,7 @@ section {
   margin: 0 auto;
 }
 .philosophy-content .lead {
+  color: white;
   font-size: 1.15rem;
   text-align: center;
   margin-bottom: 2.5rem;
