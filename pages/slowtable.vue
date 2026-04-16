@@ -224,7 +224,7 @@
             <p>🌱 Plant-based and dietary accommodations always available — just let us know when booking.</p>
           </div>
           
-          <a href="https://megatix.co.id/events/bbqnights-mawun-valley" class="btn btn-primary btn-lg" target="_blank">Book Your Spot</a>
+          <a href="/gather" class="btn btn-primary btn-lg">Book Your Spot</a>
         </div>
       </div>
     </section>
