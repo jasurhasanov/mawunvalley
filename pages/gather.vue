@@ -154,13 +154,13 @@
 <!-- 7. Outdoor Cinema -->
           <article class="event-card signature" @click="openEvent('cinema')">
             <div class="event-image">
-              <img src="/images/outdoor-cinema.png" alt="Outdoor Cinema">
+              <img src="/images/outdoor-cinema.png" alt="The Slow Screen">
               <span class="event-badge cinema">Weekly</span>
             </div>
             <div class="event-info">
               <div class="event-icon">🎬</div>
-              <h3>Outdoor Cinema</h3>
-              <p class="event-tagline">Movies under the stars at Mawun Amphitheater</p>
+              <h3>The Slow Screen</h3>
+              <p class="event-tagline">Stories under stars</p>
               <div class="event-meta">
                 <span>📅 Every Wednesday</span>
                 <span>💰 IDR 150,000</span>
@@ -626,11 +626,11 @@
           <div v-if="activeEvent === 'cinema'" class="event-detail">
             <div class="modal-header">
               <span class="event-badge cinema">🎬 Weekly Event</span>
-              <h2>Outdoor Cinema</h2>
-              <p class="modal-tagline">Movies under the stars at Mawun Amphitheater</p>
+              <h2>The Slow Screen</h2>
+              <p class="modal-tagline">Stories under stars</p>
             </div>
             <div class="modal-body">
-              <p class="intro-text">Experience cinema like never before — in our open-air amphitheater surrounded by nature. Settle into the terraced seating or lounge on carpets and cushions in the garden. Popcorn, drinks, and a magical atmosphere included.</p>
+              <p class="intro-text">There's something special about people gathering under the stars to share a story. Every Wednesday, our natural amphitheater transforms into an open-air cinema — fifteen cushioned seats on terraced wood, carpets spread across the grass, and a screen set against the valley sky. Popcorn, drinks, and the company of others who chose to be present for an evening.</p>
               
               <h4>⏰ Schedule</h4>
               <div class="schedule-box">
@@ -690,6 +690,7 @@
 
             </div>
             <div class="modal-footer">
+              <a href="/slowscreen" class="btn btn-outline btn-lg">Our Philosophy</a>
               <a href="https://megatix.co.id/events/outdoor-cinema-nights-at-the-farm" class="btn btn-primary btn-lg" target="_blank">Book Tickets</a>
             </div>
           </div>
