@@ -96,7 +96,7 @@
             <img src="/images/animal-goat.jpg" alt="The Goats">
             <div class="animal-overlay">
               <h4>The Goats</h4>
-              <p><strong>Coconut</strong> eats everything—cheesecake, cat food, your lunch. <strong>Spinach & Kangkung</strong> are champion fence-jumpers who raid the veggie garden.</p>
+              <p><strong>Cheesecake</strong> eats everything—cat food, your lunch, anything she can reach. <strong>Spinach & Kangkung</strong> are champion fence-jumpers who raid the veggie garden.</p>
             </div>
           </div>
           <div class="animal-card">
