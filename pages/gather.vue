@@ -333,9 +333,10 @@
                 <div class="benefit">🍺 Good Company</div>
                 <div class="benefit">📸 Great Memories</div>
               </div>
+
+              <p class="philosophy-link">Learn more about <a href="/slowtable">our philosophy →</a></p>
             </div>
             <div class="modal-footer">
-              <a href="/slowtable" class="btn btn-outline btn-lg">Our Philosophy</a>
               <a href="https://megatix.co.id/events/bbqnights-mawun-valley" class="btn btn-primary btn-lg" target="_blank">Book Tickets</a>
             </div>
           </div>
@@ -689,9 +690,9 @@
                 <div class="benefit">☕ Drinks Included</div>
               </div>
 
+              <p class="philosophy-link">Learn more about <a href="/slowscreen">our philosophy →</a></p>
             </div>
             <div class="modal-footer">
-              <a href="/slowscreen" class="btn btn-outline btn-lg">Our Philosophy</a>
               <a href="https://megatix.co.id/events/outdoor-cinema-nights-at-the-farm" class="btn btn-primary btn-lg" target="_blank">Book Tickets</a>
             </div>
           </div>
@@ -806,6 +807,19 @@ const closeEvent = () => {
 </script>
 
 <style scoped>
+.philosophy-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #5a6c5e);
+}
+.philosophy-link a {
+  color: var(--color-terracotta, #c17f59);
+  text-decoration: none;
+}
+.philosophy-link a:hover {
+  text-decoration: underline;
+}
 /* Hero */
 .page-hero {
   position: relative;
