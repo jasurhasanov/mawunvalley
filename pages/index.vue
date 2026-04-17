@@ -63,9 +63,9 @@
           </NuxtLink>
           <NuxtLink to="/gather" class="way-card">
             <div class="way-icon">🍽️</div>
-            <h3>Farm Events</h3>
-            <p>BBQ nights, cooking classes, Little Farmer for kids. Come together.</p>
-            <span class="way-link">See events →</span>
+            <h3>Slow Experiences</h3>
+            <p>The Slow Table, The Slow Screen, and more. Where rushing isn't welcome.</p>
+            <span class="way-link">Explore →</span>
           </NuxtLink>
           <NuxtLink to="/belong" class="way-card">
             <div class="way-icon">👨‍👩‍👧</div>
