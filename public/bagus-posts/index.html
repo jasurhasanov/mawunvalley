@@ -9,199 +9,172 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 1400px; margin: 0 auto; }
-        h1 { font-family: 'Playfair Display', serif; color: #fff; text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
-        .subtitle { color: #87CEEB; text-align: center; margin-bottom: 40px; font-size: 1.1rem; }
-        .upload-section { background: rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; margin-bottom: 40px; }
-        .upload-section h2 { color: #fff; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
-        .upload-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
-        .upload-slot { aspect-ratio: 1; border: 2px dashed rgba(255,255,255,0.3); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; overflow: hidden; position: relative; }
-        .upload-slot:hover { border-color: #4ecdc4; background: rgba(78, 205, 196, 0.1); }
-        .upload-slot img { width: 100%; height: 100%; object-fit: cover; }
-        .upload-slot .placeholder { color: rgba(255,255,255,0.5); text-align: center; padding: 10px; }
-        .upload-slot input { position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
-        .posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .post-wrapper { display: flex; flex-direction: column; align-items: center; }
-        .post-label { color: #4ecdc4; font-weight: 600; margin-bottom: 15px; font-size: 1.2rem; }
-        .social-post { width: 400px; height: 500px; position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-        .social-post.square { height: 400px; }
-        .social-post.story { width: 360px; height: 640px; }
+        .container { max-width: 500px; margin: 0 auto; }
+        h1 { font-family: 'Playfair Display', serif; color: #fff; text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .post-wrapper { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
+        .post-label { color: #4ecdc4; font-weight: 600; margin-bottom: 15px; font-size: 1.1rem; }
+        
+        /* Instagram Square Post */
+        .social-post { width: 360px; height: 360px; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+        .social-post.portrait { height: 450px; }
+        .social-post.story { height: 640px; }
+        
         .post-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
-        .post-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%); }
-        .post-content { position: absolute; inset: 0; padding: 30px; display: flex; flex-direction: column; color: #fff; }
-        .post-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .post-overlay { position: absolute; inset: 0; }
+        .post-overlay.gradient-bottom { background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.1) 100%); }
+        .post-overlay.gradient-full { background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.7) 100%); }
+        
+        .post-content { position: absolute; inset: 0; padding: 24px; display: flex; flex-direction: column; color: #fff; }
+        .post-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
         .post-logo span { color: #4ecdc4; }
-        .post-headline { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-top: auto; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
-        .post-subtext { font-size: 1rem; margin-top: 12px; opacity: 0.95; line-height: 1.5; }
-        .post-cta { display: inline-flex; align-items: center; gap: 8px; background: #4ecdc4; color: #0a1628; padding: 12px 24px; border-radius: 30px; font-weight: 700; margin-top: 20px; width: fit-content; font-size: 0.95rem; }
-        .post-location { font-size: 0.85rem; opacity: 0.8; margin-top: 10px; }
-        .post-pricing { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 15px 20px; border-radius: 12px; margin-top: 15px; }
-        .price-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.95rem; }
+        .post-headline { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; line-height: 1.2; margin-top: auto; text-shadow: 0 2px 15px rgba(0,0,0,0.7); }
+        .post-headline.large { font-size: 2rem; }
+        .post-subtext { font-size: 0.9rem; margin-top: 10px; opacity: 0.95; line-height: 1.4; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
+        .post-cta { display: inline-block; background: #4ecdc4; color: #0a1628; padding: 10px 20px; border-radius: 25px; font-weight: 700; margin-top: 15px; width: fit-content; font-size: 0.85rem; }
+        .post-location { font-size: 0.8rem; opacity: 0.85; margin-top: 8px; }
+        
+        .post-pricing { background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); padding: 12px 16px; border-radius: 10px; margin-top: 12px; }
+        .price-row { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.85rem; }
         .price-row:last-child { margin-bottom: 0; }
         .price-value { font-weight: 700; color: #4ecdc4; }
-        .badge { background: #ff6b6b; color: #fff; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; font-weight: 700; margin-left: 8px; }
-        .download-btn { background: linear-gradient(135deg, #4ecdc4, #44a08d); color: #fff; border: none; padding: 14px 28px; border-radius: 30px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 20px; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; }
-        .download-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(78, 205, 196, 0.4); }
-        .download-all { display: flex; justify-content: center; margin-top: 40px; }
-        .download-all button { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); font-size: 1.2rem; padding: 18px 40px; }
-        @media (max-width: 900px) { .posts-grid { grid-template-columns: 1fr; } .social-post { width: 100%; max-width: 400px; } .social-post.story { width: 100%; max-width: 360px; } }
+        .badge { background: #ff6b6b; color: #fff; font-size: 0.6rem; padding: 2px 6px; border-radius: 8px; font-weight: 700; margin-left: 6px; vertical-align: middle; }
+        
+        .download-btn { background: linear-gradient(135deg, #4ecdc4, #44a08d); color: #fff; border: none; padding: 12px 24px; border-radius: 25px; font-weight: 700; font-size: 0.9rem; cursor: pointer; margin-top: 15px; }
+        .download-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4); }
+        
+        .note { color: rgba(255,255,255,0.6); text-align: center; font-size: 0.85rem; margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Bagus Surf School</h1>
-        <p class="subtitle">Social Media Post Generator - Upload photos and download ready-to-post images</p>
-        <div class="upload-section">
-            <h2>Upload Your Photos (click each slot)</h2>
-            <div class="upload-grid">
-                <div class="upload-slot" data-slot="1"><input type="file" accept="image/*" onchange="handleUpload(event, 1)"><div class="placeholder" id="placeholder-1"><span style="font-size:2rem;">+</span><br>Boat/Group</div></div>
-                <div class="upload-slot" data-slot="2"><input type="file" accept="image/*" onchange="handleUpload(event, 2)"><div class="placeholder" id="placeholder-2"><span style="font-size:2rem;">+</span><br>Instructor</div></div>
-                <div class="upload-slot" data-slot="3"><input type="file" accept="image/*" onchange="handleUpload(event, 3)"><div class="placeholder" id="placeholder-3"><span style="font-size:2rem;">+</span><br>Action</div></div>
-                <div class="upload-slot" data-slot="4"><input type="file" accept="image/*" onchange="handleUpload(event, 4)"><div class="placeholder" id="placeholder-4"><span style="font-size:2rem;">+</span><br>Happy Student</div></div>
-                <div class="upload-slot" data-slot="5"><input type="file" accept="image/*" onchange="handleUpload(event, 5)"><div class="placeholder" id="placeholder-5"><span style="font-size:2rem;">+</span><br>Beach Vibes</div></div>
+        <h1>Bagus Surf School Posts</h1>
+        
+        <!-- Post 1: Sunset boat - Brand intro -->
+        <div class="post-wrapper">
+            <div class="post-label">Post 1: Brand Intro</div>
+            <div class="social-post portrait" id="post1">
+                <div class="post-bg" style="background-image: url('boat-sunset.jpg'); background-position: center 30%;"></div>
+                <div class="post-overlay gradient-bottom"></div>
+                <div class="post-content">
+                    <div class="post-logo">BAGUS <span>SURF</span></div>
+                    <div class="post-headline">Learn to Surf in Paradise</div>
+                    <div class="post-subtext">Local family-run surf school in Kuta, Lombok.<br>Max 2 students per instructor.</div>
+                    <div class="post-cta">Book via WhatsApp</div>
+                    <div class="post-location">📍 Kuta Beach, Lombok</div>
+                </div>
             </div>
+            <button class="download-btn" onclick="downloadPost('post1', 'bagus-surf-brand')">Download PNG</button>
         </div>
-        <div class="posts-grid">
-            <div class="post-wrapper">
-                <div class="post-label">Post 1: Brand Intro</div>
-                <div class="social-post" id="post1">
-                    <div class="post-bg" id="bg1" style="background: linear-gradient(135deg, #1a3a5c, #0a1628);"></div>
-                    <div class="post-overlay"></div>
-                    <div class="post-content">
-                        <div class="post-logo">BAGUS <span>SURF</span></div>
-                        <div class="post-headline">Learn to Surf in Paradise</div>
-                        <div class="post-subtext">Local family-run surf school in Kuta, Lombok. Max 2 students per instructor for personalized coaching.</div>
-                        <div class="post-cta">Book via WhatsApp</div>
-                        <div class="post-location">Kuta Beach, Lombok</div>
+        
+        <!-- Post 2: Instructor - Pricing -->
+        <div class="post-wrapper">
+            <div class="post-label">Post 2: Pricing</div>
+            <div class="social-post portrait" id="post2">
+                <div class="post-bg" style="background-image: url('instructor.jpg'); background-position: center top;"></div>
+                <div class="post-overlay gradient-full"></div>
+                <div class="post-content">
+                    <div class="post-logo">BAGUS <span>SURF</span></div>
+                    <div class="post-headline">Surf Lesson Prices</div>
+                    <div class="post-pricing">
+                        <div class="price-row"><span>1-3 Lessons</span><span class="price-value">550K/lesson</span></div>
+                        <div class="price-row"><span>4-6 Lessons <span class="badge">POPULAR</span></span><span class="price-value">500K/lesson</span></div>
+                        <div class="price-row"><span>7+ Lessons</span><span class="price-value">450K/lesson</span></div>
+                        <div class="price-row"><span>Private 1-on-1</span><span class="price-value">700K/lesson</span></div>
                     </div>
+                    <div class="post-subtext" style="font-size:0.8rem; margin-top:10px;">✓ Board & rashguard included • ✓ Hotel pickup</div>
+                    <div class="post-cta">WhatsApp: +62 859 5511 0122</div>
                 </div>
-                <button class="download-btn" onclick="downloadPost('post1', 'bagus-surf-brand')">Download PNG</button>
             </div>
-            <div class="post-wrapper">
-                <div class="post-label">Post 2: Pricing</div>
-                <div class="social-post" id="post2">
-                    <div class="post-bg" id="bg2" style="background: linear-gradient(135deg, #2d5a7b, #1a3a5c);"></div>
-                    <div class="post-overlay"></div>
-                    <div class="post-content">
-                        <div class="post-logo">BAGUS <span>SURF</span></div>
-                        <div class="post-headline">Surf Lesson Prices</div>
-                        <div class="post-pricing">
-                            <div class="price-row"><span>1-3 Lessons</span><span class="price-value">550K/lesson</span></div>
-                            <div class="price-row"><span>4-6 Lessons <span class="badge">POPULAR</span></span><span class="price-value">500K/lesson</span></div>
-                            <div class="price-row"><span>7+ Lessons</span><span class="price-value">450K/lesson</span></div>
-                            <div class="price-row"><span>1-on-1 Private</span><span class="price-value">700K/lesson</span></div>
-                        </div>
-                        <div class="post-subtext" style="font-size:0.85rem; margin-top:15px;">Board and rashguard included<br>Hotel pickup available<br>All levels welcome</div>
-                        <div class="post-cta">WhatsApp: +62 859 5511 0122</div>
-                    </div>
-                </div>
-                <button class="download-btn" onclick="downloadPost('post2', 'bagus-surf-pricing')">Download PNG</button>
-            </div>
-            <div class="post-wrapper">
-                <div class="post-label">Post 3: Action Shot</div>
-                <div class="social-post" id="post3">
-                    <div class="post-bg" id="bg3" style="background: linear-gradient(135deg, #1a5a5c, #0a2838);"></div>
-                    <div class="post-overlay"></div>
-                    <div class="post-content">
-                        <div class="post-logo">BAGUS <span>SURF</span></div>
-                        <div class="post-headline">Your First Wave Awaits</div>
-                        <div class="post-subtext">"Best surf lesson ever! Aqila and the team made me feel so confident. Standing up on my first day!"</div>
-                        <div class="post-cta">Book Your Lesson</div>
-                        <div class="post-location">Kuta Beach, Lombok</div>
-                    </div>
-                </div>
-                <button class="download-btn" onclick="downloadPost('post3', 'bagus-surf-action')">Download PNG</button>
-            </div>
-            <div class="post-wrapper">
-                <div class="post-label">Post 4: Instagram Story</div>
-                <div class="social-post story" id="post4">
-                    <div class="post-bg" id="bg4" style="background: linear-gradient(180deg, #ff9966, #ff5e62);"></div>
-                    <div class="post-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.7) 100%);"></div>
-                    <div class="post-content">
-                        <div class="post-logo" style="font-size:1.8rem;">BAGUS <span>SURF</span></div>
-                        <div style="flex: 1;"></div>
-                        <div class="post-headline" style="font-size:2.8rem;">Sunset Surf Sessions</div>
-                        <div class="post-subtext" style="font-size:1.1rem;">Join our local crew and catch perfect waves in Lomboks most beautiful bay</div>
-                        <div class="post-cta" style="align-self: center; margin-top: 30px;">SWIPE UP TO BOOK</div>
-                    </div>
-                </div>
-                <button class="download-btn" onclick="downloadPost('post4', 'bagus-surf-story')">Download PNG</button>
-            </div>
-            <div class="post-wrapper">
-                <div class="post-label">Post 5: Community Vibes</div>
-                <div class="social-post square" id="post5">
-                    <div class="post-bg" id="bg5" style="background: linear-gradient(135deg, #43cea2, #185a9d);"></div>
-                    <div class="post-overlay"></div>
-                    <div class="post-content">
-                        <div class="post-logo">BAGUS <span>SURF</span></div>
-                        <div class="post-headline" style="font-size:2rem;">More Than a Lesson, Its a Vibe</div>
-                        <div class="post-subtext">Family-run. Local guides. Good energy. Perfect waves.<br><br>Join the Bagus Surf family in Kuta, Lombok.</div>
-                        <div class="post-cta">bagussurf.com</div>
-                    </div>
-                </div>
-                <button class="download-btn" onclick="downloadPost('post5', 'bagus-surf-vibes')">Download PNG</button>
-            </div>
-            <div class="post-wrapper">
-                <div class="post-label">Post 6: Facebook Group</div>
-                <div class="social-post square" id="post6">
-                    <div class="post-bg" id="bg6" style="background: linear-gradient(135deg, #2c3e50, #4ca1af);"></div>
-                    <div class="post-overlay"></div>
-                    <div class="post-content">
-                        <div class="post-logo">BAGUS <span>SURF</span></div>
-                        <div class="post-headline" style="font-size:1.8rem;">Looking for Surf Lessons in Lombok?</div>
-                        <div class="post-subtext">Local family-run school<br>15+ years experience<br>Max 2 students/instructor<br>Board and gear included<br>All levels welcome</div>
-                        <div class="post-cta">DM for booking</div>
-                        <div class="post-location">Kuta Beach, South Lombok</div>
-                    </div>
-                </div>
-                <button class="download-btn" onclick="downloadPost('post6', 'bagus-surf-facebook')">Download PNG</button>
-            </div>
+            <button class="download-btn" onclick="downloadPost('post2', 'bagus-surf-pricing')">Download PNG</button>
         </div>
-        <div class="download-all"><button class="download-btn" onclick="downloadAll()">Download All Posts</button></div>
+        
+        <!-- Post 3: Action shot -->
+        <div class="post-wrapper">
+            <div class="post-label">Post 3: Action Shot</div>
+            <div class="social-post portrait" id="post3">
+                <div class="post-bg" style="background-image: url('action.jpg'); background-position: center;"></div>
+                <div class="post-overlay gradient-bottom"></div>
+                <div class="post-content">
+                    <div class="post-logo">BAGUS <span>SURF</span></div>
+                    <div class="post-headline">Your First Wave Awaits</div>
+                    <div class="post-subtext">"Best surf lesson ever! Standing up on my first day!" ⭐⭐⭐⭐⭐</div>
+                    <div class="post-cta">Book Your Lesson</div>
+                    <div class="post-location">📍 Kuta Beach, Lombok</div>
+                </div>
+            </div>
+            <button class="download-btn" onclick="downloadPost('post3', 'bagus-surf-action')">Download PNG</button>
+        </div>
+        
+        <!-- Post 4: Happy student -->
+        <div class="post-wrapper">
+            <div class="post-label">Post 4: Happy Student</div>
+            <div class="social-post portrait" id="post4">
+                <div class="post-bg" style="background-image: url('happy-student.jpg'); background-position: center;"></div>
+                <div class="post-overlay gradient-bottom"></div>
+                <div class="post-content">
+                    <div class="post-logo">BAGUS <span>SURF</span></div>
+                    <div class="post-headline">More Than a Lesson</div>
+                    <div class="post-subtext">Family-run. Local guides. Good energy. Perfect waves.</div>
+                    <div class="post-cta">Join the Bagus Family</div>
+                    <div class="post-location">📍 Kuta Beach, Lombok</div>
+                </div>
+            </div>
+            <button class="download-btn" onclick="downloadPost('post4', 'bagus-surf-happy')">Download PNG</button>
+        </div>
+        
+        <!-- Post 5: Beach vibes - Facebook -->
+        <div class="post-wrapper">
+            <div class="post-label">Post 5: Facebook Group</div>
+            <div class="social-post portrait" id="post5">
+                <div class="post-bg" style="background-image: url('beach-vibes.jpg'); background-position: center top;"></div>
+                <div class="post-overlay gradient-full"></div>
+                <div class="post-content">
+                    <div class="post-logo">BAGUS <span>SURF</span></div>
+                    <div class="post-headline">Looking for Surf Lessons?</div>
+                    <div class="post-subtext">✓ Local family-run school<br>✓ 15+ years experience<br>✓ Max 2 students per instructor<br>✓ Board & gear included<br>✓ All levels welcome</div>
+                    <div class="post-cta">DM for booking</div>
+                    <div class="post-location">📍 Kuta Beach, South Lombok</div>
+                </div>
+            </div>
+            <button class="download-btn" onclick="downloadPost('post5', 'bagus-surf-facebook')">Download PNG</button>
+        </div>
+        
+        <!-- Post 6: Story format -->
+        <div class="post-wrapper">
+            <div class="post-label">Post 6: Instagram Story</div>
+            <div class="social-post story" id="post6">
+                <div class="post-bg" style="background-image: url('boat-sunset.jpg'); background-position: center 40%;"></div>
+                <div class="post-overlay gradient-full"></div>
+                <div class="post-content">
+                    <div class="post-logo" style="font-size:1.5rem;">BAGUS <span>SURF</span></div>
+                    <div style="flex: 1;"></div>
+                    <div class="post-headline large">Sunset Surf Sessions</div>
+                    <div class="post-subtext" style="font-size:1rem;">Join our local crew in Lombok's most beautiful bay</div>
+                    <div class="post-cta" style="align-self: center; margin-top: 25px;">SWIPE UP TO BOOK</div>
+                </div>
+            </div>
+            <button class="download-btn" onclick="downloadPost('post6', 'bagus-surf-story')">Download PNG</button>
+        </div>
+        
+        <div class="note">
+            <strong>Instructions:</strong><br>
+            Put this HTML file in a folder with these images:<br>
+            • boat-sunset.jpg<br>
+            • instructor.jpg<br>
+            • action.jpg<br>
+            • happy-student.jpg<br>
+            • beach-vibes.jpg
+        </div>
     </div>
+    
     <script>
-        const uploadedImages = {};
-        function handleUpload(event, slot) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    uploadedImages[slot] = e.target.result;
-                    const slotEl = document.querySelector('[data-slot="'+slot+'"]');
-                    const placeholder = document.getElementById('placeholder-'+slot);
-                    const existingImg = slotEl.querySelector('img');
-                    if (existingImg) existingImg.remove();
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    slotEl.appendChild(img);
-                    placeholder.style.display = 'none';
-                    updatePostBackgrounds();
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-        function updatePostBackgrounds() {
-            if (uploadedImages[1]) { document.getElementById('bg1').style.backgroundImage = 'url('+uploadedImages[1]+')'; document.getElementById('bg4').style.backgroundImage = 'url('+uploadedImages[1]+')'; }
-            if (uploadedImages[2]) { document.getElementById('bg2').style.backgroundImage = 'url('+uploadedImages[2]+')'; }
-            if (uploadedImages[3]) { document.getElementById('bg3').style.backgroundImage = 'url('+uploadedImages[3]+')'; }
-            if (uploadedImages[4]) { document.getElementById('bg5').style.backgroundImage = 'url('+uploadedImages[4]+')'; }
-            if (uploadedImages[5]) { document.getElementById('bg6').style.backgroundImage = 'url('+uploadedImages[5]+')'; }
-        }
         async function downloadPost(postId, filename) {
             const post = document.getElementById(postId);
-            const canvas = await html2canvas(post, { scale: 3, useCORS: true, backgroundColor: null });
+            const canvas = await html2canvas(post, { scale: 3, useCORS: true, allowTaint: true, backgroundColor: null });
             const link = document.createElement('a');
-            link.download = filename+'.png';
+            link.download = filename + '.png';
             link.href = canvas.toDataURL('image/png');
             link.click();
-        }
-        async function downloadAll() {
-            const posts = ['post1', 'post2', 'post3', 'post4', 'post5', 'post6'];
-            const names = ['bagus-surf-brand', 'bagus-surf-pricing', 'bagus-surf-action', 'bagus-surf-story', 'bagus-surf-vibes', 'bagus-surf-facebook'];
-            for (let i = 0; i < posts.length; i++) {
-                await new Promise(resolve => setTimeout(resolve, 500));
-                await downloadPost(posts[i], names[i]);
-            }
         }
     </script>
 </body>
