@@ -12,7 +12,7 @@
       <ul class="nav-links" :class="{ active: menuOpen }">
         <li><NuxtLink to="/" @click="closeMenu">Home</NuxtLink></li>
         <li><NuxtLink to="/stay-contribute" @click="closeMenu">Stay & Contribute</NuxtLink></li>
-        <li><NuxtLink to="/gather" @click="closeMenu">Farm Events</NuxtLink></li>
+        <li><NuxtLink to="/gather" @click="closeMenu">Slow Experiences</NuxtLink></li>
         <li><NuxtLink to="/little-roots" @click="closeMenu">Little Roots</NuxtLink></li>
         <li><NuxtLink to="/belong" @click="closeMenu">Membership</NuxtLink></li>
         <li><NuxtLink to="/nonis" @click="closeMenu">Noni's</NuxtLink></li>

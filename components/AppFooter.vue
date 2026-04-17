@@ -11,7 +11,7 @@
       <ul>
         <li><a href="/nonis">Noni's Resto & Pastry</a></li>
         <li><a href="/stay-contribute">Stay & Contribute</a></li>
-        <li><a href="/gather">Farm Events</a></li>
+        <li><a href="/gather">Slow Experiences</a></li>
         <li><a href="/retreat">Farm Retreat</a></li>
         <li><a href="/little-roots">Little Roots</a></li>
         <li><a href="/gift-cards">Gift Cards</a></li>
