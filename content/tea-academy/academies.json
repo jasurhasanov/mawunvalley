@@ -1,6 +1,6 @@
 {
   "count": 12,
-  "boundary": "No Academy 13. Menu work is a supporting tool.",
+  "boundary": "No Academy 13. Menu work is folded into the 12 academies.",
   "academies": [
     {
       "number": "01",
@@ -71,8 +71,7 @@
         "Menu description drafts"
       ],
       "tools": [
-        "/tea-academy/journal",
-        "/tea-academy/menu-builder"
+        "/tea-academy/journal"
       ],
       "rank": "Seed"
     },
@@ -121,7 +120,6 @@
         "Server script"
       ],
       "tools": [
-        "/tea-academy/menu-builder",
         "/tea-academy/journal"
       ],
       "rank": "Host"
@@ -146,8 +144,7 @@
         "Reorder decision"
       ],
       "tools": [
-        "/tea-academy/passport",
-        "/tea-academy/menu-builder"
+        "/tea-academy/passport"
       ],
       "rank": "Keeper"
     },

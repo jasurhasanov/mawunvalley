@@ -22,8 +22,8 @@
           <span class="label">Boundary</span>
           <h2>Exactly 12 Academies</h2>
           <p>
-            The academy stops at The House. Menu, pricing, signature tea experiences, and seasonal rotations
-            are supporting website sections, not a thirteenth academy.
+            The academy stops at The House. Signature tea experiences, pairings, pricing, and seasonal rotations
+            are folded back into the existing academies, not kept as a thirteenth academy or separate tool.
           </p>
         </article>
         <article class="status-panel compact">
@@ -34,7 +34,7 @@
         <article class="status-panel compact">
           <span class="label">Next build</span>
           <strong>Content tools</strong>
-          <p>Academy detail pages, journal, passport, lab, garden, house, templates, and menu builder.</p>
+          <p>Academy detail pages, journal, passport, lab, garden, house, and templates.</p>
         </article>
       </div>
     </section>
@@ -126,12 +126,10 @@ const tools = [
   { name: 'Tea Passport', path: '/tea-academy/passport', summary: 'A record of teas by origin, vendor, category, date opened, rating, and repeat decision.' },
   { name: 'Tea Lab', path: '/tea-academy/lab', summary: 'Brewing experiments, blend tests, cold brew trials, and service experiments.' },
   { name: 'Tea Garden', path: '/tea-academy/garden', summary: 'Plants, herbs, local botanicals, garden-to-cup ideas, and care rhythm.' },
-  { name: 'Tea House', path: '/tea-academy/house', summary: 'Storage, service station, tool inventory, checklists, and maintenance rhythm.' },
-  { name: 'Menu Builder', path: '/tea-academy/menu-builder', summary: 'Menu descriptions, pricing, pairings, seasonal rotations, and signatures as a supporting tool.' }
+  { name: 'Tea House', path: '/tea-academy/house', summary: 'Storage, service station, tool inventory, checklists, and maintenance rhythm.' }
 ]
 
 const supportingSections = [
-  'Tea menu builder',
   'Signature ceremony library',
   "Noni's tea service integration",
   'Mawun Valley tea garden plan',
