@@ -23,7 +23,7 @@
           <h2>Exactly 12 Academies</h2>
           <p>
             The academy stops at The House. Signature tea experiences, pairings, pricing, and seasonal rotations
-            are folded back into the existing academies, not kept as a thirteenth academy or separate tool.
+            are folded back into the existing academies, not kept as a separate numbered academy.
           </p>
         </article>
         <article class="status-panel compact">
@@ -45,14 +45,14 @@
         <h2>The 12 Academies</h2>
       </div>
       <div class="container academy-grid">
-        <article v-for="academy in academies" :key="academy.title" class="academy-card">
+        <NuxtLink v-for="academy in academies" :key="academy.slug" :to="`/tea-academy/academies/${academy.slug}`" class="academy-card">
           <span class="number">{{ academy.number }}</span>
           <div>
             <h3>{{ academy.title }}</h3>
-            <p>{{ academy.summary }}</p>
-            <small>{{ academy.progress }}</small>
+            <p>{{ academy.purpose }}</p>
+            <small>{{ academy.rank }}</small>
           </div>
-        </article>
+        </NuxtLink>
       </div>
     </section>
 
@@ -62,11 +62,11 @@
         <h2>What the Website Should Become</h2>
       </div>
       <div class="container tool-grid">
-        <article v-for="tool in tools" :key="tool.name" class="tool-card">
+        <NuxtLink v-for="tool in tools" :key="tool.name" :to="tool.path" class="tool-card">
           <h3>{{ tool.name }}</h3>
           <p>{{ tool.summary }}</p>
           <code>{{ tool.path }}</code>
-        </article>
+        </NuxtLink>
       </div>
     </section>
 
@@ -105,49 +105,7 @@
 </template>
 
 <script setup>
-const academies = [
-  { number: '01', title: 'The Leaf', summary: 'Tea as a plant, processing path, categories, and quality signals.', progress: 'Foundation knowledge' },
-  { number: '02', title: 'The Cup', summary: 'Brewing, water, temperature, timing, vessel choice, and repeatable tasting.', progress: 'Daily practice' },
-  { number: '03', title: 'The Tongue', summary: 'Flavor memory, tasting language, mouthfeel, aroma, defects, and comparison.', progress: 'Sensory skill' },
-  { number: '04', title: 'The Hand', summary: 'Weighing, rinsing, pouring, cleaning, preparing, and serving calmly.', progress: 'Physical fluency' },
-  { number: '05', title: 'The Table', summary: 'Hospitality, ceremony, pacing, guest attention, and food connection.', progress: 'Guest experience' },
-  { number: '06', title: 'The Market', summary: 'Sourcing, vendors, pricing, value, ethics, and buying decisions.', progress: 'Buying judgment' },
-  { number: '07', title: 'The Archive', summary: 'Notes, labels, tea records, experiments, photos, and review habits.', progress: 'Memory system' },
-  { number: '08', title: 'The Map', summary: 'Origins, terroir, travel, tea geography, climate, and place-based learning.', progress: 'World context' },
-  { number: '09', title: 'The Spirit', summary: 'Philosophy, culture, silence, ritual, gratitude, and meaning without performance.', progress: 'Depth and restraint' },
-  { number: '10', title: 'The Lab', summary: 'Experiments, variables, blends, cold brew, service trials, and useful failures.', progress: 'Maker practice' },
-  { number: '11', title: 'The Garden', summary: 'Tea plants, herbs, local botanicals, living landscape, and Mawun Valley ecology.', progress: 'Living ground' },
-  { number: '12', title: 'The House', summary: 'Tools, storage, service station, guest flow, atmosphere, and maintenance.', progress: 'Physical home' }
-]
-
-const tools = [
-  { name: 'Journey Guide', path: '/tea-academy', summary: 'The dashboard: current academy, current mission, rank, and what to do next.' },
-  { name: 'Tea Journal', path: '/tea-academy/journal', summary: 'Daily tasting notes, guest notes, ceremony reflections, and field notes.' },
-  { name: 'Tea Passport', path: '/tea-academy/passport', summary: 'A record of teas by origin, vendor, category, date opened, rating, and repeat decision.' },
-  { name: 'Tea Lab', path: '/tea-academy/lab', summary: 'Brewing experiments, blend tests, cold brew trials, and service experiments.' },
-  { name: 'Tea Garden', path: '/tea-academy/garden', summary: 'Plants, herbs, local botanicals, garden-to-cup ideas, and care rhythm.' },
-  { name: 'Tea House', path: '/tea-academy/house', summary: 'Storage, service station, tool inventory, checklists, and maintenance rhythm.' }
-]
-
-const supportingSections = [
-  'Signature ceremony library',
-  "Noni's tea service integration",
-  'Mawun Valley tea garden plan',
-  'Guest-facing tea story',
-  'Internal staff scripts',
-  'Storage labels and tasting cards',
-  'Monthly review dashboard',
-  'Procurement and vendor shortlist',
-  'Seasonal tea calendar'
-]
-
-const ranks = [
-  { name: 'Seed', summary: 'Start the habit and basic language.' },
-  { name: 'Keeper', summary: 'Build reliable practice, storage, service, and care.' },
-  { name: 'Host', summary: 'Serve guests with confidence and restraint.' },
-  { name: 'Maker', summary: 'Experiment, blend, document, and improve.' },
-  { name: 'Steward', summary: "Connect tea to Mawun Valley's land, culture, archive, and long-term identity." }
-]
+import { academies, ranks, supportingSections, toolPages as tools } from '../data/teaAcademy'
 
 useHead({
   title: 'Tea Academy - Mawun Valley',
@@ -162,273 +120,41 @@ useHead({
 </script>
 
 <style scoped>
-.tea-page {
-  background: #f7f3ec;
-  color: #28352d;
-  min-height: 100vh;
-}
-
-.container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.tea-hero {
-  min-height: 72vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(120deg, #13251d 0%, #274233 58%, #6f5631 100%);
-  color: #fff;
-}
-
-.hero-inner {
-  width: min(900px, calc(100% - 40px));
-  margin: 0 auto;
-}
-
-.eyebrow {
-  margin: 0 0 14px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: .78rem;
-  font-weight: 700;
-  color: #dfbf73;
-}
-
-.eyebrow.dark {
-  color: #8b5c31;
-}
-
-h1,
-h2,
-h3,
-p {
-  letter-spacing: 0;
-}
-
-h1 {
-  margin: 0;
-  font-size: clamp(3rem, 9vw, 6.6rem);
-  line-height: .95;
-  color: #fff;
-}
-
-h2 {
-  margin: 0 0 14px;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.05;
-  color: #213126;
-}
-
-h3 {
-  margin: 0 0 8px;
-  font-size: 1.1rem;
-  color: #213126;
-}
-
-.lede {
-  max-width: 720px;
-  margin: 22px 0 0;
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  line-height: 1.55;
-  color: rgba(255, 255, 255, .9);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-
-.hero-actions a {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  padding: 0 16px;
-  border: 1px solid rgba(255, 255, 255, .42);
-  border-radius: 6px;
-  color: #fff;
-  text-decoration: none;
-  background: rgba(255, 255, 255, .08);
-}
-
-.section {
-  padding: 76px 0;
-}
-
-.section.alt,
-.status-band {
-  background: #efe6d7;
-}
-
-.status-grid {
-  display: grid;
-  grid-template-columns: 1.4fr .8fr .8fr;
-  gap: 14px;
-}
-
-.status-panel,
-.academy-card,
-.tool-card,
-.rank-item {
-  background: #fffdf8;
-  border: 1px solid rgba(68, 87, 71, .14);
-  border-radius: 8px;
-  box-shadow: 0 12px 32px rgba(31, 49, 38, .07);
-}
-
-.status-panel {
-  padding: 24px;
-}
-
-.status-panel.compact strong {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 1.35rem;
-  color: #213126;
-}
-
-.status-panel p,
-.academy-card p,
-.tool-card p,
-.website-layout p,
-.rank-item p {
-  margin: 0;
-  line-height: 1.65;
-  color: #536056;
-}
-
-.label {
-  display: block;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1.6px;
-  font-size: .72rem;
-  font-weight: 800;
-  color: #9a6636;
-}
-
-.section-head {
-  margin-bottom: 26px;
-}
-
-.academy-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.academy-card {
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 14px;
-  padding: 20px;
-}
-
-.number {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #273c2f;
-  color: #f3d68a;
-  font-weight: 800;
-  font-size: .82rem;
-}
-
-.academy-card small {
-  display: block;
-  margin-top: 14px;
-  color: #8b5c31;
-  font-weight: 700;
-}
-
-.tool-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.tool-card {
-  padding: 22px;
-}
-
-.tool-card code {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 6px 8px;
-  border-radius: 5px;
-  background: #efe6d7;
-  color: #35483a;
-  font-size: .84rem;
-}
-
-.website-layout {
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 42px;
-  align-items: start;
-}
-
-.section-list {
-  display: grid;
-  gap: 10px;
-}
-
-.section-row {
-  display: grid;
-  grid-template-columns: 10px 1fr;
-  gap: 12px;
-  align-items: center;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(68, 87, 71, .16);
-}
-
-.section-row span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #b87943;
-}
-
-.rank-section {
-  background: #fffdf8;
-}
-
-.rank-track {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.rank-item {
-  padding: 18px;
-}
-
-.rank-item strong {
-  display: block;
-  margin-bottom: 8px;
-  color: #213126;
-}
-
-@media (max-width: 900px) {
-  .status-grid,
-  .academy-grid,
-  .tool-grid,
-  .website-layout,
-  .rank-track {
-    grid-template-columns: 1fr;
-  }
-
-  .tea-hero {
-    min-height: 66vh;
-  }
-
-  .section {
-    padding: 58px 0;
-  }
-}
+.tea-page { background: #f7f3ec; color: #28352d; min-height: 100vh; }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.tea-hero { min-height: 72vh; display: flex; align-items: center; background: linear-gradient(120deg, #13251d 0%, #274233 58%, #6f5631 100%); color: #fff; }
+.hero-inner { width: min(900px, calc(100% - 40px)); margin: 0 auto; }
+.eyebrow, .label { margin: 0 0 14px; text-transform: uppercase; letter-spacing: 1.6px; font-size: .78rem; font-weight: 800; color: #dfbf73; }
+.eyebrow.dark, .label { color: #8b5c31; }
+h1, h2, h3, p { letter-spacing: 0; }
+h1 { margin: 0; font-size: clamp(3rem, 9vw, 6.6rem); line-height: .95; color: #fff; }
+h2 { margin: 0 0 14px; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.05; color: #213126; }
+h3 { margin: 0 0 8px; font-size: 1.1rem; color: #213126; }
+.lede { max-width: 720px; margin: 22px 0 0; font-size: clamp(1.05rem, 2vw, 1.35rem); line-height: 1.55; color: rgba(255,255,255,.9); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.hero-actions a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 16px; border: 1px solid rgba(255,255,255,.42); border-radius: 6px; color: #fff; text-decoration: none; background: rgba(255,255,255,.08); }
+.section { padding: 76px 0; }
+.section.alt, .status-band { background: #efe6d7; }
+.status-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr; gap: 14px; }
+.status-panel, .academy-card, .tool-card, .rank-item { background: #fffdf8; border: 1px solid rgba(68,87,71,.14); border-radius: 8px; box-shadow: 0 12px 32px rgba(31,49,38,.07); }
+.status-panel { padding: 24px; }
+.status-panel.compact strong { display: block; margin-bottom: 10px; font-size: 1.35rem; color: #213126; }
+.status-panel p, .academy-card p, .tool-card p, .website-layout p, .rank-item p { margin: 0; line-height: 1.65; color: #536056; }
+.section-head { margin-bottom: 26px; }
+.academy-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.academy-card { display: grid; grid-template-columns: 48px 1fr; gap: 14px; padding: 20px; text-decoration: none; color: inherit; }
+.number { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: #273c2f; color: #f3d68a; font-weight: 800; font-size: .82rem; }
+.academy-card small { display: block; margin-top: 14px; color: #8b5c31; font-weight: 700; }
+.tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.tool-card { padding: 22px; text-decoration: none; color: inherit; }
+.tool-card code { display: inline-block; margin-top: 14px; padding: 6px 8px; border-radius: 5px; background: #efe6d7; color: #35483a; font-size: .84rem; }
+.website-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 42px; align-items: start; }
+.section-list { display: grid; gap: 10px; }
+.section-row { display: grid; grid-template-columns: 10px 1fr; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(68,87,71,.16); }
+.section-row span { width: 10px; height: 10px; border-radius: 50%; background: #b87943; }
+.rank-section { background: #fffdf8; }
+.rank-track { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.rank-item { padding: 18px; }
+.rank-item strong { display: block; margin-bottom: 8px; color: #213126; }
+@media (max-width: 900px) { .status-grid, .academy-grid, .tool-grid, .website-layout, .rank-track { grid-template-columns: 1fr; } .tea-hero { min-height: 66vh; } .section { padding: 58px 0; } }
 </style>
