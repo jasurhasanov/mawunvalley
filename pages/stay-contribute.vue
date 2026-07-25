@@ -877,12 +877,12 @@
           <div class="cabin-card">
             <div class="cabin-slider">
               <div class="slider-images">
-                <img v-for="i in 6" :key="'windmill-'+i" :src="`/images/windmill-${i}.jpg`" :class="{ active: cabinSlides.windmill === i }" alt="Rick's Windmill">
+                <img v-for="i in 7" :key="'windmill-'+i" :src="`/images/windmill-${i}.jpg`" :class="{ active: cabinSlides.windmill === i }" alt="Rick's Windmill">
               </div>
-              <button class="slider-btn prev" @click="prevSlide('windmill', 6)">‹</button>
-              <button class="slider-btn next" @click="nextSlide('windmill', 6)">›</button>
+              <button class="slider-btn prev" @click="prevSlide('windmill', 7)">‹</button>
+              <button class="slider-btn next" @click="nextSlide('windmill', 7)">›</button>
               <div class="slider-dots">
-                <span v-for="i in 6" :key="i" :class="{ active: cabinSlides.windmill === i }" @click="cabinSlides.windmill = i"></span>
+                <span v-for="i in 7" :key="i" :class="{ active: cabinSlides.windmill === i }" @click="cabinSlides.windmill = i"></span>
               </div>
             </div>
             <div class="cabin-info"><h4>Rick's Windmill</h4><p>Queen bed • Unique design • Black balcony</p></div>
